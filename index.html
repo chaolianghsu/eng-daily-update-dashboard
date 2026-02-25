@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>工程部 Daily Update Dashboard</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>📊</text></svg>" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #0f172a; }
+    #root { min-height: 100vh; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script crossorigin src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/prop-types@15.8.1/prop-types.min.js"></script>
+  <script crossorigin src="https://unpkg.com/recharts@2.12.7/umd/Recharts.js"></script>
+  <script crossorigin src="https://unpkg.com/@babel/standalone@7.24.7/babel.min.js"></script>
+
+  <script type="text/babel">
+const { useState } = React;
+const {
+  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+  ResponsiveContainer, ReferenceLine, Cell, LineChart, Line,
+  ComposedChart
+} = window.Recharts;
+
+// ═══════════════════════════════════════════════════════════
+// 📌 DATA SECTION — 每天只改這個區塊
+// ═══════════════════════════════════════════════════════════
+
+const COLORS = {
+  bg: "#0f172a", card: "#1e293b", border: "#334155",
+  text: "#e2e8f0", textMuted: "#94a3b8", textDim: "#64748b",
+  accent: "#3b82f6", accentLight: "#60a5fa",
+  green: "#22c55e", greenDim: "#166534",
+  yellow: "#eab308", yellowDim: "#854d0e",
+  red: "#ef4444", redDim: "#991b1b",
+  orange: "#f97316", orangeDim: "#7c2d12",
+  purple: "#a78bfa",
+};
+
+const rawData = {
+  "2/23": {
+    Joyce:  { total: 8.5, meeting: 3.5, dev: 5 },
+    Ivy:    { total: 7, meeting: 0, dev: 7 },
+    Jason:  { total: 6.5, meeting: 0.5, dev: 6 },
+    日銜:   { total: 7, meeting: 0, dev: 7 },
+    Wendy:  { total: 7.5, meeting: 0, dev: 7.5 },
+    侑呈:   { total: 8, meeting: 0, dev: 8 },
+    禎佑:   { total: 8, meeting: 0, dev: 8 },
+    Ted:    { total: 6.5, meeting: 0, dev: 6.5 },
+    家輝:   { total: 6, meeting: 0, dev: 6 },
+    Joe:    { total: 4, meeting: 0.5, dev: 3.5 },
+    Aaron:  { total: 6, meeting: 0, dev: 6 },
+    哲緯:   { total: null, meeting: null, dev: null },
+  },
+  "2/24": {
+    Joyce:  { total: 10, meeting: 5.5, dev: 4.5 },
+    Ivy:    { total: 7, meeting: 2, dev: 5 },
+    Jason:  { total: 6, meeting: 3.5, dev: 2.5 },
+    日銜:   { total: null, meeting: null, dev: null },
+    Wendy:  { total: 7.5, meeting: 2, dev: 5.5 },
+    侑呈:   { total: 8, meeting: 2, dev: 6 },
+    禎佑:   { total: 7.5, meeting: 3.5, dev: 4 },
+    Ted:    { total: 6, meeting: 3, dev: 3 },
+    家輝:   { total: 7, meeting: 0, dev: 7 },
+    Joe:    { total: 7, meeting: 1.5, dev: 5.5 },
+    Aaron:  { total: 6, meeting: 3.5, dev: 2.5 },
+    哲緯:   { total: 4, meeting: 2.5, dev: 1.5 },
+  },
+};
+
+const issues = [
+  { member: "日銜", severity: "🔴", text: "連續 2 天未回報", sc: COLORS.red, bg: COLORS.redDim },
+  { member: "哲緯", severity: "🔴", text: "日期錯位，缺報 2/24", sc: COLORS.red, bg: COLORS.redDim },
+  { member: "Joyce", severity: "🟡", text: "連續超時 8.5→10hr+", sc: COLORS.yellow, bg: COLORS.yellowDim },
+  { member: "Aaron", severity: "🟡", text: "HITL 靜默消失 3 天，對齊度 25%", sc: COLORS.yellow, bg: COLORS.yellowDim },
+  { member: "侑呈", severity: "🟡", text: "幽靈任務：私密社團 3 天", sc: COLORS.yellow, bg: COLORS.yellowDim },
+  { member: "Ted", severity: "🟡", text: "few shot 反覆消失 3 次", sc: COLORS.yellow, bg: COLORS.yellowDim },
+  { member: "Jason", severity: "🟡", text: "blocked by Aaron ES API key", sc: COLORS.yellow, bg: COLORS.yellowDim },
+  { member: "Joe", severity: "🟢", text: "改善 4→7hr", sc: COLORS.green, bg: COLORS.greenDim },
+  { member: "家輝", severity: "🟢", text: "改善 6→7hr", sc: COLORS.green, bg: COLORS.greenDim },
+];
+
+// ═══════════════════════════════════════════════════════════
+// 🔧 AUTO-COMPUTED — 以下不需手動改
+// ═══════════════════════════════════════════════════════════
+
+const members = ["Joyce", "Ivy", "Jason", "日銜", "Wendy", "侑呈", "禎佑", "Ted", "家輝", "Joe", "Aaron", "哲緯"];
+const dates = Object.keys(rawData);
+const weekDays = ["日", "一", "二", "三", "四", "五", "六"];
+const dayLabels = Object.fromEntries(dates.map(d => {
+  const [m, dd] = d.split("/").map(Number);
+  const dow = new Date(2026, m - 1, dd).getDay();
+  return [d, weekDays[dow]];
+}));
+
+const memberColors = {
+  Joyce: "#f472b6", Ivy: "#a78bfa", Jason: "#60a5fa", 日銜: "#34d399",
+  Wendy: "#fbbf24", 侑呈: "#fb923c", 禎佑: "#22d3ee", Ted: "#c084fc",
+  家輝: "#4ade80", Joe: "#f87171", Aaron: "#38bdf8", 哲緯: "#a3a3a3",
+};
+
+function getStatus(hours) {
+  if (hours === null) return { label: "未回報", color: COLORS.red, bg: COLORS.redDim };
+  if (hours > 10) return { label: "超時", color: COLORS.red, bg: COLORS.redDim };
+  if (hours >= 8.5) return { label: "偏高", color: COLORS.yellow, bg: COLORS.yellowDim };
+  if (hours >= 6.5) return { label: "合理", color: COLORS.green, bg: COLORS.greenDim };
+  if (hours >= 5) return { label: "偏低", color: COLORS.orange, bg: COLORS.orangeDim };
+  return { label: "不足", color: COLORS.red, bg: COLORS.redDim };
+}
+
+function getBarColor(hours) {
+  if (hours === null || hours === 0) return COLORS.textDim;
+  if (hours > 8.5) return COLORS.yellow;
+  if (hours >= 6.5) return COLORS.accentLight;
+  if (hours >= 5) return COLORS.orange;
+  return COLORS.red;
+}
+
+function getTrendIcon(v1, v2) {
+  if (v1 === null || v2 === null) return "—";
+  const d = v2 - v1;
+  if (d > 1) return "📈";
+  if (d > 0) return "↗";
+  if (d < -1) return "📉";
+  if (d < 0) return "↘";
+  return "➡️";
+}
+
+const CustomTooltip = ({ active, payload, label }) => {
+  if (!active || !payload?.length) return null;
+  return (
+    <div style={{
+      background: COLORS.card, border: `1px solid ${COLORS.border}`,
+      borderRadius: 8, padding: "12px 16px", fontSize: 13,
+      boxShadow: "0 8px 32px rgba(0,0,0,0.5)",
+    }}>
+      <p style={{ color: COLORS.text, fontWeight: 700, marginBottom: 8, fontSize: 14 }}>{label}</p>
+      {payload.filter(p => p.value !== null && p.value !== undefined).map((p, i) => (
+        <div key={i} style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 3 }}>
+          <span style={{ width: 10, height: 10, borderRadius: "50%", background: p.color || p.stroke, display: "inline-block", flexShrink: 0 }} />
+          <span style={{ color: COLORS.textMuted, minWidth: 36 }}>{p.name}:</span>
+          <span style={{ color: COLORS.text, fontWeight: 600, fontVariantNumeric: "tabular-nums" }}>
+            {p.value}hr
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+function Dashboard() {
+  const [view, setView] = useState("daily");
+  const [selectedDate, setSelectedDate] = useState(dates[dates.length - 1]);
+
+  const dailyBarData = members.map(m => {
+    const d = rawData[selectedDate]?.[m] || { total: null, meeting: null, dev: null };
+    return { name: m, 開發: d.dev, 會議: d.meeting, total: d.total };
+  }).sort((a, b) => (b.total || -1) - (a.total || -1));
+
+  const trendData = dates.map(date => {
+    const row = { date: `${date}（${dayLabels[date]}）` };
+    members.forEach(m => { row[m] = rawData[date]?.[m]?.total ?? null; });
+    return row;
+  });
+
+  const weeklySummary = members.map(m => {
+    const vals = dates.map(d => rawData[d]?.[m]?.total).filter(v => v !== null && v !== undefined);
+    const avg = vals.length ? +(vals.reduce((a, b) => a + b, 0) / vals.length).toFixed(1) : null;
+    const sum = vals.length ? +vals.reduce((a, b) => a + b, 0).toFixed(1) : null;
+    const daysReported = vals.length;
+    const meetSum = dates.map(d => rawData[d]?.[m]?.meeting).filter(v => v !== null && v !== undefined).reduce((a, b) => a + b, 0);
+    const meetPct = sum ? Math.round(meetSum / sum * 100) : 0;
+    const v1 = rawData[dates[0]]?.[m]?.total ?? null;
+    const v2 = rawData[dates[dates.length - 1]]?.[m]?.total ?? null;
+    const trend = getTrendIcon(v1, v2);
+    return { name: m, avg, sum, daysReported, meetSum: +meetSum.toFixed(1), meetPct, trend };
+  }).sort((a, b) => (b.avg || -1) - (a.avg || -1));
+
+  const tabStyle = (active) => ({
+    padding: "8px 20px", borderRadius: 8, border: "none", cursor: "pointer",
+    fontSize: 13, fontWeight: 600, fontFamily: "inherit", transition: "all 0.2s",
+    background: active ? COLORS.accent : "transparent",
+    color: active ? "#fff" : COLORS.textMuted,
+  });
+
+  return (
+    <div style={{ minHeight: "100vh", background: COLORS.bg, color: COLORS.text, padding: "24px 16px", fontFamily: "'JetBrains Mono','SF Mono','Noto Sans TC',monospace" }}>
+      <div style={{ maxWidth: 1000, margin: "0 auto" }}>
+
+        <div style={{ marginBottom: 24 }}>
+          <h1 style={{ fontSize: 26, fontWeight: 800, margin: 0, background: "linear-gradient(135deg, #60a5fa, #a78bfa)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+            工程部 Daily Update Dashboard
+          </h1>
+          <p style={{ color: COLORS.textDim, fontSize: 13, marginTop: 4 }}>
+            工時追蹤・一致性分析・風險警示 — {dates[0]}~{dates[dates.length-1]}（{dates.length} 工作天）
+          </p>
+        </div>
+
+        {/* Issue Ticker */}
+        <div style={{ background: COLORS.card, borderRadius: 10, padding: "12px 16px", border: `1px solid ${COLORS.border}`, marginBottom: 20, display: "flex", flexWrap: "wrap", gap: 8 }}>
+          {issues.map((iss, i) => (
+            <span key={i} style={{
+              fontSize: 11, fontWeight: 600, padding: "4px 10px", borderRadius: 6,
+              background: iss.bg, color: iss.sc,
+            }}>
+              {iss.severity} {iss.member}：{iss.text}
+            </span>
+          ))}
+        </div>
+
+        {/* Tabs */}
+        <div style={{ display: "flex", gap: 4, marginBottom: 24, background: COLORS.card, borderRadius: 10, padding: 4, width: "fit-content" }}>
+          {[
+            { key: "daily", label: "📊 每日工時" },
+            { key: "trend", label: "📈 趨勢比較" },
+            { key: "weekly", label: "📋 週統計" },
+          ].map(tab => (
+            <button key={tab.key} onClick={() => setView(tab.key)} style={tabStyle(view === tab.key)}>
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* ══ DAILY ══ */}
+        {view === "daily" && (
+          <div>
+            <div style={{ display: "flex", gap: 8, marginBottom: 20 }}>
+              {dates.map(d => (
+                <button key={d} onClick={() => setSelectedDate(d)}
+                  style={{
+                    padding: "6px 16px", borderRadius: 6, cursor: "pointer",
+                    fontSize: 13, fontWeight: 600, fontFamily: "inherit",
+                    border: selectedDate === d ? `2px solid ${COLORS.accent}` : `1px solid ${COLORS.border}`,
+                    background: selectedDate === d ? "rgba(59,130,246,0.15)" : "transparent",
+                    color: selectedDate === d ? COLORS.accentLight : COLORS.textMuted,
+                  }}
+                >{d}（{dayLabels[d]}）</button>
+              ))}
+            </div>
+
+            <div style={{ background: COLORS.card, borderRadius: 12, padding: "20px 16px 8px", border: `1px solid ${COLORS.border}`, marginBottom: 20 }}>
+              <p style={{ fontSize: 13, color: COLORS.textMuted, marginBottom: 12, fontWeight: 600 }}>
+                {selectedDate} 個人工時（開發 + 會議）
+              </p>
+              <ResponsiveContainer width="100%" height={380}>
+                <ComposedChart data={dailyBarData} layout="vertical" margin={{ left: 8, right: 24, top: 4, bottom: 4 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke={COLORS.border} horizontal={false} />
+                  <XAxis type="number" domain={[0, 10]} tick={{ fill: COLORS.textDim, fontSize: 11 }} axisLine={{ stroke: COLORS.border }} tickLine={false} unit="hr" />
+                  <YAxis type="category" dataKey="name" width={48} tick={{ fill: COLORS.text, fontSize: 12, fontWeight: 600 }} axisLine={false} tickLine={false} />
+                  <Tooltip content={<CustomTooltip />} />
+                  <ReferenceLine x={8} stroke={COLORS.green} strokeDasharray="6 4" strokeWidth={1.5} label={{ value: "8hr", fill: COLORS.green, fontSize: 11, position: "top" }} />
+                  <ReferenceLine x={6.5} stroke={COLORS.yellow} strokeDasharray="4 4" strokeWidth={1} label={{ value: "6.5", fill: COLORS.yellow, fontSize: 10, position: "top" }} />
+                  <Bar dataKey="開發" stackId="a" fill={COLORS.accentLight} barSize={22} />
+                  <Bar dataKey="會議" stackId="a" fill={COLORS.purple} radius={[0, 4, 4, 0]} barSize={22} />
+                  <Legend wrapperStyle={{ fontSize: 12, color: COLORS.textMuted, paddingTop: 8 }} />
+                </ComposedChart>
+              </ResponsiveContainer>
+            </div>
+
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))", gap: 10 }}>
+              {dailyBarData.map(d => {
+                const status = getStatus(d.total);
+                const meetPct = d.total ? Math.round((d.會議 || 0) / d.total * 100) : 0;
+                const issue = issues.find(i => i.member === d.name);
+                return (
+                  <div key={d.name} style={{
+                    background: COLORS.card, borderRadius: 10, padding: "14px 12px",
+                    border: `1px solid ${issue?.severity === "🔴" ? COLORS.red + "44" : issue?.severity === "🟡" ? COLORS.yellow + "33" : COLORS.border}`,
+                  }}>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
+                      <span style={{ fontWeight: 700, fontSize: 13 }}>{d.name}</span>
+                      <span style={{ fontSize: 10, fontWeight: 700, padding: "2px 7px", borderRadius: 4, background: status.bg, color: status.color }}>
+                        {status.label}
+                      </span>
+                    </div>
+                    <div style={{ fontSize: 28, fontWeight: 800, color: status.color, fontVariantNumeric: "tabular-nums", lineHeight: 1.2 }}>
+                      {d.total !== null ? d.total : "—"}
+                      <span style={{ fontSize: 12, fontWeight: 500, color: COLORS.textDim }}>hr</span>
+                    </div>
+                    {d.total !== null && (
+                      <div style={{ marginTop: 6, height: 4, borderRadius: 2, background: COLORS.bg, overflow: "hidden", display: "flex" }}>
+                        <div style={{ height: "100%", width: `${((d.開發 || 0) / 10) * 100}%`, background: COLORS.accentLight }} />
+                        <div style={{ height: "100%", width: `${((d.會議 || 0) / 10) * 100}%`, background: COLORS.purple }} />
+                      </div>
+                    )}
+                    <div style={{ display: "flex", justifyContent: "space-between", marginTop: 6 }}>
+                      {meetPct > 0 ? (
+                        <span style={{ fontSize: 10, color: meetPct > 50 ? COLORS.yellow : COLORS.textDim }}>
+                          會議 {meetPct}%{meetPct > 50 ? " ⚠" : ""}
+                        </span>
+                      ) : <span />}
+                      {issue && <span style={{ fontSize: 10 }}>{issue.severity}</span>}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* ══ TREND ══ */}
+        {view === "trend" && (
+          <div>
+            <div style={{ background: COLORS.card, borderRadius: 12, padding: "20px 16px 8px", border: `1px solid ${COLORS.border}`, marginBottom: 20 }}>
+              <p style={{ fontSize: 13, color: COLORS.textMuted, marginBottom: 12, fontWeight: 600 }}>每日工時趨勢</p>
+              <ResponsiveContainer width="100%" height={400}>
+                <LineChart data={trendData} margin={{ left: 0, right: 16, top: 8, bottom: 8 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke={COLORS.border} />
+                  <XAxis dataKey="date" tick={{ fill: COLORS.text, fontSize: 12 }} axisLine={{ stroke: COLORS.border }} tickLine={false} />
+                  <YAxis domain={[0, 10]} tick={{ fill: COLORS.textDim, fontSize: 11 }} axisLine={{ stroke: COLORS.border }} tickLine={false} unit="hr" />
+                  <Tooltip content={<CustomTooltip />} />
+                  <ReferenceLine y={8} stroke={COLORS.green} strokeDasharray="6 4" strokeWidth={1.5} />
+                  <ReferenceLine y={6.5} stroke={COLORS.yellow} strokeDasharray="4 4" strokeWidth={1} />
+                  {members.map(m => (
+                    <Line key={m} type="monotone" dataKey={m} stroke={memberColors[m]} strokeWidth={2.5}
+                      dot={{ r: 5, fill: memberColors[m], stroke: COLORS.card, strokeWidth: 2 }}
+                      connectNulls={false} />
+                  ))}
+                  <Legend wrapperStyle={{ fontSize: 11, paddingTop: 12 }} />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
+
+            <div style={{ background: COLORS.card, borderRadius: 12, padding: 20, border: `1px solid ${COLORS.border}` }}>
+              <p style={{ fontSize: 13, color: COLORS.textMuted, marginBottom: 12, fontWeight: 600 }}>日間變化</p>
+              <div style={{ overflowX: "auto" }}>
+                <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
+                  <thead>
+                    <tr>
+                      {["成員", ...dates.map(d => `${d}(${dayLabels[d]})`), "Δ", ""].map((h, i) => (
+                        <th key={i} style={{ textAlign: i === 0 ? "left" : "center", padding: "8px 10px", borderBottom: `1px solid ${COLORS.border}`, color: COLORS.textMuted, fontWeight: 600, fontSize: 12 }}>{h}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {members.map(m => {
+                      const vals = dates.map(d => rawData[d]?.[m]?.total ?? null);
+                      const delta = (vals[0] !== null && vals[vals.length - 1] !== null) ? +(vals[vals.length - 1] - vals[0]).toFixed(1) : null;
+                      const trend = getTrendIcon(vals[0], vals[vals.length - 1]);
+                      return (
+                        <tr key={m} style={{ borderBottom: `1px solid ${COLORS.border}22` }}>
+                          <td style={{ padding: "8px 10px", fontWeight: 600 }}>
+                            <span style={{ display: "inline-block", width: 8, height: 8, borderRadius: "50%", background: memberColors[m], marginRight: 8, verticalAlign: "middle" }} />
+                            {m}
+                          </td>
+                          {vals.map((v, i) => {
+                            const st = getStatus(v);
+                            return (
+                              <td key={i} style={{ textAlign: "center", padding: "8px 10px", fontVariantNumeric: "tabular-nums" }}>
+                                {v !== null ? <span style={{ color: st.color, fontWeight: 700 }}>{v}</span> : <span style={{ color: COLORS.red, fontSize: 11 }}>缺報</span>}
+                              </td>
+                            );
+                          })}
+                          <td style={{ textAlign: "center", padding: "8px 10px", fontVariantNumeric: "tabular-nums" }}>
+                            {delta !== null ? (
+                              <span style={{ color: delta > 0 ? COLORS.green : delta < 0 ? COLORS.orange : COLORS.textDim, fontWeight: 700 }}>
+                                {delta > 0 ? "+" : ""}{delta}
+                              </span>
+                            ) : <span style={{ color: COLORS.textDim }}>—</span>}
+                          </td>
+                          <td style={{ textAlign: "center", padding: "8px 10px", fontSize: 14 }}>{trend}</td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* ══ WEEKLY ══ */}
+        {view === "weekly" && (
+          <div>
+            <div style={{ background: COLORS.card, borderRadius: 12, padding: "20px 16px 8px", border: `1px solid ${COLORS.border}`, marginBottom: 20 }}>
+              <p style={{ fontSize: 13, color: COLORS.textMuted, marginBottom: 12, fontWeight: 600 }}>平均每日工時</p>
+              <ResponsiveContainer width="100%" height={380}>
+                <BarChart data={weeklySummary} layout="vertical" margin={{ left: 8, right: 24, top: 4, bottom: 4 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke={COLORS.border} horizontal={false} />
+                  <XAxis type="number" domain={[0, 10]} tick={{ fill: COLORS.textDim, fontSize: 11 }} axisLine={{ stroke: COLORS.border }} tickLine={false} unit="hr" />
+                  <YAxis type="category" dataKey="name" width={48} tick={{ fill: COLORS.text, fontSize: 12, fontWeight: 600 }} axisLine={false} tickLine={false} />
+                  <Tooltip content={<CustomTooltip />} />
+                  <ReferenceLine x={8} stroke={COLORS.green} strokeDasharray="6 4" strokeWidth={1.5} label={{ value: "8hr", fill: COLORS.green, fontSize: 11, position: "top" }} />
+                  <ReferenceLine x={6.5} stroke={COLORS.yellow} strokeDasharray="4 4" strokeWidth={1} />
+                  <Bar dataKey="avg" name="日均工時" radius={[0, 6, 6, 0]} barSize={24}>
+                    {weeklySummary.map((entry, i) => (
+                      <Cell key={i} fill={getBarColor(entry.avg)} />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+
+            <div style={{ background: COLORS.card, borderRadius: 12, padding: 20, border: `1px solid ${COLORS.border}` }}>
+              <p style={{ fontSize: 13, color: COLORS.textMuted, marginBottom: 12, fontWeight: 600 }}>週統計明細</p>
+              <div style={{ overflowX: "auto" }}>
+                <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
+                  <thead>
+                    <tr>
+                      {["成員", "回報", "總工時", "日均", "會議", "會議%", "趨勢", "狀態"].map(h => (
+                        <th key={h} style={{ textAlign: h === "成員" ? "left" : "center", padding: "10px 8px", borderBottom: `1px solid ${COLORS.border}`, color: COLORS.textMuted, fontWeight: 600, fontSize: 12 }}>{h}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {weeklySummary.map(m => {
+                      const st = getStatus(m.avg);
+                      return (
+                        <tr key={m.name} style={{ borderBottom: `1px solid ${COLORS.border}22` }}>
+                          <td style={{ padding: "10px 8px", fontWeight: 600 }}>
+                            <span style={{ display: "inline-block", width: 8, height: 8, borderRadius: "50%", background: memberColors[m.name], marginRight: 8, verticalAlign: "middle" }} />
+                            {m.name}
+                          </td>
+                          <td style={{ textAlign: "center", padding: "10px 8px", color: m.daysReported < dates.length ? COLORS.yellow : COLORS.textMuted, fontWeight: m.daysReported < dates.length ? 700 : 400 }}>
+                            {m.daysReported}/{dates.length}
+                          </td>
+                          <td style={{ textAlign: "center", padding: "10px 8px", fontWeight: 600, fontVariantNumeric: "tabular-nums" }}>
+                            {m.sum !== null ? m.sum : "—"}
+                          </td>
+                          <td style={{ textAlign: "center", padding: "10px 8px", fontWeight: 700, color: st.color, fontVariantNumeric: "tabular-nums" }}>
+                            {m.avg !== null ? m.avg : "—"}
+                          </td>
+                          <td style={{ textAlign: "center", padding: "10px 8px", fontVariantNumeric: "tabular-nums", color: COLORS.textMuted }}>
+                            {m.meetSum > 0 ? m.meetSum : "—"}
+                          </td>
+                          <td style={{ textAlign: "center", padding: "10px 8px" }}>
+                            <span style={{ color: m.meetPct > 50 ? COLORS.yellow : m.meetPct > 30 ? COLORS.textMuted : COLORS.textDim, fontWeight: m.meetPct > 50 ? 700 : 400 }}>
+                              {m.sum ? `${m.meetPct}%` : "—"}{m.meetPct > 50 ? " ⚠" : ""}
+                            </span>
+                          </td>
+                          <td style={{ textAlign: "center", padding: "10px 8px", fontSize: 14 }}>{m.trend}</td>
+                          <td style={{ textAlign: "center", padding: "10px 8px" }}>
+                            <span style={{ fontSize: 10, fontWeight: 700, padding: "3px 8px", borderRadius: 4, background: st.bg, color: st.color }}>
+                              {st.label}
+                            </span>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        )}
+
+        <div style={{ marginTop: 28, paddingTop: 14, borderTop: `1px solid ${COLORS.border}`, display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 8 }}>
+          <span style={{ fontSize: 11, color: COLORS.textDim }}>
+            ✅ 6.5-8.5hr ｜ ⚠️ 5-6.5 / 8.5-10hr ｜ ❌ &lt;5 / &gt;10hr ｜ 會議 &gt;50% ⚠
+          </span>
+          <span style={{ fontSize: 11, color: COLORS.textDim }}>
+            Daily Update Analyzer v2 — {dates.length} 工作天
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<Dashboard />);
+  </script>
+</body>
+</html>
