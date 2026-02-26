@@ -21,7 +21,7 @@
   <script crossorigin src="https://unpkg.com/@babel/standalone@7.24.7/babel.min.js"></script>
 
   <script type="text/babel">
-const { useState } = React;
+const { useState, useEffect } = React;
 const {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
   ResponsiveContainer, ReferenceLine, Cell, LineChart, Line,
@@ -29,7 +29,7 @@ const {
 } = window.Recharts;
 
 // ═══════════════════════════════════════════════════════════
-// 📌 DATA SECTION — 每天只改這個區塊
+// 📌 DATA — 從 raw_data.json 載入，每天只需更新該檔案
 // ═══════════════════════════════════════════════════════════
 
 const COLORS = {
@@ -43,67 +43,15 @@ const COLORS = {
   purple: "#a78bfa",
 };
 
-const rawData = {
-  "2/23": {
-    Joyce:  { total: 8.5, meeting: 3.5, dev: 5 },
-    Ivy:    { total: 7, meeting: 0, dev: 7 },
-    Jason:  { total: 6.5, meeting: 0.5, dev: 6 },
-    日銜:   { total: 7, meeting: 0, dev: 7 },
-    Wendy:  { total: 7.5, meeting: 0, dev: 7.5 },
-    侑呈:   { total: 8, meeting: 0, dev: 8 },
-    禎佑:   { total: 8, meeting: 0, dev: 8 },
-    Ted:    { total: 6.5, meeting: 0, dev: 6.5 },
-    家輝:   { total: 6, meeting: 0, dev: 6 },
-    Joe:    { total: 4, meeting: 0.5, dev: 3.5 },
-    Aaron:  { total: 6, meeting: 0, dev: 6 },
-    哲緯:   { total: null, meeting: null, dev: null },
-  },
-  "2/24": {
-    Joyce:  { total: 10, meeting: 5.5, dev: 4.5 },
-    Ivy:    { total: 7, meeting: 2, dev: 5 },
-    Jason:  { total: 6, meeting: 3.5, dev: 2.5 },
-    日銜:   { total: null, meeting: null, dev: null },
-    Wendy:  { total: 7.5, meeting: 2, dev: 5.5 },
-    侑呈:   { total: 8, meeting: 2, dev: 6 },
-    禎佑:   { total: 7.5, meeting: 3.5, dev: 4 },
-    Ted:    { total: 6, meeting: 3, dev: 3 },
-    家輝:   { total: 7, meeting: 0, dev: 7 },
-    Joe:    { total: 7, meeting: 1.5, dev: 5.5 },
-    Aaron:  { total: 6, meeting: 3.5, dev: 2.5 },
-    哲緯:   { total: 4, meeting: 2.5, dev: 1.5 },
-  },
+const SEVERITY_COLORS = {
+  "🔴": { sc: COLORS.red, bg: COLORS.redDim },
+  "🟡": { sc: COLORS.yellow, bg: COLORS.yellowDim },
+  "🟢": { sc: COLORS.green, bg: COLORS.greenDim },
 };
-
-const issues = [
-  { member: "日銜", severity: "🔴", text: "連續 2 天未回報", sc: COLORS.red, bg: COLORS.redDim },
-  { member: "哲緯", severity: "🔴", text: "日期錯位，缺報 2/24", sc: COLORS.red, bg: COLORS.redDim },
-  { member: "Joyce", severity: "🟡", text: "連續超時 8.5→10hr+", sc: COLORS.yellow, bg: COLORS.yellowDim },
-  { member: "Aaron", severity: "🟡", text: "HITL 靜默消失 3 天，對齊度 25%", sc: COLORS.yellow, bg: COLORS.yellowDim },
-  { member: "侑呈", severity: "🟡", text: "幽靈任務：私密社團 3 天", sc: COLORS.yellow, bg: COLORS.yellowDim },
-  { member: "Ted", severity: "🟡", text: "few shot 反覆消失 3 次", sc: COLORS.yellow, bg: COLORS.yellowDim },
-  { member: "Jason", severity: "🟡", text: "blocked by Aaron ES API key", sc: COLORS.yellow, bg: COLORS.yellowDim },
-  { member: "Joe", severity: "🟢", text: "改善 4→7hr", sc: COLORS.green, bg: COLORS.greenDim },
-  { member: "家輝", severity: "🟢", text: "改善 6→7hr", sc: COLORS.green, bg: COLORS.greenDim },
-];
 
 // ═══════════════════════════════════════════════════════════
 // 🔧 AUTO-COMPUTED — 以下不需手動改
 // ═══════════════════════════════════════════════════════════
-
-const members = ["Joyce", "Ivy", "Jason", "日銜", "Wendy", "侑呈", "禎佑", "Ted", "家輝", "Joe", "Aaron", "哲緯"];
-const dates = Object.keys(rawData);
-const weekDays = ["日", "一", "二", "三", "四", "五", "六"];
-const dayLabels = Object.fromEntries(dates.map(d => {
-  const [m, dd] = d.split("/").map(Number);
-  const dow = new Date(2026, m - 1, dd).getDay();
-  return [d, weekDays[dow]];
-}));
-
-const memberColors = {
-  Joyce: "#f472b6", Ivy: "#a78bfa", Jason: "#60a5fa", 日銜: "#34d399",
-  Wendy: "#fbbf24", 侑呈: "#fb923c", 禎佑: "#22d3ee", Ted: "#c084fc",
-  家輝: "#4ade80", Joe: "#f87171", Aaron: "#38bdf8", 哲緯: "#a3a3a3",
-};
 
 function getStatus(hours) {
   if (hours === null) return { label: "未回報", color: COLORS.red, bg: COLORS.redDim };
@@ -156,10 +104,49 @@ const CustomTooltip = ({ active, payload, label }) => {
 
 function Dashboard() {
   const [view, setView] = useState("daily");
-  const [selectedDate, setSelectedDate] = useState(dates[dates.length - 1]);
+  const [rawData, setRawData] = useState(null);
+  const [issues, setIssues] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [selectedDate, setSelectedDate] = useState(null);
+
+  useEffect(() => {
+    fetch("raw_data.json")
+      .then(r => r.json())
+      .then(data => {
+        setRawData(data.rawData);
+        setIssues(data.issues.map(iss => ({
+          ...iss,
+          sc: SEVERITY_COLORS[iss.severity]?.sc || COLORS.textMuted,
+          bg: SEVERITY_COLORS[iss.severity]?.bg || COLORS.border,
+        })));
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return (
+      <div style={{ minHeight: "100vh", background: COLORS.bg, display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <p style={{ color: COLORS.textMuted, fontSize: 16 }}>載入資料中...</p>
+      </div>
+    );
+  }
+
+  const dates = Object.keys(rawData);
+  const members = [...new Set(dates.flatMap(d => Object.keys(rawData[d])))];
+  const weekDays = ["日", "一", "二", "三", "四", "五", "六"];
+  const dayLabels = Object.fromEntries(dates.map(d => {
+    const [m, dd] = d.split("/").map(Number);
+    const dow = new Date(2026, m - 1, dd).getDay();
+    return [d, weekDays[dow]];
+  }));
+  const memberColors = {};
+  const palette = ["#f472b6", "#a78bfa", "#60a5fa", "#34d399", "#fbbf24", "#fb923c", "#22d3ee", "#c084fc", "#4ade80", "#f87171", "#38bdf8", "#a3a3a3", "#e879f9", "#facc15", "#2dd4bf", "#f43f5e"];
+  members.forEach((m, i) => { memberColors[m] = palette[i % palette.length]; });
+
+  const activeDate = selectedDate || dates[dates.length - 1];
 
   const dailyBarData = members.map(m => {
-    const d = rawData[selectedDate]?.[m] || { total: null, meeting: null, dev: null };
+    const d = rawData[activeDate]?.[m] || { total: null, meeting: null, dev: null };
     return { name: m, 開發: d.dev, 會議: d.meeting, total: d.total };
   }).sort((a, b) => (b.total || -1) - (a.total || -1));
 
@@ -236,9 +223,9 @@ function Dashboard() {
                   style={{
                     padding: "6px 16px", borderRadius: 6, cursor: "pointer",
                     fontSize: 13, fontWeight: 600, fontFamily: "inherit",
-                    border: selectedDate === d ? `2px solid ${COLORS.accent}` : `1px solid ${COLORS.border}`,
-                    background: selectedDate === d ? "rgba(59,130,246,0.15)" : "transparent",
-                    color: selectedDate === d ? COLORS.accentLight : COLORS.textMuted,
+                    border: activeDate === d ? `2px solid ${COLORS.accent}` : `1px solid ${COLORS.border}`,
+                    background: activeDate === d ? "rgba(59,130,246,0.15)" : "transparent",
+                    color: activeDate === d ? COLORS.accentLight : COLORS.textMuted,
                   }}
                 >{d}（{dayLabels[d]}）</button>
               ))}
@@ -246,7 +233,7 @@ function Dashboard() {
 
             <div style={{ background: COLORS.card, borderRadius: 12, padding: "20px 16px 8px", border: `1px solid ${COLORS.border}`, marginBottom: 20 }}>
               <p style={{ fontSize: 13, color: COLORS.textMuted, marginBottom: 12, fontWeight: 600 }}>
-                {selectedDate} 個人工時（開發 + 會議）
+                {activeDate} 個人工時（開發 + 會議）
               </p>
               <ResponsiveContainer width="100%" height={380}>
                 <ComposedChart data={dailyBarData} layout="vertical" margin={{ left: 8, right: 24, top: 4, bottom: 4 }}>

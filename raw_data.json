@@ -1,0 +1,43 @@
+{
+  "rawData": {
+    "2/23": {
+      "Joyce":  { "total": 8.5, "meeting": 3.5, "dev": 5 },
+      "Ivy":    { "total": 7, "meeting": 0, "dev": 7 },
+      "Jason":  { "total": 6.5, "meeting": 0.5, "dev": 6 },
+      "日銜":   { "total": null, "meeting": null, "dev": null },
+      "Wendy":  { "total": 7.5, "meeting": 0, "dev": 7.5 },
+      "侑呈":   { "total": 8, "meeting": 0, "dev": 8 },
+      "禎佑":   { "total": 8, "meeting": 0, "dev": 8 },
+      "Ted":    { "total": 6.5, "meeting": 0, "dev": 6.5 },
+      "家輝":   { "total": 6, "meeting": 0, "dev": 6 },
+      "Joe":    { "total": 4, "meeting": 0.5, "dev": 3.5 },
+      "Aaron":  { "total": 6, "meeting": 0, "dev": 6 },
+      "哲緯":   { "total": null, "meeting": null, "dev": null }
+    },
+    "2/24": {
+      "Joyce":  { "total": 10, "meeting": 5.5, "dev": 4.5 },
+      "Ivy":    { "total": 7, "meeting": 2, "dev": 5 },
+      "Jason":  { "total": 6, "meeting": 3.5, "dev": 2.5 },
+      "日銜":   { "total": null, "meeting": null, "dev": null },
+      "Wendy":  { "total": 7.5, "meeting": 2, "dev": 5.5 },
+      "侑呈":   { "total": 8, "meeting": 2, "dev": 6 },
+      "禎佑":   { "total": 7.5, "meeting": 3.5, "dev": 4 },
+      "Ted":    { "total": 6, "meeting": 3, "dev": 3 },
+      "家輝":   { "total": 7, "meeting": 0, "dev": 7 },
+      "Joe":    { "total": 7, "meeting": 1.5, "dev": 5.5 },
+      "Aaron":  { "total": 6, "meeting": 3.5, "dev": 2.5 },
+      "哲緯":   { "total": 4, "meeting": 2.5, "dev": 1.5 }
+    }
+  },
+  "issues": [
+    { "member": "日銜", "severity": "🔴", "text": "連續 2 天未回報" },
+    { "member": "哲緯", "severity": "🔴", "text": "日期錯位，缺報 2/24" },
+    { "member": "Joyce", "severity": "🟡", "text": "連續超時 8.5→10hr+" },
+    { "member": "Aaron", "severity": "🟡", "text": "HITL 靜默消失 3 天，對齊度 25%" },
+    { "member": "侑呈", "severity": "🟡", "text": "幽靈任務：私密社團 3 天" },
+    { "member": "Ted", "severity": "🟡", "text": "few shot 反覆消失 3 次" },
+    { "member": "Jason", "severity": "🟡", "text": "blocked by Aaron ES API key" },
+    { "member": "Joe", "severity": "🟢", "text": "改善 4→7hr" },
+    { "member": "家輝", "severity": "🟢", "text": "改善 6→7hr" }
+  ]
+}
