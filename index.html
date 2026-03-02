@@ -21,7 +21,7 @@
   <script crossorigin src="https://unpkg.com/@babel/standalone@7.24.7/babel.min.js"></script>
 
   <script type="text/babel">
-const { useState, useEffect } = React;
+const { useState, useEffect, useMemo } = React;
 const {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
   ResponsiveContainer, ReferenceLine, Cell, LineChart, Line,
@@ -50,24 +50,27 @@ const SEVERITY_COLORS = {
   "🟢": { sc: COLORS.green, bg: COLORS.greenDim },
 };
 
+const THRESHOLDS = { overtime: 10, high: 8.5, target: 8, ok: 6.5, low: 5 };
+const MEETING_HEAVY_PCT = 50;
+
 // ═══════════════════════════════════════════════════════════
 // 🔧 AUTO-COMPUTED — 以下不需手動改
 // ═══════════════════════════════════════════════════════════
 
 function getStatus(hours) {
   if (hours === null) return { label: "未回報", color: COLORS.red, bg: COLORS.redDim };
-  if (hours > 10) return { label: "超時", color: COLORS.red, bg: COLORS.redDim };
-  if (hours >= 8.5) return { label: "偏高", color: COLORS.yellow, bg: COLORS.yellowDim };
-  if (hours >= 6.5) return { label: "合理", color: COLORS.green, bg: COLORS.greenDim };
-  if (hours >= 5) return { label: "偏低", color: COLORS.orange, bg: COLORS.orangeDim };
+  if (hours > THRESHOLDS.overtime) return { label: "超時", color: COLORS.red, bg: COLORS.redDim };
+  if (hours >= THRESHOLDS.high) return { label: "偏高", color: COLORS.yellow, bg: COLORS.yellowDim };
+  if (hours >= THRESHOLDS.ok) return { label: "合理", color: COLORS.green, bg: COLORS.greenDim };
+  if (hours >= THRESHOLDS.low) return { label: "偏低", color: COLORS.orange, bg: COLORS.orangeDim };
   return { label: "不足", color: COLORS.red, bg: COLORS.redDim };
 }
 
 function getBarColor(hours) {
   if (hours === null || hours === 0) return COLORS.textDim;
-  if (hours > 8.5) return COLORS.yellow;
-  if (hours >= 6.5) return COLORS.accentLight;
-  if (hours >= 5) return COLORS.orange;
+  if (hours > THRESHOLDS.high) return COLORS.yellow;
+  if (hours >= THRESHOLDS.ok) return COLORS.accentLight;
+  if (hours >= THRESHOLDS.low) return COLORS.orange;
   return COLORS.red;
 }
 
@@ -103,25 +106,47 @@ const CustomTooltip = ({ active, payload, label }) => {
   );
 };
 
+const CardPanel = ({ title, children, padding }) => (
+  <div style={{ background: COLORS.card, borderRadius: 12, padding: padding || "20px 16px 8px", border: `1px solid ${COLORS.border}`, marginBottom: 20 }}>
+    <p style={{ fontSize: 13, color: COLORS.textMuted, marginBottom: 12, fontWeight: 600 }}>{title}</p>
+    {children}
+  </div>
+);
+
+const ColorDot = ({ color }) => (
+  <span style={{ display: "inline-block", width: 8, height: 8, borderRadius: "50%", background: color, marginRight: 8, verticalAlign: "middle" }} />
+);
+
+const StatusBadge = ({ status }) => (
+  <span style={{ fontSize: 10, fontWeight: 700, padding: "2px 7px", borderRadius: 4, background: status.bg, color: status.color }}>
+    {status.label}
+  </span>
+);
+
+const tabStyle = (active) => ({
+  padding: "8px 20px", borderRadius: 8, border: "none", cursor: "pointer",
+  fontSize: 13, fontWeight: 600, fontFamily: "inherit", transition: "all 0.2s",
+  background: active ? COLORS.accent : "transparent",
+  color: active ? "#fff" : COLORS.textMuted,
+});
+
 function Dashboard() {
   const [view, setView] = useState("daily");
   const [rawData, setRawData] = useState(null);
   const [issues, setIssues] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
 
   useEffect(() => {
     fetch("raw_data.json")
-      .then(r => r.json())
+      .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
       .then(data => {
         setRawData(data.rawData);
-        setIssues(data.issues.map(iss => ({
-          ...iss,
-          sc: SEVERITY_COLORS[iss.severity]?.sc || COLORS.textMuted,
-          bg: SEVERITY_COLORS[iss.severity]?.bg || COLORS.border,
-        })));
+        setIssues(data.issues);
         setLoading(false);
-      });
+      })
+      .catch(err => { setError(err.message); setLoading(false); });
   }, []);
 
   if (loading) {
@@ -132,50 +157,52 @@ function Dashboard() {
     );
   }
 
+  if (error) {
+    return (
+      <div style={{ minHeight: "100vh", background: COLORS.bg, display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <p style={{ color: COLORS.red, fontSize: 16 }}>載入失敗：{error}</p>
+      </div>
+    );
+  }
+
   const dates = Object.keys(rawData);
   const members = [...new Set(dates.flatMap(d => Object.keys(rawData[d])))];
   const weekDays = ["日", "一", "二", "三", "四", "五", "六"];
   const dayLabels = Object.fromEntries(dates.map(d => {
     const [m, dd] = d.split("/").map(Number);
-    const dow = new Date(2026, m - 1, dd).getDay();
+    const dow = new Date(new Date().getFullYear(), m - 1, dd).getDay();
     return [d, weekDays[dow]];
   }));
-  const memberColors = {};
   const palette = ["#f472b6", "#a78bfa", "#60a5fa", "#34d399", "#fbbf24", "#fb923c", "#22d3ee", "#c084fc", "#4ade80", "#f87171", "#38bdf8", "#a3a3a3", "#e879f9", "#facc15", "#2dd4bf", "#f43f5e"];
-  members.forEach((m, i) => { memberColors[m] = palette[i % palette.length]; });
+  const memberColors = Object.fromEntries(members.map((m, i) => [m, palette[i % palette.length]]));
+  const issueMap = Object.fromEntries(issues.map(iss => [iss.member, iss]));
 
   const activeDate = selectedDate || dates[dates.length - 1];
 
-  const dailyBarData = members.map(m => {
+  const dailyBarData = useMemo(() => members.map(m => {
     const d = rawData[activeDate]?.[m] || { total: null, meeting: null, dev: null };
     return { name: m, 開發: d.dev, 會議: d.meeting, total: d.total };
-  }).sort((a, b) => (b.total || -1) - (a.total || -1));
+  }).sort((a, b) => (b.total || -1) - (a.total || -1)), [rawData, activeDate, members]);
 
-  const trendData = dates.map(date => {
+  const trendData = useMemo(() => dates.map(date => {
     const row = { date: `${date}（${dayLabels[date]}）` };
     members.forEach(m => { row[m] = rawData[date]?.[m]?.total ?? null; });
     return row;
-  });
+  }), [rawData, dates, members, dayLabels]);
 
-  const weeklySummary = members.map(m => {
-    const vals = dates.map(d => rawData[d]?.[m]?.total).filter(v => v !== null && v !== undefined);
-    const avg = vals.length ? +(vals.reduce((a, b) => a + b, 0) / vals.length).toFixed(1) : null;
-    const sum = vals.length ? +vals.reduce((a, b) => a + b, 0).toFixed(1) : null;
-    const daysReported = vals.length;
-    const meetSum = dates.map(d => rawData[d]?.[m]?.meeting).filter(v => v !== null && v !== undefined).reduce((a, b) => a + b, 0);
-    const meetPct = sum ? Math.round(meetSum / sum * 100) : 0;
+  const weeklySummary = useMemo(() => members.map(m => {
+    let totalSum = 0, meetSum = 0, count = 0;
+    for (const d of dates) {
+      const entry = rawData[d]?.[m];
+      if (entry?.total != null) { totalSum += entry.total; count++; }
+      if (entry?.meeting != null) { meetSum += entry.meeting; }
+    }
+    const avg = count ? +(totalSum / count).toFixed(1) : null;
+    const sum = count ? +totalSum.toFixed(1) : null;
     const v1 = rawData[dates[0]]?.[m]?.total ?? null;
     const v2 = rawData[dates[dates.length - 1]]?.[m]?.total ?? null;
-    const trend = getTrendIcon(v1, v2);
-    return { name: m, avg, sum, daysReported, meetSum: +meetSum.toFixed(1), meetPct, trend };
-  }).sort((a, b) => (b.avg || -1) - (a.avg || -1));
-
-  const tabStyle = (active) => ({
-    padding: "8px 20px", borderRadius: 8, border: "none", cursor: "pointer",
-    fontSize: 13, fontWeight: 600, fontFamily: "inherit", transition: "all 0.2s",
-    background: active ? COLORS.accent : "transparent",
-    color: active ? "#fff" : COLORS.textMuted,
-  });
+    return { name: m, avg, sum, daysReported: count, meetSum: +meetSum.toFixed(1), meetPct: sum ? Math.round(meetSum / sum * 100) : 0, trend: getTrendIcon(v1, v2) };
+  }).sort((a, b) => (b.avg || -1) - (a.avg || -1)), [rawData, dates, members]);
 
   return (
     <div style={{ minHeight: "100vh", background: COLORS.bg, color: COLORS.text, padding: "24px 16px", fontFamily: "'JetBrains Mono','SF Mono','Noto Sans TC',monospace" }}>
@@ -192,14 +219,17 @@ function Dashboard() {
 
         {/* Issue Ticker */}
         <div style={{ background: COLORS.card, borderRadius: 10, padding: "12px 16px", border: `1px solid ${COLORS.border}`, marginBottom: 20, display: "flex", flexWrap: "wrap", gap: 8 }}>
-          {issues.map((iss, i) => (
-            <span key={i} style={{
-              fontSize: 11, fontWeight: 600, padding: "4px 10px", borderRadius: 6,
-              background: iss.bg, color: iss.sc,
-            }}>
-              {iss.severity} {iss.member}：{iss.text}
-            </span>
-          ))}
+          {issues.map((iss, i) => {
+            const sev = SEVERITY_COLORS[iss.severity];
+            return (
+              <span key={i} style={{
+                fontSize: 11, fontWeight: 600, padding: "4px 10px", borderRadius: 6,
+                background: sev?.bg || COLORS.border, color: sev?.sc || COLORS.textMuted,
+              }}>
+                {iss.severity} {iss.member}：{iss.text}
+              </span>
+            );
+          })}
         </div>
 
         {/* Tabs */}
@@ -232,30 +262,27 @@ function Dashboard() {
               ))}
             </div>
 
-            <div style={{ background: COLORS.card, borderRadius: 12, padding: "20px 16px 8px", border: `1px solid ${COLORS.border}`, marginBottom: 20 }}>
-              <p style={{ fontSize: 13, color: COLORS.textMuted, marginBottom: 12, fontWeight: 600 }}>
-                {activeDate} 個人工時（開發 + 會議）
-              </p>
+            <CardPanel title={`${activeDate} 個人工時（開發 + 會議）`}>
               <ResponsiveContainer width="100%" height={380}>
                 <ComposedChart data={dailyBarData} layout="vertical" margin={{ left: 8, right: 24, top: 4, bottom: 4 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke={COLORS.border} horizontal={false} />
                   <XAxis type="number" domain={[0, 10]} tick={{ fill: COLORS.textDim, fontSize: 11 }} axisLine={{ stroke: COLORS.border }} tickLine={false} unit="hr" />
                   <YAxis type="category" dataKey="name" width={48} tick={{ fill: COLORS.text, fontSize: 12, fontWeight: 600 }} axisLine={false} tickLine={false} />
                   <Tooltip content={<CustomTooltip />} />
-                  <ReferenceLine x={8} stroke={COLORS.green} strokeDasharray="6 4" strokeWidth={1.5} label={{ value: "8hr", fill: COLORS.green, fontSize: 11, position: "top" }} />
-                  <ReferenceLine x={6.5} stroke={COLORS.yellow} strokeDasharray="4 4" strokeWidth={1} label={{ value: "6.5", fill: COLORS.yellow, fontSize: 10, position: "top" }} />
+                  <ReferenceLine x={THRESHOLDS.target} stroke={COLORS.green} strokeDasharray="6 4" strokeWidth={1.5} label={{ value: `${THRESHOLDS.target}hr`, fill: COLORS.green, fontSize: 11, position: "top" }} />
+                  <ReferenceLine x={THRESHOLDS.ok} stroke={COLORS.yellow} strokeDasharray="4 4" strokeWidth={1} label={{ value: `${THRESHOLDS.ok}`, fill: COLORS.yellow, fontSize: 10, position: "top" }} />
                   <Bar dataKey="開發" stackId="a" fill={COLORS.accentLight} barSize={22} />
                   <Bar dataKey="會議" stackId="a" fill={COLORS.purple} radius={[0, 4, 4, 0]} barSize={22} />
                   <Legend wrapperStyle={{ fontSize: 12, color: COLORS.textMuted, paddingTop: 8 }} />
                 </ComposedChart>
               </ResponsiveContainer>
-            </div>
+            </CardPanel>
 
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))", gap: 10 }}>
               {dailyBarData.map(d => {
                 const status = getStatus(d.total);
                 const meetPct = d.total ? Math.round((d.會議 || 0) / d.total * 100) : 0;
-                const issue = issues.find(i => i.member === d.name);
+                const issue = issueMap[d.name];
                 return (
                   <div key={d.name} style={{
                     background: COLORS.card, borderRadius: 10, padding: "14px 12px",
@@ -263,9 +290,7 @@ function Dashboard() {
                   }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
                       <span style={{ fontWeight: 700, fontSize: 13 }}>{d.name}</span>
-                      <span style={{ fontSize: 10, fontWeight: 700, padding: "2px 7px", borderRadius: 4, background: status.bg, color: status.color }}>
-                        {status.label}
-                      </span>
+                      <StatusBadge status={status} />
                     </div>
                     <div style={{ fontSize: 28, fontWeight: 800, color: status.color, fontVariantNumeric: "tabular-nums", lineHeight: 1.2 }}>
                       {d.total !== null ? d.total : "—"}
@@ -279,8 +304,8 @@ function Dashboard() {
                     )}
                     <div style={{ display: "flex", justifyContent: "space-between", marginTop: 6 }}>
                       {meetPct > 0 ? (
-                        <span style={{ fontSize: 10, color: meetPct > 50 ? COLORS.yellow : COLORS.textDim }}>
-                          會議 {meetPct}%{meetPct > 50 ? " ⚠" : ""}
+                        <span style={{ fontSize: 10, color: meetPct > MEETING_HEAVY_PCT ? COLORS.yellow : COLORS.textDim }}>
+                          會議 {meetPct}%{meetPct > MEETING_HEAVY_PCT ? " ⚠" : ""}
                         </span>
                       ) : <span />}
                       {issue && <span style={{ fontSize: 10 }}>{issue.severity}</span>}
@@ -295,16 +320,15 @@ function Dashboard() {
         {/* ══ TREND ══ */}
         {view === "trend" && (
           <div>
-            <div style={{ background: COLORS.card, borderRadius: 12, padding: "20px 16px 8px", border: `1px solid ${COLORS.border}`, marginBottom: 20 }}>
-              <p style={{ fontSize: 13, color: COLORS.textMuted, marginBottom: 12, fontWeight: 600 }}>每日工時趨勢</p>
+            <CardPanel title="每日工時趨勢">
               <ResponsiveContainer width="100%" height={400}>
                 <LineChart data={trendData} margin={{ left: 0, right: 16, top: 8, bottom: 8 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke={COLORS.border} />
                   <XAxis dataKey="date" tick={{ fill: COLORS.text, fontSize: 12 }} axisLine={{ stroke: COLORS.border }} tickLine={false} />
                   <YAxis domain={[0, 10]} tick={{ fill: COLORS.textDim, fontSize: 11 }} axisLine={{ stroke: COLORS.border }} tickLine={false} unit="hr" />
                   <Tooltip content={<CustomTooltip />} />
-                  <ReferenceLine y={8} stroke={COLORS.green} strokeDasharray="6 4" strokeWidth={1.5} />
-                  <ReferenceLine y={6.5} stroke={COLORS.yellow} strokeDasharray="4 4" strokeWidth={1} />
+                  <ReferenceLine y={THRESHOLDS.target} stroke={COLORS.green} strokeDasharray="6 4" strokeWidth={1.5} />
+                  <ReferenceLine y={THRESHOLDS.ok} stroke={COLORS.yellow} strokeDasharray="4 4" strokeWidth={1} />
                   {members.map(m => (
                     <Line key={m} type="monotone" dataKey={m} stroke={memberColors[m]} strokeWidth={2.5}
                       dot={{ r: 5, fill: memberColors[m], stroke: COLORS.card, strokeWidth: 2 }}
@@ -313,10 +337,9 @@ function Dashboard() {
                   <Legend wrapperStyle={{ fontSize: 11, paddingTop: 12 }} />
                 </LineChart>
               </ResponsiveContainer>
-            </div>
+            </CardPanel>
 
-            <div style={{ background: COLORS.card, borderRadius: 12, padding: 20, border: `1px solid ${COLORS.border}` }}>
-              <p style={{ fontSize: 13, color: COLORS.textMuted, marginBottom: 12, fontWeight: 600 }}>日間變化</p>
+            <CardPanel title="日間變化" padding={20}>
               <div style={{ overflowX: "auto" }}>
                 <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
                   <thead>
@@ -334,7 +357,7 @@ function Dashboard() {
                       return (
                         <tr key={m} style={{ borderBottom: `1px solid ${COLORS.border}22` }}>
                           <td style={{ padding: "8px 10px", fontWeight: 600 }}>
-                            <span style={{ display: "inline-block", width: 8, height: 8, borderRadius: "50%", background: memberColors[m], marginRight: 8, verticalAlign: "middle" }} />
+                            <ColorDot color={memberColors[m]} />
                             {m}
                           </td>
                           {vals.map((v, i) => {
@@ -359,23 +382,22 @@ function Dashboard() {
                   </tbody>
                 </table>
               </div>
-            </div>
+            </CardPanel>
           </div>
         )}
 
         {/* ══ WEEKLY ══ */}
         {view === "weekly" && (
           <div>
-            <div style={{ background: COLORS.card, borderRadius: 12, padding: "20px 16px 8px", border: `1px solid ${COLORS.border}`, marginBottom: 20 }}>
-              <p style={{ fontSize: 13, color: COLORS.textMuted, marginBottom: 12, fontWeight: 600 }}>平均每日工時</p>
+            <CardPanel title="平均每日工時">
               <ResponsiveContainer width="100%" height={380}>
                 <BarChart data={weeklySummary} layout="vertical" margin={{ left: 8, right: 24, top: 4, bottom: 4 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke={COLORS.border} horizontal={false} />
                   <XAxis type="number" domain={[0, 10]} tick={{ fill: COLORS.textDim, fontSize: 11 }} axisLine={{ stroke: COLORS.border }} tickLine={false} unit="hr" />
                   <YAxis type="category" dataKey="name" width={48} tick={{ fill: COLORS.text, fontSize: 12, fontWeight: 600 }} axisLine={false} tickLine={false} />
                   <Tooltip content={<CustomTooltip />} />
-                  <ReferenceLine x={8} stroke={COLORS.green} strokeDasharray="6 4" strokeWidth={1.5} label={{ value: "8hr", fill: COLORS.green, fontSize: 11, position: "top" }} />
-                  <ReferenceLine x={6.5} stroke={COLORS.yellow} strokeDasharray="4 4" strokeWidth={1} />
+                  <ReferenceLine x={THRESHOLDS.target} stroke={COLORS.green} strokeDasharray="6 4" strokeWidth={1.5} label={{ value: `${THRESHOLDS.target}hr`, fill: COLORS.green, fontSize: 11, position: "top" }} />
+                  <ReferenceLine x={THRESHOLDS.ok} stroke={COLORS.yellow} strokeDasharray="4 4" strokeWidth={1} />
                   <Bar dataKey="avg" name="日均工時" radius={[0, 6, 6, 0]} barSize={24}>
                     {weeklySummary.map((entry, i) => (
                       <Cell key={i} fill={getBarColor(entry.avg)} />
@@ -383,10 +405,9 @@ function Dashboard() {
                   </Bar>
                 </BarChart>
               </ResponsiveContainer>
-            </div>
+            </CardPanel>
 
-            <div style={{ background: COLORS.card, borderRadius: 12, padding: 20, border: `1px solid ${COLORS.border}` }}>
-              <p style={{ fontSize: 13, color: COLORS.textMuted, marginBottom: 12, fontWeight: 600 }}>週統計明細</p>
+            <CardPanel title="週統計明細" padding={20}>
               <div style={{ overflowX: "auto" }}>
                 <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
                   <thead>
@@ -402,7 +423,7 @@ function Dashboard() {
                       return (
                         <tr key={m.name} style={{ borderBottom: `1px solid ${COLORS.border}22` }}>
                           <td style={{ padding: "10px 8px", fontWeight: 600 }}>
-                            <span style={{ display: "inline-block", width: 8, height: 8, borderRadius: "50%", background: memberColors[m.name], marginRight: 8, verticalAlign: "middle" }} />
+                            <ColorDot color={memberColors[m.name]} />
                             {m.name}
                           </td>
                           <td style={{ textAlign: "center", padding: "10px 8px", color: m.daysReported < dates.length ? COLORS.yellow : COLORS.textMuted, fontWeight: m.daysReported < dates.length ? 700 : 400 }}>
@@ -418,15 +439,13 @@ function Dashboard() {
                             {m.meetSum > 0 ? m.meetSum : "—"}
                           </td>
                           <td style={{ textAlign: "center", padding: "10px 8px" }}>
-                            <span style={{ color: m.meetPct > 50 ? COLORS.yellow : m.meetPct > 30 ? COLORS.textMuted : COLORS.textDim, fontWeight: m.meetPct > 50 ? 700 : 400 }}>
-                              {m.sum ? `${m.meetPct}%` : "—"}{m.meetPct > 50 ? " ⚠" : ""}
+                            <span style={{ color: m.meetPct > MEETING_HEAVY_PCT ? COLORS.yellow : m.meetPct > 30 ? COLORS.textMuted : COLORS.textDim, fontWeight: m.meetPct > MEETING_HEAVY_PCT ? 700 : 400 }}>
+                              {m.sum ? `${m.meetPct}%` : "—"}{m.meetPct > MEETING_HEAVY_PCT ? " ⚠" : ""}
                             </span>
                           </td>
                           <td style={{ textAlign: "center", padding: "10px 8px", fontSize: 14 }}>{m.trend}</td>
                           <td style={{ textAlign: "center", padding: "10px 8px" }}>
-                            <span style={{ fontSize: 10, fontWeight: 700, padding: "3px 8px", borderRadius: 4, background: st.bg, color: st.color }}>
-                              {st.label}
-                            </span>
+                            <StatusBadge status={st} />
                           </td>
                         </tr>
                       );
@@ -434,13 +453,13 @@ function Dashboard() {
                   </tbody>
                 </table>
               </div>
-            </div>
+            </CardPanel>
           </div>
         )}
 
         <div style={{ marginTop: 28, paddingTop: 14, borderTop: `1px solid ${COLORS.border}`, display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 8 }}>
           <span style={{ fontSize: 11, color: COLORS.textDim }}>
-            ✅ 6.5-8.5hr ｜ ⚠️ 5-6.5 / 8.5-10hr ｜ ❌ &lt;5 / &gt;10hr ｜ 會議 &gt;50% ⚠
+            ✅ {THRESHOLDS.ok}-{THRESHOLDS.high}hr ｜ ⚠️ {THRESHOLDS.low}-{THRESHOLDS.ok} / {THRESHOLDS.high}-{THRESHOLDS.overtime}hr ｜ ❌ &lt;{THRESHOLDS.low} / &gt;{THRESHOLDS.overtime}hr ｜ 會議 &gt;{MEETING_HEAVY_PCT}% ⚠
           </span>
           <span style={{ fontSize: 11, color: COLORS.textDim }}>
             Daily Update Analyzer v2 — {dates.length} 工作天
