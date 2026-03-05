@@ -100,7 +100,7 @@
     },
     "3/4": {
       "Joyce":  { "total": 2.5, "meeting": 2.5, "dev": 0 },
-      "Ivy":    { "total": null, "meeting": null, "dev": null },
+      "Ivy":    { "total": 7, "meeting": 1.5, "dev": 5.5 },
       "Jason":  { "total": null, "meeting": null, "dev": null },
       "日銜":   { "total": 7, "meeting": 0, "dev": 7 },
       "Wendy":  { "total": 8, "meeting": 0, "dev": 8 },
