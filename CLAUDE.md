@@ -50,7 +50,7 @@ The team posts daily work hour reports in Google Chat space `spaces/AAQAQhmoRAk`
 1. Reads `chat-config.json` for space ID and member mapping
 2. Fetches messages via `mcp__gws__chat_spaces_messages_list`
 3. Finds "Daily Update" thread and parses replies
-4. Extracts hours from patterns like `(Xhr)`, `(XH)`, `（1.5H）`
+4. Extracts hours from patterns like `(Xhr)`, `(XH)`, `（1.5H）`, `(X小時)`, `(X)` (bare number)
 5. Generates issues based on rules (missing reports, overtime, low hours, etc.)
 6. Merges into `raw_data.json` and runs tests
 

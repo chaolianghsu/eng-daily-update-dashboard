@@ -45,8 +45,8 @@ Block:
 Extract from each message:
 - **Sender**: Map `sender.name` (e.g., `users/12345`) → member name via `memberMap`
 - **Date**: Extract from message text (M/D format)
-- **Hours**: Sum all hour values in parentheses `(Xhr)` or `(XH)` or `（XH）` → `total`
-  - Regex: `[（(]\s*(\d+(?:\.\d+)?)\s*[Hh](?:r|our|ours)?[^)）]*[)）]`
+- **Hours**: Sum all hour values in parentheses `(Xhr)`, `(XH)`, `（XH）`, `(X小時)`, `(X)` → `total`
+  - Regex: `[（(]\s*(\d+(?:\.\d+)?)\s*(?:[Hh](?:r|our|ours)?|小時)?[^)）]*[)）]`
   - Items containing meeting/會議/讀書會/例會/討論/分享會/sync/臨時會 keywords → `meeting` hours
   - Everything else → `dev` hours
 - If no hours can be parsed, set `{ total: null, meeting: null, dev: null }`
