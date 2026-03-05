@@ -76,11 +76,22 @@ Reuse the same parsing logic as `/fetch-daily-updates` Step 4:
 
 Build a date entry: `{ "memberName": { total, meeting, dev }, ... }` for each target date.
 
-### Step 6: Merge into rawData
+### Step 6: Merge into rawData and regenerate issues
 
 For each target date with parsed data:
 - Add the date entry to `rawData` (do NOT overwrite existing dates)
-- Do NOT modify the `issues` array
+
+After merging, regenerate the `issues` array using the same rules as `/fetch-daily-updates` Step 5, based on the **full updated rawData**. The latest date in rawData is treated as "today" for issue evaluation:
+
+| Condition | Severity | Text template |
+|-----------|----------|---------------|
+| Member has null data for 2+ consecutive workdays | 🔴 | "連續 N 天未回報" |
+| Member not reported on latest date | 🔴 | "未回報 M/D" |
+| Member total > 10hr | 🟡 | "超時 {total}hr" |
+| Member total < 5hr (non-null) | 🟡 | "工時偏低 {total}hr" |
+| Meeting % > 50% | 🟡 | "會議佔比 {pct}%" |
+| Member improved from < 6hr to >= 6.5hr | 🟢 | "改善 {prev}→{curr}hr" |
+| Member stable at >= 7hr | 🟢 | "穩定 {total}hr" |
 
 ### Step 7: Write, validate, and confirm
 
@@ -109,5 +120,5 @@ git push
 - Messages are in Traditional Chinese. Hour patterns: `(1hr)`, `(1H)`, `(1 hour)`, `(1小時)`, `（1.5H）`.
 - Both halfwidth `()` and fullwidth `（）` parentheses are used.
 - Always preserve existing data — this is append-only for `rawData`.
-- Do NOT touch the `issues` array. User can run `/fetch-daily-updates` afterward to regenerate issues.
+- After backfilling, always regenerate the `issues` array based on the full updated rawData to keep warnings consistent with actual data.
 - Multiple target dates share the same fetched message batch for efficiency.

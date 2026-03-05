@@ -114,10 +114,10 @@
     }
   },
   "issues": [
-    { "member": "Ivy", "severity": "🔴", "text": "未回報 3/4" },
     { "member": "Jason", "severity": "🔴", "text": "未回報 3/4" },
-    { "member": "哲緯", "severity": "🔴", "text": "連續未回報（2/23、3/4）" },
     { "member": "Joyce", "severity": "🟡", "text": "工時偏低 2.5hr（全為會議）" },
+    { "member": "哲緯", "severity": "🟡", "text": "超時 13hr" },
+    { "member": "Ivy", "severity": "🟢", "text": "穩定 7hr" },
     { "member": "日銜", "severity": "🟢", "text": "恢復回報 7hr" },
     { "member": "侑呈", "severity": "🟢", "text": "穩定 8.5hr" }
   ]
