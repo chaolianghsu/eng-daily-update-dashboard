@@ -41,16 +41,28 @@
       "Joe":    { "total": 7, "meeting": 0.5, "dev": 6.5 },
       "Aaron":  { "total": 7, "meeting": 0, "dev": 7 },
       "哲緯":   { "total": 17, "meeting": 0, "dev": 17 }
+    },
+    "3/4": {
+      "Joyce":  { "total": 2.5, "meeting": 2.5, "dev": 0 },
+      "Ivy":    { "total": null, "meeting": null, "dev": null },
+      "Jason":  { "total": null, "meeting": null, "dev": null },
+      "日銜":   { "total": 7, "meeting": 0, "dev": 7 },
+      "Wendy":  { "total": 8, "meeting": 0, "dev": 8 },
+      "侑呈":   { "total": 8.5, "meeting": 0, "dev": 8.5 },
+      "禎佑":   { "total": 7.5, "meeting": 0, "dev": 7.5 },
+      "Ted":    { "total": 7, "meeting": 0, "dev": 7 },
+      "家輝":   { "total": 7, "meeting": 0, "dev": 7 },
+      "Joe":    { "total": 7, "meeting": 0, "dev": 7 },
+      "Aaron":  { "total": 7, "meeting": 0, "dev": 7 },
+      "哲緯":   { "total": null, "meeting": null, "dev": null }
     }
   },
   "issues": [
-    { "member": "哲緯", "severity": "🔴", "text": "工時 17hr 異常（LSR 單項 12hr，疑似筆誤）" },
-    { "member": "Ted", "severity": "🟡", "text": "遲報 11:39 + 工時偏高 9.5hr" },
-    { "member": "哲緯", "severity": "🟡", "text": "Threads Blockers 堆積 7 項未推進" },
-    { "member": "侑呈", "severity": "🟠", "text": "時數格式模糊，建議統一標註" },
-    { "member": "家輝", "severity": "🟠", "text": "Pending 區 4 項長期未動" },
-    { "member": "日銜", "severity": "🟢", "text": "改善：恢復回報" },
-    { "member": "Joe", "severity": "🟢", "text": "持續改善 4→7→7hr" },
-    { "member": "家輝", "severity": "🟢", "text": "改善 6→7→8hr" }
+    { "member": "Ivy", "severity": "🔴", "text": "未回報 3/4" },
+    { "member": "Jason", "severity": "🔴", "text": "未回報 3/4" },
+    { "member": "哲緯", "severity": "🔴", "text": "連續未回報（2/23、3/4）" },
+    { "member": "Joyce", "severity": "🟡", "text": "工時偏低 2.5hr（全為會議）" },
+    { "member": "日銜", "severity": "🟢", "text": "恢復回報 7hr" },
+    { "member": "侑呈", "severity": "🟢", "text": "穩定 8.5hr" }
   ]
 }
