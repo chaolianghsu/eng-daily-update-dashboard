@@ -50,3 +50,38 @@ describe('backfill-daily-updates: single date (3/3)', () => {
     });
   });
 });
+
+describe('backfill-daily-updates: date range (2/26-2/28)', () => {
+  const workdays = ['2/26', '2/27'];
+
+  workdays.forEach((date) => {
+    it(`should have date ${date} in rawData`, () => {
+      expect(data.rawData).toHaveProperty(date);
+    });
+
+    it(`${date} should have valid member entries`, () => {
+      const dayData = data.rawData[date];
+      expect(dayData).toBeDefined();
+      const members = Object.keys(dayData);
+      expect(members.length).toBeGreaterThan(0);
+      members.forEach((member) => {
+        const entry = dayData[member];
+        expect(entry).toHaveProperty('total');
+        expect(entry).toHaveProperty('meeting');
+        expect(entry).toHaveProperty('dev');
+        ['total', 'meeting', 'dev'].forEach((field) => {
+          const val = entry[field];
+          expect(val === null || typeof val === 'number').toBe(true);
+        });
+      });
+    });
+  });
+
+  it('should exclude weekend 2/28 (Saturday)', () => {
+    expect(data.rawData).not.toHaveProperty('2/28');
+  });
+
+  it('should still have 6 issues (unchanged)', () => {
+    expect(data.issues).toHaveLength(6);
+  });
+});

@@ -66,8 +66,9 @@ For each target date with a matched thread:
 Reuse the same parsing logic as `/fetch-daily-updates` Step 4:
 
 - **Sender**: Map `sender.name` (e.g. `users/12345`) to member name via `memberMap`. Skip unknown senders with a warning.
-- **Hours**: Sum all hour values matching regex: `[（(]\s*(\d+(?:\.\d+)?)\s*(?:[Hh](?:r|our|ours)?|小時)?[^)）]*[)）]`
-  - Matches: `(1hr)`, `(1H)`, `(1 hour)`, `(1小時)`, `(1 小時)`, `（1.5H）`, `(7)` (bare number)
+- **Hours**: Sum all hour values matching regex: `[（(]\s*(\d+(?:\.\d+)?)\s*(?:[Hh](?:r|our|ours)?|小時)[^)）]*[)）]`
+  - Matches: `(1hr)`, `(1H)`, `(1 hour)`, `(1小時)`, `(1 小時)`, `（1.5H）`
+  - Does NOT match bare `(7)` — too ambiguous (could be task count, not hours)
   - Items containing meeting/會議/讀書會/例會/討論/分享會/sync/臨時會 keywords -> `meeting` hours
   - Everything else -> `dev` hours
   - `total` = `meeting` + `dev`
