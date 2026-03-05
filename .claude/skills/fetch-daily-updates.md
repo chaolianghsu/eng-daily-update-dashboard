@@ -21,7 +21,7 @@ Read raw_data.json → get existing rawData, issues
 Use `mcp__gws__chat_spaces_messages_list` to get recent messages:
 
 ```
-params: { parent: "<spaceId>", pageSize: 30, orderBy: "createTime desc" }
+params: { parent: "<spaceId>", pageSize: 100, orderBy: "createTime desc" }
 ```
 
 Search results for messages containing the `queryKeyword` (e.g., "Daily Update"). This message is the thread starter — note its `thread.name`.
