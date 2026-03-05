@@ -149,6 +149,54 @@ function Dashboard() {
       .catch(err => { setError(err.message); setLoading(false); });
   }, []);
 
+  const dates = rawData ? Object.keys(rawData) : [];
+  const members = rawData ? [...new Set(dates.flatMap(d => Object.keys(rawData[d])))] : [];
+  const weekDays = ["日", "一", "二", "三", "四", "五", "六"];
+  const dayLabels = Object.fromEntries(dates.map(d => {
+    const [m, dd] = d.split("/").map(Number);
+    const dow = new Date(new Date().getFullYear(), m - 1, dd).getDay();
+    return [d, weekDays[dow]];
+  }));
+  const palette = ["#f472b6", "#a78bfa", "#60a5fa", "#34d399", "#fbbf24", "#fb923c", "#22d3ee", "#c084fc", "#4ade80", "#f87171", "#38bdf8", "#a3a3a3", "#e879f9", "#facc15", "#2dd4bf", "#f43f5e"];
+  const memberColors = Object.fromEntries(members.map((m, i) => [m, palette[i % palette.length]]));
+  const issueMap = Object.fromEntries(issues.map(iss => [iss.member, iss]));
+
+  const activeDate = selectedDate || dates[dates.length - 1];
+
+  const dailyBarData = useMemo(() => {
+    if (!rawData) return [];
+    return members.map(m => {
+      const d = rawData[activeDate]?.[m] || { total: null, meeting: null, dev: null };
+      return { name: m, 開發: d.dev, 會議: d.meeting, total: d.total };
+    }).sort((a, b) => (b.total || -1) - (a.total || -1));
+  }, [rawData, activeDate, members]);
+
+  const trendData = useMemo(() => {
+    if (!rawData) return [];
+    return dates.map(date => {
+      const row = { date: `${date}（${dayLabels[date]}）` };
+      members.forEach(m => { row[m] = rawData[date]?.[m]?.total ?? null; });
+      return row;
+    });
+  }, [rawData, dates, members, dayLabels]);
+
+  const weeklySummary = useMemo(() => {
+    if (!rawData) return [];
+    return members.map(m => {
+      let totalSum = 0, meetSum = 0, count = 0;
+      for (const d of dates) {
+        const entry = rawData[d]?.[m];
+        if (entry?.total != null) { totalSum += entry.total; count++; }
+        if (entry?.meeting != null) { meetSum += entry.meeting; }
+      }
+      const avg = count ? +(totalSum / count).toFixed(1) : null;
+      const sum = count ? +totalSum.toFixed(1) : null;
+      const v1 = rawData[dates[0]]?.[m]?.total ?? null;
+      const v2 = rawData[dates[dates.length - 1]]?.[m]?.total ?? null;
+      return { name: m, avg, sum, daysReported: count, meetSum: +meetSum.toFixed(1), meetPct: sum ? Math.round(meetSum / sum * 100) : 0, trend: getTrendIcon(v1, v2) };
+    }).sort((a, b) => (b.avg || -1) - (a.avg || -1));
+  }, [rawData, dates, members]);
+
   if (loading) {
     return (
       <div style={{ minHeight: "100vh", background: COLORS.bg, display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -164,45 +212,6 @@ function Dashboard() {
       </div>
     );
   }
-
-  const dates = Object.keys(rawData);
-  const members = [...new Set(dates.flatMap(d => Object.keys(rawData[d])))];
-  const weekDays = ["日", "一", "二", "三", "四", "五", "六"];
-  const dayLabels = Object.fromEntries(dates.map(d => {
-    const [m, dd] = d.split("/").map(Number);
-    const dow = new Date(new Date().getFullYear(), m - 1, dd).getDay();
-    return [d, weekDays[dow]];
-  }));
-  const palette = ["#f472b6", "#a78bfa", "#60a5fa", "#34d399", "#fbbf24", "#fb923c", "#22d3ee", "#c084fc", "#4ade80", "#f87171", "#38bdf8", "#a3a3a3", "#e879f9", "#facc15", "#2dd4bf", "#f43f5e"];
-  const memberColors = Object.fromEntries(members.map((m, i) => [m, palette[i % palette.length]]));
-  const issueMap = Object.fromEntries(issues.map(iss => [iss.member, iss]));
-
-  const activeDate = selectedDate || dates[dates.length - 1];
-
-  const dailyBarData = useMemo(() => members.map(m => {
-    const d = rawData[activeDate]?.[m] || { total: null, meeting: null, dev: null };
-    return { name: m, 開發: d.dev, 會議: d.meeting, total: d.total };
-  }).sort((a, b) => (b.total || -1) - (a.total || -1)), [rawData, activeDate, members]);
-
-  const trendData = useMemo(() => dates.map(date => {
-    const row = { date: `${date}（${dayLabels[date]}）` };
-    members.forEach(m => { row[m] = rawData[date]?.[m]?.total ?? null; });
-    return row;
-  }), [rawData, dates, members, dayLabels]);
-
-  const weeklySummary = useMemo(() => members.map(m => {
-    let totalSum = 0, meetSum = 0, count = 0;
-    for (const d of dates) {
-      const entry = rawData[d]?.[m];
-      if (entry?.total != null) { totalSum += entry.total; count++; }
-      if (entry?.meeting != null) { meetSum += entry.meeting; }
-    }
-    const avg = count ? +(totalSum / count).toFixed(1) : null;
-    const sum = count ? +totalSum.toFixed(1) : null;
-    const v1 = rawData[dates[0]]?.[m]?.total ?? null;
-    const v2 = rawData[dates[dates.length - 1]]?.[m]?.total ?? null;
-    return { name: m, avg, sum, daysReported: count, meetSum: +meetSum.toFixed(1), meetPct: sum ? Math.round(meetSum / sum * 100) : 0, trend: getTrendIcon(v1, v2) };
-  }).sort((a, b) => (b.avg || -1) - (a.avg || -1)), [rawData, dates, members]);
 
   return (
     <div style={{ minHeight: "100vh", background: COLORS.bg, color: COLORS.text, padding: "24px 16px", fontFamily: "'JetBrains Mono','SF Mono','Noto Sans TC',monospace" }}>
