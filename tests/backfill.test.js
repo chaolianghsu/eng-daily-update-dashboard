@@ -85,3 +85,30 @@ describe('backfill-daily-updates: date range (2/26-2/28)', () => {
     expect(data.issues).toHaveLength(6);
   });
 });
+
+describe('backfill-daily-updates: auto-detect (no argument)', () => {
+  it('should have date 3/2 in rawData', () => {
+    expect(data.rawData).toHaveProperty('3/2');
+  });
+
+  it('3/2 should have valid member entries', () => {
+    const dayData = data.rawData['3/2'];
+    expect(dayData).toBeDefined();
+    const members = Object.keys(dayData);
+    expect(members.length).toBeGreaterThan(0);
+    members.forEach((member) => {
+      const entry = dayData[member];
+      expect(entry).toHaveProperty('total');
+      expect(entry).toHaveProperty('meeting');
+      expect(entry).toHaveProperty('dev');
+      ['total', 'meeting', 'dev'].forEach((field) => {
+        const val = entry[field];
+        expect(val === null || typeof val === 'number').toBe(true);
+      });
+    });
+  });
+
+  it('should still have 6 issues (unchanged)', () => {
+    expect(data.issues).toHaveLength(6);
+  });
+});

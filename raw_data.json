@@ -70,6 +70,20 @@
       "Aaron":  { "total": 6.5, "meeting": 0.5, "dev": 6 },
       "哲緯":   { "total": null, "meeting": null, "dev": null }
     },
+    "3/2": {
+      "Joyce":  { "total": 11, "meeting": 1, "dev": 10 },
+      "Ivy":    { "total": 7.5, "meeting": 0, "dev": 7.5 },
+      "Jason":  { "total": 6.5, "meeting": 0, "dev": 6.5 },
+      "日銜":   { "total": 6.5, "meeting": 0, "dev": 6.5 },
+      "Wendy":  { "total": 7.5, "meeting": 0, "dev": 7.5 },
+      "侑呈":   { "total": null, "meeting": null, "dev": null },
+      "禎佑":   { "total": null, "meeting": null, "dev": null },
+      "Ted":    { "total": 7, "meeting": 0.5, "dev": 6.5 },
+      "家輝":   { "total": 6.5, "meeting": 0, "dev": 6.5 },
+      "Joe":    { "total": 7, "meeting": 1, "dev": 6 },
+      "Aaron":  { "total": 7, "meeting": 0, "dev": 7 },
+      "哲緯":   { "total": null, "meeting": null, "dev": null }
+    },
     "3/3": {
       "Joyce":  { "total": 8.5, "meeting": 4.5, "dev": 4 },
       "Ivy":    { "total": 7, "meeting": 1, "dev": 6 },
