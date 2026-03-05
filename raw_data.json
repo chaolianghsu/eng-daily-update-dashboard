@@ -110,7 +110,7 @@
       "家輝":   { "total": 7, "meeting": 0, "dev": 7 },
       "Joe":    { "total": 7, "meeting": 0, "dev": 7 },
       "Aaron":  { "total": 7, "meeting": 0, "dev": 7 },
-      "哲緯":   { "total": null, "meeting": null, "dev": null }
+      "哲緯":   { "total": 13, "meeting": 3.5, "dev": 9.5 }
     }
   },
   "issues": [
