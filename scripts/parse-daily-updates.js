@@ -292,10 +292,25 @@ function parseMessagesFile(messageFiles, manualLeave) {
     );
   }
 
-  // Parse leave
-  const leaveMap = parseLeaveMessages(messages, memberMap);
+  // Parse leave: start with config.leave, then auto-detect from messages
+  const leaveMap = {};
+  if (config.leave) {
+    for (const [name, ranges] of Object.entries(config.leave)) {
+      leaveMap[name] = [...ranges];
+    }
+  }
+  const autoLeave = parseLeaveMessages(messages, memberMap);
+  for (const [name, ranges] of Object.entries(autoLeave)) {
+    if (!leaveMap[name]) leaveMap[name] = [];
+    for (const r of ranges) {
+      const isDup = leaveMap[name].some(
+        (x) => x.start === r.start && x.end === r.end
+      );
+      if (!isDup) leaveMap[name].push(r);
+    }
+  }
 
-  // Merge manual leave overrides
+  // Merge CLI --leave overrides
   if (manualLeave) {
     for (const [name, ranges] of Object.entries(manualLeave)) {
       if (!leaveMap[name]) leaveMap[name] = [];

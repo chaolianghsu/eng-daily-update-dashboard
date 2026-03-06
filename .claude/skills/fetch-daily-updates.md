@@ -42,7 +42,7 @@ The script outputs JSON with:
 - **Content date**: Thread "3/6 Daily Update" typically contains 3/5 progress. Verify `contentDate` is correct.
 - **Already exists**: If `alreadyExists` is true, the date is already in rawData — skip or compare.
 - **Null hours**: Check members with null — they may have reported but used unparseable format (e.g., bare `(6)` without H/hr suffix).
-- **Leave gaps**: If a known leave is missing from `leaveMap`, re-run with `--leave`.
+- **Leave gaps**: If a known leave is missing from `leaveMap`, add it to `chat-config.json` `leave` section or re-run with `--leave`.
 
 ### Step 5: Merge and write
 
@@ -68,3 +68,4 @@ git push
 - Members not in `memberMap` are skipped.
 - All parsing rules, thresholds, and issue logic are in `scripts/parse-daily-updates.js`.
 - Leave announcements are standalone threads containing 請假 or 休假. Member is identified via `sender.name` → `memberMap`, NOT from text (nicknames differ).
+- Leave sources (merged in order): `chat-config.json` `leave` section → auto-detected from Chat messages → CLI `--leave` flag. Use config for leave not posted in Chat.
