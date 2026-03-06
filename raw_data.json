@@ -130,7 +130,7 @@
   "issues": [
     { "member": "Jason", "severity": "🟠", "text": "休假 3/5-3/11" },
     { "member": "Ivy", "severity": "🟡", "text": "工時偏低 4hr" },
-    { "member": "Joyce", "severity": "🟢", "text": "改善 2.5→10hr" },
+    { "member": "Joyce", "severity": "🟡", "text": "超時 10hr" },
     { "member": "日銜", "severity": "🟢", "text": "穩定 7hr" },
     { "member": "Wendy", "severity": "🟢", "text": "穩定 7.5hr" },
     { "member": "侑呈", "severity": "🟢", "text": "穩定 8hr" },

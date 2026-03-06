@@ -9,122 +9,62 @@ Fetch daily work hour reports from the Google Chat space and update `raw_data.js
 
 ## Workflow
 
-### Step 1: Load config and current data
+### Step 1: Load config
 
-```
-Read chat-config.json → get spaceId, memberMap, queryKeyword
-Read raw_data.json → get existing rawData, issues
-```
+Read `chat-config.json` → get `spaceId`.
 
-### Step 2: Find the Daily Update thread for today
+### Step 2: Fetch messages from Chat
 
-Use `mcp__gws__chat_spaces_messages_list` to get recent messages:
+Use `mcp__gws__chat_spaces_messages_list`:
 
 ```
 params: { parent: "<spaceId>", pageSize: 100, orderBy: "createTime desc" }
 ```
 
-Search results for messages containing the `queryKeyword` (e.g., "Daily Update"). This message is the thread starter — note its `thread.name`.
+If the result is too large and saved to a file, note the file path.
+If returned inline, save the JSON to a temp file (e.g., `/tmp/chat-messages.json`).
 
-### Step 2.5: Scan for leave announcements
+### Step 3: Run parsing script
 
-From the messages fetched in Step 2, filter those where `text` contains `請假` or `休假`. These are standalone leave announcement threads.
-
-**Identify member**: Use `sender.name` (user ID) → `memberMap` lookup. Do NOT parse name from message text (nicknames differ from rawData names, e.g. 火鍋=家輝, Chris=禎佑, Yuriy=侑呈).
-
-**Parse date range** from message text:
-
-| Format | Example | Result |
-|--------|---------|--------|
-| Two M/D patterns | `5/21(四)~5/26(二)` | 5/21 → 5/26 |
-| Full-width separator | `3/16～ 3/20` | 3/16 → 3/20 |
-| Same-month shorthand | `3/19~20` | 3/19 → 3/20 |
-| Single day | `3/13 (五)` | 3/13 → 3/13 |
-| Partial day (ignore partial, use full range) | `3/13(五)下午 ~ 3/18(三)` | 3/13 → 3/18 |
-
-Regex strategy:
-1. Find all `M/D` patterns: `/(\d{1,2})\/(\d{1,2})/g`
-2. If 2+ matches → `start = first, end = last`
-3. If 1 match → check for `~N` shorthand: `/(\d{1,2})\/(\d{1,2})\s*(?:\([^)]*\))?\s*[~～]\s*(\d{1,2})/`
-   - If matched: same month, `end = M/matched_day`
-   - If no range indicator: single day (`start = end`)
-
-**Build leave map**: `{ memberName: [{ start: "M/D", end: "M/D" }, ...] }`
-
-A member may have multiple leave entries. Store all ranges.
-
-### Step 3: Get all replies in the thread
-
-Filter messages by the thread name found in Step 2. Each reply is a team member's daily update.
-
-### Step 4: Parse each message into structured data
-
-Each message follows this format:
-```
-M/D 進度：
-1. [Done] Task description (Xhr)
-2. [In Progress] Task description (Xhr)
-...
-Block:
-...
+```bash
+node scripts/parse-daily-updates.js <messages-file> [--leave "Name:M/D-M/D"]
 ```
 
-Extract from each message:
-- **Sender**: Map `sender.name` (e.g., `users/12345`) → member name via `memberMap`
-- **Date**: Extract from message text (M/D format)
-- **Hours**: Sum all hour values in parentheses `(Xhr)`, `(XH)`, `（XH）`, `(X小時)` → `total`
-  - Regex: `[（(]\s*(\d+(?:\.\d+)?)\s*(?:[Hh](?:r|our|ours)?|小時)[^)）]*[)）]`
-  - Bare `(7)` is NOT matched — too ambiguous (could be task count)
-  - Items containing meeting/會議/讀書會/例會/討論/分享會/sync/臨時會 keywords → `meeting` hours
-  - Everything else → `dev` hours
-- If no hours can be parsed, set `{ total: null, meeting: null, dev: null }`
+Use `--leave` for any known leave not posted in Chat (e.g., `--leave "Jason:3/5-3/11"`).
 
-### Step 5: Generate issues automatically
+The script outputs JSON with:
+- `dateEntries` — parsed data per date, with `contentDate` (actual data date) vs `threadDate` (thread title date)
+- `leaveMap` — auto-detected + manual leave entries
+- `issues` — generated warnings
 
-Apply these rules to generate the `issues` array:
+### Step 4: Review output
 
-| Priority | Condition | Severity | Text template |
-|----------|-----------|----------|---------------|
-| 1 | Member has null data AND date is within a leave range | 🟠 | "休假 {start}-{end}" or "休假 {date}" (single day) |
-| 2 | Member has null data for 2+ consecutive days (excluding leave days) | 🔴 | "連續 N 天未回報" |
-| 3 | Member not reported today (NOT on leave today) | 🔴 | "未回報 M/D" |
-| 4 | Member total > 10hr | 🟡 | "超時 {total}hr" |
-| 5 | Member total < 5hr (non-null) | 🟡 | "工時偏低 {total}hr" |
-| 6 | Meeting % > 50% | 🟡 | "會議佔比 {pct}%" |
-| 7 | Member improved from < 6hr to >= 6.5hr | 🟢 | "改善 {prev}→{curr}hr" |
-| 8 | Member stable at >= 7hr | 🟢 | "穩定 {total}hr" |
+- **Content date**: Thread "3/6 Daily Update" typically contains 3/5 progress. Verify `contentDate` is correct.
+- **Already exists**: If `alreadyExists` is true, the date is already in rawData — skip or compare.
+- **Null hours**: Check members with null — they may have reported but used unparseable format (e.g., bare `(6)` without H/hr suffix).
+- **Leave gaps**: If a known leave is missing from `leaveMap`, re-run with `--leave`.
 
-**Leave-aware logic:**
-- Use the leave map from Step 2.5
-- **Date-in-range check**: Parse M/D strings to compare numerically: `start <= date <= end` (same year assumed)
-- Leave days do NOT count toward "連續 N 天未回報" streak
-- If a member is on leave for today's date, emit 🟠 instead of 🔴
+### Step 5: Merge and write
 
-### Step 6: Merge with existing data
+For each new date entry (where `alreadyExists` is false):
+1. Add `entry` to `rawData` under the `contentDate` key
+2. Replace `issues` with script-generated issues
+3. Write updated `raw_data.json`
+4. Run `npm test` to verify
 
-- Add new date entries to `rawData` (don't overwrite existing dates)
-- Replace `issues` with newly generated ones
-- Members list is auto-computed from rawData keys in index.html — no need to maintain
+### Step 6: Confirm and commit
 
-### Step 7: Write and confirm
-
-1. Write updated `raw_data.json`
-2. Run `npm test` to verify schema validation passes
-3. Show a summary table of the update to the user
-4. Ask user to confirm, then:
-   ```
-   git add raw_data.json
-   git commit -m "Update daily data for M/D"
-   git push
-   ```
+Show summary table, then:
+```
+git add raw_data.json
+git commit -m "Update daily data for M/D"
+git push
+```
 
 ## Notes
 
-- The Google Chat API `messages.list` does NOT support text-based filtering. You must fetch recent messages and filter client-side.
-- Messages are in Traditional Chinese. Hour patterns: `(1hr)`, `(1H)`, `(1 hour)`, `(1小時)`, `（1.5H）`.
-- Both halfwidth `()` and fullwidth `（）` parentheses are used.
-- If a member is not in `memberMap`, log a warning and skip.
-- Always preserve existing data — this is append-only for `rawData`.
-- Leave announcements are standalone threads in the same space (not inside Daily Update threads). They are already included in the Step 2 fetch results.
-- A member may have multiple leave entries (e.g., separate sick leave and vacation). Check all ranges.
-- If a sender of a leave message is not in `memberMap`, skip it silently.
+- Thread date ≠ content date. "3/6 Daily Update" thread has 3/5 progress.
+- Google Chat API does NOT support text filtering — must fetch and filter client-side.
+- Members not in `memberMap` are skipped.
+- All parsing rules, thresholds, and issue logic are in `scripts/parse-daily-updates.js`.
+- Leave announcements are standalone threads containing 請假 or 休假. Member is identified via `sender.name` → `memberMap`, NOT from text (nicknames differ).
