@@ -57,7 +57,15 @@ const MEETING_HEAVY_PCT = 50;
 // 🔧 AUTO-COMPUTED — 以下不需手動改
 // ═══════════════════════════════════════════════════════════
 
-function getStatus(hours) {
+function dateToNum(d) { const p = d.split("/").map(Number); return p[0] * 100 + p[1]; }
+function isOnLeave(date, leaveRanges) {
+  if (!date || !leaveRanges) return false;
+  const dn = dateToNum(date);
+  return leaveRanges.some(r => dn >= dateToNum(r.start) && dn <= dateToNum(r.end));
+}
+
+function getStatus(hours, onLeave) {
+  if (hours === null && onLeave) return { label: "休假", color: COLORS.orange, bg: COLORS.orangeDim };
   if (hours === null) return { label: "未回報", color: COLORS.red, bg: COLORS.redDim };
   if (hours > THRESHOLDS.overtime) return { label: "超時", color: COLORS.red, bg: COLORS.redDim };
   if (hours >= THRESHOLDS.high) return { label: "偏高", color: COLORS.yellow, bg: COLORS.yellowDim };
@@ -134,6 +142,7 @@ function Dashboard() {
   const [view, setView] = useState("daily");
   const [rawData, setRawData] = useState(null);
   const [issues, setIssues] = useState([]);
+  const [leave, setLeave] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
@@ -144,6 +153,7 @@ function Dashboard() {
       .then(data => {
         setRawData(data.rawData);
         setIssues(data.issues);
+        setLeave(data.leave || {});
         setLoading(false);
       })
       .catch(err => { setError(err.message); setLoading(false); });
@@ -289,7 +299,7 @@ function Dashboard() {
 
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))", gap: 10 }}>
               {dailyBarData.map(d => {
-                const status = getStatus(d.total);
+                const status = getStatus(d.total, isOnLeave(activeDate, leave[d.name]));
                 const meetPct = d.total ? Math.round((d.會議 || 0) / d.total * 100) : 0;
                 const issue = issueMap[d.name];
                 return (
@@ -370,10 +380,11 @@ function Dashboard() {
                             {m}
                           </td>
                           {vals.map((v, i) => {
-                            const st = getStatus(v);
+                            const onLv = isOnLeave(dates[i], leave[m]);
+                            const st = getStatus(v, onLv);
                             return (
                               <td key={i} style={{ textAlign: "center", padding: "8px 10px", fontVariantNumeric: "tabular-nums" }}>
-                                {v !== null ? <span style={{ color: st.color, fontWeight: 700 }}>{v}</span> : <span style={{ color: COLORS.red, fontSize: 11 }}>缺報</span>}
+                                {v !== null ? <span style={{ color: st.color, fontWeight: 700 }}>{v}</span> : <span style={{ color: onLv ? COLORS.orange : COLORS.red, fontSize: 11 }}>{onLv ? "休假" : "缺報"}</span>}
                               </td>
                             );
                           })}
