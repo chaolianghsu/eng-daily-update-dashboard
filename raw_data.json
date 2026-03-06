@@ -138,5 +138,8 @@
     { "member": "Joe", "severity": "🟢", "text": "穩定 7hr" },
     { "member": "Aaron", "severity": "🟢", "text": "穩定 7hr" },
     { "member": "家輝", "severity": "🟢", "text": "穩定 7hr" }
-  ]
+  ],
+  "leave": {
+    "Jason": [{ "start": "3/5", "end": "3/11" }]
+  }
 }

@@ -68,4 +68,21 @@ describe('raw_data.json schema validation', () => {
       });
     });
   });
+
+  describe('leave (optional)', () => {
+    it('if present, should be an object with member keys mapping to arrays of {start, end}', () => {
+      if (!data.leave) return;
+      expect(typeof data.leave).toBe('object');
+      Object.entries(data.leave).forEach(([member, ranges]) => {
+        expect(typeof member).toBe('string');
+        expect(Array.isArray(ranges)).toBe(true);
+        ranges.forEach((range) => {
+          expect(range).toHaveProperty('start');
+          expect(range).toHaveProperty('end');
+          expect(range.start).toMatch(/^\d{1,2}\/\d{1,2}$/);
+          expect(range.end).toMatch(/^\d{1,2}\/\d{1,2}$/);
+        });
+      });
+    });
+  });
 });

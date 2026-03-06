@@ -292,11 +292,11 @@ function parseMessagesFile(messageFiles, manualLeave) {
     );
   }
 
-  // Parse leave: start with config.leave, then auto-detect from messages
+  // Parse leave: start with raw_data.json leave, then auto-detect from messages
   const leaveMap = {};
-  if (config.leave) {
-    for (const [name, ranges] of Object.entries(config.leave)) {
-      leaveMap[name] = [...ranges];
+  if (existing.leave) {
+    for (const [name, ranges] of Object.entries(existing.leave)) {
+      leaveMap[name] = ranges.map((r) => ({ ...r }));
     }
   }
   const autoLeave = parseLeaveMessages(messages, memberMap);

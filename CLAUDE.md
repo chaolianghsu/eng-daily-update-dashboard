@@ -26,7 +26,10 @@ Engineering Department Daily Update Dashboard — a React dashboard for tracking
   },
   "issues": [
     { "member": "string", "severity": "🔴|🟡|🟠|🟢", "text": "string" }
-  ]
+  ],
+  "leave": {
+    "member": [{ "start": "M/D", "end": "M/D" }]
+  }
 }
 ```
 

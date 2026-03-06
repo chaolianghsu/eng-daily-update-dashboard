@@ -68,4 +68,4 @@ git push
 - Members not in `memberMap` are skipped.
 - All parsing rules, thresholds, and issue logic are in `scripts/parse-daily-updates.js`.
 - Leave announcements are standalone threads containing 請假 or 休假. Member is identified via `sender.name` → `memberMap`, NOT from text (nicknames differ).
-- Leave sources (merged in order): `chat-config.json` `leave` section → auto-detected from Chat messages → CLI `--leave` flag. Use config for leave not posted in Chat.
+- Leave sources (merged in order): `raw_data.json` `leave` section → auto-detected from Chat messages → CLI `--leave` flag. Use `raw_data.json` for leave not posted in Chat.
