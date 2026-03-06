@@ -77,12 +77,12 @@
       "日銜":   { "total": 6.5, "meeting": 0, "dev": 6.5 },
       "Wendy":  { "total": 7.5, "meeting": 0, "dev": 7.5 },
       "侑呈":   { "total": null, "meeting": null, "dev": null },
-      "禎佑":   { "total": null, "meeting": null, "dev": null },
+      "禎佑":   { "total": 8, "meeting": 0, "dev": 8 },
       "Ted":    { "total": 7, "meeting": 0.5, "dev": 6.5 },
       "家輝":   { "total": 6.5, "meeting": 0, "dev": 6.5 },
       "Joe":    { "total": 7, "meeting": 1, "dev": 6 },
       "Aaron":  { "total": 7, "meeting": 0, "dev": 7 },
-      "哲緯":   { "total": null, "meeting": null, "dev": null }
+      "哲緯":   { "total": 9.5, "meeting": 0, "dev": 9.5 }
     },
     "3/3": {
       "Joyce":  { "total": 8.5, "meeting": 4.5, "dev": 4 },
@@ -91,25 +91,25 @@
       "日銜":   { "total": 6.5, "meeting": 2.5, "dev": 4 },
       "Wendy":  { "total": 6.5, "meeting": 2, "dev": 4.5 },
       "侑呈":   { "total": 8, "meeting": 1, "dev": 7 },
-      "禎佑":   { "total": null, "meeting": null, "dev": null },
+      "禎佑":   { "total": 7.5, "meeting": 1, "dev": 6.5 },
       "Ted":    { "total": 6.5, "meeting": 2.5, "dev": 4 },
       "家輝":   { "total": 8, "meeting": 0, "dev": 8 },
       "Joe":    { "total": 7, "meeting": 2.5, "dev": 4.5 },
       "Aaron":  { "total": 6.5, "meeting": 1, "dev": 5.5 },
-      "哲緯":   { "total": null, "meeting": null, "dev": null }
+      "哲緯":   { "total": 7.5, "meeting": 2, "dev": 5.5 }
     },
     "3/4": {
       "Joyce":  { "total": 2.5, "meeting": 2.5, "dev": 0 },
       "Ivy":    { "total": 7, "meeting": 1.5, "dev": 5.5 },
       "Jason":  { "total": null, "meeting": null, "dev": null },
-      "日銜":   { "total": 7, "meeting": 0, "dev": 7 },
-      "Wendy":  { "total": 8, "meeting": 0, "dev": 8 },
+      "日銜":   { "total": 7, "meeting": 2, "dev": 5 },
+      "Wendy":  { "total": 8, "meeting": 2.5, "dev": 5.5 },
       "侑呈":   { "total": 8.5, "meeting": 0, "dev": 8.5 },
-      "禎佑":   { "total": 7.5, "meeting": 0, "dev": 7.5 },
-      "Ted":    { "total": 7, "meeting": 0, "dev": 7 },
-      "家輝":   { "total": 7, "meeting": 0, "dev": 7 },
-      "Joe":    { "total": 7, "meeting": 0, "dev": 7 },
-      "Aaron":  { "total": 7, "meeting": 0, "dev": 7 },
+      "禎佑":   { "total": 7.5, "meeting": 1.5, "dev": 6 },
+      "Ted":    { "total": 7, "meeting": 1, "dev": 6 },
+      "家輝":   { "total": 7, "meeting": 2, "dev": 5 },
+      "Joe":    { "total": 7, "meeting": 0.5, "dev": 6.5 },
+      "Aaron":  { "total": 7, "meeting": 1, "dev": 6 },
       "哲緯":   { "total": 13, "meeting": 3.5, "dev": 9.5 }
     },
     "3/5": {
@@ -128,16 +128,16 @@
     }
   },
   "issues": [
-    { "member": "Jason", "severity": "🟠", "text": "休假 3/5-3/11" },
-    { "member": "Ivy", "severity": "🟡", "text": "工時偏低 4hr" },
     { "member": "Joyce", "severity": "🟡", "text": "超時 10hr" },
+    { "member": "Ivy", "severity": "🟡", "text": "工時偏低 4hr" },
+    { "member": "Jason", "severity": "🟠", "text": "休假 3/5-3/11" },
     { "member": "日銜", "severity": "🟢", "text": "穩定 7hr" },
     { "member": "Wendy", "severity": "🟢", "text": "穩定 7.5hr" },
     { "member": "侑呈", "severity": "🟢", "text": "穩定 8hr" },
     { "member": "禎佑", "severity": "🟢", "text": "穩定 7.5hr" },
+    { "member": "家輝", "severity": "🟢", "text": "穩定 7hr" },
     { "member": "Joe", "severity": "🟢", "text": "穩定 7hr" },
-    { "member": "Aaron", "severity": "🟢", "text": "穩定 7hr" },
-    { "member": "家輝", "severity": "🟢", "text": "穩定 7hr" }
+    { "member": "Aaron", "severity": "🟢", "text": "穩定 7hr" }
   ],
   "leave": {
     "Jason": [{ "start": "3/5", "end": "3/11" }]
