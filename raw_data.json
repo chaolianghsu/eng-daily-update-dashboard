@@ -111,14 +111,32 @@
       "Joe":    { "total": 7, "meeting": 0, "dev": 7 },
       "Aaron":  { "total": 7, "meeting": 0, "dev": 7 },
       "哲緯":   { "total": 13, "meeting": 3.5, "dev": 9.5 }
+    },
+    "3/5": {
+      "Joyce":  { "total": 10, "meeting": 0, "dev": 10 },
+      "Ivy":    { "total": 4, "meeting": 0, "dev": 4 },
+      "Jason":  { "total": null, "meeting": null, "dev": null },
+      "日銜":   { "total": 7, "meeting": 0, "dev": 7 },
+      "Wendy":  { "total": 7.5, "meeting": 0.5, "dev": 7 },
+      "侑呈":   { "total": 8, "meeting": 0, "dev": 8 },
+      "禎佑":   { "total": 7.5, "meeting": 0, "dev": 7.5 },
+      "Ted":    { "total": 6.5, "meeting": 0, "dev": 6.5 },
+      "家輝":   { "total": 7, "meeting": 0, "dev": 7 },
+      "Joe":    { "total": 7, "meeting": 1, "dev": 6 },
+      "Aaron":  { "total": 7, "meeting": 1, "dev": 6 },
+      "哲緯":   { "total": 6.5, "meeting": 0, "dev": 6.5 }
     }
   },
   "issues": [
-    { "member": "Jason", "severity": "🔴", "text": "未回報 3/4" },
-    { "member": "Joyce", "severity": "🟡", "text": "工時偏低 2.5hr（全為會議）" },
-    { "member": "哲緯", "severity": "🟡", "text": "超時 13hr" },
-    { "member": "Ivy", "severity": "🟢", "text": "穩定 7hr" },
-    { "member": "日銜", "severity": "🟢", "text": "恢復回報 7hr" },
-    { "member": "侑呈", "severity": "🟢", "text": "穩定 8.5hr" }
+    { "member": "Jason", "severity": "🟠", "text": "休假 3/5-3/11" },
+    { "member": "Ivy", "severity": "🟡", "text": "工時偏低 4hr" },
+    { "member": "Joyce", "severity": "🟢", "text": "改善 2.5→10hr" },
+    { "member": "日銜", "severity": "🟢", "text": "穩定 7hr" },
+    { "member": "Wendy", "severity": "🟢", "text": "穩定 7.5hr" },
+    { "member": "侑呈", "severity": "🟢", "text": "穩定 8hr" },
+    { "member": "禎佑", "severity": "🟢", "text": "穩定 7.5hr" },
+    { "member": "Joe", "severity": "🟢", "text": "穩定 7hr" },
+    { "member": "Aaron", "severity": "🟢", "text": "穩定 7hr" },
+    { "member": "家輝", "severity": "🟢", "text": "穩定 7hr" }
   ]
 }
