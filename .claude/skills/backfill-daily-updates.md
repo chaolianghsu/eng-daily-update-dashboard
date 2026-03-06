@@ -15,10 +15,16 @@ Backfill missing daily update data from Google Chat history into `raw_data.json`
 
 ## Workflow
 
-### Step 1: Load config and current data
+### Step 1: Load config and check existing leave
 
-Read `chat-config.json` → `spaceId`, `memberMap`, `queryKeyword`.
-Read `raw_data.json` → existing `rawData`.
+1. Read `chat-config.json` → `spaceId`, `memberMap`, `queryKeyword`
+2. Read `raw_data.json` → existing `rawData`, `leave`
+3. Display current leave entries to operator:
+   ```
+   目前已知休假：
+   - Jason: 3/5-3/11
+   ```
+   If no leave entries, display "目前無已知休假記錄".
 
 ### Step 2: Compute target dates
 
@@ -56,9 +62,23 @@ Save all results to a file. If multiple pages, combine messages into one file or
 node scripts/parse-daily-updates.js <file1> [file2 ...] [--leave "Name:M/D-M/D"]
 ```
 
-The script outputs all found threads, leave map, and issues.
+The script outputs:
+- `leaveMap` — combined leave (raw_data.json + auto-detected from Chat + CLI `--leave`)
+- `dateEntries` — parsed data per date
+- `issues` — generated warnings
+- `warnings` — members with null data but no leave detected
 
-### Step 5: Match and merge
+### Step 5: Review leave first
+
+**Before reviewing daily update data, check leave completeness:**
+
+1. Review `leaveMap` — does it include all known leaves for the target dates?
+2. Review `warnings` — any member flagged as "資料為 null，未偵測到休假"?
+3. If a leave is missing:
+   - Add to `raw_data.json` `leave` section, OR
+   - Re-run script with `--leave "Name:M/D-M/D"`
+
+### Step 6: Match and merge
 
 From script output:
 - Match `dateEntries` to target dates (using `contentDate`)
@@ -67,7 +87,7 @@ From script output:
 - Add matched entries to `rawData`
 - Replace `issues` with script-generated issues
 
-### Step 6: Write, validate, and confirm
+### Step 7: Write, validate, and confirm
 
 1. Write `raw_data.json`
 2. Run `npm test`
@@ -93,5 +113,7 @@ git push
 - Thread date ≠ content date. "3/6 Daily Update" thread has 3/5 progress.
 - All parsing rules, thresholds, and issue logic are in `scripts/parse-daily-updates.js`.
 - Leave announcements are standalone threads containing 請假 or 休假. Detection uses `sender.name` → `memberMap`.
+- Leave sources (merged in order): `raw_data.json` `leave` → auto-detected from Chat → CLI `--leave`.
+- Older leave announcements (beyond fetched messages) won't be auto-detected. Always verify `warnings` output.
 - Multiple target dates share the same fetched message batch for efficiency.
 - Always preserve existing data — append-only for `rawData`.

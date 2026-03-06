@@ -354,7 +354,17 @@ function parseMessagesFile(messageFiles, manualLeave) {
   }
   const issues = generateIssues(mergedRawData, leaveMap);
 
-  return { dateEntries, leaveMap, issues };
+  // Generate warnings for null-data members without leave detected
+  const warnings = [];
+  for (const [date, info] of Object.entries(dateEntries)) {
+    for (const [member, data] of Object.entries(info.entry)) {
+      if (data.total === null && !isOnLeave(date, leaveMap[member])) {
+        warnings.push(`${member}: ${date} 資料為 null，未偵測到休假`);
+      }
+    }
+  }
+
+  return { dateEntries, leaveMap, issues, warnings };
 }
 
 // --- CLI ---
