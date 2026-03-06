@@ -63,9 +63,10 @@ The script outputs JSON with:
 
 For each new date entry (where `alreadyExists` is false):
 1. Add `entry` to `rawData` under the `contentDate` key
-2. Replace `issues` with script-generated issues
-3. Write updated `raw_data.json`
-4. Run `npm test` to verify
+2. Replace `leave` with script-generated `leaveMap` (auto-persists detected leave)
+3. Replace `issues` with script-generated issues
+4. Write updated `raw_data.json`
+5. Run `npm test` to verify
 
 ### Step 7: Confirm and commit
 

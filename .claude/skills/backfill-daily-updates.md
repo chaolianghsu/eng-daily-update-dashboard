@@ -85,6 +85,7 @@ From script output:
 - Skip dates marked `alreadyExists`
 - For dates not found in any thread, mark as "未找到"
 - Add matched entries to `rawData`
+- Replace `leave` with script-generated `leaveMap` (auto-persists detected leave)
 - Replace `issues` with script-generated issues
 
 ### Step 7: Write, validate, and confirm
