@@ -52,6 +52,7 @@ For each page of results, scan messages client-side:
 - For each target date still not found, check if the message text contains BOTH the `queryKeyword` (e.g. "Daily Update") AND the date string (e.g. "3/3")
 - When a match is found, record its `thread.name` and associate it with that target date
 - Also collect all other messages in the same batch that share the same `thread.name` — these are the replies
+- **Also collect leave messages**: While scanning each page, filter messages where `text` contains `請假` or `休假`. Build a leave map using the same logic as `/fetch-daily-updates` Step 2.5 (identify member via `sender.name` → `memberMap`, parse date range from text). This is a filter added to the existing scan loop, NOT a separate API call.
 
 If not all target dates are found after one page, use `nextPageToken` to fetch the next page. Maximum 5 pages (500 messages). Stop early if all target dates are found.
 
@@ -81,17 +82,23 @@ Build a date entry: `{ "memberName": { total, meeting, dev }, ... }` for each ta
 For each target date with parsed data:
 - Add the date entry to `rawData` (do NOT overwrite existing dates)
 
-After merging, regenerate the `issues` array using the same rules as `/fetch-daily-updates` Step 5, based on the **full updated rawData**. The latest date in rawData is treated as "today" for issue evaluation:
+After merging, regenerate the `issues` array using the same rules as `/fetch-daily-updates` Step 5, based on the **full updated rawData**. Use the leave map from Step 3. The latest date in rawData is treated as "today" for issue evaluation:
 
-| Condition | Severity | Text template |
-|-----------|----------|---------------|
-| Member has null data for 2+ consecutive workdays | 🔴 | "連續 N 天未回報" |
-| Member not reported on latest date | 🔴 | "未回報 M/D" |
-| Member total > 10hr | 🟡 | "超時 {total}hr" |
-| Member total < 5hr (non-null) | 🟡 | "工時偏低 {total}hr" |
-| Meeting % > 50% | 🟡 | "會議佔比 {pct}%" |
-| Member improved from < 6hr to >= 6.5hr | 🟢 | "改善 {prev}→{curr}hr" |
-| Member stable at >= 7hr | 🟢 | "穩定 {total}hr" |
+| Priority | Condition | Severity | Text template |
+|----------|-----------|----------|---------------|
+| 1 | Member has null data AND date is within a leave range | 🟠 | "休假 {start}-{end}" or "休假 {date}" (single day) |
+| 2 | Member has null data for 2+ consecutive workdays (excluding leave days) | 🔴 | "連續 N 天未回報" |
+| 3 | Member not reported on latest date (NOT on leave) | 🔴 | "未回報 M/D" |
+| 4 | Member total > 10hr | 🟡 | "超時 {total}hr" |
+| 5 | Member total < 5hr (non-null) | 🟡 | "工時偏低 {total}hr" |
+| 6 | Meeting % > 50% | 🟡 | "會議佔比 {pct}%" |
+| 7 | Member improved from < 6hr to >= 6.5hr | 🟢 | "改善 {prev}→{curr}hr" |
+| 8 | Member stable at >= 7hr | 🟢 | "穩定 {total}hr" |
+
+**Leave-aware logic:**
+- **Date-in-range check**: Parse M/D strings to compare numerically: `start <= date <= end` (same year assumed)
+- Leave days do NOT count toward "連續 N 天未回報" streak
+- If a member is on leave for the latest date, emit 🟠 instead of 🔴
 
 ### Step 7: Write, validate, and confirm
 
@@ -122,3 +129,6 @@ git push
 - Always preserve existing data — this is append-only for `rawData`.
 - After backfilling, always regenerate the `issues` array based on the full updated rawData to keep warnings consistent with actual data.
 - Multiple target dates share the same fetched message batch for efficiency.
+- Leave announcements are standalone threads in the same space. They are already included in the Step 3 fetch results — no extra API call needed.
+- A member may have multiple leave entries. Check all ranges when determining if a date falls within leave.
+- If a sender of a leave message is not in `memberMap`, skip it silently.

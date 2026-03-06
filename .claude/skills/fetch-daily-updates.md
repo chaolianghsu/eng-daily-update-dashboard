@@ -26,6 +26,33 @@ params: { parent: "<spaceId>", pageSize: 100, orderBy: "createTime desc" }
 
 Search results for messages containing the `queryKeyword` (e.g., "Daily Update"). This message is the thread starter — note its `thread.name`.
 
+### Step 2.5: Scan for leave announcements
+
+From the messages fetched in Step 2, filter those where `text` contains `請假` or `休假`. These are standalone leave announcement threads.
+
+**Identify member**: Use `sender.name` (user ID) → `memberMap` lookup. Do NOT parse name from message text (nicknames differ from rawData names, e.g. 火鍋=家輝, Chris=禎佑, Yuriy=侑呈).
+
+**Parse date range** from message text:
+
+| Format | Example | Result |
+|--------|---------|--------|
+| Two M/D patterns | `5/21(四)~5/26(二)` | 5/21 → 5/26 |
+| Full-width separator | `3/16～ 3/20` | 3/16 → 3/20 |
+| Same-month shorthand | `3/19~20` | 3/19 → 3/20 |
+| Single day | `3/13 (五)` | 3/13 → 3/13 |
+| Partial day (ignore partial, use full range) | `3/13(五)下午 ~ 3/18(三)` | 3/13 → 3/18 |
+
+Regex strategy:
+1. Find all `M/D` patterns: `/(\d{1,2})\/(\d{1,2})/g`
+2. If 2+ matches → `start = first, end = last`
+3. If 1 match → check for `~N` shorthand: `/(\d{1,2})\/(\d{1,2})\s*(?:\([^)]*\))?\s*[~～]\s*(\d{1,2})/`
+   - If matched: same month, `end = M/matched_day`
+   - If no range indicator: single day (`start = end`)
+
+**Build leave map**: `{ memberName: [{ start: "M/D", end: "M/D" }, ...] }`
+
+A member may have multiple leave entries. Store all ranges.
+
 ### Step 3: Get all replies in the thread
 
 Filter messages by the thread name found in Step 2. Each reply is a team member's daily update.
@@ -56,15 +83,22 @@ Extract from each message:
 
 Apply these rules to generate the `issues` array:
 
-| Condition | Severity | Text template |
-|-----------|----------|---------------|
-| Member has null data for 2+ consecutive days | 🔴 | "連續 N 天未回報" |
-| Member not reported today | 🔴 | "未回報 M/D" |
-| Member total > 10hr | 🟡 | "超時 {total}hr" |
-| Member total < 5hr (non-null) | 🟡 | "工時偏低 {total}hr" |
-| Meeting % > 50% | 🟡 | "會議佔比 {pct}%" |
-| Member improved from < 6hr to >= 6.5hr | 🟢 | "改善 {prev}→{curr}hr" |
-| Member stable at >= 7hr | 🟢 | "穩定 {total}hr" |
+| Priority | Condition | Severity | Text template |
+|----------|-----------|----------|---------------|
+| 1 | Member has null data AND date is within a leave range | 🟠 | "休假 {start}-{end}" or "休假 {date}" (single day) |
+| 2 | Member has null data for 2+ consecutive days (excluding leave days) | 🔴 | "連續 N 天未回報" |
+| 3 | Member not reported today (NOT on leave today) | 🔴 | "未回報 M/D" |
+| 4 | Member total > 10hr | 🟡 | "超時 {total}hr" |
+| 5 | Member total < 5hr (non-null) | 🟡 | "工時偏低 {total}hr" |
+| 6 | Meeting % > 50% | 🟡 | "會議佔比 {pct}%" |
+| 7 | Member improved from < 6hr to >= 6.5hr | 🟢 | "改善 {prev}→{curr}hr" |
+| 8 | Member stable at >= 7hr | 🟢 | "穩定 {total}hr" |
+
+**Leave-aware logic:**
+- Use the leave map from Step 2.5
+- **Date-in-range check**: Parse M/D strings to compare numerically: `start <= date <= end` (same year assumed)
+- Leave days do NOT count toward "連續 N 天未回報" streak
+- If a member is on leave for today's date, emit 🟠 instead of 🔴
 
 ### Step 6: Merge with existing data
 
@@ -91,3 +125,6 @@ Apply these rules to generate the `issues` array:
 - Both halfwidth `()` and fullwidth `（）` parentheses are used.
 - If a member is not in `memberMap`, log a warning and skip.
 - Always preserve existing data — this is append-only for `rawData`.
+- Leave announcements are standalone threads in the same space (not inside Daily Update threads). They are already included in the Step 2 fetch results.
+- A member may have multiple leave entries (e.g., separate sick leave and vacation). Check all ranges.
+- If a sender of a leave message is not in `memberMap`, skip it silently.
