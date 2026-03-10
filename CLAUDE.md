@@ -12,6 +12,7 @@ Engineering Department Daily Update Dashboard — a React dashboard for tracking
 - **`raw_data.json`**: Dashboard data — `rawData` (work hours by date/member) and `issues` (risk warnings). Members list and colors are auto-computed from rawData keys.
 - **`chat-config.json`** (gitignored): Google Chat space config with `spaceId` and `memberMap` for user ID to name mapping.
 - **`scripts/parse-daily-updates.js`**: Shared parsing logic for daily update data — hour extraction, leave detection, issue generation. Used by both `/fetch-daily-updates` and `/backfill-daily-updates` skills. Run via `node scripts/parse-daily-updates.js <messages-file> [--leave "Name:M/D-M/D"]`.
+- **`scripts/merge-daily-data.js`**: Merges parsed daily update output with existing raw_data.json data. Used by `/sync-daily-updates` skill.
 - Three dashboard views: Daily, Trend, Weekly
 - Dark theme with inline styles; no external CSS
 
@@ -41,7 +42,7 @@ Engineering Department Daily Update Dashboard — a React dashboard for tracking
 
 **To update data manually**: Edit `raw_data.json` directly. Charts and tables render reactively from this data.
 
-**To update data from Google Chat**: Run `/fetch-daily-updates` skill — pulls daily updates from the Chat space, parses hours, generates issues, and updates `raw_data.json`.
+**To update data from Google Chat**: Run `/sync-daily-updates` skill — fully automated: fetches Chat messages, parses hours, merges data, commits, pushes, and optionally updates Google Sheets.
 
 ## Deployment
 
@@ -49,7 +50,7 @@ GitHub Pages via `.github/workflows/pages.yml`. Deploys on pushes to `main`.
 
 ## Google Chat Integration
 
-The team posts daily work hour reports in Google Chat space `spaces/AAQAQhmoRAk`. The `/fetch-daily-updates` skill automates data extraction:
+The team posts daily work hour reports in Google Chat space `spaces/AAQAQhmoRAk`. The `/sync-daily-updates` skill automates data extraction:
 
 1. Reads `chat-config.json` for space ID and member mapping
 2. Fetches messages via `mcp__gws__chat_spaces_messages_list`
@@ -57,6 +58,8 @@ The team posts daily work hour reports in Google Chat space `spaces/AAQAQhmoRAk`
 4. Script extracts hours, detects leave, generates issues
 5. Thread date ≠ content date ("3/6 Daily Update" contains 3/5 progress)
 6. Reviews output, merges into `raw_data.json`, and runs tests
+
+The older `/fetch-daily-updates` and `/backfill-daily-updates` skills are superseded by `/sync-daily-updates`.
 
 ## Key Conventions
 
