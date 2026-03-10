@@ -125,19 +125,46 @@
       "Joe":    { "total": 7, "meeting": 1, "dev": 6 },
       "Aaron":  { "total": 7, "meeting": 1, "dev": 6 },
       "哲緯":   { "total": 6.5, "meeting": 0, "dev": 6.5 }
+    },
+    "3/6": {
+      "Joyce":  { "total": 10.5, "meeting": 2.5, "dev": 8 },
+      "Ivy":    { "total": 7.5, "meeting": 1.5, "dev": 6 },
+      "Jason":  { "total": null, "meeting": null, "dev": null },
+      "日銜":   { "total": 6.5, "meeting": 0, "dev": 6.5 },
+      "Wendy":  { "total": 7.5, "meeting": 0, "dev": 7.5 },
+      "侑呈":   { "total": 8, "meeting": 0, "dev": 8 },
+      "禎佑":   { "total": 7.5, "meeting": 0, "dev": 7.5 },
+      "Ted":    { "total": 8, "meeting": 0, "dev": 8 },
+      "家輝":   { "total": 7.5, "meeting": 0, "dev": 7.5 },
+      "Joe":    { "total": 7, "meeting": 0, "dev": 7 },
+      "Aaron":  { "total": 7.5, "meeting": 0, "dev": 7.5 },
+      "哲緯":   { "total": 7, "meeting": 1.5, "dev": 5.5 }
+    },
+    "3/9": {
+      "Joyce":  { "total": 12.5, "meeting": 0, "dev": 12.5 },
+      "Ivy":    { "total": 7, "meeting": 0, "dev": 7 },
+      "Jason":  { "total": null, "meeting": null, "dev": null },
+      "日銜":   { "total": 7, "meeting": 0, "dev": 7 },
+      "Wendy":  { "total": 7, "meeting": 0, "dev": 7 },
+      "侑呈":   { "total": 8, "meeting": 0, "dev": 8 },
+      "禎佑":   { "total": 8, "meeting": 0, "dev": 8 },
+      "Ted":    { "total": 8.5, "meeting": 0, "dev": 8.5 },
+      "家輝":   { "total": 8, "meeting": 0, "dev": 8 },
+      "Joe":    { "total": 6.5, "meeting": 0, "dev": 6.5 },
+      "Aaron":  { "total": 6, "meeting": 2, "dev": 4 },
+      "哲緯":   { "total": 5, "meeting": 0, "dev": 5 }
     }
   },
   "issues": [
-    { "member": "Joyce", "severity": "🟡", "text": "超時 10hr" },
-    { "member": "Ivy", "severity": "🟡", "text": "工時偏低 4hr" },
+    { "member": "Joyce", "severity": "🟡", "text": "超時 12.5hr" },
+    { "member": "Ivy", "severity": "🟢", "text": "穩定 7hr" },
     { "member": "Jason", "severity": "🟠", "text": "休假 3/5-3/11" },
     { "member": "日銜", "severity": "🟢", "text": "穩定 7hr" },
-    { "member": "Wendy", "severity": "🟢", "text": "穩定 7.5hr" },
+    { "member": "Wendy", "severity": "🟢", "text": "穩定 7hr" },
     { "member": "侑呈", "severity": "🟢", "text": "穩定 8hr" },
-    { "member": "禎佑", "severity": "🟢", "text": "穩定 7.5hr" },
-    { "member": "家輝", "severity": "🟢", "text": "穩定 7hr" },
-    { "member": "Joe", "severity": "🟢", "text": "穩定 7hr" },
-    { "member": "Aaron", "severity": "🟢", "text": "穩定 7hr" }
+    { "member": "禎佑", "severity": "🟢", "text": "穩定 8hr" },
+    { "member": "Ted", "severity": "🟢", "text": "穩定 8.5hr" },
+    { "member": "家輝", "severity": "🟢", "text": "穩定 8hr" }
   ],
   "leave": {
     "Jason": [{ "start": "3/5", "end": "3/11" }],

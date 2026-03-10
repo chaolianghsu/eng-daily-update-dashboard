@@ -8,17 +8,47 @@ const ROOT = path.resolve(__dirname, '..');
 
 // --- Constants ---
 
-const MEETING_KEYWORDS = /meeting|會議|讀書會|例會|討論|分享會|sync|臨時會/i;
+const MEETING_KEYWORDS = /meeting|會議|週會|讀書會|例會|討論|分享會|sync|臨時會/i;
 const LEAVE_KEYWORDS = /請假|休假/;
 const HOUR_PATTERN = /[（(]\s*(\d+(?:\.\d+)?)\s*(?:[Hh](?:r|our|ours)?|小時)[^)）]*[)）]/;
+const WORK_HOUR_PATTERN = /工時[：:]\s*(\d+(?:\.\d+)?)\s*[Hh]/;
 
 // --- Parsing Functions ---
 
-function parseHoursFromText(text) {
+function extractProgressSection(text) {
   const lines = (text || '').split('\n');
-  let total = 0, meeting = 0, dev = 0, found = false;
+  const result = [];
+  let foundFirstDate = false;
 
   for (const line of lines) {
+    const trimmed = line.trim();
+
+    // Detect date+progress headers (e.g., "3/2 進度：", "3/6 今日工項：")
+    if (/\d{1,2}\/\d{1,2}/.test(trimmed) && /進度|工項/.test(trimmed)) {
+      if (foundFirstDate) break; // Stop at second date section
+      foundFirstDate = true;
+    }
+
+    // Stop at blocker/pending/backlog sections
+    if (foundFirstDate && /^(?:Block|Blocker|Pending|Backlog)/i.test(trimmed)) {
+      break;
+    }
+
+    result.push(line);
+  }
+
+  return result.join('\n');
+}
+
+function parseHoursFromText(text) {
+  const section = extractProgressSection(text);
+  const lines = section.split('\n');
+  let total = 0, meeting = 0, dev = 0, found = false;
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+
+    // Try parenthesized pattern: (0.5H), （2HR）, etc.
     const re = new RegExp(HOUR_PATTERN.source, 'g');
     let m;
     while ((m = re.exec(line)) !== null) {
@@ -26,6 +56,26 @@ function parseHoursFromText(text) {
       total += h;
       found = true;
       if (MEETING_KEYWORDS.test(line)) meeting += h;
+      else dev += h;
+    }
+
+    // Try 工時 pattern: 工時：0.5 H, 工時：3 H, etc.
+    const wm = line.match(WORK_HOUR_PATTERN);
+    if (wm) {
+      const h = parseFloat(wm[1]);
+      total += h;
+      found = true;
+      // Check subsequent lines until next numbered item for meeting keywords
+      let isMeeting = false;
+      for (let j = i + 1; j < lines.length; j++) {
+        const nextLine = lines[j].trim();
+        if (/^\d+\.\s/.test(nextLine)) break;
+        if (MEETING_KEYWORDS.test(nextLine)) {
+          isMeeting = true;
+          break;
+        }
+      }
+      if (isMeeting) meeting += h;
       else dev += h;
     }
   }
