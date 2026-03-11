@@ -149,7 +149,7 @@ function readRawData_(ss) {
   var rows = sheet.getDataRange().getValues();
   var rawData = {};
   for (var i = 1; i < rows.length; i++) {
-    var date = String(rows[i][0]);
+    var date = formatDate_(rows[i][0]);
     var member = String(rows[i][1]);
     var total = rows[i][2];
     var meeting = rows[i][3];
@@ -189,9 +189,16 @@ function readLeave_(ss) {
     var member = String(rows[i][0]);
     if (!member) continue;
     if (!leave[member]) leave[member] = [];
-    leave[member].push({ start: String(rows[i][1]), end: String(rows[i][2]) });
+    leave[member].push({ start: formatDate_(rows[i][1]), end: formatDate_(rows[i][2]) });
   }
   return leave;
+}
+
+function formatDate_(val) {
+  if (val instanceof Date) {
+    return (val.getMonth() + 1) + '/' + val.getDate();
+  }
+  return String(val);
 }
 
 function dateToNum_(d) {
