@@ -61,6 +61,8 @@
     ::-webkit-scrollbar-track { background: transparent; }
     ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
 
+    .attention-card:hover { transform: translateY(-1px); }
+
     @media (max-width: 768px) {
       .dashboard-container { padding: 16px 12px !important; }
       .dashboard-title { font-size: 20px !important; }
@@ -68,8 +70,8 @@
       .tab-bar { width: 100% !important; }
       .tab-btn { flex: 1 !important; padding: 8px 6px !important; font-size: 11px !important; text-align: center !important; white-space: nowrap; }
       .member-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; }
-      .issue-ticker { gap: 6px !important; }
-      .issue-badge { font-size: 10px !important; padding: 3px 6px !important; }
+      .status-overview { flex-direction: column !important; }
+      .status-kpis { border-right: none !important; border-bottom: 1px solid #334155 !important; justify-content: space-around !important; }
       .footer-bar { flex-direction: column !important; align-items: flex-start !important; }
       .week-label { font-size: 12px !important; }
       .card-panel { padding: 16px 12px 6px !important; }
@@ -363,17 +365,25 @@ function Dashboard() {
   const weeklySummary = useMemo(() => {
     if (!rawData) return [];
     return members.map(m => {
-      let totalSum = 0, meetSum = 0, count = 0;
+      let totalSum = 0, meetSum = 0, devSum = 0, count = 0;
+      const dailyTotals = [];
       for (const d of dates) {
         const entry = rawData[d]?.[m];
-        if (entry?.total != null) { totalSum += entry.total; count++; }
+        if (entry?.total != null) { totalSum += entry.total; count++; dailyTotals.push(entry.total); }
         if (entry?.meeting != null) { meetSum += entry.meeting; }
+        if (entry?.dev != null) { devSum += entry.dev; }
       }
       const avg = count ? +(totalSum / count).toFixed(1) : null;
       const sum = count ? +totalSum.toFixed(1) : null;
+      const devAvg = count ? +(devSum / count).toFixed(1) : null;
+      const meetAvg = count ? +(meetSum / count).toFixed(1) : null;
+      const stdDev = dailyTotals.length >= 2 ? Math.sqrt(dailyTotals.reduce((s, v) => s + (v - avg) * (v - avg), 0) / dailyTotals.length) : null;
+      const maxStdDev = 3;
+      const stabilityPct = stdDev !== null ? Math.max(0, 100 - (stdDev / maxStdDev) * 100) : 0;
+      const stabilityColor = stabilityPct >= 70 ? COLORS.green : stabilityPct >= 40 ? COLORS.yellow : COLORS.orange;
       const v1 = rawData[dates[0]]?.[m]?.total ?? null;
       const v2 = rawData[dates[dates.length - 1]]?.[m]?.total ?? null;
-      return { name: m, avg, sum, daysReported: count, meetSum: +meetSum.toFixed(1), meetPct: sum ? Math.round(meetSum / sum * 100) : 0, trend: getTrendIcon(v1, v2) };
+      return { name: m, avg, sum, devAvg, meetAvg, daysReported: count, meetSum: +meetSum.toFixed(1), meetPct: sum ? Math.round(meetSum / sum * 100) : 0, trend: getTrendIcon(v1, v2), stdDev, stabilityPct, stabilityColor };
     }).sort((a, b) => (b.avg || -1) - (a.avg || -1));
   }, [rawData, dates, members]);
 
@@ -413,20 +423,103 @@ function Dashboard() {
           </p>
         </div>
 
-        {/* Issue Ticker */}
-        <div className="animate-in issue-ticker" style={{ animationDelay: "0.05s", background: COLORS.card, borderRadius: 10, padding: "12px 16px", border: `1px solid ${COLORS.border}`, marginBottom: 20, display: "flex", flexWrap: "wrap", gap: 8 }}>
-          {issues.map((iss, i) => {
-            const sev = SEVERITY_COLORS[iss.severity];
-            return (
-              <span key={i} className="issue-badge" style={{
-                fontSize: 11, fontWeight: 600, padding: "4px 10px", borderRadius: 6,
-                background: sev?.bg || COLORS.border, color: sev?.sc || COLORS.textMuted,
-              }}>
-                {iss.severity} {iss.member}：{iss.text}
-              </span>
-            );
-          })}
-        </div>
+        {/* Team Status Overview */}
+        {(() => {
+          const attentionIssues = issues.filter(i => i.severity !== "🟢");
+          const stableIssues = issues.filter(i => i.severity === "🟢");
+          const reportedCount = members.filter(m => {
+            const latest = dates[dates.length - 1];
+            return rawData?.[latest]?.[m]?.total != null;
+          }).length;
+          const latestData = rawData?.[dates[dates.length - 1]] || {};
+          const teamVals = Object.values(latestData).filter(v => v.total != null).map(v => v.total);
+          const teamAvg = teamVals.length ? +(teamVals.reduce((a, b) => a + b, 0) / teamVals.length).toFixed(1) : null;
+          const actionHints = {
+            "超時": "留意工作量分配",
+            "未回報": "請確認是否需要協助",
+            "連續": "建議主動聯繫",
+            "工時偏低": "建議了解狀況",
+            "不足": "建議了解狀況",
+            "會議佔比": "留意會議時間",
+          };
+          const getHint = (text) => {
+            for (const [key, hint] of Object.entries(actionHints)) {
+              if (text.includes(key)) return hint;
+            }
+            return null;
+          };
+          return (
+            <div className="animate-in" style={{ animationDelay: "0.05s", background: COLORS.card, borderRadius: 12, border: `1px solid ${COLORS.border}`, marginBottom: 20, overflow: "hidden" }}>
+              <div className="status-overview" style={{ display: "flex", gap: 0 }}>
+                {/* Left: KPI metrics */}
+                <div className="status-kpis" style={{ display: "flex", gap: 0, borderRight: `1px solid ${COLORS.border}`, flexShrink: 0 }}>
+                  <div style={{ padding: "16px 20px", borderRight: `1px solid ${COLORS.border}`, minWidth: 90, textAlign: "center" }}>
+                    <div style={{ fontSize: 10, color: COLORS.textDim, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 6 }}>回報率</div>
+                    <div style={{ fontSize: 22, fontWeight: 800, color: reportedCount >= members.length ? COLORS.green : reportedCount >= members.length - 2 ? COLORS.yellow : COLORS.red, lineHeight: 1.1, fontVariantNumeric: "tabular-nums" }}>
+                      {reportedCount}<span style={{ fontSize: 13, fontWeight: 500, color: COLORS.textDim }}>/{members.length}</span>
+                    </div>
+                  </div>
+                  <div style={{ padding: "16px 20px", borderRight: `1px solid ${COLORS.border}`, minWidth: 90, textAlign: "center" }}>
+                    <div style={{ fontSize: 10, color: COLORS.textDim, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 6 }}>團隊均時</div>
+                    <div style={{ fontSize: 22, fontWeight: 800, color: teamAvg ? getStatus(teamAvg).color : COLORS.textDim, lineHeight: 1.1, fontVariantNumeric: "tabular-nums" }}>
+                      {teamAvg ?? "—"}<span style={{ fontSize: 11, fontWeight: 500, color: COLORS.textDim }}>hr</span>
+                    </div>
+                    {teamAvg && (
+                      <div style={{ marginTop: 6, height: 3, borderRadius: 2, background: COLORS.bg, overflow: "hidden", width: 56, margin: "6px auto 0" }}>
+                        <div style={{ height: "100%", width: `${Math.min(100, (teamAvg / 10) * 100)}%`, borderRadius: 2, background: getStatus(teamAvg).color, transition: "width 0.5s ease" }} />
+                      </div>
+                    )}
+                  </div>
+                  <div style={{ padding: "16px 20px", minWidth: 80, textAlign: "center" }}>
+                    <div style={{ fontSize: 10, color: COLORS.textDim, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 6 }}>需關注</div>
+                    <div style={{ fontSize: 22, fontWeight: 800, color: attentionIssues.length > 0 ? COLORS.yellow : COLORS.green, lineHeight: 1.1 }}>
+                      {attentionIssues.length}<span style={{ fontSize: 11, fontWeight: 500, color: COLORS.textDim }}>人</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right: Attention cards */}
+                <div style={{ flex: 1, padding: "10px 16px", display: "flex", flexWrap: "wrap", gap: 8, alignContent: "center" }}>
+                  {attentionIssues.length === 0 ? (
+                    <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "4px 0" }}>
+                      <span style={{ fontSize: 12, color: COLORS.green, fontWeight: 600 }}>全員狀態正常</span>
+                    </div>
+                  ) : attentionIssues.map((iss, i) => {
+                    const sev = SEVERITY_COLORS[iss.severity];
+                    const hint = getHint(iss.text);
+                    const isLeave = iss.text.includes("休假");
+                    return (
+                      <div key={i} className="attention-card" style={{
+                        display: "flex", alignItems: "center", gap: 10, padding: "8px 14px",
+                        borderRadius: 8, background: sev?.bg + "44" || COLORS.border,
+                        border: `1px solid ${sev?.sc || COLORS.border}22`,
+                        transition: "transform 0.15s ease",
+                      }}>
+                        <span style={{ fontSize: 14 }}>{iss.severity}</span>
+                        <div>
+                          <div style={{ fontSize: 12, fontWeight: 700, color: sev?.sc || COLORS.text }}>{iss.member} <span style={{ fontWeight: 500, color: COLORS.textMuted }}>{iss.text}</span></div>
+                          {hint && !isLeave && <div style={{ fontSize: 10, color: COLORS.textDim, marginTop: 2 }}>{hint}</div>}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Bottom: stable members */}
+              {stableIssues.length > 0 && (
+                <div style={{ borderTop: `1px solid ${COLORS.border}`, padding: "8px 16px", display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+                  <span style={{ fontSize: 10, color: COLORS.textDim, fontWeight: 600, flexShrink: 0 }}>穩定</span>
+                  {stableIssues.map((iss, i) => (
+                    <span key={i} style={{ fontSize: 11, color: COLORS.green, fontWeight: 500, opacity: 0.75 }}>
+                      {iss.member}{iss.text.includes("改善") ? " ↑" : ""}{i < stableIssues.length - 1 ? "," : ""}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+          );
+        })()}
 
         {/* Tabs */}
         <div className="animate-in tab-bar" style={{ animationDelay: "0.1s", display: "flex", gap: 4, marginBottom: 24, background: COLORS.card, borderRadius: 10, padding: 4, width: "fit-content" }}>
@@ -811,7 +904,7 @@ function Dashboard() {
         {view === "weekly" && (
           <div>
             <div className="animate-in" style={{ animationDelay: "0.15s" }}>
-              <CardPanel title="平均每日工時">
+              <CardPanel title="日均工時分佈（開發 + 會議）">
                 <ResponsiveContainer width="100%" height={chartHeight}>
                   <BarChart data={weeklySummary} layout="vertical" margin={{ left: 8, right: 24, top: 4, bottom: 4 }}>
                     <CartesianGrid strokeDasharray="3 3" stroke={COLORS.border} horizontal={false} />
@@ -820,11 +913,9 @@ function Dashboard() {
                     <Tooltip content={<CustomTooltip />} />
                     <ReferenceLine x={THRESHOLDS.target} stroke={COLORS.green} strokeDasharray="6 4" strokeWidth={1.5} label={{ value: `${THRESHOLDS.target}hr`, fill: COLORS.green, fontSize: 11, position: "top" }} />
                     <ReferenceLine x={THRESHOLDS.ok} stroke={COLORS.yellow} strokeDasharray="4 4" strokeWidth={1} />
-                    <Bar dataKey="avg" name="日均工時" radius={[0, 6, 6, 0]} barSize={24}>
-                      {weeklySummary.map((entry, i) => (
-                        <Cell key={i} fill={getBarColor(entry.avg)} />
-                      ))}
-                    </Bar>
+                    <Bar dataKey="devAvg" name="開發" stackId="a" fill={COLORS.accentLight} barSize={22} />
+                    <Bar dataKey="meetAvg" name="會議" stackId="a" fill={COLORS.purple} radius={[0, 4, 4, 0]} barSize={22} />
+                    <Legend wrapperStyle={{ fontSize: 12, color: COLORS.textMuted, paddingTop: 8 }} />
                   </BarChart>
                 </ResponsiveContainer>
               </CardPanel>
@@ -833,44 +924,71 @@ function Dashboard() {
             <div className="animate-in" style={{ animationDelay: "0.2s" }}>
               <CardPanel title="週統計明細" padding={20}>
                 <div style={{ overflowX: "auto" }}>
-                  <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13, minWidth: isMobile ? 550 : "auto" }}>
+                  <table style={{ width: "100%", borderCollapse: "separate", borderSpacing: "0 2px", fontSize: 13, minWidth: isMobile ? 550 : "auto" }}>
                     <thead>
                       <tr>
-                        {["成員", "回報", "總工時", "日均", "會議", "會議%", "趨勢", "狀態"].map((h, i) => (
-                          <th key={h} style={{ textAlign: h === "成員" ? "left" : "center", padding: "10px 8px", borderBottom: `1px solid ${COLORS.border}`, color: COLORS.textMuted, fontWeight: 600, fontSize: 12, whiteSpace: "nowrap", ...(i === 0 ? { position: "sticky", left: 0, background: COLORS.card, zIndex: 1 } : {}) }}>{h}</th>
+                        {["成員", "回報", "總工時", "日均", "會議", "會議%", "穩定度", "趨勢"].map((h, i) => (
+                          <th key={h} style={{ textAlign: h === "成員" ? "left" : "center", padding: "10px 8px", borderBottom: `1px solid ${COLORS.border}`, color: COLORS.textMuted, fontWeight: 600, fontSize: 11, whiteSpace: "nowrap", ...(i === 0 ? { position: "sticky", left: 0, background: COLORS.card, zIndex: 1 } : {}) }}>{h}</th>
                         ))}
                       </tr>
                     </thead>
                     <tbody>
                       {weeklySummary.map(m => {
                         const st = getStatus(m.avg);
+                        const isHighlighted = selectedMembers.has(m.name);
                         return (
-                          <tr key={m.name} style={{ borderBottom: `1px solid ${COLORS.border}22` }}>
-                            <td style={{ padding: "10px 8px", fontWeight: 600, whiteSpace: "nowrap", position: "sticky", left: 0, background: COLORS.card, zIndex: 1 }}>
-                              <ColorDot color={memberColors[m.name]} />
-                              {m.name}
+                          <tr key={m.name} onClick={() => {
+                            const next = new Set(selectedMembers);
+                            isHighlighted ? next.delete(m.name) : next.add(m.name);
+                            setSelectedMembers(next);
+                          }} style={{ cursor: "pointer", transition: "background 0.15s ease" }}>
+                            <td style={{ padding: "9px 8px", fontWeight: 600, whiteSpace: "nowrap", position: "sticky", left: 0, background: isHighlighted ? memberColors[m.name] + "15" : COLORS.card, zIndex: 1, borderBottom: `1px solid ${COLORS.border}15` }}>
+                              <ColorDot color={isHighlighted ? memberColors[m.name] : COLORS.textDim} />
+                              <span style={{ color: isHighlighted ? memberColors[m.name] : COLORS.text }}>{m.name}</span>
                             </td>
-                            <td style={{ textAlign: "center", padding: "10px 8px", color: m.daysReported < dates.length ? COLORS.yellow : COLORS.textMuted, fontWeight: m.daysReported < dates.length ? 700 : 400 }}>
+                            <td style={{
+                              textAlign: "center", padding: "9px 8px", fontVariantNumeric: "tabular-nums",
+                              fontWeight: m.daysReported < dates.length ? 700 : 400,
+                              color: m.daysReported < dates.length ? COLORS.yellow : COLORS.textMuted,
+                              background: m.daysReported < dates.length - 2 ? COLORS.red + "12" : "transparent",
+                              borderBottom: `1px solid ${COLORS.border}15`,
+                            }}>
                               {m.daysReported}/{dates.length}
                             </td>
-                            <td style={{ textAlign: "center", padding: "10px 8px", fontWeight: 600, fontVariantNumeric: "tabular-nums" }}>
+                            <td style={{ textAlign: "center", padding: "9px 8px", fontWeight: 600, fontVariantNumeric: "tabular-nums", borderBottom: `1px solid ${COLORS.border}15` }}>
                               {m.sum !== null ? m.sum : "—"}
                             </td>
-                            <td style={{ textAlign: "center", padding: "10px 8px", fontWeight: 700, color: st.color, fontVariantNumeric: "tabular-nums" }}>
+                            <td style={{
+                              textAlign: "center", padding: "9px 8px", fontWeight: 700, fontVariantNumeric: "tabular-nums",
+                              color: st.color,
+                              background: m.avg !== null ? st.color + "12" : "transparent",
+                              borderBottom: `1px solid ${COLORS.border}15`,
+                            }}>
                               {m.avg !== null ? m.avg : "—"}
                             </td>
-                            <td style={{ textAlign: "center", padding: "10px 8px", fontVariantNumeric: "tabular-nums", color: COLORS.textMuted }}>
+                            <td style={{ textAlign: "center", padding: "9px 8px", fontVariantNumeric: "tabular-nums", color: COLORS.textMuted, borderBottom: `1px solid ${COLORS.border}15` }}>
                               {m.meetSum > 0 ? m.meetSum : "—"}
                             </td>
-                            <td style={{ textAlign: "center", padding: "10px 8px" }}>
+                            <td style={{
+                              textAlign: "center", padding: "9px 8px",
+                              background: m.meetPct > MEETING_HEAVY_PCT ? COLORS.yellow + "15" : "transparent",
+                              borderBottom: `1px solid ${COLORS.border}15`,
+                            }}>
                               <span style={{ color: m.meetPct > MEETING_HEAVY_PCT ? COLORS.yellow : m.meetPct > 30 ? COLORS.textMuted : COLORS.textDim, fontWeight: m.meetPct > MEETING_HEAVY_PCT ? 700 : 400 }}>
                                 {m.sum ? `${m.meetPct}%` : "—"}{m.meetPct > MEETING_HEAVY_PCT ? " ⚠" : ""}
                               </span>
                             </td>
-                            <td style={{ textAlign: "center", padding: "10px 8px", fontSize: 14 }}>{m.trend}</td>
-                            <td style={{ textAlign: "center", padding: "10px 8px" }}>
-                              <StatusBadge status={st} />
+                            <td style={{ textAlign: "center", padding: "9px 8px", borderBottom: `1px solid ${COLORS.border}15`, minWidth: 64 }}>
+                              {m.stdDev !== null ? (
+                                <div style={{ display: "flex", alignItems: "center", gap: 4, justifyContent: "center" }}>
+                                  <div style={{ width: 36, height: 5, borderRadius: 3, background: COLORS.bg, overflow: "hidden" }}>
+                                    <div style={{ height: "100%", width: `${m.stabilityPct}%`, borderRadius: 3, background: m.stabilityColor, transition: "width 0.4s ease" }} />
+                                  </div>
+                                  <span style={{ fontSize: 10, color: m.stabilityColor, fontWeight: 600, minWidth: 14 }}>{m.stdDev.toFixed(1)}</span>
+                                </div>
+                              ) : <span style={{ color: COLORS.textDim, fontSize: 10 }}>—</span>}
                             </td>
+                            <td style={{ textAlign: "center", padding: "9px 6px", fontSize: 13, borderBottom: `1px solid ${COLORS.border}15` }}>{m.trend}</td>
                           </tr>
                         );
                       })}
