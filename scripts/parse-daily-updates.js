@@ -281,6 +281,7 @@ function findThreads(messages, queryKeyword) {
 function parseThread(replies, memberMap) {
   const dateCounts = {};
   const members = {};
+  const rawReplies = [];
 
   for (const reply of replies) {
     const name = memberMap[reply.sender?.name];
@@ -297,13 +298,18 @@ function parseThread(replies, memberMap) {
     }
 
     members[name] = parseHoursFromText(text);
+    rawReplies.push({
+      member: name,
+      text,
+      createTime: reply.createTime || null,
+    });
   }
 
   const contentDate =
     Object.entries(dateCounts)
       .sort((a, b) => b[1] - a[1])[0]?.[0] || null;
 
-  return { contentDate, members };
+  return { contentDate, members, rawReplies };
 }
 
 // --- Main ---
@@ -376,7 +382,7 @@ function parseMessagesFile(messageFiles, manualLeave) {
   // Parse each thread
   const dateEntries = {};
   for (const thread of Object.values(threadMap)) {
-    const { contentDate, members } = parseThread(thread.replies, memberMap);
+    const { contentDate, members, rawReplies } = parseThread(thread.replies, memberMap);
     const dataDate = contentDate || thread.threadDate;
 
     // Fill unreported members with null
@@ -392,6 +398,7 @@ function parseMessagesFile(messageFiles, manualLeave) {
       alreadyExists: !!existing.rawData[dataDate],
       reportedCount: Object.keys(members).length,
       totalMembers: reportingMembers.length,
+      rawReplies,
     };
   }
 

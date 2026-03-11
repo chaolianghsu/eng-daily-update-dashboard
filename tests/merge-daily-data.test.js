@@ -25,6 +25,10 @@ describe('mergeDailyData', () => {
         alreadyExists: false,
         reportedCount: 2,
         totalMembers: 2,
+        rawReplies: [
+          { member: 'Joyce', text: '3/6 進度：\n1. Task A (2H)\n2. Task B (6H)', createTime: '2026-03-07T01:30:00Z' },
+          { member: 'Ivy', text: '3/6 進度：\n1. Task C (7H)', createTime: '2026-03-07T02:00:00Z' },
+        ],
       },
     },
     leaveMap: {
@@ -68,5 +72,30 @@ describe('mergeDailyData', () => {
   it('should replace leave with parsed leaveMap', () => {
     const result = mergeDailyData(existing, parsed);
     expect(result.leave).toEqual(parsed.leaveMap);
+  });
+
+  it('should collect dailyUpdates from rawReplies', () => {
+    const result = mergeDailyData(existing, parsed);
+    expect(result.dailyUpdates).toHaveLength(2);
+    expect(result.dailyUpdates[0]).toEqual({
+      date: '3/6',
+      member: 'Joyce',
+      createTime: '2026-03-07T01:30:00Z',
+      text: '3/6 進度：\n1. Task A (2H)\n2. Task B (6H)',
+      total: 8,
+    });
+    expect(result.dailyUpdates[1].member).toBe('Ivy');
+    expect(result.dailyUpdates[1].total).toBe(7);
+  });
+
+  it('should return empty dailyUpdates when no rawReplies', () => {
+    const parsedNoReplies = {
+      ...parsed,
+      dateEntries: {
+        '3/6': { ...parsed.dateEntries['3/6'], rawReplies: undefined },
+      },
+    };
+    const result = mergeDailyData(existing, parsedNoReplies);
+    expect(result.dailyUpdates).toEqual([]);
   });
 });

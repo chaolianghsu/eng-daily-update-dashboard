@@ -3,10 +3,23 @@
 
 function mergeDailyData(existing, parsed) {
   const rawData = { ...existing.rawData };
+  const dailyUpdates = [];
 
   for (const [date, info] of Object.entries(parsed.dateEntries || {})) {
     if (!info.alreadyExists && !rawData[date]) {
       rawData[date] = info.entry;
+    }
+    // Collect raw replies for daily updates sheet
+    if (info.rawReplies) {
+      for (const reply of info.rawReplies) {
+        dailyUpdates.push({
+          date,
+          member: reply.member,
+          createTime: reply.createTime,
+          text: reply.text,
+          total: info.entry[reply.member]?.total ?? null,
+        });
+      }
     }
   }
 
@@ -14,6 +27,7 @@ function mergeDailyData(existing, parsed) {
     rawData,
     issues: parsed.issues || existing.issues || [],
     leave: parsed.leaveMap || existing.leave || {},
+    dailyUpdates,
   };
 }
 

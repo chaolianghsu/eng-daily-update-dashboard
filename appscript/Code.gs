@@ -18,6 +18,7 @@ function doPost(e) {
   writeRawData_(ss, data.rawData);
   writeIssues_(ss, data.issues || []);
   writeLeave_(ss, data.leave || {});
+  writeDailyUpdates_(ss, data.dailyUpdates || []);
 
   var dateCount = Object.keys(data.rawData).length;
   return ContentService.createTextOutput(JSON.stringify({ status: 'ok', dates: dateCount }))
@@ -93,6 +94,49 @@ function writeLeave_(ss, leave) {
 
   if (rows.length > 1) {
     sheet.getRange(1, 1, rows.length, 3).setValues(rows);
+  }
+}
+
+function writeDailyUpdates_(ss, dailyUpdates) {
+  var sheet = ss.getSheetByName('Daily Updates');
+  if (!sheet) sheet = ss.insertSheet('Daily Updates');
+
+  // Read existing rows to deduplicate by date+member
+  var existing = sheet.getDataRange().getValues();
+  var existingKeys = {};
+  for (var i = 1; i < existing.length; i++) {
+    var key = String(existing[i][0]) + '|' + String(existing[i][1]);
+    existingKeys[key] = true;
+  }
+
+  // Add header if sheet is empty
+  if (existing.length === 0) {
+    sheet.getRange(1, 1, 1, 5).setValues([['日期', '成員', '時間', '原始內容', '上一個工作日的工時']]);
+    existing = [['header']];
+  }
+
+  var newRows = [];
+  for (var i = 0; i < dailyUpdates.length; i++) {
+    var u = dailyUpdates[i];
+    var key = String(u.date) + '|' + String(u.member);
+    if (existingKeys[key]) continue;
+
+    var time = '';
+    if (u.createTime) {
+      var d = new Date(u.createTime);
+      var hours = d.getHours();
+      var minutes = d.getMinutes();
+      var period = hours < 12 ? '上午' : '下午';
+      var displayHour = hours <= 12 ? hours : hours - 12;
+      time = period + ' ' + displayHour + ':' + (minutes < 10 ? '0' : '') + minutes;
+    }
+
+    newRows.push([u.date, u.member, time, u.text || '', u.total === null ? '' : u.total]);
+  }
+
+  if (newRows.length > 0) {
+    var startRow = existing.length + 1;
+    sheet.getRange(startRow, 1, newRows.length, 5).setValues(newRows);
   }
 }
 

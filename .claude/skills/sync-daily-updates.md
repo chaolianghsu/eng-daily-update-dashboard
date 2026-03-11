@@ -79,14 +79,14 @@ Replace `<dates>` with the actual new dates added (e.g., "3/9, 3/10").
 
 ### Step 8: Update Google Sheets via Apps Script
 
-POST the merged data to the Apps Script web app, which writes to the Spreadsheet's rawData/issues/leave sheets.
+POST the merged data to the Apps Script web app, which writes to the Spreadsheet's rawData/issues/leave/daily update sheets.
 
 ```bash
 # Two-step POST (Apps Script returns 302 redirect):
 REDIRECT_URL=$(curl -s -o /dev/null -w "%{redirect_url}" -X POST \
   -H "Content-Type: application/json" \
   -d @raw_data.json \
-  "https://script.google.com/a/macros/big-data.com.tw/s/AKfycbxGz9qsav_YxPzdTsJJCRQ9jtUcBxe-6ZnmV1cwjAUSIVtr3RZ9FbFoIQQQNuAxcvy2/exec" 2>/dev/null)
+  "https://script.google.com/macros/s/AKfycbwROAe-v_4TZTkwNxmKJzP7WI4IDV897iu3VN6_7BIn8cJHFY1g8adknZrnErDYvEI/exec" 2>/dev/null)
 
 curl -s "$REDIRECT_URL"
 ```
@@ -94,7 +94,7 @@ curl -s "$REDIRECT_URL"
 Expected response: `{"status":"ok","dates":N}`
 
 The Apps Script web app also serves the Dashboard at the same URL (GET request).
-Dashboard URL: https://script.google.com/a/macros/big-data.com.tw/s/AKfycbxGz9qsav_YxPzdTsJJCRQ9jtUcBxe-6ZnmV1cwjAUSIVtr3RZ9FbFoIQQQNuAxcvy2/exec
+Dashboard URL: https://script.google.com/macros/s/AKfycbwROAe-v_4TZTkwNxmKJzP7WI4IDV897iu3VN6_7BIn8cJHFY1g8adknZrnErDYvEI/exec
 
 ### Step 9: Output summary
 
@@ -115,3 +115,4 @@ raw_data.json 已 commit + push
 - Leave sources (merged in order): `raw_data.json` leave → auto-detected from Chat → CLI --leave.
 - Google Chat API does NOT support text filtering — must fetch and filter client-side.
 - Members not in `memberMap` are skipped.
+- Raw daily update text (原始內容) is written to the "daily update" sheet via `dailyUpdates` in the POST payload. Deduplication is by date+member.
