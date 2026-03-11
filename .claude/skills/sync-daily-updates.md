@@ -86,7 +86,7 @@ POST the merged data to the Apps Script web app, which writes to the Spreadsheet
 REDIRECT_URL=$(curl -s -o /dev/null -w "%{redirect_url}" -X POST \
   -H "Content-Type: application/json" \
   -d @raw_data.json \
-  "https://script.google.com/macros/s/AKfycbwROAe-v_4TZTkwNxmKJzP7WI4IDV897iu3VN6_7BIn8cJHFY1g8adknZrnErDYvEI/exec" 2>/dev/null)
+  "https://script.google.com/macros/s/AKfycbxMfzEiZoAq5igmL69qN711mCrpX9Mv0vjnxb1IiEqpkC0h_ZVR2me2SNlX82YvNEGp/exec" 2>/dev/null)
 
 curl -s "$REDIRECT_URL"
 ```
@@ -94,7 +94,7 @@ curl -s "$REDIRECT_URL"
 Expected response: `{"status":"ok","dates":N}`
 
 The Apps Script web app also serves the Dashboard at the same URL (GET request).
-Dashboard URL: https://script.google.com/macros/s/AKfycbwROAe-v_4TZTkwNxmKJzP7WI4IDV897iu3VN6_7BIn8cJHFY1g8adknZrnErDYvEI/exec
+Dashboard URL: https://script.google.com/macros/s/AKfycbxMfzEiZoAq5igmL69qN711mCrpX9Mv0vjnxb1IiEqpkC0h_ZVR2me2SNlX82YvNEGp/exec
 
 ### Step 9: Output summary
 
