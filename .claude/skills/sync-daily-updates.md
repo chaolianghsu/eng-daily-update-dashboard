@@ -77,18 +77,24 @@ git push
 
 Replace `<dates>` with the actual new dates added (e.g., "3/9, 3/10").
 
-### Step 8: Update Google Sheets (structured view)
+### Step 8: Update Google Sheets via Apps Script
 
-Write parsed data to the Spreadsheet `1-HSbdexmualS3zc9Ut_BjMwKdR7TEPRZ8QuSVHhp_QA`.
+POST the merged data to the Apps Script web app, which writes to the Spreadsheet's rawData/issues/leave sheets.
 
-For the `rawData` sheet, use `mcp__gws__drive_files_export` to read existing sheet data, then determine what rows to add. Format each date/member as a row:
+```bash
+# Two-step POST (Apps Script returns 302 redirect):
+REDIRECT_URL=$(curl -s -o /dev/null -w "%{redirect_url}" -X POST \
+  -H "Content-Type: application/json" \
+  -d @raw_data.json \
+  "https://script.google.com/a/macros/big-data.com.tw/s/AKfycbxGz9qsav_YxPzdTsJJCRQ9jtUcBxe-6ZnmV1cwjAUSIVtr3RZ9FbFoIQQQNuAxcvy2/exec" 2>/dev/null)
 
+curl -s "$REDIRECT_URL"
 ```
-date,member,total,meeting,dev
-3/5,Joyce,10,0,10
-```
 
-Note: Writing to Google Sheets requires the Sheets API. If not available via MCP tools, skip this step and log "Sheets 更新跳過（無 Sheets API）".
+Expected response: `{"status":"ok","dates":N}`
+
+The Apps Script web app also serves the Dashboard at the same URL (GET request).
+Dashboard URL: https://script.google.com/a/macros/big-data.com.tw/s/AKfycbxGz9qsav_YxPzdTsJJCRQ9jtUcBxe-6ZnmV1cwjAUSIVtr3RZ9FbFoIQQQNuAxcvy2/exec
 
 ### Step 9: Output summary
 
