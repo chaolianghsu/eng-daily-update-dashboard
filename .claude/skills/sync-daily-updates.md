@@ -139,6 +139,8 @@ Read `spaceId` from `chat-config.json`. Send a summary message to the Google Cha
 回報率：<N>/<M>
 需關注：<attention issues or "無">
 穩定：<stable member names>
+📈 Dashboard：https://chaolianghsu.github.io/eng-daily-update-dashboard/
+📋 Sheets Dashboard：https://script.google.com/a/macros/big-data.com.tw/s/AKfycbxMfzEiZoAq5igmL69qN711mCrpX9Mv0vjnxb1IiEqpkC0h_ZVR2me2SNlX82YvNEGp/exec
 ```
 
 **On holiday skip (from Step 0):**
