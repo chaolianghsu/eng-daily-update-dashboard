@@ -71,14 +71,21 @@ node scripts/merge-daily-data.js raw_data.json /tmp/parsed-output.json > /tmp/me
 
 ### Step 5: Review and apply
 
-1. Compare `/tmp/merged-data.json` with `raw_data.json`:
-   - How many new dates were added?
-   - Any warnings from the parsed output?
-2. If new data exists, copy merged data to `raw_data.json`:
+The merge script auto-detects two types of changes:
+- **New dates** (`newDates`): dates not yet in raw_data.json
+- **Backfills** (`backfilled`): existing dates where null entries are updated with actual data (e.g., late reporters)
+
+Issues are automatically recalculated when any changes are detected.
+
+1. Read the merge output and check `newDates` and `backfilled` arrays:
+   ```bash
+   node -e "const d=require('/tmp/merged-data.json'); console.log('New dates:', d.newDates); console.log('Backfilled:', d.backfilled);"
+   ```
+2. If either has entries, copy merged data to `raw_data.json`:
    ```bash
    cp /tmp/merged-data.json raw_data.json
    ```
-3. If no new data, display "沒有新的資料需要更新" and stop.
+3. If both are empty, display "沒有新的資料需要更新", send no-data notification (Step 10), and stop.
 
 ### Step 6: Validate
 
@@ -96,7 +103,10 @@ git commit -m "Update daily data for <dates>"
 git push
 ```
 
-Replace `<dates>` with the actual new dates added (e.g., "3/9, 3/10").
+Replace `<dates>` with a summary of changes:
+- New dates: "3/9, 3/10"
+- Backfills only: "3/11 (Ted backfill)"
+- Both: "3/12, 3/11 (Ted backfill)"
 
 ### Step 8: Update Google Sheets via Apps Script
 
@@ -131,7 +141,7 @@ raw_data.json 已 commit + push
 
 Read `spaceId` from `chat-config.json`. Send a summary message to the Google Chat space using `mcp__gws__chat_spaces_messages_create`.
 
-**On successful sync:**
+**On successful sync (new dates):**
 ```
 📊 Daily Update Sync 完成
 日期：<today M/D>（<weekday>）
@@ -142,6 +152,21 @@ Read `spaceId` from `chat-config.json`. Send a summary message to the Google Cha
 📈 Dashboard：https://chaolianghsu.github.io/eng-daily-update-dashboard/
 📋 Sheets Dashboard：https://script.google.com/a/macros/big-data.com.tw/s/AKfycbxMfzEiZoAq5igmL69qN711mCrpX9Mv0vjnxb1IiEqpkC0h_ZVR2me2SNlX82YvNEGp/exec
 ```
+
+**On successful sync (backfill only):**
+```
+📊 Daily Update Sync 完成（補登）
+日期：<today M/D>（<weekday>）
+更新：<date> <member> 補回報（<total>hr）[, ...]
+回報率：<N>/<M>
+需關注：<attention issues or "無">
+穩定：<stable member names>
+📈 Dashboard：https://chaolianghsu.github.io/eng-daily-update-dashboard/
+📋 Sheets Dashboard：https://script.google.com/a/macros/big-data.com.tw/s/AKfycbxMfzEiZoAq5igmL69qN711mCrpX9Mv0vjnxb1IiEqpkC0h_ZVR2me2SNlX82YvNEGp/exec
+```
+
+**On successful sync (both new dates + backfill):**
+Combine both: show 新增日期 and 更新 lines.
 
 **On holiday skip (from Step 0):**
 ```

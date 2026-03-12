@@ -64,9 +64,14 @@ describe('mergeDailyData', () => {
     expect(result.rawData['3/5'].Joyce.total).toBe(10);
   });
 
-  it('should replace issues with parsed issues', () => {
+  it('should recalculate issues from merged data', () => {
     const result = mergeDailyData(existing, parsed);
-    expect(result.issues).toEqual(parsed.issues);
+    // Issues are recalculated from merged rawData, not passed through
+    expect(result.issues).toBeInstanceOf(Array);
+    expect(result.issues.length).toBeGreaterThan(0);
+    // Joyce 8hr should be stable
+    const joyceIssue = result.issues.find(i => i.member === 'Joyce');
+    expect(joyceIssue.severity).toBe('🟢');
   });
 
   it('should replace leave with parsed leaveMap', () => {
@@ -86,6 +91,72 @@ describe('mergeDailyData', () => {
     });
     expect(result.dailyUpdates[1].member).toBe('Ivy');
     expect(result.dailyUpdates[1].total).toBe(7);
+  });
+
+  it('should return newDates and backfilled metadata', () => {
+    const result = mergeDailyData(existing, parsed);
+    expect(result.newDates).toEqual(['3/6']);
+    expect(result.backfilled).toEqual([]);
+  });
+
+  it('should backfill null entries in existing dates', () => {
+    const existingWithNull = {
+      rawData: {
+        '3/6': {
+          Joyce: { total: 8, meeting: 2, dev: 6 },
+          Ivy: { total: null, meeting: null, dev: null },
+        },
+      },
+      issues: [],
+      leave: {},
+    };
+    const parsedBackfill = {
+      dateEntries: {
+        '3/6': {
+          threadDate: '3/7',
+          contentDate: '3/6',
+          entry: {
+            Joyce: { total: 8, meeting: 2, dev: 6 },
+            Ivy: { total: 7, meeting: 0, dev: 7 },
+          },
+          alreadyExists: true,
+          reportedCount: 2,
+          totalMembers: 2,
+        },
+      },
+      leaveMap: {},
+      issues: [],
+    };
+    const result = mergeDailyData(existingWithNull, parsedBackfill);
+    expect(result.rawData['3/6'].Ivy.total).toBe(7);
+    expect(result.newDates).toEqual([]);
+    expect(result.backfilled).toEqual([
+      { date: '3/6', member: 'Ivy', total: 7, meeting: 0, dev: 7 },
+    ]);
+  });
+
+  it('should not overwrite existing non-null entries', () => {
+    const existingWithData = {
+      rawData: {
+        '3/6': {
+          Joyce: { total: 8, meeting: 2, dev: 6 },
+        },
+      },
+      issues: [],
+      leave: {},
+    };
+    const parsedDifferent = {
+      dateEntries: {
+        '3/6': {
+          entry: { Joyce: { total: 99, meeting: 0, dev: 99 } },
+          alreadyExists: true,
+        },
+      },
+      leaveMap: {},
+    };
+    const result = mergeDailyData(existingWithData, parsedDifferent);
+    expect(result.rawData['3/6'].Joyce.total).toBe(8);
+    expect(result.backfilled).toEqual([]);
   });
 
   it('should return empty dailyUpdates when no rawReplies', () => {

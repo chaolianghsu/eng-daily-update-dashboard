@@ -402,11 +402,18 @@ function parseMessagesFile(messageFiles, manualLeave) {
     };
   }
 
-  // Generate issues with merged data
+  // Generate issues with merged data (including backfills)
   const mergedRawData = { ...existing.rawData };
   for (const [date, info] of Object.entries(dateEntries)) {
     if (!mergedRawData[date]) {
       mergedRawData[date] = info.entry;
+    } else {
+      // Backfill null entries for existing dates
+      for (const [member, data] of Object.entries(info.entry)) {
+        if (mergedRawData[date][member]?.total === null && data.total !== null) {
+          mergedRawData[date][member] = data;
+        }
+      }
     }
   }
   const issues = generateIssues(mergedRawData, leaveMap);
