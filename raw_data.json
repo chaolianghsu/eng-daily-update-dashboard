@@ -781,9 +781,9 @@
         "dev": 8
       },
       "Ted": {
-        "total": null,
-        "meeting": null,
-        "dev": null
+        "total": 8,
+        "meeting": 0,
+        "dev": 8
       },
       "家輝": {
         "total": 7.5,
@@ -837,11 +837,6 @@
       "member": "禎佑",
       "severity": "🟡",
       "text": "超時 10.5hr"
-    },
-    {
-      "member": "Ted",
-      "severity": "🔴",
-      "text": "未回報 3/11"
     },
     {
       "member": "家輝",
