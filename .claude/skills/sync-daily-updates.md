@@ -12,6 +12,27 @@ Replaces `/fetch-daily-updates` and `/backfill-daily-updates`.
 
 ## Workflow
 
+### Step 0: Check if today is a workday
+
+Fetch the Taiwan DGPA (行政院人事行政總處) official work calendar to determine if today is a workday.
+
+```bash
+curl -s "https://www.dgpa.gov.tw/FileConversion?filename=dgpa/files/202506/a52331bd-a189-466b-b0f0-cae3062bbf74.csv" -o /tmp/dgpa-calendar.csv
+```
+
+Parse the CSV and find today's row by `YYYYMMDD` date key:
+- Column format: `西元日期,星期,是否放假,備註`
+- `是否放假` = `0` → workday, `2` → holiday/weekend
+
+If today is a holiday (`是否放假 === "2"`):
+1. Display: "今天是 [備註 or 週末]，跳過 sync"
+2. Send holiday skip notification (see Step 10)
+3. Stop — do not proceed to Step 1
+
+If the DGPA CSV fetch fails, fallback: treat Mon–Fri as workday, Sat–Sun as holiday.
+
+**Note:** The CSV URL is for 2026 (民國115年). Update yearly when the government publishes the next year's calendar at https://data.gov.tw/dataset/14718.
+
 ### Step 1: Read existing data and leave
 
 1. Read `chat-config.json` → get `spaceId`, `memberMap`
@@ -105,6 +126,49 @@ Dashboard URL: https://script.google.com/macros/s/AKfycbxMfzEiZoAq5igmL69qN711mC
 Warnings：無
 raw_data.json 已 commit + push
 ```
+
+### Step 10: Send Google Chat notification
+
+Read `spaceId` from `chat-config.json`. Send a summary message to the Google Chat space using `mcp__gws__chat_spaces_messages_create`.
+
+**On successful sync:**
+```
+📊 Daily Update Sync 完成
+日期：<today M/D>（<weekday>）
+新增日期：<new dates>
+回報率：<N>/<M>
+需關注：<attention issues or "無">
+穩定：<stable member names>
+```
+
+**On holiday skip (from Step 0):**
+```
+📅 今天是 <holiday name>，跳過 sync
+```
+
+**On no new data (from Step 5):**
+```
+📊 Sync 檢查完成，沒有新資料（<today M/D>）
+```
+
+**On failure:**
+```
+❌ Sync 失敗：<error description>
+```
+
+## Scheduling
+
+Run with Claude Code `/loop` in a tmux session:
+
+```bash
+# Create persistent session
+tmux new-session -d -s daily-sync
+tmux send-keys -t daily-sync 'cd ~/Projects/eng-daily-update-dashboard && claude' Enter
+# Start at 11:00 on a workday, repeats every 24h
+tmux send-keys -t daily-sync '/loop 24h /sync-daily-updates' Enter
+```
+
+Recovery after machine restart: `tmux attach -t daily-sync` or re-run above.
 
 ## Notes
 
