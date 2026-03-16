@@ -225,7 +225,7 @@ const tabStyle = (active) => ({
   color: active ? "#fff" : COLORS.textMuted,
 });
 
-function CommitsView({ commitData, dates, members, memberColors, leave, activeDate, onDateSelect, dailyDates, dayLabels }) {
+function CommitsView({ commitData, dates, members, memberColors, leave, activeDate, onDateSelect, dailyDates, dayLabels, taskAnalysisData }) {
   const { commits, analysis, projectRisks } = commitData;
   const [expandedMember, setExpandedMember] = useState(null);
 
@@ -581,6 +581,78 @@ function CommitsView({ commitData, dates, members, memberColors, leave, activeDa
         </div>
       </CardPanel>
 
+      {/* Task Reasonableness Warnings */}
+      {(() => {
+        if (!taskAnalysisData || !taskAnalysisData.warnings) return null;
+        const warnings = taskAnalysisData.warnings;
+        const summary = taskAnalysisData.summary;
+        const typeLabels = { low_output: '產出不足', mismatch: '領域不符', outlier: '偏離均值' };
+        const typeIcons = { low_output: '🔴', mismatch: '🟠', outlier: '🟡' };
+
+        if (warnings.length === 0) {
+          return (
+            <CardPanel title="任務合理性警示">
+              <div style={{ padding: "12px 0", textAlign: "center", color: COLORS.textDim, fontSize: 13 }}>
+                無警示 — 所有成員任務與 commit 記錄一致
+              </div>
+            </CardPanel>
+          );
+        }
+
+        return (
+          <CardPanel title={`任務合理性警示（${taskAnalysisData.period || ''}）`}>
+            {/* Summary stats */}
+            <div style={{ display: "flex", gap: 12, marginBottom: 16, flexWrap: "wrap" }}>
+              <div style={{ background: COLORS.bg, borderRadius: 8, padding: "8px 14px", display: "flex", alignItems: "center", gap: 8 }}>
+                <span style={{ fontSize: 20, fontWeight: 800, color: COLORS.red }}>{warnings.length}</span>
+                <span style={{ fontSize: 11, color: COLORS.textMuted }}>警示總數</span>
+              </div>
+              {Object.entries(summary?.byType || {}).filter(([, v]) => v > 0).map(([type, count]) => {
+                const sev = SEVERITY_COLORS[typeIcons[type]];
+                return (
+                  <div key={type} style={{ background: sev ? sev.bg + '33' : COLORS.bg, borderRadius: 8, padding: "8px 14px", display: "flex", alignItems: "center", gap: 8, border: `1px solid ${sev ? sev.sc + '33' : COLORS.border}` }}>
+                    <span style={{ fontSize: 14 }}>{typeIcons[type]}</span>
+                    <span style={{ fontSize: 16, fontWeight: 700, color: sev ? sev.sc : COLORS.text }}>{count}</span>
+                    <span style={{ fontSize: 11, color: COLORS.textMuted }}>{typeLabels[type]}</span>
+                  </div>
+                );
+              })}
+            </div>
+            {/* Warning cards */}
+            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+              {warnings.map((w, i) => {
+                const sev = SEVERITY_COLORS[w.severity] || { sc: COLORS.textDim, bg: COLORS.border };
+                return (
+                  <div key={i} style={{
+                    background: sev.bg + '22', border: `1px solid ${sev.sc}33`, borderRadius: 10,
+                    padding: "14px 16px", display: "flex", flexDirection: "column", gap: 8,
+                  }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
+                      <span style={{ fontSize: 18 }}>{w.severity}</span>
+                      <span style={{ fontWeight: 700, fontSize: 14, color: COLORS.text }}>{w.member}</span>
+                      <span style={{ fontSize: 12, color: COLORS.textMuted, background: COLORS.bg, padding: "2px 8px", borderRadius: 4 }}>{w.date}</span>
+                      <span style={{
+                        fontSize: 10, fontWeight: 600, padding: "2px 8px", borderRadius: 4,
+                        background: sev.bg, color: sev.sc, marginLeft: "auto",
+                      }}>{typeLabels[w.type] || w.type}</span>
+                    </div>
+                    <div style={{ fontSize: 12, color: COLORS.textMuted }}>
+                      <span style={{ fontWeight: 600, color: COLORS.text }}>任務：</span>{w.task}
+                    </div>
+                    <div style={{ fontSize: 12, color: COLORS.teal }}>
+                      <span style={{ fontWeight: 600, color: COLORS.text }}>Commits：</span>{w.commits}
+                    </div>
+                    <div style={{ fontSize: 12, color: COLORS.textMuted, background: COLORS.bg + '80', borderRadius: 6, padding: "8px 10px", lineHeight: 1.6 }}>
+                      {w.reasoning}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </CardPanel>
+        );
+      })()}
+
       {/* Project Participation */}
       {allProjects.length > 0 && (
         <CardPanel title={`專案參與度（${activeDate}）`}>
@@ -650,6 +722,7 @@ function Dashboard() {
   const [selectedDate, setSelectedDate] = useState(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [commitData, setCommitData] = useState(null);
+  const [taskAnalysisData, setTaskAnalysisData] = useState(null);
   const [selectedMembers, setSelectedMembers] = useState(new Set());
   const [trendRange, setTrendRange] = useState("2weeks");
 
@@ -663,11 +736,13 @@ function Dashboard() {
     Promise.all([
       fetch("raw_data.json").then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); }),
       fetch("gitlab-commits.json").then(r => r.ok ? r.json() : null).catch(() => null),
-    ]).then(([rawDataResp, commitResp]) => {
+      fetch("task-analysis.json").then(r => r.ok ? r.json() : null).catch(() => null),
+    ]).then(([rawDataResp, commitResp, taskAnalysisResp]) => {
       setRawData(rawDataResp.rawData);
       setIssues(rawDataResp.issues || []);
       setLeave(rawDataResp.leave || {});
       setCommitData(commitResp);
+      setTaskAnalysisData(taskAnalysisResp);
       setLoading(false);
     }).catch(err => {
       setError(err.message);
@@ -1457,7 +1532,7 @@ function Dashboard() {
         {/* ══ COMMITS ══ */}
         {view === "commits" && commitData && (
           <CommitsView commitData={commitData} dates={dates} members={members} memberColors={memberColors} leave={leave}
-            activeDate={activeDate} onDateSelect={setSelectedDate} dailyDates={dailyDates} dayLabels={dayLabels} />
+            activeDate={activeDate} onDateSelect={setSelectedDate} dailyDates={dailyDates} dayLabels={dayLabels} taskAnalysisData={taskAnalysisData} />
         )}
 
         {/* Footer */}
