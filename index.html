@@ -595,15 +595,6 @@ function CommitsView({ commitData, dates, members, memberColors, leave, activeDa
               ))}
             </BarChart>
           </ResponsiveContainer>
-          {projectRisks.length > 0 && (
-            <div style={{ marginTop: 12, display: "flex", flexWrap: "wrap", gap: 8 }}>
-              {projectRisks.map(r => (
-                <span key={r.project} style={{ padding: "4px 10px", borderRadius: 6, fontSize: 12, background: COLORS.yellowDim, color: COLORS.yellow }}>
-                  {"\u26A0\uFE0F"} {r.project.split('/').pop()} — 僅 {r.soloContributor} 貢獻
-                </span>
-              ))}
-            </div>
-          )}
         </CardPanel>
       )}
 
@@ -821,9 +812,6 @@ function Dashboard() {
   const allIssues = useMemo(() => {
     const base = issues.filter(i => i.severity !== '🟢');
     if (!commitData) return base;
-    for (const r of (commitData.projectRisks || [])) {
-      base.push({ member: r.soloContributor, severity: r.severity, text: `${r.project.split('/').pop()} 單點貢獻` });
-    }
     const activeAnalysis = commitData.analysis?.[activeDate] || {};
     for (const [m, a] of Object.entries(activeAnalysis)) {
       if (a.status === '🔴') {
