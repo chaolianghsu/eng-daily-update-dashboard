@@ -2,16 +2,20 @@
 
 ## Overview
 
-Fetch engineering team's GitLab commits and correlate them with daily update data. Write results to the existing Google Spreadsheet alongside daily update data for cross-reference and analysis.
+Fetch engineering team's GitLab commits and correlate them with daily update data. Write results to the existing Google Spreadsheet and a local JSON file for the dashboard. Visualize commit activity and consistency analysis in the dashboard.
 
 ## Architecture
 
-Follows existing pattern: Node.js script for data processing → POST to Apps Script web app → Google Spreadsheet.
+Follows existing pattern: Node.js script for data processing → outputs to local JSON + POST to Apps Script web app.
 
 ```
-gitlab-config.json → fetch-gitlab-commits.js → JSON → POST → Apps Script → Spreadsheet
-                                                                              ├── GitLab Commits (new tab)
-                                                                              └── Commit Analysis (new tab)
+gitlab-config.json → fetch-gitlab-commits.js ─┬→ gitlab-commits.json (dashboard data)
+                                               └→ POST → Apps Script → Spreadsheet
+                                                                         ├── GitLab Commits (new tab)
+                                                                         └── Commit Analysis (new tab)
+
+index.html ─── fetches ─┬→ raw_data.json (existing)
+                         └→ gitlab-commits.json (new)
 ```
 
 ## Components
@@ -165,15 +169,90 @@ Generate commit-based risk warnings in the same format as existing `issues` entr
 - 🔴 "有 commits 但未回報 daily update" (commits exist but no daily update)
 - Follows existing severity convention: 🔴 critical, 🟡 warning, 🟠 caution, 🟢 improvement
 
-### 5. Skills
+### 5. gitlab-commits.json (Dashboard Data)
+
+Output by `fetch-gitlab-commits.js` alongside its stdout JSON. Fetched by `index.html` at runtime (parallel with `raw_data.json`). Dashboard gracefully handles missing file (commit features hidden).
+
+```json
+{
+  "commits": {
+    "3/11": {
+      "Joyce": {
+        "count": 5,
+        "projects": ["KEYPO/keypo-backend"],
+        "items": [
+          { "title": "[feat] Remove token del", "sha": "339d2d85", "project": "KEYPO/keypo-backend" }
+        ]
+      }
+    }
+  },
+  "analysis": {
+    "3/11": {
+      "Joyce": { "status": "✅", "commitCount": 5, "hours": 9 },
+      "Ted": { "status": "⚠️", "commitCount": 0, "hours": 7.5 }
+    }
+  },
+  "projectRisks": [
+    { "project": "KEYPO/keypo-data-api", "soloContributor": "家輝", "severity": "🟡" }
+  ]
+}
+```
+
+### 6. index.html Dashboard Changes
+
+#### 6a. Data Loading
+
+Add parallel fetch of `gitlab-commits.json` alongside `raw_data.json`. If `gitlab-commits.json` is missing or fails, set `commitData` to `null` and hide all commit-related UI. No error state shown — commit features are optional.
+
+#### 6b. New Tab: 🔀 Commits
+
+Fourth tab added to existing tab bar: `{ key: "commits", label: "🔀 Commits" }`.
+
+Three sections:
+
+**Consistency Grid** — A date × member matrix. Each cell is a colored dot:
+- ✅ (green): both commits and daily update present
+- ⚠️ (yellow/orange): hours reported but 0 commits (may be meetings/review)
+- 🔴 (red): commits exist but no daily update
+- Gray: no data (on leave or no activity)
+
+Layout similar to GitHub contribution graph. Dates on X axis, members on Y axis.
+
+**Project Participation** — Horizontal stacked bar chart (Recharts `BarChart`). Each member's bar shows commit count per project, color-coded by project. Below the chart, a warning section lists single-point-of-failure projects (only 1 contributor).
+
+**Commit Detail Table** — Collapsible by member. Columns: Date | Project | Title | SHA. Sorted by date descending.
+
+#### 6c. Daily View Enhancement
+
+Member cards gain two additions:
+- **Commit badge**: Top-right corner, teal/cyan (`#06b6d4`) pill showing commit count (e.g., "3 commits"). Hidden if 0 or no commit data.
+- **Consistency indicator**: Small status icon next to the existing status badge (✅/⚠️/🔴).
+- **Hover detail**: On card hover, if commits exist, show a brief tooltip or expanded section listing project + title for each commit.
+
+#### 6d. Trend View Enhancement
+
+Add commit count as a secondary Y-axis (right side) on the existing ComposedChart. Rendered as bars (thin, semi-transparent teal) behind the existing hour lines. This shows the correlation between hours reported and commits per day.
+
+#### 6e. Issues Ticker Integration
+
+The Status Overview attention cards section displays commit-related warnings from `projectRisks` and `analysis` data alongside existing daily update issues. Uses the same severity color system.
+
+#### 6f. Design Language
+
+- **Commit accent color**: Teal/cyan `#06b6d4` (distinguish from blue `#3b82f6` used for hours/dev)
+- **Consistency colors**: Reuse existing SEVERITY_COLORS (🔴 red, 🟡 yellow, 🟢 green)
+- **New elements** follow existing patterns: dark cards, rounded corners, hover transitions, responsive grid
+- **Typography**: Same font stack (JetBrains Mono, SF Mono, Noto Sans TC)
+
+### 7. Skills
 
 #### .claude/skills/sync-gitlab-commits.md
 
 Standalone skill:
 1. Read `gitlab-config.json`
 2. Run `node scripts/fetch-gitlab-commits.js --date <date>`
-3. Review output
-4. POST to Apps Script web app
+3. Review output (script writes `gitlab-commits.json` and outputs POST payload to stdout)
+4. POST payload to Apps Script web app
 5. Output summary
 
 #### .claude/skills/sync.md
@@ -207,18 +286,19 @@ Excluded: GitLab CI, patty, richard, 李耀瑄, leohu
 ## File Changes Summary
 
 **New files:**
-- `gitlab-config.json` (gitignored) — already created
+- `gitlab-config.json` (gitignored) — already created (needs memberMap/excludeAuthors update)
+- `gitlab-commits.json` — dashboard commit data (generated by script)
 - `scripts/fetch-gitlab-commits.js`
 - `.claude/skills/sync-gitlab-commits.md`
 - `.claude/skills/sync.md`
 
 **Modified files:**
 - `appscript/Code.gs` — add `writeGitlabCommits_()`, `writeCommitAnalysis_()`, update `doPost()`
+- `index.html` — add commits tab, daily view badges, trend overlay, issues integration
 - `.gitignore` — already done
 
 **Unchanged:**
 - `raw_data.json` schema
-- `index.html` dashboard
 - `.claude/skills/sync-daily-updates.md`
 - `scripts/parse-daily-updates.js`
 - `scripts/merge-daily-data.js`
