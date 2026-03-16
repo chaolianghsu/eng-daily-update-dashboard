@@ -4,34 +4,10 @@
       "Joyce": {
         "count": 15,
         "projects": [
-          "KEYPO/keypo-backend",
-          "KEYPO/keypo-engine/keypo-engine-api-v3"
+          "KEYPO/keypo-engine/keypo-engine-api-v3",
+          "KEYPO/keypo-backend"
         ],
         "items": [
-          {
-            "title": "[feat] Remove token del",
-            "sha": "339d2d85",
-            "project": "KEYPO/keypo-backend",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/339d2d854a142eeaceea8d6f09e4e23cfb83d665"
-          },
-          {
-            "title": "[fix] Coerce filter_ads from [] to \"no_ads\" in gpt_report",
-            "sha": "2cb79b5f",
-            "project": "KEYPO/keypo-backend",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/2cb79b5f40064ad8dc1a096a6eb01116be1408d3"
-          },
-          {
-            "title": "[feat] Add kw_aggs weights for person hotkw in gpt_report",
-            "sha": "dd2dbf9b",
-            "project": "KEYPO/keypo-backend",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/dd2dbf9b83094933f24144dfd70d9b0405b0ab75"
-          },
-          {
-            "title": "[fix] Add min_time/max_time params for keypo engine API v3 in report download",
-            "sha": "ff85c1a9",
-            "project": "KEYPO/keypo-backend",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/ff85c1a92192458495b6e2e4a1a888d476c94086"
-          },
           {
             "title": "feat: add AiReportSetting and GPT summarizer utilities",
             "sha": "302be11e",
@@ -97,13 +73,71 @@
             "sha": "fc28e631",
             "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
             "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/fc28e63191b833027b71abbd3aadb92a3fe1ad2b"
+          },
+          {
+            "title": "[feat] Remove token del",
+            "sha": "339d2d85",
+            "project": "KEYPO/keypo-backend",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/339d2d854a142eeaceea8d6f09e4e23cfb83d665"
+          },
+          {
+            "title": "[fix] Coerce filter_ads from [] to \"no_ads\" in gpt_report",
+            "sha": "2cb79b5f",
+            "project": "KEYPO/keypo-backend",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/2cb79b5f40064ad8dc1a096a6eb01116be1408d3"
+          },
+          {
+            "title": "[feat] Add kw_aggs weights for person hotkw in gpt_report",
+            "sha": "dd2dbf9b",
+            "project": "KEYPO/keypo-backend",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/dd2dbf9b83094933f24144dfd70d9b0405b0ab75"
+          },
+          {
+            "title": "[fix] Add min_time/max_time params for keypo engine API v3 in report download",
+            "sha": "ff85c1a9",
+            "project": "KEYPO/keypo-backend",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/ff85c1a92192458495b6e2e4a1a888d476c94086"
+          }
+        ]
+      },
+      "Jason": {
+        "count": 4,
+        "projects": [
+          "dailyview/2024-dailyview-backend",
+          "dailyview/dv-remote-es"
+        ],
+        "items": [
+          {
+            "title": "fix: replace sys.executable with python in subprocess call to fix uWSGI config error",
+            "sha": "d9f0b774",
+            "project": "dailyview/2024-dailyview-backend",
+            "url": "https://biglab.buygta.today/dailyview/2024-dailyview-backend/-/commit/d9f0b77473ee0971c397d14e70e9630a2ae3991c"
+          },
+          {
+            "title": "Merge branch 'dev' into 'main'",
+            "sha": "6354d054",
+            "project": "dailyview/2024-dailyview-backend",
+            "url": "https://biglab.buygta.today/dailyview/2024-dailyview-backend/-/commit/6354d0540212ba16d0294fcacbfa6d5823db6037"
+          },
+          {
+            "title": "Merge branch 'dev' into 'main'",
+            "sha": "0674ff6d",
+            "project": "dailyview/2024-dailyview-backend",
+            "url": "https://biglab.buygta.today/dailyview/2024-dailyview-backend/-/commit/0674ff6d39e48e4f02ce0cc1515e15cb05f07515"
+          },
+          {
+            "title": "feat: 支援跨平台 date 與 rotate-alias --date 測試參數",
+            "sha": "d123e948",
+            "project": "dailyview/dv-remote-es",
+            "url": "https://biglab.buygta.today/dailyview/dv-remote-es/-/commit/d123e948b2c839b0f0825d57d54869ed8c0a5782"
           }
         ]
       },
       "Joe": {
-        "count": 3,
+        "count": 4,
         "projects": [
-          "KEYPO/keypo-frontend-2023"
+          "KEYPO/keypo-frontend-2023",
+          "joe/es-v9-site-index-migration"
         ],
         "items": [
           {
@@ -123,6 +157,168 @@
             "sha": "da3f603d",
             "project": "KEYPO/keypo-frontend-2023",
             "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/da3f603d6dc57548fcd583a2e681eb7c75c06baa"
+          },
+          {
+            "title": "feat: add auth headers for dest ES client and update connection config",
+            "sha": "22022006",
+            "project": "joe/es-v9-site-index-migration",
+            "url": "https://biglab.buygta.today/joe/es-v9-site-index-migration/-/commit/22022006f0fdd74948f0013915c99788acbbbb65"
+          }
+        ]
+      },
+      "日銜": {
+        "count": 6,
+        "projects": [
+          "CrawlersV2/bigcrawler-scrapy"
+        ],
+        "items": [
+          {
+            "title": "fix(gvmh) : fix time error",
+            "sha": "9300e931",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/9300e9314d88277c5da42ce3bf6f9355c7ff4e49"
+          },
+          {
+            "title": "Merge branch 'byron-fix-gvmh' into 'develop'",
+            "sha": "711084b2",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/711084b2199ce669f8ae8a5167a6a272b0ea9ead"
+          },
+          {
+            "title": "Merge branch 'byron-fix-gvmh' into 'develop'",
+            "sha": "21d293c7",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/21d293c7608192241e69a5a68dbb0322aa4b86df"
+          },
+          {
+            "title": "fix(mna) : fix time error",
+            "sha": "bab39733",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/bab397330dae1860bf1ea8a381d0bca699b0dd5e"
+          },
+          {
+            "title": "Merge branch 'byron-fix-mna' into 'develop'",
+            "sha": "31fd8316",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/31fd83161ea03387db70904cfcd2a6ee8dde9ffd"
+          },
+          {
+            "title": "Merge branch 'byron-fix-mna' into 'develop'",
+            "sha": "48d499ae",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/48d499ae379a79f77cf807b28a2017fa617d9e5f"
+          }
+        ]
+      },
+      "Ivy": {
+        "count": 2,
+        "projects": [
+          "bigdata/2025-bigdata-app"
+        ],
+        "items": [
+          {
+            "title": "feat(investor-relations): add financial pages, i18n and footer (WIP)",
+            "sha": "bfc2b043",
+            "project": "bigdata/2025-bigdata-app",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-app/-/commit/bfc2b043d7ff53bef5d00993a751a2d4c005bd42"
+          },
+          {
+            "title": "chore: update vscode settings, contact-us label and en footer label",
+            "sha": "e1d190c1",
+            "project": "bigdata/2025-bigdata-app",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-app/-/commit/e1d190c15bc330aaca9bee526ac3672c77910afc"
+          }
+        ]
+      },
+      "禎佑": {
+        "count": 14,
+        "projects": [
+          "chris.su/tiktok-crawl-httpx"
+        ],
+        "items": [
+          {
+            "title": "chore: Add new error for dead channel",
+            "sha": "d1f5f766",
+            "project": "chris.su/tiktok-crawl-httpx",
+            "url": "https://biglab.buygta.today/chris.su/tiktok-crawl-httpx/-/commit/d1f5f76676ff44eda94915821ab0c2a9a601b1dd"
+          },
+          {
+            "title": "fix: _update_fid2name_state 傳入 plain dict 導致 to_json_dict 報錯",
+            "sha": "28ca3b21",
+            "project": "chris.su/tiktok-crawl-httpx",
+            "url": "https://biglab.buygta.today/chris.su/tiktok-crawl-httpx/-/commit/28ca3b2169a1b8e6991255578644c009a1808a02"
+          },
+          {
+            "title": "chore: update log for debugging",
+            "sha": "efa10eb4",
+            "project": "chris.su/tiktok-crawl-httpx",
+            "url": "https://biglab.buygta.today/chris.su/tiktok-crawl-httpx/-/commit/efa10eb40e0a41e80450a89a8d15c800b292737f"
+          },
+          {
+            "title": "fix: 修正前一個 commit 的 logger",
+            "sha": "b77d85cb",
+            "project": "chris.su/tiktok-crawl-httpx",
+            "url": "https://biglab.buygta.today/chris.su/tiktok-crawl-httpx/-/commit/b77d85cb223e20bda1356c2170f859fbfbac9a14"
+          },
+          {
+            "title": "fix: 修正改 state 的 api url 的 endpoint",
+            "sha": "28ae5922",
+            "project": "chris.su/tiktok-crawl-httpx",
+            "url": "https://biglab.buygta.today/chris.su/tiktok-crawl-httpx/-/commit/28ae5922cf88e9b74adc0e4ce5c95d3d43fcbafb"
+          },
+          {
+            "title": "feat: 新增關鍵字查詢用戶、頻道資訊收錄增加keyword欄位",
+            "sha": "105c033f",
+            "project": "chris.su/tiktok-crawl-httpx",
+            "url": "https://biglab.buygta.today/chris.su/tiktok-crawl-httpx/-/commit/105c033fce3e10a8828d585afefa7520d540a00f"
+          },
+          {
+            "title": "chore: 調整task queue",
+            "sha": "b93dd29b",
+            "project": "chris.su/tiktok-crawl-httpx",
+            "url": "https://biglab.buygta.today/chris.su/tiktok-crawl-httpx/-/commit/b93dd29b26cace6b71db89ea8d9a1991706b5fd7"
+          },
+          {
+            "title": "fix: supervisor 環境變數格式錯誤",
+            "sha": "3bdf6dda",
+            "project": "chris.su/tiktok-crawl-httpx",
+            "url": "https://biglab.buygta.today/chris.su/tiktok-crawl-httpx/-/commit/3bdf6dda615d521cc6390646f9a311331c30c1f1"
+          },
+          {
+            "title": "chore: enable 直接送kol用戶爬蟲的redis list",
+            "sha": "244256b3",
+            "project": "chris.su/tiktok-crawl-httpx",
+            "url": "https://biglab.buygta.today/chris.su/tiktok-crawl-httpx/-/commit/244256b3f412416aba2c41eacc2cc832eac0841b"
+          },
+          {
+            "title": "fix: 發送redis list的內容需要是str，非dict",
+            "sha": "3e5a44a1",
+            "project": "chris.su/tiktok-crawl-httpx",
+            "url": "https://biglab.buygta.today/chris.su/tiktok-crawl-httpx/-/commit/3e5a44a129122f3bcee3697f4891768cf190635c"
+          },
+          {
+            "title": "fix: fix code",
+            "sha": "ea224556",
+            "project": "chris.su/tiktok-crawl-httpx",
+            "url": "https://biglab.buygta.today/chris.su/tiktok-crawl-httpx/-/commit/ea224556104ce5d204e937117b09184acd6c40de"
+          },
+          {
+            "title": "Merge branch 'develop' into 'main'",
+            "sha": "d3cc7475",
+            "project": "chris.su/tiktok-crawl-httpx",
+            "url": "https://biglab.buygta.today/chris.su/tiktok-crawl-httpx/-/commit/d3cc7475411d8405f2c38ced9ff60e784ade4026"
+          },
+          {
+            "title": "Merge branch 'develop' into 'main'",
+            "sha": "1779ec77",
+            "project": "chris.su/tiktok-crawl-httpx",
+            "url": "https://biglab.buygta.today/chris.su/tiktok-crawl-httpx/-/commit/1779ec771804834ed2b6010977f159d0310f22fb"
+          },
+          {
+            "title": "fix: keyword 是可選才對",
+            "sha": "9137a811",
+            "project": "chris.su/tiktok-crawl-httpx",
+            "url": "https://biglab.buygta.today/chris.su/tiktok-crawl-httpx/-/commit/9137a811c6180d819efb460e2584c700053ef770"
           }
         ]
       },
@@ -149,6 +345,20 @@
             "sha": "3a0e126b",
             "project": "KEYPO/keypo-q-huaan-v2",
             "url": "https://biglab.buygta.today/KEYPO/keypo-q-huaan-v2/-/commit/3a0e126ba6b106928b3ec53e8891400824c8a747"
+          }
+        ]
+      },
+      "Wendy": {
+        "count": 1,
+        "projects": [
+          "sinyi/sinyi-dashboard"
+        ],
+        "items": [
+          {
+            "title": "wip\" es v9 query adjustments",
+            "sha": "a5dc38e7",
+            "project": "sinyi/sinyi-dashboard",
+            "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/a5dc38e76effb806ce4f89a91a26956af1136108"
           }
         ]
       },
@@ -935,24 +1145,34 @@
         "hours": 7.5
       },
       "Ivy": {
-        "status": "⚠️",
-        "commitCount": 0,
+        "status": "✅",
+        "commitCount": 2,
         "hours": 8
       },
       "Jason": {
-        "status": "⚠️",
-        "commitCount": 0,
+        "status": "✅",
+        "commitCount": 4,
         "hours": 7.5
       },
+      "日銜": {
+        "status": "🔴",
+        "commitCount": 6,
+        "hours": null
+      },
       "Wendy": {
-        "status": "⚠️",
-        "commitCount": 0,
+        "status": "✅",
+        "commitCount": 1,
         "hours": 7.5
       },
       "侑呈": {
         "status": "⚠️",
         "commitCount": 0,
         "hours": 6.5
+      },
+      "禎佑": {
+        "status": "🔴",
+        "commitCount": 14,
+        "hours": null
       },
       "Ted": {
         "status": "✅",
@@ -966,7 +1186,7 @@
       },
       "Joe": {
         "status": "✅",
-        "commitCount": 3,
+        "commitCount": 4,
         "hours": 11
       },
       "哲緯": {
@@ -978,6 +1198,16 @@
   },
   "projectRisks": [
     {
+      "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+      "soloContributor": "Joyce",
+      "severity": "🟡"
+    },
+    {
+      "project": "dailyview/2024-dailyview-backend",
+      "soloContributor": "Jason",
+      "severity": "🟡"
+    },
+    {
       "project": "KEYPO/keypo-backend",
       "soloContributor": "Joyce",
       "severity": "🟡"
@@ -988,13 +1218,38 @@
       "severity": "🟡"
     },
     {
-      "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
-      "soloContributor": "Joyce",
+      "project": "CrawlersV2/bigcrawler-scrapy",
+      "soloContributor": "日銜",
+      "severity": "🟡"
+    },
+    {
+      "project": "bigdata/2025-bigdata-app",
+      "soloContributor": "Ivy",
+      "severity": "🟡"
+    },
+    {
+      "project": "chris.su/tiktok-crawl-httpx",
+      "soloContributor": "禎佑",
+      "severity": "🟡"
+    },
+    {
+      "project": "dailyview/dv-remote-es",
+      "soloContributor": "Jason",
       "severity": "🟡"
     },
     {
       "project": "KEYPO/keypo-q-huaan-v2",
       "soloContributor": "家輝",
+      "severity": "🟡"
+    },
+    {
+      "project": "joe/es-v9-site-index-migration",
+      "soloContributor": "Joe",
+      "severity": "🟡"
+    },
+    {
+      "project": "sinyi/sinyi-dashboard",
+      "soloContributor": "Wendy",
       "severity": "🟡"
     },
     {

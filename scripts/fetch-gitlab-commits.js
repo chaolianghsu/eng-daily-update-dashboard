@@ -254,10 +254,14 @@ async function main() {
 
   console.error(`Fetching commits for ${dateRange.since}${dateRange.since !== dateRange.until ? '-' + dateRange.until : ''}...`);
 
-  // Fetch projects
-  const projectsUrl = `${baseUrl}/api/v4/projects?membership=true&per_page=100&order_by=last_activity_at`;
+  // Fetch projects — all visible projects with recent activity (not just membership)
+  // Use last_activity_after to filter to projects active within the date range (with 1 day buffer)
+  const sinceDate = new Date(sinceISO);
+  sinceDate.setDate(sinceDate.getDate() - 1);
+  const lastActivityAfter = sinceDate.toISOString().split('T')[0];
+  const projectsUrl = `${baseUrl}/api/v4/projects?per_page=100&order_by=last_activity_at&last_activity_after=${lastActivityAfter}`;
   const projects = await fetchAllPages(projectsUrl, token);
-  console.error(`Found ${projects.length} projects`);
+  console.error(`Found ${projects.length} projects with activity after ${lastActivityAfter}`);
 
   // Fetch commits for each project
   const allCommits = [];
