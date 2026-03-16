@@ -64,7 +64,7 @@ Stores GitLab API credentials and member mapping. File exists with `baseUrl` and
 
 **Process:**
 1. Read `gitlab-config.json`
-2. Call `GET /api/v4/projects?membership=true&per_page=100&order_by=last_activity_at` to list projects. Handle pagination: follow `x-next-page` header if present (unlikely to exceed 100 for this team, but handled for correctness).
+2. Call `GET /api/v4/projects?per_page=100&order_by=last_activity_at&last_activity_after=<since-1day>` to list all visible projects with recent activity (not just membership — team members work across many groups). Handle pagination: follow `x-next-page` header if present.
 3. For each project, call `GET /api/v4/projects/:id/repository/commits?since=<start>&until=<end>&all=true&per_page=100`. Handle pagination similarly.
 4. Filter out `excludeAuthors`
 5. Map `author_name` to daily update member name via `memberMap`

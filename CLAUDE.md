@@ -73,13 +73,14 @@ The older `/fetch-daily-updates` and `/backfill-daily-updates` skills are supers
 
 Self-hosted GitLab at `https://biglab.buygta.today`. The `/sync-gitlab-commits` skill automates commit data extraction:
 
-1. Reads `gitlab-config.json` for API token and member mapping (14 members, 5 excluded bots/non-eng)
-2. Fetches commits via GitLab API (`/api/v4/projects/:id/repository/commits?all=true`)
-3. Maps `author_name` to daily update member names; unmapped authors logged as warnings
-4. Cross-references with `raw_data.json` for consistency analysis (✅ both present, ⚠️ hours but no commits, 🔴 commits but no report)
-5. Identifies single-contributor project risks
-6. Writes `gitlab-commits.json` (dashboard) + POSTs to Apps Script (Spreadsheet)
-7. Each commit includes a clickable `url` linking to the GitLab commit page
+1. Reads `gitlab-config.json` for API token and member mapping (22 author variants → 14 members, 6 excluded bots/non-eng)
+2. Fetches all visible projects with recent activity via `last_activity_after` filter (not just membership — covers `dailyview/*`, `bigdata/*`, `CrawlersV2/*`, `sinyi/*`, personal repos, etc.)
+3. For each project, fetches commits via GitLab API (`/api/v4/projects/:id/repository/commits?all=true`)
+4. Maps `author_name` to daily update member names; unmapped authors logged as warnings — some members use multiple git names (e.g., `byron.you`, `Byron.you`, `游日銜` all map to 日銜)
+5. Cross-references with `raw_data.json` for consistency analysis (✅ both present, ⚠️ hours but no commits, 🔴 commits but no report)
+6. Identifies single-contributor project risks
+7. Writes `gitlab-commits.json` (dashboard) + POSTs to Apps Script (Spreadsheet)
+8. Each commit includes a clickable `url` linking to the GitLab commit page
 
 ### gitlab-commits.json Schema
 
