@@ -917,14 +917,34 @@
     },
     "3/13": {
       "Joyce": {
-        "status": "🔴",
+        "status": "✅",
         "commitCount": 17,
-        "hours": null
+        "hours": 7.5
+      },
+      "Ivy": {
+        "status": "⚠️",
+        "commitCount": 0,
+        "hours": 8
+      },
+      "Jason": {
+        "status": "⚠️",
+        "commitCount": 0,
+        "hours": 7.5
+      },
+      "Wendy": {
+        "status": "⚠️",
+        "commitCount": 0,
+        "hours": 7.5
+      },
+      "侑呈": {
+        "status": "⚠️",
+        "commitCount": 0,
+        "hours": 6.5
       },
       "Ted": {
-        "status": "🔴",
+        "status": "✅",
         "commitCount": 2,
-        "hours": null
+        "hours": 10
       },
       "家輝": {
         "status": "🔴",
@@ -932,9 +952,14 @@
         "hours": null
       },
       "Joe": {
-        "status": "🔴",
+        "status": "✅",
         "commitCount": 3,
-        "hours": null
+        "hours": 11
+      },
+      "哲緯": {
+        "status": "⚠️",
+        "commitCount": 0,
+        "hours": 7
       }
     }
   },
