@@ -158,7 +158,7 @@ function writeGitlabCommits_(ss, commits) {
 
   // Add header if empty
   if (existing.length === 0) {
-    sheet.getRange(1, 1, 1, 5).setValues([['日期', '成員', 'Project', 'Commit Title', 'SHA']]);
+    sheet.getRange(1, 1, 1, 6).setValues([['日期', '成員', 'Project', 'Commit Title', 'SHA', 'URL']]);
     existing = [['header']];
   }
 
@@ -167,12 +167,12 @@ function writeGitlabCommits_(ss, commits) {
     var c = commits[i];
     var key = String(c.date) + '|' + String(c.member) + '|' + String(c.sha);
     if (existingKeys[key]) continue;
-    newRows.push([c.date, c.member, c.project, c.title, c.sha]);
+    newRows.push([c.date, c.member, c.project, c.title, c.sha, c.url || '']);
   }
 
   if (newRows.length > 0) {
     var startRow = existing.length + 1;
-    sheet.getRange(startRow, 1, newRows.length, 5).setValues(newRows);
+    sheet.getRange(startRow, 1, newRows.length, 6).setValues(newRows);
   }
 }
 
@@ -239,7 +239,8 @@ function getCommitData() {
     if (commits[date][member].projects.indexOf(project) === -1) {
       commits[date][member].projects.push(project);
     }
-    commits[date][member].items.push({ title: title, sha: sha, project: project });
+    var url = String(commitRows[i][5] || '');
+    commits[date][member].items.push({ title: title, sha: sha, project: project, url: url || null });
   }
 
   // Read analysis
