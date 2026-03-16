@@ -225,7 +225,7 @@ const tabStyle = (active) => ({
   color: active ? "#fff" : COLORS.textMuted,
 });
 
-function CommitsView({ commitData, dates, members, memberColors, leave }) {
+function CommitsView({ commitData, dates, members, memberColors, leave, activeDate, onDateSelect, dailyDates, dayLabels }) {
   const { commits, analysis, projectRisks } = commitData;
   const [expandedMember, setExpandedMember] = useState(null);
 
@@ -233,13 +233,12 @@ function CommitsView({ commitData, dates, members, memberColors, leave }) {
 
   const projectSet = new Set();
   const memberProjectCounts = {};
-  for (const [date, memberCommits] of Object.entries(commits)) {
-    for (const [member, data] of Object.entries(memberCommits)) {
-      if (!memberProjectCounts[member]) memberProjectCounts[member] = {};
-      for (const item of data.items) {
-        projectSet.add(item.project);
-        memberProjectCounts[member][item.project] = (memberProjectCounts[member][item.project] || 0) + 1;
-      }
+  const dateCommits = commits[activeDate] || {};
+  for (const [member, data] of Object.entries(dateCommits)) {
+    if (!memberProjectCounts[member]) memberProjectCounts[member] = {};
+    for (const item of data.items) {
+      projectSet.add(item.project);
+      memberProjectCounts[member][item.project] = (memberProjectCounts[member][item.project] || 0) + 1;
     }
   }
   const allProjects = [...projectSet].sort();
@@ -252,12 +251,11 @@ function CommitsView({ commitData, dates, members, memberColors, leave }) {
     .sort((a, b) => b._total - a._total);
 
   const memberCommitList = {};
-  for (const [date, mc] of Object.entries(commits)) {
-    for (const [member, data] of Object.entries(mc)) {
-      if (!memberCommitList[member]) memberCommitList[member] = [];
-      for (const item of data.items) {
-        memberCommitList[member].push({ date, ...item });
-      }
+  const dateCommitsForDetail = commits[activeDate] || {};
+  for (const [member, data] of Object.entries(dateCommitsForDetail)) {
+    if (!memberCommitList[member]) memberCommitList[member] = [];
+    for (const item of data.items) {
+      memberCommitList[member].push({ date: activeDate, ...item });
     }
   }
 
@@ -271,6 +269,21 @@ function CommitsView({ commitData, dates, members, memberColors, leave }) {
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+      <div style={{ marginBottom: 20 }}>
+        <div className="date-scroll">
+          {dailyDates.map(d => (
+            <button key={d} className="date-btn" onClick={() => onDateSelect(d)}
+              style={{
+                padding: "8px 20px", borderRadius: 8, cursor: "pointer",
+                fontSize: 13, fontWeight: 600, fontFamily: "inherit",
+                border: activeDate === d ? `2px solid ${COLORS.teal}` : `1px solid ${COLORS.border}`,
+                background: activeDate === d ? "rgba(6,182,212,0.15)" : "transparent",
+                color: activeDate === d ? COLORS.teal : COLORS.textMuted,
+              }}
+            >{d}（{dayLabels[d]}）</button>
+          ))}
+        </div>
+      </div>
       {/* Consistency Grid */}
       <CardPanel title="一致性檢查">
         <div style={{ overflowX: "auto" }}>
@@ -279,7 +292,11 @@ function CommitsView({ commitData, dates, members, memberColors, leave }) {
               <tr>
                 <th style={{ padding: "6px 12px", textAlign: "left", color: COLORS.textMuted, fontWeight: 400 }}>成員</th>
                 {gridDates.map(d => (
-                  <th key={d} style={{ padding: "6px 8px", textAlign: "center", color: COLORS.textMuted, fontWeight: 400, fontSize: 11 }}>{d}</th>
+                  <th key={d} style={{
+                    padding: "6px 8px", textAlign: "center", fontWeight: d === activeDate ? 700 : 400, fontSize: 11,
+                    color: d === activeDate ? COLORS.teal : COLORS.textMuted,
+                    borderBottom: d === activeDate ? `2px solid ${COLORS.teal}` : "none",
+                  }}>{d}</th>
                 ))}
               </tr>
             </thead>
@@ -313,7 +330,7 @@ function CommitsView({ commitData, dates, members, memberColors, leave }) {
 
       {/* Project Participation */}
       {allProjects.length > 0 && (
-        <CardPanel title="專案參與度">
+        <CardPanel title={`專案參與度（${activeDate}）`}>
           <ResponsiveContainer width="100%" height={barData.length * 36 + 40}>
             <BarChart data={barData} layout="vertical" margin={{ left: 60, right: 20 }}>
               <CartesianGrid strokeDasharray="3 3" stroke={COLORS.border} />
@@ -338,7 +355,7 @@ function CommitsView({ commitData, dates, members, memberColors, leave }) {
       )}
 
       {/* Commit Detail */}
-      <CardPanel title="Commit 明細">
+      <CardPanel title={`Commit 明細（${activeDate}）`}>
         {Object.entries(memberCommitList).sort((a, b) => b[1].length - a[1].length).map(([member, items]) => (
           <div key={member} style={{ marginBottom: 8 }}>
             <button
@@ -356,7 +373,17 @@ function CommitsView({ commitData, dates, members, memberColors, leave }) {
                       <td style={{ padding: "4px 8px", color: COLORS.textMuted, width: 40 }}>{item.date}</td>
                       <td style={{ padding: "4px 8px", color: COLORS.teal, width: 120, fontSize: 11 }}>{item.project.split('/').pop()}</td>
                       <td style={{ padding: "4px 8px", color: COLORS.text }}>{item.title}</td>
-                      <td style={{ padding: "4px 8px", color: COLORS.textDim, width: 70, fontFamily: "JetBrains Mono, SF Mono, monospace", fontSize: 11 }}>{item.sha}</td>
+                      <td style={{ padding: "4px 8px", width: 70 }}>
+                        {item.url ? (
+                          <a href={item.url} target="_blank" rel="noopener noreferrer"
+                            style={{ color: COLORS.teal, fontFamily: "JetBrains Mono, SF Mono, monospace", fontSize: 11, textDecoration: "none" }}
+                            onMouseOver={e => e.target.style.textDecoration = "underline"}
+                            onMouseOut={e => e.target.style.textDecoration = "none"}
+                          >{item.sha}</a>
+                        ) : (
+                          <span style={{ color: COLORS.textDim, fontFamily: "JetBrains Mono, SF Mono, monospace", fontSize: 11 }}>{item.sha}</span>
+                        )}
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -1206,7 +1233,8 @@ function Dashboard() {
 
         {/* ══ COMMITS ══ */}
         {view === "commits" && commitData && (
-          <CommitsView commitData={commitData} dates={dates} members={members} memberColors={memberColors} leave={leave} />
+          <CommitsView commitData={commitData} dates={dates} members={members} memberColors={memberColors} leave={leave}
+            activeDate={activeDate} onDateSelect={setSelectedDate} dailyDates={dailyDates} dayLabels={dayLabels} />
         )}
 
         {/* Footer */}
