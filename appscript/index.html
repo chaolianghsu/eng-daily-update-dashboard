@@ -114,6 +114,7 @@ const COLORS = {
   red: "#ef4444", redDim: "#991b1b",
   orange: "#f97316", orangeDim: "#7c2d12",
   purple: "#a78bfa",
+  teal: "#06b6d4", tealDim: "#164e63",
 };
 
 const SEVERITY_COLORS = {
@@ -224,6 +225,150 @@ const tabStyle = (active) => ({
   color: active ? "#fff" : COLORS.textMuted,
 });
 
+function CommitsView({ commitData, dates, members, memberColors, leave }) {
+  const { commits, analysis, projectRisks } = commitData;
+  const [expandedMember, setExpandedMember] = useState(null);
+
+  const gridDates = dates.filter(d => analysis[d]);
+
+  const projectSet = new Set();
+  const memberProjectCounts = {};
+  for (const [date, memberCommits] of Object.entries(commits)) {
+    for (const [member, data] of Object.entries(memberCommits)) {
+      if (!memberProjectCounts[member]) memberProjectCounts[member] = {};
+      for (const item of data.items) {
+        projectSet.add(item.project);
+        memberProjectCounts[member][item.project] = (memberProjectCounts[member][item.project] || 0) + 1;
+      }
+    }
+  }
+  const allProjects = [...projectSet].sort();
+  const projectColors = {};
+  const projectPalette = ["#06b6d4","#22c55e","#f59e0b","#ef4444","#a78bfa","#ec4899","#f97316","#14b8a6","#6366f1","#84cc16"];
+  allProjects.forEach((p, i) => { projectColors[p] = projectPalette[i % projectPalette.length]; });
+
+  const barData = Object.entries(memberProjectCounts)
+    .map(([member, projects]) => ({ member, ...projects, _total: Object.values(projects).reduce((a, b) => a + b, 0) }))
+    .sort((a, b) => b._total - a._total);
+
+  const memberCommitList = {};
+  for (const [date, mc] of Object.entries(commits)) {
+    for (const [member, data] of Object.entries(mc)) {
+      if (!memberCommitList[member]) memberCommitList[member] = [];
+      for (const item of data.items) {
+        memberCommitList[member].push({ date, ...item });
+      }
+    }
+  }
+
+  const consistencyStyle = (status) => {
+    const map = { "\u2705": { c: COLORS.green, b: COLORS.greenDim }, "\u26A0\uFE0F": { c: COLORS.yellow, b: COLORS.yellowDim } };
+    const s = map[status] || (SEVERITY_COLORS[status] ? { c: SEVERITY_COLORS[status].sc, b: SEVERITY_COLORS[status].bg } : { c: COLORS.textDim, b: COLORS.border });
+    return s;
+  };
+  const statusColor = s => consistencyStyle(s).c;
+  const statusBg = s => consistencyStyle(s).b;
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+      {/* Consistency Grid */}
+      <CardPanel title="一致性檢查">
+        <div style={{ overflowX: "auto" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
+            <thead>
+              <tr>
+                <th style={{ padding: "6px 12px", textAlign: "left", color: COLORS.textMuted, fontWeight: 400 }}>成員</th>
+                {gridDates.map(d => (
+                  <th key={d} style={{ padding: "6px 8px", textAlign: "center", color: COLORS.textMuted, fontWeight: 400, fontSize: 11 }}>{d}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {members.filter(m => gridDates.some(d => analysis[d]?.[m])).map(m => (
+                <tr key={m}>
+                  <td style={{ padding: "6px 12px", color: COLORS.text }}>{m}</td>
+                  {gridDates.map(d => {
+                    const a = analysis[d]?.[m];
+                    const onLeaveDay = leave[m] && leave[m].some(r => {
+                      const dn = d.split('/').map(Number);
+                      const sn = r.start.split('/').map(Number);
+                      const en = r.end.split('/').map(Number);
+                      return (dn[0]*100+dn[1]) >= (sn[0]*100+sn[1]) && (dn[0]*100+dn[1]) <= (en[0]*100+en[1]);
+                    });
+                    const bg = a ? statusBg(a.status) : (onLeaveDay ? COLORS.orangeDim : "transparent");
+                    const color = a ? statusColor(a.status) : (onLeaveDay ? COLORS.orange : COLORS.textDim);
+                    const label = a ? a.status : (onLeaveDay ? "假" : "\u00B7");
+                    return (
+                      <td key={d} style={{ padding: "4px 8px", textAlign: "center" }}>
+                        <span style={{ display: "inline-block", width: 28, height: 28, lineHeight: "28px", borderRadius: 6, background: bg, color, fontSize: 14 }}>{label}</span>
+                      </td>
+                    );
+                  })}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </CardPanel>
+
+      {/* Project Participation */}
+      {allProjects.length > 0 && (
+        <CardPanel title="專案參與度">
+          <ResponsiveContainer width="100%" height={barData.length * 36 + 40}>
+            <BarChart data={barData} layout="vertical" margin={{ left: 60, right: 20 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke={COLORS.border} />
+              <XAxis type="number" tick={{ fill: COLORS.textDim, fontSize: 11 }} axisLine={{ stroke: COLORS.border }} tickLine={false} />
+              <YAxis type="category" dataKey="member" width={50} tick={{ fill: COLORS.textMuted, fontSize: 12 }} axisLine={false} tickLine={false} />
+              <Tooltip contentStyle={{ background: COLORS.card, border: `1px solid ${COLORS.border}`, borderRadius: 8, color: COLORS.text }} />
+              {allProjects.map(p => (
+                <Bar key={p} dataKey={p} stackId="a" fill={projectColors[p]} name={p.split('/').pop()} />
+              ))}
+            </BarChart>
+          </ResponsiveContainer>
+          {projectRisks.length > 0 && (
+            <div style={{ marginTop: 12, display: "flex", flexWrap: "wrap", gap: 8 }}>
+              {projectRisks.map(r => (
+                <span key={r.project} style={{ padding: "4px 10px", borderRadius: 6, fontSize: 12, background: COLORS.yellowDim, color: COLORS.yellow }}>
+                  {"\u26A0\uFE0F"} {r.project.split('/').pop()} — 僅 {r.soloContributor} 貢獻
+                </span>
+              ))}
+            </div>
+          )}
+        </CardPanel>
+      )}
+
+      {/* Commit Detail */}
+      <CardPanel title="Commit 明細">
+        {Object.entries(memberCommitList).sort((a, b) => b[1].length - a[1].length).map(([member, items]) => (
+          <div key={member} style={{ marginBottom: 8 }}>
+            <button
+              onClick={() => setExpandedMember(expandedMember === member ? null : member)}
+              style={{ width: "100%", textAlign: "left", background: "transparent", border: `1px solid ${COLORS.border}`, borderRadius: 8, padding: "8px 12px", color: COLORS.text, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center", fontFamily: "inherit", fontSize: 13 }}
+            >
+              <span>{member}</span>
+              <span style={{ color: COLORS.teal }}>{items.length} commits {expandedMember === member ? "\u25B2" : "\u25BC"}</span>
+            </button>
+            {expandedMember === member && (
+              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12, marginTop: 4 }}>
+                <tbody>
+                  {items.sort((a, b) => b.date.localeCompare(a.date)).map((item, i) => (
+                    <tr key={i} style={{ borderBottom: `1px solid ${COLORS.border}` }}>
+                      <td style={{ padding: "4px 8px", color: COLORS.textMuted, width: 40 }}>{item.date}</td>
+                      <td style={{ padding: "4px 8px", color: COLORS.teal, width: 120, fontSize: 11 }}>{item.project.split('/').pop()}</td>
+                      <td style={{ padding: "4px 8px", color: COLORS.text }}>{item.title}</td>
+                      <td style={{ padding: "4px 8px", color: COLORS.textDim, width: 70, fontFamily: "JetBrains Mono, SF Mono, monospace", fontSize: 11 }}>{item.sha}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
+          </div>
+        ))}
+      </CardPanel>
+    </div>
+  );
+}
+
 function Dashboard() {
   const [view, setView] = useState("daily");
   const [rawData, setRawData] = useState(null);
@@ -233,6 +378,7 @@ function Dashboard() {
   const [error, setError] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [commitData, setCommitData] = useState(null);
   const [selectedMembers, setSelectedMembers] = useState(new Set());
   const [trendRange, setTrendRange] = useState("2weeks");
 
@@ -243,19 +389,37 @@ function Dashboard() {
   }, []);
 
   useEffect(() => {
+    let dashboardDone = false, commitDone = false;
+    const tryFinish = () => {
+      if (dashboardDone && commitDone) setLoading(false);
+    };
     google.script.run
       .withSuccessHandler(jsonStr => {
         const data = JSON.parse(jsonStr);
         setRawData(data.rawData);
-        setIssues(data.issues);
+        setIssues(data.issues || []);
         setLeave(data.leave || {});
-        setLoading(false);
+        dashboardDone = true;
+        tryFinish();
       })
       .withFailureHandler(err => {
         setError(err.message || String(err));
         setLoading(false);
       })
       .getDashboardData();
+    google.script.run
+      .withSuccessHandler(jsonStr => {
+        const data = JSON.parse(jsonStr);
+        setCommitData(data);
+        commitDone = true;
+        tryFinish();
+      })
+      .withFailureHandler(() => {
+        setCommitData(null);
+        commitDone = true;
+        tryFinish();
+      })
+      .getCommitData();
   }, []);
 
   const dates = rawData ? Object.keys(rawData) : [];
@@ -335,9 +499,14 @@ function Dashboard() {
       row['團隊平均'] = vals.length ? +(vals.reduce((a, b) => a + b, 0) / vals.length).toFixed(1) : null;
       row['_min'] = vals.length ? Math.min(...vals) : null;
       row['_max'] = vals.length ? Math.max(...vals) : null;
+      if (commitData?.commits?.[date]) {
+        for (const m of members) {
+          row[`_commit_${m}`] = commitData.commits[date]?.[m]?.count || 0;
+        }
+      }
       return row;
     });
-  }, [rawData, trendDates, members, dayLabels]);
+  }, [rawData, trendDates, members, dayLabels, commitData]);
 
   const useWeeklyAgg = trendRange === 'month' || trendRange === 'all';
 
@@ -387,6 +556,21 @@ function Dashboard() {
     }).sort((a, b) => (b.avg || -1) - (a.avg || -1));
   }, [rawData, dates, members]);
 
+  const allIssues = useMemo(() => {
+    const base = issues.filter(i => i.severity !== '🟢');
+    if (!commitData) return base;
+    for (const r of (commitData.projectRisks || [])) {
+      base.push({ member: r.soloContributor, severity: r.severity, text: `${r.project.split('/').pop()} 單點貢獻` });
+    }
+    const activeAnalysis = commitData.analysis?.[activeDate] || {};
+    for (const [m, a] of Object.entries(activeAnalysis)) {
+      if (a.status === '🔴') {
+        base.push({ member: m, severity: '🔴', text: `有 ${a.commitCount} commits 但未回報工時` });
+      }
+    }
+    return base;
+  }, [issues, commitData, activeDate]);
+
   if (loading) {
     return (
       <div style={{ minHeight: "100vh", background: COLORS.bg, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 16 }}>
@@ -425,7 +609,7 @@ function Dashboard() {
 
         {/* Team Status Overview */}
         {(() => {
-          const attentionIssues = issues.filter(i => i.severity !== "🟢");
+          const attentionIssues = allIssues;
           const stableIssues = issues.filter(i => i.severity === "🟢");
           const reportedCount = members.filter(m => {
             const latest = dates[dates.length - 1];
@@ -527,6 +711,7 @@ function Dashboard() {
             { key: "daily", label: "📊 每日工時" },
             { key: "trend", label: "📈 趨勢比較" },
             { key: "weekly", label: "📋 週統計" },
+            ...(commitData ? [{ key: "commits", label: "🔀 Commits" }] : []),
           ].map(tab => (
             <button key={tab.key} className={`tab-btn ${view === tab.key ? 'tab-active' : ''}`} onClick={() => setView(tab.key)} style={tabStyle(view === tab.key)}>
               {tab.label}
@@ -585,10 +770,23 @@ function Dashboard() {
                     animationDelay: `${0.28 + idx * 0.04}s`,
                     background: COLORS.card, borderRadius: 10, padding: "14px 12px",
                     border: `1px solid ${issue?.severity === "🔴" ? COLORS.red + "44" : issue?.severity === "🟡" ? COLORS.yellow + "33" : COLORS.border}`,
+                    position: "relative",
                   }}>
+                    {commitData && commitData.commits?.[activeDate]?.[d.name]?.count > 0 && (
+                      <span style={{ position: "absolute", top: 8, right: 8, background: COLORS.tealDim, color: COLORS.teal, padding: "2px 8px", borderRadius: 10, fontSize: 11, fontWeight: 600 }}>
+                        {commitData.commits[activeDate][d.name].count} commits
+                      </span>
+                    )}
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
                       <span style={{ fontWeight: 700, fontSize: 13 }}>{d.name}</span>
-                      <StatusBadge status={status} />
+                      <span style={{ display: "flex", alignItems: "center", gap: 4 }}>
+                        <StatusBadge status={status} />
+                        {commitData?.analysis?.[activeDate]?.[d.name] && (
+                          <span style={{ fontSize: 12 }}>
+                            {commitData.analysis[activeDate][d.name].status}
+                          </span>
+                        )}
+                      </span>
                     </div>
                     <div style={{ fontSize: 28, fontWeight: 800, color: status.color, fontVariantNumeric: "tabular-nums", lineHeight: 1.2 }}>
                       {d.total !== null ? d.total : "—"}
@@ -676,27 +874,33 @@ function Dashboard() {
                 </div>
 
                 <ResponsiveContainer width="100%" height={isMobile ? 320 : 400}>
-                  <ComposedChart data={trendData} margin={{ left: 0, right: 16, top: 8, bottom: 8 }}>
+                  <ComposedChart data={trendData} margin={{ left: 0, right: commitData ? 40 : 16, top: 8, bottom: 8 }}>
                     <CartesianGrid strokeDasharray="3 3" stroke={COLORS.border} />
                     <XAxis dataKey="date" tick={{ fill: COLORS.text, fontSize: isMobile ? 10 : 12 }} axisLine={{ stroke: COLORS.border }} tickLine={false} angle={isMobile ? -30 : 0} textAnchor={isMobile ? "end" : "middle"} height={isMobile ? 50 : 30} />
-                    <YAxis domain={[0, 12]} tick={{ fill: COLORS.textDim, fontSize: 11 }} axisLine={{ stroke: COLORS.border }} tickLine={false} unit="hr" />
+                    <YAxis yAxisId="left" domain={[0, 12]} tick={{ fill: COLORS.textDim, fontSize: 11 }} axisLine={{ stroke: COLORS.border }} tickLine={false} unit="hr" />
+                    {commitData && <YAxis yAxisId="right" orientation="right" tick={{ fill: COLORS.textDim, fontSize: 11 }} axisLine={{ stroke: COLORS.border }} tickLine={false} label={{ value: "commits", angle: 90, position: "insideRight", fill: COLORS.textDim, fontSize: 11 }} />}
                     <Tooltip content={<CustomTooltip />} />
-                    <ReferenceLine y={THRESHOLDS.target} stroke={COLORS.green} strokeDasharray="6 4" strokeWidth={1.5} />
-                    <ReferenceLine y={THRESHOLDS.ok} stroke={COLORS.yellow} strokeDasharray="4 4" strokeWidth={1} />
+                    <ReferenceLine yAxisId="left" y={THRESHOLDS.target} stroke={COLORS.green} strokeDasharray="6 4" strokeWidth={1.5} />
+                    <ReferenceLine yAxisId="left" y={THRESHOLDS.ok} stroke={COLORS.yellow} strokeDasharray="4 4" strokeWidth={1} />
+
+                    {/* Commit bars — behind lines */}
+                    {commitData && selectedMembers.size > 0 && [...selectedMembers].map(m =>
+                      <Bar key={`commit-${m}`} yAxisId="right" dataKey={`_commit_${m}`} fill={memberColors[m]} fillOpacity={0.25} name={`${m} commits`} barSize={12} legendType="none" />
+                    )}
 
                     {/* Min-max range band */}
-                    <Area type="monotone" dataKey="_max" stroke="none" fill={COLORS.accent} fillOpacity={0.06} connectNulls={false} legendType="none" tooltipType="none" />
-                    <Area type="monotone" dataKey="_min" stroke="none" fill={COLORS.bg} fillOpacity={1} connectNulls={false} legendType="none" tooltipType="none" />
+                    <Area yAxisId="left" type="monotone" dataKey="_max" stroke="none" fill={COLORS.accent} fillOpacity={0.06} connectNulls={false} legendType="none" tooltipType="none" />
+                    <Area yAxisId="left" type="monotone" dataKey="_min" stroke="none" fill={COLORS.bg} fillOpacity={1} connectNulls={false} legendType="none" tooltipType="none" />
 
                     {/* Team average line — always visible */}
-                    <Line type="monotone" dataKey="團隊平均" stroke="#e2e8f0" strokeWidth={3}
+                    <Line yAxisId="left" type="monotone" dataKey="團隊平均" stroke="#e2e8f0" strokeWidth={3}
                       strokeDasharray="8 4"
                       dot={{ r: isMobile ? 3 : 4, fill: "#e2e8f0", stroke: COLORS.card, strokeWidth: 2 }}
                       connectNulls={false} />
 
                     {/* Selected member lines */}
                     {members.filter(m => selectedMembers.has(m)).map(m => (
-                      <Line key={m} type="monotone" dataKey={m} stroke={memberColors[m]} strokeWidth={2.5}
+                      <Line key={m} yAxisId="left" type="monotone" dataKey={m} stroke={memberColors[m]} strokeWidth={2.5}
                         dot={{ r: isMobile ? 3 : 5, fill: memberColors[m], stroke: COLORS.card, strokeWidth: 2 }}
                         connectNulls={false} />
                     ))}
@@ -998,6 +1202,11 @@ function Dashboard() {
               </CardPanel>
             </div>
           </div>
+        )}
+
+        {/* ══ COMMITS ══ */}
+        {view === "commits" && commitData && (
+          <CommitsView commitData={commitData} dates={dates} members={members} memberColors={memberColors} leave={leave} />
         )}
 
         {/* Footer */}

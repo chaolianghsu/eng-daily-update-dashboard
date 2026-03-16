@@ -213,6 +213,77 @@ function writeCommitAnalysis_(ss, analysis) {
   }
 }
 
+/**
+ * Returns commit data as JSON string (called from client via google.script.run).
+ * Returns null (as string) if no GitLab Commits sheet exists.
+ */
+function getCommitData() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var commitSheet = ss.getSheetByName('GitLab Commits');
+  if (!commitSheet) return JSON.stringify(null);
+
+  // Read commits: group by date → member
+  var commitRows = commitSheet.getDataRange().getValues();
+  var commits = {};
+  for (var i = 1; i < commitRows.length; i++) {
+    var date = formatDate_(commitRows[i][0]);
+    var member = String(commitRows[i][1]);
+    var project = String(commitRows[i][2]);
+    var title = String(commitRows[i][3]);
+    var sha = String(commitRows[i][4]);
+    if (!date || !member) continue;
+
+    if (!commits[date]) commits[date] = {};
+    if (!commits[date][member]) commits[date][member] = { count: 0, projects: [], items: [] };
+    commits[date][member].count++;
+    if (commits[date][member].projects.indexOf(project) === -1) {
+      commits[date][member].projects.push(project);
+    }
+    commits[date][member].items.push({ title: title, sha: sha, project: project });
+  }
+
+  // Read analysis
+  var analysisSheet = ss.getSheetByName('Commit Analysis');
+  var analysis = {};
+  var projectRisks = [];
+  if (analysisSheet) {
+    var analysisRows = analysisSheet.getDataRange().getValues();
+    var projectContributors = {};
+    for (var i = 1; i < analysisRows.length; i++) {
+      var date = formatDate_(analysisRows[i][0]);
+      var member = String(analysisRows[i][1]);
+      var commitCount = Number(analysisRows[i][2]) || 0;
+      var hours = analysisRows[i][3] === '' || analysisRows[i][3] === null ? null : Number(analysisRows[i][3]);
+      var status = String(analysisRows[i][4]);
+      var projects = String(analysisRows[i][5]);
+      if (!date || !member) continue;
+
+      if (!analysis[date]) analysis[date] = {};
+      analysis[date][member] = { status: status, commitCount: commitCount, hours: hours };
+
+      // Track project contributors for risk detection
+      if (projects) {
+        var projList = projects.split(', ');
+        for (var j = 0; j < projList.length; j++) {
+          if (!projectContributors[projList[j]]) projectContributors[projList[j]] = {};
+          projectContributors[projList[j]][member] = true;
+        }
+      }
+    }
+
+    // Identify single-contributor projects
+    var projNames = Object.keys(projectContributors);
+    for (var i = 0; i < projNames.length; i++) {
+      var contributors = Object.keys(projectContributors[projNames[i]]);
+      if (contributors.length === 1) {
+        projectRisks.push({ project: projNames[i], soloContributor: contributors[0], severity: '🟡' });
+      }
+    }
+  }
+
+  return JSON.stringify({ commits: commits, analysis: analysis, projectRisks: projectRisks });
+}
+
 // --- Read helpers ---
 
 function readRawData_(ss) {
