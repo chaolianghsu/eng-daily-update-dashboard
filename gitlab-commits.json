@@ -1,182 +1,97 @@
 {
   "commits": {
-    "3/11": {
-      "Aaron": {
-        "count": 34,
+    "3/13": {
+      "Joyce": {
+        "count": 17,
         "projects": [
-          "KEYPO/keypo-engine/on-premises-api-gateway",
-          "llmprojects/keypo-agent"
+          "KEYPO/keypo-backend",
+          "KEYPO/keypo-engine/keypo-engine-api-v3"
         ],
         "items": [
           {
-            "title": "feat(config): add product-team-joe consumer",
-            "sha": "b8fdf19a",
-            "project": "KEYPO/keypo-engine/on-premises-api-gateway"
+            "title": "[feat] Remove token del",
+            "sha": "339d2d85",
+            "project": "KEYPO/keypo-backend"
           },
           {
-            "title": "docs: add SSL certificate expiry dates",
-            "sha": "5443b25e",
-            "project": "KEYPO/keypo-engine/on-premises-api-gateway"
+            "title": "[fix] Coerce filter_ads from [] to \"no_ads\" in gpt_report",
+            "sha": "2cb79b5f",
+            "project": "KEYPO/keypo-backend"
           },
           {
-            "title": "feat(builder): add generic build_agent/build_team with capability filtering",
-            "sha": "ddee3873",
-            "project": "llmprojects/keypo-agent"
+            "title": "[feat] Add kw_aggs weights for person hotkw in gpt_report",
+            "sha": "dd2dbf9b",
+            "project": "KEYPO/keypo-backend"
           },
           {
-            "title": "refactor(builder): eliminate special cases with pipeline architecture",
-            "sha": "39ed8f78",
-            "project": "llmprojects/keypo-agent"
+            "title": "[fix] Add min_time/max_time params for keypo engine API v3 in report download",
+            "sha": "ff85c1a9",
+            "project": "KEYPO/keypo-backend"
           },
           {
-            "title": "Merge branch 'feature/agent-factory' into 'dev'",
-            "sha": "e34cd0f6",
-            "project": "llmprojects/keypo-agent"
+            "title": "feat: add AiReportSetting and GPT summarizer utilities",
+            "sha": "302be11e",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
           },
           {
-            "title": "docs: add analysis thinking skills design spec",
-            "sha": "f5de7e42",
-            "project": "llmprojects/keypo-agent"
+            "title": "feat: add GptReportQueryModel schema and middleware routing",
+            "sha": "c0d174b2",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
           },
           {
-            "title": "docs: add analysis thinking skills implementation plan",
-            "sha": "d1e06dc2",
-            "project": "llmprojects/keypo-agent"
+            "title": "feat: add ai_analysis module for gptreportV2 endpoint",
+            "sha": "ef89e586",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
           },
           {
-            "title": "feat(skills): add hypothesis-driven-planning thinking skill",
-            "sha": "16761e5a",
-            "project": "llmprojects/keypo-agent"
+            "title": "feat: wire ai_analysis module into application",
+            "sha": "b2724f98",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
           },
           {
-            "title": "feat(skills): add so-what-reasoning thinking skill",
-            "sha": "6e9e2893",
-            "project": "llmprojects/keypo-agent"
+            "title": "build: add httpx and openai dependencies",
+            "sha": "04b75fcc",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
           },
           {
-            "title": "refactor(prompts): replace hardcoded patterns with hypothesis-driven workflow in plan agent",
-            "sha": "e6b867e7",
-            "project": "llmprojects/keypo-agent"
+            "title": "Merge branch 'feature/add-ai-report' into 'develop'",
+            "sha": "c8e7479f",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
           },
           {
-            "title": "refactor(prompts): add so-what-reasoning framework to analysis agent interpretation step",
-            "sha": "23137ea7",
-            "project": "llmprojects/keypo-agent"
+            "title": "Merge branch 'feature/add-ai-report' into feature/add-deploy-config",
+            "sha": "e5cc5ba0",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
           },
           {
-            "title": "feat(agents): enable analysis skills loading in analysis agent",
-            "sha": "80bd4715",
-            "project": "llmprojects/keypo-agent"
+            "title": "fix: correct batch_size formula and add debug logging for SprdTrnd",
+            "sha": "fda14216",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
           },
           {
-            "title": "fix(tools): add error handling to prevent internal errors leaking to users",
-            "sha": "4cada284",
-            "project": "llmprojects/keypo-agent"
+            "title": "Merge branch 'fix/sprdtrnd-dayinterval-count' into feature/add-deploy-config",
+            "sha": "ebda9db5",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
           },
           {
-            "title": "fix(prompts): prevent team router from exposing agent names and routing decisions to users",
-            "sha": "5ef1e91d",
-            "project": "llmprojects/keypo-agent"
+            "title": "Merge branch 'fix/sprdtrnd-dayinterval-count' into 'develop'",
+            "sha": "1bf4cf20",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
           },
           {
-            "title": "refactor: address code review feedback",
-            "sha": "5c9b8807",
-            "project": "llmprojects/keypo-agent"
+            "title": "fix: add startupProbe and improve lifespan error handling",
+            "sha": "e828826f",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
           },
           {
-            "title": "Merge branch 'feature/analysis-skill' into 'dev'",
-            "sha": "40366e7b",
-            "project": "llmprojects/keypo-agent"
+            "title": "Merge branch 'richard/fix-hotkw_weights' into feature/add-deploy-config",
+            "sha": "e70a8787",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
           },
           {
-            "title": "feat(agents): add analysis thinking skills for hypothesis-driven planning and so-what reasoning",
-            "sha": "44a8b5fa",
-            "project": "llmprojects/keypo-agent"
-          },
-          {
-            "title": "Merge branch 'feature/analysis-skill' into 'dev'",
-            "sha": "e0e9dd00",
-            "project": "llmprojects/keypo-agent"
-          },
-          {
-            "title": "docs: add permission blueprint architecture design spec",
-            "sha": "7edcbf4a",
-            "project": "llmprojects/keypo-agent"
-          },
-          {
-            "title": "docs: add implementation plan for permission blueprint",
-            "sha": "06ecb16b",
-            "project": "llmprojects/keypo-agent"
-          },
-          {
-            "title": "feat(blueprint): add frozen data models for AgentBlueprint, TeamBlueprint, UserCapabilities",
-            "sha": "35bf6420",
-            "project": "llmprojects/keypo-agent"
-          },
-          {
-            "title": "feat(blueprint): add BlueprintBuilder with AGENT_TOOL_MANIFEST",
-            "sha": "d521f117",
-            "project": "llmprojects/keypo-agent"
-          },
-          {
-            "title": "refactor(agents): add optional tools parameter to agent factory functions",
-            "sha": "3ab7bbf9",
-            "project": "llmprojects/keypo-agent"
-          },
-          {
-            "title": "feat(blueprint): add manifest, TeamFactory, and capabilities resolver",
-            "sha": "b30e4553",
-            "project": "llmprojects/keypo-agent"
-          },
-          {
-            "title": "feat(blueprint): wire TeamFactory into SendMessageUsecase",
-            "sha": "a31a68d9",
-            "project": "llmprojects/keypo-agent"
-          },
-          {
-            "title": "docs: add prompt dynamic composition spec and implementation plan",
-            "sha": "8dab71e3",
-            "project": "llmprojects/keypo-agent"
-          },
-          {
-            "title": "feat(prompts): add Jinja2 conditionals for dynamic tool sections in analysis_plan",
-            "sha": "44327aef",
-            "project": "llmprojects/keypo-agent"
-          },
-          {
-            "title": "test(prompts): verify Jinja2 conditional rendering for analysis_plan instructions",
-            "sha": "b81aaec0",
-            "project": "llmprojects/keypo-agent"
-          },
-          {
-            "title": "feat(agents): add tool_ids parameter to get_analysis_plan_agent",
-            "sha": "e3cf8b4b",
-            "project": "llmprojects/keypo-agent"
-          },
-          {
-            "title": "feat(tools): add build_generate_analysis_plan_tool factory with closure pattern",
-            "sha": "6320b018",
-            "project": "llmprojects/keypo-agent"
-          },
-          {
-            "title": "refactor(blueprint): unify resolve_tools dispatch with **kwargs pattern",
-            "sha": "86f1066e",
-            "project": "llmprojects/keypo-agent"
-          },
-          {
-            "title": "feat(blueprint): wire generate_analysis_plan factory into registry",
-            "sha": "35ee072c",
-            "project": "llmprojects/keypo-agent"
-          },
-          {
-            "title": "test(blueprint): add integration test for blueprint → resolve_tools path",
-            "sha": "e9a226be",
-            "project": "llmprojects/keypo-agent"
-          },
-          {
-            "title": "Merge branch 'feature/permission-architecture' into 'dev'",
-            "sha": "e85947ec",
-            "project": "llmprojects/keypo-agent"
+            "title": "Merge branch 'richard/fix-hotkw_weights' into 'develop'",
+            "sha": "fc28e631",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
           }
         ]
       },
@@ -187,187 +102,59 @@
         ],
         "items": [
           {
-            "title": "refactor: remove GPT wording from AI report disclaimer across all locales",
-            "sha": "84920b8e",
+            "title": "fix: correct 24-hour query time range and stabilize query date initialization",
+            "sha": "5b5b8c75",
             "project": "KEYPO/keypo-frontend-2023"
           },
           {
-            "title": "Merge branch 'fix-issues' into develop",
-            "sha": "b51d329e",
+            "title": "chore: change external port from 3000 to 3001",
+            "sha": "cd5b8865",
             "project": "KEYPO/keypo-frontend-2023"
           },
           {
-            "title": "Merge branch 'feat/e2e-hotchnl-tests' into 'feat/e2e-freqdist-tests'",
-            "sha": "080d9578",
-            "project": "KEYPO/keypo-frontend-2023"
-          }
-        ]
-      },
-      "Ivy": {
-        "count": 5,
-        "projects": [
-          "KEYPO/keypo-frontend-2023"
-        ],
-        "items": [
-          {
-            "title": "fix(e2e): use container instead of scope for chart element queries",
-            "sha": "192c808a",
-            "project": "KEYPO/keypo-frontend-2023"
-          },
-          {
-            "title": "refactor(e2e): extract shared topic constants",
-            "sha": "1610405f",
-            "project": "KEYPO/keypo-frontend-2023"
-          },
-          {
-            "title": "feat(e2e): add bar chart and x-axis log scale support to chart-helpers",
-            "sha": "d3eb083c",
-            "project": "KEYPO/keypo-frontend-2023"
-          },
-          {
-            "title": "test(e2e): add HotChnl page E2E test spec",
-            "sha": "35c388d9",
-            "project": "KEYPO/keypo-frontend-2023"
-          },
-          {
-            "title": "chore: add e2e:auth script and update gitignore",
-            "sha": "0f577bb1",
+            "title": "chore: update container name for frontend service to include 'uat'",
+            "sha": "da3f603d",
             "project": "KEYPO/keypo-frontend-2023"
           }
         ]
       },
-      "Joyce": {
-        "count": 14,
+      "家輝": {
+        "count": 3,
         "projects": [
-          "KEYPO/keypo-engine/keypo-engine-api-v3"
+          "KEYPO/keypo-q-huaan-v2"
         ],
         "items": [
           {
-            "title": "feat: add EmailQueryModel and middleware routing for email endpoints",
-            "sha": "e9a11b8b",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
+            "title": "add language detect",
+            "sha": "798fe3a2",
+            "project": "KEYPO/keypo-q-huaan-v2"
           },
           {
-            "title": "feat: create keypo_email module scaffold and response schemas",
-            "sha": "3a56dfe9",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
+            "title": "add install fasttext pycld2",
+            "sha": "b493a619",
+            "project": "KEYPO/keypo-q-huaan-v2"
           },
           {
-            "title": "feat: add repository layer for EmailTextListV2 ES queries",
-            "sha": "c858aa9c",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
-          },
-          {
-            "title": "feat: add use case layer for EmailTextListV2 business logic",
-            "sha": "c32aed45",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
-          },
-          {
-            "title": "feat: add controller and routes for EmailTextListV2",
-            "sha": "cee91e8e",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
-          },
-          {
-            "title": "feat: wire keypo_email module into application DI and router",
-            "sha": "121a585b",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
-          },
-          {
-            "title": "Merge branch 'feature/add-emailtextlist' into 'develop'",
-            "sha": "9372d4dd",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
-          },
-          {
-            "title": "feat: add response schema for EmailPN",
-            "sha": "f483d02a",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
-          },
-          {
-            "title": "feat: add repository layer for EmailPN ES queries",
-            "sha": "2c1da335",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
-          },
-          {
-            "title": "feat: add use case layer for EmailPN business logic",
-            "sha": "0ac3dad2",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
-          },
-          {
-            "title": "feat: add controller and route for EmailPN",
-            "sha": "a27562e3",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
-          },
-          {
-            "title": "feat: register EmailPN in middleware EMAIL_QUERY_PATHS",
-            "sha": "75b777b0",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
-          },
-          {
-            "title": "Merge branch 'feature/add-emailtextlist' into feature/add-deploy-config",
-            "sha": "287ac23e",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
-          },
-          {
-            "title": "Merge branch 'feature/add-emailpn' into feature/add-deploy-config",
-            "sha": "e8f00e71",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
+            "title": "tweak",
+            "sha": "3a0e126b",
+            "project": "KEYPO/keypo-q-huaan-v2"
           }
         ]
       },
       "Ted": {
-        "count": 10,
+        "count": 2,
         "projects": [
           "KEYPO/keypo-engine/keypo-engine-api-gateway"
         ],
         "items": [
           {
-            "title": "Merge branch 'fix/drill-and-runbook-alignment' into 'develop'",
-            "sha": "80b54440",
+            "title": "docs(sop): update disaster drill to use unified env vars file",
+            "sha": "7586aea7",
             "project": "KEYPO/keypo-engine/keypo-engine-api-gateway"
           },
           {
-            "title": "Merge branch 'feat/monitoring-baseline-route' into 'develop'",
-            "sha": "31a05d47",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway"
-          },
-          {
-            "title": "Merge branch 'feat/monitoring-baseline-route' into 'develop'",
-            "sha": "cbafddac",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway"
-          },
-          {
-            "title": "Merge branch 'feature/username-auth-plugin' into 'develop'",
-            "sha": "f04def2d",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway"
-          },
-          {
-            "title": "fix(docs): correct health check endpoint in runbooks and drill SOP",
-            "sha": "3f86ece6",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway"
-          },
-          {
-            "title": "fix(ci): fix backup commit push failure on detached HEAD",
-            "sha": "7e339588",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway"
-          },
-          {
-            "title": "fix(docs): align runbooks with actual APISIX operations",
-            "sha": "ccffff4f",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway"
-          },
-          {
-            "title": "feat(load-test): add full-fast/full-slow modes and abort thresholds",
-            "sha": "7d524740",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway"
-          },
-          {
-            "title": "feat(apisix): upgrade to 3.15.0 with Redis keepalive pool support",
-            "sha": "498bf10b",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway"
-          },
-          {
-            "title": "chore: remove Retry-After header from spec and contract test",
-            "sha": "52a63d9c",
+            "title": "Merge branch 'feat/upgrade-apisix-3.15.0' into 'develop'",
+            "sha": "d2068e9c",
             "project": "KEYPO/keypo-engine/keypo-engine-api-gateway"
           }
         ]
@@ -1011,13 +798,13 @@
     },
     "3/11": {
       "Joyce": {
-        "status": "✅",
-        "commitCount": 14,
+        "status": "⚠️",
+        "commitCount": 0,
         "hours": 9
       },
       "Ivy": {
-        "status": "✅",
-        "commitCount": 5,
+        "status": "⚠️",
+        "commitCount": 0,
         "hours": 7.5
       },
       "Jason": {
@@ -1046,8 +833,8 @@
         "hours": 10.5
       },
       "Ted": {
-        "status": "✅",
-        "commitCount": 10,
+        "status": "⚠️",
+        "commitCount": 0,
         "hours": 8
       },
       "家輝": {
@@ -1056,13 +843,13 @@
         "hours": 7.5
       },
       "Joe": {
-        "status": "✅",
-        "commitCount": 3,
+        "status": "⚠️",
+        "commitCount": 0,
         "hours": 7
       },
       "Aaron": {
-        "status": "✅",
-        "commitCount": 34,
+        "status": "⚠️",
+        "commitCount": 0,
         "hours": 6.5
       },
       "哲緯": {
@@ -1127,12 +914,39 @@
         "commitCount": 0,
         "hours": 11.5
       }
+    },
+    "3/13": {
+      "Joyce": {
+        "status": "🔴",
+        "commitCount": 17,
+        "hours": null
+      },
+      "Ted": {
+        "status": "🔴",
+        "commitCount": 2,
+        "hours": null
+      },
+      "家輝": {
+        "status": "🔴",
+        "commitCount": 3,
+        "hours": null
+      },
+      "Joe": {
+        "status": "🔴",
+        "commitCount": 3,
+        "hours": null
+      }
     }
   },
   "projectRisks": [
     {
-      "project": "KEYPO/keypo-engine/on-premises-api-gateway",
-      "soloContributor": "Aaron",
+      "project": "KEYPO/keypo-backend",
+      "soloContributor": "Joyce",
+      "severity": "🟡"
+    },
+    {
+      "project": "KEYPO/keypo-frontend-2023",
+      "soloContributor": "Joe",
       "severity": "🟡"
     },
     {
@@ -1141,13 +955,13 @@
       "severity": "🟡"
     },
     {
-      "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-      "soloContributor": "Ted",
+      "project": "KEYPO/keypo-q-huaan-v2",
+      "soloContributor": "家輝",
       "severity": "🟡"
     },
     {
-      "project": "llmprojects/keypo-agent",
-      "soloContributor": "Aaron",
+      "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+      "soloContributor": "Ted",
       "severity": "🟡"
     }
   ]
