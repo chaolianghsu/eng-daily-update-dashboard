@@ -117,6 +117,7 @@ function filterAndMapCommits(commits, projectPath, memberMap, excludeAuthors) {
       project: projectPath,
       title: c.title,
       sha: c.short_id,
+      url: c.web_url || null,
       unmapped: !member,
     });
   }
@@ -199,7 +200,7 @@ function buildDashboardJSON(commits, analysis, projectRisks) {
     const m = commitsByDate[c.date][c.member];
     m.count++;
     if (!m.projects.includes(c.project)) m.projects.push(c.project);
-    m.items.push({ title: c.title, sha: c.sha, project: c.project });
+    m.items.push({ title: c.title, sha: c.sha, project: c.project, url: c.url });
   }
   return { commits: commitsByDate, analysis, projectRisks };
 }
@@ -207,7 +208,7 @@ function buildDashboardJSON(commits, analysis, projectRisks) {
 function buildPostPayload(commits, analysisResult) {
   // Flat arrays for Apps Script
   const gitlabCommits = commits.filter(c => !c.unmapped).map(c => ({
-    date: c.date, member: c.member, project: c.project, title: c.title, sha: c.sha,
+    date: c.date, member: c.member, project: c.project, title: c.title, sha: c.sha, url: c.url,
   }));
 
   const commitAnalysis = [];

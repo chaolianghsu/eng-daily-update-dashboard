@@ -2,7 +2,7 @@
   "commits": {
     "3/13": {
       "Joyce": {
-        "count": 17,
+        "count": 15,
         "projects": [
           "KEYPO/keypo-backend",
           "KEYPO/keypo-engine/keypo-engine-api-v3"
@@ -11,87 +11,92 @@
           {
             "title": "[feat] Remove token del",
             "sha": "339d2d85",
-            "project": "KEYPO/keypo-backend"
+            "project": "KEYPO/keypo-backend",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/339d2d854a142eeaceea8d6f09e4e23cfb83d665"
           },
           {
             "title": "[fix] Coerce filter_ads from [] to \"no_ads\" in gpt_report",
             "sha": "2cb79b5f",
-            "project": "KEYPO/keypo-backend"
+            "project": "KEYPO/keypo-backend",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/2cb79b5f40064ad8dc1a096a6eb01116be1408d3"
           },
           {
             "title": "[feat] Add kw_aggs weights for person hotkw in gpt_report",
             "sha": "dd2dbf9b",
-            "project": "KEYPO/keypo-backend"
+            "project": "KEYPO/keypo-backend",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/dd2dbf9b83094933f24144dfd70d9b0405b0ab75"
           },
           {
             "title": "[fix] Add min_time/max_time params for keypo engine API v3 in report download",
             "sha": "ff85c1a9",
-            "project": "KEYPO/keypo-backend"
+            "project": "KEYPO/keypo-backend",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/ff85c1a92192458495b6e2e4a1a888d476c94086"
           },
           {
             "title": "feat: add AiReportSetting and GPT summarizer utilities",
             "sha": "302be11e",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/302be11e079e2b8339e566fc2f8931eaa681f599"
           },
           {
             "title": "feat: add GptReportQueryModel schema and middleware routing",
             "sha": "c0d174b2",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/c0d174b2a67987bdc4449a0fc833177b87ed3868"
           },
           {
             "title": "feat: add ai_analysis module for gptreportV2 endpoint",
             "sha": "ef89e586",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/ef89e586ca5725bfd718ff33873af10b7924b458"
           },
           {
             "title": "feat: wire ai_analysis module into application",
             "sha": "b2724f98",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/b2724f98fbdd02d58aa5a29ad1e0854e0c3c726f"
           },
           {
             "title": "build: add httpx and openai dependencies",
             "sha": "04b75fcc",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
-          },
-          {
-            "title": "Merge branch 'feature/add-ai-report' into 'develop'",
-            "sha": "c8e7479f",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/04b75fcc9256eb35bfd450001f4c1b0febe506fe"
           },
           {
             "title": "Merge branch 'feature/add-ai-report' into feature/add-deploy-config",
             "sha": "e5cc5ba0",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/e5cc5ba0c6127847de3b139024639f2138bf3f04"
           },
           {
             "title": "fix: correct batch_size formula and add debug logging for SprdTrnd",
             "sha": "fda14216",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/fda142160b7f7f4aff2b2a2d688807c15d2b6f1d"
           },
           {
             "title": "Merge branch 'fix/sprdtrnd-dayinterval-count' into feature/add-deploy-config",
             "sha": "ebda9db5",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
-          },
-          {
-            "title": "Merge branch 'fix/sprdtrnd-dayinterval-count' into 'develop'",
-            "sha": "1bf4cf20",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/ebda9db5396bf1e582862695ab220d22da009681"
           },
           {
             "title": "fix: add startupProbe and improve lifespan error handling",
             "sha": "e828826f",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/e828826f6aef360eff5c3d76c7fe3e2b83d00a3e"
           },
           {
             "title": "Merge branch 'richard/fix-hotkw_weights' into feature/add-deploy-config",
             "sha": "e70a8787",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/e70a87879d2411063fc87f00af80fc21e23fdd67"
           },
           {
             "title": "Merge branch 'richard/fix-hotkw_weights' into 'develop'",
             "sha": "fc28e631",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-v3"
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/fc28e63191b833027b71abbd3aadb92a3fe1ad2b"
           }
         ]
       },
@@ -104,17 +109,20 @@
           {
             "title": "fix: correct 24-hour query time range and stabilize query date initialization",
             "sha": "5b5b8c75",
-            "project": "KEYPO/keypo-frontend-2023"
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/5b5b8c75e5a3e37312e3eef1d6809f8d7b1769db"
           },
           {
             "title": "chore: change external port from 3000 to 3001",
             "sha": "cd5b8865",
-            "project": "KEYPO/keypo-frontend-2023"
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/cd5b8865f70c185197c7240a93ec8d4e29ce4b83"
           },
           {
             "title": "chore: update container name for frontend service to include 'uat'",
             "sha": "da3f603d",
-            "project": "KEYPO/keypo-frontend-2023"
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/da3f603d6dc57548fcd583a2e681eb7c75c06baa"
           }
         ]
       },
@@ -127,17 +135,20 @@
           {
             "title": "add language detect",
             "sha": "798fe3a2",
-            "project": "KEYPO/keypo-q-huaan-v2"
+            "project": "KEYPO/keypo-q-huaan-v2",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-q-huaan-v2/-/commit/798fe3a2b45d8ff0a4014cfce8faca55b1f37caa"
           },
           {
             "title": "add install fasttext pycld2",
             "sha": "b493a619",
-            "project": "KEYPO/keypo-q-huaan-v2"
+            "project": "KEYPO/keypo-q-huaan-v2",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-q-huaan-v2/-/commit/b493a61948e04fb24a9ca9e09d5a52e334214285"
           },
           {
             "title": "tweak",
             "sha": "3a0e126b",
-            "project": "KEYPO/keypo-q-huaan-v2"
+            "project": "KEYPO/keypo-q-huaan-v2",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-q-huaan-v2/-/commit/3a0e126ba6b106928b3ec53e8891400824c8a747"
           }
         ]
       },
@@ -150,12 +161,14 @@
           {
             "title": "docs(sop): update disaster drill to use unified env vars file",
             "sha": "7586aea7",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway"
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/7586aea76d06630d89b2f6d294f4df0869486341"
           },
           {
             "title": "Merge branch 'feat/upgrade-apisix-3.15.0' into 'develop'",
             "sha": "d2068e9c",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway"
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/d2068e9c021ec6bd23f7a4eebd9284ee2d544bb8"
           }
         ]
       }
@@ -918,7 +931,7 @@
     "3/13": {
       "Joyce": {
         "status": "✅",
-        "commitCount": 17,
+        "commitCount": 15,
         "hours": 7.5
       },
       "Ivy": {
