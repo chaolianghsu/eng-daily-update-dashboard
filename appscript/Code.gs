@@ -15,13 +15,17 @@ function doPost(e) {
   var data = JSON.parse(e.postData.contents);
   var ss = SpreadsheetApp.getActiveSpreadsheet();
 
-  writeRawData_(ss, data.rawData);
-  writeIssues_(ss, data.issues || []);
-  writeLeave_(ss, data.leave || {});
-  writeDailyUpdates_(ss, data.dailyUpdates || []);
+  if (data.rawData) writeRawData_(ss, data.rawData);
+  if (data.issues) writeIssues_(ss, data.issues);
+  if (data.leave) writeLeave_(ss, data.leave);
+  if (data.dailyUpdates) writeDailyUpdates_(ss, data.dailyUpdates);
+  if (data.gitlabCommits) writeGitlabCommits_(ss, data.gitlabCommits);
+  if (data.commitAnalysis) writeCommitAnalysis_(ss, data.commitAnalysis);
 
-  var dateCount = Object.keys(data.rawData).length;
-  return ContentService.createTextOutput(JSON.stringify({ status: 'ok', dates: dateCount }))
+  var result = { status: 'ok' };
+  if (data.rawData) result.dates = Object.keys(data.rawData).length;
+  if (data.gitlabCommits) result.commits = data.gitlabCommits.length;
+  return ContentService.createTextOutput(JSON.stringify(result))
     .setMimeType(ContentService.MimeType.JSON);
 }
 
@@ -137,6 +141,75 @@ function writeDailyUpdates_(ss, dailyUpdates) {
   if (newRows.length > 0) {
     var startRow = existing.length + 1;
     sheet.getRange(startRow, 1, newRows.length, 5).setValues(newRows);
+  }
+}
+
+function writeGitlabCommits_(ss, commits) {
+  var sheet = ss.getSheetByName('GitLab Commits');
+  if (!sheet) sheet = ss.insertSheet('GitLab Commits');
+
+  // Read existing rows for deduplication by date|member|sha
+  var existing = sheet.getDataRange().getValues();
+  var existingKeys = {};
+  for (var i = 1; i < existing.length; i++) {
+    var key = String(existing[i][0]) + '|' + String(existing[i][1]) + '|' + String(existing[i][4]);
+    existingKeys[key] = true;
+  }
+
+  // Add header if empty
+  if (existing.length === 0) {
+    sheet.getRange(1, 1, 1, 5).setValues([['日期', '成員', 'Project', 'Commit Title', 'SHA']]);
+    existing = [['header']];
+  }
+
+  var newRows = [];
+  for (var i = 0; i < commits.length; i++) {
+    var c = commits[i];
+    var key = String(c.date) + '|' + String(c.member) + '|' + String(c.sha);
+    if (existingKeys[key]) continue;
+    newRows.push([c.date, c.member, c.project, c.title, c.sha]);
+  }
+
+  if (newRows.length > 0) {
+    var startRow = existing.length + 1;
+    sheet.getRange(startRow, 1, newRows.length, 5).setValues(newRows);
+  }
+}
+
+function writeCommitAnalysis_(ss, analysis) {
+  var sheet = ss.getSheetByName('Commit Analysis');
+  if (!sheet) sheet = ss.insertSheet('Commit Analysis');
+
+  // Read existing rows for deduplication by date|member (overwrite mode)
+  var existing = sheet.getDataRange().getValues();
+  var existingKeyRows = {};
+  for (var i = 1; i < existing.length; i++) {
+    var key = String(existing[i][0]) + '|' + String(existing[i][1]);
+    existingKeyRows[key] = i + 1; // 1-based row number
+  }
+
+  // Add header if empty
+  if (existing.length === 0) {
+    sheet.getRange(1, 1, 1, 6).setValues([['日期', '成員', 'Commits數', 'Daily Update工時', '狀態', '參與Projects']]);
+    existing = [['header']];
+  }
+
+  var newRows = [];
+  for (var i = 0; i < analysis.length; i++) {
+    var a = analysis[i];
+    var key = String(a.date) + '|' + String(a.member);
+    var row = [a.date, a.member, a.commitCount, a.dailyUpdateHours === null ? '' : a.dailyUpdateHours, a.status, a.projects];
+    if (existingKeyRows[key]) {
+      // Overwrite existing row
+      sheet.getRange(existingKeyRows[key], 1, 1, 6).setValues([row]);
+    } else {
+      newRows.push(row);
+    }
+  }
+
+  if (newRows.length > 0) {
+    var startRow = existing.length + 1;
+    sheet.getRange(startRow, 1, newRows.length, 6).setValues(newRows);
   }
 }
 
