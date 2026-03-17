@@ -31,7 +31,7 @@ jobs:
         run: bun install
 
       - name: Build
-        run: bun run build
+        run: bun run build && touch dist/.nojekyll
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
