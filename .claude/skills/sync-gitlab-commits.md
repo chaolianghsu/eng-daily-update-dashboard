@@ -1,3 +1,8 @@
+---
+description: Sync GitLab commits — fetch, analyze consistency, update Sheets and local JSON
+user_invocable: true
+---
+
 # Sync GitLab Commits
 
 Fetch GitLab commits for the engineering team and update Google Spreadsheet.

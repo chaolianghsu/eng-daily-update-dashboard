@@ -1,3 +1,8 @@
+---
+description: Sync all — 3-stage DAG: daily updates + GitLab commits (parallel) → consistency analysis → task analysis
+user_invocable: true
+---
+
 # Sync All
 
 Three-stage DAG pipeline: parallel data collection → consistency analysis → task analysis.

@@ -1,3 +1,8 @@
+---
+description: Sync daily updates from Google Chat — parse, merge, commit, push, update Sheets
+user_invocable: true
+---
+
 # Sync Daily Updates
 
 Fully automated: fetch daily updates from Google Chat, parse, merge with existing data, update raw_data.json, commit, push, and write structured data to Google Sheets.

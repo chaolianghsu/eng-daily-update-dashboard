@@ -1,3 +1,8 @@
+---
+description: Backfill missing daily updates from Google Chat history (superseded by /sync-daily-updates)
+user_invocable: true
+---
+
 # Backfill Daily Updates from Google Chat
 
 Backfill missing daily update data from Google Chat history into `public/raw_data.json`.

@@ -1,3 +1,8 @@
+---
+description: Fetch daily updates from Google Chat (superseded by /sync-daily-updates)
+user_invocable: true
+---
+
 # Fetch Daily Updates from Google Chat
 
 Fetch daily work hour reports from the Google Chat space and update `public/raw_data.json`.
