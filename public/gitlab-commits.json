@@ -3551,7 +3551,7 @@
     },
     "3/16": {
       "Ivy": {
-        "count": 21,
+        "count": 20,
         "projects": [
           "bigdata/2025-bigdata-admin-backend",
           "KEYPO/keypo-frontend-2023"
@@ -3580,12 +3580,6 @@
             "sha": "cf0ea119",
             "project": "bigdata/2025-bigdata-admin-backend",
             "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/cf0ea11989b9dc2543cf1cb645f090daa0337487"
-          },
-          {
-            "title": "Merge branch 'feat/contact-us-permissions' into 'develop'",
-            "sha": "74ada242",
-            "project": "bigdata/2025-bigdata-admin-backend",
-            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/74ada24234e166a02e785668cd34614e073bc255"
           },
           {
             "title": "refactor(e2e): refactor chart-helpers with chartLocator factory pattern",
@@ -5206,44 +5200,54 @@
     },
     "3/16": {
       "Joyce": {
-        "status": "🔴",
+        "status": "✅",
         "commitCount": 31,
-        "hours": null
+        "hours": 9
       },
       "Ivy": {
-        "status": "🔴",
-        "commitCount": 21,
-        "hours": null
+        "status": "✅",
+        "commitCount": 20,
+        "hours": 7
       },
       "Jason": {
-        "status": "🔴",
+        "status": "✅",
         "commitCount": 4,
-        "hours": null
+        "hours": 7
+      },
+      "日銜": {
+        "status": "⚠️",
+        "commitCount": 0,
+        "hours": 6.5
       },
       "Wendy": {
-        "status": "🔴",
+        "status": "✅",
         "commitCount": 4,
-        "hours": null
+        "hours": 7.5
+      },
+      "侑呈": {
+        "status": "⚠️",
+        "commitCount": 0,
+        "hours": 4
       },
       "Ted": {
-        "status": "🔴",
+        "status": "✅",
         "commitCount": 1,
-        "hours": null
+        "hours": 8
       },
       "Joe": {
-        "status": "🔴",
+        "status": "✅",
         "commitCount": 5,
-        "hours": null
+        "hours": 4
       },
       "Aaron": {
-        "status": "🔴",
+        "status": "✅",
         "commitCount": 16,
-        "hours": null
+        "hours": 6.5
       },
       "哲緯": {
-        "status": "🔴",
+        "status": "✅",
         "commitCount": 12,
-        "hours": null
+        "hours": 7.5
       }
     }
   },
