@@ -15,6 +15,15 @@ function doPost(e) {
   var data = JSON.parse(e.postData.contents);
   var ss = SpreadsheetApp.getActiveSpreadsheet();
 
+  // Clear specified sheets before writing (for rebuild/dedup)
+  if (data.clearSheets) {
+    var sheetsToClean = Array.isArray(data.clearSheets) ? data.clearSheets : [data.clearSheets];
+    for (var i = 0; i < sheetsToClean.length; i++) {
+      var sheetToClear = ss.getSheetByName(sheetsToClean[i]);
+      if (sheetToClear) sheetToClear.clear();
+    }
+  }
+
   if (data.rawData) writeRawData_(ss, data.rawData);
   if (data.issues) writeIssues_(ss, data.issues);
   if (data.leave) writeLeave_(ss, data.leave);
