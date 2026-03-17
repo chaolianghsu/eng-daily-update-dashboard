@@ -1,11 +1,19 @@
 ---
-description: Sync GitLab commits — fetch, analyze consistency, update Sheets and local JSON
+description: Sync GitLab commits — fetch, analyze consistency, update Sheets and local JSON. Supports backfill via date range.
 user_invocable: true
 ---
 
 # Sync GitLab Commits
 
-Fetch GitLab commits for the engineering team and update Google Spreadsheet.
+Fetch GitLab commits for the engineering team and update Google Spreadsheet. Also used for backfilling historical data.
+
+## Usage
+
+```
+/sync-gitlab-commits          # previous workday (default)
+/sync-gitlab-commits 3/11     # specific date
+/sync-gitlab-commits 3/9-3/12 # date range (backfill)
+```
 
 ## Prerequisites
 
@@ -19,10 +27,18 @@ Fetch GitLab commits for the engineering team and update Google Spreadsheet.
 
 Read `gitlab-config.json` to confirm settings exist. Verify it has `baseUrl`, `token`, `memberMap`, and `excludeAuthors` fields.
 
-### Step 2: Determine date
+### Step 2: Determine date and detect gaps
 
 If no date argument provided, use previous work day.
 User can specify: `/sync-gitlab-commits 3/11` or `/sync-gitlab-commits 3/9-3/12`
+
+**Auto-detect gaps:** Compare dates in `public/raw_data.json` vs `public/gitlab-commits.json`. If there are daily update dates without GitLab data, display:
+```
+⚠️ 偵測到缺口：以下日期有 daily update 但無 GitLab commits
+  2/23, 2/24, 2/25, 2/26, 2/27, 3/2, 3/3
+  要補抓嗎？(y/n)
+```
+If user confirms, use the gap range as the date argument.
 
 ### Step 3: Fetch and analyze
 
@@ -82,4 +98,6 @@ Commits：<N>
 - The script writes `public/gitlab-commits.json` (for dashboard) and outputs the POST payload to stdout.
 - Progress and warnings go to stderr.
 - Unmapped authors appear in stderr warnings — consider adding them to `gitlab-config.json` memberMap.
-- Idempotent: Google Sheets deduplicates by date|member|sha.
+- Idempotent: Google Sheets deduplicates by date|member|sha. Local JSON merges by date (preserves old dates).
+- **Backfill:** Use date range to backfill historical data. The merge logic preserves existing dates, so re-running is safe.
+- Commits are deduplicated by sha+project to prevent inflated counts.

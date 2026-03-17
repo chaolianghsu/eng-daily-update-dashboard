@@ -84,9 +84,8 @@ Engineering Department Daily Update Dashboard — a React dashboard for tracking
 |---------|-------------|
 | `/sync` | 三階段 DAG pipeline: 平行收集 → 一致性分析 → 任務合理性（主要使用） |
 | `/sync-daily-updates` | Google Chat daily updates: 抓取 → 解析 → 合併 → commit → push → Sheets |
-| `/sync-gitlab-commits` | GitLab commits: 抓取 → 分析一致性 → 寫入 JSON + Sheets |
+| `/sync-gitlab-commits` | GitLab commits: 抓取 → 分析一致性 → 寫入 JSON + Sheets。支援 backfill: `/sync-gitlab-commits 3/9-3/12` |
 | `/fetch-daily-updates` | 舊版（已被 `/sync-daily-updates` 取代） |
-| `/backfill-daily-updates` | 舊版（已被 `/sync-daily-updates` 取代） |
 
 Skills 定義在 `.claude/skills/*.md`，需要 `user_invocable: true` frontmatter。
 
@@ -105,7 +104,7 @@ The team posts daily work hour reports in Google Chat space `spaces/AAQAQhmoRAk`
 5. Thread date ≠ content date ("3/6 Daily Update" contains 3/5 progress)
 6. Reviews output, merges into `public/raw_data.json`, and runs tests
 
-The older `/fetch-daily-updates` and `/backfill-daily-updates` skills are superseded by `/sync-daily-updates`.
+The older `/fetch-daily-updates` skill is superseded by `/sync-daily-updates`.
 
 ## GitLab Integration
 
