@@ -102,7 +102,6 @@ The team posts daily work hour reports in Google Chat space `spaces/AAQAQhmoRAk`
 5. Thread date ≠ content date ("3/6 Daily Update" contains 3/5 progress)
 6. Reviews output, merges into `public/raw_data.json`, and runs tests
 
-
 ## GitLab Integration
 
 Self-hosted GitLab at `https://biglab.buygta.today`. The `/sync-gitlab-commits` skill automates commit data extraction:
