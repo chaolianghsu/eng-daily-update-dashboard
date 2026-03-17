@@ -1,200 +1,47 @@
 {
-  "analysisDate": "2026-03-16",
-  "period": "3/9-3/13",
+  "analysisDate": "2026-03-17",
+  "period": "3/16",
   "warnings": [
     {
-      "date": "3/9",
-      "member": "哲緯",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "新增測試各節點測試檔案 + 整理專案文件 (3H)、Threads日常需求處理 (0.5H)、重啟與檢查42上服務 (1.5H)",
-      "commits": "當天無任何 commit",
-      "reasoning": "回報 5H 開發時數，其中新增測試檔案與整理文件共 3H（In Progress），但當天 0 筆 GitLab commit。重啟服務 1.5H 屬維運可理解無 commit，但測試檔案新增應有程式碼產出。"
-    },
-    {
-      "date": "3/9",
-      "member": "侑呈",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "重新部署42/53服務 (3H)、AI機器人Alert機制 (3.5H)、回補JP X資料 (1H)、數據需求申請表 (0.5H)",
-      "commits": "1 筆 commit（log-center: min_threshold 改為 per-platform）",
-      "reasoning": "8H 開發時數僅 1 筆 commit（0.13 c/h），顯著低於團隊平均 2.05 c/h（差距約 16 倍）。部署與回補資料屬維運性質可理解產出較少，但 AI Alert 開發 3.5H 僅 1 筆 commit 偏低。"
-    },
-    {
-      "date": "3/9",
-      "member": "家輝",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "es9 f2n資料表建立 (0.5H)、機器42/53異常排除 (4H)、產品中心周會 (1.5H)、KEYPO信箱備份 (1H)、同仁帳號處理 (0.5H)、gcp帳單確認 (0.5H)",
-      "commits": "2 筆 commit（bigcrawler-scrapy release/1.3.160 merge）",
-      "reasoning": "8H 開發時數僅 2 筆 release merge commit（0.25 c/h），顯著低於團隊平均 2.05 c/h（差距約 8 倍）。多數任務為 IT 維運（機器排除 4H、信箱備份、帳號處理、帳單確認），非純軟體開發，但均標記為 [Dev]。"
-    },
-    {
-      "date": "3/9",
+      "date": "3/16",
       "member": "日銜",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "KOL網紅頻道 (5.5H, In Progress)、異常站台修復 (1.5H)",
-      "commits": "6 筆 commit（bigcrawler-scrapy: fix ltvnews、fix mamilove 及相關 merge）",
-      "reasoning": "7H 開發時數產出 6 筆 commit（0.86 c/h），低於團隊平均 2.05 c/h（差距約 2.4 倍）。KOL網紅頻道主要任務 5.5H 為 In Progress 狀態，commit 集中在異常站台修復相關的爬蟲修正。"
-    },
-    {
-      "date": "3/9",
-      "member": "Ivy",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "F2E E2E Test (7H)",
-      "commits": "7 筆 commit（keypo-frontend-2023: e2e locale helpers、chart helpers、LatestKW/HashtagKW 測試等）",
-      "reasoning": "7H 開發時數產出 7 筆 commit（1.0 c/h），低於團隊平均 2.05 c/h（差距約 2.1 倍，邊界值）。E2E 測試開發每筆 commit 涵蓋較完整的測試邏輯，單筆程式碼量較大，屬合理範圍的邊界案例。"
-    },
-    {
-      "date": "3/10",
-      "member": "Ivy",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "F2E E2E Test (6H)、大數據官網日文後端 (0.5H)",
-      "commits": "3 筆 commit（keypo-frontend-2023 merge 1 筆、bigdata-admin-backend fix + merge 2 筆）",
-      "reasoning": "6.5H 開發時數產出 3 筆 commit（0.46 c/h），低於團隊平均 1.47 c/h（差距約 3.2 倍）。E2E 測試 6H 僅 1 筆相關 merge commit，產出偏低。"
-    },
-    {
-      "date": "3/10",
-      "member": "禎佑",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發 Kol Text to ES query (6H)",
-      "commits": "2 筆 commit（data-ingestion-monitor 調整警報、es-query-agent 初版架構）",
-      "reasoning": "6H 開發時數產出 2 筆 commit（0.33 c/h），低於團隊平均 1.47 c/h（差距約 4.5 倍）。es-query-agent 為初版大架構開發，可能處於設計與實驗階段。"
-    },
-    {
-      "date": "3/10",
-      "member": "Ted",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "熱門排行榜問題回覆 (0.5H)、Fanti api 測試影片 (1H)、Fanti ES 串接 IDC 修改 (2H)",
-      "commits": "2 筆 commit（keypo-engine-api: fix gpt-report empty posts guard + merge）",
-      "reasoning": "扣除 Non-Dev 與會議後有效開發 3.5H，產出 2 筆 commit（0.57 c/h），低於團隊平均 1.47 c/h（差距約 2.6 倍）。Fanti ES 串接 2H（In Progress）尚無相關 commit。"
-    },
-    {
-      "date": "3/11",
-      "member": "家輝",
       "severity": "🔴",
       "type": "low_output",
-      "task": "遠傳idc部署es9 data pipeline (2.5H)、佳龍正式機pipeline更新rmq版本 (3H)、確認5F測試機路由 (0.5H)、協助天下雜誌拍攝 (1.5H)",
-      "commits": "當天無任何 commit",
-      "reasoning": "回報 7.5H 開發時數但 0 筆 commit。主要任務為基礎設施部署與維運（idc 部署 2.5H + pipeline 更新 3H），以及非開發性質的雜誌拍攝 1.5H。部署工作可能不產生 commit，但 pipeline 更新 rmq 版本（3H）通常涉及設定檔修改應有版控紀錄。"
+      "task": "其他頻道添加表消化 (2H), VIP站台修復 (2H), 非社群時區調整 (1H)",
+      "commits": "無 commits",
+      "reasoning": "報告 5H 開發工時，但當天 0 筆 GitLab commits。三項開發任務均無對應的程式碼提交記錄。"
     },
     {
-      "date": "3/11",
-      "member": "Ivy",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "F2E E2E Test (5.5H)、大數據官網 (2H)",
-      "commits": "5 筆 commit（keypo-frontend-2023: e2e chart helpers、HotChnl 測試、auth script 等）",
-      "reasoning": "7.5H 開發時數產出 5 筆 commit（0.67 c/h），低於團隊平均 1.74 c/h（差距約 2.6 倍）。大數據官網 2H 當天無對應 commit。"
-    },
-    {
-      "date": "3/11",
+      "date": "3/16",
       "member": "侑呈",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "AI機器人Alert機制 (3H)、FB留言排查 (0.5H)、Fanti (2.5H)、issue #3003 排查 (2.5H)",
-      "commits": "6 筆 commit（log-center: stagnation 修正、Redis 監控、容錯通知等）",
-      "reasoning": "8.5H 開發時數產出 6 筆 commit（0.71 c/h），低於團隊平均 1.74 c/h（差距約 2.5 倍）。commit 集中在 AI Alert（log-center），Fanti 2.5H 與 issue 排查 2.5H 無對應 commit。"
-    },
-    {
-      "date": "3/12",
-      "member": "Wendy",
       "severity": "🔴",
       "type": "low_output",
-      "task": "ES query 程式碼邏輯調整 (2H, Done)、reindex 流程調整至 IDC 機房 (2.5H)",
-      "commits": "當天無任何 commit",
-      "reasoning": "扣除 Non-Dev MR 審核 3H 後，仍有 4.5H 開發時數（ES query 調整 + reindex）且 0 筆 commit。ES query 調整已標記 Done，理應有程式碼變更但無 commit 紀錄。"
+      "task": "Fanti (4H), 盤點私密社團 magic token / 6小時排程 (3.5H)",
+      "commits": "無 commits",
+      "reasoning": "報告 4H 開發工時（含 Fanti 開發），但當天 0 筆 GitLab commits。兩項任務均為開發性質但無程式碼產出。注意：第二項任務時數 3.5H 未計入 total（total 僅 4H），可能為記錄格式問題。"
     },
     {
-      "date": "3/12",
-      "member": "Joyce",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "玄武計畫 KEYPO engine API v3 (9H)、DV進度同步 (0.5H)、建立品牌行銷部試用帳號 (1H)",
-      "commits": "4 筆 commit（keypo-engine-api-v3 env fix 1 筆、keypo-engine-api merge 2 筆、keypo-backend merge 1 筆）",
-      "reasoning": "10.5H 開發時數產出 4 筆 commit（0.38 c/h），低於團隊平均 0.96 c/h（差距約 2.5 倍）。相較 Joyce 其他天（3/9: 60 commits, 3/11: 13 commits），此日 API v3 開發 9H 僅 1 筆直接相關 commit 明顯偏低，可能處於深度設計或除錯階段。"
-    },
-    {
-      "date": "3/12",
-      "member": "Ivy",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "大數據官網 (6H)",
-      "commits": "1 筆 commit（bigdata-app: IR section pages and navbar, WIP）",
-      "reasoning": "扣除會議後 6H 開發時數產出 1 筆 commit（0.17 c/h），低於團隊平均 0.96 c/h（差距約 5.7 倍）。官網開發 6H 僅 1 筆 WIP commit，產出明顯不足。"
-    },
-    {
-      "date": "3/12",
+      "date": "3/16",
       "member": "Jason",
       "severity": "🟡",
       "type": "outlier",
-      "task": "DV AI 產文工項時程 (2.5H)、DV 請求超時問題排查 (2.5H)、DV進度同步 (0.5H)",
-      "commits": "1 筆 commit（dailyview-backend: fix subprocess call）",
-      "reasoning": "5.5H 開發時數產出 1 筆 commit（0.18 c/h），低於團隊平均 0.96 c/h（差距約 5.3 倍）。AI 產文工項 2.5H 無相關 commit，超時排查 2.5H 僅 1 筆修正。"
+      "task": "DV 測試機調整 VPC 設定 (3H), Issue #3011 (0.5H), Issue #54 (2H)",
+      "commits": "4 commits (dailyview-app: 3, dailyview-backend: 1)",
+      "reasoning": "開發工時 7H 但僅 4 筆 commits，工時/commit 比例 (1.75) 顯著高於團隊平均 (0.53)。其中 VPC 設定 3H 為基礎設施工作，可能不產生 commits，但整體產出仍偏低。"
     },
     {
-      "date": "3/12",
-      "member": "家輝",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "遠傳idc部署es9 pipeline (2H)、explore channel表格遷移ES9 (3.5H)、explore channel consumer寫入ES9 (1H)、docker儲存位置更新 (0.5H)、釐清表格關係 (0.5H)",
-      "commits": "3 筆 commit（explore-channel-consumer: es9-explo、version 1.0.5、tweak）",
-      "reasoning": "7.5H 開發時數產出 3 筆 commit（0.4 c/h），低於團隊平均 0.96 c/h（差距約 2.4 倍）。explore channel 遷移工作 4.5H 有 3 筆對應 commit，idc 部署 2H 無 commit（屬基礎設施操作）。"
-    },
-    {
-      "date": "3/13",
-      "member": "侑呈",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "Fanti (5H)、更換開發工具 nvim 安裝套件 (1.5H)",
-      "commits": "當天無任何 commit",
-      "reasoning": "回報 Fanti 開發 5H 但當天 0 筆 commit。前兩天 Fanti 相關工作（log-center）均有穩定 commit 產出（3/11: 6 筆、3/12: 5 筆），3/13 突然中斷。另 1.5H 安裝 nvim 套件屬環境設定，合理無 commit。"
-    },
-    {
-      "date": "3/13",
-      "member": "哲緯",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "LSR (5H)、Threads日常需求處理 (0.5H)",
-      "commits": "當天無任何 commit",
-      "reasoning": "回報 LSR 開發 5H 但 0 筆 commit。3/10 和 3/11 哲緯在 LSR 相關專案有大量 commit（3/10: 18 筆、3/11: 32 筆），3/13 完全無產出形成顯著斷層。本週兩天（3/9、3/13）均為 0 commit，需關注。"
-    },
-    {
-      "date": "3/13",
-      "member": "Ivy",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "大數據官網 (6.5H)",
-      "commits": "2 筆 commit（bigdata-app: IR financial pages + vscode/footer 更新）",
-      "reasoning": "6.5H 開發時數產出 2 筆 commit（0.31 c/h），低於團隊平均 1.07 c/h（差距約 3.5 倍）。Ivy 本週五天均觸發 outlier 警示，E2E 測試與官網開發的 commit 產出持續偏低。"
-    },
-    {
-      "date": "3/13",
-      "member": "Wendy",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "調整連線至 IDC 機房 ES 並驗證 (3H)、情緒編修排程釐清 (1H)",
-      "commits": "1 筆 commit（sinyi-dashboard: wip es v9 query adjustments）",
-      "reasoning": "扣除 Non-Dev 審核 2H 與會議 1.5H 後，有效開發 4H 產出 1 筆 WIP commit（0.25 c/h），低於團隊平均 1.07 c/h（差距約 4.3 倍）。ES 連線調整 3H 僅 1 筆 WIP commit，驗證工作可能尚未完成。"
-    },
-    {
-      "date": "3/13",
+      "date": "3/16",
       "member": "Ted",
       "severity": "🟡",
       "type": "outlier",
-      "task": "engine API 壓測 baseline/日常流量測試 (6H)、與兆良 1-1 (1H)",
-      "commits": "2 筆 commit（keypo-engine-api-gateway: docs SOP 更新 + merge）",
-      "reasoning": "扣除會議 3H 後，有效開發約 6H（含壓測 6H + 1-1 會議 1H 實為會議性質），產出 2 筆 commit（0.29 c/h），低於團隊平均 1.07 c/h（差距約 3.7 倍）。壓測工作性質偏向執行與觀測，不一定產生大量 commit，但 6H 僅 2 筆文件更新仍偏低。"
+      "task": "gateway 壓測整理報告 (1.5H), 本地 Fanti 資料庫同步 (0.5H), integration test 確認 (2H)",
+      "commits": "1 commit (fanti-insights-api: gitignore 更新)",
+      "reasoning": "報告 8H 工時但僅 1 筆 commit（且為 gitignore 更新）。不過 4H 標記為 Non-Dev（refresh api 確認、content_tags 確認、部署方式確認），屬規劃與調查性質，不需 commits。實際開發 4H 中多為測試確認和環境同步，commit 產出偏低但合理性尚可。"
     }
   ],
   "summary": {
-    "totalMembers": 12,
-    "totalWarnings": 21,
-    "byType": { "low_output": 5, "mismatch": 0, "outlier": 16 }
+    "totalMembers": 9,
+    "totalWarnings": 4,
+    "byType": { "low_output": 2, "mismatch": 0, "outlier": 2 }
   }
 }
