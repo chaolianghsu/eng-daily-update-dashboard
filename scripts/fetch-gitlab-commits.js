@@ -239,6 +239,55 @@ function buildPostPayload(commits, analysisResult) {
   return { gitlabCommits, commitAnalysis };
 }
 
+// --- Collect commits (shared by main and collect-gitlab-commits.js) ---
+
+async function collectCommits(dateArg) {
+  const configPath = path.join(ROOT, 'gitlab-config.json');
+  if (!fs.existsSync(configPath)) {
+    throw new Error('gitlab-config.json not found');
+  }
+  const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+  const { baseUrl, token, memberMap, excludeAuthors = [] } = config;
+
+  const dateRange = dateArg ? parseDateArg(dateArg) : { since: getPreviousWorkday(), until: getPreviousWorkday() };
+  const sinceISO = mdToISO(dateRange.since);
+  const untilISO = mdToISO(dateRange.until, true);
+
+  console.error(`Fetching commits for ${dateRange.since}${dateRange.since !== dateRange.until ? '-' + dateRange.until : ''}...`);
+
+  const sinceDate = new Date(sinceISO);
+  sinceDate.setDate(sinceDate.getDate() - 1);
+  const lastActivityAfter = sinceDate.toISOString().split('T')[0];
+  const projectsUrl = `${baseUrl}/api/v4/projects?per_page=100&order_by=last_activity_at&last_activity_after=${lastActivityAfter}`;
+  const projects = await fetchAllPages(projectsUrl, token);
+  console.error(`Found ${projects.length} projects with activity after ${lastActivityAfter}`);
+
+  const allCommits = [];
+  const warnings = [];
+  for (const proj of projects) {
+    const commitsUrl = `${baseUrl}/api/v4/projects/${proj.id}/repository/commits?since=${encodeURIComponent(sinceISO)}&until=${encodeURIComponent(untilISO)}&all=true&per_page=100`;
+    try {
+      const rawCommits = await fetchAllPages(commitsUrl, token);
+      if (rawCommits.length === 0) continue;
+      const mapped = filterAndMapCommits(rawCommits, proj.path_with_namespace, memberMap, excludeAuthors);
+      for (const c of mapped) {
+        if (c.unmapped && !warnings.includes(c.member)) warnings.push(c.member);
+      }
+      allCommits.push(...mapped.filter(c => !c.unmapped));
+      console.error(`  ${proj.path_with_namespace}: ${rawCommits.length} commits (${mapped.filter(c => !c.unmapped).length} mapped)`);
+    } catch (e) {
+      if (e.message.includes('token')) throw e;
+      continue;
+    }
+  }
+
+  if (warnings.length > 0) {
+    console.error(`\nWarning: unmapped authors: ${warnings.join(', ')}`);
+  }
+
+  return { config, dateRange, allCommits };
+}
+
 // --- Main ---
 
 async function main() {
@@ -248,56 +297,7 @@ async function main() {
     if (args[i] === '--date' && args[i + 1]) { dateArg = args[i + 1]; i++; }
   }
 
-  // Load config
-  const configPath = path.join(ROOT, 'gitlab-config.json');
-  if (!fs.existsSync(configPath)) {
-    console.error('Error: gitlab-config.json not found');
-    process.exit(1);
-  }
-  const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
-  const { baseUrl, token, memberMap, excludeAuthors = [] } = config;
-
-  // Determine date range
-  const dateRange = dateArg ? parseDateArg(dateArg) : { since: getPreviousWorkday(), until: getPreviousWorkday() };
-  const sinceISO = mdToISO(dateRange.since);
-  const untilISO = mdToISO(dateRange.until, true);
-
-  console.error(`Fetching commits for ${dateRange.since}${dateRange.since !== dateRange.until ? '-' + dateRange.until : ''}...`);
-
-  // Fetch projects — all visible projects with recent activity (not just membership)
-  // Use last_activity_after to filter to projects active within the date range (with 1 day buffer)
-  const sinceDate = new Date(sinceISO);
-  sinceDate.setDate(sinceDate.getDate() - 1);
-  const lastActivityAfter = sinceDate.toISOString().split('T')[0];
-  const projectsUrl = `${baseUrl}/api/v4/projects?per_page=100&order_by=last_activity_at&last_activity_after=${lastActivityAfter}`;
-  const projects = await fetchAllPages(projectsUrl, token);
-  console.error(`Found ${projects.length} projects with activity after ${lastActivityAfter}`);
-
-  // Fetch commits for each project
-  const allCommits = [];
-  const warnings = [];
-  for (const proj of projects) {
-    const commitsUrl = `${baseUrl}/api/v4/projects/${proj.id}/repository/commits?since=${encodeURIComponent(sinceISO)}&until=${encodeURIComponent(untilISO)}&all=true&per_page=100`;
-    try {
-      const rawCommits = await fetchAllPages(commitsUrl, token);
-      if (rawCommits.length === 0) continue;
-      const mapped = filterAndMapCommits(rawCommits, proj.path_with_namespace, memberMap, excludeAuthors);
-      // Collect unmapped warnings
-      for (const c of mapped) {
-        if (c.unmapped && !warnings.includes(c.member)) warnings.push(c.member);
-      }
-      allCommits.push(...mapped.filter(c => !c.unmapped));
-      console.error(`  ${proj.path_with_namespace}: ${rawCommits.length} commits (${mapped.filter(c => !c.unmapped).length} mapped)`);
-    } catch (e) {
-      if (e.message.includes('token')) throw e;
-      // Skip projects with no repository or other non-fatal errors
-      continue;
-    }
-  }
-
-  if (warnings.length > 0) {
-    console.error(`\nWarning: unmapped authors: ${warnings.join(', ')}`);
-  }
+  const { config, dateRange, allCommits } = await collectCommits(dateArg);
 
   // Load raw_data.json for analysis
   const rawDataPath = path.join(ROOT, 'public', 'raw_data.json');
@@ -360,4 +360,5 @@ if (require.main === module) {
 module.exports = {
   parseDateArg, dateToMD, mdToISO, getPreviousWorkday,
   filterAndMapCommits, fetchAllPages, buildAnalysis,
+  buildDashboardJSON, buildPostPayload, collectCommits,
 };
