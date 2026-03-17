@@ -224,10 +224,16 @@ function buildDashboardJSON(commits, analysis, projectRisks) {
 }
 
 function buildPostPayload(commits, analysisResult) {
-  // Flat arrays for Apps Script
-  const gitlabCommits = commits.filter(c => !c.unmapped).map(c => ({
-    date: c.date, member: c.member, project: c.project, title: c.title, sha: c.sha, url: c.url,
-  }));
+  // Flat arrays for Apps Script (deduplicate by date|member|sha|project)
+  const seenPost = new Set();
+  const gitlabCommits = [];
+  for (const c of commits) {
+    if (c.unmapped) continue;
+    const key = `${c.date}|${c.member}|${c.sha}|${c.project}`;
+    if (seenPost.has(key)) continue;
+    seenPost.add(key);
+    gitlabCommits.push({ date: c.date, member: c.member, project: c.project, title: c.title, sha: c.sha, url: c.url });
+  }
 
   const commitAnalysis = [];
   for (const [date, members] of Object.entries(analysisResult.analysis)) {

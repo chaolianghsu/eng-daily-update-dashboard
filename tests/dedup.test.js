@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { buildDashboardJSON, buildAnalysis } from '../scripts/fetch-gitlab-commits.js';
+import { buildDashboardJSON, buildAnalysis, buildPostPayload } from '../scripts/fetch-gitlab-commits.js';
 import { mergeDailyData } from '../scripts/merge-daily-data.js';
 
 describe('GitLab commit deduplication (buildDashboardJSON)', () => {
@@ -39,6 +39,19 @@ describe('GitLab commit deduplication (buildAnalysis)', () => {
     const rawData = { '3/5': { Alice: { total: 8 } } };
     const result = buildAnalysis(commits, rawData, ['Alice']);
     expect(result.analysis['3/5']['Alice'].commitCount).toBe(1); // not 2
+  });
+});
+
+describe('GitLab commit deduplication (buildPostPayload)', () => {
+  it('deduplicates commits with same sha+project in POST payload', () => {
+    const commits = [
+      { date: '3/5', member: 'Alice', project: 'repo-a', title: 'fix bug', sha: 'abc123', url: '' },
+      { date: '3/5', member: 'Alice', project: 'repo-a', title: 'fix bug', sha: 'abc123', url: '' }, // duplicate
+      { date: '3/5', member: 'Alice', project: 'repo-a', title: 'add feature', sha: 'def456', url: '' },
+    ];
+    const analysisResult = { analysis: {}, projectRisks: [] };
+    const result = buildPostPayload(commits, analysisResult);
+    expect(result.gitlabCommits).toHaveLength(2); // not 3
   });
 });
 
