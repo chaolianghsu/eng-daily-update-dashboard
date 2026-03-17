@@ -67,7 +67,7 @@ Engineering Department Daily Update Dashboard — a React dashboard for tracking
 
 **To deploy Apps Script**: `bun run deploy:appscript` (builds + clasp push).
 
-**To run tests**: `bun run test` (Vitest, 138 tests). Tests cover: data schema validation, script utilities, React hooks (unit), view components (rendering), consistency analysis logic, and deduplication. Note: use `bun run test` not `bun test` — the latter uses Bun's built-in runner which doesn't support jsdom.
+**To run tests**: `bun run test` (Vitest, 139 tests). Tests cover: data schema validation, script utilities, React hooks (unit), view components (rendering), consistency analysis logic, and deduplication. Note: use `bun run test` not `bun test` — the latter uses Bun's built-in runner which doesn't support jsdom.
 
 **To update data manually**: Edit `public/raw_data.json` directly. Charts and tables render reactively from this data.
 
