@@ -21,10 +21,12 @@ function doPost(e) {
   if (data.dailyUpdates) writeDailyUpdates_(ss, data.dailyUpdates);
   if (data.gitlabCommits) writeGitlabCommits_(ss, data.gitlabCommits);
   if (data.commitAnalysis) writeCommitAnalysis_(ss, data.commitAnalysis);
+  if (data.taskAnalysis) writeTaskAnalysis_(ss, data.taskAnalysis);
 
   var result = { status: 'ok' };
   if (data.rawData) result.dates = Object.keys(data.rawData).length;
   if (data.gitlabCommits) result.commits = data.gitlabCommits.length;
+  if (data.taskAnalysis) result.taskWarnings = data.taskAnalysis.warnings ? data.taskAnalysis.warnings.length : 0;
   return ContentService.createTextOutput(JSON.stringify(result))
     .setMimeType(ContentService.MimeType.JSON);
 }
@@ -283,6 +285,97 @@ function getCommitData() {
   }
 
   return JSON.stringify({ commits: commits, analysis: analysis, projectRisks: projectRisks });
+}
+
+function writeTaskAnalysis_(ss, taskAnalysis) {
+  var sheet = ss.getSheetByName('Task Analysis');
+  if (!sheet) sheet = ss.insertSheet('Task Analysis');
+
+  var existing = sheet.getDataRange().getValues();
+  var existingKeyRows = {};
+  for (var i = 1; i < existing.length; i++) {
+    var key = String(existing[i][1]) + '|' + String(existing[i][2]) + '|' + String(existing[i][3]);
+    existingKeyRows[key] = i + 1;
+  }
+
+  if (existing.length === 0) {
+    sheet.getRange(1, 1, 1, 9).setValues([['analysisDate', 'period', 'date', 'member', 'severity', 'type', 'task', 'commits', 'reasoning']]);
+    existing = [['header']];
+  }
+
+  var warnings = taskAnalysis.warnings || [];
+  var analysisDate = taskAnalysis.analysisDate || '';
+  var period = taskAnalysis.period || '';
+  var newRows = [];
+
+  for (var i = 0; i < warnings.length; i++) {
+    var w = warnings[i];
+    var key = String(period) + '|' + String(w.date) + '|' + String(w.member);
+    var row = [analysisDate, period, w.date, w.member, w.severity, w.type, w.task, w.commits, w.reasoning];
+    if (existingKeyRows[key]) {
+      sheet.getRange(existingKeyRows[key], 1, 1, 9).setValues([row]);
+    } else {
+      newRows.push(row);
+    }
+  }
+
+  if (newRows.length > 0) {
+    var startRow = existing.length + 1;
+    sheet.getRange(startRow, 1, newRows.length, 9).setValues(newRows);
+  }
+}
+
+/**
+ * Returns task analysis data as JSON string (called from client via google.script.run).
+ * Returns the most recent period's data. Returns null if no sheet exists.
+ */
+function getTaskAnalysisData() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName('Task Analysis');
+  if (!sheet) return JSON.stringify(null);
+
+  var rows = sheet.getDataRange().getValues();
+  if (rows.length <= 1) return JSON.stringify(null);
+
+  // Find the latest analysisDate
+  var latestDate = '';
+  for (var i = 1; i < rows.length; i++) {
+    var d = String(rows[i][0]);
+    if (d > latestDate) latestDate = d;
+  }
+
+  // Collect warnings for the latest analysisDate
+  var warnings = [];
+  var period = '';
+  for (var i = 1; i < rows.length; i++) {
+    if (String(rows[i][0]) !== latestDate) continue;
+    period = String(rows[i][1]);
+    warnings.push({
+      date: String(rows[i][2]),
+      member: String(rows[i][3]),
+      severity: String(rows[i][4]),
+      type: String(rows[i][5]),
+      task: String(rows[i][6]),
+      commits: String(rows[i][7]),
+      reasoning: String(rows[i][8])
+    });
+  }
+
+  // Compute summary
+  var critical = 0, warning = 0, caution = 0;
+  for (var i = 0; i < warnings.length; i++) {
+    var s = warnings[i].severity;
+    if (s === '🔴') critical++;
+    else if (s === '🟡') warning++;
+    else if (s === '🟠') caution++;
+  }
+
+  return JSON.stringify({
+    analysisDate: latestDate,
+    period: period,
+    warnings: warnings,
+    summary: { totalWarnings: warnings.length, critical: critical, warning: warning, caution: caution }
+  });
 }
 
 // --- Read helpers ---
