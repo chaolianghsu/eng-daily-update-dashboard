@@ -290,7 +290,7 @@ async function main() {
   }
 
   // Load raw_data.json for analysis
-  const rawDataPath = path.join(ROOT, 'raw_data.json');
+  const rawDataPath = path.join(ROOT, 'public', 'raw_data.json');
   const existing = fs.existsSync(rawDataPath)
     ? JSON.parse(fs.readFileSync(rawDataPath, 'utf8'))
     : { rawData: {} };
@@ -303,7 +303,7 @@ async function main() {
 
   // Write gitlab-commits.json for dashboard
   const dashboardData = buildDashboardJSON(allCommits, analysisResult.analysis, analysisResult.projectRisks);
-  fs.writeFileSync(path.join(ROOT, 'gitlab-commits.json'), JSON.stringify(dashboardData, null, 2));
+  fs.writeFileSync(path.join(ROOT, 'public', 'gitlab-commits.json'), JSON.stringify(dashboardData, null, 2));
   console.error(`\nWrote gitlab-commits.json`);
 
   // Output POST payload to stdout

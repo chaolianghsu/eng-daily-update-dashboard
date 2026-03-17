@@ -2,10 +2,24 @@
   "name": "eng-daily-update-dashboard",
   "private": true,
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:appscript": "vite build --config vite.config.appscript.ts && bun scripts/build-appscript.ts",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "deploy:appscript": "bun run build:appscript && cd appscript && clasp push"
   },
   "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "typescript": "^5.9.3",
+    "vite": "^6.0.0",
     "vitest": "^3.0.0"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "recharts": "2.12.7"
   }
 }

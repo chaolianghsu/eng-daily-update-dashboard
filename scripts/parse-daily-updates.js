@@ -318,7 +318,7 @@ function parseMessagesFile(messageFiles, manualLeave) {
   const config = JSON.parse(
     fs.readFileSync(path.join(ROOT, 'chat-config.json'), 'utf8')
   );
-  const rawDataPath = path.join(ROOT, 'raw_data.json');
+  const rawDataPath = path.join(ROOT, 'public', 'raw_data.json');
   const existing = fs.existsSync(rawDataPath)
     ? JSON.parse(fs.readFileSync(rawDataPath, 'utf8'))
     : { rawData: {}, issues: [] };

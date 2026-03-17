@@ -41,7 +41,7 @@ describe('raw_data.json loading contract', () => {
   it('raw_data.json should be loadable and contain required fields', async () => {
     const fs = await import('fs');
     const path = await import('path');
-    const dataPath = path.resolve(__dirname, '..', 'raw_data.json');
+    const dataPath = path.resolve(__dirname, '..', 'public', 'raw_data.json');
     const data = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
 
     expect(data).toHaveProperty('rawData');

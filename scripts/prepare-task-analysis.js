@@ -98,8 +98,8 @@ function main() {
   const periodLabel = since === until ? since : `${since}-${until}`;
 
   // Load data files
-  const rawDataPath = path.join(ROOT, 'raw_data.json');
-  const commitsPath = path.join(ROOT, 'gitlab-commits.json');
+  const rawDataPath = path.join(ROOT, 'public', 'raw_data.json');
+  const commitsPath = path.join(ROOT, 'public', 'gitlab-commits.json');
 
   if (!fs.existsSync(rawDataPath)) {
     console.error('Error: raw_data.json not found');

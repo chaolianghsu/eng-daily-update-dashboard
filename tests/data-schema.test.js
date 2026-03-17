@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 
-const dataPath = resolve(__dirname, '..', 'raw_data.json');
+const dataPath = resolve(__dirname, '..', 'public', 'raw_data.json');
 let data;
 
 try {
