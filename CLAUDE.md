@@ -68,15 +68,27 @@ Engineering Department Daily Update Dashboard — a React dashboard for tracking
 
 **To deploy Apps Script**: `bun run deploy:appscript` (builds + clasp push).
 
-**To run tests**: `bun run test` (Vitest, 131 tests). Tests cover: data schema validation, script utilities, React hooks (unit), view components (rendering), and consistency analysis logic. Note: use `bun run test` not `bun test` — the latter uses Bun's built-in runner which doesn't support jsdom.
+**To run tests**: `bun run test` (Vitest, 138 tests). Tests cover: data schema validation, script utilities, React hooks (unit), view components (rendering), consistency analysis logic, and deduplication. Note: use `bun run test` not `bun test` — the latter uses Bun's built-in runner which doesn't support jsdom.
 
 **To update data manually**: Edit `public/raw_data.json` directly. Charts and tables render reactively from this data.
 
-**To update data from Google Chat**: Run `/sync-daily-updates` skill — fully automated: fetches Chat messages, parses hours, merges data, commits, pushes, and optionally updates Google Sheets.
+**To update data from Google Chat**: Run `/sync-daily-updates` — fully automated: fetches Chat messages, parses hours, merges data, commits, pushes, and updates Google Sheets.
 
-**To update GitLab commits**: Run `/sync-gitlab-commits` skill — fetches commits from GitLab, analyzes consistency with daily updates, writes to Spreadsheet and local JSON.
+**To update GitLab commits**: Run `/sync-gitlab-commits` — fetches commits from GitLab, analyzes consistency with daily updates, writes to Spreadsheet and local JSON.
 
-**To sync everything**: Run `/sync` skill — 3-stage DAG pipeline: Stage 1 collects daily updates + GitLab commits in parallel, Stage 2 runs consistency analysis, Stage 3 runs automated task analysis via `claude --print`.
+**To sync everything**: Run `/sync` — 3-stage DAG pipeline: Stage 1 collects daily updates + GitLab commits in parallel, Stage 2 runs consistency analysis, Stage 3 runs automated task analysis via `claude --print`.
+
+## Slash Commands
+
+| Command | Description |
+|---------|-------------|
+| `/sync` | 三階段 DAG pipeline: 平行收集 → 一致性分析 → 任務合理性（主要使用） |
+| `/sync-daily-updates` | Google Chat daily updates: 抓取 → 解析 → 合併 → commit → push → Sheets |
+| `/sync-gitlab-commits` | GitLab commits: 抓取 → 分析一致性 → 寫入 JSON + Sheets |
+| `/fetch-daily-updates` | 舊版（已被 `/sync-daily-updates` 取代） |
+| `/backfill-daily-updates` | 舊版（已被 `/sync-daily-updates` 取代） |
+
+Skills 定義在 `.claude/skills/*.md`，需要 `user_invocable: true` frontmatter。
 
 ## Deployment
 
