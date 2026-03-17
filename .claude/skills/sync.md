@@ -1,18 +1,18 @@
 # Sync All
 
-Run daily update sync and GitLab commits sync together.
+Run daily update sync first, then GitLab commits sync.
+
+**IMPORTANT:** Daily updates MUST complete before GitLab sync starts. GitLab sync reads `public/raw_data.json` for consistency analysis (hours vs commits). If it runs before daily updates are merged, all hours will be null and every member will show 🔴.
 
 ## Workflow
 
-### Step 1: Run both syncs in parallel
+### Step 1: Run daily updates sync first
 
-Execute `/sync-daily-updates` and `/sync-gitlab-commits` using the Agent tool:
-- One as foreground agent
-- One as background agent with `run_in_background: true`
+Execute `/sync-daily-updates` as a foreground agent. Wait for it to complete.
 
-### Step 2: Wait for both to complete
+### Step 2: Run GitLab commits sync
 
-Monitor progress messages from both agents.
+After Step 1 completes, execute `/sync-gitlab-commits` as a foreground agent.
 
 ### Step 3: Combined summary
 
