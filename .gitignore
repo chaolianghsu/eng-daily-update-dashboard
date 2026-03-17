@@ -2,4 +2,9 @@
 node_modules/
 chat-config.json
 gitlab-config.json
+appscript/.clasp.json
+appscript/appsscript.json
+dist/
+dist-appscript/
+appscript/index.html
 

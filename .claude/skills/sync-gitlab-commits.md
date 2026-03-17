@@ -5,7 +5,7 @@ Fetch GitLab commits for the engineering team and update Google Spreadsheet.
 ## Prerequisites
 
 - `gitlab-config.json` exists with `baseUrl`, `token`, `memberMap`, `excludeAuthors`
-- `raw_data.json` exists with current data
+- `public/raw_data.json` exists with current data
 - Git remote is configured for push
 
 ## Workflow
@@ -52,10 +52,10 @@ curl -s "$REDIRECT_URL"
 
 Expected: `{"status":"ok","commits":N}`
 
-### Step 6: Commit gitlab-commits.json
+### Step 6: Commit public/gitlab-commits.json
 
 ```bash
-git add gitlab-commits.json
+git add public/gitlab-commits.json
 git commit -m "Update GitLab commits data for <date>"
 git push
 ```
@@ -74,7 +74,7 @@ Commits：<N>
 
 ## Notes
 
-- The script writes `gitlab-commits.json` (for dashboard) and outputs the POST payload to stdout.
+- The script writes `public/gitlab-commits.json` (for dashboard) and outputs the POST payload to stdout.
 - Progress and warnings go to stderr.
 - Unmapped authors appear in stderr warnings — consider adding them to `gitlab-config.json` memberMap.
 - Idempotent: Google Sheets deduplicates by date|member|sha.

@@ -7,7 +7,7 @@ Replaces `/fetch-daily-updates` and `/backfill-daily-updates`.
 ## Prerequisites
 
 - `chat-config.json` exists with `spaceId` and `memberMap`
-- `raw_data.json` exists with current data
+- `public/raw_data.json` exists with current data
 - Git remote is configured for push
 
 ## Workflow
@@ -36,7 +36,7 @@ If the DGPA CSV fetch fails, fallback: treat Mon–Fri as workday, Sat–Sun as 
 ### Step 1: Read existing data and leave
 
 1. Read `chat-config.json` → get `spaceId`, `memberMap`
-2. Read `raw_data.json` → existing data
+2. Read `public/raw_data.json` → existing data
 3. Display current leave entries:
    ```
    目前已知休假：
@@ -66,7 +66,7 @@ Save output to `/tmp/parsed-output.json`.
 ### Step 4: Merge data
 
 ```bash
-node scripts/merge-daily-data.js raw_data.json /tmp/parsed-output.json > /tmp/merged-data.json
+node scripts/merge-daily-data.js public/raw_data.json /tmp/parsed-output.json > /tmp/merged-data.json
 ```
 
 ### Step 5: Review and apply
@@ -81,9 +81,9 @@ Issues are automatically recalculated when any changes are detected.
    ```bash
    node -e "const d=require('/tmp/merged-data.json'); console.log('New dates:', d.newDates); console.log('Backfilled:', d.backfilled);"
    ```
-2. If either has entries, copy merged data to `raw_data.json`:
+2. If either has entries, copy merged data to `public/raw_data.json`:
    ```bash
-   cp /tmp/merged-data.json raw_data.json
+   cp /tmp/merged-data.json public/raw_data.json
    ```
 3. If both are empty, display "沒有新的資料需要更新", send no-data notification (Step 10), and stop.
 
@@ -98,7 +98,7 @@ All tests must pass before proceeding.
 ### Step 7: Commit and push
 
 ```bash
-git add raw_data.json
+git add public/raw_data.json
 git commit -m "Update daily data for <dates>"
 git push
 ```
@@ -116,7 +116,7 @@ POST the merged data to the Apps Script web app, which writes to the Spreadsheet
 # Two-step POST (Apps Script returns 302 redirect):
 REDIRECT_URL=$(curl -s -o /dev/null -w "%{redirect_url}" -X POST \
   -H "Content-Type: application/json" \
-  -d @raw_data.json \
+  -d @public/raw_data.json \
   "https://script.google.com/macros/s/AKfycbxMfzEiZoAq5igmL69qN711mCrpX9Mv0vjnxb1IiEqpkC0h_ZVR2me2SNlX82YvNEGp/exec" 2>/dev/null)
 
 curl -s "$REDIRECT_URL"
@@ -203,7 +203,7 @@ Recovery after machine restart: `tmux attach -t daily-sync` or re-run above.
 - Thread date ≠ content date. "3/6 Daily Update" thread contains 3/5 progress.
 - All parsing rules are in `scripts/parse-daily-updates.js`.
 - Leave detection is automatic from Chat messages containing 請假/休假.
-- Leave sources (merged in order): `raw_data.json` leave → auto-detected from Chat → CLI --leave.
+- Leave sources (merged in order): `public/raw_data.json` leave → auto-detected from Chat → CLI --leave.
 - Google Chat API does NOT support text filtering — must fetch and filter client-side.
 - Members not in `memberMap` are skipped.
 - Raw daily update text (原始內容) is written to the "daily update" sheet via `dailyUpdates` in the POST payload. Deduplication is by date+member.

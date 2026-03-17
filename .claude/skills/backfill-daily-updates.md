@@ -1,6 +1,6 @@
 # Backfill Daily Updates from Google Chat
 
-Backfill missing daily update data from Google Chat history into `raw_data.json`.
+Backfill missing daily update data from Google Chat history into `public/raw_data.json`.
 
 ## Usage
 
@@ -11,14 +11,14 @@ Backfill missing daily update data from Google Chat history into `raw_data.json`
 ## Prerequisites
 
 - `chat-config.json` exists with `spaceId`, `memberMap`, `queryKeyword`
-- `raw_data.json` exists with current data
+- `public/raw_data.json` exists with current data
 
 ## Workflow
 
 ### Step 1: Load config and check existing leave
 
 1. Read `chat-config.json` → `spaceId`, `memberMap`, `queryKeyword`
-2. Read `raw_data.json` → existing `rawData`, `leave`
+2. Read `public/raw_data.json` → existing `rawData`, `leave`
 3. Display current leave entries to operator:
    ```
    目前已知休假：
@@ -63,7 +63,7 @@ node scripts/parse-daily-updates.js <file1> [file2 ...] [--leave "Name:M/D-M/D"]
 ```
 
 The script outputs:
-- `leaveMap` — combined leave (raw_data.json + auto-detected from Chat + CLI `--leave`)
+- `leaveMap` — combined leave (public/raw_data.json + auto-detected from Chat + CLI `--leave`)
 - `dateEntries` — parsed data per date
 - `issues` — generated warnings
 - `warnings` — members with null data but no leave detected
@@ -75,7 +75,7 @@ The script outputs:
 1. Review `leaveMap` — does it include all known leaves for the target dates?
 2. Review `warnings` — any member flagged as "資料為 null，未偵測到休假"?
 3. If a leave is missing:
-   - Add to `raw_data.json` `leave` section, OR
+   - Add to `public/raw_data.json` `leave` section, OR
    - Re-run script with `--leave "Name:M/D-M/D"`
 
 ### Step 6: Match and merge
@@ -90,7 +90,7 @@ From script output:
 
 ### Step 7: Write, validate, and confirm
 
-1. Write `raw_data.json`
+1. Write `public/raw_data.json`
 2. Run `npm test`
 3. Show summary table:
 
@@ -104,7 +104,7 @@ From script output:
 
 4. Ask user to confirm, then:
 ```
-git add raw_data.json
+git add public/raw_data.json
 git commit -m "Backfill daily data for M/D, M/D"
 git push
 ```
@@ -114,7 +114,7 @@ git push
 - Thread date ≠ content date. "3/6 Daily Update" thread has 3/5 progress.
 - All parsing rules, thresholds, and issue logic are in `scripts/parse-daily-updates.js`.
 - Leave announcements are standalone threads containing 請假 or 休假. Detection uses `sender.name` → `memberMap`.
-- Leave sources (merged in order): `raw_data.json` `leave` → auto-detected from Chat → CLI `--leave`.
+- Leave sources (merged in order): `public/raw_data.json` `leave` → auto-detected from Chat → CLI `--leave`.
 - Older leave announcements (beyond fetched messages) won't be auto-detected. Always verify `warnings` output.
 - Multiple target dates share the same fetched message batch for efficiency.
 - Always preserve existing data — append-only for `rawData`.
