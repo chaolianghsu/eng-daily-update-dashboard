@@ -23,9 +23,13 @@ function mergeDailyData(existing, parsed) {
         }
       }
     }
-    // Collect raw replies for daily updates sheet
+    // Collect raw replies for daily updates sheet (deduplicate by date+member)
     if (info.rawReplies) {
+      const seenDailyUpdate = new Set();
       for (const reply of info.rawReplies) {
+        const dedupKey = `${date}|${reply.member}`;
+        if (seenDailyUpdate.has(dedupKey)) continue;
+        seenDailyUpdate.add(dedupKey);
         dailyUpdates.push({
           date,
           member: reply.member,

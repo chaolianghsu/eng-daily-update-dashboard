@@ -127,12 +127,16 @@ function filterAndMapCommits(commits, projectPath, memberMap, excludeAuthors) {
 // --- Analysis ---
 
 function buildAnalysis(commits, rawData, dailyUpdateMembers) {
-  // Group commits by date → member
+  // Group commits by date → member (deduplicate by sha+project)
   const commitsByDateMember = {};
   const projectContributors = {};
+  const seenCommits = new Set();
 
   for (const c of commits) {
     if (c.unmapped) continue;
+    const dedupKey = `${c.date}|${c.member}|${c.sha}|${c.project}`;
+    if (seenCommits.has(dedupKey)) continue;
+    seenCommits.add(dedupKey);
     const key = `${c.date}|${c.member}`;
     if (!commitsByDateMember[key]) commitsByDateMember[key] = [];
     commitsByDateMember[key].push(c);
@@ -199,10 +203,14 @@ function buildAnalysis(commits, rawData, dailyUpdateMembers) {
 // --- Output ---
 
 function buildDashboardJSON(commits, analysis, projectRisks) {
-  // Group commits by date → member for dashboard format
+  // Group commits by date → member for dashboard format (deduplicate by sha+project)
   const commitsByDate = {};
+  const seen = new Set();
   for (const c of commits) {
     if (c.unmapped) continue;
+    const dedupKey = `${c.date}|${c.member}|${c.sha}|${c.project}`;
+    if (seen.has(dedupKey)) continue;
+    seen.add(dedupKey);
     if (!commitsByDate[c.date]) commitsByDate[c.date] = {};
     if (!commitsByDate[c.date][c.member]) {
       commitsByDate[c.date][c.member] = { count: 0, projects: [], items: [] };
