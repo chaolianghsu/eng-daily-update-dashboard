@@ -301,10 +301,20 @@ async function main() {
   // Build analysis
   const analysisResult = buildAnalysis(allCommits, existing.rawData, dailyUpdateMembers);
 
-  // Write gitlab-commits.json for dashboard
+  // Write gitlab-commits.json for dashboard (merge with existing data)
   const dashboardData = buildDashboardJSON(allCommits, analysisResult.analysis, analysisResult.projectRisks);
-  fs.writeFileSync(path.join(ROOT, 'public', 'gitlab-commits.json'), JSON.stringify(dashboardData, null, 2));
-  console.error(`\nWrote gitlab-commits.json`);
+  const gitlabJsonPath = path.join(ROOT, 'public', 'gitlab-commits.json');
+  if (fs.existsSync(gitlabJsonPath)) {
+    const existingGitlab = JSON.parse(fs.readFileSync(gitlabJsonPath, 'utf8'));
+    // Merge: new dates overwrite, old dates preserved
+    for (const [date, data] of Object.entries(dashboardData.commits)) { existingGitlab.commits[date] = data; }
+    for (const [date, data] of Object.entries(dashboardData.analysis)) { existingGitlab.analysis[date] = data; }
+    existingGitlab.projectRisks = dashboardData.projectRisks;
+    fs.writeFileSync(gitlabJsonPath, JSON.stringify(existingGitlab, null, 2));
+  } else {
+    fs.writeFileSync(gitlabJsonPath, JSON.stringify(dashboardData, null, 2));
+  }
+  console.error(`\nWrote gitlab-commits.json (merged)`);
 
   // Output POST payload to stdout
   const postPayload = buildPostPayload(allCommits, analysisResult);
