@@ -10,9 +10,12 @@
     "deploy:appscript": "bun run build:appscript && cd appscript && clasp push"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^4.0.0",
+    "jsdom": "^29.0.0",
     "typescript": "^5.9.3",
     "vite": "^6.0.0",
     "vitest": "^3.0.0"

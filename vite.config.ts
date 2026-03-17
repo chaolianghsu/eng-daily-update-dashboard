@@ -6,4 +6,12 @@ export default defineConfig({
   build: {
     outDir: "dist",
   },
+  test: {
+    environment: "node",
+    environmentMatchGlobs: [
+      ["tests/unit/**", "jsdom"],
+      ["tests/components/**", "jsdom"],
+    ],
+    setupFiles: ["tests/setup.ts"],
+  },
 });
