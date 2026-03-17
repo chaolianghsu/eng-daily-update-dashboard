@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
   ResponsiveContainer, ReferenceLine, Cell, LineChart, Line,
@@ -9,6 +9,11 @@ import { COLORS, SEVERITY_COLORS, THRESHOLDS, MEETING_HEAVY_PCT, WEEK_DAYS, MEMB
 import { isOnLeave, getStatus, getTrendIcon, getWeekRange } from "./utils";
 import { CustomTooltip, CardPanel, ColorDot, StatusBadge, tabStyle } from "./components";
 import CommitsView from "./CommitsView";
+import { useCurrentWeek } from "./hooks/useCurrentWeek";
+import { useDailyBarData } from "./hooks/useDailyBarData";
+import { useTrendData } from "./hooks/useTrendData";
+import { useWeeklySummary } from "./hooks/useWeeklySummary";
+import { useAllIssues } from "./hooks/useAllIssues";
 import type { LoadData, CommitData, TaskAnalysisData } from "./types";
 import "./styles.css";
 
@@ -58,35 +63,7 @@ export default function App({ loadData }: { loadData: LoadData }) {
   const memberColors = Object.fromEntries(members.map((m, i) => [m, MEMBER_PALETTE[i % MEMBER_PALETTE.length]]));
   const issueMap = Object.fromEntries(issues.map(iss => [iss.member, iss]));
 
-  const currentWeek = useMemo(() => {
-    if (!dates.length) return { dates: [], label: "" };
-    const year = new Date().getFullYear();
-    const { monday, friday } = getWeekRange(new Date());
-
-    let weekDates = dates.filter(d => {
-      const [m, dd] = d.split('/').map(Number);
-      const date = new Date(year, m - 1, dd);
-      return date >= monday && date <= friday;
-    });
-
-    const fmtDate = (dt: Date) => `${dt.getMonth()+1}/${dt.getDate()}`;
-    let label = `本週 ${fmtDate(monday)} – ${fmtDate(friday)}`;
-
-    if (weekDates.length === 0 && dates.length > 0) {
-      const latest = dates[dates.length - 1];
-      const [lm, ld] = latest.split('/').map(Number);
-      const latestDate = new Date(year, lm - 1, ld);
-      const { monday: pMon, friday: pFri } = getWeekRange(latestDate);
-      weekDates = dates.filter(d => {
-        const [m, dd] = d.split('/').map(Number);
-        const date = new Date(year, m - 1, dd);
-        return date >= pMon && date <= pFri;
-      });
-      label = `${fmtDate(pMon)} – ${fmtDate(pFri)} 週`;
-    }
-
-    return { dates: weekDates, label };
-  }, [dates]);
+  const currentWeek = useCurrentWeek(dates);
 
   const dailyDates = currentWeek.dates;
   const activeDate = (selectedDate && dailyDates.includes(selectedDate))
@@ -95,101 +72,13 @@ export default function App({ loadData }: { loadData: LoadData }) {
 
   const chartHeight = isMobile ? 280 : 380;
 
-  const dailyBarData = useMemo(() => {
-    if (!rawData || !activeDate) return [];
-    return members.map(m => {
-      const d = rawData[activeDate]?.[m] || { total: null, meeting: null, dev: null };
-      return { name: m, 開發: d.dev, 會議: d.meeting, total: d.total };
-    }).sort((a, b) => (b.total || -1) - (a.total || -1));
-  }, [rawData, activeDate, members]);
+  const dailyBarData = useDailyBarData(rawData, activeDate, members);
 
-  const trendDates = useMemo(() => {
-    const limits: Record<string, number> = { week: 5, "2weeks": 10, month: 22, all: Infinity };
-    const n = limits[trendRange] || Infinity;
-    return n >= dates.length ? dates : dates.slice(-n);
-  }, [dates, trendRange]);
+  const { trendDates, trendData, useWeeklyAgg, weekGroups } = useTrendData(rawData, dates, members, dayLabels, commitData, trendRange);
 
-  const trendData = useMemo(() => {
-    if (!rawData) return [];
-    return trendDates.map(date => {
-      const row: any = { date: `${date}（${dayLabels[date]}）` };
-      const vals: number[] = [];
-      members.forEach(m => {
-        const v = rawData[date]?.[m]?.total ?? null;
-        row[m] = v;
-        if (v !== null) vals.push(v);
-      });
-      row['團隊平均'] = vals.length ? +(vals.reduce((a, b) => a + b, 0) / vals.length).toFixed(1) : null;
-      row['_min'] = vals.length ? Math.min(...vals) : null;
-      row['_max'] = vals.length ? Math.max(...vals) : null;
-      if (commitData?.commits?.[date]) {
-        for (const m of members) {
-          row[`_commit_${m}`] = commitData.commits[date]?.[m]?.count || 0;
-        }
-      }
-      return row;
-    });
-  }, [rawData, trendDates, members, dayLabels, commitData]);
+  const weeklySummary = useWeeklySummary(rawData, dates, members);
 
-  const useWeeklyAgg = trendRange === 'month' || trendRange === 'all';
-
-  const weekGroups = useMemo(() => {
-    if (!useWeeklyAgg || !trendDates.length) return [];
-    const year = new Date().getFullYear();
-    const groups: any[] = [];
-    let current: any = null;
-    for (const d of trendDates) {
-      const [m, dd] = d.split('/').map(Number);
-      const date = new Date(year, m - 1, dd);
-      const { monday } = getWeekRange(date);
-      const wk = `${monday.getMonth()+1}/${monday.getDate()}`;
-      if (!current || current.key !== wk) {
-        const fri = new Date(monday);
-        fri.setDate(monday.getDate() + 4);
-        current = { key: wk, label: `${wk}–${fri.getMonth()+1}/${fri.getDate()}`, dates: [] };
-        groups.push(current);
-      }
-      current.dates.push(d);
-    }
-    return groups;
-  }, [trendDates, useWeeklyAgg]);
-
-  const weeklySummary = useMemo(() => {
-    if (!rawData) return [];
-    return members.map(m => {
-      let totalSum = 0, meetSum = 0, devSum = 0, count = 0;
-      const dailyTotals: number[] = [];
-      for (const d of dates) {
-        const entry = rawData[d]?.[m];
-        if (entry?.total != null) { totalSum += entry.total; count++; dailyTotals.push(entry.total); }
-        if (entry?.meeting != null) { meetSum += entry.meeting; }
-        if (entry?.dev != null) { devSum += entry.dev; }
-      }
-      const avg = count ? +(totalSum / count).toFixed(1) : null;
-      const sum = count ? +totalSum.toFixed(1) : null;
-      const devAvg = count ? +(devSum / count).toFixed(1) : null;
-      const meetAvg = count ? +(meetSum / count).toFixed(1) : null;
-      const stdDev = dailyTotals.length >= 2 ? Math.sqrt(dailyTotals.reduce((s, v) => s + (v - avg!) * (v - avg!), 0) / dailyTotals.length) : null;
-      const maxStdDev = 3;
-      const stabilityPct = stdDev !== null ? Math.max(0, 100 - (stdDev / maxStdDev) * 100) : 0;
-      const stabilityColor = stabilityPct >= 70 ? COLORS.green : stabilityPct >= 40 ? COLORS.yellow : COLORS.orange;
-      const v1 = rawData[dates[0]]?.[m]?.total ?? null;
-      const v2 = rawData[dates[dates.length - 1]]?.[m]?.total ?? null;
-      return { name: m, avg, sum, devAvg, meetAvg, daysReported: count, meetSum: +meetSum.toFixed(1), meetPct: sum ? Math.round(meetSum / sum * 100) : 0, trend: getTrendIcon(v1, v2), stdDev, stabilityPct, stabilityColor };
-    }).sort((a, b) => (b.avg || -1) - (a.avg || -1));
-  }, [rawData, dates, members]);
-
-  const allIssues = useMemo(() => {
-    const base = issues.filter(i => i.severity !== '🟢');
-    if (!commitData) return base;
-    const activeAnalysis = commitData.analysis?.[activeDate] || {};
-    for (const [m, a] of Object.entries(activeAnalysis)) {
-      if (a.status === '🔴') {
-        base.push({ member: m, severity: '🔴', text: `有 ${a.commitCount} commits 但未回報工時` });
-      }
-    }
-    return base;
-  }, [issues, commitData, activeDate]);
+  const allIssues = useAllIssues(issues, commitData, activeDate);
 
   if (loading) {
     return (
