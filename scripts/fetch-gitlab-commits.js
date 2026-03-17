@@ -145,7 +145,17 @@ function buildAnalysis(commits, rawData, dailyUpdateMembers) {
   // Build analysis per date × member
   const analysis = {};
   const commitDates = [...new Set(commits.filter(c => !c.unmapped).map(c => c.date))];
-  const allDates = [...new Set([...commitDates, ...Object.keys(rawData)])].sort((a, b) => {
+  // Only analyze dates that have commits OR fall within the fetched date range
+  // Determine fetched range from commit dates
+  const fetchedDateNums = commitDates.map(d => { const p = d.split('/').map(Number); return p[0] * 100 + p[1]; });
+  const minFetched = Math.min(...fetchedDateNums);
+  const maxFetched = Math.max(...fetchedDateNums);
+  const rawDataDatesInRange = Object.keys(rawData).filter(d => {
+    const p = d.split('/').map(Number);
+    const n = p[0] * 100 + p[1];
+    return n >= minFetched && n <= maxFetched;
+  });
+  const allDates = [...new Set([...commitDates, ...rawDataDatesInRange])].sort((a, b) => {
     const [am, ad] = a.split('/').map(Number);
     const [bm, bd] = b.split('/').map(Number);
     return (am * 100 + ad) - (bm * 100 + bd);
