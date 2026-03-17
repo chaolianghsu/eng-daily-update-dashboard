@@ -1,0 +1,74 @@
+/* src/styles.css */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: #0f172a;
+  background-image: radial-gradient(ellipse at 15% -5%, rgba(59,130,246,0.07) 0%, transparent 55%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#root { min-height: 100vh; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-in { animation: fadeInUp 0.45s ease-out both; }
+
+.member-card {
+  transition: transform 0.2s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.member-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+  border-color: rgba(59,130,246,0.3) !important;
+}
+
+.date-scroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+  scroll-snap-type: x mandatory;
+}
+.date-scroll::-webkit-scrollbar { display: none; }
+.date-btn {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  transition: all 0.2s ease;
+}
+.date-btn:hover { background: rgba(59,130,246,0.1) !important; }
+
+.tab-btn { transition: all 0.2s ease; }
+.tab-btn:hover:not(.tab-active) { background: rgba(148,163,184,0.1) !important; }
+
+::-webkit-scrollbar { height: 4px; width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+
+.attention-card:hover { transform: translateY(-1px); }
+
+@media (max-width: 768px) {
+  .dashboard-container { padding: 16px 12px !important; }
+  .dashboard-title { font-size: 20px !important; }
+  .dashboard-subtitle { font-size: 11px !important; }
+  .tab-bar { width: 100% !important; }
+  .tab-btn { flex: 1 !important; padding: 8px 6px !important; font-size: 11px !important; text-align: center !important; white-space: nowrap; }
+  .member-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px !important; }
+  .status-overview { flex-direction: column !important; }
+  .status-kpis { border-right: none !important; border-bottom: 1px solid #334155 !important; justify-content: space-around !important; }
+  .footer-bar { flex-direction: column !important; align-items: flex-start !important; }
+  .week-label { font-size: 12px !important; }
+  .card-panel { padding: 16px 12px 6px !important; }
+}
+
+@media (max-width: 480px) {
+  .member-grid { grid-template-columns: 1fr !important; }
+  .dashboard-container { padding: 12px 8px !important; }
+  .dashboard-title { font-size: 18px !important; }
+}
