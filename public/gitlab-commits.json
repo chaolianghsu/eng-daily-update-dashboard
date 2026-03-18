@@ -8925,111 +8925,31 @@
       }
     },
     "3/17": {
-      "Ted": {
-        "count": 2,
-        "projects": [
-          "CrawlersV2/fanti-insights-api"
-        ],
-        "items": [
-          {
-            "title": "fix: handle ES9 keyword array fields (hash_tags, content_tags)",
-            "sha": "6b8c9e2d",
-            "project": "CrawlersV2/fanti-insights-api",
-            "url": "https://biglab.buygta.today/CrawlersV2/fanti-insights-api/-/commit/6b8c9e2daea74c80f4ec1703728ae9721cb2f971"
-          },
-          {
-            "title": "docs: add sshuttle tunnel details to deployment guide",
-            "sha": "15095152",
-            "project": "CrawlersV2/fanti-insights-api",
-            "url": "https://biglab.buygta.today/CrawlersV2/fanti-insights-api/-/commit/15095152915afb827ba7f167e1a451680f4b7652"
-          }
-        ]
-      },
-      "Joe": {
-        "count": 6,
-        "projects": [
-          "KEYPO/keypo-frontend-2023",
-          "KEYPO/keypo-backend"
-        ],
-        "items": [
-          {
-            "title": "feat: add 1-hour alert frequency option for specific clients",
-            "sha": "2947c243",
-            "project": "KEYPO/keypo-frontend-2023",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/2947c2431eec6031699745abebbdb02658bb3d1a"
-          },
-          {
-            "title": "refactor: enable sub keyword parameter in AgentParamsList",
-            "sha": "d734a668",
-            "project": "KEYPO/keypo-frontend-2023",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/d734a66808181a141fba55cfcb72a1ec507ce1d6"
-          },
-          {
-            "title": "Merge branch 'refactor-enable-sub-keyword-parameter-in-agent' into demo",
-            "sha": "c3c18ae4",
-            "project": "KEYPO/keypo-frontend-2023",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/c3c18ae4b38b2167e961d7421d899e0971c06bef"
-          },
-          {
-            "title": "Merge branch 'feat-34' into demo",
-            "sha": "01da0f88",
-            "project": "KEYPO/keypo-frontend-2023",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/01da0f883f7e2d0714e881773113ab777470af74"
-          },
-          {
-            "title": "docs: [WIP] add implementation plan for client-specific channel filter",
-            "sha": "ee50fe5f",
-            "project": "KEYPO/keypo-frontend-2023",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/ee50fe5f7d81d240bca08c5aec84e0c1a959fcf1"
-          },
-          {
-            "title": "Merge branch 'feature/add-jp-type' into 'develop'",
-            "sha": "14681c78",
-            "project": "KEYPO/keypo-backend",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/14681c78e66e6a4ef30f86541a586b79b87c9bd9"
-          }
-        ]
-      },
-      "Wendy": {
-        "count": 4,
-        "projects": [
-          "sinyi/sinyi-dashboard",
-          "bigdata/2025-bigdata-admin-backend"
-        ],
-        "items": [
-          {
-            "title": "feat(es): add IDC auth config and migrate to ES client",
-            "sha": "350d098a",
-            "project": "sinyi/sinyi-dashboard",
-            "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/350d098aa8056a1238129e9f0f6f0de2c50a6538"
-          },
-          {
-            "title": "fix(es): adapt queries for ES v9 compatibility",
-            "sha": "c33d7a1d",
-            "project": "sinyi/sinyi-dashboard",
-            "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/c33d7a1dd4c271c1c78a42caedc8254b9f8b969b"
-          },
-          {
-            "title": "docs(es_v9_migration): add IDC auth doc and update inventory",
-            "sha": "851df4f6",
-            "project": "sinyi/sinyi-dashboard",
-            "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/851df4f67faca50393b77f6adc5ca66ff457ee20"
-          },
-          {
-            "title": "Merge branch 'feat/add-jp-language' into 'develop'",
-            "sha": "c4f34225",
-            "project": "bigdata/2025-bigdata-admin-backend",
-            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/c4f3422553c71fbd636dd0a8b98368eb1d6b821d"
-          }
-        ]
-      },
       "Aaron": {
-        "count": 22,
+        "count": 24,
         "projects": [
-          "llmprojects/keypo-agent",
-          "kol/kol-agent"
+          "kol/kol-agent",
+          "llmprojects/keypo-agent"
         ],
         "items": [
+          {
+            "title": "refactor(api): use QueryResponse model for all endpoints",
+            "sha": "319231d6",
+            "project": "kol/kol-agent",
+            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/319231d608c4567dda2935f21bea6e4e4e42453d"
+          },
+          {
+            "title": "build: migrate from pip to uv",
+            "sha": "851f7779",
+            "project": "kol/kol-agent",
+            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/851f7779826bfdf22a1609f7208fc8ee8eff6cbe"
+          },
+          {
+            "title": "chore: add docker-compose for local dev",
+            "sha": "37d611fe",
+            "project": "kol/kol-agent",
+            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/37d611febe295fe6d930f47386d24dcaeae14113"
+          },
           {
             "title": "docs(specs): add KOL tool routing fix design spec",
             "sha": "4258c949",
@@ -9155,12 +9075,190 @@
             "sha": "514d36bd",
             "project": "llmprojects/keypo-agent",
             "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/514d36bd42c94ab13b54d1966793e45cea05ceb2"
+          }
+        ]
+      },
+      "日銜": {
+        "count": 13,
+        "projects": [
+          "CrawlersV2/bigcrawler-scrapy"
+        ],
+        "items": [
+          {
+            "title": "fix time error",
+            "sha": "b97401f3",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/b97401f3c05024b6a62e6b3bec5e899883dffb7c"
           },
           {
-            "title": "refactor(api): use QueryResponse model for all endpoints",
-            "sha": "319231d6",
-            "project": "kol/kol-agent",
-            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/319231d608c4567dda2935f21bea6e4e4e42453d"
+            "title": "Merge branch 'byron-fix-scooptw' into 'develop'",
+            "sha": "a56c046c",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/a56c046c0445869ad2546f07f391944e2941c7b6"
+          },
+          {
+            "title": "Merge branch 'byron-fix-scooptw' into 'develop'",
+            "sha": "b42fb9e3",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/b42fb9e35b8b884942172a69f81336fd29942457"
+          },
+          {
+            "title": "fix(nextapple) : remove comment",
+            "sha": "89c71513",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/89c71513e8f1a38f16dd336c36451df8e130c4dc"
+          },
+          {
+            "title": "Merge branch 'byron-fix-nextapple' into 'develop'",
+            "sha": "5df62193",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/5df6219375b02f561f5f484dca5543d45d7c5893"
+          },
+          {
+            "title": "Merge branch 'byron-fix-nextapple' into 'develop'",
+            "sha": "b3743772",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/b374377254fd1df3e6b58f37c8c53885f683ac20"
+          },
+          {
+            "title": "fix(people): use AJAX pagination with pcajaxamore_scroll nonce",
+            "sha": "b8dc3c51",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/b8dc3c510c50d2dda1360e02868ea83ff8999247"
+          },
+          {
+            "title": "fix flake8 error",
+            "sha": "377cf28f",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/377cf28f8eecc9370ad41763029e0b58b3318bd0"
+          },
+          {
+            "title": "Merge branch 'byron-fix-people' into 'develop'",
+            "sha": "cd9ec4f3",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/cd9ec4f3ac5154815d0139d92e60171f15340e10"
+          },
+          {
+            "title": "Merge branch 'byron-fix-people' into 'develop'",
+            "sha": "68fefda4",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/68fefda41393760821e55067faf6bfd42122d6ee"
+          },
+          {
+            "title": "fix(focusnews) : update time_css",
+            "sha": "c5e72f43",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/c5e72f4399fe59a1c8fde68c29fe45918e68fcdc"
+          },
+          {
+            "title": "Merge branch 'byron-fix-focusnews' into 'develop'",
+            "sha": "b1a15e94",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/b1a15e94f7a5a294dd120dc4e3c19e6f64fc2e4b"
+          },
+          {
+            "title": "Merge branch 'byron-fix-focusnews' into 'develop'",
+            "sha": "b96ff4c8",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/b96ff4c810a09e0127c0d508609406bd7d585407"
+          }
+        ]
+      },
+      "Ted": {
+        "count": 2,
+        "projects": [
+          "CrawlersV2/fanti-insights-api"
+        ],
+        "items": [
+          {
+            "title": "fix: handle ES9 keyword array fields (hash_tags, content_tags)",
+            "sha": "6b8c9e2d",
+            "project": "CrawlersV2/fanti-insights-api",
+            "url": "https://biglab.buygta.today/CrawlersV2/fanti-insights-api/-/commit/6b8c9e2daea74c80f4ec1703728ae9721cb2f971"
+          },
+          {
+            "title": "docs: add sshuttle tunnel details to deployment guide",
+            "sha": "15095152",
+            "project": "CrawlersV2/fanti-insights-api",
+            "url": "https://biglab.buygta.today/CrawlersV2/fanti-insights-api/-/commit/15095152915afb827ba7f167e1a451680f4b7652"
+          }
+        ]
+      },
+      "Joe": {
+        "count": 6,
+        "projects": [
+          "KEYPO/keypo-frontend-2023",
+          "KEYPO/keypo-backend"
+        ],
+        "items": [
+          {
+            "title": "feat: add 1-hour alert frequency option for specific clients",
+            "sha": "2947c243",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/2947c2431eec6031699745abebbdb02658bb3d1a"
+          },
+          {
+            "title": "refactor: enable sub keyword parameter in AgentParamsList",
+            "sha": "d734a668",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/d734a66808181a141fba55cfcb72a1ec507ce1d6"
+          },
+          {
+            "title": "Merge branch 'refactor-enable-sub-keyword-parameter-in-agent' into demo",
+            "sha": "c3c18ae4",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/c3c18ae4b38b2167e961d7421d899e0971c06bef"
+          },
+          {
+            "title": "Merge branch 'feat-34' into demo",
+            "sha": "01da0f88",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/01da0f883f7e2d0714e881773113ab777470af74"
+          },
+          {
+            "title": "docs: [WIP] add implementation plan for client-specific channel filter",
+            "sha": "ee50fe5f",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/ee50fe5f7d81d240bca08c5aec84e0c1a959fcf1"
+          },
+          {
+            "title": "Merge branch 'feature/add-jp-type' into 'develop'",
+            "sha": "14681c78",
+            "project": "KEYPO/keypo-backend",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/14681c78e66e6a4ef30f86541a586b79b87c9bd9"
+          }
+        ]
+      },
+      "Wendy": {
+        "count": 4,
+        "projects": [
+          "sinyi/sinyi-dashboard",
+          "bigdata/2025-bigdata-admin-backend"
+        ],
+        "items": [
+          {
+            "title": "feat(es): add IDC auth config and migrate to ES client",
+            "sha": "350d098a",
+            "project": "sinyi/sinyi-dashboard",
+            "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/350d098aa8056a1238129e9f0f6f0de2c50a6538"
+          },
+          {
+            "title": "fix(es): adapt queries for ES v9 compatibility",
+            "sha": "c33d7a1d",
+            "project": "sinyi/sinyi-dashboard",
+            "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/c33d7a1dd4c271c1c78a42caedc8254b9f8b969b"
+          },
+          {
+            "title": "docs(es_v9_migration): add IDC auth doc and update inventory",
+            "sha": "851df4f6",
+            "project": "sinyi/sinyi-dashboard",
+            "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/851df4f67faca50393b77f6adc5ca66ff457ee20"
+          },
+          {
+            "title": "Merge branch 'feat/add-jp-language' into 'develop'",
+            "sha": "c4f34225",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/c4f3422553c71fbd636dd0a8b98368eb1d6b821d"
           }
         ]
       },
@@ -9338,92 +9436,6 @@
             "sha": "0bebda1f",
             "project": "KEYPO/keypo-engine-api",
             "url": "https://biglab.buygta.today/KEYPO/keypo-engine-api/-/commit/0bebda1f030d345d989e8bd37b4a9e1fff8e8c5c"
-          }
-        ]
-      },
-      "日銜": {
-        "count": 13,
-        "projects": [
-          "CrawlersV2/bigcrawler-scrapy"
-        ],
-        "items": [
-          {
-            "title": "fix time error",
-            "sha": "b97401f3",
-            "project": "CrawlersV2/bigcrawler-scrapy",
-            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/b97401f3c05024b6a62e6b3bec5e899883dffb7c"
-          },
-          {
-            "title": "Merge branch 'byron-fix-scooptw' into 'develop'",
-            "sha": "a56c046c",
-            "project": "CrawlersV2/bigcrawler-scrapy",
-            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/a56c046c0445869ad2546f07f391944e2941c7b6"
-          },
-          {
-            "title": "Merge branch 'byron-fix-scooptw' into 'develop'",
-            "sha": "b42fb9e3",
-            "project": "CrawlersV2/bigcrawler-scrapy",
-            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/b42fb9e35b8b884942172a69f81336fd29942457"
-          },
-          {
-            "title": "fix(nextapple) : remove comment",
-            "sha": "89c71513",
-            "project": "CrawlersV2/bigcrawler-scrapy",
-            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/89c71513e8f1a38f16dd336c36451df8e130c4dc"
-          },
-          {
-            "title": "Merge branch 'byron-fix-nextapple' into 'develop'",
-            "sha": "5df62193",
-            "project": "CrawlersV2/bigcrawler-scrapy",
-            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/5df6219375b02f561f5f484dca5543d45d7c5893"
-          },
-          {
-            "title": "Merge branch 'byron-fix-nextapple' into 'develop'",
-            "sha": "b3743772",
-            "project": "CrawlersV2/bigcrawler-scrapy",
-            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/b374377254fd1df3e6b58f37c8c53885f683ac20"
-          },
-          {
-            "title": "fix(people): use AJAX pagination with pcajaxamore_scroll nonce",
-            "sha": "b8dc3c51",
-            "project": "CrawlersV2/bigcrawler-scrapy",
-            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/b8dc3c510c50d2dda1360e02868ea83ff8999247"
-          },
-          {
-            "title": "fix flake8 error",
-            "sha": "377cf28f",
-            "project": "CrawlersV2/bigcrawler-scrapy",
-            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/377cf28f8eecc9370ad41763029e0b58b3318bd0"
-          },
-          {
-            "title": "Merge branch 'byron-fix-people' into 'develop'",
-            "sha": "cd9ec4f3",
-            "project": "CrawlersV2/bigcrawler-scrapy",
-            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/cd9ec4f3ac5154815d0139d92e60171f15340e10"
-          },
-          {
-            "title": "Merge branch 'byron-fix-people' into 'develop'",
-            "sha": "68fefda4",
-            "project": "CrawlersV2/bigcrawler-scrapy",
-            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/68fefda41393760821e55067faf6bfd42122d6ee"
-          },
-          {
-            "title": "fix(focusnews) : update time_css",
-            "sha": "c5e72f43",
-            "project": "CrawlersV2/bigcrawler-scrapy",
-            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/c5e72f4399fe59a1c8fde68c29fe45918e68fcdc"
-          },
-          {
-            "title": "Merge branch 'byron-fix-focusnews' into 'develop'",
-            "sha": "b1a15e94",
-            "project": "CrawlersV2/bigcrawler-scrapy",
-            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/b1a15e94f7a5a294dd120dc4e3c19e6f64fc2e4b"
-          },
-          {
-            "title": "Merge branch 'byron-fix-focusnews' into 'develop'",
-            "sha": "b96ff4c8",
-            "project": "CrawlersV2/bigcrawler-scrapy",
-            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/b96ff4c810a09e0127c0d508609406bd7d585407"
           }
         ]
       },
@@ -10774,10 +10786,15 @@
         "commitCount": 4,
         "hours": 6.5
       },
+      "侑呈": {
+        "status": "⚠️",
+        "commitCount": 0,
+        "hours": 7
+      },
       "Ted": {
-        "status": "🔴",
+        "status": "✅",
         "commitCount": 2,
-        "hours": null
+        "hours": 9.5
       },
       "Joe": {
         "status": "✅",
@@ -10786,13 +10803,13 @@
       },
       "Aaron": {
         "status": "✅",
-        "commitCount": 22,
+        "commitCount": 24,
         "hours": 6.5
       },
       "哲緯": {
-        "status": "🔴",
+        "status": "✅",
         "commitCount": 5,
-        "hours": null
+        "hours": 7
       }
     },
     "3/18": {
@@ -10820,18 +10837,28 @@
   },
   "projectRisks": [
     {
+      "project": "kol/kol-agent",
+      "soloContributor": "Aaron",
+      "severity": "🟡"
+    },
+    {
       "project": "CrawlersV2/bigcrawler-scrapy",
       "soloContributor": "日銜",
       "severity": "🟡"
     },
     {
-      "project": "KEYPO/keypo-engine/on-premises-api-gateway",
-      "soloContributor": "Aaron",
+      "project": "CrawlersV2/fanti-insights-api",
+      "soloContributor": "Ted",
       "severity": "🟡"
     },
     {
       "project": "KEYPO/keypo-frontend-2023",
       "soloContributor": "Joe",
+      "severity": "🟡"
+    },
+    {
+      "project": "sinyi/sinyi-dashboard",
+      "soloContributor": "Wendy",
       "severity": "🟡"
     },
     {
@@ -10842,6 +10869,36 @@
     {
       "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
       "soloContributor": "Joyce",
+      "severity": "🟡"
+    },
+    {
+      "project": "KEYPO/keypo-engine-api",
+      "soloContributor": "Joyce",
+      "severity": "🟡"
+    },
+    {
+      "project": "bigdata/2025-bigdata-admin",
+      "soloContributor": "Ivy",
+      "severity": "🟡"
+    },
+    {
+      "project": "mason/truthsocial-crawler",
+      "soloContributor": "哲緯",
+      "severity": "🟡"
+    },
+    {
+      "project": "dailyview/2024-dailyview-app",
+      "soloContributor": "Jason",
+      "severity": "🟡"
+    },
+    {
+      "project": "dailyview/dv-remote-es",
+      "soloContributor": "Jason",
+      "severity": "🟡"
+    },
+    {
+      "project": "KEYPO/keypo-backend",
+      "soloContributor": "Joe",
       "severity": "🟡"
     }
   ]
