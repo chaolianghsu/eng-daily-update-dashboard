@@ -9663,6 +9663,143 @@
           }
         ]
       }
+    },
+    "3/18": {
+      "日銜": {
+        "count": 9,
+        "projects": [
+          "CrawlersV2/bigcrawler-scrapy"
+        ],
+        "items": [
+          {
+            "title": "fix(zeek) : add zeek to CLOUDSCRAPER_DOMAINS",
+            "sha": "8d5dff92",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/8d5dff92ddff13240d00edd4ae6797e925c6bdbf"
+          },
+          {
+            "title": "Merge branch 'byron-fix-zeek' into 'develop'",
+            "sha": "982c2d4b",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/982c2d4b426e078270f61b6f2406164de1112ca6"
+          },
+          {
+            "title": "Merge branch 'byron-fix-zeek' into 'develop'",
+            "sha": "f43efe46",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/f43efe4663c5b10692fa37c8e2eab48705ac2415"
+          },
+          {
+            "title": "feat(leho) : add leho for TW",
+            "sha": "fbf22d7f",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/fbf22d7f92c4fb88a54ab2f5a7a5f295ab7704ec"
+          },
+          {
+            "title": "Merge branch 'byron-add-leho' into 'develop'",
+            "sha": "da3ccfe7",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/da3ccfe7c6e17777a2ccc936f2d4c2ce570292cc"
+          },
+          {
+            "title": "Merge branch 'byron-add-leho' into 'develop'",
+            "sha": "b36fd628",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/b36fd628b676241b6a93a2c02ee877016fdfd5c3"
+          },
+          {
+            "title": "feat(taichung) : add taichung for TW",
+            "sha": "01985c9b",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/01985c9b355317f0d5762bb7ee388ce01c18be0e"
+          },
+          {
+            "title": "Merge branch 'byron-add-taichung' into 'develop'",
+            "sha": "83a96a0f",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/83a96a0fad97d6fd342eb1ed28752ecde4e0d341"
+          },
+          {
+            "title": "Merge branch 'byron-add-taichung' into 'develop'",
+            "sha": "327e035a",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/327e035a923c373abd9f8bdd83837723768afb70"
+          }
+        ]
+      },
+      "Aaron": {
+        "count": 3,
+        "projects": [
+          "KEYPO/keypo-engine/on-premises-api-gateway",
+          "llmprojects/keypo-agent"
+        ],
+        "items": [
+          {
+            "title": "fix(tests): skip known-bad queries in k6 test",
+            "sha": "cc50f6e0",
+            "project": "KEYPO/keypo-engine/on-premises-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/on-premises-api-gateway/-/commit/cc50f6e0b1bef1d33c15a919cd5fbd814f555552"
+          },
+          {
+            "title": "feat(rules): allow POST for dailyview-index-manager",
+            "sha": "23b4294f",
+            "project": "KEYPO/keypo-engine/on-premises-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/on-premises-api-gateway/-/commit/23b4294fdd7c51b14711aeb6fa18f46bcf9e8ff0"
+          },
+          {
+            "title": "Merge branch 'feature/kol' into 'dev'",
+            "sha": "91570531",
+            "project": "llmprojects/keypo-agent",
+            "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/91570531c977de47d810a36406bc43ea3f757d51"
+          }
+        ]
+      },
+      "Joe": {
+        "count": 4,
+        "projects": [
+          "KEYPO/keypo-frontend-2023"
+        ],
+        "items": [
+          {
+            "title": "docs: [WIP] update plan - change filter strategy from append to override",
+            "sha": "8b6d7712",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/8b6d7712f2c47069eba6e21eabbb67bb2abcf26e"
+          },
+          {
+            "title": "feat: override channel filter for specific clients on channel-monitoring page",
+            "sha": "73bbc9b3",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/73bbc9b301b9610c58f407f5313285940aaa7d25"
+          },
+          {
+            "title": "docs: [WIP] add implementation plan for KOL in Agent permission",
+            "sha": "30279db0",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/30279db0e58523d7acf927d9b37566375e426253"
+          },
+          {
+            "title": "Merge branch 'feat-client-specific-channel-filter' into demo",
+            "sha": "168696e1",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/168696e1ece8b140198f75b45a568ca57d1b8bcd"
+          }
+        ]
+      },
+      "Joyce": {
+        "count": 1,
+        "projects": [
+          "KEYPO/keypo-engine/keypo-engine-api-v3"
+        ],
+        "items": [
+          {
+            "title": "refactor: suppress health check endpoint from request logging",
+            "sha": "52996bbd",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/52996bbd1e9c8ea966b7b08d6a2eb9b14968b9cb"
+          }
+        ]
+      }
     }
   },
   "analysis": {
@@ -10657,22 +10794,44 @@
         "commitCount": 5,
         "hours": null
       }
+    },
+    "3/18": {
+      "Joyce": {
+        "status": "🔴",
+        "commitCount": 1,
+        "hours": null
+      },
+      "日銜": {
+        "status": "🔴",
+        "commitCount": 9,
+        "hours": null
+      },
+      "Joe": {
+        "status": "🔴",
+        "commitCount": 4,
+        "hours": null
+      },
+      "Aaron": {
+        "status": "🔴",
+        "commitCount": 3,
+        "hours": null
+      }
     }
   },
   "projectRisks": [
     {
-      "project": "CrawlersV2/fanti-insights-api",
-      "soloContributor": "Ted",
+      "project": "CrawlersV2/bigcrawler-scrapy",
+      "soloContributor": "日銜",
+      "severity": "🟡"
+    },
+    {
+      "project": "KEYPO/keypo-engine/on-premises-api-gateway",
+      "soloContributor": "Aaron",
       "severity": "🟡"
     },
     {
       "project": "KEYPO/keypo-frontend-2023",
       "soloContributor": "Joe",
-      "severity": "🟡"
-    },
-    {
-      "project": "sinyi/sinyi-dashboard",
-      "soloContributor": "Wendy",
       "severity": "🟡"
     },
     {
@@ -10683,46 +10842,6 @@
     {
       "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
       "soloContributor": "Joyce",
-      "severity": "🟡"
-    },
-    {
-      "project": "KEYPO/keypo-engine-api",
-      "soloContributor": "Joyce",
-      "severity": "🟡"
-    },
-    {
-      "project": "CrawlersV2/bigcrawler-scrapy",
-      "soloContributor": "日銜",
-      "severity": "🟡"
-    },
-    {
-      "project": "bigdata/2025-bigdata-admin",
-      "soloContributor": "Ivy",
-      "severity": "🟡"
-    },
-    {
-      "project": "kol/kol-agent",
-      "soloContributor": "Aaron",
-      "severity": "🟡"
-    },
-    {
-      "project": "mason/truthsocial-crawler",
-      "soloContributor": "哲緯",
-      "severity": "🟡"
-    },
-    {
-      "project": "dailyview/2024-dailyview-app",
-      "soloContributor": "Jason",
-      "severity": "🟡"
-    },
-    {
-      "project": "dailyview/dv-remote-es",
-      "soloContributor": "Jason",
-      "severity": "🟡"
-    },
-    {
-      "project": "KEYPO/keypo-backend",
-      "soloContributor": "Joe",
       "severity": "🟡"
     }
   ]
