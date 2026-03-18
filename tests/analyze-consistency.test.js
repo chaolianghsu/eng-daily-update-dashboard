@@ -57,3 +57,75 @@ describe('analyze-consistency.js script', () => {
     expect(mod).toBeDefined();
   });
 });
+
+describe('dedupCommitItems', () => {
+  it('deduplicates items by sha+project within each member', () => {
+    const { dedupCommitItems } = require('../scripts/analyze-consistency.js');
+    const data = {
+      commits: {
+        '3/17': {
+          Alice: {
+            count: 3,
+            projects: ['repo-a'],
+            items: [
+              { title: 'fix', sha: 'abc', project: 'repo-a', url: '' },
+              { title: 'fix', sha: 'abc', project: 'repo-a', url: '' }, // dup
+              { title: 'feat', sha: 'def', project: 'repo-a', url: '' },
+            ],
+          },
+        },
+      },
+      analysis: {},
+      projectRisks: [],
+    };
+    const result = dedupCommitItems(data);
+    expect(result.commits['3/17']['Alice'].items).toHaveLength(2);
+    expect(result.commits['3/17']['Alice'].count).toBe(2);
+  });
+
+  it('preserves items with same sha but different projects', () => {
+    const { dedupCommitItems } = require('../scripts/analyze-consistency.js');
+    const data = {
+      commits: {
+        '3/17': {
+          Alice: {
+            count: 2,
+            projects: ['repo-a', 'repo-b'],
+            items: [
+              { title: 'fix', sha: 'abc', project: 'repo-a', url: '' },
+              { title: 'fix', sha: 'abc', project: 'repo-b', url: '' },
+            ],
+          },
+        },
+      },
+      analysis: {},
+      projectRisks: [],
+    };
+    const result = dedupCommitItems(data);
+    expect(result.commits['3/17']['Alice'].items).toHaveLength(2);
+    expect(result.commits['3/17']['Alice'].count).toBe(2);
+  });
+
+  it('recalculates projects list after dedup', () => {
+    const { dedupCommitItems } = require('../scripts/analyze-consistency.js');
+    const data = {
+      commits: {
+        '3/17': {
+          Alice: {
+            count: 3,
+            projects: ['repo-a', 'repo-b'],
+            items: [
+              { title: 'fix', sha: 'abc', project: 'repo-a', url: '' },
+              { title: 'fix', sha: 'abc', project: 'repo-a', url: '' }, // dup
+              { title: 'feat', sha: 'def', project: 'repo-a', url: '' },
+            ],
+          },
+        },
+      },
+      analysis: {},
+      projectRisks: [],
+    };
+    const result = dedupCommitItems(data);
+    expect(result.commits['3/17']['Alice'].projects).toEqual(['repo-a']);
+  });
+});

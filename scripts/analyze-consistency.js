@@ -6,6 +6,28 @@ const { buildAnalysis, buildDashboardJSON, buildPostPayload } = require('./fetch
 
 const ROOT = path.resolve(__dirname, '..');
 
+/**
+ * Dedup commit items by sha+project within each date/member, recalculate count and projects.
+ */
+function dedupCommitItems(data) {
+  for (const [date, members] of Object.entries(data.commits)) {
+    for (const [member, info] of Object.entries(members)) {
+      const seen = new Set();
+      const uniqueItems = [];
+      for (const item of info.items) {
+        const key = `${item.sha}|${item.project}`;
+        if (seen.has(key)) continue;
+        seen.add(key);
+        uniqueItems.push(item);
+      }
+      info.items = uniqueItems;
+      info.count = uniqueItems.length;
+      info.projects = [...new Set(uniqueItems.map(i => i.project))];
+    }
+  }
+  return data;
+}
+
 async function main() {
   const args = process.argv.slice(2);
   let commitsPath = null;
@@ -36,8 +58,10 @@ async function main() {
     for (const [date, data] of Object.entries(dashboardData.commits)) { existingGitlab.commits[date] = data; }
     for (const [date, data] of Object.entries(dashboardData.analysis)) { existingGitlab.analysis[date] = data; }
     existingGitlab.projectRisks = dashboardData.projectRisks;
+    dedupCommitItems(existingGitlab);
     fs.writeFileSync(gitlabJsonPath, JSON.stringify(existingGitlab, null, 2));
   } else {
+    dedupCommitItems(dashboardData);
     fs.writeFileSync(gitlabJsonPath, JSON.stringify(dashboardData, null, 2));
   }
   console.error('Wrote gitlab-commits.json (merged)');
@@ -57,3 +81,5 @@ async function main() {
 if (require.main === module) {
   main().catch(e => { console.error(`Error: ${e.message}`); process.exit(1); });
 }
+
+module.exports = { dedupCommitItems };

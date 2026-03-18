@@ -15,13 +15,20 @@ function doPost(e) {
   var data = JSON.parse(e.postData.contents);
   var ss = SpreadsheetApp.getActiveSpreadsheet();
 
-  // Clear specified sheets before writing (for rebuild/dedup)
+  // Clear specified sheets before writing (for rebuild)
   if (data.clearSheets) {
     var sheetsToClean = Array.isArray(data.clearSheets) ? data.clearSheets : [data.clearSheets];
     for (var i = 0; i < sheetsToClean.length; i++) {
       var sheetToClear = ss.getSheetByName(sheetsToClean[i]);
       if (sheetToClear) sheetToClear.clear();
     }
+  }
+
+  // Remove duplicate rows from specified sheets (keeps first occurrence)
+  if (data.dedupSheets) {
+    var result = dedupSheets_(ss, data.dedupSheets);
+    return ContentService.createTextOutput(JSON.stringify(result))
+      .setMimeType(ContentService.MimeType.JSON);
   }
 
   if (data.rawData) writeRawData_(ss, data.rawData);
@@ -439,6 +446,62 @@ function readLeave_(ss) {
     leave[member].push({ start: formatDate_(rows[i][1]), end: formatDate_(rows[i][2]) });
   }
   return leave;
+}
+
+/**
+ * Dedup key config per sheet: which columns form the unique key.
+ * Column indices are 0-based. 'date' columns use formatDate_().
+ */
+var DEDUP_KEY_CONFIG = {
+  'Daily Updates':    { cols: [0, 1], dateCols: [0] },       // date|member
+  'GitLab Commits':   { cols: [0, 1, 4], dateCols: [0] },    // date|member|sha
+  'Commit Analysis':  { cols: [0, 1], dateCols: [0] },       // date|member
+  'Task Analysis':    { cols: [1, 2, 3], dateCols: [2] },    // period|date|member
+};
+
+function dedupSheets_(ss, sheetNames) {
+  var names = Array.isArray(sheetNames) ? sheetNames : [sheetNames];
+  var report = { status: 'ok', dedup: {} };
+
+  for (var n = 0; n < names.length; n++) {
+    var name = names[n];
+    var config = DEDUP_KEY_CONFIG[name];
+    if (!config) { report.dedup[name] = 'unknown sheet'; continue; }
+
+    var sheet = ss.getSheetByName(name);
+    if (!sheet) { report.dedup[name] = 'not found'; continue; }
+
+    var rows = sheet.getDataRange().getValues();
+    if (rows.length <= 1) { report.dedup[name] = 0; continue; }
+
+    var seen = {};
+    var rowsToDelete = []; // collect 1-based row numbers to delete
+
+    for (var i = 1; i < rows.length; i++) {
+      var parts = [];
+      for (var c = 0; c < config.cols.length; c++) {
+        var col = config.cols[c];
+        var val = (config.dateCols.indexOf(col) >= 0)
+          ? formatDate_(rows[i][col])
+          : String(rows[i][col]);
+        parts.push(val);
+      }
+      var key = parts.join('|');
+      if (seen[key]) {
+        rowsToDelete.push(i + 1); // 1-based
+      } else {
+        seen[key] = true;
+      }
+    }
+
+    // Delete from bottom to top to preserve row indices
+    for (var d = rowsToDelete.length - 1; d >= 0; d--) {
+      sheet.deleteRow(rowsToDelete[d]);
+    }
+    report.dedup[name] = rowsToDelete.length;
+  }
+
+  return report;
 }
 
 function formatDate_(val) {
