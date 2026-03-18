@@ -1019,9 +1019,9 @@
         "dev": 5
       },
       "侑呈": {
-        "total": null,
-        "meeting": null,
-        "dev": null
+        "total": 7,
+        "meeting": 0,
+        "dev": 7
       },
       "禎佑": {
         "total": null,
@@ -1029,9 +1029,9 @@
         "dev": null
       },
       "Ted": {
-        "total": null,
-        "meeting": null,
-        "dev": null
+        "total": 9.5,
+        "meeting": 2,
+        "dev": 7.5
       },
       "家輝": {
         "total": null,
@@ -1049,9 +1049,9 @@
         "dev": 5
       },
       "哲緯": {
-        "total": null,
-        "meeting": null,
-        "dev": null
+        "total": 7,
+        "meeting": 1.5,
+        "dev": 5.5
       }
     }
   },
@@ -1078,8 +1078,8 @@
     },
     {
       "member": "侑呈",
-      "severity": "🔴",
-      "text": "未回報 3/17"
+      "severity": "🟢",
+      "text": "改善 4→7hr"
     },
     {
       "member": "禎佑",
@@ -1088,8 +1088,8 @@
     },
     {
       "member": "Ted",
-      "severity": "🔴",
-      "text": "未回報 3/17"
+      "severity": "🟡",
+      "text": "超時 9.5hr"
     },
     {
       "member": "家輝",
@@ -1103,8 +1103,8 @@
     },
     {
       "member": "哲緯",
-      "severity": "🔴",
-      "text": "未回報 3/17"
+      "severity": "🟢",
+      "text": "穩定 7hr"
     }
   ],
   "leave": {
@@ -1174,6 +1174,27 @@
     ]
   },
   "dailyUpdates": [
+    {
+      "date": "3/17",
+      "member": "Ted",
+      "createTime": "2026-03-18T02:45:47.242079Z",
+      "text": "3/17 工項：\n1. [In Progress] KEYPO engine API gateway\n    - [In Progress] engine API 壓測問題確認 (0.5H)\n    - [To Do] 災難演練問題修正 \n2. [In Progress] Fanti\n    - [In Progress] Fanti refresh api 測試規劃 (2H)\n    - [Done] Fanti content_tags, 需進行修改, 並確認並且確認相關api (wordcount) (2H)\n    - [Done] 從ES9 環境抓 sm/f2n setting/mapping 確認相關改動與修改範圍:  hash_tags. (2H)\n    - [Done] Fanti 例會 (0.5H)\n3. [To Do] KEYPO\n    - [Done] 例會 (1.5H)\n    - [Done] 正式環境 ai report 確認(0.5H)\n    - [In Progress] gpt report 換模型規劃 (0.5H)\n\nblock:\n[Fanti] 資料搬遷 script \nbacklog:\n速報 gemini3 評估\nAI 報告切換模型 - 使用 DSPy 進行效果評估與提示詞優化\n同步 Fanti 狀態同步給 pm\n\n3/18 今日工項：\n1. [In Progress] KEYPO engine API gateway\n    - [In Progress] engine API 壓測問題確認 \n    - [To Do] 災難演練問題修正 \n2. [In Progress] Fanti\n    - [In Progress] Fanti refresh api 測試規劃 \n    - [In Progress] wordcount api es 查詢語法整理, content_tags, hash_tags 測試腳本\n3. [To Do] KEYPO\n    - [In Progress] gpt report 換模型規劃",
+      "total": 9.5
+    },
+    {
+      "date": "3/17",
+      "member": "哲緯",
+      "createTime": "2026-03-18T02:15:29.322559Z",
+      "text": "3/17 進度：\n1. [Done]Threads日常需求處理 (0.5H)\n2. LSR\n   - LSR (2H)\n      - [Done] SFTP VM 更改規格，新增RAM\n      - [Done] GCS新增recent資料夾，SFTP掛載由/latest更改成/recent\n      - [Done] 更改生圖時複製邏輯至/recent資料夾\n      - [Done] 新增listcycle於/recent\n   - LSR 會議（1.5H）\n3. Threads(2H)\n   - [Inprogress]調整測試請求延遲延長\n   - [Done]與廠商聯繫更換Proxy-seller\n4. 元大（1H）\n   - 調查通知中斷問題（更改模型，並更改API KEY）\n\nBlockers:\n1. BM wireframe\n2. Threads 文章AI機器人自動停止問題\n3. Threads Alert優化\n4. KETKYC\n   - 調查物料監控模組查詢Timeout問題\n   - 專案瘦身\n\n3/18 工項：\n1. [To Do] Threads日常需求處理\n2. [To Do] LSR專案\n   - 處理客戶3/17的反饋\n3. [To Do] Threads\n   - 觀察Proxy-seller穩定度",
+      "total": 7
+    },
+    {
+      "date": "3/17",
+      "member": "侑呈",
+      "createTime": "2026-03-18T02:15:28.790079Z",
+      "text": "3/17 進度：\n1. Fanti(2.5H)\n[In Progress] 盤點 mq-fbmessage-consumer, mq-fb-insights-consumer\n[Done] mq-fb-insights-consumer 修改成es9 連線\n[In Progress] 地端測試寫入 RQ -> consumer -> ES9, fb_page_insights 驗證寫入\n2. 私密社團 瀏覽器服務V3 (4.5H)\n[Done]重構瀏覽器服務 新增透過API觸發 私密社團AI機器人\n[Done]純被動滾動 + 監聽 network response\n[Done]RabbitMQ 訊息佇列\n[Done]Consumer 獨立服務 + Worker 端輕量解析\n[Done]DOM 提取 + network 監聽合併\n[In Progress]測試 3個帳號 3私密社團 2300主文回文 耗時 50分鐘 不間斷持續測試 3H\n\nBlockers:\n1. [To do] twitter 自動化登入\n2. [In Progress] IG關鍵字貼文探索(mobile token)\n3. [In Progress] #2787 確認 ig 以外社群 是否能抓到地標\n4. [In Progress] 持續性收錄 日版 fb ig\n5. [In Progress] #318 測試研究FBG response 是否有轉發貼文內容, 測試完畢, 轉發內容要加在哪裡待issue例會討論完\n6. [In Progress] #309 修復時辰待確認\n\n3/18 今日工項：\n1. 私密社團測試 偽裝 延遲觀測 & 維運帳號\n2. [In Progress] 盤點 mq-fbmessage-consumer, mq-fb-insights-consumer\n3. [In Progress] 主責AI機器人 alert 測試, 加入TW/X HK/FBG進行監控\n4. [In Progress] 私密社團V3\n5. [To Do] 盤點主責服務效能統計",
+      "total": 7
+    },
     {
       "date": "3/17",
       "member": "Jason",
@@ -1663,6 +1684,30 @@
       "createTime": "2026-03-10T01:35:01.484895Z",
       "text": "3/9 (一) 工項/進度：\n\n1. [In Progress] F2E E2E Test (7h)\n    - [Done] 熱門頻道開發 LINK\n    - [Done] !141 MR Feedback 調整\n\n\nBacklog / Blockers:  待辦事項 / 阻礙因素：\n\n[Backlog] 內部系統發信寄件人管理方式：待討論\n[Backlog] 網溫加入 CDN\n[Backlog] VM bigdata-web 關閉：Sam 已回覆，待轉移整個靜態教育訓練網站至 big-data GCS 下（比照簽名檔）\n[Backlog] 教育訓練網站簡報與資源管理：待討論決議是否由管理中心進行管理 (採用 Google Drive or S3 + CloudFront)\n[Block] Azure groupdv 服務備份：因檔案較大，約 40 幾 GB，尚需研究看看如何備份至 gitlab 或是待討論看看是否傳至 GCP 上或是放公司 NAS\n\n\n3/10 (二) 今日工項：\n\n1. [In Progress] F2E E2E Test\n    - [To Do] 熱門頻道 Commit Review & 調整\n    - [To Do] !142 文章列表 MR Review Commit 確認\n2. [To Do] 大數據官網日文功能後台後端\n    - [To Do] !45 MR Feedback 調整",
       "total": 7
+    }
+  ],
+  "newDates": [],
+  "backfilled": [
+    {
+      "date": "3/17",
+      "member": "侑呈",
+      "total": 7,
+      "meeting": 0,
+      "dev": 7
+    },
+    {
+      "date": "3/17",
+      "member": "Ted",
+      "total": 9.5,
+      "meeting": 2,
+      "dev": 7.5
+    },
+    {
+      "date": "3/17",
+      "member": "哲緯",
+      "total": 7,
+      "meeting": 1.5,
+      "dev": 5.5
     }
   ]
 }
