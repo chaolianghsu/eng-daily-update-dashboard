@@ -10,7 +10,10 @@ function mergeDailyData(existing, parsed) {
   const backfilled = [];
 
   for (const [date, info] of Object.entries(parsed.dateEntries || {})) {
-    if (!rawData[date]) {
+    const isNewDate = !rawData[date];
+    const backfilledMembers = new Set();
+
+    if (isNewDate) {
       // New date — add entire entry
       rawData[date] = info.entry;
       newDates.push(date);
@@ -19,16 +22,19 @@ function mergeDailyData(existing, parsed) {
       for (const [member, data] of Object.entries(info.entry)) {
         if (rawData[date][member] && rawData[date][member].total === null && data.total !== null) {
           rawData[date][member] = data;
+          backfilledMembers.add(member);
           backfilled.push({ date, member, total: data.total, meeting: data.meeting, dev: data.dev });
         }
       }
     }
     // Collect raw replies for daily updates sheet (deduplicate by date+member)
+    // For existing dates, only include backfilled members to avoid Sheets duplicates
     if (info.rawReplies) {
       const seenDailyUpdate = new Set();
       for (const reply of info.rawReplies) {
         const dedupKey = `${date}|${reply.member}`;
         if (seenDailyUpdate.has(dedupKey)) continue;
+        if (!isNewDate && !backfilledMembers.has(reply.member)) continue;
         seenDailyUpdate.add(dedupKey);
         dailyUpdates.push({
           date,

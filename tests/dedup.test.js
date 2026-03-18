@@ -110,4 +110,95 @@ describe('Daily updates deduplication (mergeDailyData)', () => {
     const result = mergeDailyData(existing, parsed);
     expect(result.dailyUpdates).toHaveLength(2);
   });
+
+  it('excludes already-reported members from dailyUpdates during backfill', () => {
+    // Scenario: Joyce already reported (total=8), Ivy is being backfilled (null→7)
+    // dailyUpdates should only include Ivy, not re-send Joyce to Sheets
+    const existing = {
+      rawData: {
+        '3/6': {
+          Joyce: { total: 8, meeting: 2, dev: 6 },
+          Ivy: { total: null, meeting: null, dev: null },
+        },
+      },
+      issues: [],
+      leave: {},
+    };
+    const parsed = {
+      dateEntries: {
+        '3/6': {
+          entry: {
+            Joyce: { total: 8, meeting: 2, dev: 6 },
+            Ivy: { total: 7, meeting: 0, dev: 7 },
+          },
+          rawReplies: [
+            { member: 'Joyce', createTime: '2026-03-07T01:30:00Z', text: 'already reported' },
+            { member: 'Ivy', createTime: '2026-03-07T09:00:00Z', text: 'backfill reply' },
+          ],
+        },
+      },
+      leaveMap: {},
+    };
+    const result = mergeDailyData(existing, parsed);
+    // Only Ivy's dailyUpdate should be included (backfilled)
+    expect(result.dailyUpdates).toHaveLength(1);
+    expect(result.dailyUpdates[0].member).toBe('Ivy');
+  });
+
+  it('includes all members for new dates in dailyUpdates', () => {
+    // New date: all members should be in dailyUpdates
+    const existing = { rawData: {}, issues: [], leave: {} };
+    const parsed = {
+      dateEntries: {
+        '3/6': {
+          entry: {
+            Joyce: { total: 8, meeting: 2, dev: 6 },
+            Ivy: { total: 7, meeting: 0, dev: 7 },
+          },
+          rawReplies: [
+            { member: 'Joyce', createTime: '2026-03-07T01:30:00Z', text: 'task A' },
+            { member: 'Ivy', createTime: '2026-03-07T02:00:00Z', text: 'task B' },
+          ],
+        },
+      },
+      leaveMap: {},
+    };
+    const result = mergeDailyData(existing, parsed);
+    expect(result.dailyUpdates).toHaveLength(2);
+  });
+
+  it('excludes members with null data from dailyUpdates during backfill', () => {
+    // Members who still have null (didn't backfill) should not be in dailyUpdates
+    const existing = {
+      rawData: {
+        '3/6': {
+          Joyce: { total: 8, meeting: 2, dev: 6 },
+          Ivy: { total: null, meeting: null, dev: null },
+          Ted: { total: null, meeting: null, dev: null },
+        },
+      },
+      issues: [],
+      leave: {},
+    };
+    const parsed = {
+      dateEntries: {
+        '3/6': {
+          entry: {
+            Joyce: { total: 8, meeting: 2, dev: 6 },
+            Ivy: { total: 7, meeting: 0, dev: 7 },
+            Ted: { total: null, meeting: null, dev: null },
+          },
+          rawReplies: [
+            { member: 'Joyce', createTime: '2026-03-07T01:30:00Z', text: 'already done' },
+            { member: 'Ivy', createTime: '2026-03-07T09:00:00Z', text: 'backfill' },
+          ],
+        },
+      },
+      leaveMap: {},
+    };
+    const result = mergeDailyData(existing, parsed);
+    // Only Ivy (backfilled). Joyce excluded (already reported), Ted has no rawReply
+    expect(result.dailyUpdates).toHaveLength(1);
+    expect(result.dailyUpdates[0].member).toBe('Ivy');
+  });
 });

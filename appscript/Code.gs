@@ -120,7 +120,7 @@ function writeDailyUpdates_(ss, dailyUpdates) {
   var existing = sheet.getDataRange().getValues();
   var existingKeys = {};
   for (var i = 1; i < existing.length; i++) {
-    var key = String(existing[i][0]) + '|' + String(existing[i][1]);
+    var key = formatDate_(existing[i][0]) + '|' + String(existing[i][1]);
     existingKeys[key] = true;
   }
 
@@ -163,7 +163,7 @@ function writeGitlabCommits_(ss, commits) {
   var existing = sheet.getDataRange().getValues();
   var existingKeys = {};
   for (var i = 1; i < existing.length; i++) {
-    var key = String(existing[i][0]) + '|' + String(existing[i][1]) + '|' + String(existing[i][4]);
+    var key = formatDate_(existing[i][0]) + '|' + String(existing[i][1]) + '|' + String(existing[i][4]);
     existingKeys[key] = true;
   }
 
@@ -195,7 +195,7 @@ function writeCommitAnalysis_(ss, analysis) {
   var existing = sheet.getDataRange().getValues();
   var existingKeyRows = {};
   for (var i = 1; i < existing.length; i++) {
-    var key = String(existing[i][0]) + '|' + String(existing[i][1]);
+    var key = formatDate_(existing[i][0]) + '|' + String(existing[i][1]);
     existingKeyRows[key] = i + 1; // 1-based row number
   }
 
@@ -303,7 +303,7 @@ function writeTaskAnalysis_(ss, taskAnalysis) {
   var existing = sheet.getDataRange().getValues();
   var existingKeyRows = {};
   for (var i = 1; i < existing.length; i++) {
-    var key = String(existing[i][1]) + '|' + String(existing[i][2]) + '|' + String(existing[i][3]);
+    var key = String(existing[i][1]) + '|' + formatDate_(existing[i][2]) + '|' + String(existing[i][3]);
     existingKeyRows[key] = i + 1;
   }
 
