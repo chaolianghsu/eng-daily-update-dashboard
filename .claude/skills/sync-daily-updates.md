@@ -1,5 +1,5 @@
 ---
-description: Sync daily updates from Google Chat — parse, merge, commit, push, update Sheets
+description: Sync daily updates from Google Chat — fetches work hour reports, parses hours/leave, merges into raw_data.json, validates, commits, pushes, updates Sheets. Use for daily-update-only sync ('同步日報', '抓 Chat 資料'), not when GitLab sync is also needed.
 user_invocable: true
 ---
 
@@ -63,10 +63,8 @@ If the result is too large and auto-saved to a file, note that file path.
 ### Step 3: Parse messages
 
 ```bash
-node scripts/parse-daily-updates.js /tmp/chat-messages.json
+node scripts/parse-daily-updates.js /tmp/chat-messages.json > /tmp/parsed-output.json
 ```
-
-Save output to `/tmp/parsed-output.json`.
 
 ### Step 4: Merge data
 
@@ -95,7 +93,7 @@ Issues are automatically recalculated when any changes are detected.
 ### Step 6: Validate
 
 ```bash
-npm test
+bun run test
 ```
 
 All tests must pass before proceeding.
@@ -144,7 +142,10 @@ raw_data.json 已 commit + push
 
 ### Step 10: Send Google Chat notification
 
-Read `spaceId` from `chat-config.json`. Send a summary message to the Google Chat space using `mcp__gws__chat_spaces_messages_create`.
+Show the notification message preview and ask: **"要發送 Chat 通知嗎？"**
+Only send if the user explicitly confirms. If declined, skip this step.
+
+Read `spaceId` from `chat-config.json`. Send via `mcp__gws__chat_spaces_messages_create`.
 
 **On successful sync (new dates):**
 ```
@@ -202,13 +203,18 @@ tmux send-keys -t daily-sync '/loop 24h /sync-daily-updates' Enter
 
 Recovery after machine restart: `tmux attach -t daily-sync` or re-run above.
 
+## Gotchas
+
+- **Thread date ≠ content date.** "3/6 Daily Update" thread contains 3/5 progress. The parse script handles this, but if you're manually inspecting Chat messages, don't assume the thread title date matches the data date.
+- **Google Chat API has no text filtering** — must fetch all messages and filter client-side. Large spaces return many irrelevant messages; the parse script handles this.
+- **DGPA CSV URL changes yearly.** The URL in Step 0 is for 2026 (民國115年). When it 404s in January, update from https://data.gov.tw/dataset/14718.
+- **Apps Script POST returns 302.** Must follow the redirect with a second curl. A single curl without `-L` will silently fail (returns HTML, not JSON).
+- **Merge script is idempotent** — running multiple times won't duplicate data (skips existing dates). Safe to re-run if unsure.
+- **Members not in `memberMap` are silently skipped.** If a new team member's messages aren't being parsed, check `chat-config.json` memberMap first.
+
 ## Notes
 
-- Idempotent: running multiple times won't duplicate data (merge script skips existing dates).
-- Thread date ≠ content date. "3/6 Daily Update" thread contains 3/5 progress.
 - All parsing rules are in `scripts/parse-daily-updates.js`.
 - Leave detection is automatic from Chat messages containing 請假/休假.
 - Leave sources (merged in order): `public/raw_data.json` leave → auto-detected from Chat → CLI --leave.
-- Google Chat API does NOT support text filtering — must fetch and filter client-side.
-- Members not in `memberMap` are skipped.
 - Raw daily update text (原始內容) is written to the "daily update" sheet via `dailyUpdates` in the POST payload. Deduplication is by date+member.

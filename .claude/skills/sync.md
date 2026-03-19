@@ -1,5 +1,5 @@
 ---
-description: Sync all — 3-stage DAG: daily updates + GitLab commits (parallel) → consistency analysis → task analysis
+description: Sync all data — 3-stage DAG pipeline: (1) daily updates + GitLab commits in parallel, (2) consistency analysis, (3) AI task reasonableness analysis. Use for full daily sync ('同步全部', '同步', 'sync'), or when no specific sync target is mentioned.
 user_invocable: true
 ---
 
@@ -7,7 +7,17 @@ user_invocable: true
 
 Three-stage DAG pipeline: parallel data collection → consistency analysis → task analysis.
 
+## Prerequisites
+
+- `chat-config.json` exists with `spaceId` and `memberMap` (for Stage 1 daily updates)
+- `gitlab-config.json` exists with `baseUrl`, `token`, `memberMap`, `excludeAuthors` (for Stage 1 GitLab)
+- `public/raw_data.json` exists with current data
+- `claude` CLI available on PATH (for Stage 3; gracefully skipped if missing)
+- Git remote is configured for push
+
 ## Workflow
+
+**Date logic:** If `/sync` is invoked without a date argument, default to previous workday (Mon–Fri; Mon for weekend runs). This date is used for GitLab collection (Stage 1) and task analysis (Stage 3).
 
 ### Stage 1: 平行收集
 
@@ -25,9 +35,9 @@ Execute two agents in parallel:
 
 **Agent B (foreground or background):** Collect GitLab commits without analysis:
 ```bash
-node scripts/collect-gitlab-commits.js --date <date> > /tmp/sync-$(date +%s)-commits.json 2>/tmp/sync-gitlab-stderr.txt
+node scripts/collect-gitlab-commits.js --date <M/D> > /tmp/sync-$(date +%s)-commits.json 2>/tmp/sync-gitlab-stderr.txt
 ```
-- If no date argument, use previous workday
+- `<M/D>` = target date from date logic above (e.g., `3/17`)
 - Save the commits JSON path for Stage 2
 
 Wait for both agents to complete. Display per-agent results:
@@ -87,8 +97,10 @@ Display:
 
 Run automated task analysis:
 ```bash
-node scripts/prepare-task-analysis.js --date <date-range> | claude --print -m haiku > /tmp/sync-task-analysis.json 2>/dev/null
+node scripts/prepare-task-analysis.js --date <M/D> | claude --print -m haiku > /tmp/sync-task-analysis.json 2>/dev/null
 ```
+
+`<M/D>` = same target date as Stage 1. The script determines the analysis window internally.
 
 If successful:
 1. Validate the output is valid JSON
@@ -142,7 +154,10 @@ Task Analysis:
 
 ### Google Chat Notification
 
-Send combined notification to Google Chat (same spaceId from chat-config.json):
+Show the notification message preview and ask: **"要發送 Chat 通知嗎？"**
+Only send if the user explicitly confirms. If declined, skip silently.
+
+If confirmed, send to Google Chat (spaceId from chat-config.json) via `mcp__gws__chat_spaces_messages_create`:
 
 ```
 📊 Sync All 完成（<today M/D>）
@@ -153,3 +168,11 @@ Commits：<N>
 需關注：<attention issues or "無">
 📈 Dashboard：https://chaolianghsu.github.io/eng-daily-update-dashboard/
 ```
+
+## Gotchas
+
+- **Stage 2 depends on Stage 1's tmp file path.** The commits JSON path from `collect-gitlab-commits.js` must be passed exactly to `analyze-consistency.js`. Use the timestamped filename pattern (`/tmp/sync-$(date +%s)-commits.json`) to avoid collisions with concurrent runs.
+- **`claude --print` may output non-JSON.** Stage 3 pipes to `claude --print -m haiku`, which can occasionally produce preamble text before the JSON. Always validate the output is valid JSON before copying to `public/task-analysis.json`.
+- **Stage 1 Agent A modifies `public/raw_data.json` in-place.** Stage 2 reads this file. If Agent A fails mid-write, Stage 2 gets corrupted input. The error handling paths (daily fails → use existing raw_data.json) account for this.
+- **Apps Script POST returns 302.** All three POST steps (daily updates, commits, task analysis) require following the redirect with a second curl call.
+- **Parallel agent timing.** Agent A (daily updates) involves MCP calls and may take longer than Agent B (GitLab collection). Stage 2 must wait for both — don't proceed on partial results.
