@@ -140,9 +140,13 @@ export function TrendView({
               <table style={{ width: "100%", borderCollapse: "separate", borderSpacing: "0 2px", fontSize: 13 }}>
                 <thead>
                   <tr>
-                    {["成員", ...weekGroups.map((w: any) => w.label), "平均", "穩定度", ""].map((h, i) => (
-                      <th key={i} style={{ textAlign: i === 0 ? "left" : "center", padding: "8px 8px", borderBottom: `1px solid ${COLORS.border}`, color: COLORS.textMuted, fontWeight: 600, fontSize: 11, whiteSpace: "nowrap", ...(i === 0 ? { position: "sticky" as const, left: 0, background: COLORS.card, zIndex: 1 } : {}) }}>{h}</th>
-                    ))}
+                    {["成員", ...weekGroups.map((w: any) => w.label), "平均", "穩定度", "Commits", "一致✅", ""].map((h, i, arr) => {
+                      const isTealHeader = h === "Commits" || h === "一致✅";
+                      const isCommitsHeader = h === "Commits";
+                      return (
+                        <th key={i} style={{ textAlign: i === 0 ? "left" : "center", padding: "8px 8px", borderBottom: `1px solid ${COLORS.border}`, color: isTealHeader ? COLORS.teal : COLORS.textMuted, fontWeight: 600, fontSize: 11, whiteSpace: "nowrap", ...(i === 0 ? { position: "sticky" as const, left: 0, background: COLORS.card, zIndex: 1 } : {}), ...(isCommitsHeader ? { borderLeft: `2px solid ${COLORS.tealDim}` } : {}) }}>{h}</th>
+                      );
+                    })}
                   </tr>
                 </thead>
                 <tbody>
@@ -198,6 +202,28 @@ export function TrendView({
                             </div>
                           ) : <span style={{ color: COLORS.textDim, fontSize: 10 }}>—</span>}
                         </td>
+                        {(() => {
+                          let ct = 0, okCount = 0, totalAnalysis = 0;
+                          if (commitData) {
+                            for (const d of trendDates) {
+                              const c = commitData.commits?.[d]?.[m];
+                              if (c) ct += c.count;
+                              const a = commitData.analysis?.[d]?.[m];
+                              if (a) { totalAnalysis++; if (a.status === '✅') okCount++; }
+                            }
+                          }
+                          const pct = totalAnalysis > 0 ? Math.round(okCount / totalAnalysis * 100) : null;
+                          return (
+                            <>
+                              <td style={{ textAlign: "center", padding: "7px 8px", fontVariantNumeric: "tabular-nums", color: ct > 0 ? COLORS.teal : COLORS.textDim, fontWeight: 700, borderBottom: `1px solid ${COLORS.border}15`, borderLeft: `2px solid ${COLORS.tealDim}` }}>
+                                {ct > 0 ? ct : "—"}
+                              </td>
+                              <td style={{ textAlign: "center", padding: "7px 8px", borderBottom: `1px solid ${COLORS.border}15` }}>
+                                {pct !== null ? <span style={{ color: COLORS.green, fontWeight: 700 }}>{pct}%</span> : <span style={{ color: COLORS.textDim }}>—</span>}
+                              </td>
+                            </>
+                          );
+                        })()}
                         <td style={{ textAlign: "center", padding: "7px 6px", fontSize: 13, borderBottom: `1px solid ${COLORS.border}15` }}>{trend}</td>
                       </tr>
                     );
@@ -216,7 +242,7 @@ export function TrendView({
                         </td>
                       );
                     })}
-                    <td colSpan={3} />
+                    <td colSpan={5} />
                   </tr>
                 </tbody>
               </table>
@@ -224,9 +250,13 @@ export function TrendView({
               <table style={{ width: "100%", borderCollapse: "separate", borderSpacing: "0 2px", fontSize: 13, minWidth: isMobile ? 600 : "auto" }}>
                 <thead>
                   <tr>
-                    {["成員", ...trendDates.map(d => `${d}(${dayLabels[d]})`), "平均", "穩定度", ""].map((h, i) => (
-                      <th key={i} style={{ textAlign: i === 0 ? "left" : "center", padding: "8px 8px", borderBottom: `1px solid ${COLORS.border}`, color: COLORS.textMuted, fontWeight: 600, fontSize: 11, whiteSpace: "nowrap", ...(i === 0 ? { position: "sticky" as const, left: 0, background: COLORS.card, zIndex: 1 } : {}) }}>{h}</th>
-                    ))}
+                    {["成員", ...trendDates.map(d => `${d}(${dayLabels[d]})`), "平均", "穩定度", "Commits", "一致✅", ""].map((h, i, arr) => {
+                      const isTealHeader = h === "Commits" || h === "一致✅";
+                      const isCommitsHeader = h === "Commits";
+                      return (
+                        <th key={i} style={{ textAlign: i === 0 ? "left" : "center", padding: "8px 8px", borderBottom: `1px solid ${COLORS.border}`, color: isTealHeader ? COLORS.teal : COLORS.textMuted, fontWeight: 600, fontSize: 11, whiteSpace: "nowrap", ...(i === 0 ? { position: "sticky" as const, left: 0, background: COLORS.card, zIndex: 1 } : {}), ...(isCommitsHeader ? { borderLeft: `2px solid ${COLORS.tealDim}` } : {}) }}>{h}</th>
+                      );
+                    })}
                   </tr>
                 </thead>
                 <tbody>
@@ -277,6 +307,28 @@ export function TrendView({
                             </div>
                           ) : <span style={{ color: COLORS.textDim, fontSize: 10 }}>—</span>}
                         </td>
+                        {(() => {
+                          let ct = 0, okCount = 0, totalAnalysis = 0;
+                          if (commitData) {
+                            for (const d of trendDates) {
+                              const c = commitData.commits?.[d]?.[m];
+                              if (c) ct += c.count;
+                              const a = commitData.analysis?.[d]?.[m];
+                              if (a) { totalAnalysis++; if (a.status === '✅') okCount++; }
+                            }
+                          }
+                          const pct = totalAnalysis > 0 ? Math.round(okCount / totalAnalysis * 100) : null;
+                          return (
+                            <>
+                              <td style={{ textAlign: "center", padding: "7px 8px", fontVariantNumeric: "tabular-nums", color: ct > 0 ? COLORS.teal : COLORS.textDim, fontWeight: 700, borderBottom: `1px solid ${COLORS.border}15`, borderLeft: `2px solid ${COLORS.tealDim}` }}>
+                                {ct > 0 ? ct : "—"}
+                              </td>
+                              <td style={{ textAlign: "center", padding: "7px 8px", borderBottom: `1px solid ${COLORS.border}15` }}>
+                                {pct !== null ? <span style={{ color: COLORS.green, fontWeight: 700 }}>{pct}%</span> : <span style={{ color: COLORS.textDim }}>—</span>}
+                              </td>
+                            </>
+                          );
+                        })()}
                         <td style={{ textAlign: "center", padding: "7px 6px", fontSize: 13, borderBottom: `1px solid ${COLORS.border}15` }}>{trend}</td>
                       </tr>
                     );
@@ -295,7 +347,7 @@ export function TrendView({
                         </td>
                       );
                     })}
-                    <td colSpan={3} />
+                    <td colSpan={5} />
                   </tr>
                 </tbody>
               </table>
