@@ -3,6 +3,7 @@ export interface MemberHours {
   total: number | null;
   meeting: number | null;
   dev: number | null;
+  status: 'reported' | 'unreported' | 'replied_no_hours' | 'zero' | 'leave';
 }
 
 export interface Issue {

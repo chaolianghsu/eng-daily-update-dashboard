@@ -34,7 +34,7 @@ describe('backfill-daily-updates: single date (3/3)', () => {
   it('should preserve existing dates unchanged', () => {
     // 2/23 Joyce should still be { total: 8.5, meeting: 3.5, dev: 5 }
     expect(data.rawData['2/23']).toBeDefined();
-    expect(data.rawData['2/23']['Joyce']).toEqual({
+    expect(data.rawData['2/23']['Joyce']).toMatchObject({
       total: 8.5,
       meeting: 3.5,
       dev: 5,

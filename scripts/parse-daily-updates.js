@@ -80,11 +80,13 @@ function parseHoursFromText(text) {
     }
   }
 
-  if (!found) return { total: null, meeting: null, dev: null };
+  if (!found) return { total: null, meeting: null, dev: null, status: 'replied_no_hours' };
+  const roundedTotal = Math.round(total * 10) / 10;
   return {
-    total: Math.round(total * 10) / 10,
+    total: roundedTotal,
     meeting: Math.round(meeting * 10) / 10,
     dev: Math.round(dev * 10) / 10,
+    status: roundedTotal === 0 ? 'zero' : 'reported',
   };
 }
 
@@ -388,7 +390,7 @@ function parseMessagesFile(messageFiles, manualLeave) {
     // Fill unreported members with null
     const fullEntry = {};
     for (const m of reportingMembers) {
-      fullEntry[m] = members[m] || { total: null, meeting: null, dev: null };
+      fullEntry[m] = members[m] || { total: null, meeting: null, dev: null, status: 'unreported' };
     }
 
     dateEntries[dataDate] = {
