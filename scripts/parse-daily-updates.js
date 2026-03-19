@@ -163,8 +163,15 @@ function generateIssues(rawData, leaveMap) {
             ? `休假 ${activeLeave.start}`
             : `休假 ${activeLeave.start}-${activeLeave.end}`;
         issues.push({ member, severity: '🟠', text });
+        if (!data.status || data.status === 'unreported') data.status = 'leave';
         continue;
       }
+    }
+
+    // P1.5: Replied but no hours
+    if (data.status === 'replied_no_hours') {
+      issues.push({ member, severity: '🟠', text: `有回覆無工時 ${latestDate}` });
+      continue;
     }
 
     // P2: Consecutive unreported days (excluding leave)
