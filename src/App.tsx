@@ -79,6 +79,11 @@ export default function App({ loadData }: { loadData: LoadData }) {
     setSelectedMembers(next);
   };
 
+  const dateSelectAndSwitchToCommits = (d: string) => {
+    setSelectedDate(d);
+    setView('commits');
+  };
+
   if (loading) {
     return (
       <div style={{ minHeight: "100vh", background: COLORS.bg, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 16 }}>
@@ -150,7 +155,10 @@ export default function App({ loadData }: { loadData: LoadData }) {
         {view === "weekly" && (
           <WeeklyView weeklySummary={weeklySummary} chartHeight={chartHeight}
             members={members} memberColors={memberColors} selectedMembers={selectedMembers}
-            onToggleMember={toggleMember} isMobile={isMobile} dates={dates} />
+            onToggleMember={toggleMember} isMobile={isMobile} dates={dates}
+            commitData={commitData} leave={leave}
+            dailyDates={dailyDates} dayLabels={dayLabels}
+            onDateSelectAndSwitchToCommits={dateSelectAndSwitchToCommits} />
         )}
 
         {view === "commits" && commitData && (

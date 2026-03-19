@@ -25,8 +25,6 @@ export default function CommitsView({ commitData, dates, members, memberColors, 
   const { commits, analysis, projectRisks } = commitData;
   const [expandedMember, setExpandedMember] = useState(null);
 
-  const gridDates = dates.filter(d => analysis[d]);
-
   const projectSet = new Set<string>();
   const memberProjectCounts: Record<string, Record<string, number>> = {};
   const dateCommits = commits[activeDate] || {};
@@ -235,174 +233,38 @@ export default function CommitsView({ commitData, dates, members, memberColors, 
           </CardPanel>
         );
       })()}
-      {/* Consistency Grid — Enhanced */}
-      <CardPanel title="一致性檢查（每日明細）">
-        <div style={{ overflowX: "auto" }}>
-          <table style={{ width: "100%", borderCollapse: "separate", borderSpacing: 2, fontSize: 12 }}>
-            <thead>
-              <tr>
-                <th style={{ padding: "6px 10px", textAlign: "left", color: COLORS.textMuted, fontWeight: 600, fontSize: 11, whiteSpace: "nowrap", position: "sticky", left: 0, background: COLORS.card, zIndex: 1 }}>成員</th>
-                {gridDates.map(d => (
-                  <th key={d} onClick={() => onDateSelect(d)} style={{
-                    padding: "6px 6px", textAlign: "center", fontSize: 10, cursor: "pointer",
-                    fontWeight: d === activeDate ? 700 : 400,
-                    color: d === activeDate ? COLORS.teal : COLORS.textMuted,
-                    background: d === activeDate ? COLORS.tealDim + "40" : "transparent",
-                    borderRadius: "6px 6px 0 0",
-                    transition: "all 0.15s ease",
-                  }}>{d}</th>
-                ))}
-                <th style={{ padding: "6px 8px", textAlign: "center", color: COLORS.teal, fontWeight: 600, fontSize: 10, whiteSpace: "nowrap" }}>合計</th>
-              </tr>
-            </thead>
-            <tbody>
-              {members.filter(m => gridDates.some(d => analysis[d]?.[m])).map(m => {
-                // Member totals
-                let totalCommits = 0, activeDays = 0;
-                gridDates.forEach(d => {
-                  const a = analysis[d]?.[m];
-                  if (a && a.commitCount > 0) { totalCommits += a.commitCount; activeDays++; }
-                });
-                return (
-                  <tr key={m}>
-                    <td style={{ padding: "4px 10px", color: COLORS.text, fontWeight: 600, fontSize: 12, whiteSpace: "nowrap", position: "sticky", left: 0, background: COLORS.card, zIndex: 1 }}>
-                      <span style={{ display: "inline-block", width: 7, height: 7, borderRadius: "50%", background: memberColors[m] || COLORS.textDim, marginRight: 6, verticalAlign: "middle" }} />
-                      {m}
-                    </td>
-                    {gridDates.map(d => {
-                      const a = analysis[d]?.[m];
-                      const onLeaveDay = leave[m] && leave[m].some(r => {
-                        const dn = d.split('/').map(Number);
-                        const sn = r.start.split('/').map(Number);
-                        const en = r.end.split('/').map(Number);
-                        return (dn[0]*100+dn[1]) >= (sn[0]*100+sn[1]) && (dn[0]*100+dn[1]) <= (en[0]*100+en[1]);
-                      });
-
-                      const isActive = d === activeDate;
-                      let bg, color, topLabel, bottomLabel, tooltip;
-
-                      if (a) {
-                        const intensity = Math.min(1, 0.3 + (a.commitCount / 20) * 0.7);
-                        const baseColor = a.status === '✅' ? COLORS.green : a.status === '⚠️' ? COLORS.yellow : COLORS.red;
-                        const baseBg = a.status === '✅' ? COLORS.greenDim : a.status === '⚠️' ? COLORS.yellowDim : COLORS.redDim;
-                        bg = baseBg + Math.round(intensity * 255).toString(16).padStart(2, '0');
-                        color = baseColor;
-                        topLabel = a.commitCount > 0 ? a.commitCount : '—';
-                        bottomLabel = a.hours != null ? a.hours + 'h' : '?';
-                        tooltip = `${m} ${d}\n${a.status} Commits: ${a.commitCount} | 工時: ${a.hours || '未報'}hr`;
-                      } else if (onLeaveDay) {
-                        bg = COLORS.orangeDim + '44';
-                        color = COLORS.orange;
-                        topLabel = '假';
-                        bottomLabel = '';
-                        tooltip = `${m} ${d}\n休假`;
-                      } else {
-                        bg = 'transparent';
-                        color = COLORS.textDim;
-                        topLabel = '·';
-                        bottomLabel = '';
-                        tooltip = `${m} ${d}\n無資料`;
-                      }
-
-                      return (
-                        <td key={d} title={tooltip} onClick={() => onDateSelect(d)} style={{
-                          padding: 0, textAlign: "center", cursor: "pointer",
-                          background: isActive ? COLORS.tealDim + "30" : "transparent",
-                          borderLeft: isActive ? `1px solid ${COLORS.teal}33` : "1px solid transparent",
-                          borderRight: isActive ? `1px solid ${COLORS.teal}33` : "1px solid transparent",
-                        }}>
-                          <div style={{
-                            margin: "1px auto", width: 38, padding: "3px 2px", borderRadius: 5,
-                            background: bg, transition: "all 0.15s ease",
-                            display: "flex", flexDirection: "column", alignItems: "center", gap: 0,
-                          }}>
-                            <span style={{ fontSize: 12, fontWeight: 700, color, lineHeight: 1.3, fontVariantNumeric: "tabular-nums" }}>{topLabel}</span>
-                            {bottomLabel && <span style={{ fontSize: 9, color: COLORS.textDim, lineHeight: 1.2, fontVariantNumeric: "tabular-nums" }}>{bottomLabel}</span>}
-                          </div>
-                        </td>
-                      );
-                    })}
-                    {/* Member total column */}
-                    <td style={{ padding: "4px 8px", textAlign: "center" }}>
-                      <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                        <span style={{ fontSize: 12, fontWeight: 700, color: totalCommits > 0 ? COLORS.teal : COLORS.textDim, fontVariantNumeric: "tabular-nums" }}>{totalCommits || '—'}</span>
-                        {activeDays > 0 && <span style={{ fontSize: 9, color: COLORS.textDim }}>{activeDays}d</span>}
-                      </div>
-                    </td>
-                  </tr>
-                );
-              })}
-              {/* Summary row */}
-              <tr>
-                <td style={{ padding: "6px 10px", color: COLORS.textMuted, fontWeight: 600, fontSize: 11, borderTop: `1px solid ${COLORS.border}`, position: "sticky", left: 0, background: COLORS.card, zIndex: 1 }}>合計</td>
-                {gridDates.map(d => {
-                  const dateMembers = analysis[d] || {};
-                  const totalC = Object.values(dateMembers).reduce((s, a) => s + (a.commitCount || 0), 0);
-                  const hoursArr = Object.values(dateMembers).filter(a => a.hours != null).map(a => a.hours);
-                  const avgH = hoursArr.length ? (hoursArr.reduce((a, b) => a + b, 0) / hoursArr.length).toFixed(1) : null;
-                  const isActive = d === activeDate;
-                  return (
-                    <td key={d} onClick={() => onDateSelect(d)} style={{
-                      padding: "4px 4px", textAlign: "center", cursor: "pointer",
-                      borderTop: `1px solid ${COLORS.border}`,
-                      background: isActive ? COLORS.tealDim + "30" : "transparent",
-                    }}>
-                      <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                        <span style={{ fontSize: 11, fontWeight: 700, color: totalC > 0 ? COLORS.teal : COLORS.textDim, fontVariantNumeric: "tabular-nums" }}>{totalC || '—'}</span>
-                        {avgH && <span style={{ fontSize: 9, color: COLORS.textDim }}>{avgH}h</span>}
-                      </div>
-                    </td>
-                  );
-                })}
-                <td style={{ borderTop: `1px solid ${COLORS.border}` }} />
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        {/* Legend */}
-        <div style={{ display: "flex", gap: 16, marginTop: 10, paddingTop: 8, borderTop: `1px solid ${COLORS.border}`, flexWrap: "wrap" }}>
-          {[
-            { label: "✅ 工時+Commits 一致", bg: COLORS.greenDim, color: COLORS.green },
-            { label: "⚠️ 有工時，無 Commits", bg: COLORS.yellowDim, color: COLORS.yellow },
-            { label: "🔴 有 Commits，未回報", bg: COLORS.redDim, color: COLORS.red },
-            { label: "假 休假", bg: COLORS.orangeDim, color: COLORS.orange },
-          ].map(l => (
-            <span key={l.label} style={{ display: "flex", alignItems: "center", gap: 4, fontSize: 10, color: COLORS.textDim }}>
-              <span style={{ display: "inline-block", width: 12, height: 12, borderRadius: 3, background: l.bg, border: `1px solid ${l.color}33` }} />
-              {l.label}
-            </span>
-          ))}
-          <span style={{ fontSize: 10, color: COLORS.textDim, marginLeft: "auto" }}>上方=commits 下方=工時 | 點擊日期切換</span>
-        </div>
-      </CardPanel>
-
-      {/* Task Reasonableness Warnings */}
+      {/* Task Reasonableness Warnings — filtered by activeDate */}
       {(() => {
         if (!taskAnalysisData || !taskAnalysisData.warnings) return null;
-        const warnings = taskAnalysisData.warnings;
-        const summary = taskAnalysisData.summary;
         const typeLabels = { low_output: '產出不足', mismatch: '領域不符', outlier: '偏離均值' };
         const typeIcons = { low_output: '🔴', mismatch: '🟠', outlier: '🟡' };
+        const warnings = taskAnalysisData.warnings.filter(w => w.date === activeDate);
+
+        // Compute summary from filtered warnings
+        const byType: Record<string, number> = {};
+        for (const w of warnings) {
+          byType[w.type] = (byType[w.type] || 0) + 1;
+        }
 
         if (warnings.length === 0) {
           return (
-            <CardPanel title="任務合理性警示">
+            <CardPanel title={`任務合理性警示（${activeDate}）`}>
               <div style={{ padding: "12px 0", textAlign: "center", color: COLORS.textDim, fontSize: 13 }}>
-                無警示 — 所有成員任務與 commit 記錄一致
+                無警示 — {activeDate} 所有成員任務與 commit 記錄一致
               </div>
             </CardPanel>
           );
         }
 
         return (
-          <CardPanel title={`任務合理性警示（${taskAnalysisData.period || ''}）`}>
+          <CardPanel title={`任務合理性警示（${activeDate}）`}>
             {/* Summary stats */}
             <div style={{ display: "flex", gap: 12, marginBottom: 16, flexWrap: "wrap" }}>
               <div style={{ background: COLORS.bg, borderRadius: 8, padding: "8px 14px", display: "flex", alignItems: "center", gap: 8 }}>
                 <span style={{ fontSize: 20, fontWeight: 800, color: COLORS.red }}>{warnings.length}</span>
-                <span style={{ fontSize: 11, color: COLORS.textMuted }}>警示總數</span>
+                <span style={{ fontSize: 11, color: COLORS.textMuted }}>警示數</span>
               </div>
-              {Object.entries(summary?.byType || {}).filter(([, v]) => v > 0).map(([type, count]) => {
+              {Object.entries(byType).filter(([, v]) => v > 0).map(([type, count]) => {
                 const sev = SEVERITY_COLORS[typeIcons[type]];
                 return (
                   <div key={type} style={{ background: sev ? sev.bg + '33' : COLORS.bg, borderRadius: 8, padding: "8px 14px", display: "flex", alignItems: "center", gap: 8, border: `1px solid ${sev ? sev.sc + '33' : COLORS.border}` }}>
@@ -425,7 +287,6 @@ export default function CommitsView({ commitData, dates, members, memberColors, 
                     <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
                       <span style={{ fontSize: 18 }}>{w.severity}</span>
                       <span style={{ fontWeight: 700, fontSize: 14, color: COLORS.text }}>{w.member}</span>
-                      <span style={{ fontSize: 12, color: COLORS.textMuted, background: COLORS.bg, padding: "2px 8px", borderRadius: 4 }}>{w.date}</span>
                       <span style={{
                         fontSize: 10, fontWeight: 600, padding: "2px 8px", borderRadius: 4,
                         background: sev.bg, color: sev.sc, marginLeft: "auto",
@@ -503,6 +364,7 @@ export default function CommitsView({ commitData, dates, members, memberColors, 
           </div>
         ))}
       </CardPanel>
+
     </div>
   );
 }
