@@ -68,4 +68,40 @@ describe("useWeeklySummary", () => {
     );
     expect(result.current[0].trend).toBe("📈"); // increase > 1
   });
+
+  it("calculates commit stats when commitData provided", () => {
+    const rawData = {
+      "3/5": { "A": { total: 8, meeting: 2, dev: 6 } },
+      "3/6": { "A": { total: 7, meeting: 1, dev: 6 } },
+    };
+    const commitData = {
+      commits: {
+        "3/5": { "A": { count: 5, projects: ["p1"], items: [] } },
+        "3/6": { "A": { count: 3, projects: ["p1"], items: [] } },
+      },
+      analysis: {
+        "3/5": { "A": { status: "✅", commitCount: 5, hours: 8 } },
+        "3/6": { "A": { status: "⚠️", commitCount: 3, hours: 7 } },
+      },
+      projectRisks: [],
+    };
+    const { result } = renderHook(() =>
+      useWeeklySummary(rawData, ["3/5", "3/6"], ["A"], commitData)
+    );
+    expect(result.current[0].commitTotal).toBe(8);
+    expect(result.current[0].commitAvg).toBe(4);
+    expect(result.current[0].consistency).toEqual({ ok: 1, warn: 1, red: 0 });
+  });
+
+  it("returns zero commit stats when commitData is null", () => {
+    const rawData = {
+      "3/5": { "A": { total: 8, meeting: 2, dev: 6 } },
+    };
+    const { result } = renderHook(() =>
+      useWeeklySummary(rawData, ["3/5"], ["A"], null)
+    );
+    expect(result.current[0].commitTotal).toBe(0);
+    expect(result.current[0].commitAvg).toBe(0);
+    expect(result.current[0].consistency).toEqual({ ok: 0, warn: 0, red: 0 });
+  });
 });
