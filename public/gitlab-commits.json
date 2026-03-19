@@ -10330,11 +10330,89 @@
       }
     },
     "3/18": {
+      "Ivy": {
+        "count": 10,
+        "projects": [
+          "bigdata/2025-bigdata-admin",
+          "bigdata/2025-bigdata-admin-backend"
+        ],
+        "items": [
+          {
+            "title": "feat(investor): add API service layer for investor relations",
+            "sha": "f44e0072",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/f44e00720ad48a9fcd45b76db423595fa3158b37",
+            "datetime": "2026-03-18T16:06:03.000+08:00"
+          },
+          {
+            "title": "feat(components): add PdfUploader form component",
+            "sha": "710099a7",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/710099a7a5086d2dccd7c65c79b3434789b98c8e",
+            "datetime": "2026-03-18T16:06:23.000+08:00"
+          },
+          {
+            "title": "feat(investor): add financial info page with 4 tab views",
+            "sha": "f3ce51a4",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/f3ce51a4f6b2de27ab7f81648a953358a18a38fb",
+            "datetime": "2026-03-18T16:19:44.000+08:00"
+          },
+          {
+            "title": "feat(router): add investor relations route and sidebar entry",
+            "sha": "aec8ebc7",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/aec8ebc7d47aa7ddf0a26091f6cca6dc93039e4c",
+            "datetime": "2026-03-18T16:20:00.000+08:00"
+          },
+          {
+            "title": "chore(deps): add xlsx (SheetJS) for Excel import parsing",
+            "sha": "a5a92bbb",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/a5a92bbb940ca2fd2408e37ae1b8670ce93b4b39",
+            "datetime": "2026-03-18T16:20:10.000+08:00"
+          },
+          {
+            "title": "feat(investor_relations): add models and migrations for financial info",
+            "sha": "65c4f758",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/65c4f75811aacbc696eb4e99b7070ca755238da5",
+            "datetime": "2026-03-18T16:00:55.000+08:00"
+          },
+          {
+            "title": "feat(investor_relations): add services and serializers",
+            "sha": "71c3f5fa",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/71c3f5fa48330f4590aab6180b46dfcb5186f8b2",
+            "datetime": "2026-03-18T16:01:27.000+08:00"
+          },
+          {
+            "title": "feat(investor_relations): add admin and public API views with URLs",
+            "sha": "27b5fd3d",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/27b5fd3d81e71157cea821acfa0e594a92687612",
+            "datetime": "2026-03-18T16:02:18.000+08:00"
+          },
+          {
+            "title": "test(investor_relations): add comprehensive test suite (94 tests)",
+            "sha": "b5dafb47",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/b5dafb475a74d5ab790d2ff77e1c2e23c6767af1",
+            "datetime": "2026-03-18T16:02:46.000+08:00"
+          },
+          {
+            "title": "chore(investor_relations): register app, configure routes and update schema",
+            "sha": "384fc8e5",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/384fc8e5be7ccf9b47d0111654c8b964d68431a0",
+            "datetime": "2026-03-18T16:03:22.000+08:00"
+          }
+        ]
+      },
       "Aaron": {
-        "count": 9,
+        "count": 8,
         "projects": [
           "kol/kol-agent",
-          "llmprojects/keypo-agent",
           "KEYPO/keypo-engine/on-premises-api-gateway"
         ],
         "items": [
@@ -10381,13 +10459,6 @@
             "datetime": "2026-03-18T07:45:27.000+00:00"
           },
           {
-            "title": "Merge branch 'feature/kol' into 'dev'",
-            "sha": "91570531",
-            "project": "llmprojects/keypo-agent",
-            "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/91570531c977de47d810a36406bc43ea3f757d51",
-            "datetime": "2026-03-18T01:28:47.000+00:00"
-          },
-          {
             "title": "fix(tests): skip known-bad queries in k6 test",
             "sha": "cc50f6e0",
             "project": "KEYPO/keypo-engine/on-premises-api-gateway",
@@ -10400,85 +10471,6 @@
             "project": "KEYPO/keypo-engine/on-premises-api-gateway",
             "url": "https://biglab.buygta.today/KEYPO/keypo-engine/on-premises-api-gateway/-/commit/23b4294fdd7c51b14711aeb6fa18f46bcf9e8ff0",
             "datetime": "2026-03-18T11:05:24.000+08:00"
-          }
-        ]
-      },
-      "Ivy": {
-        "count": 10,
-        "projects": [
-          "bigdata/2025-bigdata-admin-backend",
-          "bigdata/2025-bigdata-admin"
-        ],
-        "items": [
-          {
-            "title": "feat(investor_relations): add models and migrations for financial info",
-            "sha": "65c4f758",
-            "project": "bigdata/2025-bigdata-admin-backend",
-            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/65c4f75811aacbc696eb4e99b7070ca755238da5",
-            "datetime": "2026-03-18T16:00:55.000+08:00"
-          },
-          {
-            "title": "feat(investor_relations): add services and serializers",
-            "sha": "71c3f5fa",
-            "project": "bigdata/2025-bigdata-admin-backend",
-            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/71c3f5fa48330f4590aab6180b46dfcb5186f8b2",
-            "datetime": "2026-03-18T16:01:27.000+08:00"
-          },
-          {
-            "title": "feat(investor_relations): add admin and public API views with URLs",
-            "sha": "27b5fd3d",
-            "project": "bigdata/2025-bigdata-admin-backend",
-            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/27b5fd3d81e71157cea821acfa0e594a92687612",
-            "datetime": "2026-03-18T16:02:18.000+08:00"
-          },
-          {
-            "title": "test(investor_relations): add comprehensive test suite (94 tests)",
-            "sha": "b5dafb47",
-            "project": "bigdata/2025-bigdata-admin-backend",
-            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/b5dafb475a74d5ab790d2ff77e1c2e23c6767af1",
-            "datetime": "2026-03-18T16:02:46.000+08:00"
-          },
-          {
-            "title": "chore(investor_relations): register app, configure routes and update schema",
-            "sha": "384fc8e5",
-            "project": "bigdata/2025-bigdata-admin-backend",
-            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/384fc8e5be7ccf9b47d0111654c8b964d68431a0",
-            "datetime": "2026-03-18T16:03:22.000+08:00"
-          },
-          {
-            "title": "feat(investor): add API service layer for investor relations",
-            "sha": "f44e0072",
-            "project": "bigdata/2025-bigdata-admin",
-            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/f44e00720ad48a9fcd45b76db423595fa3158b37",
-            "datetime": "2026-03-18T16:06:03.000+08:00"
-          },
-          {
-            "title": "feat(components): add PdfUploader form component",
-            "sha": "710099a7",
-            "project": "bigdata/2025-bigdata-admin",
-            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/710099a7a5086d2dccd7c65c79b3434789b98c8e",
-            "datetime": "2026-03-18T16:06:23.000+08:00"
-          },
-          {
-            "title": "feat(investor): add financial info page with 4 tab views",
-            "sha": "f3ce51a4",
-            "project": "bigdata/2025-bigdata-admin",
-            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/f3ce51a4f6b2de27ab7f81648a953358a18a38fb",
-            "datetime": "2026-03-18T16:19:44.000+08:00"
-          },
-          {
-            "title": "feat(router): add investor relations route and sidebar entry",
-            "sha": "aec8ebc7",
-            "project": "bigdata/2025-bigdata-admin",
-            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/aec8ebc7d47aa7ddf0a26091f6cca6dc93039e4c",
-            "datetime": "2026-03-18T16:20:00.000+08:00"
-          },
-          {
-            "title": "chore(deps): add xlsx (SheetJS) for Excel import parsing",
-            "sha": "a5a92bbb",
-            "project": "bigdata/2025-bigdata-admin",
-            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/a5a92bbb940ca2fd2408e37ae1b8670ce93b4b39",
-            "datetime": "2026-03-18T16:20:10.000+08:00"
           }
         ]
       },
@@ -11955,7 +11947,7 @@
       },
       "Aaron": {
         "status": "✅",
-        "commitCount": 9,
+        "commitCount": 8,
         "hours": 6.5
       },
       "哲緯": {
@@ -11972,7 +11964,7 @@
       "severity": "🟡"
     },
     {
-      "project": "llmprojects/keypo-agent",
+      "project": "kol/kol-agent",
       "soloContributor": "Aaron",
       "severity": "🟡"
     },
@@ -11982,18 +11974,23 @@
       "severity": "🟡"
     },
     {
-      "project": "KEYPO/keypo-newsletter",
-      "soloContributor": "Ted",
+      "project": "KEYPO/keypo-engine-api",
+      "soloContributor": "Joyce",
       "severity": "🟡"
     },
     {
-      "project": "bigdata/2025-bigdata-backend",
-      "soloContributor": "Ivy",
+      "project": "KEYPO/keypo-frontend-2023",
+      "soloContributor": "Joe",
       "severity": "🟡"
     },
     {
-      "project": "dailyview/dv-remote-es",
-      "soloContributor": "Jason",
+      "project": "KEYPO/keypo-backend",
+      "soloContributor": "Joyce",
+      "severity": "🟡"
+    },
+    {
+      "project": "CrawlersV2/bigcrawler-scrapy",
+      "soloContributor": "日銜",
       "severity": "🟡"
     },
     {
@@ -12022,6 +12019,11 @@
       "severity": "🟡"
     },
     {
+      "project": "sinyi/sinyi-dashboard",
+      "soloContributor": "Wendy",
+      "severity": "🟡"
+    },
+    {
       "project": "yuriy.lin/browser_service",
       "soloContributor": "侑呈",
       "severity": "🟡"
@@ -12029,191 +12031,6 @@
     {
       "project": "KEYPO/keypo-engine/on-premises-api-gateway",
       "soloContributor": "Aaron",
-      "severity": "🟡"
-    },
-    {
-      "project": "mason/truthsocial-crawler",
-      "soloContributor": "哲緯",
-      "severity": "🟡"
-    },
-    {
-      "project": "dailyview/2024-dailyview-backend",
-      "soloContributor": "Jason",
-      "severity": "🟡"
-    },
-    {
-      "project": "mason/threads-scrapy",
-      "soloContributor": "哲緯",
-      "severity": "🟡"
-    },
-    {
-      "project": "bigdata/2025-bigdata-app",
-      "soloContributor": "Ivy",
-      "severity": "🟡"
-    },
-    {
-      "project": "chris.su/tiktok-crawl-httpx",
-      "soloContributor": "禎佑",
-      "severity": "🟡"
-    },
-    {
-      "project": "KEYPO/keypo-q-huaan-v2",
-      "soloContributor": "家輝",
-      "severity": "🟡"
-    },
-    {
-      "project": "joe/es-v9-site-index-migration",
-      "soloContributor": "Joe",
-      "severity": "🟡"
-    },
-    {
-      "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-      "soloContributor": "Ted",
-      "severity": "🟡"
-    },
-    {
-      "project": "chris.su/tiktok-task-job",
-      "soloContributor": "禎佑",
-      "severity": "🟡"
-    },
-    {
-      "project": "CrawlersV2/explore-channel-consumer",
-      "soloContributor": "家輝",
-      "severity": "🟡"
-    },
-    {
-      "project": "chris.su/googlemap-crawler-v2",
-      "soloContributor": "禎佑",
-      "severity": "🟡"
-    },
-    {
-      "project": "yuriy.lin/log-center",
-      "soloContributor": "侑呈",
-      "severity": "🟡"
-    },
-    {
-      "project": "chris.su/channel_api_v2",
-      "soloContributor": "禎佑",
-      "severity": "🟡"
-    },
-    {
-      "project": "chris.su/kol-agent",
-      "soloContributor": "禎佑",
-      "severity": "🟡"
-    },
-    {
-      "project": "chris.su/kol-desc-parser",
-      "soloContributor": "禎佑",
-      "severity": "🟡"
-    },
-    {
-      "project": "KEYPO/keypo-data-api",
-      "soloContributor": "家輝",
-      "severity": "🟡"
-    },
-    {
-      "project": "chris.su/data-ingestion-monitor",
-      "soloContributor": "禎佑",
-      "severity": "🟡"
-    },
-    {
-      "project": "mason/line-social-radar-api",
-      "soloContributor": "哲緯",
-      "severity": "🟡"
-    },
-    {
-      "project": "KEYPO/keypo-engine/es-proxy-settings",
-      "soloContributor": "Aaron",
-      "severity": "🟡"
-    },
-    {
-      "project": "chris.su/es-query-agent",
-      "soloContributor": "禎佑",
-      "severity": "🟡"
-    },
-    {
-      "project": "mason/line-social-radar",
-      "soloContributor": "哲緯",
-      "severity": "🟡"
-    },
-    {
-      "project": "wendyHsieh/sy-esv9",
-      "soloContributor": "Wendy",
-      "severity": "🟡"
-    },
-    {
-      "project": "chris.su/tiktok-crawl-api-v2",
-      "soloContributor": "禎佑",
-      "severity": "🟡"
-    },
-    {
-      "project": "CrawlersV2/bigrmq",
-      "soloContributor": "家輝",
-      "severity": "🟡"
-    },
-    {
-      "project": "ted.juang/fanti-es9-mapping",
-      "soloContributor": "Ted",
-      "severity": "🟡"
-    },
-    {
-      "project": "yuriy.lin/keyword-search",
-      "soloContributor": "侑呈",
-      "severity": "🟡"
-    },
-    {
-      "project": "Crawlers/bigproxy",
-      "soloContributor": "家輝",
-      "severity": "🟡"
-    },
-    {
-      "project": "wg-dashboard/web-crawler",
-      "soloContributor": "哲緯",
-      "severity": "🟡"
-    },
-    {
-      "project": "chris.su/keykyc-data-v2",
-      "soloContributor": "禎佑",
-      "severity": "🟡"
-    },
-    {
-      "project": "chris.su/mapsheet",
-      "soloContributor": "禎佑",
-      "severity": "🟡"
-    },
-    {
-      "project": "chris.su/keykyc_company",
-      "soloContributor": "禎佑",
-      "severity": "🟡"
-    },
-    {
-      "project": "chris.su/httpxubo",
-      "soloContributor": "禎佑",
-      "severity": "🟡"
-    },
-    {
-      "project": "dailyview/2024-dailyview-admin-backend",
-      "soloContributor": "Jason",
-      "severity": "🟡"
-    },
-    {
-      "project": "yuriy.lin/crawler_manager",
-      "soloContributor": "侑呈",
-      "severity": "🟡"
-    },
-    {
-      "project": "CrawlersV2/mq_es_consumer",
-      "soloContributor": "家輝",
-      "severity": "🟡"
-    },
-    {
-      "project": "KEYPO/keypo-international-website",
-      "soloContributor": "Joe",
-      "severity": "🟡"
-    },
-    {
-      "project": "yuriy.lin/kol_profile_info",
-      "soloContributor": "侑呈",
       "severity": "🟡"
     }
   ]
