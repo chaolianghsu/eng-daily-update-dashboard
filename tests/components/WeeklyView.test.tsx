@@ -17,6 +17,11 @@ const baseProps = {
   onToggleMember: vi.fn(),
   isMobile: false,
   dates: ["3/9", "3/10", "3/11", "3/12", "3/13"],
+  commitData: null,
+  leave: {},
+  dailyDates: ["3/9", "3/10", "3/11", "3/12", "3/13"],
+  dayLabels: { "3/9": "一", "3/10": "二", "3/11": "三", "3/12": "四", "3/13": "五" },
+  onDateSelectAndSwitchToCommits: vi.fn(),
 };
 
 describe("WeeklyView", () => {
@@ -62,5 +67,23 @@ describe("WeeklyView", () => {
     // stabilityColor is green (#22c55e), should be visible
     const stabilityText = screen.getByText("0.5"); // stdDev value
     expect(stabilityText).toBeInTheDocument();
+  });
+
+  it("renders consistency heatmap when commitData provided", () => {
+    const props = {
+      ...baseProps,
+      commitData: {
+        commits: { "3/9": { "A": { count: 5, projects: ["p1"], items: [] } } },
+        analysis: { "3/9": { "A": { status: "✅", commitCount: 5, hours: 8 } } },
+        projectRisks: [],
+      },
+    };
+    render(<WeeklyView {...props} />);
+    expect(screen.getByText("一致性總覽（全期間）")).toBeInTheDocument();
+  });
+
+  it("does not render heatmap when commitData is null", () => {
+    render(<WeeklyView {...baseProps} />);
+    expect(screen.queryByText("一致性總覽（全期間）")).not.toBeInTheDocument();
   });
 });
