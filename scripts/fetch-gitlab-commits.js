@@ -114,6 +114,7 @@ function filterAndMapCommits(commits, projectPath, memberMap, excludeAuthors) {
     results.push({
       member: member || c.author_name,
       date: dateToMD(c.committed_date),
+      datetime: c.committed_date,
       project: projectPath,
       title: c.title,
       sha: c.short_id,
@@ -218,7 +219,7 @@ function buildDashboardJSON(commits, analysis, projectRisks) {
     const m = commitsByDate[c.date][c.member];
     m.count++;
     if (!m.projects.includes(c.project)) m.projects.push(c.project);
-    m.items.push({ title: c.title, sha: c.sha, project: c.project, url: c.url });
+    m.items.push({ title: c.title, sha: c.sha, project: c.project, url: c.url, datetime: c.datetime });
   }
   return { commits: commitsByDate, analysis, projectRisks };
 }

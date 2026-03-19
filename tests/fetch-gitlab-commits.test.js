@@ -77,6 +77,21 @@ describe('filterAndMapCommits', () => {
   });
 });
 
+import { buildDashboardJSON } from '../scripts/fetch-gitlab-commits.js';
+
+describe('buildDashboardJSON', () => {
+  it("buildDashboardJSON preserves datetime in commit items", () => {
+    const commits = [{
+      member: "A", date: "3/18", project: "p1", title: "fix bug",
+      sha: "abc123", url: "https://example.com", unmapped: false,
+      datetime: "2026-03-18T15:30:45+08:00",
+    }];
+    const analysis = { "3/18": { "A": { status: "✅", commitCount: 1, hours: 8 } } };
+    const result = buildDashboardJSON(commits, analysis, []);
+    expect(result.commits["3/18"]["A"].items[0].datetime).toBe("2026-03-18T15:30:45+08:00");
+  });
+});
+
 import { buildAnalysis } from '../scripts/fetch-gitlab-commits.js';
 
 describe('buildAnalysis', () => {

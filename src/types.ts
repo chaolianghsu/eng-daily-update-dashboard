@@ -22,6 +22,7 @@ export interface CommitItem {
   sha: string;
   project: string;
   url: string;
+  datetime?: string;
 }
 
 export interface MemberCommits {
