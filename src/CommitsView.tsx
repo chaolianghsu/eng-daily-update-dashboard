@@ -340,9 +340,10 @@ export default function CommitsView({ commitData, dates, members, memberColors, 
             {expandedMember === member && (
               <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12, marginTop: 4 }}>
                 <tbody>
-                  {items.sort((a, b) => b.date.localeCompare(a.date)).map((item, i) => (
+                  {items.sort((a, b) => (b.datetime || '').localeCompare(a.datetime || '')).map((item, i) => (
                     <tr key={i} style={{ borderBottom: `1px solid ${COLORS.border}` }}>
-                      <td style={{ padding: "4px 8px", color: COLORS.textMuted, width: 40 }}>{item.date}</td>
+                      <td style={{ padding: "4px 8px", color: COLORS.textMuted, width: 50, fontSize: 11 }}
+                        title={item.datetime || ''}>{item.datetime ? new Date(item.datetime).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Taipei' }) : '—'}</td>
                       <td style={{ padding: "4px 8px", color: COLORS.teal, width: 120, fontSize: 11 }}>{item.project.split('/').pop()}</td>
                       <td style={{ padding: "4px 8px", color: COLORS.text }}>{item.title}</td>
                       <td style={{ padding: "4px 8px", width: 70 }}>
