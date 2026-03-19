@@ -11,6 +11,15 @@ try {
   data = null;
 }
 
+const commitDataPath = resolve(__dirname, '..', 'public', 'gitlab-commits.json');
+let commitData;
+
+try {
+  commitData = JSON.parse(readFileSync(commitDataPath, 'utf-8'));
+} catch {
+  commitData = null;
+}
+
 describe('raw_data.json schema validation', () => {
   it('should be parseable JSON', () => {
     expect(data).not.toBeNull();
@@ -84,5 +93,33 @@ describe('raw_data.json schema validation', () => {
         });
       });
     });
+  });
+
+  describe('rawData status field (optional)', () => {
+    it('rawData entries have valid status field', () => {
+      const validStatuses = ['reported', 'unreported', 'replied_no_hours', 'zero', 'leave'];
+      for (const [date, members] of Object.entries(data.rawData)) {
+        for (const [member, entry] of Object.entries(members)) {
+          if (entry.status) {
+            expect(validStatuses).toContain(entry.status);
+          }
+        }
+      }
+    });
+  });
+});
+
+describe('gitlab-commits.json schema validation', () => {
+  it('commit items have optional datetime field', () => {
+    if (!commitData) return;
+    for (const [date, members] of Object.entries(commitData.commits)) {
+      for (const [member, data] of Object.entries(members)) {
+        for (const item of data.items) {
+          if (item.datetime) {
+            expect(new Date(item.datetime).toString()).not.toBe('Invalid Date');
+          }
+        }
+      }
+    }
   });
 });
