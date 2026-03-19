@@ -70,7 +70,7 @@ export default function App({ loadData }: { loadData: LoadData }) {
 
   const dailyBarData = useDailyBarData(rawData, activeDate, members);
   const { trendDates, trendData, useWeeklyAgg, weekGroups } = useTrendData(rawData, dates, members, dayLabels, commitData, trendRange);
-  const weeklySummary = useWeeklySummary(rawData, dates, members);
+  const weeklySummary = useWeeklySummary(rawData, dates, members, commitData);
   const allIssues = useAllIssues(issues, commitData, activeDate);
 
   const toggleMember = (m: string) => {

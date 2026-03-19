@@ -20,6 +20,9 @@ interface WeeklySummaryEntry {
   stdDev: number | null;
   stabilityPct: number;
   stabilityColor: string;
+  commitTotal: number;
+  commitAvg: number;
+  consistency: { ok: number; warn: number; red: number };
 }
 
 interface WeeklyViewProps {
@@ -69,9 +72,12 @@ export function WeeklyView({
             <table style={{ width: "100%", borderCollapse: "separate", borderSpacing: "0 2px", fontSize: 13, minWidth: isMobile ? 550 : "auto" }}>
               <thead>
                 <tr>
-                  {["成員", "回報", "總工時", "日均", "會議", "會議%", "穩定度", "趨勢"].map((h, i) => (
-                    <th key={h} style={{ textAlign: h === "成員" ? "left" : "center", padding: "10px 8px", borderBottom: `1px solid ${COLORS.border}`, color: COLORS.textMuted, fontWeight: 600, fontSize: 11, whiteSpace: "nowrap", ...(i === 0 ? { position: "sticky" as const, left: 0, background: COLORS.card, zIndex: 1 } : {}) }}>{h}</th>
-                  ))}
+                  {["成員", "回報", "總工時", "日均", "會議%", "穩定度", "Commits", "日均C", "一致性", "趨勢"].map((h, i) => {
+                    const isTealHeader = h === "Commits" || h === "日均C" || h === "一致性";
+                    return (
+                      <th key={h} style={{ textAlign: h === "成員" ? "left" : "center", padding: "10px 8px", borderBottom: `1px solid ${COLORS.border}`, color: isTealHeader ? COLORS.teal : COLORS.textMuted, fontWeight: 600, fontSize: 11, whiteSpace: "nowrap", ...(i === 0 ? { position: "sticky" as const, left: 0, background: COLORS.card, zIndex: 1 } : {}), ...(h === "Commits" ? { borderLeft: `2px solid ${COLORS.tealDim}` } : {}) }}>{h}</th>
+                    );
+                  })}
                 </tr>
               </thead>
               <tbody>
@@ -104,9 +110,6 @@ export function WeeklyView({
                       }}>
                         {m.avg !== null ? m.avg : "—"}
                       </td>
-                      <td style={{ textAlign: "center", padding: "9px 8px", fontVariantNumeric: "tabular-nums", color: COLORS.textMuted, borderBottom: `1px solid ${COLORS.border}15` }}>
-                        {m.meetSum > 0 ? m.meetSum : "—"}
-                      </td>
                       <td style={{
                         textAlign: "center", padding: "9px 8px",
                         background: m.meetPct > MEETING_HEAVY_PCT ? COLORS.yellow + "15" : "transparent",
@@ -125,6 +128,23 @@ export function WeeklyView({
                             <span style={{ fontSize: 10, color: m.stabilityColor, fontWeight: 600, minWidth: 14 }}>{m.stdDev.toFixed(1)}</span>
                           </div>
                         ) : <span style={{ color: COLORS.textDim, fontSize: 10 }}>—</span>}
+                      </td>
+                      <td style={{ textAlign: "center", padding: "9px 8px", fontVariantNumeric: "tabular-nums", fontWeight: 700, color: m.commitTotal > 0 ? COLORS.teal : COLORS.textDim, borderBottom: `1px solid ${COLORS.border}15`, borderLeft: `2px solid ${COLORS.tealDim}` }}>
+                        {m.commitTotal > 0 ? m.commitTotal : "—"}
+                      </td>
+                      <td style={{ textAlign: "center", padding: "9px 8px", fontVariantNumeric: "tabular-nums", color: m.commitAvg > 0 ? COLORS.teal : COLORS.textDim, borderBottom: `1px solid ${COLORS.border}15` }}>
+                        {m.commitAvg > 0 ? m.commitAvg : "—"}
+                      </td>
+                      <td style={{ textAlign: "center", padding: "9px 8px", fontSize: 11, borderBottom: `1px solid ${COLORS.border}15`, whiteSpace: "nowrap" }}>
+                        {(m.consistency.ok + m.consistency.warn + m.consistency.red) > 0 ? (
+                          <span>
+                            {m.consistency.ok > 0 && <span style={{ color: COLORS.green }}>✅{m.consistency.ok}</span>}
+                            {m.consistency.ok > 0 && m.consistency.warn > 0 && ' '}
+                            {m.consistency.warn > 0 && <span style={{ color: COLORS.yellow }}>⚠️{m.consistency.warn}</span>}
+                            {(m.consistency.ok > 0 || m.consistency.warn > 0) && m.consistency.red > 0 && ' '}
+                            {m.consistency.red > 0 && <span style={{ color: COLORS.red }}>🔴{m.consistency.red}</span>}
+                          </span>
+                        ) : <span style={{ color: COLORS.textDim }}>—</span>}
                       </td>
                       <td style={{ textAlign: "center", padding: "9px 6px", fontSize: 13, borderBottom: `1px solid ${COLORS.border}15` }}>{m.trend}</td>
                     </tr>

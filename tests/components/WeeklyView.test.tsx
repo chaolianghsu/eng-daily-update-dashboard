@@ -8,7 +8,7 @@ import { WeeklyView } from "../../src/views/WeeklyView";
 
 const baseProps = {
   weeklySummary: [
-    { name: "A", avg: 8, sum: 40, devAvg: 6, meetAvg: 2, daysReported: 5, meetSum: 10, meetPct: 25, trend: "➡️", stdDev: 0.5, stabilityPct: 83, stabilityColor: "#22c55e" },
+    { name: "A", avg: 8, sum: 40, devAvg: 6, meetAvg: 2, daysReported: 5, meetSum: 10, meetPct: 25, trend: "➡️", stdDev: 0.5, stabilityPct: 83, stabilityColor: "#22c55e", commitTotal: 0, commitAvg: 0, consistency: { ok: 0, warn: 0, red: 0 } },
   ],
   chartHeight: 380,
   members: ["A"],
@@ -42,6 +42,19 @@ describe("WeeklyView", () => {
     };
     render(<WeeklyView {...props} />);
     expect(screen.getByText(/60%.*⚠/)).toBeInTheDocument();
+  });
+
+  it("renders commit columns when commit data present", () => {
+    const props = {
+      ...baseProps,
+      weeklySummary: [
+        { ...baseProps.weeklySummary[0], commitTotal: 31, commitAvg: 6.2, consistency: { ok: 5, warn: 0, red: 0 } },
+      ],
+    };
+    render(<WeeklyView {...props} />);
+    expect(screen.getByText("Commits")).toBeInTheDocument();
+    expect(screen.getByText("31")).toBeInTheDocument();
+    expect(screen.getByText("6.2")).toBeInTheDocument();
   });
 
   it("renders stability bar", () => {
