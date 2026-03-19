@@ -46,4 +46,24 @@ describe("useDailyBarData", () => {
     const { result } = renderHook(() => useDailyBarData(rawData, "3/5", ["A"]));
     expect(result.current[0].total).toBeNull();
   });
+
+  it("passes through status field from rawData", () => {
+    const rawData = {
+      "3/18": {
+        "A": { total: 8, meeting: 1, dev: 7, status: 'reported' },
+        "B": { total: null, meeting: null, dev: null, status: 'unreported' },
+      },
+    };
+    const { result } = renderHook(() => useDailyBarData(rawData, "3/18", ["A", "B"]));
+    const a = result.current.find(d => d.name === "A");
+    const b = result.current.find(d => d.name === "B");
+    expect(a.status).toBe('reported');
+    expect(b.status).toBe('unreported');
+  });
+
+  it("defaults to 'unreported' for missing members", () => {
+    const rawData = { "3/18": {} };
+    const { result } = renderHook(() => useDailyBarData(rawData, "3/18", ["A"]));
+    expect(result.current[0].status).toBe('unreported');
+  });
 });

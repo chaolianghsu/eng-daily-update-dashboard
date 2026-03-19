@@ -48,4 +48,26 @@ describe("DailyView", () => {
     expect(activeBtn).toBeDefined();
     expect((activeBtn as HTMLElement).style.border).toContain("59, 130, 246"); // COLORS.accent rgb
   });
+
+  it("shows '未報' for unreported members", () => {
+    const props = {
+      ...baseProps,
+      dailyBarData: [
+        { name: "A", 開發: null, 會議: null, total: null, status: 'unreported' as const },
+      ],
+    };
+    render(<DailyView {...props} />);
+    expect(screen.getByText("未報")).toBeInTheDocument();
+  });
+
+  it("shows '無工時' for replied_no_hours members", () => {
+    const props = {
+      ...baseProps,
+      dailyBarData: [
+        { name: "A", 開發: null, 會議: null, total: null, status: 'replied_no_hours' as const },
+      ],
+    };
+    render(<DailyView {...props} />);
+    expect(screen.getByText("無工時")).toBeInTheDocument();
+  });
 });

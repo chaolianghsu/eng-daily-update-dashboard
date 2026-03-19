@@ -14,7 +14,7 @@ interface DailyViewProps {
   onDateSelect: (date: string) => void;
   dayLabels: Record<string, string>;
   weekLabel: string;
-  dailyBarData: Array<{ name: string; 開發: number; 會議: number; total: number | null }>;
+  dailyBarData: Array<{ name: string; 開發: number; 會議: number; total: number | null; status?: string }>;
   chartHeight: number;
   memberColors: Record<string, string>;
   issueMap: Record<string, { severity: string; text: string }>;
@@ -94,7 +94,12 @@ export function DailyView({
                 </span>
               </div>
               <div style={{ fontSize: 28, fontWeight: 800, color: status.color, fontVariantNumeric: "tabular-nums", lineHeight: 1.2 }}>
-                {d.total !== null ? d.total : "—"}
+                {d.total !== null ? d.total : (
+                  d.status === 'unreported' ? <span style={{ color: COLORS.red, fontSize: 11 }}>未報</span> :
+                  d.status === 'replied_no_hours' ? <span style={{ color: COLORS.orange, fontSize: 11 }}>無工時</span> :
+                  d.status === 'leave' ? <span style={{ color: COLORS.orange, fontSize: 11 }}>假</span> :
+                  d.status === 'zero' ? '0' : '—'
+                )}
                 <span style={{ fontSize: 12, fontWeight: 500, color: COLORS.textDim }}>hr</span>
               </div>
               {d.total !== null && (
