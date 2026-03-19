@@ -9677,8 +9677,222 @@
       }
     },
     "3/18": {
-      "日銜": {
+      "Joyce": {
+        "count": 18,
+        "projects": [
+          "KEYPO/keypo-engine-api",
+          "KEYPO/keypo-backend",
+          "KEYPO/keypo-engine/keypo-engine-api-v3"
+        ],
+        "items": [
+          {
+            "title": "Merge branch 'fix/sndist-non-news-types-from-query' into 'develop'",
+            "sha": "39b43ef0",
+            "project": "KEYPO/keypo-engine-api",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine-api/-/commit/39b43ef06402c455f07a62f4571c9947f3cbcea1"
+          },
+          {
+            "title": "[fix] Use case-insensitive check for existing region suffix in _convert_es_index_types",
+            "sha": "096b123e",
+            "project": "KEYPO/keypo-backend",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/096b123e96a5b4155ba125228ef4552447143e40"
+          },
+          {
+            "title": "Merge branch 'fix/case-insensitive-region-suffix' into 'develop'",
+            "sha": "bda36a55",
+            "project": "KEYPO/keypo-backend",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/bda36a555a1233c1691d96a3f4dc2cf23a1a9760"
+          },
+          {
+            "title": "refactor: suppress health check endpoint from request logging",
+            "sha": "52996bbd",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/52996bbd1e9c8ea966b7b08d6a2eb9b14968b9cb"
+          },
+          {
+            "title": "Merge branch 'feature/add-system-logging' into feature/add-deploy-config",
+            "sha": "b6321119",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/b63211197891a41210671636ca31c190407f69ea"
+          },
+          {
+            "title": "fix(filtersearch): fix regions filter case mismatch in site queries",
+            "sha": "ae349f16",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/ae349f16c71ffdc3251c32fff3cfae6c0a54ada8"
+          },
+          {
+            "title": "Merge branch 'fix/filtersearch-missing-site-results' into 'develop'",
+            "sha": "54a52640",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/54a526407158a22d2bcb62d3727eedede6d7767e"
+          },
+          {
+            "title": "Merge branch 'fix/filtersearch-missing-site-results' into feature/add-deploy-config",
+            "sha": "1d98e978",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/1d98e9782248df4c2d3e0af3cc4c82c37601f306"
+          },
+          {
+            "title": "feat: add GKE Autopilot deployment configuration",
+            "sha": "876f5587",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/876f5587f5179516e1c44cc8b3d67da1e7a0a6ac"
+          },
+          {
+            "title": "[chore] Update gitignore",
+            "sha": "71911626",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/719116268f678a21e8033609f43026ebcf811a8f"
+          },
+          {
+            "title": "chore: update docker image names for deployment",
+            "sha": "a3dd1247",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/a3dd1247c37c7e9fa7bbd337247407977dca91d5"
+          },
+          {
+            "title": "[doc] update GKE cost",
+            "sha": "69d095ca",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/69d095ca49c2678640164e8016c572930b9b969c"
+          },
+          {
+            "title": "fix: add startupProbe and improve lifespan error handling",
+            "sha": "ba24dc12",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/ba24dc1276fe370e8d4832f72e3e7eacc72ee270"
+          },
+          {
+            "title": "fix: correct CARROT_2_URL env var name and protect secret file in gitignore",
+            "sha": "723c17b3",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/723c17b33581bb4a74253bbbf5379eddcaeb3dd5"
+          },
+          {
+            "title": "feat: add LOG_LEVEL=DEBUG to staging Helm values",
+            "sha": "b671f439",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/b671f4399cba88f6bd5443ffbf6060928cff562d"
+          },
+          {
+            "title": "Merge branch 'develop' into feature/deploy-infra",
+            "sha": "6c3447c2",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/6c3447c2f21439c0c5e93aaa02a1dce66f2d6d00"
+          },
+          {
+            "title": "chore: fix plan_doc gitignore path prefix",
+            "sha": "e65c9ea1",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/e65c9ea1bb4ec681df8444e74fe1ea35789a62c4"
+          },
+          {
+            "title": "Merge branch 'feature/deploy-infra' into 'develop'",
+            "sha": "0c0effa9",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/0c0effa9108d579f6963e4a36158ecf4567b7d7c"
+          }
+        ]
+      },
+      "Aaron": {
         "count": 9,
+        "projects": [
+          "kol/kol-agent",
+          "KEYPO/keypo-engine/on-premises-api-gateway",
+          "llmprojects/keypo-agent"
+        ],
+        "items": [
+          {
+            "title": "docs: update README for uv and docker-compose",
+            "sha": "beae2937",
+            "project": "kol/kol-agent",
+            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/beae2937afe034245ab2b4915dd998f965152d41"
+          },
+          {
+            "title": "Merge branch 'chore/migrate-to-uv' into 'main'",
+            "sha": "ad0c84f4",
+            "project": "kol/kol-agent",
+            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/ad0c84f44a37a3b61a1473634dd50645b7dead24"
+          },
+          {
+            "title": "Merge branch 'chore/migrate-to-uv' into 'main'",
+            "sha": "d98ac3f4",
+            "project": "kol/kol-agent",
+            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/d98ac3f47a9376ba06d9a642c066a5d83177bac5"
+          },
+          {
+            "title": "feat(logging): add structured JSON logging with request middleware",
+            "sha": "d54c4ce7",
+            "project": "kol/kol-agent",
+            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/d54c4ce7bd8bc4cce5e97fe180d9f76debcd18ee"
+          },
+          {
+            "title": "Merge branch 'feat/logging-format' into 'main'",
+            "sha": "77841dc9",
+            "project": "kol/kol-agent",
+            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/77841dc9f4e78df72d7c62179d9459954a0adadd"
+          },
+          {
+            "title": "Merge branch 'feat/logging-format' into 'main'",
+            "sha": "62d4f98d",
+            "project": "kol/kol-agent",
+            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/62d4f98d8d23d86457ca59ce272f669fd20c6b47"
+          },
+          {
+            "title": "fix(tests): skip known-bad queries in k6 test",
+            "sha": "cc50f6e0",
+            "project": "KEYPO/keypo-engine/on-premises-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/on-premises-api-gateway/-/commit/cc50f6e0b1bef1d33c15a919cd5fbd814f555552"
+          },
+          {
+            "title": "feat(rules): allow POST for dailyview-index-manager",
+            "sha": "23b4294f",
+            "project": "KEYPO/keypo-engine/on-premises-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/on-premises-api-gateway/-/commit/23b4294fdd7c51b14711aeb6fa18f46bcf9e8ff0"
+          },
+          {
+            "title": "Merge branch 'feature/kol' into 'dev'",
+            "sha": "91570531",
+            "project": "llmprojects/keypo-agent",
+            "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/91570531c977de47d810a36406bc43ea3f757d51"
+          }
+        ]
+      },
+      "Joe": {
+        "count": 4,
+        "projects": [
+          "KEYPO/keypo-frontend-2023"
+        ],
+        "items": [
+          {
+            "title": "docs: [WIP] update plan - change filter strategy from append to override",
+            "sha": "8b6d7712",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/8b6d7712f2c47069eba6e21eabbb67bb2abcf26e"
+          },
+          {
+            "title": "feat: override channel filter for specific clients on channel-monitoring page",
+            "sha": "73bbc9b3",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/73bbc9b301b9610c58f407f5313285940aaa7d25"
+          },
+          {
+            "title": "docs: [WIP] add implementation plan for KOL in Agent permission",
+            "sha": "30279db0",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/30279db0e58523d7acf927d9b37566375e426253"
+          },
+          {
+            "title": "Merge branch 'feat-client-specific-channel-filter' into demo",
+            "sha": "168696e1",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/168696e1ece8b140198f75b45a568ca57d1b8bcd"
+          }
+        ]
+      },
+      "日銜": {
+        "count": 15,
         "projects": [
           "CrawlersV2/bigcrawler-scrapy"
         ],
@@ -9736,79 +9950,248 @@
             "sha": "327e035a",
             "project": "CrawlersV2/bigcrawler-scrapy",
             "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/327e035a923c373abd9f8bdd83837723768afb70"
+          },
+          {
+            "title": "feat(verse) : add verse for TW",
+            "sha": "dbba4aaf",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/dbba4aafb8bdeee4ae5a0a89178f848e67f5522e"
+          },
+          {
+            "title": "Merge branch 'byron-add-verse' into 'develop'",
+            "sha": "84cba6fa",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/84cba6fa791fb022c47f3ce6ebd5e794313412e1"
+          },
+          {
+            "title": "Merge branch 'byron-add-verse' into 'develop'",
+            "sha": "ffea138b",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/ffea138bbe8007c82fe8bf58faac04ce0c921659"
+          },
+          {
+            "title": "feat(mediacorp) : add mediacorp for TW",
+            "sha": "0adcebd3",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/0adcebd33cbcda66fa6c27d6e29cfaac481b55e4"
+          },
+          {
+            "title": "Merge branch 'byron-add-mediacorp' into 'develop'",
+            "sha": "ff5f15c5",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/ff5f15c5c374296eef6d134ea848173a8c2d79ed"
+          },
+          {
+            "title": "Merge branch 'byron-add-mediacorp' into 'develop'",
+            "sha": "2e8bcfad",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/2e8bcfad3f9b64ff6f64f70fa27cdcc8c61ee3ec"
           }
         ]
       },
-      "Aaron": {
-        "count": 3,
+      "Ivy": {
+        "count": 10,
         "projects": [
-          "KEYPO/keypo-engine/on-premises-api-gateway",
-          "llmprojects/keypo-agent"
+          "bigdata/2025-bigdata-admin-backend",
+          "bigdata/2025-bigdata-admin"
         ],
         "items": [
           {
-            "title": "fix(tests): skip known-bad queries in k6 test",
-            "sha": "cc50f6e0",
-            "project": "KEYPO/keypo-engine/on-premises-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/on-premises-api-gateway/-/commit/cc50f6e0b1bef1d33c15a919cd5fbd814f555552"
+            "title": "feat(investor_relations): add models and migrations for financial info",
+            "sha": "65c4f758",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/65c4f75811aacbc696eb4e99b7070ca755238da5"
           },
           {
-            "title": "feat(rules): allow POST for dailyview-index-manager",
-            "sha": "23b4294f",
-            "project": "KEYPO/keypo-engine/on-premises-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/on-premises-api-gateway/-/commit/23b4294fdd7c51b14711aeb6fa18f46bcf9e8ff0"
+            "title": "feat(investor_relations): add services and serializers",
+            "sha": "71c3f5fa",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/71c3f5fa48330f4590aab6180b46dfcb5186f8b2"
           },
           {
-            "title": "Merge branch 'feature/kol' into 'dev'",
-            "sha": "91570531",
-            "project": "llmprojects/keypo-agent",
-            "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/91570531c977de47d810a36406bc43ea3f757d51"
+            "title": "feat(investor_relations): add admin and public API views with URLs",
+            "sha": "27b5fd3d",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/27b5fd3d81e71157cea821acfa0e594a92687612"
+          },
+          {
+            "title": "test(investor_relations): add comprehensive test suite (94 tests)",
+            "sha": "b5dafb47",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/b5dafb475a74d5ab790d2ff77e1c2e23c6767af1"
+          },
+          {
+            "title": "chore(investor_relations): register app, configure routes and update schema",
+            "sha": "384fc8e5",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/384fc8e5be7ccf9b47d0111654c8b964d68431a0"
+          },
+          {
+            "title": "feat(investor): add API service layer for investor relations",
+            "sha": "f44e0072",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/f44e00720ad48a9fcd45b76db423595fa3158b37"
+          },
+          {
+            "title": "feat(components): add PdfUploader form component",
+            "sha": "710099a7",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/710099a7a5086d2dccd7c65c79b3434789b98c8e"
+          },
+          {
+            "title": "feat(investor): add financial info page with 4 tab views",
+            "sha": "f3ce51a4",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/f3ce51a4f6b2de27ab7f81648a953358a18a38fb"
+          },
+          {
+            "title": "feat(router): add investor relations route and sidebar entry",
+            "sha": "aec8ebc7",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/aec8ebc7d47aa7ddf0a26091f6cca6dc93039e4c"
+          },
+          {
+            "title": "chore(deps): add xlsx (SheetJS) for Excel import parsing",
+            "sha": "a5a92bbb",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/a5a92bbb940ca2fd2408e37ae1b8670ce93b4b39"
           }
         ]
       },
-      "Joe": {
-        "count": 4,
+      "Wendy": {
+        "count": 6,
         "projects": [
-          "KEYPO/keypo-frontend-2023"
+          "bigdata/2025-bigdata-admin-backend",
+          "sinyi/sinyi-dashboard"
         ],
         "items": [
           {
-            "title": "docs: [WIP] update plan - change filter strategy from append to override",
-            "sha": "8b6d7712",
-            "project": "KEYPO/keypo-frontend-2023",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/8b6d7712f2c47069eba6e21eabbb67bb2abcf26e"
+            "title": "Merge branch 'feat/contact-us-permissions' into 'develop'",
+            "sha": "08e84f68",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/08e84f68cf029a40f3bf6b3c59482eb14b51ed29"
           },
           {
-            "title": "feat: override channel filter for specific clients on channel-monitoring page",
-            "sha": "73bbc9b3",
-            "project": "KEYPO/keypo-frontend-2023",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/73bbc9b301b9610c58f407f5313285940aaa7d25"
+            "title": "build(es): separate IDC auth credentials per cluster",
+            "sha": "58c5eac8",
+            "project": "sinyi/sinyi-dashboard",
+            "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/58c5eac82b0c8f126d05fce70116cfa792ab65f2"
           },
           {
-            "title": "docs: [WIP] add implementation plan for KOL in Agent permission",
-            "sha": "30279db0",
-            "project": "KEYPO/keypo-frontend-2023",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/30279db0e58523d7acf927d9b37566375e426253"
+            "title": "feat(es): add Qtool v2 with CJK boundary detection",
+            "sha": "16b38643",
+            "project": "sinyi/sinyi-dashboard",
+            "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/16b3864303d7047c00ab2799507e743c24fd75c8"
           },
           {
-            "title": "Merge branch 'feat-client-specific-channel-filter' into demo",
-            "sha": "168696e1",
-            "project": "KEYPO/keypo-frontend-2023",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/168696e1ece8b140198f75b45a568ca57d1b8bcd"
+            "title": "refactor(es): migrate to Qtool v2 and ES index aliases",
+            "sha": "21a237c8",
+            "project": "sinyi/sinyi-dashboard",
+            "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/21a237c8de17e4fcb2528fb3e379670c6a446ea4"
+          },
+          {
+            "title": "docs(es_v9_migration): add migration plans and update inventory",
+            "sha": "696d49a0",
+            "project": "sinyi/sinyi-dashboard",
+            "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/696d49a0943186b7ccfbd25d0ee012a8136713a4"
+          },
+          {
+            "title": "docs: add get_pn_from_keypo data flow analysis",
+            "sha": "4342951b",
+            "project": "sinyi/sinyi-dashboard",
+            "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/4342951b058831a402f37c92c468a3d2e44dc817"
           }
         ]
       },
-      "Joyce": {
-        "count": 1,
+      "侑呈": {
+        "count": 6,
         "projects": [
-          "KEYPO/keypo-engine/keypo-engine-api-v3"
+          "CrawlersV2/fb-search-api",
+          "CrawlersV2/fb-insights-scrapy",
+          "CrawlersV2/fb-cdp",
+          "CrawlersV2/mq-fbmessage-consumer",
+          "yuriy.lin/browser_service"
         ],
         "items": [
           {
-            "title": "refactor: suppress health check endpoint from request logging",
-            "sha": "52996bbd",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/52996bbd1e9c8ea966b7b08d6a2eb9b14968b9cb"
+            "title": "重構: ES9 升級 - 加入 Gateway/Proxy 查詢支援",
+            "sha": "295c8c61",
+            "project": "CrawlersV2/fb-search-api",
+            "url": "https://biglab.buygta.today/CrawlersV2/fb-search-api/-/commit/295c8c615f85b707cbea6854c313116317190f84"
+          },
+          {
+            "title": "重構: ES9 升級 - URL 路徑修正，加入 Gateway 認證",
+            "sha": "88a7bee4",
+            "project": "CrawlersV2/fb-insights-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/fb-insights-scrapy/-/commit/88a7bee453b7e7c3da9124db12c85ca1a0420c19"
+          },
+          {
+            "title": "重構: 升級至 Elasticsearch 9，改用 Gateway/Proxy 連線",
+            "sha": "cccb86a2",
+            "project": "CrawlersV2/fb-cdp",
+            "url": "https://biglab.buygta.today/CrawlersV2/fb-cdp/-/commit/cccb86a2ac4fef9e2bca3b4b6d6a5a792ecb8f86"
+          },
+          {
+            "title": "重構: 升級至 Elasticsearch 9，改用 Gateway/Proxy 連線",
+            "sha": "b0de36ae",
+            "project": "CrawlersV2/mq-fbmessage-consumer",
+            "url": "https://biglab.buygta.today/CrawlersV2/mq-fbmessage-consumer/-/commit/b0de36ae5d052b5d0d6240406b1330756633ed15"
+          },
+          {
+            "title": "V3: 被動式瀏覽器爬蟲 + RabbitMQ 架構",
+            "sha": "df84d855",
+            "project": "yuriy.lin/browser_service",
+            "url": "https://biglab.buygta.today/yuriy.lin/browser_service/-/commit/df84d8558ab0003019a9a84bcdb2481c5a884d52"
+          },
+          {
+            "title": "P0 程式碼品質優化",
+            "sha": "cf9b2838",
+            "project": "yuriy.lin/browser_service",
+            "url": "https://biglab.buygta.today/yuriy.lin/browser_service/-/commit/cf9b2838fc0b0af5109782ea2d87ff115e79a9c9"
+          }
+        ]
+      },
+      "Ted": {
+        "count": 6,
+        "projects": [
+          "CrawlersV2/fanti-insights-api"
+        ],
+        "items": [
+          {
+            "title": "fix: use terms query instead of query_string OR to avoid too many clauses",
+            "sha": "830db7d8",
+            "project": "CrawlersV2/fanti-insights-api",
+            "url": "https://biglab.buygta.today/CrawlersV2/fanti-insights-api/-/commit/830db7d8ed60806892d23efb3c59df8942220880"
+          },
+          {
+            "title": "chore: update ES gateway config and migration test settings",
+            "sha": "a73da59c",
+            "project": "CrawlersV2/fanti-insights-api",
+            "url": "https://biglab.buygta.today/CrawlersV2/fanti-insights-api/-/commit/a73da59c80b5e5eabb789af500764a9c5cc5bdfd"
+          },
+          {
+            "title": "docs: add baseline testing guide, refresh test results, and too many clauses fix",
+            "sha": "29e250b3",
+            "project": "CrawlersV2/fanti-insights-api",
+            "url": "https://biglab.buygta.today/CrawlersV2/fanti-insights-api/-/commit/29e250b3430092598c0bb6e18a710f57a4d29411"
+          },
+          {
+            "title": "feat: improve baseline recording and comparison scripts",
+            "sha": "a3afd5b6",
+            "project": "CrawlersV2/fanti-insights-api",
+            "url": "https://biglab.buygta.today/CrawlersV2/fanti-insights-api/-/commit/a3afd5b67f0aeeab200ab33e1aa6fa198422a14b"
+          },
+          {
+            "title": "chore: add baseline data, test scripts, and supporting docs",
+            "sha": "46bc8040",
+            "project": "CrawlersV2/fanti-insights-api",
+            "url": "https://biglab.buygta.today/CrawlersV2/fanti-insights-api/-/commit/46bc80400e55c34c54058d8572fb8e25c5786131"
+          },
+          {
+            "title": "chore: clean up old baselines, add gitignore and testing README",
+            "sha": "7931b6ce",
+            "project": "CrawlersV2/fanti-insights-api",
+            "url": "https://biglab.buygta.today/CrawlersV2/fanti-insights-api/-/commit/7931b6ce62c6e5b61d46ba86fc966a3a3ef6614b"
           }
         ]
       }
@@ -10814,41 +11197,66 @@
     },
     "3/18": {
       "Joyce": {
-        "status": "🔴",
-        "commitCount": 1,
-        "hours": null
+        "status": "✅",
+        "commitCount": 18,
+        "hours": 3
+      },
+      "Ivy": {
+        "status": "✅",
+        "commitCount": 10,
+        "hours": 7
       },
       "日銜": {
+        "status": "✅",
+        "commitCount": 15,
+        "hours": 7
+      },
+      "Wendy": {
+        "status": "✅",
+        "commitCount": 6,
+        "hours": 7.5
+      },
+      "侑呈": {
         "status": "🔴",
-        "commitCount": 9,
+        "commitCount": 6,
         "hours": null
+      },
+      "Ted": {
+        "status": "✅",
+        "commitCount": 6,
+        "hours": 7
+      },
+      "家輝": {
+        "status": "⚠️",
+        "commitCount": 0,
+        "hours": 3.5
       },
       "Joe": {
-        "status": "🔴",
+        "status": "✅",
         "commitCount": 4,
-        "hours": null
+        "hours": 7
       },
       "Aaron": {
-        "status": "🔴",
-        "commitCount": 3,
-        "hours": null
+        "status": "✅",
+        "commitCount": 9,
+        "hours": 6.5
+      },
+      "哲緯": {
+        "status": "⚠️",
+        "commitCount": 0,
+        "hours": 8.5
       }
     }
   },
   "projectRisks": [
     {
+      "project": "KEYPO/keypo-engine-api",
+      "soloContributor": "Joyce",
+      "severity": "🟡"
+    },
+    {
       "project": "kol/kol-agent",
       "soloContributor": "Aaron",
-      "severity": "🟡"
-    },
-    {
-      "project": "CrawlersV2/bigcrawler-scrapy",
-      "soloContributor": "日銜",
-      "severity": "🟡"
-    },
-    {
-      "project": "CrawlersV2/fanti-insights-api",
-      "soloContributor": "Ted",
       "severity": "🟡"
     },
     {
@@ -10857,13 +11265,33 @@
       "severity": "🟡"
     },
     {
-      "project": "sinyi/sinyi-dashboard",
-      "soloContributor": "Wendy",
+      "project": "KEYPO/keypo-backend",
+      "soloContributor": "Joyce",
       "severity": "🟡"
     },
     {
-      "project": "llmprojects/keypo-agent",
-      "soloContributor": "Aaron",
+      "project": "CrawlersV2/bigcrawler-scrapy",
+      "soloContributor": "日銜",
+      "severity": "🟡"
+    },
+    {
+      "project": "CrawlersV2/fb-search-api",
+      "soloContributor": "侑呈",
+      "severity": "🟡"
+    },
+    {
+      "project": "CrawlersV2/fb-insights-scrapy",
+      "soloContributor": "侑呈",
+      "severity": "🟡"
+    },
+    {
+      "project": "CrawlersV2/fb-cdp",
+      "soloContributor": "侑呈",
+      "severity": "🟡"
+    },
+    {
+      "project": "CrawlersV2/mq-fbmessage-consumer",
+      "soloContributor": "侑呈",
       "severity": "🟡"
     },
     {
@@ -10872,8 +11300,8 @@
       "severity": "🟡"
     },
     {
-      "project": "KEYPO/keypo-engine-api",
-      "soloContributor": "Joyce",
+      "project": "CrawlersV2/fanti-insights-api",
+      "soloContributor": "Ted",
       "severity": "🟡"
     },
     {
@@ -10882,23 +11310,23 @@
       "severity": "🟡"
     },
     {
-      "project": "mason/truthsocial-crawler",
-      "soloContributor": "哲緯",
+      "project": "sinyi/sinyi-dashboard",
+      "soloContributor": "Wendy",
       "severity": "🟡"
     },
     {
-      "project": "dailyview/2024-dailyview-app",
-      "soloContributor": "Jason",
+      "project": "yuriy.lin/browser_service",
+      "soloContributor": "侑呈",
       "severity": "🟡"
     },
     {
-      "project": "dailyview/dv-remote-es",
-      "soloContributor": "Jason",
+      "project": "KEYPO/keypo-engine/on-premises-api-gateway",
+      "soloContributor": "Aaron",
       "severity": "🟡"
     },
     {
-      "project": "KEYPO/keypo-backend",
-      "soloContributor": "Joe",
+      "project": "llmprojects/keypo-agent",
+      "soloContributor": "Aaron",
       "severity": "🟡"
     }
   ]
