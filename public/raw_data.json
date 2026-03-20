@@ -4,1134 +4,1424 @@
       "Joyce": {
         "total": 8.5,
         "meeting": 3.5,
-        "dev": 5
+        "dev": 5,
+        "status": "reported"
       },
       "Ivy": {
         "total": 7,
         "meeting": 0,
-        "dev": 7
+        "dev": 7,
+        "status": "reported"
       },
       "Jason": {
         "total": 6.5,
         "meeting": 0.5,
-        "dev": 6
+        "dev": 6,
+        "status": "reported"
       },
       "日銜": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "unreported"
       },
       "Wendy": {
         "total": 7.5,
         "meeting": 0,
-        "dev": 7.5
+        "dev": 7.5,
+        "status": "reported"
       },
       "侑呈": {
         "total": 8,
         "meeting": 0,
-        "dev": 8
+        "dev": 8,
+        "status": "reported"
       },
       "禎佑": {
         "total": 8,
         "meeting": 0,
-        "dev": 8
+        "dev": 8,
+        "status": "reported"
       },
       "Ted": {
         "total": 6.5,
         "meeting": 0,
-        "dev": 6.5
+        "dev": 6.5,
+        "status": "reported"
       },
       "家輝": {
         "total": 6,
         "meeting": 0,
-        "dev": 6
+        "dev": 6,
+        "status": "reported"
       },
       "Joe": {
         "total": 4,
         "meeting": 0.5,
-        "dev": 3.5
+        "dev": 3.5,
+        "status": "reported"
       },
       "Aaron": {
         "total": 6,
         "meeting": 0,
-        "dev": 6
+        "dev": 6,
+        "status": "reported"
       },
       "哲緯": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "unreported"
       }
     },
     "2/24": {
       "Joyce": {
         "total": 10,
         "meeting": 5.5,
-        "dev": 4.5
+        "dev": 4.5,
+        "status": "reported"
       },
       "Ivy": {
         "total": 7,
         "meeting": 2,
-        "dev": 5
+        "dev": 5,
+        "status": "reported"
       },
       "Jason": {
         "total": 6,
         "meeting": 3.5,
-        "dev": 2.5
+        "dev": 2.5,
+        "status": "reported"
       },
       "日銜": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "unreported"
       },
       "Wendy": {
         "total": 7.5,
         "meeting": 2,
-        "dev": 5.5
+        "dev": 5.5,
+        "status": "reported"
       },
       "侑呈": {
         "total": 8,
         "meeting": 2,
-        "dev": 6
+        "dev": 6,
+        "status": "reported"
       },
       "禎佑": {
         "total": 7.5,
         "meeting": 3.5,
-        "dev": 4
+        "dev": 4,
+        "status": "reported"
       },
       "Ted": {
         "total": 6,
         "meeting": 3,
-        "dev": 3
+        "dev": 3,
+        "status": "reported"
       },
       "家輝": {
         "total": 7,
         "meeting": 0,
-        "dev": 7
+        "dev": 7,
+        "status": "reported"
       },
       "Joe": {
         "total": 7,
         "meeting": 1.5,
-        "dev": 5.5
+        "dev": 5.5,
+        "status": "reported"
       },
       "Aaron": {
         "total": 6,
         "meeting": 3.5,
-        "dev": 2.5
+        "dev": 2.5,
+        "status": "reported"
       },
       "哲緯": {
         "total": 4,
         "meeting": 2.5,
-        "dev": 1.5
+        "dev": 1.5,
+        "status": "reported"
       }
     },
     "2/25": {
       "Joyce": {
         "total": 8.5,
         "meeting": 0,
-        "dev": 8.5
+        "dev": 8.5,
+        "status": "reported"
       },
       "Ivy": {
         "total": 7.5,
         "meeting": 0.5,
-        "dev": 7
+        "dev": 7,
+        "status": "reported"
       },
       "Jason": {
         "total": 7,
         "meeting": 0,
-        "dev": 7
+        "dev": 7,
+        "status": "reported"
       },
       "日銜": {
         "total": 7,
         "meeting": 0,
-        "dev": 7
+        "dev": 7,
+        "status": "reported"
       },
       "Wendy": {
         "total": 7.5,
         "meeting": 0.5,
-        "dev": 7
+        "dev": 7,
+        "status": "reported"
       },
       "侑呈": {
         "total": 8,
         "meeting": 0,
-        "dev": 8
+        "dev": 8,
+        "status": "reported"
       },
       "禎佑": {
         "total": 7.5,
         "meeting": 0,
-        "dev": 7.5
+        "dev": 7.5,
+        "status": "reported"
       },
       "Ted": {
         "total": 9.5,
         "meeting": 0,
-        "dev": 9.5
+        "dev": 9.5,
+        "status": "reported"
       },
       "家輝": {
         "total": 8,
         "meeting": 0,
-        "dev": 8
+        "dev": 8,
+        "status": "reported"
       },
       "Joe": {
         "total": 7,
         "meeting": 0.5,
-        "dev": 6.5
+        "dev": 6.5,
+        "status": "reported"
       },
       "Aaron": {
         "total": 7,
         "meeting": 0,
-        "dev": 7
+        "dev": 7,
+        "status": "reported"
       },
       "哲緯": {
         "total": 17,
         "meeting": 0,
-        "dev": 17
+        "dev": 17,
+        "status": "reported"
       }
     },
     "2/26": {
       "Joyce": {
         "total": 12,
         "meeting": 2,
-        "dev": 10
+        "dev": 10,
+        "status": "reported"
       },
       "Ivy": {
         "total": 7.5,
         "meeting": 0,
-        "dev": 7.5
+        "dev": 7.5,
+        "status": "reported"
       },
       "Jason": {
         "total": 7,
         "meeting": 0,
-        "dev": 7
+        "dev": 7,
+        "status": "reported"
       },
       "日銜": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "unreported"
       },
       "Wendy": {
         "total": 6,
         "meeting": 0,
-        "dev": 6
+        "dev": 6,
+        "status": "reported"
       },
       "侑呈": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "unreported"
       },
       "禎佑": {
         "total": 7,
         "meeting": 1,
-        "dev": 6
+        "dev": 6,
+        "status": "reported"
       },
       "Ted": {
         "total": 5,
         "meeting": 0,
-        "dev": 5
+        "dev": 5,
+        "status": "reported"
       },
       "家輝": {
         "total": 6,
         "meeting": 0,
-        "dev": 6
+        "dev": 6,
+        "status": "reported"
       },
       "Joe": {
         "total": 7,
         "meeting": 0.5,
-        "dev": 6.5
+        "dev": 6.5,
+        "status": "reported"
       },
       "Aaron": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "unreported"
       },
       "哲緯": {
         "total": 9.5,
         "meeting": 1,
-        "dev": 8.5
+        "dev": 8.5,
+        "status": "reported"
       }
     },
     "2/27": {
       "Joyce": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "unreported"
       },
       "Ivy": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "unreported"
       },
       "Jason": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "unreported"
       },
       "日銜": {
         "total": 7,
         "meeting": 0,
-        "dev": 7
+        "dev": 7,
+        "status": "reported"
       },
       "Wendy": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "unreported"
       },
       "侑呈": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "unreported"
       },
       "禎佑": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "unreported"
       },
       "Ted": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "unreported"
       },
       "家輝": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "unreported"
       },
       "Joe": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "unreported"
       },
       "Aaron": {
         "total": 6.5,
         "meeting": 0.5,
-        "dev": 6
+        "dev": 6,
+        "status": "reported"
       },
       "哲緯": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "unreported"
       }
     },
     "3/2": {
       "Joyce": {
         "total": 11,
         "meeting": 1,
-        "dev": 10
+        "dev": 10,
+        "status": "reported"
       },
       "Ivy": {
         "total": 7.5,
         "meeting": 0,
-        "dev": 7.5
+        "dev": 7.5,
+        "status": "reported"
       },
       "Jason": {
         "total": 6.5,
         "meeting": 0,
-        "dev": 6.5
+        "dev": 6.5,
+        "status": "reported"
       },
       "日銜": {
         "total": 6.5,
         "meeting": 0,
-        "dev": 6.5
+        "dev": 6.5,
+        "status": "reported"
       },
       "Wendy": {
         "total": 7.5,
         "meeting": 0,
-        "dev": 7.5
+        "dev": 7.5,
+        "status": "reported"
       },
       "侑呈": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "unreported"
       },
       "禎佑": {
         "total": 8,
         "meeting": 0,
-        "dev": 8
+        "dev": 8,
+        "status": "reported"
       },
       "Ted": {
         "total": 7,
         "meeting": 0.5,
-        "dev": 6.5
+        "dev": 6.5,
+        "status": "reported"
       },
       "家輝": {
         "total": 6.5,
         "meeting": 0,
-        "dev": 6.5
+        "dev": 6.5,
+        "status": "reported"
       },
       "Joe": {
         "total": 7,
         "meeting": 1,
-        "dev": 6
+        "dev": 6,
+        "status": "reported"
       },
       "Aaron": {
         "total": 7,
         "meeting": 0,
-        "dev": 7
+        "dev": 7,
+        "status": "reported"
       },
       "哲緯": {
         "total": 9.5,
         "meeting": 0,
-        "dev": 9.5
+        "dev": 9.5,
+        "status": "reported"
       }
     },
     "3/3": {
       "Joyce": {
         "total": 8.5,
         "meeting": 4.5,
-        "dev": 4
+        "dev": 4,
+        "status": "reported"
       },
       "Ivy": {
         "total": 7,
         "meeting": 1,
-        "dev": 6
+        "dev": 6,
+        "status": "reported"
       },
       "Jason": {
         "total": 6.5,
         "meeting": 1,
-        "dev": 5.5
+        "dev": 5.5,
+        "status": "reported"
       },
       "日銜": {
         "total": 6.5,
         "meeting": 2.5,
-        "dev": 4
+        "dev": 4,
+        "status": "reported"
       },
       "Wendy": {
         "total": 6.5,
         "meeting": 2,
-        "dev": 4.5
+        "dev": 4.5,
+        "status": "reported"
       },
       "侑呈": {
         "total": 8,
         "meeting": 1,
-        "dev": 7
+        "dev": 7,
+        "status": "reported"
       },
       "禎佑": {
         "total": 7.5,
         "meeting": 1,
-        "dev": 6.5
+        "dev": 6.5,
+        "status": "reported"
       },
       "Ted": {
         "total": 6.5,
         "meeting": 2.5,
-        "dev": 4
+        "dev": 4,
+        "status": "reported"
       },
       "家輝": {
         "total": 8,
         "meeting": 0,
-        "dev": 8
+        "dev": 8,
+        "status": "reported"
       },
       "Joe": {
         "total": 7,
         "meeting": 2.5,
-        "dev": 4.5
+        "dev": 4.5,
+        "status": "reported"
       },
       "Aaron": {
         "total": 6.5,
         "meeting": 1,
-        "dev": 5.5
+        "dev": 5.5,
+        "status": "reported"
       },
       "哲緯": {
         "total": 7.5,
         "meeting": 2,
-        "dev": 5.5
+        "dev": 5.5,
+        "status": "reported"
       }
     },
     "3/4": {
       "Joyce": {
         "total": 2.5,
         "meeting": 2.5,
-        "dev": 0
+        "dev": 0,
+        "status": "reported"
       },
       "Ivy": {
         "total": 7,
         "meeting": 1.5,
-        "dev": 5.5
+        "dev": 5.5,
+        "status": "reported"
       },
       "Jason": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "unreported"
       },
       "日銜": {
         "total": 7,
         "meeting": 2,
-        "dev": 5
+        "dev": 5,
+        "status": "reported"
       },
       "Wendy": {
         "total": 8,
         "meeting": 2.5,
-        "dev": 5.5
+        "dev": 5.5,
+        "status": "reported"
       },
       "侑呈": {
         "total": 8.5,
         "meeting": 0,
-        "dev": 8.5
+        "dev": 8.5,
+        "status": "reported"
       },
       "禎佑": {
         "total": 7.5,
         "meeting": 1.5,
-        "dev": 6
+        "dev": 6,
+        "status": "reported"
       },
       "Ted": {
         "total": 7,
         "meeting": 1,
-        "dev": 6
+        "dev": 6,
+        "status": "reported"
       },
       "家輝": {
         "total": 7,
         "meeting": 2,
-        "dev": 5
+        "dev": 5,
+        "status": "reported"
       },
       "Joe": {
         "total": 7,
         "meeting": 0.5,
-        "dev": 6.5
+        "dev": 6.5,
+        "status": "reported"
       },
       "Aaron": {
         "total": 7,
         "meeting": 1,
-        "dev": 6
+        "dev": 6,
+        "status": "reported"
       },
       "哲緯": {
         "total": 13,
         "meeting": 3.5,
-        "dev": 9.5
+        "dev": 9.5,
+        "status": "reported"
       }
     },
     "3/5": {
       "Joyce": {
         "total": 10,
         "meeting": 0,
-        "dev": 10
+        "dev": 10,
+        "status": "reported"
       },
       "Ivy": {
         "total": 4,
         "meeting": 0,
-        "dev": 4
+        "dev": 4,
+        "status": "reported"
       },
       "Jason": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "leave"
       },
       "日銜": {
         "total": 7,
         "meeting": 0,
-        "dev": 7
+        "dev": 7,
+        "status": "reported"
       },
       "Wendy": {
         "total": 7.5,
         "meeting": 0.5,
-        "dev": 7
+        "dev": 7,
+        "status": "reported"
       },
       "侑呈": {
         "total": 8,
         "meeting": 0,
-        "dev": 8
+        "dev": 8,
+        "status": "reported"
       },
       "禎佑": {
         "total": 7.5,
         "meeting": 0,
-        "dev": 7.5
+        "dev": 7.5,
+        "status": "reported"
       },
       "Ted": {
         "total": 6.5,
         "meeting": 0,
-        "dev": 6.5
+        "dev": 6.5,
+        "status": "reported"
       },
       "家輝": {
         "total": 7,
         "meeting": 0,
-        "dev": 7
+        "dev": 7,
+        "status": "reported"
       },
       "Joe": {
         "total": 7,
         "meeting": 1,
-        "dev": 6
+        "dev": 6,
+        "status": "reported"
       },
       "Aaron": {
         "total": 7,
         "meeting": 1,
-        "dev": 6
+        "dev": 6,
+        "status": "reported"
       },
       "哲緯": {
         "total": 6.5,
         "meeting": 0,
-        "dev": 6.5
+        "dev": 6.5,
+        "status": "reported"
       }
     },
     "3/6": {
       "Joyce": {
         "total": 10.5,
         "meeting": 2.5,
-        "dev": 8
+        "dev": 8,
+        "status": "reported"
       },
       "Ivy": {
         "total": 7.5,
         "meeting": 1.5,
-        "dev": 6
+        "dev": 6,
+        "status": "reported"
       },
       "Jason": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "leave"
       },
       "日銜": {
         "total": 6.5,
         "meeting": 0,
-        "dev": 6.5
+        "dev": 6.5,
+        "status": "reported"
       },
       "Wendy": {
         "total": 7.5,
         "meeting": 0,
-        "dev": 7.5
+        "dev": 7.5,
+        "status": "reported"
       },
       "侑呈": {
         "total": 8,
         "meeting": 0,
-        "dev": 8
+        "dev": 8,
+        "status": "reported"
       },
       "禎佑": {
         "total": 7.5,
         "meeting": 0,
-        "dev": 7.5
+        "dev": 7.5,
+        "status": "reported"
       },
       "Ted": {
         "total": 8,
         "meeting": 0,
-        "dev": 8
+        "dev": 8,
+        "status": "reported"
       },
       "家輝": {
         "total": 7.5,
         "meeting": 0,
-        "dev": 7.5
+        "dev": 7.5,
+        "status": "reported"
       },
       "Joe": {
         "total": 7,
         "meeting": 0,
-        "dev": 7
+        "dev": 7,
+        "status": "reported"
       },
       "Aaron": {
         "total": 7.5,
         "meeting": 0,
-        "dev": 7.5
+        "dev": 7.5,
+        "status": "reported"
       },
       "哲緯": {
         "total": 7,
         "meeting": 1.5,
-        "dev": 5.5
+        "dev": 5.5,
+        "status": "reported"
       }
     },
     "3/9": {
       "Joyce": {
         "total": 12.5,
         "meeting": 0,
-        "dev": 12.5
+        "dev": 12.5,
+        "status": "reported"
       },
       "Ivy": {
         "total": 7,
         "meeting": 0,
-        "dev": 7
+        "dev": 7,
+        "status": "reported"
       },
       "Jason": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "leave"
       },
       "日銜": {
         "total": 7,
         "meeting": 0,
-        "dev": 7
+        "dev": 7,
+        "status": "reported"
       },
       "Wendy": {
         "total": 7,
         "meeting": 0,
-        "dev": 7
+        "dev": 7,
+        "status": "reported"
       },
       "侑呈": {
         "total": 8,
         "meeting": 0,
-        "dev": 8
+        "dev": 8,
+        "status": "reported"
       },
       "禎佑": {
         "total": 8,
         "meeting": 0,
-        "dev": 8
+        "dev": 8,
+        "status": "reported"
       },
       "Ted": {
         "total": 8.5,
         "meeting": 0,
-        "dev": 8.5
+        "dev": 8.5,
+        "status": "reported"
       },
       "家輝": {
         "total": 8,
         "meeting": 0,
-        "dev": 8
+        "dev": 8,
+        "status": "reported"
       },
       "Joe": {
         "total": 6.5,
         "meeting": 0,
-        "dev": 6.5
+        "dev": 6.5,
+        "status": "reported"
       },
       "Aaron": {
         "total": 6,
         "meeting": 2,
-        "dev": 4
+        "dev": 4,
+        "status": "reported"
       },
       "哲緯": {
         "total": 5,
         "meeting": 0,
-        "dev": 5
+        "dev": 5,
+        "status": "reported"
       }
     },
     "3/10": {
       "Joyce": {
         "total": 9.5,
         "meeting": 5,
-        "dev": 4.5
+        "dev": 4.5,
+        "status": "reported"
       },
       "Ivy": {
         "total": 7.5,
         "meeting": 1,
-        "dev": 6.5
+        "dev": 6.5,
+        "status": "reported"
       },
       "Jason": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "leave"
       },
       "日銜": {
         "total": 7,
         "meeting": 1,
-        "dev": 6
+        "dev": 6,
+        "status": "reported"
       },
       "Wendy": {
         "total": 7.5,
         "meeting": 0,
-        "dev": 7.5
+        "dev": 7.5,
+        "status": "reported"
       },
       "侑呈": {
         "total": 8,
         "meeting": 1,
-        "dev": 7
+        "dev": 7,
+        "status": "reported"
       },
       "禎佑": {
         "total": 6,
         "meeting": 0,
-        "dev": 6
+        "dev": 6,
+        "status": "reported"
       },
       "Ted": {
         "total": 7,
         "meeting": 2.5,
-        "dev": 4.5
+        "dev": 4.5,
+        "status": "reported"
       },
       "家輝": {
         "total": 6.5,
         "meeting": 2.5,
-        "dev": 4
+        "dev": 4,
+        "status": "reported"
       },
       "Joe": {
         "total": 7,
         "meeting": 2,
-        "dev": 5
+        "dev": 5,
+        "status": "reported"
       },
       "Aaron": {
         "total": 6,
         "meeting": 1.5,
-        "dev": 4.5
+        "dev": 4.5,
+        "status": "reported"
       },
       "哲緯": {
         "total": 7.5,
         "meeting": 0,
-        "dev": 7.5
+        "dev": 7.5,
+        "status": "reported"
       }
     },
     "3/11": {
       "Joyce": {
         "total": 9,
         "meeting": 1.5,
-        "dev": 7.5
+        "dev": 7.5,
+        "status": "reported"
       },
       "Ivy": {
         "total": 7.5,
         "meeting": 0,
-        "dev": 7.5
+        "dev": 7.5,
+        "status": "reported"
       },
       "Jason": {
         "total": 6.5,
         "meeting": 1,
-        "dev": 5.5
+        "dev": 5.5,
+        "status": "reported"
       },
       "日銜": {
         "total": 7,
         "meeting": 0,
-        "dev": 7
+        "dev": 7,
+        "status": "reported"
       },
       "Wendy": {
         "total": 7,
         "meeting": 0.5,
-        "dev": 6.5
+        "dev": 6.5,
+        "status": "reported"
       },
       "侑呈": {
         "total": 8.5,
         "meeting": 0,
-        "dev": 8.5
+        "dev": 8.5,
+        "status": "reported"
       },
       "禎佑": {
         "total": 10.5,
         "meeting": 2.5,
-        "dev": 8
+        "dev": 8,
+        "status": "reported"
       },
       "Ted": {
         "total": 8,
         "meeting": 0,
-        "dev": 8
+        "dev": 8,
+        "status": "reported"
       },
       "家輝": {
         "total": 7.5,
         "meeting": 0,
-        "dev": 7.5
+        "dev": 7.5,
+        "status": "reported"
       },
       "Joe": {
         "total": 7,
         "meeting": 1.5,
-        "dev": 5.5
+        "dev": 5.5,
+        "status": "reported"
       },
       "Aaron": {
         "total": 6.5,
         "meeting": 2.5,
-        "dev": 4
+        "dev": 4,
+        "status": "reported"
       },
       "哲緯": {
         "total": 17,
         "meeting": 0,
-        "dev": 17
+        "dev": 17,
+        "status": "reported"
       }
     },
     "3/12": {
       "Joyce": {
         "total": 10.5,
         "meeting": 0,
-        "dev": 10.5
+        "dev": 10.5,
+        "status": "reported"
       },
       "Ivy": {
         "total": 7,
         "meeting": 1,
-        "dev": 6
+        "dev": 6,
+        "status": "reported"
       },
       "Jason": {
         "total": 6.5,
         "meeting": 1,
-        "dev": 5.5
+        "dev": 5.5,
+        "status": "reported"
       },
       "日銜": {
         "total": 7.5,
         "meeting": 0,
-        "dev": 7.5
+        "dev": 7.5,
+        "status": "reported"
       },
       "Wendy": {
         "total": 7.5,
         "meeting": 0,
-        "dev": 7.5
+        "dev": 7.5,
+        "status": "reported"
       },
       "侑呈": {
         "total": 8.5,
         "meeting": 0,
-        "dev": 8.5
+        "dev": 8.5,
+        "status": "reported"
       },
       "禎佑": {
         "total": 7.5,
         "meeting": 1,
-        "dev": 6.5
+        "dev": 6.5,
+        "status": "reported"
       },
       "Ted": {
         "total": 7.5,
         "meeting": 0,
-        "dev": 7.5
+        "dev": 7.5,
+        "status": "reported"
       },
       "家輝": {
         "total": 7.5,
         "meeting": 0,
-        "dev": 7.5
+        "dev": 7.5,
+        "status": "reported"
       },
       "Joe": {
         "total": 7,
         "meeting": 0.5,
-        "dev": 6.5
+        "dev": 6.5,
+        "status": "reported"
       },
       "Aaron": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "unreported"
       },
       "哲緯": {
         "total": 11.5,
         "meeting": 0,
-        "dev": 11.5
+        "dev": 11.5,
+        "status": "reported"
       }
     },
     "3/13": {
       "Joyce": {
         "total": 7.5,
         "meeting": 3.5,
-        "dev": 4
+        "dev": 4,
+        "status": "reported"
       },
       "Ivy": {
         "total": 8,
         "meeting": 1.5,
-        "dev": 6.5
+        "dev": 6.5,
+        "status": "reported"
       },
       "Jason": {
         "total": 7.5,
         "meeting": 1.5,
-        "dev": 6
+        "dev": 6,
+        "status": "reported"
       },
       "日銜": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "unreported"
       },
       "Wendy": {
         "total": 7.5,
         "meeting": 1.5,
-        "dev": 6
+        "dev": 6,
+        "status": "reported"
       },
       "侑呈": {
         "total": 6.5,
         "meeting": 1.5,
-        "dev": 5
+        "dev": 5,
+        "status": "reported"
       },
       "禎佑": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "unreported"
       },
       "Ted": {
         "total": 10,
         "meeting": 3,
-        "dev": 7
+        "dev": 7,
+        "status": "reported"
       },
       "家輝": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "leave"
       },
       "Joe": {
         "total": 11,
         "meeting": 3,
-        "dev": 8
+        "dev": 8,
+        "status": "reported"
       },
       "Aaron": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "leave"
       },
       "哲緯": {
         "total": 7,
         "meeting": 1.5,
-        "dev": 5.5
+        "dev": 5.5,
+        "status": "reported"
       }
     },
     "3/16": {
       "Joyce": {
         "total": 9,
         "meeting": 0,
-        "dev": 9
+        "dev": 9,
+        "status": "reported"
       },
       "Ivy": {
         "total": 7,
         "meeting": 3.5,
-        "dev": 3.5
+        "dev": 3.5,
+        "status": "reported"
       },
       "Jason": {
         "total": 7,
         "meeting": 0,
-        "dev": 7
+        "dev": 7,
+        "status": "reported"
       },
       "日銜": {
         "total": 6.5,
         "meeting": 1.5,
-        "dev": 5
+        "dev": 5,
+        "status": "reported"
       },
       "Wendy": {
         "total": 7.5,
         "meeting": 0,
-        "dev": 7.5
+        "dev": 7.5,
+        "status": "reported"
       },
       "侑呈": {
         "total": 4,
         "meeting": 0,
-        "dev": 4
+        "dev": 4,
+        "status": "reported"
       },
       "禎佑": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "leave"
       },
       "Ted": {
         "total": 8,
         "meeting": 0,
-        "dev": 8
+        "dev": 8,
+        "status": "reported"
       },
       "家輝": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "leave"
       },
       "Joe": {
         "total": 4,
         "meeting": 0,
-        "dev": 4
+        "dev": 4,
+        "status": "reported"
       },
       "Aaron": {
         "total": 6.5,
         "meeting": 0,
-        "dev": 6.5
+        "dev": 6.5,
+        "status": "reported"
       },
       "哲緯": {
         "total": 7.5,
         "meeting": 0,
-        "dev": 7.5
+        "dev": 7.5,
+        "status": "reported"
       }
     },
     "3/17": {
       "Joyce": {
         "total": 9,
         "meeting": 4.5,
-        "dev": 4.5
+        "dev": 4.5,
+        "status": "reported"
       },
       "Ivy": {
         "total": 7,
         "meeting": 0.5,
-        "dev": 6.5
+        "dev": 6.5,
+        "status": "reported"
       },
       "Jason": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "unreported"
       },
       "日銜": {
         "total": 7,
         "meeting": 0,
-        "dev": 7
+        "dev": 7,
+        "status": "reported"
       },
       "Wendy": {
         "total": 6.5,
         "meeting": 1.5,
-        "dev": 5
+        "dev": 5,
+        "status": "reported"
       },
       "侑呈": {
         "total": 7,
         "meeting": 0,
-        "dev": 7
+        "dev": 7,
+        "status": "reported"
       },
       "禎佑": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "leave"
       },
       "Ted": {
         "total": 9.5,
         "meeting": 2,
-        "dev": 7.5
+        "dev": 7.5,
+        "status": "reported"
       },
       "家輝": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "leave"
       },
       "Joe": {
         "total": 7,
         "meeting": 2.5,
-        "dev": 4.5
+        "dev": 4.5,
+        "status": "reported"
       },
       "Aaron": {
         "total": 6.5,
         "meeting": 1.5,
-        "dev": 5
+        "dev": 5,
+        "status": "reported"
       },
       "哲緯": {
         "total": 7,
         "meeting": 1.5,
-        "dev": 5.5
+        "dev": 5.5,
+        "status": "reported"
       }
     },
     "3/18": {
       "Joyce": {
         "total": 3,
         "meeting": 0.5,
-        "dev": 2.5
+        "dev": 2.5,
+        "status": "reported"
       },
       "Ivy": {
         "total": 7,
         "meeting": 1.5,
-        "dev": 5.5
+        "dev": 5.5,
+        "status": "reported"
       },
       "Jason": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "unreported"
       },
       "日銜": {
         "total": 7,
         "meeting": 1,
-        "dev": 6
+        "dev": 6,
+        "status": "reported"
       },
       "Wendy": {
         "total": 7.5,
         "meeting": 1.5,
-        "dev": 6
+        "dev": 6,
+        "status": "reported"
       },
       "侑呈": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "unreported"
       },
       "禎佑": {
         "total": null,
         "meeting": null,
-        "dev": null
+        "dev": null,
+        "status": "leave"
       },
       "Ted": {
         "total": 7,
         "meeting": 1,
-        "dev": 6
+        "dev": 6,
+        "status": "reported"
       },
       "家輝": {
         "total": 3.5,
         "meeting": 1.5,
-        "dev": 2
+        "dev": 2,
+        "status": "reported"
       },
       "Joe": {
         "total": 7,
         "meeting": 0.5,
-        "dev": 6.5
+        "dev": 6.5,
+        "status": "reported"
       },
       "Aaron": {
         "total": 6.5,
         "meeting": 2,
-        "dev": 4.5
+        "dev": 4.5,
+        "status": "reported"
       },
       "哲緯": {
         "total": 8.5,
         "meeting": 1.5,
-        "dev": 7
+        "dev": 7,
+        "status": "reported"
+      }
+    },
+    "3/19": {
+      "Joyce": {
+        "total": 8,
+        "meeting": 0,
+        "dev": 8,
+        "status": "reported"
+      },
+      "Ivy": {
+        "total": 8,
+        "meeting": 0.5,
+        "dev": 7.5,
+        "status": "reported"
+      },
+      "Jason": {
+        "total": 7,
+        "meeting": 0,
+        "dev": 7,
+        "status": "reported"
+      },
+      "日銜": {
+        "total": 7,
+        "meeting": 0.5,
+        "dev": 6.5,
+        "status": "reported"
+      },
+      "Wendy": {
+        "total": 7.5,
+        "meeting": 0.5,
+        "dev": 7,
+        "status": "reported"
+      },
+      "侑呈": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "leave"
+      },
+      "禎佑": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "leave"
+      },
+      "Ted": {
+        "total": 10,
+        "meeting": 0,
+        "dev": 10,
+        "status": "reported"
+      },
+      "家輝": {
+        "total": 7,
+        "meeting": 0,
+        "dev": 7,
+        "status": "reported"
+      },
+      "Joe": {
+        "total": 6,
+        "meeting": 1,
+        "dev": 5,
+        "status": "reported"
+      },
+      "Aaron": {
+        "total": 7.5,
+        "meeting": 1,
+        "dev": 6.5,
+        "status": "reported"
+      },
+      "哲緯": {
+        "total": 7.5,
+        "meeting": 1.5,
+        "dev": 6,
+        "status": "reported"
       }
     }
   },
   "issues": [
     {
       "member": "Joyce",
-      "severity": "🟡",
-      "text": "工時偏低 3hr"
+      "severity": "🟢",
+      "text": "改善 3→8hr"
     },
     {
       "member": "Ivy",
       "severity": "🟢",
-      "text": "穩定 7hr"
+      "text": "穩定 8hr"
     },
     {
       "member": "Jason",
-      "severity": "🔴",
-      "text": "連續 2 天未回報"
+      "severity": "🟢",
+      "text": "穩定 7hr"
     },
     {
       "member": "日銜",
@@ -1145,8 +1435,8 @@
     },
     {
       "member": "侑呈",
-      "severity": "🔴",
-      "text": "未回報 3/18"
+      "severity": "🟠",
+      "text": "休假 3/19-3/20"
     },
     {
       "member": "禎佑",
@@ -1155,23 +1445,23 @@
     },
     {
       "member": "Ted",
-      "severity": "🟢",
-      "text": "穩定 7hr"
+      "severity": "🟡",
+      "text": "超時 10hr"
     },
     {
       "member": "家輝",
-      "severity": "🟡",
-      "text": "工時偏低 3.5hr"
+      "severity": "🟢",
+      "text": "改善 3.5→7hr"
     },
     {
-      "member": "Joe",
+      "member": "Aaron",
       "severity": "🟢",
-      "text": "穩定 7hr"
+      "text": "穩定 7.5hr"
     },
     {
       "member": "哲緯",
       "severity": "🟢",
-      "text": "穩定 8.5hr"
+      "text": "穩定 7.5hr"
     }
   ],
   "leave": {
@@ -1191,6 +1481,10 @@
       {
         "start": "3/13",
         "end": "3/18"
+      },
+      {
+        "start": "3/20",
+        "end": "3/20"
       }
     ],
     "禎佑": [
@@ -1242,78 +1536,78 @@
   },
   "dailyUpdates": [
     {
-      "date": "3/18",
-      "member": "Ted",
-      "createTime": "2026-03-19T02:52:17.347487Z",
-      "text": "3/18 工項：\n1. [In Progress] KEYPO engine API gateway\n    - [To Do] 災難演練問題修正\n2. [In Progress] Fanti\n    - [Done] Fanti refresh api 測試 - 確認資料更新, 寫入問題\n    - [In Progress] wordcount api es 查詢語法整理, content_tags, hash_tags 測試腳本\n    - [Done] 修復 ES 9 too many clauses 問題 - 改用 terms query 取代 query_string OR (830db7d) (1H)\n    - [Done] 更新 ES gateway config 和 migration test 設定 (a73da59) (0.5H)\n    - [Done] 更新 baseline testing，更新測試結果 (29e250b) (a3afd5b)  (46bc804) (7931b6c) (4H)\n3. [In Progress] KEYPO\n    - [In Progress] gpt report 換模型規劃 (0.5H)\n4. [Done] 讀書會 (1H)\n\nblock:\n[Fanti] 資料搬遷 script \nbacklog:\n速報 gemini3 評估\nAI 報告切換模型 - 使用 DSPy 進行效果評估與提示詞優化\n同步 Fanti 狀態同步給 pm\n\n3/19 今日工項：\n1. [In Progress] KEYPO engine API gateway\n    - [In Progress] engine API 壓測問題確認 \n    - [To Do] 災難演練問題修正 \n2. [In Progress] Fanti\n    - [In Progress] Fanti refresh api 測試規劃 \n    - [In Progress] wordcount api es 查詢語法整理, content_tags, hash_tags 測試腳本\n    - [In Progress] 新增 ES 相關測試\n3. [To Do] KEYPO\n    - [In Progress] gpt report 換模型規劃",
-      "total": 7
-    },
-    {
-      "date": "3/18",
+      "date": "3/19",
       "member": "家輝",
-      "createTime": "2026-03-19T02:00:23.474751Z",
-      "text": "3/13 進度：\n1. [In Progress] es9 資料內語系判別(2H)\n2. [Done] 工程部週會(1.5H)\n\nPending\n1. [In Progress] 活動文後續觀察\n2. [In Progress] ai機器人套件升級 > 初始環境建立與部署\n3. [To Do] 調查rabbit mq資料塞車時，資源佔用狀況\n4. [In Progress] rmq&伺服器監控警報機制\n5. [In Progress] 與佳龍確認新版合約\n\n3/19 今日工項： \n1. [To Do] site表格資料對應\n2. [In Progress] es9 資料內語系判別\n3. [To Do] chatgpt停用通知信\n4. [To Do] gcp發票報帳\n5. [To Do] 開立財務顧問帳號\n6. [To Do] 確認gcp季度報告時間",
-      "total": 3.5
-    },
-    {
-      "date": "3/18",
-      "member": "哲緯",
-      "createTime": "2026-03-19T01:59:51.030671Z",
-      "text": "3/18 進度：\n1. [Done]Threads日常需求處理 (0.5H)\n2. LSR\n   - LSR (5H) link\n      - [Done] init_tokens 改為依序嘗試所有 proxy 避免單一 proxy 故障導致驗證跳過\n      - [Done] 摘要須綜合所有文章觀點，禁止單一 POV 比重過高\n      - [Done] 摘要僅描述核心事件，排除無關延伸資訊\n      - [Done] 區分摘要（全局概述）與觀點（具體立場）角色\n      - [Done] 觀點標題與內文禁止粗俗字眼，須改寫為中性表達\n      - [Done] 移除絕對禁止詞彙清單，改為可使用但需平均分散\n      - [Done] 同步放寬合併話題標題用詞規則，保持兩階段一致\n      - [Done] 兜底合併重構 — 新增 B-1 全局合併讓高熱度話題也有合併機會\n      - [Done] 強化反幻覺約束 — Stage 1/2/4 prompt 三管齊下防止 AI 幻覺\n      - [Done] Stage 6 移除生圖排除分類 13/14，所有分類皆生成圖片\n      - [Done] Stage 5 LLM 濃縮超標 summary — 超過 150 字自動重寫\n   - LSR API link\n      - [Done] SCENE_EXTRACT_PROMPT 增加無實體場所話題判斷邏輯\n      - [Done] visual_subject → scene 場景化重構\n   - LSR 會議（0.5H）\n3. Threads(0.5H)\n   - [Inprogress]調整測試請求延遲延長\n4. 讀書會 (1H)\n5. 各服務計算CPU/RAM/SSD使用量（1H）link\n\nBlockers:\n1. BM wireframe\n2. Threads 文章AI機器人自動停止問題\n3. Threads Alert優化\n4. KETKYC\n   - 調查物料監控模組查詢Timeout問題\n   - 專案瘦身\n\n3/19 工項：\n1. [To Do] Threads日常需求處理\n2. [To Do] LSR專案\n   - 處理客戶3/17的反饋\n3. [To Do] Threads\n   - 持續調整請求延遲，因太短則Proxy不穩，拉長則排程跑不完",
-      "total": 8.5
-    },
-    {
-      "date": "3/18",
-      "member": "日銜",
-      "createTime": "2026-03-19T01:55:40.730703Z",
-      "text": "3/18 進度：\n1. [Done] Issue#3017 link (0.5H)\n2.[Done] Issue#3018 link (1H)\n3.[In Progress]數據需求申請 (4H)\n[Done] 崛起新傳媒 link\n[Done] Verse link\n[Done] 臺中市政府 link\n[Done] 樂聯網 link\n[In Progress] 華盛頓新聞通訊社\n4.[Done] 讀書會 (1H)\n5.[Done] 新站台回補近三個月資料 (0.5H)\n\nBlockers:\n\n3/19 今日工項：\n1. [In Progress] 數據需求申請\n2.[To Do] Issue#3021 link\n3.[To Do] Issue#344 link",
+      "createTime": "2026-03-20T03:21:23.124895Z",
+      "text": "3/19 進度：\n1. [Done] es9 資料內語系判別(3H)\n2. [Done] 管理中心月會(1H)\n3. 各項庶務處理(3H)\n    [In Progress] chatgpt停用通知信\n    [Done] gcp發票報帳\n    [Done] 開立財務顧問帳號\n    [In Progress]確認gcp季度報告時間\n    [Done] 轉移 google workspace經銷商\n\nPending\n1. [In Progress] 活動文後續觀察\n2. [In Progress] ai機器人套件升級 > 初始環境建立與部署\n3. [To Do] 調查rabbit mq資料塞車時，資源佔用狀況\n4. [In Progress] rmq&伺服器監控警報機制\n5. [In Progress] 與佳龍確認新版合約\n\n3/20 今日工項： \n1. [To Do] site表格資料對應\n2. [To Do] 協助天下拍攝",
       "total": 7
     },
     {
-      "date": "3/18",
-      "member": "Aaron",
-      "createTime": "2026-03-19T01:53:48.226607Z",
-      "text": "3/18 工項/進度：\n1. [Done] 網紅 Agent 會議 (1 H)\n2. [Done] 讀書會 (1 H)\n3. [Done] 1 on 1 (1 H)\n4. [Done] 壓測 ES (2 H)\n5. [Done] LookerStudio Dashboard 少欄位 issue (0.5 H)\n6. [In Progress] 部署 KOL Agent (1 H)\n[Done] 網路, Artifact Registry, Secret, 設定\n[In Progress] Service Account 設定缺少權限\n\nBacklog / Blockers:  待辦事項 / 阻礙因素：\nNone\n\n3/19 今日工項：\n1. [To Do] KEYPO Agent 會議\n2. [In Progress] 部署 KOL Agent\n[In Progress] Service Account 設定缺少權限\n3. [In Progress] Grafana 監控 GKE",
-      "total": 6.5
+      "date": "3/19",
+      "member": "日銜",
+      "createTime": "2026-03-20T02:26:04.449983Z",
+      "text": "3/19 進度：\n1. [Done] issue#3024 （1.5H)\n已完成修復與回爬遺漏文章\n2. [Done] issue#3029 (1.5H)\n已完成修復與回爬遺漏文章\n3.[In Progress] issue#344 (3.5H)\n[Done]比對與意藍OP差異文章＆確認原因\n[In Progress] 修復收錄中斷站台\n[In Progress] 優化漏文站台\n[In Progress] 開發未收錄新站\n4. 臨時討論(0.5H)\n\nBlockers:\n\n3/20 今日工項 :\n1. [In Progress] Issue處理\n2. [To Do] Line Today爬蟲優化\n3. [To Do] msn爬蟲優化\n4. [To Do]工程部 週會",
+      "total": 7
     },
     {
-      "date": "3/18",
-      "member": "Wendy",
-      "createTime": "2026-03-19T01:52:58.517983Z",
-      "text": "3/18 進度：\n1. SY ESv9 升級/維護項目 (5H, link, commits)\n   - [Done] SY GCP subnet 調整刪掉沒用到的\n   - [Done] 確認 SY KEYPO engine API 呼叫用途與狀態\n   - [Done] Codebase 中 Qtool 使用更新為 v2 並確認轉換結果\n   - [Done] 確認 query IDC SY ES 流程可通、依照 v9 設定調整 index 配置\n   - [In Progress] 確認 query IDC KEYPO ES、reindex 流程、依照 v9 設定調整 index 配置\n   - [Done] 啟動測試機月排程驗證情緒不一致修復有生效 (link)\n2. [Done] KEYPO F2E E2E testing sync 會議 (0.5H)\n3. [Done] 讀書會 (1H)\n4. [Done] 大數據官網後台 MR 審核： !46, !47 (1H)\n\nBlock:\nNone\n\n3/19 工項：\n1. SY ESv9 升級/維護項目 (link)\n   - [In Progress] 排程順序優化測試驗證 (link)\n   - [To Do] KEYPO engine API gateway api key 申請信\n   - [To Do] 確認 GCP 連線 IDC 可通\n   - [In Progress] 確認 query IDC KEYPO ES、reindex 流程、依照 v9 設定調整 index 配置\n   - [To Do] 確認 ES v5.4 rollback 與切換\n2. [To Do] Frontend 開發 guideline update 例會\n3. [To Do] TY 上版流程確認",
+      "date": "3/19",
+      "member": "Ted",
+      "createTime": "2026-03-20T02:17:50.468255Z",
+      "text": "3/19 工項：\n1. [In Progress] KEYPO engine API gateway\n    - [In Progress] engine API 壓測問題確認\n    - [Done] SY key 發放 (0.5H)\n2. [In Progress] Fanti\n    - [Done] Fanti refresh api 測試規劃 (0.5H)\n    - [Done] wordcount api es 查詢語法整理, content_tags, hash_tags 相關測試完善 link (1H)\n    - [Done] 發現並修復 refresh bugs - 大量資料更新時的 user fbid conflict (因為 psid-fbid 不唯一) 和 scroll cache (scroll id cache 一小時, 但實際上 scroll id 在 ES 只會保留2分鐘 )導致翻頁錯誤問題 (aad3086) (2H)\n    - [Done] 擴充測試- 資料庫寫入相關測試 (topic, tag, source) (7220001) (3H)\n    - [Done] 發現並修復 ES sm data 缺少 fetchedtime 和 extra fields 例外處理 (3f8c6c9) (1H)\n\n3. [In Progress] KEYPO\n    - [In Progress] gpt report 換模型規劃 (0.5H)\n    - [Done] 2992 協助調查 log (0.5H)\n4. [In Progress] 日品牌電子報\n    - [Done] 更新漢神收件人 (0.5H)\n    - [Done] 上版更新文字 (0.5H)\n\nblock:\n[Fanti] 資料搬遷 script \nbacklog:\n速報 gemini3 評估\nAI 報告切換模型 - 使用 DSPy 進行效果評估與提示詞優化\n同步 Fanti 狀態同步給 pm\n\n3/20 今日工項：\n1. [In Progress] KEYPO engine API gateway\n    - [To Do] rete limit 改用 req-limit 以增加用戶體驗, 降速而非直接限流\n    - [To Do] 災難演練 redis 問題確認並修正 \n    - [In Progress] engine API 壓測問題確認\n2. [To Do] KEYPO\n    - [In Progress] gpt report 換模型規劃\n3. [To Do] 工程部週會",
+      "total": 10
+    },
+    {
+      "date": "3/19",
+      "member": "哲緯",
+      "createTime": "2026-03-20T02:10:08.745919Z",
+      "text": "3/19 進度：\n1. [Done]Threads日常需求處理 (0.5H)\n2. LSR (4H)\n   - LSR\n      - [Done] 每個 POV 內部 URL 去重，同一篇文章只保留 1 個 URL link\n      - [Done] 來源 2 篇 POV 降為 2 個 link\n      - [Done] 網址驗證有效性降低併發數(5->2)並增加 timeout link\n      - [Done] Stage 2 合併 prompt 粒度從「同 entity」收緊為「同事件」提升 Stage 4 觀點與話題標題的相關性 linik\n      - [Done] Stage 2 合併後熱度篩選，限制話題數上限 280 link\n   - LSR API\n      - [Done] SCENE_EXTRACT_PROMPT Tier 2 改為 LLM 自由描述場景 link\n      - [Done] 同一批次圖片沿用去重，每張歷史圖片最多沿用一次，新增 used_images 追蹤機制 link\n   - LSR 會議（1.5H）\n3. Threads(1.5H)\n   - [Inprogress]調整測試請求延遲延長\n   - [Inprogress]與廠商書信聯絡，更換電信公司、更換Proxy等\n\nBlockers:\n1. BM wireframe\n2. Threads 文章AI機器人自動停止問題\n3. Threads Alert優化\n4. KETKYC\n   - 調查物料監控模組查詢Timeout問題\n   - 專案瘦身\n\n3/20 工項：\n1. [To Do] Threads日常需求處理\n2. [To Do] Threads\n   - 持續調整請求延遲，因太短則Proxy不穩，拉長則排程跑不完\n3. [To Do] SY\n   - 排程反爬次數過高調查",
       "total": 7.5
     },
     {
-      "date": "3/18",
-      "member": "Jason",
-      "createTime": "2026-03-19T01:36:50.197087Z",
-      "text": "3/18 進度：\n1. [Done] 工程部讀書分享會\n2. [In Progress] DV ES 9 reindex 四大資料源、TW HK資料\n3. [In Progress] DV AI 產文 plan 實作調整\n4. [Done] 讀書分享會報告製作\n5. [Done] DV 榜單調整可針對特定日期抓取\n\nBlock:\n\n3/19 今日工項：\n1. [In Progress] DV ES 9 reindex 四大資料源、TW HK資料\n2. [In Progress] DV AI 產文 plan 實作調整\n3. [In Progress] DV 榜單針對 v2 取得 12 月份資料",
-      "total": null
+      "date": "3/19",
+      "member": "Wendy",
+      "createTime": "2026-03-20T01:59:51.255151Z",
+      "text": "3/19 進度：\n1. SY ESv9 升級/維護項目 (link)\n   - [Done] 排程順序優化測試驗證 (2H, link)\n   - [Done] KEYPO engine API gateway api key 申請信 (0.5H)\n   - [In Progress] 確認 query IDC KEYPO ES、reindex 流程依照 v9 設定調整 index 配置，並確認流程正確 (3H, link)\n   - [Done] 確認 GCP 可正確連線到 IDC (0.5H)\n2. [Done] Frontend 開發 guideline update 例會 (0.5H)\n3. [Done] TY：確認 ner-worker 換模型調整方式、相關資源狀況 (1H)\n4. [Done] 大數據官網後台 MR 確認調整狀況： !47, !48, !49\n\nBlock:\nNone\n\n3/20 工項：\n1. SY ESv9 升級/維護項目 (link)\n   - [In Progress] 確認 query IDC KEYPO ES、reindex 流程、依照 v9 設定調整 index 配置\n   - [To Do] KEYPO sentidist API 改串接 v3 版本\n   - [To Do] 規劃 ES v5.4 rollback 與切換方式\n2. [To Do] issue #3025 - 20260319 - 新竹消防局Line推播群組開通需求\n3. [To Do] 工程部週會",
+      "total": 7.5
     },
     {
-      "date": "3/18",
+      "date": "3/19",
       "member": "Joe",
-      "createTime": "2026-03-19T01:36:09.727407Z",
-      "text": "3/18 進度：\n1. [Done] Frontend 開發 guideline 例會 (0.5H)\n2. [Done] KEYPO KOL in Agent 權限套用 (trello) (2.5H, commit)\n3. [In Progress] KEYPO 企業管理前後台 KOL in Agent 權限套用 (trello) (2.5H, commit)\n4. [Done] 排查玄武計畫平台的 Agent 權限設定消失問題，原因為所處的進度與後端 API 版本不符，使用 cherry-pick 重建玄武計畫功能分支後，完成測試機與UAT機的更新 (1.5H)\n\nBlockers:\nNone\n\n3/19 今日工項：\n1. [To Do] Frontend 開發 guideline update 例會\n2. [To Do] KEYPO Agent 前後端開發進度會議\n3. [In Progress] KEYPO 企業管理前後台 KOL in Agent 權限套用 (trello)\n4. [To Do] KEYPO 正式機更新作業，處理相關文件與原碼掃描",
+      "createTime": "2026-03-20T01:46:56.142847Z",
+      "text": "3/19 進度：\n1. [Done] Frontend 開發 guideline update 例會 (<0.5H)\n2. [Done] KEYPO Agent 前後端開發進度會議 (1H)\n3. [Done] KEYPO 企業管理前後台 KOL in Agent 權限套用。後台已完成修改，前台程式經 review 後確認可完全依賴後端 API 資料自動渲染 (trello) (2.5H, branch)\n4. [Done] KEYPO 正式機更新作業，處理相關文件與原碼掃描 (1.5H)\n5. [Done] KEYPO site index 搬遷結果與平台端相關功能複查 (trello) (1H)\n\nBlockers:\nNone\n\n3/20 今日工項：\n1. [To Do] 工程部週會\n2. [To Do] issue#2937：速報設定隱藏發送時間中的時分\n3. [To Do] KEYPO Agent 權限控管功能開發 (trello)",
+      "total": 6
+    },
+    {
+      "date": "3/19",
+      "member": "Jason",
+      "createTime": "2026-03-20T01:44:21.538351Z",
+      "text": "3/19 進度：\n1. [Done] DV ES 9 reindex 四大資料源、TW HK資料 (2H)\n2. [In Progress] DV AI 產文 plan 實作調整 (3H)\n3. [Done] DV 榜單針對 v2 取得 12 月份資料 (2H)\n\nBlock:\n\n3/20 今日工項：\n1. [To Do] 工程部週會\n2. [In Progress] DV AI 產文 plan 實作調整\n3. [In Progress] Issue #42\n4. [To Do] DV engine API 調整",
       "total": 7
     },
     {
-      "date": "3/18",
-      "member": "Joyce",
-      "createTime": "2026-03-19T01:30:43.514399Z",
-      "text": "3/18 進度：\n\n1. [In Progress] 玄武計畫 KEYPO engine API v3\n[In Progress] 撰寫測試\n[In Progress] 處理轉移資料平台\n[In Progress] KEYPO engine API v3 文件整理\n[In Progress] 遷移非目前KEYPO 使用的API: KeywordRec、GetContentByRefs、FullTextList\n[In Progress] 開發DV使用v3 邏輯，加入識別DV 查詢別名且處理DV ES client\n[Done] System logging 處理\n[Done] 調查頻道篩選查詢有些只有作者的原因，完成修正更新\n2. [Done] 工程部讀書分享會 (0.5H)\n3. [Done] 處理社群活躍度點擊圖表出現的文章列表筆數不一樣的問題 (1H)\n4. [Done] 處理教育帳號加急單 (0.5H)\n5. [Done] 行政臨時通知薇姐臨時加開試用帳號需求，以及幫忙確認為何上次那一批帳號無法登入，確認使用者帳號ID與密碼輸入錯誤 (0.5H)\n6. [Done] 處理 #2987 (0.5H)\n\nBlockers:\n\nFanti Meta API 升級至v18 處理中\n\n3/19 進度：\n\n1. [In Progress] 玄武計畫 KEYPO engine API v3\n[In Progress] 撰寫測試\n[In Progress] 處理轉移資料平台，整合SY 轉移資料\n[In Progress] KEYPO engine API v3 文件整理\n[In Progress] 遷移非目前KEYPO 使用的API: KeywordRec、GetContentByRefs、FullTextList\n[In Progress] 開發DV使用v3 邏輯，加入識別DV 查詢別名且處理DV ES client\n[To Do] AP 端 API Gateway 壓測報告review\n2. [To Do] 確認今日上版項目\n3. [To Do] 處理KEYPO 日本資料源自訂日報模板",
-      "total": 3
+      "date": "3/19",
+      "member": "Aaron",
+      "createTime": "2026-03-20T01:35:38.398111Z",
+      "text": "3/19 工項/進度：\n1. [Done] KEYPO Agent 會議 (1 H)\n2. [Done] KOL Agent 雲端設定 (3 H)\n3. [Done] KOL Agent 自動化部署設定 MR (1 H)\n4. [Done] KEYPO Agent 串接 KOL Agent MR (2 H)\n5. [Done] SY 網路設定 (0.5 H)\n\nBacklog / Blockers:  待辦事項 / 阻礙因素：\nNone\n\n3/20 今日工項：\n1. [To Do] 週會\n2. [To Do] API Gateway 週會\n3. [In Progress] Grafana 監控 GKE",
+      "total": 7.5
     },
     {
-      "date": "3/18",
+      "date": "3/19",
       "member": "Ivy",
-      "createTime": "2026-03-19T01:24:45.332095Z",
-      "text": "3/18 (三) 工項/進度：\n\n1. [Done] KEYPO F2E E2E Test Sync 會議 (0.5h)\n2. [Done] 部門技術分享會 (1h)\n3. [In Progress] 大數據官網 LINK (5.5h)\n    - [In Progress] 後台財務專區後端開發 LINK\n    - [In Progress] 後台財務專區前端 UI 開發 LINK\n\n\nBacklog / Blockers:  待辦事項 / 阻礙因素：\n\n[Backlog] 內部系統發信寄件人管理方式：待討論\n[Backlog] 網溫加入 CDN\n[Backlog] VM bigdata-web 關閉：Sam 已回覆，待轉移整個靜態教育訓練網站至 big-data GCS 下（比照簽名檔）\n[Backlog] 教育訓練網站簡報與資源管理：待討論決議是否由管理中心進行管理 (採用 Google Drive or S3 + CloudFront)\n[Block] Azure groupdv 服務備份：因檔案較大，約 40 幾 GB，尚需研究看看如何備份至 gitlab 或是待討論看看是否傳至 GCP 上或是放公司 NAS\n\n\n3/19 (四) 今日工項：\n\n1. [To Do] KEYPO F2E E2E Test Sync 會議\n2. [In Progress] 大數據官網 LINK\n    - [In Progress] !48 !49 後台產品分類 CRUD & 功能頁面排序功能 MR Feedback 調整\n    - [In Progress] 後台財務專區後端開發\n    - [In Progress] 後台財務專區前端 UI 開發",
-      "total": 7
+      "createTime": "2026-03-20T01:29:02.566447Z",
+      "text": "3/19 (四) 工項/進度：\n\n1. [Done] KEYPO F2E E2E Test Sync 會議 (0.5h)\n2. [In Progress] 大數據官網 LINK (7h)\n    - [Done] !48 !49 後台產品分類 CRUD & 功能頁面排序功能 MR Feedback 調整 & Merge\n    - [Done] !31 前台後端 MR 調整 & Merge\n    - [Done] !50 !32 修復測試環境音第三方套件相容性部署失敗問題\n    - [Done] !51 新增後台後端正式環境上線前的資料自動轉移機制\n    - [Done] Deploy 日文前後台功能至測試機\n3. [In Progress] #3027 大數據官網後台上稿文字編輯前台顯示異常問題 (0.5h)\n\n\nBacklog / Blockers:  待辦事項 / 阻礙因素：\n\n[Backlog] 內部系統發信寄件人管理方式：待討論\n[Backlog] 網溫加入 CDN\n[Backlog] VM bigdata-web 關閉：Sam 已回覆，待轉移整個靜態教育訓練網站至 big-data GCS 下（比照簽名檔）\n[Backlog] 教育訓練網站簡報與資源管理：待討論決議是否由管理中心進行管理 (採用 Google Drive or S3 + CloudFront)\n[Block] Azure groupdv 服務備份：因檔案較大，約 40 幾 GB，尚需研究看看如何備份至 gitlab 或是待討論看看是否傳至 GCP 上或是放公司 NAS\n\n\n3/20 (五) 今日工項：\n\n1. [To Do] 部門週會\n2. [In Progress] 大數據官網 LINK\n    - [To Do] 正式機後台日文功能上線 \n    - [In Progress] 後台財務專區後端開發\n    - [In Progress] 後台財務專區前端 UI 開發\n3. [In Progress] #3027 大數據官網後台上稿文字編輯前台顯示異常問題",
+      "total": 8
+    },
+    {
+      "date": "3/19",
+      "member": "Joyce",
+      "createTime": "2026-03-20T01:19:20.179583Z",
+      "text": "3/19 進度：\n\n1. [In Progress] 玄武計畫 KEYPO engine API v3 (6H)\n[In Progress] 撰寫測試\n[In Progress] 處理轉移資料平台，整合SY 轉移資料\n[In Progress] KEYPO engine API v3 文件整理\n[In Progress] 遷移非目前KEYPO 使用的API: KeywordRec、GetContentByRefs、FullTextList\n[In Progress] 開發DV使用v3 邏輯，加入識別DV 查詢別名且處理DV ES client\n[In Progress] AP 端 API Gateway 壓測報告review\n[In Progress] 調整system logging 不阻塞I/O方式處理\n2. [Done] 確認KEYPO今日上版項目 (0.5H)\n3. [In Progress] #45 處理KEYPO日本資料源自訂日報模板 (1H)\n4. [Done] #3030 緊急處理KEYPO香港ES查詢異常問題，經排查確認因技發部需進行資料庫年份的切換作業（關閉22-23年，開啟20-21年），未移除別名即關閉index，導致用別名查詢異常，已協助進行緊急處理，並將此流程同步給技發部要記得移除別名再關閉index (0.5H)\n\nBlockers:\n\nFanti Meta API 升級至v18 處理中\n\n3/20 進度：\n\n1. [In Progress] 玄武計畫 KEYPO engine API v3\n[In Progress] 撰寫測試\n[In Progress] 處理轉移資料平台，整合SY 轉移資料\n[In Progress] KEYPO engine API v3 文件整理\n[In Progress] 遷移非目前KEYPO 使用的API: KeywordRec、GetContentByRefs、FullTextList\n[In Progress] 開發DV使用v3 邏輯，加入識別DV 查詢別名且處理DV ES client\n[In Progress] AP 端 API Gateway 壓測報告review\n[In Progress] 調整system logging 不阻塞I/O方式處理\n2. [To Do] 工程部週會、API Gateway weekly sync",
+      "total": 8
     }
   ],
   "newDates": [
-    "3/18"
+    "3/19"
   ],
   "backfilled": []
 }
