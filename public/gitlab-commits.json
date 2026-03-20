@@ -10914,6 +10914,1217 @@
           }
         ]
       }
+    },
+    "3/19": {
+      "Ivy": {
+        "count": 57,
+        "projects": [
+          "bigdata/2025-bigdata-app",
+          "bigdata/2025-bigdata-backend",
+          "bigdata/2025-bigdata-admin-backend",
+          "bigdata/2025-bigdata-admin"
+        ],
+        "items": [
+          {
+            "title": "Merge branch 'feat-locale-jp' into 'develop'",
+            "sha": "1541f524",
+            "project": "bigdata/2025-bigdata-app",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-app/-/commit/1541f524c1e75cea3148815129283f43a61e81e6",
+            "datetime": "2026-03-19T10:16:16.000+00:00"
+          },
+          {
+            "title": "feat(contact_us): add JP language support and align with admin-backend schema",
+            "sha": "a51eff2e",
+            "project": "bigdata/2025-bigdata-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-backend/-/commit/a51eff2e15fde219885629b0330accd5b0616604",
+            "datetime": "2026-03-19T11:14:39.000+08:00"
+          },
+          {
+            "title": "Merge branch 'feat/jp-language-and-product-api' into 'dev'",
+            "sha": "4746f240",
+            "project": "bigdata/2025-bigdata-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-backend/-/commit/4746f240bcf142792ee95e4e476cfc3586a4f539",
+            "datetime": "2026-03-19T03:18:50.000+00:00"
+          },
+          {
+            "title": "Merge branch 'feat/jp-language-and-product-api' into 'dev'",
+            "sha": "b005a763",
+            "project": "bigdata/2025-bigdata-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-backend/-/commit/b005a763cf0c35ef0cdd4a60c0f8689e08d5dfac",
+            "datetime": "2026-03-19T10:00:52.000+00:00"
+          },
+          {
+            "title": "hotfix: upgrade drf-yasg to 1.21.15 to fix pkg_resources deploy error",
+            "sha": "e08386d1",
+            "project": "bigdata/2025-bigdata-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-backend/-/commit/e08386d1e5e89a94d8002a99f3a111604b926fd7",
+            "datetime": "2026-03-19T18:10:37.000+08:00"
+          },
+          {
+            "title": "Merge branch 'hotfix/upgrade-drf-yasg' into 'dev'",
+            "sha": "54547abe",
+            "project": "bigdata/2025-bigdata-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-backend/-/commit/54547abe76fde584f27302f6bd7ab6099a3ee255",
+            "datetime": "2026-03-19T10:24:52.000+00:00"
+          },
+          {
+            "title": "Merge branch 'hotfix/upgrade-drf-yasg' into 'dev'",
+            "sha": "83c1ac41",
+            "project": "bigdata/2025-bigdata-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-backend/-/commit/83c1ac41543a4a9608dcc2607894120669634dc4",
+            "datetime": "2026-03-19T10:25:45.000+00:00"
+          },
+          {
+            "title": "feat(swagger): add TaggedAutoSchema and swagger_tags to all views",
+            "sha": "b639b07d",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/b639b07d3c65de5c73b28f48e6f1650cddef9cff",
+            "datetime": "2026-03-19T09:35:17.000+08:00"
+          },
+          {
+            "title": "feat(contact_us): add ProductCategory model and CRUD endpoints",
+            "sha": "d38b4f8d",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/d38b4f8d59169db0afd3d8588053afe3adc333a0",
+            "datetime": "2026-03-19T09:36:05.000+08:00"
+          },
+          {
+            "title": "docs: add ProductCategory table to diagram.dbml",
+            "sha": "08894075",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/08894075cdc6a4a6627157b5c6ed3c22b0c8db6f",
+            "datetime": "2026-03-19T09:36:05.000+08:00"
+          },
+          {
+            "title": "refactor(contact_us): remove redundant category_name field from Product model",
+            "sha": "783d0a45",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/783d0a45217a18ed59f067a018d187ef5c306e10",
+            "datetime": "2026-03-19T09:36:05.000+08:00"
+          },
+          {
+            "title": "fix(contact_us): prevent ProductCategory code from being modified via PUT",
+            "sha": "084abe23",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/084abe23faeb6c99f68f2a95ddde68534ed2a98c",
+            "datetime": "2026-03-19T09:36:05.000+08:00"
+          },
+          {
+            "title": "style: apply black formatting",
+            "sha": "1e2a3dc5",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/1e2a3dc53cd676ece5bc956fd1438a8ae7098a52",
+            "datetime": "2026-03-19T09:36:05.000+08:00"
+          },
+          {
+            "title": "fix(swagger): add missing swagger_tags to contact us views",
+            "sha": "a82fbaaa",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/a82fbaaa23f330d706b4be966570084e8e7f2131",
+            "datetime": "2026-03-19T09:39:57.000+08:00"
+          },
+          {
+            "title": "docs: remove category_name from diagram.dbml",
+            "sha": "12becf13",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/12becf13aaf9161a3047d75739370f39c846ffc2",
+            "datetime": "2026-03-19T09:40:05.000+08:00"
+          },
+          {
+            "title": "Merge branch 'feat/product-management' into 'develop'",
+            "sha": "1a39f6f8",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/1a39f6f825afba83c51eec7f5b93c2a1cbd3de48",
+            "datetime": "2026-03-19T01:40:43.000+00:00"
+          },
+          {
+            "title": "feat(accounts): add sort_order to Feature and Department models",
+            "sha": "aa190c50",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/aa190c50dc8b2d22c058683e07299901ba7971bd",
+            "datetime": "2026-03-19T09:46:54.000+08:00"
+          },
+          {
+            "title": "feat(contact_us): add sort_order to Product and ProductOption",
+            "sha": "8555094c",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/8555094cdd8ce5c5bb06c9b299cfad915acce969",
+            "datetime": "2026-03-19T09:46:54.000+08:00"
+          },
+          {
+            "title": "test(contact_us): add product sort order tests",
+            "sha": "a39ee9ba",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/a39ee9baf1fc1fbcb9ca770d9f8a7e6524dad0c9",
+            "datetime": "2026-03-19T09:46:54.000+08:00"
+          },
+          {
+            "title": "docs: add sort_order fields to diagram.dbml",
+            "sha": "cc8fceba",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/cc8fcebabfa9c19e39bc9bf435bba1c37c43e811",
+            "datetime": "2026-03-19T09:47:30.000+08:00"
+          },
+          {
+            "title": "fix(test): remove obsolete category_name from product sort tests",
+            "sha": "3e8f4215",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/3e8f4215110835698a4e173caa4a31c6cf1503f4",
+            "datetime": "2026-03-19T10:01:46.000+08:00"
+          },
+          {
+            "title": "refactor(contact_us): validate complete sorted_ids and add transaction.atomic to sort order",
+            "sha": "a6819acf",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/a6819acffd7d2efb9d83ae8bac253298c7beebe5",
+            "datetime": "2026-03-19T10:01:53.000+08:00"
+          },
+          {
+            "title": "test(contact_us): add incomplete sorted_ids rejection test",
+            "sha": "44baec67",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/44baec67f508090d699b46588086339dbbce91e9",
+            "datetime": "2026-03-19T10:03:09.000+08:00"
+          },
+          {
+            "title": "feat(contact_us): add language filter and remove CN language support",
+            "sha": "148dd24d",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/148dd24d3a54bf63cf92f1a6036d6b5fba2f5164",
+            "datetime": "2026-03-19T10:23:44.000+08:00"
+          },
+          {
+            "title": "refactor(contact_us): use Language enum for LANGUAGE_CHOICES and add swagger language param",
+            "sha": "55854d9f",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/55854d9f6c6dde68718825d20c383a866ae06afb",
+            "datetime": "2026-03-19T10:54:05.000+08:00"
+          },
+          {
+            "title": "Merge branch 'feat/product-management' into 'develop'",
+            "sha": "8491a9ed",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/8491a9ed5cf5b3c2b94e9682581c9a72f38bb5d0",
+            "datetime": "2026-03-19T06:15:55.000+00:00"
+          },
+          {
+            "title": "Merge branch 'feat/sort-order' into 'develop'",
+            "sha": "afffa413",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/afffa413696ed644292c4dfeaa7d1a2c2120d80d",
+            "datetime": "2026-03-19T06:16:05.000+00:00"
+          },
+          {
+            "title": "Merge branch 'feat/sort-order' into 'develop'",
+            "sha": "84d039f7",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/84d039f7e18f896e27e622053239b5367697a453",
+            "datetime": "2026-03-19T06:16:33.000+00:00"
+          },
+          {
+            "title": "Merge branch 'feat/contact-us-language-filter' into 'develop'",
+            "sha": "3c091bcf",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/3c091bcf05cce9f34f3322d721329d2d206906c6",
+            "datetime": "2026-03-19T06:16:59.000+00:00"
+          },
+          {
+            "title": "Merge branch 'feat/contact-us-language-filter' into 'develop'",
+            "sha": "7120ff18",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/7120ff1860eea3958cabe1aff4c7feaf42bc67e1",
+            "datetime": "2026-03-19T06:17:19.000+00:00"
+          },
+          {
+            "title": "hotfix: add setuptools to requirements.txt for pkg_resources compatibility",
+            "sha": "654eea0a",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/654eea0a5cf5393cebd13cdda595c747ea644611",
+            "datetime": "2026-03-19T14:45:23.000+08:00"
+          },
+          {
+            "title": "chore: trigger redeploy for setuptools hotfix",
+            "sha": "01bbc59b",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/01bbc59bc6ed46a9146d80a74ac53e9780822103",
+            "datetime": "2026-03-19T15:04:45.000+08:00"
+          },
+          {
+            "title": "hotfix: upgrade drf-yasg to 1.21.15 and remove setuptools workaround",
+            "sha": "8b567434",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/8b5674343f0d729a678e214818d3ee518d3b14f1",
+            "datetime": "2026-03-19T15:19:08.000+08:00"
+          },
+          {
+            "title": "Merge branch 'hotfix/upgrade-drf-yasg' into 'develop'",
+            "sha": "5f53af8a",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/5f53af8a9be6390ccdf6d51f4bc0baa3af4ee965",
+            "datetime": "2026-03-19T07:35:32.000+00:00"
+          },
+          {
+            "title": "Merge branch 'hotfix/upgrade-drf-yasg' into 'develop'",
+            "sha": "14bfe2ea",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/14bfe2eae678f3646fdf4659637b34742cc92eff",
+            "datetime": "2026-03-19T07:36:38.000+00:00"
+          },
+          {
+            "title": "fix(migration): add RunPython to backfill product category from category_name",
+            "sha": "7cf80a28",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/7cf80a28fc9bfcdcdfff843b326ce6aca18cd286",
+            "datetime": "2026-03-19T17:46:02.000+08:00"
+          },
+          {
+            "title": "Merge branch 'fix/backfill-product-category' into 'develop'",
+            "sha": "02334508",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/02334508f3ae932d7e02432620f5f0c75bfdeb51",
+            "datetime": "2026-03-19T09:47:09.000+00:00"
+          },
+          {
+            "title": "Merge branch 'fix/backfill-product-category' into 'develop'",
+            "sha": "72eaa981",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/72eaa9817f93b19784cb7b3c91d102da517f0ff2",
+            "datetime": "2026-03-19T09:54:58.000+00:00"
+          },
+          {
+            "title": "refactor: create shared constants directory and slim down contents/constants",
+            "sha": "a0024c40",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/a0024c40a7eb37d092c0a5755466e5a6bac96770",
+            "datetime": "2026-03-19T14:43:03.000+08:00"
+          },
+          {
+            "title": "refactor: use shared language constants across all modules",
+            "sha": "1218ce25",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/1218ce25d0befacec00f78bb54c39d4750451a29",
+            "datetime": "2026-03-19T14:44:23.000+08:00"
+          },
+          {
+            "title": "refactor: use shared statusOptions across all form components",
+            "sha": "3dfd90b6",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/3dfd90b6c39e864ce32647da17f6317fb0fab7cc",
+            "datetime": "2026-03-19T14:44:56.000+08:00"
+          },
+          {
+            "title": "Merge branch 'feature/form-settings-page' into 'develop'",
+            "sha": "2f3f08b2",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/2f3f08b2d1bcbbe62e5bd37c2dc1b0f6c25e9023",
+            "datetime": "2026-03-19T06:49:11.000+00:00"
+          },
+          {
+            "title": "Merge branch 'feature/service-management-tabs-and-drag-sort' into 'develop'",
+            "sha": "61663f67",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/61663f67c7c8b99e3768bf6bf707787f4d79a1e2",
+            "datetime": "2026-03-19T07:42:23.000+00:00"
+          },
+          {
+            "title": "Merge branch 'feature/service-management-tabs-and-drag-sort' into 'develop'",
+            "sha": "db77ebca",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/db77ebcab01f2b03cc952aacd5687886837e9197",
+            "datetime": "2026-03-19T07:43:09.000+00:00"
+          },
+          {
+            "title": "Merge branch 'feature/contact-language-filter-and-jp-fields' into 'develop'",
+            "sha": "b6326622",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/b63266222eff0bd1f62b90203da1b304a9ed966a",
+            "datetime": "2026-03-19T07:44:27.000+00:00"
+          },
+          {
+            "title": "Merge branch 'feature/contact-language-filter-and-jp-fields' into 'develop'",
+            "sha": "7f42309a",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/7f42309afeb712aa475e537a1ac8e9ebdc6bf886",
+            "datetime": "2026-03-19T07:45:17.000+00:00"
+          },
+          {
+            "title": "Merge branch 'refactor/contact-api-split-endpoints' into 'develop'",
+            "sha": "2198a45f",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/2198a45f53fda1d446f2a87b4b43010d8283d20c",
+            "datetime": "2026-03-19T07:46:31.000+00:00"
+          },
+          {
+            "title": "Merge branch 'refactor/contact-api-split-endpoints' into 'develop'",
+            "sha": "c5e3d355",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/c5e3d3554b1f3700bb317376911797a3d50202cc",
+            "datetime": "2026-03-19T07:46:58.000+00:00"
+          },
+          {
+            "title": "Merge branch 'refactor/shared-constants' into 'develop'",
+            "sha": "ffd615c4",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/ffd615c4ad1ad391b81aa177abf7e8a1a0b1ccfa",
+            "datetime": "2026-03-19T07:48:56.000+00:00"
+          },
+          {
+            "title": "Merge branch 'refactor/shared-constants' into 'develop'",
+            "sha": "24ec0515",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/24ec051518e3dd6d1ad6e6d864c7aaa5e0760cd2",
+            "datetime": "2026-03-19T07:50:38.000+00:00"
+          },
+          {
+            "title": "fix(events): prevent location from being cleared on edit page load",
+            "sha": "b3f78a23",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/b3f78a23820d7aa6492ad7b4ddd710a9c953804d",
+            "datetime": "2026-03-19T16:32:00.000+08:00"
+          },
+          {
+            "title": "Merge branch 'fix/event-location-reset' into 'main'",
+            "sha": "930d33c8",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/930d33c8be6af5807f3847bda014bb14edd04ebd",
+            "datetime": "2026-03-19T08:33:11.000+00:00"
+          },
+          {
+            "title": "Merge branch 'fix/event-location-reset' into 'develop'",
+            "sha": "4c5e68d0",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/4c5e68d0924f12f8432f8167d33c4fb0ad8c6c6f",
+            "datetime": "2026-03-19T08:33:23.000+00:00"
+          },
+          {
+            "title": "Merge branch 'fix/event-location-reset' into 'main'",
+            "sha": "e795f00a",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/e795f00a946c2bb7cf5cdf268a41b918144611b4",
+            "datetime": "2026-03-19T08:36:36.000+00:00"
+          },
+          {
+            "title": "fix(events): prevent location from being cleared on edit page load",
+            "sha": "5e112a6d",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/5e112a6d74394f22ad2746082367da91b627ae31",
+            "datetime": "2026-03-19T16:40:13.000+08:00"
+          },
+          {
+            "title": "Merge branch 'fix/event-location-reset-develop' into 'develop'",
+            "sha": "f486b291",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/f486b291c882ec62e7afde86ccaa557cd5053c06",
+            "datetime": "2026-03-19T08:41:15.000+00:00"
+          },
+          {
+            "title": "Merge branch 'fix/event-location-reset-develop' into 'develop'",
+            "sha": "84e63580",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/84e635804071ec78e46126ca6ead8bf8bcd52b20",
+            "datetime": "2026-03-19T08:41:36.000+00:00"
+          }
+        ]
+      },
+      "日銜": {
+        "count": 10,
+        "projects": [
+          "CrawlersV2/bigcrawler-scrapy"
+        ],
+        "items": [
+          {
+            "title": "fix(juksy) : update time_css & web API",
+            "sha": "ab795c97",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/ab795c97c310530055bacbcec06ad7d7bb859eb2",
+            "datetime": "2026-03-19T12:11:10.000+08:00"
+          },
+          {
+            "title": "Merge branch 'byron-fix-juksy' into 'develop'",
+            "sha": "dbd1c0b0",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/dbd1c0b04b1f913f1baf4a7ae5db52a2c68b0bff",
+            "datetime": "2026-03-19T04:22:03.000+00:00"
+          },
+          {
+            "title": "Merge branch 'byron-fix-juksy' into 'develop'",
+            "sha": "bd93b2ea",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/bd93b2eac07468913ce4a633b2b2f0ea075b6667",
+            "datetime": "2026-03-19T04:22:17.000+00:00"
+          },
+          {
+            "title": "fix(rti) : update jqsel_time",
+            "sha": "bb39cffa",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/bb39cffa8b7399371d2da9cc9d0fcdb04285adc5",
+            "datetime": "2026-03-19T12:26:06.000+08:00"
+          },
+          {
+            "title": "Merge branch 'byron-fix-rti' into 'develop'",
+            "sha": "327c84fd",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/327c84fd7ea16735040a3241bb7d11cb4f1d6662",
+            "datetime": "2026-03-19T04:31:48.000+00:00"
+          },
+          {
+            "title": "Merge branch 'byron-fix-rti' into 'develop'",
+            "sha": "61844950",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/618449507b9d1bc6ae0e79e7fb7edd4211c1bd39",
+            "datetime": "2026-03-19T04:31:57.000+00:00"
+          },
+          {
+            "title": "fix(cool3c) : remove comment & update css setting",
+            "sha": "4877fb7a",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/4877fb7a57c087570db9134314995a0bda6d5331",
+            "datetime": "2026-03-19T16:37:31.000+08:00"
+          },
+          {
+            "title": "fix flake8 error",
+            "sha": "d0f44be3",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/d0f44be3affe6984e69b25d3f914111a6645d2c9",
+            "datetime": "2026-03-19T16:43:11.000+08:00"
+          },
+          {
+            "title": "Merge branch 'byron-fix-cool3c' into 'develop'",
+            "sha": "cd4bb5e2",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/cd4bb5e2b42f0e0a12d38591a7d02b3db2093b38",
+            "datetime": "2026-03-19T08:47:59.000+00:00"
+          },
+          {
+            "title": "Merge branch 'byron-fix-cool3c' into 'develop'",
+            "sha": "619e0cad",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/619e0cad9d4100ece81cb51a1a23686d9dd546d8",
+            "datetime": "2026-03-19T08:48:16.000+00:00"
+          }
+        ]
+      },
+      "Aaron": {
+        "count": 24,
+        "projects": [
+          "kol/kol-agent",
+          "llmprojects/keypo-agent",
+          "KEYPO/keypo-engine/es-proxy-settings"
+        ],
+        "items": [
+          {
+            "title": "refactor(config): migrate to pydantic-settings",
+            "sha": "33326cd3",
+            "project": "kol/kol-agent",
+            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/33326cd3140b637d16c19929b44a120cb712ab50",
+            "datetime": "2026-03-19T10:51:17.000+08:00"
+          },
+          {
+            "title": "Merge branch 'refactor/pydantic-settings' into 'main'",
+            "sha": "5a423edd",
+            "project": "kol/kol-agent",
+            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/5a423eddb40ed69bfa6fd946b15338d3d24e20df",
+            "datetime": "2026-03-19T02:57:24.000+00:00"
+          },
+          {
+            "title": "Merge branch 'refactor/pydantic-settings' into 'main'",
+            "sha": "0f8d30ee",
+            "project": "kol/kol-agent",
+            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/0f8d30eeb7a8a20d25a04d66454d908e80cb6f98",
+            "datetime": "2026-03-19T02:58:02.000+00:00"
+          },
+          {
+            "title": "ci: add GitLab CI pipeline for build and staging deploy",
+            "sha": "b5c992c9",
+            "project": "kol/kol-agent",
+            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/b5c992c9f922ebf4c9c4b126e8297b0601b7d417",
+            "datetime": "2026-03-19T12:22:39.000+08:00"
+          },
+          {
+            "title": "fix(config): load env from correct path and add secrets support",
+            "sha": "c4633620",
+            "project": "kol/kol-agent",
+            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/c4633620f46d4ad36b0ec8646c83091d41f0cd1f",
+            "datetime": "2026-03-19T13:17:55.000+08:00"
+          },
+          {
+            "title": "fix: gitlab ci file name  ",
+            "sha": "00e273b4",
+            "project": "kol/kol-agent",
+            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/00e273b465ad65a0b2873eefd11b9ac0d4acc289",
+            "datetime": "2026-03-19T05:28:08.000+00:00"
+          },
+          {
+            "title": "ci(auth): hardcode WIF provider and service account",
+            "sha": "b0cd1272",
+            "project": "kol/kol-agent",
+            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/b0cd1272426f2762d1aab72c9b4a54f0f44daf78",
+            "datetime": "2026-03-19T13:34:54.000+08:00"
+          },
+          {
+            "title": "docs: add deployment architecture and rename to CLAUDE.md",
+            "sha": "5e975014",
+            "project": "kol/kol-agent",
+            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/5e9750143c340e80e503de59e9d83f946c9ff9c2",
+            "datetime": "2026-03-19T14:16:56.000+08:00"
+          },
+          {
+            "title": "feat(config): add APP_VERSION and APP_ENV settings",
+            "sha": "dd42ef20",
+            "project": "kol/kol-agent",
+            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/dd42ef20ba0cc3fa64a8c0e049e7bbe5b322c737",
+            "datetime": "2026-03-19T14:17:05.000+08:00"
+          },
+          {
+            "title": "ci(deploy): change ingress to all for testing",
+            "sha": "a98aa05c",
+            "project": "kol/kol-agent",
+            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/a98aa05c66e3f499cee2b2a1ce3316fe0411f086",
+            "datetime": "2026-03-19T15:04:00.000+08:00"
+          },
+          {
+            "title": "Update .gitlab-ci.yml file",
+            "sha": "9d7acca3",
+            "project": "kol/kol-agent",
+            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/9d7acca3ec737cce72ca6520b39a04166377b74a",
+            "datetime": "2026-03-19T07:07:25.000+00:00"
+          },
+          {
+            "title": "feat(es-client): add error logging for failed ES requests",
+            "sha": "28106ad6",
+            "project": "kol/kol-agent",
+            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/28106ad6a44621e9a328a1d8db1d9645138acbb2",
+            "datetime": "2026-03-19T15:35:04.000+08:00"
+          },
+          {
+            "title": "fix(parser): normalize language and location to list[str]",
+            "sha": "2fedb719",
+            "project": "kol/kol-agent",
+            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/2fedb719f63a8400c6ada39c0c735f602947d837",
+            "datetime": "2026-03-19T16:20:22.000+08:00"
+          },
+          {
+            "title": "Merge branch 'feature/ci' into 'main'",
+            "sha": "4a830dbf",
+            "project": "kol/kol-agent",
+            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/4a830dbf07d9d20237f5cd3bc0e75563bc3ff85c",
+            "datetime": "2026-03-19T08:32:22.000+00:00"
+          },
+          {
+            "title": "feat(kol): add GCP ID token auth for Cloud Run",
+            "sha": "b0db15c7",
+            "project": "llmprojects/keypo-agent",
+            "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/b0db15c74e4210d6a10f13c24b89097576237149",
+            "datetime": "2026-03-19T14:07:54.000+08:00"
+          },
+          {
+            "title": "chore: log",
+            "sha": "5de7ee3a",
+            "project": "llmprojects/keypo-agent",
+            "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/5de7ee3acfd223f7e66829bc48f80b00c5470896",
+            "datetime": "2026-03-19T14:44:11.000+08:00"
+          },
+          {
+            "title": "Revert \"chore: log\"",
+            "sha": "07ae921a",
+            "project": "llmprojects/keypo-agent",
+            "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/07ae921a28e2df247a2ed439a211c2a9be8f5aad",
+            "datetime": "2026-03-19T15:09:21.000+08:00"
+          },
+          {
+            "title": "refactor(kol): simplify KOLItem schema",
+            "sha": "b2387e87",
+            "project": "llmprojects/keypo-agent",
+            "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/b2387e8727b1b03d95356d7ee1334315507f434c",
+            "datetime": "2026-03-19T16:28:29.000+08:00"
+          },
+          {
+            "title": "fix(kol-client): log response body on non-200 before raising",
+            "sha": "20b0a355",
+            "project": "llmprojects/keypo-agent",
+            "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/20b0a355bad9c086838f9d737d751af0ccdf98c7",
+            "datetime": "2026-03-19T17:00:11.000+08:00"
+          },
+          {
+            "title": "refactor(kol-tool): simplify _format_response and reorder event emission",
+            "sha": "c166ceac",
+            "project": "llmprojects/keypo-agent",
+            "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/c166ceac8d5e90ac23271148c0d5fe80d4e57adf",
+            "datetime": "2026-03-19T17:00:45.000+08:00"
+          },
+          {
+            "title": "fix(kol): stringify data in _format_response",
+            "sha": "ce7f134f",
+            "project": "llmprojects/keypo-agent",
+            "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/ce7f134f581ef43d16245faf6dadcd85aebbea84",
+            "datetime": "2026-03-19T17:25:14.000+08:00"
+          },
+          {
+            "title": "feat(plan): pass topic context to analysis plan",
+            "sha": "fa1f5826",
+            "project": "llmprojects/keypo-agent",
+            "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/fa1f582691bf944f66361895a5c5c79c97f02c02",
+            "datetime": "2026-03-19T17:25:38.000+08:00"
+          },
+          {
+            "title": "fix(prompts): add guardrail for system boundary probing",
+            "sha": "70846579",
+            "project": "llmprojects/keypo-agent",
+            "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/7084657969e8dc55f529d3faf29939c025ff3b1c",
+            "datetime": "2026-03-19T17:37:34.000+08:00"
+          },
+          {
+            "title": "fix: proxy buffer size",
+            "sha": "b9b35dff",
+            "project": "KEYPO/keypo-engine/es-proxy-settings",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/es-proxy-settings/-/commit/b9b35dff2cda329cd6aeb8402cdace22ad8393bf",
+            "datetime": "2026-03-19T15:54:39.000+08:00"
+          }
+        ]
+      },
+      "Joyce": {
+        "count": 19,
+        "projects": [
+          "KEYPO/keypo-engine/keypo-engine-api-v3",
+          "KEYPO/keypo-engine-api",
+          "KEYPO/keypo-backend"
+        ],
+        "items": [
+          {
+            "title": "feat: integrate structlog as logging backend",
+            "sha": "c9db3ec7",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/c9db3ec786be840bf467a7dd836422574e9e429b",
+            "datetime": "2026-03-19T13:42:38.000+08:00"
+          },
+          {
+            "title": "refactor: migrate shared layer to structlog.get_logger()",
+            "sha": "36b0abea",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/36b0abeac3df7135079ed720cae4d6a78307d4db",
+            "datetime": "2026-03-19T13:43:43.000+08:00"
+          },
+          {
+            "title": "refactor: migrate all modules to structlog.get_logger()",
+            "sha": "662eebce",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/662eebce70948078e57c188916822d2682c3b2fa",
+            "datetime": "2026-03-19T13:45:06.000+08:00"
+          },
+          {
+            "title": "refactor: customize structlog console output for readability",
+            "sha": "dd6cf25e",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/dd6cf25e9cb1ef073e203c11249070bd3ae5927c",
+            "datetime": "2026-03-19T14:30:15.000+08:00"
+          },
+          {
+            "title": "Merge branch 'feature/add-system-logging' into feature/add-deploy-config",
+            "sha": "f7b6dfe6",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/f7b6dfe6778ac355ed678a34bbd107ca25d8b73c",
+            "datetime": "2026-03-19T14:40:16.000+08:00"
+          },
+          {
+            "title": "feat: add module tag prefix to prod JSON log messages",
+            "sha": "6b4071bd",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/6b4071bd3ac4ba96874977f3868db331e37c0c3f",
+            "datetime": "2026-03-19T17:28:59.000+08:00"
+          },
+          {
+            "title": "refactor: rename es_tag to api_name in structured logging",
+            "sha": "c50a7a79",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/c50a7a79e63074fec955e14e1f9260d2583babe9",
+            "datetime": "2026-03-19T17:29:14.000+08:00"
+          },
+          {
+            "title": "Merge branch 'feature/add-system-logging' into feature/add-deploy-config",
+            "sha": "06ceb772",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/06ceb772a1bb9edc57dc8a2fe0c96dd0a18857a6",
+            "datetime": "2026-03-19T17:29:48.000+08:00"
+          },
+          {
+            "title": "refactor: improve query_parser log readability and reduce noise",
+            "sha": "10522115",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/1052211509acc263f7bdfbb66a95b6a72e4fbc4f",
+            "datetime": "2026-03-19T17:45:33.000+08:00"
+          },
+          {
+            "title": "Merge branch 'feature/add-system-logging' into feature/add-deploy-config",
+            "sha": "e5169f74",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/e5169f74596f15bc2c45674e5333f4850ff93a5f",
+            "datetime": "2026-03-19T17:50:08.000+08:00"
+          },
+          {
+            "title": "Merge branch 'develop' into feature/add-system-logging",
+            "sha": "a7cdcb7c",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/a7cdcb7cfe10e2ee3437ccdd03ae2768662838e4",
+            "datetime": "2026-03-19T18:05:43.000+08:00"
+          },
+          {
+            "title": "refactor: replace print() with structlog in RapidKw and MainText",
+            "sha": "0065ccb0",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/0065ccb06caadf02dcdcec4d3ecef68d8fd3cfe7",
+            "datetime": "2026-03-19T18:20:10.000+08:00"
+          },
+          {
+            "title": "Merge branch 'feature/add-system-logging' into feature/add-deploy-config",
+            "sha": "5920a01b",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/5920a01b136f2e2f679eeaa92707edbff2ab2fa0",
+            "datetime": "2026-03-19T18:23:25.000+08:00"
+          },
+          {
+            "title": "feat: add non-blocking QueueHandler/QueueListener for async-safe logging",
+            "sha": "6d7457d0",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/6d7457d0a915b7c238da268d0ae1fc87f440acd2",
+            "datetime": "2026-03-19T23:48:58.000+08:00"
+          },
+          {
+            "title": "feat: add api_name to Request completed log message",
+            "sha": "2cca399f",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/2cca399f490be7b722a5d556fac0f21cf3c4a20c",
+            "datetime": "2026-03-19T23:49:40.000+08:00"
+          },
+          {
+            "title": "Merge branch 'feature/add-system-logging' into feature/add-deploy-config",
+            "sha": "0648ba6b",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/0648ba6be96e485db62b9968b00048e2add5bd99",
+            "datetime": "2026-03-19T23:55:12.000+08:00"
+          },
+          {
+            "title": "Merge branch 'develop' into 'master'",
+            "sha": "9d6a16d5",
+            "project": "KEYPO/keypo-engine-api",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine-api/-/commit/9d6a16d586b5e04ad563fbb44fd926d65a97afdc",
+            "datetime": "2026-03-19T04:32:18.000+00:00"
+          },
+          {
+            "title": "Merge branch 'develop' into 'master'",
+            "sha": "d53b6e49",
+            "project": "KEYPO/keypo-engine-api",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine-api/-/commit/d53b6e49b69f83f6b6b9724fcb136f1b0cd7217d",
+            "datetime": "2026-03-19T05:40:58.000+00:00"
+          },
+          {
+            "title": "Merge branch 'develop' into 'master'",
+            "sha": "3ea17e53",
+            "project": "KEYPO/keypo-backend",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/3ea17e539207def07177d9d755c3b5b5e93c471d",
+            "datetime": "2026-03-19T04:29:15.000+00:00"
+          }
+        ]
+      },
+      "Wendy": {
+        "count": 19,
+        "projects": [
+          "sinyi/sinyi-dashboard"
+        ],
+        "items": [
+          {
+            "title": "refactor(airflow): merge es-by-id DAGs into upstream DAGs",
+            "sha": "9d12bc72",
+            "project": "sinyi/sinyi-dashboard",
+            "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/9d12bc720c2a66518580607749fdc3d03f7211bd",
+            "datetime": "2026-03-19T16:49:37.000+08:00"
+          },
+          {
+            "title": "Merge branch 'feat/task-dependency' into 'develop'",
+            "sha": "b3066de0",
+            "project": "sinyi/sinyi-dashboard",
+            "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/b3066de011cbcd7f0d64e87c3c9ddac43c801abf",
+            "datetime": "2026-03-19T09:00:44.000+00:00"
+          },
+          {
+            "title": "Merge branch 'feat/task-dependency' into 'develop'",
+            "sha": "78acdeaa",
+            "project": "sinyi/sinyi-dashboard",
+            "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/78acdeaa0f015405c9fa94e5802348fa2ddc541b",
+            "datetime": "2026-03-19T09:01:18.000+00:00"
+          },
+          {
+            "title": "Merge branch 'develop' into 'develop-es9-migration'",
+            "sha": "4d14b0cf",
+            "project": "sinyi/sinyi-dashboard",
+            "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/4d14b0cf39fb5a50e3899027a709b3f936ec46c1",
+            "datetime": "2026-03-19T09:09:31.000+00:00"
+          },
+          {
+            "title": "Merge branch 'develop' into 'develop-es9-migration'",
+            "sha": "2cee78a9",
+            "project": "sinyi/sinyi-dashboard",
+            "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/2cee78a958595f5450baac1d34b49e528c307f69",
+            "datetime": "2026-03-19T09:17:56.000+00:00"
+          },
+          {
+            "title": "docs: add CLAUDE.md and ES client upgrade plan",
+            "sha": "262513ab",
+            "project": "sinyi/sinyi-dashboard",
+            "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/262513ab1f7c87be924ffe01812771eb1d399443",
+            "datetime": "2026-03-19T17:19:06.000+08:00"
+          },
+          {
+            "title": "refactor(es): migrate ES clients to elasticsearch9 package",
+            "sha": "1686dbb2",
+            "project": "sinyi/sinyi-dashboard",
+            "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/1686dbb23682fcd68fbdbb74d21e700af13e9b06",
+            "datetime": "2026-03-19T17:19:06.000+08:00"
+          },
+          {
+            "title": "chore(.claude): add WebSearch and docker compose permissions",
+            "sha": "7f8f40c7",
+            "project": "sinyi/sinyi-dashboard",
+            "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/7f8f40c7c32edd7a4e17ef075f963db52552f7ee",
+            "datetime": "2026-03-19T17:19:06.000+08:00"
+          },
+          {
+            "title": "refactor(es): adapt queries for ES v9 breaking changes",
+            "sha": "161f5a40",
+            "project": "sinyi/sinyi-dashboard",
+            "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/161f5a4032af898b89dd8d77f43bca50510fcd54",
+            "datetime": "2026-03-19T17:19:06.000+08:00"
+          },
+          {
+            "title": "chore(.claude): add WebFetch domain permissions",
+            "sha": "82454fc6",
+            "project": "sinyi/sinyi-dashboard",
+            "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/82454fc63753de12c635c7df0ad32870342a41ec",
+            "datetime": "2026-03-19T17:19:06.000+08:00"
+          },
+          {
+            "title": "docs(es_v9_migration): add migration tooling and inventory",
+            "sha": "31fa40e4",
+            "project": "sinyi/sinyi-dashboard",
+            "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/31fa40e40df926236085bb35a1e678b9c1f21d46",
+            "datetime": "2026-03-19T17:19:06.000+08:00"
+          },
+          {
+            "title": "feat(es): add IDC auth config and migrate to ES client",
+            "sha": "bac97218",
+            "project": "sinyi/sinyi-dashboard",
+            "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/bac972183ac535eae480d75e1710ee74d7701b28",
+            "datetime": "2026-03-19T17:19:06.000+08:00"
+          },
+          {
+            "title": "fix(es): adapt queries for ES v9 compatibility",
+            "sha": "c4e6e7c3",
+            "project": "sinyi/sinyi-dashboard",
+            "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/c4e6e7c3f07c363f61e80347f58f480a1ffa1890",
+            "datetime": "2026-03-19T17:19:07.000+08:00"
+          },
+          {
+            "title": "docs(es_v9_migration): add IDC auth doc and update inventory",
+            "sha": "ad9898d1",
+            "project": "sinyi/sinyi-dashboard",
+            "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/ad9898d11de530290c4fc5d49d1115f36ca85e31",
+            "datetime": "2026-03-19T17:19:07.000+08:00"
+          },
+          {
+            "title": "build(es): separate IDC auth credentials per cluster",
+            "sha": "a82c7646",
+            "project": "sinyi/sinyi-dashboard",
+            "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/a82c76465c0a113675852df3f805f382b6cc062d",
+            "datetime": "2026-03-19T17:19:07.000+08:00"
+          },
+          {
+            "title": "feat(es): add Qtool v2 with CJK boundary detection",
+            "sha": "a6863a26",
+            "project": "sinyi/sinyi-dashboard",
+            "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/a6863a2664920dd17078efccb283cda8afd2af41",
+            "datetime": "2026-03-19T17:19:07.000+08:00"
+          },
+          {
+            "title": "refactor(es): migrate to Qtool v2 and ES index aliases",
+            "sha": "70b15a96",
+            "project": "sinyi/sinyi-dashboard",
+            "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/70b15a9686c53c7034b31ec569cc19d238375cde",
+            "datetime": "2026-03-19T17:19:07.000+08:00"
+          },
+          {
+            "title": "docs(es_v9_migration): add migration plans and update inventory",
+            "sha": "733a8028",
+            "project": "sinyi/sinyi-dashboard",
+            "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/733a8028f72ea9714a8858fd44a83bcf6611cb42",
+            "datetime": "2026-03-19T17:19:07.000+08:00"
+          },
+          {
+            "title": "docs: add get_pn_from_keypo data flow analysis",
+            "sha": "0e522399",
+            "project": "sinyi/sinyi-dashboard",
+            "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/0e52239992758fc3dc7488653328d6027d7d3130",
+            "datetime": "2026-03-19T17:19:07.000+08:00"
+          }
+        ]
+      },
+      "Ted": {
+        "count": 4,
+        "projects": [
+          "CrawlersV2/fanti-insights-api",
+          "KEYPO/keypo-newsletter"
+        ],
+        "items": [
+          {
+            "title": "fix: resolve refresh bugs - user fbid conflict and scroll cache",
+            "sha": "aad30865",
+            "project": "CrawlersV2/fanti-insights-api",
+            "url": "https://biglab.buygta.today/CrawlersV2/fanti-insights-api/-/commit/aad30865bea2b6924a116660c90257790d2729bb",
+            "datetime": "2026-03-19T18:36:17.000+08:00"
+          },
+          {
+            "title": "feat: expand e2e test coverage with write tests and new endpoints",
+            "sha": "7220001e",
+            "project": "CrawlersV2/fanti-insights-api",
+            "url": "https://biglab.buygta.today/CrawlersV2/fanti-insights-api/-/commit/7220001ee40b605df5ca7781a47f1f6b3aab788c",
+            "datetime": "2026-03-19T18:36:49.000+08:00"
+          },
+          {
+            "title": "Merge branch 'develop' into 'main'",
+            "sha": "dd4431aa",
+            "project": "KEYPO/keypo-newsletter",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-newsletter/-/commit/dd4431aa818a7792eec0e7a99fe01d2015d395fb",
+            "datetime": "2026-03-19T05:36:53.000+00:00"
+          },
+          {
+            "title": "Merge branch 'develop' into 'main'",
+            "sha": "51c5fae9",
+            "project": "KEYPO/keypo-newsletter",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-newsletter/-/commit/51c5fae94bbab90f2e32c77e798c9d5d21ca910b",
+            "datetime": "2026-03-19T05:37:10.000+00:00"
+          }
+        ]
+      },
+      "Joe": {
+        "count": 28,
+        "projects": [
+          "keypo-suite/keypo-portal-admin",
+          "KEYPO/keypo-engine-api",
+          "KEYPO/keypo-frontend-2023",
+          "KEYPO/keypo-backend"
+        ],
+        "items": [
+          {
+            "title": "docs: add implementation plan for KOL in Agent permission control",
+            "sha": "6f621008",
+            "project": "keypo-suite/keypo-portal-admin",
+            "url": "https://biglab.buygta.today/keypo-suite/keypo-portal-admin/-/commit/6f621008bb4760ddd52dc8b23a3a2246aa355273",
+            "datetime": "2026-03-18T19:34:27.000-06:00"
+          },
+          {
+            "title": "Merge branch 'fix/sndist-non-news-types-from-query' into 'develop'",
+            "sha": "7d7f656d",
+            "project": "KEYPO/keypo-engine-api",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine-api/-/commit/7d7f656dbda55d63e3705ad152297af383f2f67d",
+            "datetime": "2026-03-19T04:24:55.000+00:00"
+          },
+          {
+            "title": "feat: add KOL in Agent permission toggle linked to KEYPO Agent",
+            "sha": "f24838c8",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/f24838c82e1ff705a4dccb1f8df0e50c5550cd88",
+            "datetime": "2026-03-18T17:47:57.000-06:00"
+          },
+          {
+            "title": "feat: add time parameters to ES queries",
+            "sha": "4bfbddec",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/4bfbddec612c30958d11df5a20180b871a6d287b",
+            "datetime": "2026-03-18T18:44:40.000-06:00"
+          },
+          {
+            "title": "chore: update @keypo/keypo-engine-layer version",
+            "sha": "2c6ea85b",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/2c6ea85b953d4a3cfc5105518e3a72f7f0a5a5d3",
+            "datetime": "2026-03-18T18:44:43.000-06:00"
+          },
+          {
+            "title": "feat: remove time portion from min/max date format in `timeRanges`",
+            "sha": "c5d60abc",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/c5d60abcffcf49716dc07a61f54b54ac48787884",
+            "datetime": "2026-03-18T18:44:45.000-06:00"
+          },
+          {
+            "title": "refactor: remove `kw_pos_fw` and `kw_pos_neu` from attribute words",
+            "sha": "76b6c9e1",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/76b6c9e179de3d8eb076bb3e30f2cdb1312b0468",
+            "datetime": "2026-03-18T18:44:48.000-06:00"
+          },
+          {
+            "title": "feat: add minTime/maxTime params to `rapidKeyword` query payloads",
+            "sha": "9999d237",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/9999d237ad8c674d500281407ced0ff8c8d60d81",
+            "datetime": "2026-03-18T18:44:50.000-06:00"
+          },
+          {
+            "title": "refactor: add required params to `keywordStorm` query for backend common pre-check",
+            "sha": "fbc12c77",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/fbc12c777f4eaf3f44424c032d4c8ec3b925adb9",
+            "datetime": "2026-03-18T18:44:52.000-06:00"
+          },
+          {
+            "title": "refactor: remove `replaceHTMLSpaceEntity` workaround for `&nbsp;` conversion",
+            "sha": "4ee6c3a6",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/4ee6c3a6c067f97749b80698504d1d6231637a85",
+            "datetime": "2026-03-18T18:44:55.000-06:00"
+          },
+          {
+            "title": "feat: adjust minTime/maxTime in text list payload based on query date boundary",
+            "sha": "2d047044",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/2d047044dbca9cac6dbabefea26d25c1aaa2becf",
+            "datetime": "2026-03-18T18:44:57.000-06:00"
+          },
+          {
+            "title": "feat: refactor freqdist text list payload to use separated minTime/maxTime with boundary-aware adjustment",
+            "sha": "a7d2187d",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/a7d2187d2b3f3279ac48ecaf8a5d79af8b1055e5",
+            "datetime": "2026-03-18T18:45:00.000-06:00"
+          },
+          {
+            "title": "chore: update @keypo/keypo-engine-layer version",
+            "sha": "7923d255",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/7923d255ccad1187726a1ea1ede23f320db92b05",
+            "datetime": "2026-03-18T18:45:02.000-06:00"
+          },
+          {
+            "title": "feat: add tooltip to date range picker button showing full datetime range",
+            "sha": "8e045def",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/8e045def2f983f80bd647a0fafbadf66d8d1f921",
+            "datetime": "2026-03-18T18:45:06.000-06:00"
+          },
+          {
+            "title": "fix: correct 24-hour query time range and stabilize query date initialization",
+            "sha": "660c0332",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/660c0332c37d8da28870b1403a023f519effdfdd",
+            "datetime": "2026-03-18T18:45:08.000-06:00"
+          },
+          {
+            "title": "fix: add minTime and maxTime params to AI report creation request",
+            "sha": "34c9b49a",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/34c9b49ad97a2d0db210303e52d62dda641feaf3",
+            "datetime": "2026-03-18T18:47:53.000-06:00"
+          },
+          {
+            "title": "feat: display time range in AI report tooltip and widen tooltip",
+            "sha": "1eeb7603",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/1eeb7603084116b68ce2b993755ec138af9969e9",
+            "datetime": "2026-03-18T18:47:55.000-06:00"
+          },
+          {
+            "title": "refactor: extract formatDate and display time in report period",
+            "sha": "ac071f8a",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/ac071f8a5ffb842b208fd766786d5e89755d2035",
+            "datetime": "2026-03-18T18:47:57.000-06:00"
+          },
+          {
+            "title": "chore: change external port from 3000 to 3001",
+            "sha": "2973b7c8",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/2973b7c830cf112f67619280294d61f043a8d317",
+            "datetime": "2026-03-18T18:48:21.000-06:00"
+          },
+          {
+            "title": "chore: update container name for frontend service to include 'uat'",
+            "sha": "162b799d",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/162b799d44248f2cc5b091df9a8e3cda13bf1460",
+            "datetime": "2026-03-18T18:48:23.000-06:00"
+          },
+          {
+            "title": "Merge branch 'feat/e2e-freqdist-tests' into feat-es-upgrade-v3",
+            "sha": "365a510d",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/365a510d987afdb4f73f7f4e0b585a4104458c70",
+            "datetime": "2026-03-18T18:54:16.000-06:00"
+          },
+          {
+            "title": "Merge branch 'feat-34' into develop",
+            "sha": "ce93d912",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/ce93d912d53700727497253e2fe72099d9189e68",
+            "datetime": "2026-03-18T22:42:57.000-06:00"
+          },
+          {
+            "title": "Merge branch 'feat-client-specific-channel-filter' into develop",
+            "sha": "adea181d",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/adea181d1296f8edaccbdf890644ee7bcd372211",
+            "datetime": "2026-03-18T22:43:51.000-06:00"
+          },
+          {
+            "title": "v1.6.7",
+            "sha": "f785f345",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/f785f345941a70659cc3d84881da1286f5030d4e",
+            "datetime": "2026-03-18T22:44:14.000-06:00"
+          },
+          {
+            "title": "Merge branch 'develop'",
+            "sha": "ada97dd0",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/ada97dd0e7836ea7b2fbe772c1e0f4d3191cf0b5",
+            "datetime": "2026-03-18T22:45:02.000-06:00"
+          },
+          {
+            "title": "docs: add release notes for v1.6.7",
+            "sha": "ddd911ca",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/ddd911ca031eb05214760a83f20aceb39d0e5a01",
+            "datetime": "2026-03-18T22:48:20.000-06:00"
+          },
+          {
+            "title": "Merge branch 'fix/case-insensitive-region-suffix' into 'develop'",
+            "sha": "1c6b6809",
+            "project": "KEYPO/keypo-backend",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/1c6b68095fb8a3f9670b9bf2e773ca098ef34674",
+            "datetime": "2026-03-19T04:20:58.000+00:00"
+          },
+          {
+            "title": "Merge branch 'develop' into 'master'",
+            "sha": "659c69c1",
+            "project": "KEYPO/keypo-backend",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/659c69c1217408e24e7f437f428f2de8b6f1508c",
+            "datetime": "2026-03-19T04:41:50.000+00:00"
+          }
+        ]
+      },
+      "Jason": {
+        "count": 1,
+        "projects": [
+          "dailyview/dv-remote-es"
+        ],
+        "items": [
+          {
+            "title": "feat: 統一 --date 參數為 YYYY-MM 格式，create-next-month 支援指定月份補建",
+            "sha": "fb2261f9",
+            "project": "dailyview/dv-remote-es",
+            "url": "https://biglab.buygta.today/dailyview/dv-remote-es/-/commit/fb2261f9ce456096695c69d70715da0720a8d904",
+            "datetime": "2026-03-19T09:59:30.000+08:00"
+          }
+        ]
+      }
     }
   },
   "analysis": {
@@ -11955,12 +13166,69 @@
         "commitCount": 0,
         "hours": 8.5
       }
+    },
+    "3/19": {
+      "Joyce": {
+        "status": "✅",
+        "commitCount": 19,
+        "hours": 8
+      },
+      "Ivy": {
+        "status": "✅",
+        "commitCount": 57,
+        "hours": 8
+      },
+      "Jason": {
+        "status": "✅",
+        "commitCount": 1,
+        "hours": 7
+      },
+      "日銜": {
+        "status": "✅",
+        "commitCount": 10,
+        "hours": 7
+      },
+      "Wendy": {
+        "status": "✅",
+        "commitCount": 19,
+        "hours": 7.5
+      },
+      "Ted": {
+        "status": "✅",
+        "commitCount": 4,
+        "hours": 10
+      },
+      "家輝": {
+        "status": "⚠️",
+        "commitCount": 0,
+        "hours": 7
+      },
+      "Joe": {
+        "status": "✅",
+        "commitCount": 28,
+        "hours": 6
+      },
+      "Aaron": {
+        "status": "✅",
+        "commitCount": 24,
+        "hours": 7.5
+      },
+      "哲緯": {
+        "status": "⚠️",
+        "commitCount": 0,
+        "hours": 7.5
+      }
     }
   },
   "projectRisks": [
     {
-      "project": "bigdata/2025-bigdata-admin",
+      "project": "bigdata/2025-bigdata-app",
       "soloContributor": "Ivy",
+      "severity": "🟡"
+    },
+    {
+      "project": "CrawlersV2/bigcrawler-scrapy",
+      "soloContributor": "日銜",
       "severity": "🟡"
     },
     {
@@ -11974,43 +13242,8 @@
       "severity": "🟡"
     },
     {
-      "project": "KEYPO/keypo-engine-api",
-      "soloContributor": "Joyce",
-      "severity": "🟡"
-    },
-    {
-      "project": "KEYPO/keypo-frontend-2023",
-      "soloContributor": "Joe",
-      "severity": "🟡"
-    },
-    {
-      "project": "KEYPO/keypo-backend",
-      "soloContributor": "Joyce",
-      "severity": "🟡"
-    },
-    {
-      "project": "CrawlersV2/bigcrawler-scrapy",
-      "soloContributor": "日銜",
-      "severity": "🟡"
-    },
-    {
-      "project": "CrawlersV2/fb-search-api",
-      "soloContributor": "侑呈",
-      "severity": "🟡"
-    },
-    {
-      "project": "CrawlersV2/fb-insights-scrapy",
-      "soloContributor": "侑呈",
-      "severity": "🟡"
-    },
-    {
-      "project": "CrawlersV2/fb-cdp",
-      "soloContributor": "侑呈",
-      "severity": "🟡"
-    },
-    {
-      "project": "CrawlersV2/mq-fbmessage-consumer",
-      "soloContributor": "侑呈",
+      "project": "sinyi/sinyi-dashboard",
+      "soloContributor": "Wendy",
       "severity": "🟡"
     },
     {
@@ -12019,18 +13252,48 @@
       "severity": "🟡"
     },
     {
-      "project": "sinyi/sinyi-dashboard",
-      "soloContributor": "Wendy",
+      "project": "keypo-suite/keypo-portal-admin",
+      "soloContributor": "Joe",
       "severity": "🟡"
     },
     {
-      "project": "yuriy.lin/browser_service",
-      "soloContributor": "侑呈",
+      "project": "bigdata/2025-bigdata-backend",
+      "soloContributor": "Ivy",
       "severity": "🟡"
     },
     {
-      "project": "KEYPO/keypo-engine/on-premises-api-gateway",
+      "project": "bigdata/2025-bigdata-admin-backend",
+      "soloContributor": "Ivy",
+      "severity": "🟡"
+    },
+    {
+      "project": "llmprojects/keypo-agent",
       "soloContributor": "Aaron",
+      "severity": "🟡"
+    },
+    {
+      "project": "KEYPO/keypo-engine/es-proxy-settings",
+      "soloContributor": "Aaron",
+      "severity": "🟡"
+    },
+    {
+      "project": "bigdata/2025-bigdata-admin",
+      "soloContributor": "Ivy",
+      "severity": "🟡"
+    },
+    {
+      "project": "KEYPO/keypo-newsletter",
+      "soloContributor": "Ted",
+      "severity": "🟡"
+    },
+    {
+      "project": "KEYPO/keypo-frontend-2023",
+      "soloContributor": "Joe",
+      "severity": "🟡"
+    },
+    {
+      "project": "dailyview/dv-remote-es",
+      "soloContributor": "Jason",
       "severity": "🟡"
     }
   ]
