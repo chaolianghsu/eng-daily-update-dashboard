@@ -35,7 +35,7 @@ function doPost(e) {
   if (data.issues) writeIssues_(ss, data.issues);
   if (data.leave) writeLeave_(ss, data.leave);
   if (data.dailyUpdates) writeDailyUpdates_(ss, data.dailyUpdates);
-  if (data.gitlabCommits) writeGitlabCommits_(ss, data.gitlabCommits);
+  if (data.gitlabCommits) writeCommits_(ss, data.gitlabCommits);
   if (data.commitAnalysis) writeCommitAnalysis_(ss, data.commitAnalysis);
   if (data.taskAnalysis) writeTaskAnalysis_(ss, data.taskAnalysis);
 
@@ -162,9 +162,27 @@ function writeDailyUpdates_(ss, dailyUpdates) {
   }
 }
 
-function writeGitlabCommits_(ss, commits) {
-  var sheet = ss.getSheetByName('GitLab Commits');
-  if (!sheet) sheet = ss.insertSheet('GitLab Commits');
+function writeCommits_(ss, commits) {
+  // Migration: try "Commits" first, fall back to "GitLab Commits" (rename + backfill)
+  var sheet = ss.getSheetByName('Commits');
+  if (!sheet) {
+    var oldSheet = ss.getSheetByName('GitLab Commits');
+    if (oldSheet) {
+      oldSheet.setName('Commits');
+      sheet = oldSheet;
+      var lastRow = sheet.getLastRow();
+      if (lastRow >= 1) {
+        sheet.getRange(1, 7).setValue('Source');
+        if (lastRow > 1) {
+          var fillValues = [];
+          for (var r = 0; r < lastRow - 1; r++) fillValues.push(['gitlab']);
+          sheet.getRange(2, 7, lastRow - 1, 1).setValues(fillValues);
+        }
+      }
+    } else {
+      sheet = ss.insertSheet('Commits');
+    }
+  }
 
   // Read existing rows for deduplication by date|member|sha
   var existing = sheet.getDataRange().getValues();
@@ -176,7 +194,7 @@ function writeGitlabCommits_(ss, commits) {
 
   // Add header if empty
   if (existing.length === 0) {
-    sheet.getRange(1, 1, 1, 6).setValues([['日期', '成員', 'Project', 'Commit Title', 'SHA', 'URL']]);
+    sheet.getRange(1, 1, 1, 7).setValues([['日期', '成員', 'Project', 'Commit Title', 'SHA', 'URL', 'Source']]);
     existing = [['header']];
   }
 
@@ -185,12 +203,12 @@ function writeGitlabCommits_(ss, commits) {
     var c = commits[i];
     var key = String(c.date) + '|' + String(c.member) + '|' + String(c.sha);
     if (existingKeys[key]) continue;
-    newRows.push([c.date, c.member, c.project, c.title, c.sha, c.url || '']);
+    newRows.push([c.date, c.member, c.project, c.title, c.sha, c.url || '', c.source || 'gitlab']);
   }
 
   if (newRows.length > 0) {
     var startRow = existing.length + 1;
-    sheet.getRange(startRow, 1, newRows.length, 6).setValues(newRows);
+    sheet.getRange(startRow, 1, newRows.length, 7).setValues(newRows);
   }
 }
 
@@ -233,15 +251,18 @@ function writeCommitAnalysis_(ss, analysis) {
 
 /**
  * Returns commit data as JSON string (called from client via google.script.run).
- * Returns null (as string) if no GitLab Commits sheet exists.
+ * Returns null (as string) if no Commits sheet exists.
+ * Supports both "Commits" (new) and "GitLab Commits" (legacy) sheet names.
  */
 function getCommitData() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var commitSheet = ss.getSheetByName('GitLab Commits');
+  var commitSheet = ss.getSheetByName('Commits') || ss.getSheetByName('GitLab Commits');
   if (!commitSheet) return JSON.stringify(null);
 
   // Read commits: group by date → member
   var commitRows = commitSheet.getDataRange().getValues();
+  var numCols = commitRows.length > 0 ? commitRows[0].length : 0;
+  var hasSource = numCols >= 7;
   var commits = {};
   for (var i = 1; i < commitRows.length; i++) {
     var date = formatDate_(commitRows[i][0]);
@@ -258,7 +279,8 @@ function getCommitData() {
       commits[date][member].projects.push(project);
     }
     var url = String(commitRows[i][5] || '');
-    commits[date][member].items.push({ title: title, sha: sha, project: project, url: url || null });
+    var source = hasSource ? String(commitRows[i][6] || 'gitlab') : 'gitlab';
+    commits[date][member].items.push({ title: title, sha: sha, project: project, url: url || null, source: source });
   }
 
   // Read analysis
@@ -454,7 +476,8 @@ function readLeave_(ss) {
  */
 var DEDUP_KEY_CONFIG = {
   'Daily Updates':    { cols: [0, 1], dateCols: [0] },       // date|member
-  'GitLab Commits':   { cols: [0, 1, 4], dateCols: [0] },    // date|member|sha
+  'Commits':          { cols: [0, 1, 4], dateCols: [0] },    // date|member|sha
+  'GitLab Commits':   { cols: [0, 1, 4], dateCols: [0] },    // date|member|sha (legacy)
   'Commit Analysis':  { cols: [0, 1], dateCols: [0] },       // date|member
   'Task Analysis':    { cols: [1, 2, 3], dateCols: [2] },    // period|date|member
 };
