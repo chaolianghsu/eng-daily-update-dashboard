@@ -71,11 +71,12 @@ Output format per commit (same as GitLab collector + `source`):
   "title": "commit message",
   "sha": "20faa17b",
   "url": "https://github.com/bigdata-54837596/repo-name/commit/abc123...",
+  "unmapped": false,
   "source": "github"
 }
 ```
 
-Field names match GitLab's `filterAndMapCommits()` output exactly (`member`, not `author`) so shared functions (`buildAnalysis`, `buildDashboardJSON`, `buildPostPayload`) work without modification. `datetime` maps from GitHub API's `commit.committer.date`.
+Field names match GitLab's `filterAndMapCommits()` output exactly (`member`, not `author`; includes `unmapped: !member`) so shared functions (`buildAnalysis`, `buildDashboardJSON`, `buildPostPayload`) work without modification — they all use `if (c.unmapped) continue;` to filter. `datetime` maps from GitHub API's `commit.committer.date`.
 
 ### SHA Normalization
 
@@ -104,7 +105,8 @@ Full pipeline script (parallel to `fetch-gitlab-commits.js`):
 
 - Collection + analysis + POST in one run
 - When run standalone: reads existing `public/gitlab-commits.json` (nested dashboard format), iterates `commits[date][member].items` to extract all existing SHAs into a Set, filters out GitHub commits whose SHA already exists, then runs analysis with merged commits
-- Exports shared functions: `collectGitHubCommits`, `buildPostPayload` (note: named `collectGitHubCommits` not `collectCommits` to avoid collision with GitLab's export)
+- Imports shared functions (`buildAnalysis`, `buildDashboardJSON`, `buildPostPayload`) from `fetch-gitlab-commits.js`
+- Exports only `collectGitHubCommits` (named to avoid collision with GitLab's `collectCommits`)
 
 ## §2: Merge Analysis & Dedup (Stage 2)
 
@@ -253,10 +255,12 @@ interface CommitItem {
 
 New `source` column added.
 
-| date | member | sha | project | title | url | source |
-|------|--------|-----|---------|-------|-----|--------|
-| 3/19 | 成員A | abc123 | repo-1 | fix bug | https://... | gitlab |
-| 3/19 | 成員B | def456 | repo-2 | add feature | https://... | github |
+| date | member | project | title | sha | url | source |
+|------|--------|---------|-------|-----|-----|--------|
+| 3/19 | 成員A | repo-1 | fix bug | abc123 | https://... | gitlab |
+| 3/19 | 成員B | repo-2 | add feature | def456 | https://... | github |
+
+Column order matches existing `writeGitlabCommits_()`: date(0), member(1), project(2), title(3), sha(4), url(5), source(6). `DEDUP_KEY_CONFIG` `cols: [0, 1, 4]` correctly maps to `date|member|sha`.
 
 ### `Code.gs` Changes
 
