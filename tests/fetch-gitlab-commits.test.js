@@ -66,6 +66,12 @@ describe('filterAndMapCommits', () => {
     expect(result).toHaveLength(0);
   });
 
+  it('includes source: "gitlab" in output', () => {
+    const commits = [{ author_name: 'byron.you', committed_date: '2026-03-19T10:00:00+08:00', title: 'fix', short_id: '1234abcd', web_url: 'https://example.com' }];
+    const result = filterAndMapCommits(commits, 'proj/repo', { 'byron.you': '日銜' }, []);
+    expect(result[0].source).toBe('gitlab');
+  });
+
   it('returns unmapped authors with original name and warning flag', () => {
     const commits = [
       { author_name: 'unknown.dev', committed_date: '2026-03-11T10:00:00+08:00', short_id: 'u1', title: 'fix' },
@@ -89,6 +95,14 @@ describe('buildDashboardJSON', () => {
     const analysis = { "3/18": { "A": { status: "✅", commitCount: 1, hours: 8 } } };
     const result = buildDashboardJSON(commits, analysis, []);
     expect(result.commits["3/18"]["A"].items[0].datetime).toBe("2026-03-18T15:30:45+08:00");
+  });
+
+  it('propagates source to items', () => {
+    const commits = [
+      { member: 'A', date: '3/19', datetime: '2026-03-19T10:00:00Z', project: 'p1', title: 'fix', sha: '1234abcd', url: 'http://x', unmapped: false, source: 'gitlab' },
+    ];
+    const result = buildDashboardJSON(commits, {}, []);
+    expect(result.commits['3/19']['A'].items[0].source).toBe('gitlab');
   });
 });
 
@@ -130,5 +144,18 @@ describe('buildAnalysis', () => {
     const agentRisk = result.projectRisks.find(r => r.project === 'agent');
     expect(agentRisk).toBeDefined();
     expect(agentRisk.soloContributor).toBe('Aaron');
+  });
+});
+
+import { buildPostPayload } from '../scripts/fetch-gitlab-commits.js';
+
+describe('buildPostPayload', () => {
+  it('includes source in commit entries', () => {
+    const commits = [
+      { member: 'A', date: '3/19', project: 'p1', title: 'fix', sha: '1234abcd', url: 'http://x', unmapped: false, source: 'gitlab' },
+    ];
+    const analysisResult = { analysis: { '3/19': { 'A': { status: '✅', commitCount: 1, hours: 8 } } }, projectRisks: [] };
+    const result = buildPostPayload(commits, analysisResult);
+    expect(result.gitlabCommits[0].source).toBe('gitlab');
   });
 });

@@ -120,6 +120,7 @@ function filterAndMapCommits(commits, projectPath, memberMap, excludeAuthors) {
       sha: c.short_id,
       url: c.web_url || null,
       unmapped: !member,
+      source: 'gitlab',
     });
   }
   return results;
@@ -219,7 +220,7 @@ function buildDashboardJSON(commits, analysis, projectRisks) {
     const m = commitsByDate[c.date][c.member];
     m.count++;
     if (!m.projects.includes(c.project)) m.projects.push(c.project);
-    m.items.push({ title: c.title, sha: c.sha, project: c.project, url: c.url, datetime: c.datetime });
+    m.items.push({ title: c.title, sha: c.sha, project: c.project, url: c.url, datetime: c.datetime, source: c.source });
   }
   return { commits: commitsByDate, analysis, projectRisks };
 }
@@ -233,7 +234,7 @@ function buildPostPayload(commits, analysisResult) {
     const key = `${c.date}|${c.member}|${c.sha}|${c.project}`;
     if (seenPost.has(key)) continue;
     seenPost.add(key);
-    gitlabCommits.push({ date: c.date, member: c.member, project: c.project, title: c.title, sha: c.sha, url: c.url });
+    gitlabCommits.push({ date: c.date, member: c.member, project: c.project, title: c.title, sha: c.sha, url: c.url, source: c.source });
   }
 
   const commitAnalysis = [];
