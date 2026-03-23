@@ -64,15 +64,18 @@ Output format per commit (same as GitLab collector + `source`):
 
 ```json
 {
-  "sha": "20faa17b",
-  "title": "commit message",
-  "project": "repo-name",
-  "url": "https://github.com/bigdata-54837596/repo-name/commit/abc123...",
-  "author": "mapped-member-name",
+  "member": "mapped-member-name",
   "date": "3/19",
+  "datetime": "2026-03-19T14:30:00Z",
+  "project": "repo-name",
+  "title": "commit message",
+  "sha": "20faa17b",
+  "url": "https://github.com/bigdata-54837596/repo-name/commit/abc123...",
   "source": "github"
 }
 ```
+
+Field names match GitLab's `filterAndMapCommits()` output exactly (`member`, not `author`) so shared functions (`buildAnalysis`, `buildDashboardJSON`, `buildPostPayload`) work without modification. `datetime` maps from GitHub API's `commit.committer.date`.
 
 ### SHA Normalization
 
@@ -100,8 +103,8 @@ Supports `--date M/D` argument, consistent with GitLab collector.
 Full pipeline script (parallel to `fetch-gitlab-commits.js`):
 
 - Collection + analysis + POST in one run
-- When run standalone: reads existing `public/gitlab-commits.json`, extracts all existing SHAs into a Set, filters out GitHub commits whose normalized SHA already exists, then runs analysis with merged commits
-- Exports shared functions: `collectCommits`, `buildPostPayload`
+- When run standalone: reads existing `public/gitlab-commits.json` (nested dashboard format), iterates `commits[date][member].items` to extract all existing SHAs into a Set, filters out GitHub commits whose SHA already exists, then runs analysis with merged commits
+- Exports shared functions: `collectGitHubCommits`, `buildPostPayload` (note: named `collectGitHubCommits` not `collectCommits` to avoid collision with GitLab's export)
 
 ## §2: Merge Analysis & Dedup (Stage 2)
 
@@ -127,15 +130,39 @@ for (let j = i + 1; j < args.length && !args[j].startsWith('--'); j++) {
 }
 ```
 
-Read each file, merge into single `allCommits` array, then proceed with existing analysis.
+Read each file, merge into single `allCommits` array. Cross-platform dedup runs BEFORE passing to `buildAnalysis()` / `buildDashboardJSON()`:
+
+```javascript
+// 1. Read and merge all commit files
+let allCommits = [];
+for (const p of commitsPaths) {
+  allCommits.push(...JSON.parse(fs.readFileSync(p, 'utf8')));
+}
+
+// 2. Cross-platform dedup (before analysis)
+const seen = new Set();
+allCommits = allCommits.filter(c => {
+  const key = `${c.sha}|${c.project}`;
+  if (seen.has(key)) {
+    console.warn(`Dedup: commit ${c.sha} found on both platforms for project ${c.project}`);
+    return false;
+  }
+  seen.add(key);
+  return true;
+});
+
+// 3. Proceed with existing analysis using deduped array
+const analysis = buildAnalysis(allCommits, rawData, dailyUpdateMembers);
+```
 
 ### Dedup Logic
 
-1. Read all commit files, merge into single array
-2. Dedup by **normalized SHA** (8-char) + **project** as composite key (`sha|project`)
+1. Read all commit files, concatenate into single array
+2. Cross-platform dedup BEFORE analysis — using `sha|project` composite key
 3. Retention: keep first occurrence (GitLab files listed first → GitLab priority)
-4. Log warning: `Dedup: commit 20faa17b found on both gitlab and github for project X`
+4. Log warning: `Dedup: commit 20faa17b found on both platforms for project X`
 5. Edge case: same SHA + different project → keep both (different repos, not a duplicate)
+6. Then pass deduped array to existing `buildAnalysis()` and `buildDashboardJSON()`
 
 ### `public/gitlab-commits.json` Schema Change
 
@@ -239,7 +266,7 @@ New `source` column added.
    - If found → rename to "Commits", add "source" header, backfill existing rows with `"gitlab"`
    - If neither found → create new "Commits" sheet
    - Idempotent: runs safely multiple times
-2. **`DEDUP_KEY_CONFIG`** — register both `"Commits"` and `"GitLab Commits"` with the same key config (`date|member|sha`). This handles the case where `dedupSheets_` runs before migration (sheet still named "GitLab Commits"). After migration completes, only "Commits" will match.
+2. **`DEDUP_KEY_CONFIG`** — register both `"Commits"` and `"GitLab Commits"` with the same key config: `cols: [0, 1, 4]` mapping to `date|member|sha`. Column indices are unchanged because `source` is appended at position 6, not inserted. This handles the case where `dedupSheets_` runs before migration (sheet still named "GitLab Commits"). After migration completes, only "Commits" will match.
 3. **`doPost(e)`** — payload key stays `data.gitlabCommits` (backward compat with deployed callers), but handler calls `writeCommits_()`:
    ```javascript
    if (data.gitlabCommits) writeCommits_(ss, data.gitlabCommits);
@@ -298,7 +325,10 @@ New `.claude/skills/sync-github-commits.md`, symmetric to `sync-gitlab-commits.m
 
 ### `prepare-task-analysis.js`
 
-Minor change only: update prompt section header from `"### GitLab Commits (same day):"` to `"### Commits (same day):"` for accuracy. No logic changes — the script reads `public/gitlab-commits.json` commits structure which is unchanged (`commits[date][member]`).
+Minor changes: update "GitLab" references in the generated Claude prompt for accuracy:
+- Section header: `"### GitLab Commits (same day):"` → `"### Commits (same day):"`
+- Analysis rules header: drop "GitLab" qualifier from `"每日回報任務與 GitLab commit 記錄的合理性"` → `"每日回報任務與 commit 記錄的合理性"`
+No logic changes — the script reads `public/gitlab-commits.json` commits structure which is unchanged (`commits[date][member]`).
 
 ### Testing
 
@@ -341,3 +371,4 @@ Minor change only: update prompt section header from `"### GitLab Commits (same 
 | `.claude/skills/sync-github-commits.md` | **New** — standalone GitHub sync skill |
 | `github-config.json` | **New** (gitignored) — GitHub API config |
 | `.gitignore` | Add `github-config.json` |
+| `CLAUDE.md` | Document `github-config.json`, GitHub scripts, merged commits concept |
