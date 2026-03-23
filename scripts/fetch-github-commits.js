@@ -156,7 +156,8 @@ async function collectGitHubCommits(dateArg) {
       allCommits.push(...mapped.filter(c => !c.unmapped));
       console.error(`  ${org}/${repo.name}: ${rawCommits.length} commits (${mapped.filter(c => !c.unmapped).length} mapped)`);
     } catch (e) {
-      if (e.message.includes('token')) throw e;
+      if (e.message.includes('token') || e.message === 'RATE_LIMITED') throw e;
+      console.error(`  ${org}/${repo.name}: skipped (${e.message})`);
       continue;
     }
   }
@@ -188,40 +189,31 @@ async function main() {
     existing.rawData[Object.keys(existing.rawData).pop()] || {}
   );
 
-  // Load existing gitlab-commits.json and build SHA set for dedup
+  // Load existing gitlab-commits.json — single pass builds SHA set + flat array
   const gitlabJsonPath = path.join(ROOT, 'public', 'gitlab-commits.json');
   const existingSHAs = new Set();
-  let existingGitlab = { commits: {}, analysis: {}, projectRisks: [] };
+  const existingFlat = [];
   if (fs.existsSync(gitlabJsonPath)) {
-    existingGitlab = JSON.parse(fs.readFileSync(gitlabJsonPath, 'utf8'));
+    const existingGitlab = JSON.parse(fs.readFileSync(gitlabJsonPath, 'utf8'));
     for (const [date, members] of Object.entries(existingGitlab.commits)) {
       for (const [member, info] of Object.entries(members)) {
         for (const item of info.items) {
-          existingSHAs.add(item.sha);
+          existingSHAs.add(`${item.sha}|${item.project}`);
+          existingFlat.push({
+            member, date, datetime: item.datetime,
+            project: item.project, title: item.title,
+            sha: item.sha, url: item.url,
+            unmapped: false, source: item.source || 'gitlab',
+          });
         }
       }
     }
   }
 
-  // Dedup GitHub commits against existing SHAs
-  const newCommits = allCommits.filter(c => !existingSHAs.has(c.sha));
+  // Dedup GitHub commits against existing sha|project keys
+  const newCommits = allCommits.filter(c => !existingSHAs.has(`${c.sha}|${c.project}`));
   console.error(`\nGitHub commits: ${allCommits.length} total, ${newCommits.length} new (${allCommits.length - newCommits.length} already in gitlab-commits.json)`);
 
-  // Merge: combine existing flat commits from gitlab-commits.json with new GitHub commits
-  // Reconstruct flat commits from existing dashboard JSON for analysis
-  const existingFlat = [];
-  for (const [date, members] of Object.entries(existingGitlab.commits)) {
-    for (const [member, info] of Object.entries(members)) {
-      for (const item of info.items) {
-        existingFlat.push({
-          member, date, datetime: item.datetime,
-          project: item.project, title: item.title,
-          sha: item.sha, url: item.url,
-          unmapped: false, source: item.source || 'gitlab',
-        });
-      }
-    }
-  }
   const mergedCommits = [...existingFlat, ...newCommits];
 
   // Build analysis on merged data
