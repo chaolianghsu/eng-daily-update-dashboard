@@ -342,6 +342,10 @@ export default function CommitsView({ commitData, dates, members, memberColors, 
                 <tbody>
                   {items.sort((a, b) => (b.datetime || '').localeCompare(a.datetime || '')).map((item, i) => (
                     <tr key={i} style={{ borderBottom: `1px solid ${COLORS.border}` }}>
+                      <td style={{ padding: "4px 6px", width: 24, fontSize: 13, textAlign: "center" }}
+                        title={item.source === 'github' ? 'GitHub' : 'GitLab'}>
+                        {item.source === 'github' ? '🐙' : '🦊'}
+                      </td>
                       <td style={{ padding: "4px 8px", color: COLORS.textMuted, width: 50, fontSize: 11 }}
                         title={item.datetime || ''}>{item.datetime ? new Date(item.datetime).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Taipei' }) : '—'}</td>
                       <td style={{ padding: "4px 8px", color: COLORS.teal, width: 120, fontSize: 11 }}>{item.project.split('/').pop()}</td>

@@ -23,6 +23,7 @@ export interface CommitItem {
   project: string;
   url: string;
   datetime?: string;
+  source?: 'gitlab' | 'github';
 }
 
 export interface MemberCommits {

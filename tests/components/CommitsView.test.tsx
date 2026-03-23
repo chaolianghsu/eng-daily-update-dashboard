@@ -105,6 +105,7 @@ describe("CommitsView commit detail time display", () => {
     const commitRow = screen.getByText("fix bug").closest("tr");
     expect(commitRow).toBeTruthy();
     const cells = commitRow!.querySelectorAll("td");
-    expect(cells[0].textContent).toBe("—");
+    // cells[0] is source icon, cells[1] is time
+    expect(cells[1].textContent).toBe("—");
   });
 });
