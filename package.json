@@ -7,7 +7,7 @@
     "build:appscript": "vite build --config vite.config.appscript.ts && bun scripts/build-appscript.ts",
     "test": "vitest run",
     "test:watch": "vitest",
-    "deploy:appscript": "bun run build:appscript && cd appscript && clasp push",
+    "deploy:appscript": "bun run build:appscript && cd appscript && clasp push && clasp deploy -i AKfycbxMfzEiZoAq5igmL69qN711mCrpX9Mv0vjnxb1IiEqpkC0h_ZVR2me2SNlX82YvNEGp -d \"$(date +%Y-%m-%d)\"",
     "test:e2e": "playwright test"
   },
   "devDependencies": {
