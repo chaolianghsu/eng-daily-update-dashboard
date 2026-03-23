@@ -9,3 +9,5 @@ dist/
 dist-appscript/
 appscript/index.html
 
+.superpowers/
+test-results/
