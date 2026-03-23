@@ -75,22 +75,21 @@ export function DailyView({
               animationDelay: `${0.28 + idx * 0.04}s`,
               background: COLORS.card, borderRadius: 10, padding: "14px 12px",
               border: `1px solid ${issue?.severity === "🔴" ? COLORS.red + "44" : issue?.severity === "🟡" ? COLORS.yellow + "33" : COLORS.border}`,
-              position: "relative",
             }}>
-              {commitData && commitData.commits?.[activeDate]?.[d.name]?.count > 0 && (
-                <span style={{ position: "absolute", top: 8, right: 8, background: COLORS.tealDim, color: COLORS.teal, padding: "2px 8px", borderRadius: 10, fontSize: 11, fontWeight: 600 }}>
-                  {commitData.commits[activeDate][d.name].count} commits
-                </span>
-              )}
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 6 }}>
                 <span style={{ fontWeight: 700, fontSize: 13 }}>{d.name}</span>
                 <span style={{ display: "flex", alignItems: "center", gap: 4 }}>
-                  <StatusBadge status={status} />
+                  {commitData && commitData.commits?.[activeDate]?.[d.name]?.count > 0 && (
+                    <span style={{ background: COLORS.tealDim, color: COLORS.teal, padding: "1px 6px", borderRadius: 8, fontSize: 10, fontWeight: 600 }}>
+                      {commitData.commits[activeDate][d.name].count}C
+                    </span>
+                  )}
                   {commitData?.analysis?.[activeDate]?.[d.name] && (
                     <span style={{ fontSize: 12 }}>
                       {commitData.analysis[activeDate][d.name].status}
                     </span>
                   )}
+                  <StatusBadge status={status} />
                 </span>
               </div>
               <div style={{ fontSize: 28, fontWeight: 800, color: status.color, fontVariantNumeric: "tabular-nums", lineHeight: 1.2 }}>
