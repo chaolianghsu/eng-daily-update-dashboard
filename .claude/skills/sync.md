@@ -11,6 +11,7 @@ Three-stage DAG pipeline: parallel data collection → consistency analysis → 
 
 - `chat-config.json` exists with `spaceId` and `memberMap` (for Stage 1 daily updates)
 - `gitlab-config.json` exists with `baseUrl`, `token`, `memberMap`, `excludeAuthors` (for Stage 1 GitLab)
+- `github-config.json` exists with `baseUrl`, `org`, `token`, `memberMap`, `excludeAuthors` (for Stage 1 GitHub; optional — skipped if missing)
 - `public/raw_data.json` exists with current data
 - `claude` CLI available on PATH (for Stage 3; gracefully skipped if missing)
 - Git remote is configured for push
@@ -35,21 +36,31 @@ Execute two agents in parallel:
 
 **Agent B (foreground or background):** Collect GitLab commits without analysis:
 ```bash
-node scripts/collect-gitlab-commits.js --date <M/D> > /tmp/sync-$(date +%s)-commits.json 2>/tmp/sync-gitlab-stderr.txt
+node scripts/collect-gitlab-commits.js --date <M/D> > /tmp/sync-$(date +%s)-gitlab-commits.json 2>/tmp/sync-gitlab-stderr.txt
 ```
 - `<M/D>` = target date from date logic above (e.g., `3/17`)
 - Save the commits JSON path for Stage 2
 
-Wait for both agents to complete. Display per-agent results:
+**Agent C (foreground or background):** Collect GitHub commits without analysis:
+```bash
+node scripts/collect-github-commits.js --date <M/D> > /tmp/sync-$(date +%s)-github-commits.json 2>/tmp/sync-github-stderr.txt
+```
+- Same `<M/D>` as Agent B
+- Save the commits JSON path for Stage 2
+- **If `github-config.json` doesn't exist, skip Agent C gracefully** — Stage 2 proceeds with GitLab commits only
+
+Wait for all agents to complete. Display per-agent results:
 ```
 ✅ Stage 1 — 平行收集 (Xs)
   📊 Daily Updates     ✅ 3/16 (10/12 回報)
   🔀 GitLab Commits    ✅ 93 commits collected
+  🐙 GitHub Commits    ✅ 12 commits collected   (or ⏭️ skipped if no config)
 ```
 
 **Error handling:**
-- If daily updates fails but GitLab succeeds → proceed to Stage 2 with existing raw_data.json, display warning
-- If GitLab fails but daily updates succeeds → skip Stage 2 and 3, only commit daily update results
+- If daily updates fails but commits succeed → proceed to Stage 2 with existing raw_data.json, display warning
+- If all commit sources fail but daily updates succeeds → skip Stage 2 and 3, only commit daily update results
+- If GitHub fails but GitLab succeeds → proceed to Stage 2 with GitLab commits only, display warning
 - If both fail → abort with error
 
 ### Stage 2: 一致性分析
@@ -59,10 +70,11 @@ Display:
 ⏳ Stage 2 — 一致性分析
 ```
 
-Run analysis using the commits from Stage 1:
+Run analysis using the commits from Stage 1 (pass all available commits files):
 ```bash
-node scripts/analyze-consistency.js --commits /tmp/sync-<timestamp>-commits.json > /tmp/sync-analysis-output.json 2>/tmp/sync-analysis-stderr.txt
+node scripts/analyze-consistency.js --commits /tmp/sync-<timestamp>-gitlab-commits.json /tmp/sync-<timestamp>-github-commits.json > /tmp/sync-analysis-output.json 2>/tmp/sync-analysis-stderr.txt
 ```
+If Agent C was skipped (no `github-config.json`), omit the GitHub commits path — pass only the GitLab file.
 
 This script:
 1. Reads `public/raw_data.json` (updated by Stage 1 Agent A)
@@ -137,8 +149,8 @@ Daily Updates:
   新增日期：<dates>
   回報率：<N>/<M>
 
-GitLab Commits:
-  Commits：<N>
+Commits (GitLab + GitHub):
+  Commits：<N> (GitLab: <n>, GitHub: <n>)
   一致性：✅ <n> ⚠️ <n> 🔴 <n>
 
 Task Analysis:
@@ -171,7 +183,7 @@ Commits：<N>
 
 ## Gotchas
 
-- **Stage 2 depends on Stage 1's tmp file path.** The commits JSON path from `collect-gitlab-commits.js` must be passed exactly to `analyze-consistency.js`. Use the timestamped filename pattern (`/tmp/sync-$(date +%s)-commits.json`) to avoid collisions with concurrent runs.
+- **Stage 2 depends on Stage 1's tmp file paths.** The commits JSON paths from `collect-gitlab-commits.js` and `collect-github-commits.js` must be passed exactly to `analyze-consistency.js`. Use the timestamped filename pattern (`/tmp/sync-$(date +%s)-gitlab-commits.json`, `/tmp/sync-$(date +%s)-github-commits.json`) to avoid collisions with concurrent runs.
 - **`claude --print` may output non-JSON.** Stage 3 pipes to `claude --print -m haiku`, which can occasionally produce preamble text before the JSON. Always validate the output is valid JSON before copying to `public/task-analysis.json`.
 - **Stage 1 Agent A modifies `public/raw_data.json` in-place.** Stage 2 reads this file. If Agent A fails mid-write, Stage 2 gets corrupted input. The error handling paths (daily fails → use existing raw_data.json) account for this.
 - **Apps Script POST returns 302.** All three POST steps (daily updates, commits, task analysis) require following the redirect with a second curl call.
