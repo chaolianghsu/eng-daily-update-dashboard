@@ -1,51 +1,24 @@
 {
-  "analysisDate": "2026-03-20",
-  "period": "3/19",
+  "analysisDate": "2026-03-23",
+  "period": "3/20",
   "warnings": [
     {
-      "date": "3/19",
+      "date": "3/20",
       "member": "Jason",
       "severity": "🟡",
       "type": "outlier",
-      "task": "DV ES 9 reindex、DV AI 產文 plan 實作調整等開發工作 (7H)",
-      "commits": "1 commit (統一 --date 參數為 YYYY-MM 格式)",
-      "reasoning": "成員報告7小時開發工作，但GitLab上僅有1筆commit，遠低於團隊平均20.3筆。commit產出比例為0.14筆/小時，低於團隊平均2.9筆/小時約20倍，顯著偏離團隊水平，存在工時與產出不相符的情況。"
-    },
-    {
-      "date": "3/19",
-      "member": "Ted",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "wordcount api es查詢、修復refresh bugs、擴充測試等開發工作 (9H)",
-      "commits": "4 commits (修復fbid conflict、scroll cache等問題)",
-      "reasoning": "成員報告9小時開發工作，但GitLab上僅有4筆commit，遠低於團隊平均20.3筆。commit產出比例為0.44筆/小時，低於團隊平均2.9筆/小時約6.5倍，存在明顯的產出偏低現象，建議確認任務進度或是否有未提交的變更。"
-    },
-    {
-      "date": "3/19",
-      "member": "家輝",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "es9 資料內語系判別 (3H)",
-      "commits": "無",
-      "reasoning": "成員報告3小時開發工作「es9資料內語系判別」，達到低產出判斷閾值（≥3H），但GitLab上無任何相關commit。此工作應產生程式碼變更，卻未見提交紀錄，建議確認工作是否已實際完成或存在提交遺漏。"
-    },
-    {
-      "date": "3/19",
-      "member": "哲緯",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "LSR (4H)",
-      "commits": "無",
-      "reasoning": "成員報告4小時開發工作「LSR」，超過低產出判斷閾值（≥3H），但GitLab上無任何相關commit。LSR工作應涉及程式碼變更，卻未見在版本控制系統中有對應提交，建議確認工作進度記錄或是否有未提交的開發成果。"
+      "task": "DV AI 產文 plan 實作調整 (3H)、DV engine API 調整 (2H)、Issue #42 (0.5H)，共 5.5H 開發時數",
+      "commits": "4 筆 commits：dv-ai-draft (2)、dv-remote-es (2)",
+      "reasoning": "成員在 5.5H 開發時間內產出 4 筆 commits，commits/時數 比例為 0.727，低於團隊平均 1.627，相差 2.24 倍，表示產出效率顯著低於團隊平均水準。其他成員在相近的時間內平均產出 9.6 筆 commits。"
     }
   ],
   "summary": {
-    "totalMembers": 10,
-    "totalWarnings": 4,
+    "totalMembers": 9,
+    "totalWarnings": 1,
     "byType": {
-      "low_output": 2,
+      "low_output": 0,
       "mismatch": 0,
-      "outlier": 2
+      "outlier": 1
     }
   }
 }
