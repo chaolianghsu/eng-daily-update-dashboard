@@ -199,7 +199,7 @@ function main() {
 
       block += `Total reported: ${data.total}H (meeting: ${data.meeting || 0}H, dev: ${data.dev || 0}H)\n\n`;
 
-      block += `### GitLab Commits (same day):\n`;
+      block += `### Commits (same day):\n`;
       if (memberCommits && memberCommits.items.length > 0) {
         memberCommits.items.forEach(item => {
           block += `- [${item.project}] ${item.title} (${item.sha})\n`;
@@ -217,7 +217,7 @@ function main() {
   }
 
   // Build the full prompt
-  const prompt = `你是工程部管理分析助手。請分析以下每位成員的每日回報任務與 GitLab commit 記錄的合理性。
+  const prompt = `你是工程部管理分析助手。請分析以下每位成員的每日回報任務與 commit 記錄的合理性。
 
 ## 分析規則
 
