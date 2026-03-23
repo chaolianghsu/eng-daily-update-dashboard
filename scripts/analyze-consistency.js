@@ -30,13 +30,33 @@ function dedupCommitItems(data) {
 
 async function main() {
   const args = process.argv.slice(2);
-  let commitsPath = null;
+  const commitsPaths = [];
   for (let i = 0; i < args.length; i++) {
-    if (args[i] === '--commits' && args[i + 1]) { commitsPath = args[i + 1]; i++; }
+    if (args[i] === '--commits') {
+      for (let j = i + 1; j < args.length && !args[j].startsWith('--'); j++) {
+        commitsPaths.push(args[j]);
+      }
+    }
   }
-  if (!commitsPath) { console.error('Usage: node analyze-consistency.js --commits <path>'); process.exit(1); }
+  if (commitsPaths.length === 0) { console.error('Usage: node analyze-consistency.js --commits <path> [<path2> ...]'); process.exit(1); }
 
-  const allCommits = JSON.parse(fs.readFileSync(commitsPath, 'utf8'));
+  // Read and merge all commit files
+  let allCommits = [];
+  for (const p of commitsPaths) {
+    allCommits.push(...JSON.parse(fs.readFileSync(p, 'utf8')));
+  }
+
+  // Cross-platform dedup: sha|project, keep first occurrence (GitLab listed first = priority)
+  const seen = new Set();
+  allCommits = allCommits.filter(c => {
+    const key = `${c.sha}|${c.project}`;
+    if (seen.has(key)) {
+      console.error(`Dedup: commit ${c.sha} found on both platforms for project ${c.project}`);
+      return false;
+    }
+    seen.add(key);
+    return true;
+  });
 
   // Load raw_data.json
   const rawDataPath = path.join(ROOT, 'public', 'raw_data.json');
