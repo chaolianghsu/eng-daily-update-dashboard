@@ -1488,10 +1488,10 @@
         "status": "unreported"
       },
       "Ivy": {
-        "total": null,
-        "meeting": null,
-        "dev": null,
-        "status": "replied_no_hours"
+        "total": 7.2,
+        "meeting": 0,
+        "dev": 7.2,
+        "status": "reported"
       },
       "Jason": {
         "total": 7.5,
@@ -1542,10 +1542,10 @@
         "status": "reported"
       },
       "Aaron": {
-        "total": null,
-        "meeting": null,
-        "dev": null,
-        "status": "unreported"
+        "total": 7,
+        "meeting": 0,
+        "dev": 7,
+        "status": "reported"
       },
       "哲緯": {
         "total": 7,
@@ -1563,8 +1563,8 @@
     },
     {
       "member": "Ivy",
-      "severity": "🟠",
-      "text": "有回覆無工時 3/23"
+      "severity": "🟢",
+      "text": "穩定 7.2hr"
     },
     {
       "member": "Jason",
@@ -1608,8 +1608,8 @@
     },
     {
       "member": "Aaron",
-      "severity": "🔴",
-      "text": "未回報 3/23"
+      "severity": "🟢",
+      "text": "穩定 7hr"
     },
     {
       "member": "哲緯",
@@ -1694,77 +1694,34 @@
   "dailyUpdates": [
     {
       "date": "3/23",
-      "member": "日銜",
-      "createTime": "2026-03-24T02:38:08.484863Z",
-      "text": "3/23 進度\n1. [In Prorgress] Issue#344 link (7H)\nparadaily link\nttshow link\ngreatnews link\nlifenews link\nmarie link\nmarketers link\nwellnewss link\nLine Today link\n2. [Done] kol YT頻道收錄最新十部影片資訊 (1H)\n\nBlockers:\n\n\n3/24 今日工項：\n1. [In Prorgress] Issue#344 link\n2. [To Do] Udn資料異常確認",
-      "total": 8
-    },
-    {
-      "date": "3/23",
-      "member": "Ted",
-      "createTime": "2026-03-24T02:27:23.235199Z",
-      "text": "3/23 工項：\n1. [In Progress] KEYPO engine API gateway\n    - [Done] config refactor，local-limit-req fallback，request-id 和 consumer 加入 access log，per-group API ACL (cd3c04e, 0d5331f, d4bfd5a) (3H)\n    - [To Do] 災難演練 redis 問題確認\n    - [In Progress] engine API 壓測問題 - 清理 requests pool (1H)\n2. [In Progress] KEYPO\n    - [In Progress] gpt report 換模型測試 (0.5H)\n3. [In Progress] Fanti\n    - [In Progress] functional test - Docker 環境建立、 tests with DB verification、refresh tests (9786305, ea96301, e3b648b, 41ba79c, a48d606, dc2f62f) (3H)\n    - [Done] fb-search-api - ES 9 compatibility fix for all search queries (b5bfb4a) (0.5H)\n\nblock:\n[Fanti] 資料搬遷 script \nbacklog:\n速報 gemini3 評估\nAI 報告切換模型 - 使用 DSPy 進行效果評估與提示詞優化\n同步 Fanti 狀態同步給 pm\n\n3/24 今日工項：\n1. [In Progress] KEYPO engine API gateway\n    - [To Do] 新版 rate limit 說明文件\n    - [To Do] 災難演練 redis 問題確認並修正\n    - [In Progress] engine API 壓測計畫, 更新 api 退化以及效能瓶頸的判斷機制\n2. [To Do] KEYPO\n    - [In Progress] gpt report 換模型\n3. [In Progress] Fanti\n    - [In Progress] functional test review\n    - [To Do] 確認正式環境機器人修復狀況, 用 refresh 確認是否資料更新符合預期",
-      "total": 8
-    },
-    {
-      "date": "3/23",
-      "member": "侑呈",
-      "createTime": "2026-03-24T02:24:10.726463Z",
-      "text": "3/23 進度：\n1. Fanti(8H)\n[Done] 修復like followings 改版 LINK, User profile 改版 LINK\n2. 私密社團 瀏覽器服務V3 (1H) LINK\n[In Progress] day1 11093 貼文 / 62716 留言 / 24H\n[In Progress] day2 8304 貼文 / 66049 留言 / 19H\n3. OMG(3H)\n[Done] OMG關注頻道收錄\n[In Progress] OMG API\n\n\nBlockers:\n1. [To do] twitter 自動化登入\n2. [In Progress] IG關鍵字貼文探索(mobile token)\n3. [In Progress] #2787 確認 ig 以外社群 是否能抓到地標\n4. [In Progress] 持續性收錄 日版 fb ig\n5. [In Progress] #318 測試研究FBG response 是否有轉發貼文內容, 測試完畢, 轉發內容要加在哪裡待issue例會討論完\n6. [In Progress] #309 修復時辰待確認\n7. [In Progress] #3004 排查重複貼文 已拉出112篇重複貼文\n\n\n3/24 今日工項：\n1. 私密社團測試 偽裝 延遲觀測 & 維運帳號 & 私密社團V3\n2. [In Progress] 盤點 mq-fbmessage-consumer, mq-fb-insights-consumer\n3. [In Progress] 主責AI機器人 alert 測試, 加入TW/X HK/FBG進行監控\n4. [In Progress] Fanti fbuser 修復\n5. [In Progress] OMG API",
-      "total": 12
-    },
-    {
-      "date": "3/23",
-      "member": "家輝",
-      "createTime": "2026-03-24T01:55:52.011887Z",
-      "text": "3/23 進度：\n1. [In Progress] rmq&伺服器監控警報機制(0.5H)\n2. [Done] Dell R0022警示燈號應為面板燈號異常，實際系統無異狀(1H)\n3. [In Progress] es9 data pipeline docker 啟動優化& image瘦身  (6H, link)\n                            容量佔用減少90%，啟動時間縮短80%\n\nPending\n1. [In Progress] 活動文後續觀察\n2. [In Progress] ai機器人套件升級 > 初始環境建立與部署\n3. [To Do] 調查rabbit mq資料塞車時，資源佔用狀況\n4. [In Progress] rmq&伺服器監控警報機制\n5. [In Progress] 與佳龍確認新版合約\n6. [In Progress]確認gcp季度報告時間\n\n3/24 今日工項： \n1. [In Progress] es9 site表格資料對應\n2. [In Progress] rmq&伺服器監控警報機制\n3. [To Do] 佳龍資源盤點\n4. [To Do] gcp機器防火牆盤點\n5. [To Do] 啟動同步寫入ES5及ES9\n6. [In Progress] es9 docker 啟動優化& image瘦身",
-      "total": 7.5
-    },
-    {
-      "date": "3/23",
-      "member": "Joe",
-      "createTime": "2026-03-24T01:55:32.111247Z",
-      "text": "3/23 進度：\n1. [In Progress] issue#2942：KEYPO Agent 對話回應時加上 fallback的 loading，提升 TTFT (Time to First Token) 太長或工具調用間隔的使用體驗。已用完成規劃與開發實作，有待進行最後的人工整合驗證 (3H, branch)\n2. [In Progress] KEYPO Agent 權限控管功能開發 (trello) (4H, branch)\n[Done] 在後端 Agent 部分上取得所需權限，整理成一個 utils 供後續使用\n[In Progress] 在每一次對話時，將時間區間與 KOL 功能權限送到 agent 端\n[In Progress] 在產生與送出對話前，後端先執行初步權限驗證\n\nBlockers:\nNone\n\n3/24 今日工項：\n1. [In Progress] issue#2942：KEYPO Agent 對話回應時加上 fallback的 loading，提升 TTFT (Time to First Token) 太長或工具調用間隔的使用體驗\n2. [In Progress] KEYPO Agent 權限控管功能開發 (trello)\n[In Progress] 在每一次對話時，將時間區間與 KOL 功能權限送到 agent 端\n[In Progress] 在產生與送出對話前，後端先執行初步權限驗證\n[To Do] 執行測試與人工進行完整功能驗證\n3. [To Do] KEYPO 例會\n4. [To Do] issue密#337：Agent 回覆的訊息疑似位置順序錯亂",
+      "member": "Aaron",
+      "createTime": "2026-03-24T09:30:53.964975Z",
+      "text": "3/23 工項/進度：\n1. [Done] 與 Chris 同步 KOL Agent 的改動 (1 H)\n2. [In Progress] KEYPO Agent 串接 KEYPO Engine API V3 (3 H)\n[Done] 串接 link\n[To Do] 測試\n3. [In Progress] 測試 KEYPO Agent 與 KOL Agent 情境 (1 H)\n4. [Done] KEYPO Agent agno 升級 link (0.5 H)\n5. [Done] Claude Cowork 串接 Grafana MCP 監控 Server (1 H)\n6. [Done] 設定 SY 測試機雲端網路 (0.5 H)\n\nBacklog / Blockers:  待辦事項 / 阻礙因素：\nNone\n\n3/24 今日工項：\n1. [To Do] KEYPO 會議\n2. [To Do] KEYPO Agent VPC 更改\n3. [To Do] 發 KOL Agent Staging API Key\n4. [TO Do] 整理 KOL 的回應 interface 給前端\n5. [In Progress] Grafana 監控 GKE",
       "total": 7
-    },
-    {
-      "date": "3/23",
-      "member": "Wendy",
-      "createTime": "2026-03-24T01:54:48.114095Z",
-      "text": "3/23 進度：\n1. SY ESv9 升級/維護項目 (6H, link)\n   - [Done] KEYPO sentidist API 改串接 v3 版本 (link)\n   - [Done] IDC project cluster 建立 SY index\n   - [Done] Local v9 架構驗證所有同步排程功能符合預期 (link)\n   - [In Progress] Local v9 架構 API 功能符合預期 (link)\n   - [In Progress] 準備 SIT/UAT 環境與資料 (link)\n\n2. [Done] issue #3025 - 20260319 - 新竹消防局Line推播群組開通需求 (0.5H)\n3. [Done] TY 地端連線與上版方式交接 with jason (1H)\n\nBlock:\nNone\n\n3/24 工項：\n1. SY ESv9 升級/維護項目 (6H,link)\n - [To Do] ES 9升級會議 for DV, SY and Fanti\n   - [In Progress] Local v9 架構 API 功能符合預期\n   - [In Progress] 準備 SIT/UAT 環境與資料 (搬遷 SQL 資料, 建立 v9 測試 DB等等)\n   - [To Do] update-sentiment\n      - 測試環境部屬\n      - 新增 v9 migration 架構並支援 v5.4, v9 切換",
-      "total": 7.5
-    },
-    {
-      "date": "3/23",
-      "member": "哲緯",
-      "createTime": "2026-03-24T01:50:17.058351Z",
-      "text": "3/23 進度：\n1. [Done] Threads日常需求處理 (1H)\n2. LSR\n    - [Done] LSR 會議（2H）\n    - [Done] Stage 5 condense_summary 加入字數檢查後的超標重試邏輯(1H) link\n3. Threads(2H) link\n    - 測試meta語言判斷模型 2018 -> 2024模型\n3. MISC（1H）\n    - 調查正式機docker異常\n\nBlockers:\n1. BM wireframe\n2. Threads\n    - Alert優化\n    - Log優化\n    - 主題AI機器人大福減少當日文章搜集量體調查\n4. KETKYC\n    - 調查物料監控模組查詢Timeout問題\n    - 專案瘦身\n5. SY\n    - 排程反爬次數過高調查\n\n\n3/24 工項：\n1. [To Do] Threads日常需求處理\n2. [To Do] LSR\n   - 處理客戶3/23反饋內容",
-      "total": 7
-    },
-    {
-      "date": "3/23",
-      "member": "禎佑",
-      "createTime": "2026-03-24T01:49:10.059343Z",
-      "text": "03/23 進度：\n1. [In Progress] 盤點主責的相關服務是否有異常 (1H)\n[Done] TikTok (頻道影片、單篇貼文、關鍵字搜用戶、單個頻道用戶資訊)\n[Done] GoogleMap (tw/hk)\n[To Do] KEYKYC\n2. [Done] Sync KOL Agent 進度 (1.5H) link\n3. [Done] KOL Agent 密集調整 prompt，以便應對當前列出的 60 ~ 70 個情境 link (4H)\n直接測試34筆，符合預期24筆，不符預期5筆，介於中間5筆\n不符預期類型: 搜尋某個特定 kol (profile) 的資訊，無法精準鎖定 -> (經討論，目前 KEYPO Agent 其實會先 web search 一次，KOL Agent 這邊可以暫不處理)\n不符預期類型: 搜尋在多個平台都有經營的 KOL -> (待建立另一個 index 用來記錄 KOL 之間的關係)\n不符預期類型: 極少數問題，會被分析成兩種 shape -> (更換模型後即解決)\n4. 修正 TikTok 更新 dead channel 的流程 (1H)\n修正路由 tiktok-crawl-httpx link\n增加涵蓋範圍 tiktok-crawl-api-v2 link\n\nBlockers:\n1. [To Do] TikTok 關鍵字收錄開發\n2. [To Do] 日版頻道收錄\n3. [In Progress] KOL 進度 (目前可以穩定收錄，暫不處理)\n[To Do] 發現 2025 的 fid 資料，有大量頻道被禁用\n[To Do] 優化撈 es 頻道資料，避免中斷\n4. [To Do] 研究可用來確認 place_id 是失效或更換的流程，官方api只能知道是否歇業\n\n03/24 今日工項：\n1. [In Progress] 盤點主責的相關服務是否有異常\n[To Do] KEYKYC\n2. [To Do] 重啟 42 上服務\n3. [In Progress] 開發 KOL description 解析\n4. [In Progress] 完善 TikTok 監控機制",
-      "total": 7.5
-    },
-    {
-      "date": "3/23",
-      "member": "Jason",
-      "createTime": "2026-03-24T01:35:40.129695Z",
-      "text": "3/23 進度：\n1. [In Progress] DV AI 產文 plan 實作調整 (3H)\n2. [In Progress] Issue #42 (0.5H)\n3. [In Progress] DV engine API 調整 (1H)\n4. [In Progress] DV engine API v3 完整重跑 (2H)\n5. [Done] TY 事項交接 (1H)\n\nBlock:\n\n3/24 今日工項：\n1. [In Progress] DV AI 產文 prompt 校正\n2. [In Progress] Issue #42\n3. [In Progress] DV engine API 調整\n4. [In Progress] DV engine API v3 完整重跑",
-      "total": 7.5
     },
     {
       "date": "3/23",
       "member": "Ivy",
       "createTime": "2026-03-24T01:26:34.559007Z",
-      "text": "3/23 (一) 工項/進度：\n\n1. [In Progress] 大數據官網後台 LINK (7..2h)\n    - [In Progress] 後端 LINK\n         - 每月營收開發\n         - 財務報表開發\n         - 公司年報開發\n         - 法說會開發\n    - [In Progress] 前端 LINK\n         - 每月營收 UI 開發 & 串接\n         - 財務報表 UI 開發 & 串接\n         - 公司年報 UI 開發 & 串接\n         - 法說會 UI 開發 & 串接\n\n\nBacklog / Blockers:  待辦事項 / 阻礙因素：\n\n[Backlog] 內部系統發信寄件人管理方式：待討論\n[Backlog] 網溫加入 CDN\n[Backlog] VM bigdata-web 關閉：Sam 已回覆，待轉移整個靜態教育訓練網站至 big-data GCS 下（比照簽名檔）\n[Backlog] 教育訓練網站簡報與資源管理：待討論決議是否由管理中心進行管理 (採用 Google Drive or S3 + CloudFront)\n[Block] Azure groupdv 服務備份：因檔案較大，約 40 幾 GB，尚需研究看看如何備份至 gitlab 或是待討論看看是否傳至 GCP 上或是放公司 NAS\n\n\n3/24 (二) 今日工項：\n1. [In Progress] 大數據官網後台 LINK\n    - [In Progress] 後端 LINK\n         - 每月營收測試 & 調整\n         - 財務報表測試 & 調整\n         - 公司年報測試 & 調整\n         - 法說會測試 & 調整\n    - [In Progress] 前端 LINK\n         - 每月營收串接 & 調整\n         - 財務報表串接 & 調整\n         - 公司年報串接 & 調整\n         - 法說會串接 & 調整",
-      "total": null
+      "text": "3/23 (一) 工項/進度：\n\n1. [In Progress] 大數據官網後台 LINK (7.2h)\n    - [In Progress] 後端 LINK\n         - 每月營收開發\n         - 財務報表開發\n         - 公司年報開發\n         - 法說會開發\n    - [In Progress] 前端 LINK\n         - 每月營收 UI 開發 & 串接\n         - 財務報表 UI 開發 & 串接\n         - 公司年報 UI 開發 & 串接\n         - 法說會 UI 開發 & 串接\n\n\nBacklog / Blockers:  待辦事項 / 阻礙因素：\n\n[Backlog] 內部系統發信寄件人管理方式：待討論\n[Backlog] 網溫加入 CDN\n[Backlog] VM bigdata-web 關閉：Sam 已回覆，待轉移整個靜態教育訓練網站至 big-data GCS 下（比照簽名檔）\n[Backlog] 教育訓練網站簡報與資源管理：待討論決議是否由管理中心進行管理 (採用 Google Drive or S3 + CloudFront)\n[Block] Azure groupdv 服務備份：因檔案較大，約 40 幾 GB，尚需研究看看如何備份至 gitlab 或是待討論看看是否傳至 GCP 上或是放公司 NAS\n\n\n3/24 (二) 今日工項：\n1. [In Progress] 大數據官網後台 LINK\n    - [In Progress] 後端 LINK\n         - 每月營收測試 & 調整\n         - 財務報表測試 & 調整\n         - 公司年報測試 & 調整\n         - 法說會測試 & 調整\n    - [In Progress] 前端 LINK\n         - 每月營收串接 & 調整\n         - 財務報表串接 & 調整\n         - 公司年報串接 & 調整\n         - 法說會串接 & 調整",
+      "total": 7.2
     }
   ],
-  "newDates": [
-    "3/23"
-  ],
-  "backfilled": []
+  "newDates": [],
+  "backfilled": [
+    {
+      "date": "3/23",
+      "member": "Ivy",
+      "total": 7.2,
+      "meeting": 0,
+      "dev": 7.2
+    },
+    {
+      "date": "3/23",
+      "member": "Aaron",
+      "total": 7,
+      "meeting": 0,
+      "dev": 7
+    }
+  ]
 }
