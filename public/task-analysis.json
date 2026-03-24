@@ -7,36 +7,54 @@
       "member": "Jason",
       "severity": "🔴",
       "type": "low_output",
-      "task": "DV AI 產文 plan 實作調整 (3H) + Issue #42 (0.5H) + DV engine API 調整 (1H) + DV engine API v3 完整重跑 (2H) + TY 事項交接 (1H) = 7.5H 開發工時",
-      "commits": "無相應 commits",
-      "reasoning": "報告開發工時 7.5H，但當天未提交任何相關的 commits。根據任務描述（DV AI 產文、Issue #42、DV engine API 多項任務），應該有相應的程式碼變更記錄。"
+      "task": "開發任務 (7.5H)",
+      "commits": "無",
+      "reasoning": "報告了 7.5 小時開發工作，但整日無任何相關 commit 記錄，產出不足。"
     },
     {
       "date": "3/23",
       "member": "Wendy",
       "severity": "🟡",
       "type": "outlier",
-      "task": "SY ESv9 升級/維護項目 (6H) + issue #3025 (0.5H) + TY 地端連線交接 (1H) = 7.5H 開發工時",
-      "commits": "5 commits 在 sinyi/sinyi-dashboard，工時/commit 比例 = 1.5",
-      "reasoning": "開發工時 7.5H 對應 5 筆 commits，工時/commit 比例為 1.5，遠高於團隊平均 0.47，差距約 3.2 倍。相比其他成員的工作產出效率，此成員的工時與 commits 數量比例異常偏高。"
+      "task": "開發任務 (7.5H)",
+      "commits": "5 筆（sinyi-dashboard）",
+      "reasoning": "報告 7.5 小時開發工作，但僅有 5 筆 commits（團隊平均 16.2），工時與 commit 比例為 1.5（團隊平均 0.463），產出低於團隊平均 3 倍以上。"
     },
     {
       "date": "3/23",
       "member": "侑呈",
       "severity": "🟡",
       "type": "outlier",
-      "task": "Fanti (8H) + 私密社團 瀏覽器服務V3 (1H) + OMG (3H) = 12H 開發工時",
-      "commits": "3 commits 分散在 fbuser-scrapy 和 mq-fbuser-consumer，工時/commit 比例 = 4",
-      "reasoning": "開發工時 12H 對應僅 3 筆 commits，工時/commit 比例為 4，遠高於團隊平均 0.47，差距約 8.5 倍。大量報告工時但 commits 數量嚴重不足，反映出工作產出與報告時數不成比例。"
+      "task": "開發任務 (12H)",
+      "commits": "3 筆（跨 2 個專案）",
+      "reasoning": "報告 12 小時開發工作（高於團隊平均），但僅有 3 筆 commits（團隊平均 16.2），工時與 commit 比例為 4.0（團隊平均 0.463），產出明顯低於團隊預期，比例差距超過 8 倍。"
+    },
+    {
+      "date": "3/23",
+      "member": "家輝",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發任務 (7.5H)",
+      "commits": "8 筆（keypo-q-huaan-v2）",
+      "reasoning": "報告 7.5 小時開發工作，但僅有 8 筆 commits（團隊平均 16.2），工時與 commit 比例為 0.94（團隊平均 0.463），產出低於團隊平均 2 倍以上。"
+    },
+    {
+      "date": "3/23",
+      "member": "Joe",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發任務 (7H)",
+      "commits": "7 筆（跨 2 個專案）",
+      "reasoning": "報告 7 小時開發工作，但僅有 7 筆 commits（團隊平均 16.2），工時與 commit 比例為 1.0（團隊平均 0.463），產出低於團隊平均 2 倍以上。"
     }
   ],
   "summary": {
-    "totalMembers": 8,
-    "totalWarnings": 3,
+    "totalMembers": 10,
+    "totalWarnings": 5,
     "byType": {
       "low_output": 1,
       "mismatch": 0,
-      "outlier": 2
+      "outlier": 4
     }
   }
 }
