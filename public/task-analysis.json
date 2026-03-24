@@ -1,24 +1,42 @@
 {
-  "analysisDate": "2026-03-23",
-  "period": "3/20",
+  "analysisDate": "2026-03-24",
+  "period": "3/23",
   "warnings": [
     {
-      "date": "3/20",
+      "date": "3/23",
       "member": "Jason",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "DV AI 產文 plan 實作調整 (3H) + Issue #42 (0.5H) + DV engine API 調整 (1H) + DV engine API v3 完整重跑 (2H) + TY 事項交接 (1H) = 7.5H 開發工時",
+      "commits": "無相應 commits",
+      "reasoning": "報告開發工時 7.5H，但當天未提交任何相關的 commits。根據任務描述（DV AI 產文、Issue #42、DV engine API 多項任務），應該有相應的程式碼變更記錄。"
+    },
+    {
+      "date": "3/23",
+      "member": "Wendy",
       "severity": "🟡",
       "type": "outlier",
-      "task": "DV AI 產文 plan 實作調整 (3H)、DV engine API 調整 (2H)、Issue #42 (0.5H)，共 5.5H 開發時數",
-      "commits": "4 筆 commits：dv-ai-draft (2)、dv-remote-es (2)",
-      "reasoning": "成員在 5.5H 開發時間內產出 4 筆 commits，commits/時數 比例為 0.727，低於團隊平均 1.627，相差 2.24 倍，表示產出效率顯著低於團隊平均水準。其他成員在相近的時間內平均產出 9.6 筆 commits。"
+      "task": "SY ESv9 升級/維護項目 (6H) + issue #3025 (0.5H) + TY 地端連線交接 (1H) = 7.5H 開發工時",
+      "commits": "5 commits 在 sinyi/sinyi-dashboard，工時/commit 比例 = 1.5",
+      "reasoning": "開發工時 7.5H 對應 5 筆 commits，工時/commit 比例為 1.5，遠高於團隊平均 0.47，差距約 3.2 倍。相比其他成員的工作產出效率，此成員的工時與 commits 數量比例異常偏高。"
+    },
+    {
+      "date": "3/23",
+      "member": "侑呈",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "Fanti (8H) + 私密社團 瀏覽器服務V3 (1H) + OMG (3H) = 12H 開發工時",
+      "commits": "3 commits 分散在 fbuser-scrapy 和 mq-fbuser-consumer，工時/commit 比例 = 4",
+      "reasoning": "開發工時 12H 對應僅 3 筆 commits，工時/commit 比例為 4，遠高於團隊平均 0.47，差距約 8.5 倍。大量報告工時但 commits 數量嚴重不足，反映出工作產出與報告時數不成比例。"
     }
   ],
   "summary": {
-    "totalMembers": 9,
-    "totalWarnings": 1,
+    "totalMembers": 8,
+    "totalWarnings": 3,
     "byType": {
-      "low_output": 0,
+      "low_output": 1,
       "mismatch": 0,
-      "outlier": 1
+      "outlier": 2
     }
   }
 }
