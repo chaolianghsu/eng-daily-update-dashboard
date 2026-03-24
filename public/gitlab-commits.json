@@ -15954,9 +15954,9 @@
         "hours": null
       },
       "Ivy": {
-        "status": "🔴",
+        "status": "✅",
         "commitCount": 13,
-        "hours": null
+        "hours": 7.2
       },
       "Jason": {
         "status": "⚠️",
@@ -15999,9 +15999,9 @@
         "hours": 7
       },
       "Aaron": {
-        "status": "🔴",
+        "status": "✅",
         "commitCount": 31,
-        "hours": null
+        "hours": 7
       },
       "哲緯": {
         "status": "✅",
