@@ -67,12 +67,52 @@ export interface TaskAnalysisData {
   };
 }
 
+export interface PlanSpecItem {
+  date: string;
+  member: string;
+  commit: {
+    title: string;
+    sha: string;
+    project: string;
+    url: string;
+    source: 'gitlab' | 'github';
+  };
+  files: string[];
+}
+
+export interface PlanCorrelation {
+  date: string;
+  member: string;
+  status: 'matched' | 'unmatched' | 'partial';
+  specCommits: number;
+  dailyUpdateMention: boolean;
+  matchedTasks: string[];
+  unmatchedSpecs: string[];
+  reasoning: string;
+}
+
+export interface PlanAnalysisData {
+  analysisDate: string;
+  period: string;
+  planSpecs: PlanSpecItem[];
+  correlations?: PlanCorrelation[];
+  summary: {
+    totalSpecCommits: number;
+    totalCorrelations: number;
+    membersWithSpecs: number;
+    matched: number;
+    unmatched: number;
+    partial: number;
+  };
+}
+
 export interface DashboardData {
   rawData: Record<string, Record<string, MemberHours>>;
   issues: Issue[];
   leave: Record<string, LeaveRange[]>;
   commitData: CommitData | null;
   taskAnalysisData: TaskAnalysisData | null;
+  planAnalysisData: PlanAnalysisData | null;
 }
 
 export type LoadData = () => Promise<DashboardData>;
