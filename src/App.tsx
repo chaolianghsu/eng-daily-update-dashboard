@@ -12,7 +12,7 @@ import { useDailyBarData } from "./hooks/useDailyBarData";
 import { useTrendData } from "./hooks/useTrendData";
 import { useWeeklySummary } from "./hooks/useWeeklySummary";
 import { useAllIssues } from "./hooks/useAllIssues";
-import type { LoadData, CommitData, TaskAnalysisData } from "./types";
+import type { LoadData, CommitData, TaskAnalysisData, PlanAnalysisData } from "./types";
 import "./styles.css";
 
 export default function App({ loadData }: { loadData: LoadData }) {
@@ -26,6 +26,7 @@ export default function App({ loadData }: { loadData: LoadData }) {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [commitData, setCommitData] = useState<CommitData | null>(null);
   const [taskAnalysisData, setTaskAnalysisData] = useState<TaskAnalysisData | null>(null);
+  const [planAnalysisData, setPlanAnalysisData] = useState<PlanAnalysisData | null>(null);
   const [selectedMembers, setSelectedMembers] = useState<Set<string>>(new Set());
   const [trendRange, setTrendRange] = useState("2weeks");
 
@@ -43,6 +44,7 @@ export default function App({ loadData }: { loadData: LoadData }) {
         setLeave(data.leave);
         setCommitData(data.commitData);
         setTaskAnalysisData(data.taskAnalysisData);
+        setPlanAnalysisData(data.planAnalysisData);
         setLoading(false);
       })
       .catch(err => {
@@ -163,7 +165,8 @@ export default function App({ loadData }: { loadData: LoadData }) {
 
         {view === "commits" && commitData && (
           <CommitsView commitData={commitData} dates={dates} members={members} memberColors={memberColors} leave={leave}
-            activeDate={activeDate} onDateSelect={setSelectedDate} dailyDates={dailyDates} dayLabels={dayLabels} taskAnalysisData={taskAnalysisData} />
+            activeDate={activeDate} onDateSelect={setSelectedDate} dailyDates={dailyDates} dayLabels={dayLabels} taskAnalysisData={taskAnalysisData}
+            planSpecs={planAnalysisData?.planSpecs || null} />
         )}
 
         {/* Footer */}

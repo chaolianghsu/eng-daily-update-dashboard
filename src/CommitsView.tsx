@@ -5,8 +5,18 @@ import {
   ResponsiveContainer, ReferenceLine, Cell, ScatterChart, Scatter, ZAxis, LabelList,
 } from "recharts";
 import { COLORS, SEVERITY_COLORS, PROJECT_PALETTE } from "./constants";
-import type { CommitData, TaskAnalysisData, LeaveRange } from "./types";
+import type { CommitData, TaskAnalysisData, LeaveRange, PlanSpecItem } from "./types";
 import { CardPanel } from "./components";
+
+export function hasSpecFile(sha: string, planSpecs: PlanSpecItem[] | null): boolean {
+  if (!planSpecs) return false;
+  return planSpecs.some(item => item.commit.sha === sha);
+}
+
+function getSpecFiles(sha: string, planSpecs: PlanSpecItem[] | null): string[] {
+  if (!planSpecs) return [];
+  return planSpecs.filter(item => item.commit.sha === sha).flatMap(item => item.files);
+}
 
 interface CommitsViewProps {
   commitData: CommitData;
@@ -19,9 +29,10 @@ interface CommitsViewProps {
   dailyDates: string[];
   dayLabels: Record<string, string>;
   taskAnalysisData: TaskAnalysisData | null;
+  planSpecs: PlanSpecItem[] | null;
 }
 
-export default function CommitsView({ commitData, dates, members, memberColors, leave, activeDate, onDateSelect, dailyDates, dayLabels, taskAnalysisData }: CommitsViewProps) {
+export default function CommitsView({ commitData, dates, members, memberColors, leave, activeDate, onDateSelect, dailyDates, dayLabels, taskAnalysisData, planSpecs }: CommitsViewProps) {
   const { commits, analysis, projectRisks } = commitData;
   const [expandedMember, setExpandedMember] = useState(null);
 
@@ -345,6 +356,10 @@ export default function CommitsView({ commitData, dates, members, memberColors, 
                       <td style={{ padding: "4px 6px", width: 24, fontSize: 13, textAlign: "center" }}
                         title={item.source === 'github' ? 'GitHub' : 'GitLab'}>
                         {item.source === 'github' ? '🐙' : '🦊'}
+                        {hasSpecFile(item.sha, planSpecs) && (
+                          <span title={getSpecFiles(item.sha, planSpecs).join('\n')}
+                            style={{ cursor: 'help', marginLeft: 4 }}>📋</span>
+                        )}
                       </td>
                       <td style={{ padding: "4px 8px", color: COLORS.textMuted, width: 50, fontSize: 11 }}
                         title={item.datetime || ''}>{item.datetime ? new Date(item.datetime).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Taipei' }) : '—'}</td>
