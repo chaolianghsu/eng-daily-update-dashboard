@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { matchesSpecKeyword, isDocFile } from '../scripts/detect-plan-specs.js';
+import { matchesSpecKeyword, isDocFile, filterSpecCommits } from '../scripts/detect-plan-specs.js';
 
 describe('matchesSpecKeyword', () => {
   it('is exported as a function', () => {
@@ -116,5 +116,62 @@ describe('isDocFile', () => {
     it('rejects "CHANGELOG.md"', () => {
       expect(isDocFile('CHANGELOG.md')).toBe(false);
     });
+  });
+});
+
+describe('filterSpecCommits', () => {
+  it('filters commits by keyword and returns candidates', () => {
+    const commits = {
+      '哲緯': {
+        count: 3, projects: ['bigdata/api'],
+        items: [
+          { title: 'docs: add API design', sha: 'abc12345', project: 'bigdata/api', url: 'https://example.com/abc12345', source: 'gitlab' },
+          { title: 'fix: login bug', sha: 'def67890', project: 'bigdata/api', url: 'https://example.com/def67890', source: 'gitlab' },
+        ]
+      }
+    };
+    const result = filterSpecCommits(commits);
+    expect(result).toHaveLength(1);
+    expect(result[0].commit.title).toBe('docs: add API design');
+    expect(result[0].member).toBe('哲緯');
+    expect(result[0].files).toEqual([]);
+  });
+
+  it('returns empty when no keywords match', () => {
+    const commits = {
+      'Ted': { count: 1, projects: ['sinyi/app'],
+        items: [{ title: 'fix: button', sha: 'aaa', project: 'sinyi/app', url: '', source: 'gitlab' }]
+      }
+    };
+    expect(filterSpecCommits(commits)).toHaveLength(0);
+  });
+
+  it('handles empty input', () => {
+    expect(filterSpecCommits({})).toHaveLength(0);
+    expect(filterSpecCommits(null)).toHaveLength(0);
+  });
+
+  it('collects candidates from multiple members', () => {
+    const commits = {
+      '哲緯': {
+        count: 1, projects: ['bigdata/api'],
+        items: [
+          { title: 'docs: add spec', sha: 'aaa', project: 'bigdata/api', url: 'https://example.com/aaa', source: 'gitlab' },
+        ]
+      },
+      '日銜': {
+        count: 2, projects: ['sinyi/app'],
+        items: [
+          { title: 'feat: design new flow', sha: 'bbb', project: 'sinyi/app', url: 'https://example.com/bbb', source: 'github' },
+          { title: 'fix: typo', sha: 'ccc', project: 'sinyi/app', url: 'https://example.com/ccc', source: 'github' },
+        ]
+      }
+    };
+    const result = filterSpecCommits(commits);
+    expect(result).toHaveLength(2);
+    expect(result.map(r => r.member)).toContain('哲緯');
+    expect(result.map(r => r.member)).toContain('日銜');
+    // All should have empty files array initially
+    result.forEach(r => expect(r.files).toEqual([]));
   });
 });
