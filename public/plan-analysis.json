@@ -1,0 +1,202 @@
+{
+  "analysisDate": "2026-03-25",
+  "period": "3/24",
+  "planSpecs": [
+    {
+      "date": "3/24",
+      "member": "Joe",
+      "commit": {
+        "title": "docs(copilot): add implementation plan for agent generic processing hint",
+        "sha": "25386ec0",
+        "project": "KEYPO/keypo-frontend-2023",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/25386ec0",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-03-23-agent-generic-processing-hint.md"
+      ]
+    },
+    {
+      "date": "3/24",
+      "member": "Aaron",
+      "commit": {
+        "title": "docs: add KEYPO HTTP client v3 design spec",
+        "sha": "23ceb981",
+        "project": "llmprojects/keypo-agent",
+        "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/23ceb981",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-03-24-keypo-http-client-v3-design.md"
+      ]
+    },
+    {
+      "date": "3/24",
+      "member": "Aaron",
+      "commit": {
+        "title": "docs: address spec review — clarify DI flow, endpoint scope, naming",
+        "sha": "732efb5a",
+        "project": "llmprojects/keypo-agent",
+        "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/732efb5a",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-03-24-keypo-http-client-v3-design.md"
+      ]
+    },
+    {
+      "date": "3/24",
+      "member": "Aaron",
+      "commit": {
+        "title": "docs: remove start.py from v3 client scope",
+        "sha": "bf09545f",
+        "project": "llmprojects/keypo-agent",
+        "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/bf09545f",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-03-24-keypo-http-client-v3-design.md"
+      ]
+    },
+    {
+      "date": "3/24",
+      "member": "Aaron",
+      "commit": {
+        "title": "docs: add KEYPO HTTP client v3 implementation plan",
+        "sha": "c8e18319",
+        "project": "llmprojects/keypo-agent",
+        "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/c8e18319",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-03-24-keypo-http-client-v3.md"
+      ]
+    },
+    {
+      "date": "3/24",
+      "member": "Aaron",
+      "commit": {
+        "title": "docs: add v3 time query spec and plan",
+        "sha": "b4004cf6",
+        "project": "llmprojects/keypo-agent",
+        "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/b4004cf6",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-03-24-keypo-v3-time-query.md",
+        "docs/superpowers/specs/2026-03-24-keypo-v3-time-query-design.md"
+      ]
+    },
+    {
+      "date": "3/24",
+      "member": "Ted",
+      "commit": {
+        "title": "docs: document messenger user tags misalignment bug",
+        "sha": "c5613a70",
+        "project": "CrawlersV2/fanti-insights-api",
+        "url": "https://biglab.buygta.today/CrawlersV2/fanti-insights-api/-/commit/c5613a70",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/bugs/2026-03-24-messenger-user-tags-misalign.md"
+      ]
+    },
+    {
+      "date": "3/24",
+      "member": "Ted",
+      "commit": {
+        "title": "docs: add ADR-015 leaky bucket rate limiting architecture",
+        "sha": "a390f9a5",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/a390f9a5",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/decisions/015-leaky-bucket-rate-limiting.md"
+      ]
+    },
+    {
+      "date": "3/24",
+      "member": "Ted",
+      "commit": {
+        "title": "docs: add implementation plan for config refactor, ACL, and route-limit",
+        "sha": "a6a00960",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/a6a00960",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/plans/2026-03-24-config-refactor-acl-route-limit.md"
+      ]
+    },
+    {
+      "date": "3/24",
+      "member": "Ted",
+      "commit": {
+        "title": "feat(load-test): add ramping load test plan and log parser",
+        "sha": "2885e8f9",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/2885e8f9",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/plans/2026-03-24-per-api-ramping-load-test.md"
+      ]
+    }
+  ],
+  "correlations": [
+    {
+      "date": "3/24",
+      "member": "Joe",
+      "status": "unmatched",
+      "specCommits": 1,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "docs(copilot): add implementation plan for agent generic processing hint"
+      ],
+      "reasoning": "Joe 的規劃文件主要涵蓋 agent generic processing hint 相關的實現計畫，但 daily update 中完全沒有提到此項工作。Daily update 主要記錄 KEYPO Agent 的對話回應體驗改進、權限控管功能開發、測試驗證等內容，與 generic processing hint 工作完全無相關提及。"
+    },
+    {
+      "date": "3/24",
+      "member": "Aaron",
+      "status": "partial",
+      "specCommits": 5,
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "KEYPO Agent 串接 KEYPO Engine API V3"
+      ],
+      "unmatchedSpecs": [
+        "docs: add KEYPO HTTP client v3 design spec",
+        "docs: address spec review — clarify DI flow, endpoint scope, naming",
+        "docs: remove start.py from v3 client scope",
+        "docs: add KEYPO HTTP client v3 implementation plan",
+        "docs: add v3 time query spec and plan"
+      ],
+      "reasoning": "Aaron 提交了 5 筆關於 HTTP client v3 和 time query v3 的設計與規劃文件。Daily update 中有提到 'KEYPO Agent 串接 KEYPO Engine API V3' 這項 API 集成工作，顯示有進行 API V3 相關的開發，但並未明確提到撰寫 HTTP client v3 design spec、實現計畫或 time query spec 這些文件的工作。Daily update 主要記錄的是基礎設施調整（VPC、API Key、terraform 設定、前端 interface 整理等）和 API 集成工作，而非規劃/設計文檔的撰寫活動。"
+    },
+    {
+      "date": "3/24",
+      "member": "Ted",
+      "status": "matched",
+      "specCommits": 4,
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "messenger user tags misalignment bug 記錄與修正",
+        "rate limiting 說明文件 architecture, implementation plan",
+        "新增 route-limit-req plugin 和測試",
+        "ramping load test plan 和 log parser"
+      ],
+      "unmatchedSpecs": [],
+      "reasoning": "Ted 的所有 4 筆規劃/設計 commits 都完全對應到 daily update 中的工作項目。Messenger user tags misalignment bug 文檔對應 Fanti Insights API 中的 bug 記錄與修正工作；leaky bucket rate limiting architecture ADR 和 config refactor 實現計畫分別對應 rate limiting 說明文件的 architecture 和 implementation plan 工作；ramping load test plan 和 log parser 對應 load test 相關工作。所有規劃/設計工作都在 daily update 中有清楚且具體的描述。"
+    }
+  ],
+  "summary": {
+    "totalSpecCommits": 10,
+    "totalCorrelations": 3,
+    "membersWithSpecs": 3,
+    "matched": 1,
+    "unmatched": 1,
+    "partial": 1
+  }
+}
