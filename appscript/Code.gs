@@ -38,11 +38,15 @@ function doPost(e) {
   if (data.gitlabCommits) writeCommits_(ss, data.gitlabCommits);
   if (data.commitAnalysis) writeCommitAnalysis_(ss, data.commitAnalysis);
   if (data.taskAnalysis) writeTaskAnalysis_(ss, data.taskAnalysis);
+  if (data.planAnalysis) {
+    writePlanAnalysis_(ss, data.planAnalysis);
+  }
 
   var result = { status: 'ok' };
   if (data.rawData) result.dates = Object.keys(data.rawData).length;
   if (data.gitlabCommits) result.commits = data.gitlabCommits.length;
   if (data.taskAnalysis) result.taskWarnings = data.taskAnalysis.warnings ? data.taskAnalysis.warnings.length : 0;
+  if (data.planAnalysis) result.planSpecs = (data.planAnalysis.planSpecs || []).length;
   return ContentService.createTextOutput(JSON.stringify(result))
     .setMimeType(ContentService.MimeType.JSON);
 }
@@ -363,6 +367,62 @@ function writeTaskAnalysis_(ss, taskAnalysis) {
   }
 }
 
+function writePlanAnalysis_(ss, planAnalysis) {
+  // Write Plan Specs sheet
+  var specsSheet = ss.getSheetByName('Plan Specs');
+  if (!specsSheet) specsSheet = ss.insertSheet('Plan Specs');
+
+  var specsExisting = specsSheet.getDataRange().getValues();
+  var specsKeys = {};
+  for (var i = 1; i < specsExisting.length; i++) {
+    var key = formatDate_(specsExisting[i][0]) + '|' + String(specsExisting[i][1]) + '|' + String(specsExisting[i][4]);
+    specsKeys[key] = true;
+  }
+
+  if (specsExisting.length === 0) {
+    specsSheet.getRange(1, 1, 1, 6).setValues([['date', 'member', 'project', 'commitTitle', 'sha', 'files']]);
+    specsExisting = [['header']];
+  }
+
+  var specsRows = [];
+  (planAnalysis.planSpecs || []).forEach(function(s) {
+    var key = String(s.date) + '|' + String(s.member) + '|' + String(s.commit.sha);
+    if (specsKeys[key]) return;
+    specsRows.push([s.date, s.member, s.commit.project, s.commit.title, s.commit.sha, s.files.join(', ')]);
+  });
+  if (specsRows.length > 0) {
+    var startRow = specsExisting.length + 1;
+    specsSheet.getRange(startRow, 1, specsRows.length, 6).setValues(specsRows);
+  }
+
+  // Write Plan Correlations sheet
+  var corrSheet = ss.getSheetByName('Plan Correlations');
+  if (!corrSheet) corrSheet = ss.insertSheet('Plan Correlations');
+
+  var corrExisting = corrSheet.getDataRange().getValues();
+  var corrKeys = {};
+  for (var i = 1; i < corrExisting.length; i++) {
+    var key = formatDate_(corrExisting[i][0]) + '|' + String(corrExisting[i][1]);
+    corrKeys[key] = true;
+  }
+
+  if (corrExisting.length === 0) {
+    corrSheet.getRange(1, 1, 1, 6).setValues([['date', 'member', 'status', 'specCommits', 'matchedTasks', 'reasoning']]);
+    corrExisting = [['header']];
+  }
+
+  var corrRows = [];
+  (planAnalysis.correlations || []).forEach(function(c) {
+    var key = String(c.date) + '|' + String(c.member);
+    if (corrKeys[key]) return;
+    corrRows.push([c.date, c.member, c.status, c.specCommits, (c.matchedTasks || []).join(', '), c.reasoning || '']);
+  });
+  if (corrRows.length > 0) {
+    var startRow = corrExisting.length + 1;
+    corrSheet.getRange(startRow, 1, corrRows.length, 6).setValues(corrRows);
+  }
+}
+
 /**
  * Returns task analysis data as JSON string (called from client via google.script.run).
  * Returns the most recent period's data. Returns null if no sheet exists.
@@ -480,6 +540,8 @@ var DEDUP_KEY_CONFIG = {
   'GitLab Commits':   { cols: [0, 1, 4], dateCols: [0] },    // date|member|sha (legacy)
   'Commit Analysis':  { cols: [0, 1], dateCols: [0] },       // date|member
   'Task Analysis':    { cols: [1, 2, 3], dateCols: [2] },    // period|date|member
+  'Plan Specs':        { cols: [0, 1, 4], dateCols: [0] },     // date|member|sha
+  'Plan Correlations': { cols: [0, 1], dateCols: [0] },         // date|member
 };
 
 function dedupSheets_(ss, sheetNames) {
