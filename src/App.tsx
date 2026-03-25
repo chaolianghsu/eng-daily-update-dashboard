@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { COLORS, THRESHOLDS, MEETING_HEAVY_PCT, WEEK_DAYS, MEMBER_PALETTE } from "./constants";
 import { tabStyle } from "./components";
 import CommitsView from "./CommitsView";
+import PlanSpecView from "./PlanSpecView";
 import { StatusOverview } from "./views/StatusOverview";
 import { DailyView } from "./views/DailyView";
 import { TrendView } from "./views/TrendView";
@@ -131,6 +132,7 @@ export default function App({ loadData }: { loadData: LoadData }) {
             { key: "trend", label: "📈 趨勢比較" },
             { key: "weekly", label: "📋 週統計" },
             ...(commitData ? [{ key: "commits", label: "🔀 Commits" }] : []),
+            ...(planAnalysisData && planAnalysisData.planSpecs.length > 0 ? [{ key: "planspec", label: "📋 規劃追蹤" }] : []),
           ].map(tab => (
             <button key={tab.key} className={`tab-btn ${view === tab.key ? 'tab-active' : ''}`} onClick={() => setView(tab.key)} style={tabStyle(view === tab.key)}>
               {tab.label}
@@ -167,6 +169,11 @@ export default function App({ loadData }: { loadData: LoadData }) {
           <CommitsView commitData={commitData} dates={dates} members={members} memberColors={memberColors} leave={leave}
             activeDate={activeDate} onDateSelect={setSelectedDate} dailyDates={dailyDates} dayLabels={dayLabels} taskAnalysisData={taskAnalysisData}
             planSpecs={planAnalysisData?.planSpecs || null} />
+        )}
+
+        {view === "planspec" && planAnalysisData && (
+          <PlanSpecView planAnalysisData={planAnalysisData} members={members} memberColors={memberColors}
+            dates={dates} activeDate={activeDate} onDateSelect={setSelectedDate} />
         )}
 
         {/* Footer */}
