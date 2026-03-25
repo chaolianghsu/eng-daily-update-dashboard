@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { matchesSpecKeyword } from '../scripts/detect-plan-specs.js';
+import { matchesSpecKeyword, isDocFile } from '../scripts/detect-plan-specs.js';
 
 describe('matchesSpecKeyword', () => {
   it('is exported as a function', () => {
@@ -59,6 +59,62 @@ describe('matchesSpecKeyword', () => {
 
     it('rejects "feat: update Dockerfile"', () => {
       expect(matchesSpecKeyword('feat: update Dockerfile')).toBe(false);
+    });
+  });
+});
+
+describe('isDocFile', () => {
+  it('is exported as a function', () => {
+    expect(typeof isDocFile).toBe('function');
+  });
+
+  describe('matches doc directory paths', () => {
+    it('matches "docs/specs/api-design.md"', () => {
+      expect(isDocFile('docs/specs/api-design.md')).toBe(true);
+    });
+
+    it('matches "docs/plans/migration-plan.md"', () => {
+      expect(isDocFile('docs/plans/migration-plan.md')).toBe(true);
+    });
+
+    it('matches "project/design/arch.md"', () => {
+      expect(isDocFile('project/design/arch.md')).toBe(true);
+    });
+  });
+
+  describe('matches root-level spec files', () => {
+    it('matches "SPEC.md"', () => {
+      expect(isDocFile('SPEC.md')).toBe(true);
+    });
+
+    it('matches "PLAN.md"', () => {
+      expect(isDocFile('PLAN.md')).toBe(true);
+    });
+
+    it('matches "DESIGN.md"', () => {
+      expect(isDocFile('DESIGN.md')).toBe(true);
+    });
+
+    it('matches "RFC-auth-flow.md"', () => {
+      expect(isDocFile('RFC-auth-flow.md')).toBe(true);
+    });
+  });
+
+  describe('rejects non-doc files', () => {
+    it('rejects "src/utils.ts"', () => {
+      expect(isDocFile('src/utils.ts')).toBe(false);
+    });
+
+    it('rejects "docs/specs/data.json"', () => {
+      expect(isDocFile('docs/specs/data.json')).toBe(false);
+    });
+
+    it('rejects "README.md"', () => {
+      expect(isDocFile('README.md')).toBe(false);
+    });
+
+    it('rejects "CHANGELOG.md"', () => {
+      expect(isDocFile('CHANGELOG.md')).toBe(false);
     });
   });
 });

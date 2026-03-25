@@ -21,6 +21,23 @@ function matchesSpecKeyword(title) {
   return SPEC_KEYWORDS_EN.test(title) || SPEC_KEYWORDS_ZH.test(title);
 }
 
+const DOC_DIR_PATTERN = /(?:^|\/)(docs|specs|plans|design)\/.+\.md$/;
+const ROOT_SPEC_PATTERN = /^(SPEC|PLAN|DESIGN|RFC-[^/]+)\.md$/;
+
+/**
+ * Check if a file path is a doc/spec file.
+ * Matches: paths with docs/, specs/, plans/, design/ directories with .md extension,
+ * or root-level SPEC.md, PLAN.md, DESIGN.md, RFC-*.md files.
+ * Rejects: non-.md files, README.md, CHANGELOG.md.
+ * @param {string} filePath - File path relative to repo root
+ * @returns {boolean}
+ */
+function isDocFile(filePath) {
+  if (ROOT_SPEC_PATTERN.test(filePath)) return true;
+  return DOC_DIR_PATTERN.test(filePath);
+}
+
 module.exports = {
   matchesSpecKeyword,
+  isDocFile,
 };
