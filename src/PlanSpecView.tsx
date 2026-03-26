@@ -1,6 +1,7 @@
 // src/PlanSpecView.tsx
 import { COLORS } from "./constants";
 import { CardPanel } from "./components";
+import { buildFileBlobUrl } from "./utils";
 import type { PlanAnalysisData, PlanCorrelation, PlanSpecItem } from "./types";
 
 interface PlanSpecViewProps {
@@ -100,13 +101,40 @@ export default function PlanSpecView({ planAnalysisData, members, memberColors, 
                   <span style={{ marginLeft: "auto", fontFamily: "JetBrains Mono, SF Mono, monospace", fontSize: 11, color: COLORS.textDim }}>{spec.commit.sha}</span>
                 </div>
                 <div style={{ fontSize: 12, color: COLORS.text }}>{spec.commit.title}</div>
-                <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
-                  {spec.files.map((f, j) => (
-                    <span key={j} style={{
-                      fontSize: 10, padding: "2px 8px", borderRadius: 4,
-                      background: COLORS.tealDim, color: COLORS.teal, fontFamily: "JetBrains Mono, SF Mono, monospace",
-                    }}>{f}</span>
-                  ))}
+                <div style={{ display: "flex", gap: 6, flexWrap: "wrap", alignItems: "center" }}>
+                  {spec.files.map((f, j) => {
+                    const fileName = f.split('/').pop() || f;
+                    return (
+                      <span key={j} style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
+                        <a
+                          href={buildFileBlobUrl(spec.commit, f)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title={f}
+                          style={{
+                            fontSize: 10, padding: "2px 8px", borderRadius: 4,
+                            background: COLORS.tealDim, color: COLORS.teal,
+                            fontFamily: "JetBrains Mono, SF Mono, monospace",
+                            textDecoration: "none",
+                          }}
+                        >
+                          {fileName}
+                        </a>
+                        <a
+                          href={spec.commit.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title="查看 diff"
+                          style={{
+                            fontSize: 10, color: COLORS.teal, opacity: 0.6,
+                            textDecoration: "none",
+                          }}
+                        >
+                          ↔
+                        </a>
+                      </span>
+                    );
+                  })}
                 </div>
               </div>
             ))}
