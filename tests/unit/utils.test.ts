@@ -1,6 +1,6 @@
 // tests/unit/utils.test.ts
 import { describe, it, expect } from "vitest";
-import { dateToNum, isOnLeave, getStatus, getBarColor, getTrendIcon, getWeekRange } from "../../src/utils";
+import { dateToNum, isOnLeave, getStatus, getBarColor, getTrendIcon, getWeekRange, extractRepoBase } from "../../src/utils";
 
 describe("dateToNum", () => {
   it("converts M/D to sortable number", () => {
@@ -96,5 +96,32 @@ describe("getWeekRange", () => {
     const sun = new Date(2026, 2, 15); // Sun Mar 15, 2026
     const { monday } = getWeekRange(sun);
     expect(monday.getDate()).toBe(9); // Previous Monday
+  });
+});
+
+describe("extractRepoBase", () => {
+  it("extracts base from GitLab commit URL", () => {
+    expect(extractRepoBase(
+      "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/25386ec0",
+      "gitlab"
+    )).toBe("https://biglab.buygta.today/KEYPO/keypo-frontend-2023");
+  });
+
+  it("extracts base from GitLab nested project URL", () => {
+    expect(extractRepoBase(
+      "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/a390f9a5",
+      "gitlab"
+    )).toBe("https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway");
+  });
+
+  it("extracts base from GitHub commit URL", () => {
+    expect(extractRepoBase(
+      "https://github.com/bigdata-54837596/some-repo/commit/abc12345",
+      "github"
+    )).toBe("https://github.com/bigdata-54837596/some-repo");
+  });
+
+  it("returns original URL if pattern not matched", () => {
+    expect(extractRepoBase("https://example.com/unknown", "gitlab")).toBe("https://example.com/unknown");
   });
 });

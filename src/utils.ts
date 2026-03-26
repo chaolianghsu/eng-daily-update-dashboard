@@ -53,3 +53,10 @@ export function getWeekRange(refDate: Date): { monday: Date; friday: Date } {
   friday.setHours(23, 59, 59, 999);
   return { monday, friday };
 }
+
+export function extractRepoBase(commitUrl: string, source: string): string {
+  if (source === "gitlab") {
+    return commitUrl.replace(/\/-\/commit\/[^/]+$/, "");
+  }
+  return commitUrl.replace(/\/commit\/[^/]+$/, "");
+}
