@@ -1,6 +1,6 @@
 // tests/unit/utils.test.ts
 import { describe, it, expect } from "vitest";
-import { dateToNum, isOnLeave, getStatus, getBarColor, getTrendIcon, getWeekRange, extractRepoBase } from "../../src/utils";
+import { dateToNum, isOnLeave, getStatus, getBarColor, getTrendIcon, getWeekRange, extractRepoBase, buildFileBlobUrl } from "../../src/utils";
 
 describe("dateToNum", () => {
   it("converts M/D to sortable number", () => {
@@ -123,5 +123,37 @@ describe("extractRepoBase", () => {
 
   it("returns original URL if pattern not matched", () => {
     expect(extractRepoBase("https://example.com/unknown", "gitlab")).toBe("https://example.com/unknown");
+  });
+});
+
+describe("buildFileBlobUrl", () => {
+  it("builds GitLab blob URL", () => {
+    const commit = {
+      url: "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/23ceb981",
+      sha: "23ceb981",
+      source: "gitlab" as const,
+    };
+    expect(buildFileBlobUrl(commit, "docs/superpowers/specs/2026-03-24-keypo-http-client-v3-design.md"))
+      .toBe("https://biglab.buygta.today/llmprojects/keypo-agent/-/blob/23ceb981/docs/superpowers/specs/2026-03-24-keypo-http-client-v3-design.md");
+  });
+
+  it("builds GitHub blob URL", () => {
+    const commit = {
+      url: "https://github.com/bigdata-54837596/some-repo/commit/abc12345",
+      sha: "abc12345",
+      source: "github" as const,
+    };
+    expect(buildFileBlobUrl(commit, "docs/plans/feature.md"))
+      .toBe("https://github.com/bigdata-54837596/some-repo/blob/abc12345/docs/plans/feature.md");
+  });
+
+  it("handles nested GitLab project paths", () => {
+    const commit = {
+      url: "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/a390f9a5",
+      sha: "a390f9a5",
+      source: "gitlab" as const,
+    };
+    expect(buildFileBlobUrl(commit, "docs/decisions/015-leaky-bucket-rate-limiting.md"))
+      .toBe("https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/blob/a390f9a5/docs/decisions/015-leaky-bucket-rate-limiting.md");
   });
 });

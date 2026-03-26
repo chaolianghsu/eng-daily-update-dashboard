@@ -60,3 +60,14 @@ export function extractRepoBase(commitUrl: string, source: string): string {
   }
   return commitUrl.replace(/\/commit\/[^/]+$/, "");
 }
+
+export function buildFileBlobUrl(
+  commit: { url: string; sha: string; source: string },
+  filePath: string
+): string {
+  const base = extractRepoBase(commit.url, commit.source);
+  if (commit.source === "gitlab") {
+    return `${base}/-/blob/${commit.sha}/${filePath}`;
+  }
+  return `${base}/blob/${commit.sha}/${filePath}`;
+}
