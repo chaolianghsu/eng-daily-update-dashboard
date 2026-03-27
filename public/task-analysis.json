@@ -1,51 +1,51 @@
 {
-  "analysisDate": "2026-03-26",
-  "period": "3/25",
+  "analysisDate": "2026-03-27",
+  "period": "3/26",
   "warnings": [
     {
-      "date": "3/25",
+      "date": "3/26",
       "member": "Jason",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "房溫 engine api 調整 (3H)、DV AI 產文 prompt 校正 (2H)、Issue#3037 (2H)，共 7H",
-      "commits": "5 個 commits（dv-realestate、dv-ai-draft），遠低於團隊平均 15.4",
-      "reasoning": "報告開發時數 7H，但只有 5 筆 commits，工時/commit 比例（1.4 H/commit）為團隊平均（0.49 H/commit）的 2.84 倍，顯著低於團隊產出效率。"
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "[Dev] EEG engine api v3 調整 (3H)",
+      "commits": "0 相關 commits",
+      "reasoning": "Jason 報告了 3 小時的開發任務（EEG engine api v3 調整），但當天沒有任何相關的 commits 記錄。該任務符合開發時數 ≥3H 的低產出定義，需要確認工作進度是否實際完成或是否遺漏了 commits 提交。"
     },
     {
-      "date": "3/25",
-      "member": "Wendy",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "ES v9 升級分支測試 (2H)、同步失敗問題排查修正 (5H)、TY 模型升級 (1H)、WP 帳號同步 (0.5H)、IDC SY v9 資料確認 (1H)，共 9.5H",
-      "commits": "9 個 commits（sinyi-dashboard、ner-worker），遠低於團隊平均 15.4",
-      "reasoning": "報告開發時數 9.5H，但只有 9 筆 commits，工時/commit 比例（1.06 H/commit）為團隊平均的 2.14 倍，顯著低於團隊產出效率。"
-    },
-    {
-      "date": "3/25",
+      "date": "3/26",
       "member": "侑呈",
       "severity": "🟡",
       "type": "outlier",
-      "task": "Fanti (1H)、私密社團瀏覽器服務 V3 (1H)、OMG DATA API (5H)、FB_KOL/IG_KOL 排查 (0.5H)，共 7.5H",
-      "commits": "7 個 commits（browser_service、mq-fb-insights-consumer、omg_data_api、scrapyd-common），遠低於團隊平均 15.4",
-      "reasoning": "報告開發時數 7.5H，但只有 7 筆 commits，工時/commit 比例（1.07 H/commit）為團隊平均的 2.17 倍，顯著低於團隊產出效率。"
+      "task": "[Dev] 私密社團瀏覽器服務V3 (8H) + 國泰FB關鍵字POC (4H)",
+      "commits": "7 commits across 6 projects (平均團隊為 15.9)",
+      "reasoning": "侑呈報告了 12 小時的開發任務，但僅產出 7 筆 commits，工時/commit 比例為 1.71，遠高於團隊平均 0.47（超過 3.6 倍差距）。該成員的開發工時與 commit 產出的比例明顯低於團隊平均水準，需確認是否存在大量未提交的工作或自我報告工時的準確性。"
     },
     {
-      "date": "3/25",
-      "member": "家輝",
+      "date": "3/26",
+      "member": "Aaron",
       "severity": "🟡",
       "type": "outlier",
-      "task": "RMQ & 伺服器監控警報機制 (4H)、ES9 欄位調整 (1H)、啟動同步寫入 (0.5H)、設定主機路由 (1H)，共 6.5H",
-      "commits": "2 個 commits（keypo-q-huaan-v2、bigrmq），嚴重低於團隊平均 15.4",
-      "reasoning": "報告開發時數 6.5H，但只有 2 筆 commits，工時/commit 比例（3.25 H/commit）為團隊平均的 6.59 倍，是所有成員中效率最低的，需要追蹤工作進度。"
+      "task": "[Dev] 測試 KOL in Agent (2H) + KEYPO Agent 權限管理 (2H)",
+      "commits": "27 commits across 2 projects (平均團隊為 15.9)",
+      "reasoning": "Aaron 報告了 4 小時的開發任務（Non-Dev Review MR 1H 不計），卻產出 27 筆 commits，工時/commit 比例為 0.15，遠低於團隊平均 0.47（低於平均 68%）。該成員的工作模式與團隊平均明顯偏離，建議確認自我報告工時的準確性。"
+    },
+    {
+      "date": "3/26",
+      "member": "哲緯",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "[Dev] 多項任務合計 12H（LSR、KEYKYC、Yahoo改版、ES問題等）",
+      "commits": "58 commits across 6 projects (平均團隊為 15.9)",
+      "reasoning": "哲緯報告了 12 小時的開發任務，卻產出 58 筆 commits，工時/commit 比例為 0.21，遠低於團隊平均 0.47（低於平均 55%）。該成員的 commit 產出與報告工時的比例明顯異常，是團隊中產出效率最高的成員，需確認是否存在自我報告工時不準確或工作模式特殊的情況。"
     }
   ],
   "summary": {
-    "totalMembers": 12,
+    "totalMembers": 14,
     "totalWarnings": 4,
     "byType": {
-      "low_output": 0,
+      "low_output": 1,
       "mismatch": 0,
-      "outlier": 4
+      "outlier": 3
     }
   }
 }
