@@ -1,130 +1,200 @@
 {
-  "analysisDate": "2026-03-26",
-  "period": "3/25",
+  "analysisDate": "2026-03-27",
+  "period": "3/26",
   "planSpecs": [
     {
-      "date": "3/25",
-      "member": "Wendy",
-      "commit": {
-        "title": "WIP: model evaluation plan",
-        "sha": "0c695d1e",
-        "project": "tycg-analytics-platform/ner-worker",
-        "url": "https://biglab.buygta.today/tycg-analytics-platform/ner-worker/-/commit/0c695d1e",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/specs/2026-03-24-gpt-model-evaluation.md"]
-    },
-    {
-      "date": "3/25",
-      "member": "Ted",
-      "commit": {
-        "title": "docs(load-test): expand goal to include mixed traffic and rate limit tuning",
-        "sha": "70d66f1f",
-        "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/70d66f1f",
-        "source": "gitlab"
-      },
-      "files": ["docs/plans/2026-03-24-per-api-ramping-load-test.md"]
-    },
-    {
-      "date": "3/25",
-      "member": "Ted",
-      "commit": {
-        "title": "feat(load-test): add ramping load test plan and log parser",
-        "sha": "8f71d067",
-        "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/8f71d067",
-        "source": "gitlab"
-      },
-      "files": ["docs/plans/2026-03-24-per-api-ramping-load-test.md"]
-    },
-    {
-      "date": "3/25",
-      "member": "Ted",
-      "commit": {
-        "title": "docs(load-test): expand goal to include mixed traffic and rate limit tuning",
-        "sha": "64ac842d",
-        "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/64ac842d",
-        "source": "gitlab"
-      },
-      "files": ["docs/plans/2026-03-24-per-api-ramping-load-test.md"]
-    },
-    {
-      "date": "3/25",
-      "member": "Ted",
-      "commit": {
-        "title": "feat(load-test): add ramping scripts and update plan",
-        "sha": "0c35b73c",
-        "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/0c35b73c",
-        "source": "gitlab"
-      },
-      "files": ["docs/plans/2026-03-24-per-api-ramping-load-test.md"]
-    },
-    {
-      "date": "3/25",
-      "member": "Ted",
-      "commit": {
-        "title": "docs(priority-traffic): update implementation plan to reflect final state",
-        "sha": "6f59eeea",
-        "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/6f59eeea",
-        "source": "gitlab"
-      },
-      "files": ["docs/plans/2026-03-25-priority-traffic-plugin.md"]
-    },
-    {
-      "date": "3/25",
+      "date": "3/26",
       "member": "Joe",
       "commit": {
-        "title": "docs(copilot): update implementation plan with i18n text label task",
-        "sha": "7545788b",
+        "title": "docs(copilot): add KOL table event parsing implementation plan",
+        "sha": "f1b3aea7",
         "project": "KEYPO/keypo-frontend-2023",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/7545788b",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/f1b3aea7",
         "source": "gitlab"
       },
-      "files": ["docs/superpowers/plans/2026-03-23-agent-generic-processing-hint.md"]
+      "files": ["docs/superpowers/plans/2025-03-25-kol-table-event-parsing.md"]
+    },
+    {
+      "date": "3/26",
+      "member": "Ted",
+      "commit": {
+        "title": "docs: update topic refresh optimization TODO",
+        "sha": "bc0265b5",
+        "project": "CrawlersV2/fanti-insights-api",
+        "url": "https://biglab.buygta.today/CrawlersV2/fanti-insights-api/-/commit/bc0265b5",
+        "source": "gitlab"
+      },
+      "files": ["docs/TODO_topic_refresh_optimization.md"]
+    },
+    {
+      "date": "3/26",
+      "member": "Aaron",
+      "commit": {
+        "title": "docs(specs): add feature flags redesign spec",
+        "sha": "b7600f46",
+        "project": "llmprojects/keypo-agent",
+        "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/b7600f46",
+        "source": "gitlab"
+      },
+      "files": ["docs/superpowers/specs/2026-03-26-feature-flags-redesign.md"]
+    },
+    {
+      "date": "3/26",
+      "member": "Aaron",
+      "commit": {
+        "title": "docs(specs): address spec review feedback",
+        "sha": "a7a8cf31",
+        "project": "llmprojects/keypo-agent",
+        "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/a7a8cf31",
+        "source": "gitlab"
+      },
+      "files": ["docs/superpowers/specs/2026-03-26-feature-flags-redesign.md"]
+    },
+    {
+      "date": "3/26",
+      "member": "Aaron",
+      "commit": {
+        "title": "docs(plans): add feature flags redesign implementation plan",
+        "sha": "e3b275a0",
+        "project": "llmprojects/keypo-agent",
+        "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/e3b275a0",
+        "source": "gitlab"
+      },
+      "files": ["docs/superpowers/plans/2026-03-26-feature-flags-redesign.md"]
+    },
+    {
+      "date": "3/26",
+      "member": "哲緯",
+      "commit": {
+        "title": "docs: add client feedback v2 spec and implementation plan",
+        "sha": "ced4969e",
+        "project": "bigdata-54837596/line-social-radar",
+        "url": "https://github.com/bigdata-54837596/line-social-radar/commit/ced4969e",
+        "source": "github"
+      },
+      "files": ["docs/superpowers/plans/2026-03-26-client-feedback-v2.md", "docs/superpowers/specs/2026-03-26-client-feedback-v2-design.md"]
+    },
+    {
+      "date": "3/26",
+      "member": "哲緯",
+      "commit": {
+        "title": "docs: update spec per review feedback",
+        "sha": "cbe3d6c3",
+        "project": "bigdata-54837596/line-social-radar",
+        "url": "https://github.com/bigdata-54837596/line-social-radar/commit/cbe3d6c3",
+        "source": "github"
+      },
+      "files": ["docs/superpowers/specs/2026-03-26-client-feedback-v2-design.md"]
+    },
+    {
+      "date": "3/26",
+      "member": "哲緯",
+      "commit": {
+        "title": "docs: add client feedback v2 design spec",
+        "sha": "e3ec1007",
+        "project": "bigdata-54837596/line-social-radar",
+        "url": "https://github.com/bigdata-54837596/line-social-radar/commit/e3ec1007",
+        "source": "github"
+      },
+      "files": ["docs/superpowers/specs/2026-03-26-client-feedback-v2-design.md"]
+    },
+    {
+      "date": "3/26",
+      "member": "哲緯",
+      "commit": {
+        "title": "docs: add image prompt redesign implementation plan",
+        "sha": "759e51ce",
+        "project": "bigdata-54837596/line-social-radar-api",
+        "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/759e51ce",
+        "source": "github"
+      },
+      "files": ["docs/superpowers/plans/2026-03-26-image-prompt-redesign.md"]
+    },
+    {
+      "date": "3/26",
+      "member": "哲緯",
+      "commit": {
+        "title": "docs: fix decision table — objects from idol topics are still valid focal points",
+        "sha": "a536bc7e",
+        "project": "bigdata-54837596/line-social-radar-api",
+        "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/a536bc7e",
+        "source": "github"
+      },
+      "files": ["docs/superpowers/specs/2026-03-26-image-prompt-redesign-design.md"]
+    },
+    {
+      "date": "3/26",
+      "member": "哲緯",
+      "commit": {
+        "title": "docs: translate image prompt redesign spec to Traditional Chinese",
+        "sha": "f5bc08e6",
+        "project": "bigdata-54837596/line-social-radar-api",
+        "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/f5bc08e6",
+        "source": "github"
+      },
+      "files": ["docs/superpowers/specs/2026-03-26-image-prompt-redesign-design.md"]
+    },
+    {
+      "date": "3/26",
+      "member": "哲緯",
+      "commit": {
+        "title": "docs: add image prompt redesign spec — single focal point with safety valve",
+        "sha": "d10f0543",
+        "project": "bigdata-54837596/line-social-radar-api",
+        "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/d10f0543",
+        "source": "github"
+      },
+      "files": ["docs/superpowers/specs/2026-03-26-image-prompt-redesign-design.md"]
     }
   ],
   "correlations": [
     {
-      "date": "3/25",
-      "member": "Wendy",
-      "status": "partial",
+      "date": "3/26",
+      "member": "Joe",
+      "status": "matched",
       "specCommits": 1,
       "dailyUpdateMention": true,
-      "matchedTasks": ["TY 模型升級：升級 plan"],
-      "unmatchedSpecs": ["WIP: model evaluation plan"],
-      "reasoning": "Daily update 提及了 TY 模型升級的計畫工作，但沒有明確提到「模型評估計畫」的具體內容。Commit 是 WIP 狀態，主要涉及模型評估計畫規劃，與日常更新中的模型升級概念相關，但細節上略有偏差。"
-    },
-    {
-      "date": "3/25",
-      "member": "Ted",
-      "status": "matched",
-      "specCommits": 5,
-      "dailyUpdateMention": true,
-      "matchedTasks": ["load test - ramping scripts 更新, mixed traffic and rate limit tuning (0c35b73, 64ac842)", "implementation plan 更新, ADR-015 (6f59eee)"],
+      "matchedTasks": ["Agent 會議中討論優化 KOL 事件的相關資料格式，前端解析邏輯配合進行調整", "前端 Agent 訊息渲染邏輯調整，在訊息框最後加入兩種 KOL 表格"],
       "unmatchedSpecs": [],
-      "reasoning": "Daily update 明確提到了 load test 相關的 ramping scripts 更新與 mixed traffic/rate limit tuning 工作，並直接引用相應 commit SHA。同時也提到了 priority-traffic 的 implementation plan 更新。所有 5 個 plan/spec commits（4 個 load-test 相關、1 個 priority-traffic 相關）都在 daily update 中有對應的工作項目提及，完全吻合。"
+      "reasoning": "Daily update 清楚記錄了 KOL table event parsing 相關的規劃設計工作。具體包含討論 KOL 事件資料格式優化、前端解析邏輯調整，以及在 Agent 訊息框中新增 KOL 表格等實作進展，與 spec commit 內容高度吻合。"
     },
     {
-      "date": "3/25",
-      "member": "Joe",
+      "date": "3/26",
+      "member": "Ted",
       "status": "unmatched",
       "specCommits": 1,
       "dailyUpdateMention": false,
       "matchedTasks": [],
-      "unmatchedSpecs": ["docs(copilot): update implementation plan with i18n text label task"],
-      "reasoning": "Daily update 中完全沒有任何提及關於 copilot 或 i18n text label 的工作。Joe 的 3/25 工作主要聚焦在 KEYPO Agent 權限控管功能開發和 KOL in Agent 前端平台開發，與此 plan/spec commit 完全無關。"
+      "unmatchedSpecs": ["docs: update topic refresh optimization TODO"],
+      "reasoning": "Daily update 記錄的工作項目包括 KEYPO engine API gateway 優化、Fanti Insights API ES 遷移、KEYPO GPT report 等，但完全沒有提及 topic refresh optimization 相關的規劃設計工作。雖然正在進行 Fanti Insights API 開發，但沒有具體對應的 daily update 描述。"
+    },
+    {
+      "date": "3/26",
+      "member": "Aaron",
+      "status": "unmatched",
+      "specCommits": 3,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": ["docs(specs): add feature flags redesign spec", "docs(specs): address spec review feedback", "docs(plans): add feature flags redesign implementation plan"],
+      "reasoning": "Daily update 記錄的工作內容為 KEYPO Agent 會議、DevOps 會議、MR review 和 KOL in Agent 測試，以及 KEYPO Agent 權限管理。雖然提及權限管理，但完全沒有提及 feature flags redesign 相關的規劃設計文件工作，三個 spec commits 均未在 daily update 中對應。"
+    },
+    {
+      "date": "3/26",
+      "member": "哲緯",
+      "status": "partial",
+      "specCommits": 7,
+      "dailyUpdateMention": true,
+      "matchedTasks": ["更改圖片生成邏輯，動態選取圖片焦點（物件/場景）", "新增萃取話題核心物件主體"],
+      "unmatchedSpecs": ["docs: add client feedback v2 spec and implementation plan", "docs: update spec per review feedback", "docs: add client feedback v2 design spec"],
+      "reasoning": "Daily update 中有提及 image prompt redesign 相關的工作（圖片焦點動態選取、話題核心物件萃取），對應了 5 個 image prompt redesign spec commits。然而，3 個 client feedback v2 相關的 spec commits（包括 spec、review feedback 和 design spec）在 daily update 中完全未提及。整體而言，部分 specs 有對應的實作進展，部分則完全未在日報中體現。"
     }
   ],
   "summary": {
-    "totalSpecCommits": 7,
-    "totalCorrelations": 3,
-    "membersWithSpecs": 3,
+    "totalSpecCommits": 12,
+    "totalCorrelations": 4,
+    "membersWithSpecs": 4,
     "matched": 1,
-    "unmatched": 1,
+    "unmatched": 2,
     "partial": 1
   }
 }
