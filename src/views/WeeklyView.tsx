@@ -39,7 +39,7 @@ interface WeeklyViewProps {
   leave: Record<string, LeaveRange[]>;
   dailyDates: string[];
   dayLabels: Record<string, string>;
-  onDateSelectAndSwitchToCommits: (d: string) => void;
+  onDateSelect: (d: string) => void;
 }
 
 export function WeeklyView({
@@ -55,7 +55,7 @@ export function WeeklyView({
   leave,
   dailyDates,
   dayLabels,
-  onDateSelectAndSwitchToCommits,
+  onDateSelect,
 }: WeeklyViewProps) {
   return (
     <div>
@@ -179,7 +179,7 @@ export function WeeklyView({
                     <tr>
                       <th style={{ padding: "6px 10px", textAlign: "left", color: COLORS.textMuted, fontWeight: 600, fontSize: 11, whiteSpace: "nowrap", position: "sticky", left: 0, background: COLORS.card, zIndex: 1 }}>成員</th>
                       {gridDates.map(d => (
-                        <th key={d} onClick={() => onDateSelectAndSwitchToCommits(d)} style={{
+                        <th key={d} onClick={() => onDateSelect(d)} style={{
                           padding: "6px 6px", textAlign: "center", fontSize: 10, cursor: "pointer",
                           fontWeight: 400, color: COLORS.textMuted,
                           transition: "all 0.15s ease",
@@ -236,7 +236,7 @@ export function WeeklyView({
                             }
 
                             return (
-                              <td key={d} title={tooltip} onClick={() => onDateSelectAndSwitchToCommits(d)} style={{
+                              <td key={d} title={tooltip} onClick={() => onDateSelect(d)} style={{
                                 padding: 0, textAlign: "center", cursor: "pointer",
                               }}>
                                 <div style={{
@@ -267,7 +267,7 @@ export function WeeklyView({
                         const hoursArr = Object.values(dateMembers).filter((a: any) => a.hours != null).map((a: any) => a.hours);
                         const avgH = hoursArr.length ? (hoursArr.reduce((a: number, b: number) => a + b, 0) / hoursArr.length).toFixed(1) : null;
                         return (
-                          <td key={d} onClick={() => onDateSelectAndSwitchToCommits(d)} style={{
+                          <td key={d} onClick={() => onDateSelect(d)} style={{
                             padding: "4px 4px", textAlign: "center", cursor: "pointer",
                             borderTop: `1px solid ${COLORS.border}`,
                           }}>

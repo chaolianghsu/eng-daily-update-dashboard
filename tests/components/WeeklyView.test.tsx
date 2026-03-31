@@ -21,7 +21,7 @@ const baseProps = {
   leave: {},
   dailyDates: ["3/9", "3/10", "3/11", "3/12", "3/13"],
   dayLabels: { "3/9": "一", "3/10": "二", "3/11": "三", "3/12": "四", "3/13": "五" },
-  onDateSelectAndSwitchToCommits: vi.fn(),
+  onDateSelect: vi.fn(),
 };
 
 describe("WeeklyView", () => {
