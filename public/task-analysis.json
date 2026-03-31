@@ -1,51 +1,24 @@
 {
-  "analysisDate": "2026-03-27",
-  "period": "3/26",
+  "analysisDate": "2026-03-31",
+  "period": "3/27",
   "warnings": [
     {
-      "date": "3/26",
-      "member": "Jason",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "[Dev] EEG engine api v3 調整 (3H)",
-      "commits": "0 相關 commits",
-      "reasoning": "Jason 報告了 3 小時的開發任務（EEG engine api v3 調整），但當天沒有任何相關的 commits 記錄。該任務符合開發時數 ≥3H 的低產出定義，需要確認工作進度是否實際完成或是否遺漏了 commits 提交。"
-    },
-    {
-      "date": "3/26",
-      "member": "侑呈",
+      "date": "3/27",
+      "member": "Joe",
       "severity": "🟡",
       "type": "outlier",
-      "task": "[Dev] 私密社團瀏覽器服務V3 (8H) + 國泰FB關鍵字POC (4H)",
-      "commits": "7 commits across 6 projects (平均團隊為 15.9)",
-      "reasoning": "侑呈報告了 12 小時的開發任務，但僅產出 7 筆 commits，工時/commit 比例為 1.71，遠高於團隊平均 0.47（超過 3.6 倍差距）。該成員的開發工時與 commit 產出的比例明顯低於團隊平均水準，需確認是否存在大量未提交的工作或自我報告工時的準確性。"
-    },
-    {
-      "date": "3/26",
-      "member": "Aaron",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "[Dev] 測試 KOL in Agent (2H) + KEYPO Agent 權限管理 (2H)",
-      "commits": "27 commits across 2 projects (平均團隊為 15.9)",
-      "reasoning": "Aaron 報告了 4 小時的開發任務（Non-Dev Review MR 1H 不計），卻產出 27 筆 commits，工時/commit 比例為 0.15，遠低於團隊平均 0.47（低於平均 68%）。該成員的工作模式與團隊平均明顯偏離，建議確認自我報告工時的準確性。"
-    },
-    {
-      "date": "3/26",
-      "member": "哲緯",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "[Dev] 多項任務合計 12H（LSR、KEYKYC、Yahoo改版、ES問題等）",
-      "commits": "58 commits across 6 projects (平均團隊為 15.9)",
-      "reasoning": "哲緯報告了 12 小時的開發任務，卻產出 58 筆 commits，工時/commit 比例為 0.21，遠低於團隊平均 0.47（低於平均 55%）。該成員的 commit 產出與報告工時的比例明顯異常，是團隊中產出效率最高的成員，需確認是否存在自我報告工時不準確或工作模式特殊的情況。"
+      "task": "[Dev] KOL in Agent 前端平台開發 (4H)",
+      "commits": "KEYPO/keypo-frontend-2023 的 2 筆 commits（UI 時間顯示改進、文件更新）",
+      "reasoning": "Joe 報告開發工時 4H 用於 KOL in Agent 前端開發，但相關 commits 僅 2 筆。團隊平均開發工時 5.8H 對應 17.3 筆 commits（約 2.98 commits/hour），而 Joe 的 commit 產出比率僅 0.5 commits/hour（2筆÷4H），遠低於團隊平均約 6 倍，超過 2 倍差距門檻。兩筆 commits 內容為小規模修改（HH:mm 時間顯示微調、KOL 表格渲染文件），與 4 小時開發任務的預期輸出不相稱。"
     }
   ],
   "summary": {
-    "totalMembers": 14,
-    "totalWarnings": 4,
+    "totalMembers": 10,
+    "totalWarnings": 1,
     "byType": {
-      "low_output": 1,
+      "low_output": 0,
       "mismatch": 0,
-      "outlier": 3
+      "outlier": 1
     }
   }
 }
