@@ -8,16 +8,17 @@ interface StatusOverviewProps {
   members: string[];
   rawData: Record<string, Record<string, any>>;
   dates: string[];
+  activeDate: string;
 }
 
-export function StatusOverview({ allIssues, issues, members, rawData, dates }: StatusOverviewProps) {
+export function StatusOverview({ allIssues, issues, members, rawData, dates, activeDate }: StatusOverviewProps) {
   const attentionIssues = allIssues;
   const stableIssues = issues.filter(i => i.severity === "🟢");
+  const displayDate = activeDate || dates[dates.length - 1];
   const reportedCount = members.filter(m => {
-    const latest = dates[dates.length - 1];
-    return rawData?.[latest]?.[m]?.total != null;
+    return rawData?.[displayDate]?.[m]?.total != null;
   }).length;
-  const latestData = rawData?.[dates[dates.length - 1]] || {};
+  const latestData = rawData?.[displayDate] || {};
   const teamVals = Object.values(latestData).filter((v: any) => v.total != null).map((v: any) => v.total);
   const teamAvg = teamVals.length ? +(teamVals.reduce((a: number, b: number) => a + b, 0) / teamVals.length).toFixed(1) : null;
   const actionHints: Record<string, string> = {

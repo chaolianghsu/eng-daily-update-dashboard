@@ -123,7 +123,7 @@ export default function App({ loadData }: { loadData: LoadData }) {
           </p>
         </div>
 
-        <StatusOverview allIssues={allIssues} issues={issues} members={members} rawData={rawData!} dates={dates} />
+        <StatusOverview allIssues={allIssues} issues={issues} members={members} rawData={rawData!} dates={dates} activeDate={activeDate} />
 
         {/* Tabs */}
         <div className="animate-in tab-bar" style={{ animationDelay: "0.1s", display: "flex", gap: 4, marginBottom: 24, background: COLORS.card, borderRadius: 10, padding: 4, width: "fit-content" }}>
