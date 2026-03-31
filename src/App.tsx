@@ -148,9 +148,11 @@ export default function App({ loadData }: { loadData: LoadData }) {
             weeks={weekNav.weeks} weekIndex={weekNav.weekIndex}
             canGoPrev={weekNav.canGoPrev} canGoNext={weekNav.canGoNext}
             isThisWeek={weekNav.isThisWeek} isLastWeek={weekNav.isLastWeek}
-            onPrevWeek={weekNav.goToPrev} onNextWeek={weekNav.goToNext}
-            onThisWeek={weekNav.goToThisWeek} onLastWeek={weekNav.goToLastWeek}
-            onSelectWeek={weekNav.goToWeek} />
+            onPrevWeek={() => { weekNav.goToPrev(); setSelectedDate(null); }}
+            onNextWeek={() => { weekNav.goToNext(); setSelectedDate(null); }}
+            onThisWeek={() => { weekNav.goToThisWeek(); setSelectedDate(null); }}
+            onLastWeek={() => { weekNav.goToLastWeek(); setSelectedDate(null); }}
+            onSelectWeek={(i: number) => { weekNav.goToWeek(i); setSelectedDate(null); }} />
         )}
 
         {view === "trend" && (

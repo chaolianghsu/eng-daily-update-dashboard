@@ -37,18 +37,25 @@ export function useWeekNavigator(dates: string[]) {
   const currentWeek = safeIndex >= 0 ? weeks[safeIndex] : EMPTY_WEEK;
   const canGoPrev = safeIndex > 0;
   const canGoNext = safeIndex < weeks.length - 1;
-  const isThisWeek = safeIndex === weeks.length - 1;
-  const isLastWeek = safeIndex === weeks.length - 2;
+  const { monday: nowMonday } = getWeekRange(new Date());
+  const nowMondayLabel = `${nowMonday.getMonth() + 1}/${nowMonday.getDate()}`;
+  const currentCalendarWeekIndex = weeks.findIndex(w => w.label.startsWith(nowMondayLabel));
+  const isThisWeek = currentCalendarWeekIndex >= 0 && safeIndex === currentCalendarWeekIndex;
+  const isLastWeek = currentCalendarWeekIndex >= 1 && safeIndex === currentCalendarWeekIndex - 1;
 
   const goToPrev = useCallback(() => { if (canGoPrev) setWeekIndex(safeIndex - 1); }, [canGoPrev, safeIndex]);
   const goToNext = useCallback(() => { if (canGoNext) setWeekIndex(safeIndex + 1); }, [canGoNext, safeIndex]);
   const goToWeek = useCallback((index: number) => {
     if (index >= 0 && index < weeks.length) setWeekIndex(index);
   }, [weeks.length]);
-  const goToThisWeek = useCallback(() => setWeekIndex(weeks.length - 1), [weeks.length]);
+  const goToThisWeek = useCallback(() => {
+    if (currentCalendarWeekIndex >= 0) setWeekIndex(currentCalendarWeekIndex);
+    else setWeekIndex(weeks.length - 1);
+  }, [currentCalendarWeekIndex, weeks.length]);
   const goToLastWeek = useCallback(() => {
-    if (weeks.length >= 2) setWeekIndex(weeks.length - 2);
-  }, [weeks.length]);
+    if (currentCalendarWeekIndex >= 1) setWeekIndex(currentCalendarWeekIndex - 1);
+    else if (weeks.length >= 2) setWeekIndex(weeks.length - 2);
+  }, [currentCalendarWeekIndex, weeks.length]);
 
   return {
     weeks,

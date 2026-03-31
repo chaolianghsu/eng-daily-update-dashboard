@@ -49,8 +49,15 @@ export function DailyView({
         setDropdownOpen(false);
       }
     };
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setDropdownOpen(false);
+    };
     document.addEventListener("mousedown", handleClick);
-    return () => document.removeEventListener("mousedown", handleClick);
+    document.addEventListener("keydown", handleKey);
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+      document.removeEventListener("keydown", handleKey);
+    };
   }, [dropdownOpen]);
 
   return (
@@ -64,8 +71,8 @@ export function DailyView({
                 color: canGoPrev ? COLORS.textDim : COLORS.border, fontSize: 16, padding: "4px 6px",
                 fontFamily: "inherit", transition: "color 0.15s",
               }}
-              onMouseEnter={e => { if (canGoPrev) (e.target as HTMLElement).style.color = COLORS.text; }}
-              onMouseLeave={e => { (e.target as HTMLElement).style.color = canGoPrev ? COLORS.textDim : COLORS.border; }}
+              onMouseEnter={e => { if (canGoPrev) (e.currentTarget as HTMLElement).style.color = COLORS.text; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = canGoPrev ? COLORS.textDim : COLORS.border; }}
             >◀</button>
 
             <div ref={dropdownRef} style={{ position: "relative" }}>
@@ -76,8 +83,8 @@ export function DailyView({
                   padding: "4px 8px", borderRadius: 6,
                   transition: "background 0.15s",
                 }}
-                onMouseEnter={e => { (e.target as HTMLElement).style.background = COLORS.card; }}
-                onMouseLeave={e => { (e.target as HTMLElement).style.background = "none"; }}
+                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = COLORS.card; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "none"; }}
               >
                 {isThisWeek ? "本週 " : ""}{weeks[weekIndex]?.label || ""} ▾
               </button>
@@ -100,8 +107,8 @@ export function DailyView({
                         fontSize: 12, fontWeight: i === weekIndex ? 700 : 500, fontFamily: "inherit",
                         transition: "background 0.1s",
                       }}
-                      onMouseEnter={e => { if (i !== weekIndex) (e.target as HTMLElement).style.background = "rgba(255,255,255,0.05)"; }}
-                      onMouseLeave={e => { if (i !== weekIndex) (e.target as HTMLElement).style.background = "transparent"; }}
+                      onMouseEnter={e => { if (i !== weekIndex) (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.05)"; }}
+                      onMouseLeave={e => { if (i !== weekIndex) (e.currentTarget as HTMLElement).style.background = "transparent"; }}
                     >{w.label}</button>
                   ))}
                 </div>
@@ -114,8 +121,8 @@ export function DailyView({
                 color: canGoNext ? COLORS.textDim : COLORS.border, fontSize: 16, padding: "4px 6px",
                 fontFamily: "inherit", transition: "color 0.15s",
               }}
-              onMouseEnter={e => { if (canGoNext) (e.target as HTMLElement).style.color = COLORS.text; }}
-              onMouseLeave={e => { (e.target as HTMLElement).style.color = canGoNext ? COLORS.textDim : COLORS.border; }}
+              onMouseEnter={e => { if (canGoNext) (e.currentTarget as HTMLElement).style.color = COLORS.text; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = canGoNext ? COLORS.textDim : COLORS.border; }}
             >▶</button>
           </div>
 
