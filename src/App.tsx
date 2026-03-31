@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 
 import { COLORS, THRESHOLDS, MEETING_HEAVY_PCT, WEEK_DAYS, MEMBER_PALETTE } from "./constants";
 import { tabStyle } from "./components";
+import { DateNavigator } from "./components/DateNavigator";
+import { SubViewPills } from "./components/SubViewPills";
 import CommitsView from "./CommitsView";
 import PlanSpecView from "./PlanSpecView";
 import { StatusOverview } from "./views/StatusOverview";
@@ -17,7 +19,8 @@ import type { LoadData, CommitData, TaskAnalysisData, PlanAnalysisData } from ".
 import "./styles.css";
 
 export default function App({ loadData }: { loadData: LoadData }) {
-  const [view, setView] = useState("daily");
+  const [view, setView] = useState<"detail" | "trend" | "weekly">("detail");
+  const [subView, setSubView] = useState<"hours" | "commits" | "planspec">("hours");
   const [rawData, setRawData] = useState<Record<string, Record<string, any>> | null>(null);
   const [issues, setIssues] = useState<any[]>([]);
   const [leave, setLeave] = useState<Record<string, any[]>>({});
@@ -82,10 +85,6 @@ export default function App({ loadData }: { loadData: LoadData }) {
     setSelectedMembers(next);
   };
 
-  const dateSelectAndSwitchToCommits = (d: string) => {
-    setSelectedDate(d);
-    setView('commits');
-  };
 
   if (loading) {
     return (
@@ -128,31 +127,74 @@ export default function App({ loadData }: { loadData: LoadData }) {
         {/* Tabs */}
         <div className="animate-in tab-bar" style={{ animationDelay: "0.1s", display: "flex", gap: 4, marginBottom: 24, background: COLORS.card, borderRadius: 10, padding: 4, width: "fit-content" }}>
           {[
-            { key: "daily", label: "📊 每日工時" },
-            { key: "trend", label: "📈 趨勢比較" },
-            { key: "weekly", label: "📋 週統計" },
-            ...(commitData ? [{ key: "commits", label: "🔀 Commits" }] : []),
-            ...(planAnalysisData && planAnalysisData.planSpecs.length > 0 ? [{ key: "planspec", label: "📋 規劃追蹤" }] : []),
+            { key: "detail", label: "📅 每日詳情" },
+            { key: "trend", label: "📈 趨勢" },
+            { key: "weekly", label: "📋 週報" },
           ].map(tab => (
-            <button key={tab.key} className={`tab-btn ${view === tab.key ? 'tab-active' : ''}`} onClick={() => setView(tab.key)} style={tabStyle(view === tab.key)}>
+            <button key={tab.key} className={`tab-btn ${view === tab.key ? 'tab-active' : ''}`}
+              onClick={() => setView(tab.key as any)} style={tabStyle(view === tab.key)}>
               {tab.label}
             </button>
           ))}
         </div>
 
-        {view === "daily" && (
-          <DailyView dailyDates={dailyDates} activeDate={activeDate} onDateSelect={setSelectedDate}
-            dayLabels={dayLabels} dailyBarData={dailyBarData}
-            chartHeight={chartHeight} memberColors={memberColors} issueMap={issueMap}
-            commitData={commitData} leave={leave}
-            weeks={weekNav.weeks} weekIndex={weekNav.weekIndex}
-            canGoPrev={weekNav.canGoPrev} canGoNext={weekNav.canGoNext}
-            isThisWeek={weekNav.isThisWeek} isLastWeek={weekNav.isLastWeek}
-            onPrevWeek={() => { weekNav.goToPrev(); setSelectedDate(null); }}
-            onNextWeek={() => { weekNav.goToNext(); setSelectedDate(null); }}
-            onThisWeek={() => { weekNav.goToThisWeek(); setSelectedDate(null); }}
-            onLastWeek={() => { weekNav.goToLastWeek(); setSelectedDate(null); }}
-            onSelectWeek={(i: number) => { weekNav.goToWeek(i); setSelectedDate(null); }} />
+        {view === "detail" && (
+          <>
+            <DateNavigator
+              dates={dailyDates}
+              activeDate={activeDate}
+              onDateSelect={setSelectedDate}
+              dayLabels={dayLabels}
+              weeks={weekNav.weeks}
+              weekIndex={weekNav.weekIndex}
+              canGoPrev={weekNav.canGoPrev}
+              canGoNext={weekNav.canGoNext}
+              onPrevWeek={() => { weekNav.goToPrev(); setSelectedDate(null); }}
+              onNextWeek={() => { weekNav.goToNext(); setSelectedDate(null); }}
+              onSelectWeek={(i: number) => { weekNav.goToWeek(i); setSelectedDate(null); }}
+            />
+            <SubViewPills
+              activeView={subView}
+              onViewChange={setSubView}
+              activeDate={activeDate}
+              commitData={commitData}
+              planAnalysisData={planAnalysisData}
+            />
+            <div style={{ marginTop: 16 }}>
+              {subView === "hours" && (
+                <DailyView
+                  activeDate={activeDate}
+                  dailyBarData={dailyBarData}
+                  chartHeight={chartHeight}
+                  memberColors={memberColors}
+                  issueMap={issueMap}
+                  commitData={commitData}
+                  leave={leave}
+                />
+              )}
+              {subView === "commits" && commitData && (
+                <CommitsView
+                  commitData={commitData}
+                  dates={dates}
+                  members={members}
+                  memberColors={memberColors}
+                  leave={leave}
+                  activeDate={activeDate}
+                  taskAnalysisData={taskAnalysisData}
+                  planSpecs={planAnalysisData?.planSpecs || null}
+                />
+              )}
+              {subView === "planspec" && planAnalysisData && (
+                <PlanSpecView
+                  planAnalysisData={planAnalysisData}
+                  members={members}
+                  memberColors={memberColors}
+                  dates={dates}
+                  activeDate={activeDate}
+                />
+              )}
+            </div>
+          </>
         )}
 
         {view === "trend" && (
@@ -170,18 +212,7 @@ export default function App({ loadData }: { loadData: LoadData }) {
             onToggleMember={toggleMember} isMobile={isMobile} dates={dates}
             commitData={commitData} leave={leave}
             dailyDates={dailyDates} dayLabels={dayLabels}
-            onDateSelectAndSwitchToCommits={dateSelectAndSwitchToCommits} />
-        )}
-
-        {view === "commits" && commitData && (
-          <CommitsView commitData={commitData} dates={dates} members={members} memberColors={memberColors} leave={leave}
-            activeDate={activeDate} onDateSelect={setSelectedDate} dailyDates={dailyDates} dayLabels={dayLabels} taskAnalysisData={taskAnalysisData}
-            planSpecs={planAnalysisData?.planSpecs || null} />
-        )}
-
-        {view === "planspec" && planAnalysisData && (
-          <PlanSpecView planAnalysisData={planAnalysisData} members={members} memberColors={memberColors}
-            dates={dates} activeDate={activeDate} onDateSelect={setSelectedDate} />
+            onDateSelect={(d: string) => { setSelectedDate(d); setSubView("commits"); setView("detail"); }} />
         )}
 
         {/* Footer */}
