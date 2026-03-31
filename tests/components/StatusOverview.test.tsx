@@ -12,6 +12,7 @@ const baseProps = {
   members: ["A", "B"],
   rawData: { "3/5": { A: { total: 8 }, B: { total: 7 } } },
   dates: ["3/5"],
+  activeDate: "3/5",
 };
 
 describe("StatusOverview", () => {
