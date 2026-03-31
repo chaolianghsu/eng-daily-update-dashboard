@@ -50,8 +50,8 @@ export function useWeekNavigator(dates: string[]) {
   const isThisWeek = safeIndex === weeks.length - 1;
   const isLastWeek = safeIndex === weeks.length - 2;
 
-  const goToPrev = useCallback(() => { if (canGoPrev) setWeekIndex(i => i - 1); }, [canGoPrev]);
-  const goToNext = useCallback(() => { if (canGoNext) setWeekIndex(i => i + 1); }, [canGoNext]);
+  const goToPrev = useCallback(() => { if (canGoPrev) setWeekIndex(safeIndex - 1); }, [canGoPrev, safeIndex]);
+  const goToNext = useCallback(() => { if (canGoNext) setWeekIndex(safeIndex + 1); }, [canGoNext, safeIndex]);
   const goToWeek = useCallback((index: number) => {
     if (index >= 0 && index < weeks.length) setWeekIndex(index);
   }, [weeks.length]);

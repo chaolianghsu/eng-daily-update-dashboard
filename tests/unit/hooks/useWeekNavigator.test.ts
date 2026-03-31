@@ -1,6 +1,6 @@
 // tests/unit/hooks/useWeekNavigator.test.ts
 import { describe, it, expect, vi } from "vitest";
-import { renderHook } from "@testing-library/react";
+import { renderHook, act } from "@testing-library/react";
 import { useWeekNavigator } from "../../../src/hooks/useWeekNavigator";
 
 describe("useWeekNavigator", () => {
@@ -63,6 +63,120 @@ describe("useWeekNavigator", () => {
 
       expect(result.current.currentWeek.label).toContain("3/9");
       expect(result.current.currentWeek.label).toContain("3/13");
+
+      vi.useRealTimers();
+    });
+  });
+
+  describe("navigation", () => {
+    it("goToPrev moves to earlier week", () => {
+      vi.useFakeTimers();
+      vi.setSystemTime(new Date(2026, 2, 13));
+
+      const dates = ["3/2", "3/3", "3/9", "3/10"];
+      const { result } = renderHook(() => useWeekNavigator(dates));
+
+      expect(result.current.weekIndex).toBe(1);
+      act(() => result.current.goToPrev());
+      expect(result.current.weekIndex).toBe(0);
+      expect(result.current.currentWeek.dates).toEqual(["3/2", "3/3"]);
+
+      vi.useRealTimers();
+    });
+
+    it("goToNext moves to later week", () => {
+      vi.useFakeTimers();
+      vi.setSystemTime(new Date(2026, 2, 13));
+
+      const dates = ["3/2", "3/3", "3/9", "3/10"];
+      const { result } = renderHook(() => useWeekNavigator(dates));
+
+      act(() => result.current.goToPrev());
+      expect(result.current.weekIndex).toBe(0);
+      act(() => result.current.goToNext());
+      expect(result.current.weekIndex).toBe(1);
+
+      vi.useRealTimers();
+    });
+
+    it("canGoPrev is false at earliest week", () => {
+      vi.useFakeTimers();
+      vi.setSystemTime(new Date(2026, 2, 13));
+
+      const dates = ["3/2", "3/3", "3/9", "3/10"];
+      const { result } = renderHook(() => useWeekNavigator(dates));
+
+      act(() => result.current.goToPrev());
+      expect(result.current.canGoPrev).toBe(false);
+      act(() => result.current.goToPrev()); // no-op
+      expect(result.current.weekIndex).toBe(0);
+
+      vi.useRealTimers();
+    });
+
+    it("canGoNext is false at latest week", () => {
+      vi.useFakeTimers();
+      vi.setSystemTime(new Date(2026, 2, 13));
+
+      const dates = ["3/2", "3/3", "3/9", "3/10"];
+      const { result } = renderHook(() => useWeekNavigator(dates));
+
+      expect(result.current.canGoNext).toBe(false);
+
+      vi.useRealTimers();
+    });
+
+    it("goToWeek jumps to specific week", () => {
+      vi.useFakeTimers();
+      vi.setSystemTime(new Date(2026, 2, 20));
+
+      const dates = ["3/2", "3/3", "3/9", "3/10", "3/16", "3/17"];
+      const { result } = renderHook(() => useWeekNavigator(dates));
+
+      act(() => result.current.goToWeek(0));
+      expect(result.current.currentWeek.dates).toEqual(["3/2", "3/3"]);
+
+      vi.useRealTimers();
+    });
+
+    it("goToThisWeek jumps to latest week", () => {
+      vi.useFakeTimers();
+      vi.setSystemTime(new Date(2026, 2, 20));
+
+      const dates = ["3/2", "3/3", "3/9", "3/10", "3/16", "3/17"];
+      const { result } = renderHook(() => useWeekNavigator(dates));
+
+      act(() => result.current.goToWeek(0));
+      act(() => result.current.goToThisWeek());
+      expect(result.current.weekIndex).toBe(2);
+      expect(result.current.isThisWeek).toBe(true);
+
+      vi.useRealTimers();
+    });
+
+    it("goToLastWeek jumps to second-latest week", () => {
+      vi.useFakeTimers();
+      vi.setSystemTime(new Date(2026, 2, 20));
+
+      const dates = ["3/2", "3/3", "3/9", "3/10", "3/16", "3/17"];
+      const { result } = renderHook(() => useWeekNavigator(dates));
+
+      act(() => result.current.goToLastWeek());
+      expect(result.current.weekIndex).toBe(1);
+      expect(result.current.isLastWeek).toBe(true);
+
+      vi.useRealTimers();
+    });
+
+    it("goToLastWeek is no-op when only one week", () => {
+      vi.useFakeTimers();
+      vi.setSystemTime(new Date(2026, 2, 13));
+
+      const dates = ["3/9", "3/10"];
+      const { result } = renderHook(() => useWeekNavigator(dates));
+
+      act(() => result.current.goToLastWeek());
+      expect(result.current.weekIndex).toBe(0); // stays at latest (only) week
 
       vi.useRealTimers();
     });
