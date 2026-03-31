@@ -37,9 +37,13 @@ export function useWeekNavigator(dates: string[]) {
       }));
   }, [dates]);
 
-  const [weekIndex, setWeekIndex] = useState(() => Math.max(0, weeks.length - 1));
+  const [weekIndex, setWeekIndex] = useState(-1);
 
-  const safeIndex = weeks.length === 0 ? -1 : Math.min(weekIndex, weeks.length - 1);
+  const safeIndex = weeks.length === 0
+    ? -1
+    : weekIndex === -1
+      ? weeks.length - 1      // not yet set — default to latest
+      : Math.min(weekIndex, weeks.length - 1);
   const currentWeek = safeIndex >= 0 ? weeks[safeIndex] : { dates: [] as string[], label: "", monday: new Date(), friday: new Date() };
   const canGoPrev = safeIndex > 0;
   const canGoNext = safeIndex < weeks.length - 1;

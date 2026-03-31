@@ -1,6 +1,6 @@
 // tests/unit/hooks/useWeekNavigator.test.ts
 import { describe, it, expect, vi } from "vitest";
-import { renderHook, act } from "@testing-library/react";
+import { renderHook } from "@testing-library/react";
 import { useWeekNavigator } from "../../../src/hooks/useWeekNavigator";
 
 describe("useWeekNavigator", () => {
