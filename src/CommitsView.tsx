@@ -25,14 +25,11 @@ interface CommitsViewProps {
   memberColors: Record<string, string>;
   leave: Record<string, LeaveRange[]>;
   activeDate: string;
-  onDateSelect: (d: string) => void;
-  dailyDates: string[];
-  dayLabels: Record<string, string>;
   taskAnalysisData: TaskAnalysisData | null;
   planSpecs: PlanSpecItem[] | null;
 }
 
-export default function CommitsView({ commitData, dates, members, memberColors, leave, activeDate, onDateSelect, dailyDates, dayLabels, taskAnalysisData, planSpecs }: CommitsViewProps) {
+export default function CommitsView({ commitData, dates, members, memberColors, leave, activeDate, taskAnalysisData, planSpecs }: CommitsViewProps) {
   const { commits, analysis, projectRisks } = commitData;
   const [expandedMember, setExpandedMember] = useState(null);
 
@@ -73,21 +70,6 @@ export default function CommitsView({ commitData, dates, members, memberColors, 
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-      <div style={{ marginBottom: 20 }}>
-        <div className="date-scroll">
-          {dailyDates.map(d => (
-            <button key={d} className="date-btn" onClick={() => onDateSelect(d)}
-              style={{
-                padding: "8px 20px", borderRadius: 8, cursor: "pointer",
-                fontSize: 13, fontWeight: 600, fontFamily: "inherit",
-                border: activeDate === d ? `2px solid ${COLORS.teal}` : `1px solid ${COLORS.border}`,
-                background: activeDate === d ? "rgba(6,182,212,0.15)" : "transparent",
-                color: activeDate === d ? COLORS.teal : COLORS.textMuted,
-              }}
-            >{d}（{dayLabels[d]}）</button>
-          ))}
-        </div>
-      </div>
       {/* Correlation Overview */}
       {(() => {
         const dateAnalysis = analysis[activeDate] || {};

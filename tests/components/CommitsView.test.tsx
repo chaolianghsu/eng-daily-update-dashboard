@@ -17,9 +17,6 @@ const baseProps = {
   memberColors: { Alice: "#f472b6" },
   leave: {},
   activeDate: "3/18",
-  onDateSelect: vi.fn(),
-  dailyDates: ["3/18"],
-  dayLabels: { "3/18": "三" },
   taskAnalysisData: null,
 };
 
