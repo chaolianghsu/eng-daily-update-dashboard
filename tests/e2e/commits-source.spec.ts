@@ -1,20 +1,33 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Commits source icons', () => {
-  test.beforeEach(async ({ page }) => {
-    await page.goto('/');
-    // Navigate to Commits tab
-    await page.click('text=Commits');
-  });
-
   test('shows source icon in commit detail', async ({ page }) => {
-    // Find and expand a member's commits
-    const memberButton = page.locator('button:has-text("commits")').first();
+    await page.goto('/');
+    await page.waitForSelector('.tab-btn');
+
+    // Navigate to Commits sub-view via pill (only shown when commit data exists)
+    const commitsPill = page.getByText('🔀 Commits');
+    if (!await commitsPill.isVisible()) {
+      // No commit data available — skip
+      return;
+    }
+    await commitsPill.click();
+    await expect(page.locator('text=Commit 明細')).toBeVisible();
+
+    // Find the Commit 明細 card panel by its class and title text
+    const detailCard = page.locator('.card-panel', { hasText: /Commit 明細/ }).last();
+    const memberButton = detailCard.locator('button', { hasText: /\d+ commits/ }).first();
     if (await memberButton.isVisible()) {
+      await memberButton.scrollIntoViewIfNeeded();
       await memberButton.click();
-      // Should see either 🦊 or 🐙 icon in the expanded detail
-      const icons = page.locator('td:has-text("🦊"), td:has-text("🐙")');
-      expect(await icons.count()).toBeGreaterThan(0);
+      // After expanding, the table appears inside the card
+      const expandedTable = detailCard.locator('table').first();
+      const firstRow = expandedTable.locator('tbody tr').first();
+      await expect(firstRow).toBeVisible({ timeout: 5000 });
+      // First td should contain either 🦊 (GitLab) or 🐙 (GitHub) source icon
+      const firstCell = firstRow.locator('td').first();
+      const cellText = await firstCell.textContent();
+      expect(cellText).toMatch(/🦊|🐙/);
     }
   });
 });

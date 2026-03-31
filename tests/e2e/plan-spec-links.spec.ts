@@ -2,9 +2,13 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Plan/Spec file links', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/');
-    // Navigate to Plan Tracking tab (規劃追蹤)
-    await page.click('text=規劃追蹤');
+    await page.goto('');
+    await page.waitForSelector('.tab-btn');
+    // Navigate to Plan Tracking sub-view via 📋 規劃 pill (only visible when plan data exists)
+    const planPill = page.getByText('📋 規劃');
+    if (await planPill.isVisible()) {
+      await planPill.click();
+    }
   });
 
   test('spec file names are clickable links with blob URLs', async ({ page }) => {
