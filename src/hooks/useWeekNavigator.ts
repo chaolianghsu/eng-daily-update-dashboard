@@ -2,18 +2,13 @@
 import { useMemo, useState, useCallback } from "react";
 import { getWeekRange } from "../utils";
 
-interface Week {
-  dates: string[];
-  monday: Date;
-  friday: Date;
-  label: string;
-}
+const EMPTY_WEEK = { dates: [] as string[], label: "" };
 
 export function useWeekNavigator(dates: string[]) {
-  const weeks: Week[] = useMemo(() => {
-    if (!dates.length) return [];
+  const weeks = useMemo(() => {
+    if (!dates.length) return [] as Array<{ dates: string[]; label: string }>;
     const year = new Date().getFullYear();
-    const weekMap = new Map<string, { monday: Date; friday: Date; dates: string[] }>();
+    const weekMap = new Map<string, { mondayTs: number; dates: string[]; label: string }>();
 
     for (const d of dates) {
       const [m, dd] = d.split("/").map(Number);
@@ -21,20 +16,15 @@ export function useWeekNavigator(dates: string[]) {
       const { monday, friday } = getWeekRange(date);
       const key = `${monday.getMonth() + 1}/${monday.getDate()}`;
       if (!weekMap.has(key)) {
-        weekMap.set(key, { monday, friday, dates: [] });
+        const fmtDate = (dt: Date) => `${dt.getMonth() + 1}/${dt.getDate()}`;
+        weekMap.set(key, { mondayTs: monday.getTime(), dates: [], label: `${fmtDate(monday)} – ${fmtDate(friday)}` });
       }
       weekMap.get(key)!.dates.push(d);
     }
 
-    const fmtDate = (dt: Date) => `${dt.getMonth() + 1}/${dt.getDate()}`;
     return Array.from(weekMap.values())
-      .sort((a, b) => a.monday.getTime() - b.monday.getTime())
-      .map(w => ({
-        dates: w.dates,
-        monday: w.monday,
-        friday: w.friday,
-        label: `${fmtDate(w.monday)} – ${fmtDate(w.friday)}`,
-      }));
+      .sort((a, b) => a.mondayTs - b.mondayTs)
+      .map(w => ({ dates: w.dates, label: w.label }));
   }, [dates]);
 
   const [weekIndex, setWeekIndex] = useState(-1);
@@ -42,9 +32,9 @@ export function useWeekNavigator(dates: string[]) {
   const safeIndex = weeks.length === 0
     ? -1
     : weekIndex === -1
-      ? weeks.length - 1      // not yet set — default to latest
+      ? weeks.length - 1
       : Math.min(weekIndex, weeks.length - 1);
-  const currentWeek = safeIndex >= 0 ? weeks[safeIndex] : { dates: [] as string[], label: "", monday: new Date(), friday: new Date() };
+  const currentWeek = safeIndex >= 0 ? weeks[safeIndex] : EMPTY_WEEK;
   const canGoPrev = safeIndex > 0;
   const canGoNext = safeIndex < weeks.length - 1;
   const isThisWeek = safeIndex === weeks.length - 1;
@@ -61,9 +51,9 @@ export function useWeekNavigator(dates: string[]) {
   }, [weeks.length]);
 
   return {
-    weeks: weeks.map(w => ({ dates: w.dates, label: w.label })),
+    weeks,
     weekIndex: safeIndex,
-    currentWeek: { dates: currentWeek.dates, label: currentWeek.label },
+    currentWeek,
     canGoPrev,
     canGoNext,
     isThisWeek,

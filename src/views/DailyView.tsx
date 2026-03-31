@@ -56,7 +56,6 @@ export function DailyView({
   return (
     <div>
       <div className="animate-in" style={{ animationDelay: "0.15s", marginBottom: 20 }}>
-        {/* Week Navigator */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 10 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
             <button onClick={onPrevWeek} disabled={!canGoPrev}
@@ -144,7 +143,6 @@ export function DailyView({
           </div>
         </div>
 
-        {/* Date buttons */}
         <div className="date-scroll">
           {dailyDates.map(d => (
             <button key={d} className="date-btn" onClick={() => onDateSelect(d)}
