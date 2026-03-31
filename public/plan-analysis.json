@@ -1,200 +1,176 @@
 {
-  "analysisDate": "2026-03-27",
-  "period": "3/26",
+  "analysisDate": "2026-03-31",
+  "period": "3/27",
   "planSpecs": [
     {
-      "date": "3/26",
+      "date": "3/27",
       "member": "Joe",
       "commit": {
-        "title": "docs(copilot): add KOL table event parsing implementation plan",
-        "sha": "f1b3aea7",
+        "title": "docs: update KOL table rendering plan - use state for instant display and add developer handoff for icons",
+        "sha": "8455e3df",
         "project": "KEYPO/keypo-frontend-2023",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/f1b3aea7",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/8455e3df",
         "source": "gitlab"
       },
-      "files": ["docs/superpowers/plans/2025-03-25-kol-table-event-parsing.md"]
+      "files": ["docs/superpowers/plans/2025-03-25-kol-table-rendering.md"]
     },
     {
-      "date": "3/26",
-      "member": "Ted",
-      "commit": {
-        "title": "docs: update topic refresh optimization TODO",
-        "sha": "bc0265b5",
-        "project": "CrawlersV2/fanti-insights-api",
-        "url": "https://biglab.buygta.today/CrawlersV2/fanti-insights-api/-/commit/bc0265b5",
-        "source": "gitlab"
-      },
-      "files": ["docs/TODO_topic_refresh_optimization.md"]
-    },
-    {
-      "date": "3/26",
+      "date": "3/27",
       "member": "Aaron",
       "commit": {
-        "title": "docs(specs): add feature flags redesign spec",
-        "sha": "b7600f46",
+        "title": "docs: add KOL web search pre-lookup design spec",
+        "sha": "017f30b1",
         "project": "llmprojects/keypo-agent",
-        "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/b7600f46",
+        "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/017f30b1",
         "source": "gitlab"
       },
-      "files": ["docs/superpowers/specs/2026-03-26-feature-flags-redesign.md"]
+      "files": ["docs/superpowers/specs/2026-03-27-kol-web-search-prelookup-design.md"]
     },
     {
-      "date": "3/26",
+      "date": "3/27",
       "member": "Aaron",
       "commit": {
-        "title": "docs(specs): address spec review feedback",
-        "sha": "a7a8cf31",
+        "title": "docs: add KOL web search pre-lookup implementation plan",
+        "sha": "0f2b2bb6",
         "project": "llmprojects/keypo-agent",
-        "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/a7a8cf31",
+        "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/0f2b2bb6",
         "source": "gitlab"
       },
-      "files": ["docs/superpowers/specs/2026-03-26-feature-flags-redesign.md"]
+      "files": ["docs/superpowers/plans/2026-03-27-kol-web-search-prelookup.md"]
     },
     {
-      "date": "3/26",
-      "member": "Aaron",
+      "date": "3/27",
+      "member": "禎佑",
       "commit": {
-        "title": "docs(plans): add feature flags redesign implementation plan",
-        "sha": "e3b275a0",
-        "project": "llmprojects/keypo-agent",
-        "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/e3b275a0",
+        "title": "docs: add keyword_users diagnostics design spec",
+        "sha": "c14f965b",
+        "project": "chris.su/tiktok-crawl-api-v2",
+        "url": "https://biglab.buygta.today/chris.su/tiktok-crawl-api-v2/-/commit/c14f965b",
         "source": "gitlab"
       },
-      "files": ["docs/superpowers/plans/2026-03-26-feature-flags-redesign.md"]
+      "files": ["docs/superpowers/specs/2026-03-27-keyword-users-diagnostics-design.md"]
     },
     {
-      "date": "3/26",
+      "date": "3/27",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs: add keyword_users diagnostics implementation plan",
+        "sha": "3e20dbfd",
+        "project": "chris.su/tiktok-crawl-api-v2",
+        "url": "https://biglab.buygta.today/chris.su/tiktok-crawl-api-v2/-/commit/3e20dbfd",
+        "source": "gitlab"
+      },
+      "files": ["docs/superpowers/plans/2026-03-27-keyword-users-diagnostics.md"]
+    },
+    {
+      "date": "3/27",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs: add keyword_users captcha defense design spec",
+        "sha": "726e8f6a",
+        "project": "chris.su/tiktok-crawl-api-v2",
+        "url": "https://biglab.buygta.today/chris.su/tiktok-crawl-api-v2/-/commit/726e8f6a",
+        "source": "gitlab"
+      },
+      "files": ["docs/superpowers/specs/2026-03-27-keyword-users-captcha-defense-design.md"]
+    },
+    {
+      "date": "3/27",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs: add keyword_users captcha defense implementation plan",
+        "sha": "b14a1388",
+        "project": "chris.su/tiktok-crawl-api-v2",
+        "url": "https://biglab.buygta.today/chris.su/tiktok-crawl-api-v2/-/commit/b14a1388",
+        "source": "gitlab"
+      },
+      "files": ["docs/superpowers/plans/2026-03-27-keyword-users-captcha-defense.md"]
+    },
+    {
+      "date": "3/27",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs: add API route refactoring design spec",
+        "sha": "8c39d9d2",
+        "project": "chris.su/tiktok-crawl-api-v2",
+        "url": "https://biglab.buygta.today/chris.su/tiktok-crawl-api-v2/-/commit/8c39d9d2",
+        "source": "gitlab"
+      },
+      "files": ["docs/superpowers/specs/2026-03-27-api-route-refactoring-design.md"]
+    },
+    {
+      "date": "3/27",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs: add API route refactoring implementation plan",
+        "sha": "a0335d4c",
+        "project": "chris.su/tiktok-crawl-api-v2",
+        "url": "https://biglab.buygta.today/chris.su/tiktok-crawl-api-v2/-/commit/a0335d4c",
+        "source": "gitlab"
+      },
+      "files": ["docs/superpowers/plans/2026-03-27-api-route-refactoring.md"]
+    },
+    {
+      "date": "3/27",
       "member": "哲緯",
       "commit": {
-        "title": "docs: add client feedback v2 spec and implementation plan",
-        "sha": "ced4969e",
+        "title": "docs: add viewpoint summary condensing spec",
+        "sha": "0cbaaf50",
         "project": "bigdata-54837596/line-social-radar",
-        "url": "https://github.com/bigdata-54837596/line-social-radar/commit/ced4969e",
+        "url": "https://github.com/bigdata-54837596/line-social-radar/commit/0cbaaf50",
         "source": "github"
       },
-      "files": ["docs/superpowers/plans/2026-03-26-client-feedback-v2.md", "docs/superpowers/specs/2026-03-26-client-feedback-v2-design.md"]
-    },
-    {
-      "date": "3/26",
-      "member": "哲緯",
-      "commit": {
-        "title": "docs: update spec per review feedback",
-        "sha": "cbe3d6c3",
-        "project": "bigdata-54837596/line-social-radar",
-        "url": "https://github.com/bigdata-54837596/line-social-radar/commit/cbe3d6c3",
-        "source": "github"
-      },
-      "files": ["docs/superpowers/specs/2026-03-26-client-feedback-v2-design.md"]
-    },
-    {
-      "date": "3/26",
-      "member": "哲緯",
-      "commit": {
-        "title": "docs: add client feedback v2 design spec",
-        "sha": "e3ec1007",
-        "project": "bigdata-54837596/line-social-radar",
-        "url": "https://github.com/bigdata-54837596/line-social-radar/commit/e3ec1007",
-        "source": "github"
-      },
-      "files": ["docs/superpowers/specs/2026-03-26-client-feedback-v2-design.md"]
-    },
-    {
-      "date": "3/26",
-      "member": "哲緯",
-      "commit": {
-        "title": "docs: add image prompt redesign implementation plan",
-        "sha": "759e51ce",
-        "project": "bigdata-54837596/line-social-radar-api",
-        "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/759e51ce",
-        "source": "github"
-      },
-      "files": ["docs/superpowers/plans/2026-03-26-image-prompt-redesign.md"]
-    },
-    {
-      "date": "3/26",
-      "member": "哲緯",
-      "commit": {
-        "title": "docs: fix decision table — objects from idol topics are still valid focal points",
-        "sha": "a536bc7e",
-        "project": "bigdata-54837596/line-social-radar-api",
-        "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/a536bc7e",
-        "source": "github"
-      },
-      "files": ["docs/superpowers/specs/2026-03-26-image-prompt-redesign-design.md"]
-    },
-    {
-      "date": "3/26",
-      "member": "哲緯",
-      "commit": {
-        "title": "docs: translate image prompt redesign spec to Traditional Chinese",
-        "sha": "f5bc08e6",
-        "project": "bigdata-54837596/line-social-radar-api",
-        "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/f5bc08e6",
-        "source": "github"
-      },
-      "files": ["docs/superpowers/specs/2026-03-26-image-prompt-redesign-design.md"]
-    },
-    {
-      "date": "3/26",
-      "member": "哲緯",
-      "commit": {
-        "title": "docs: add image prompt redesign spec — single focal point with safety valve",
-        "sha": "d10f0543",
-        "project": "bigdata-54837596/line-social-radar-api",
-        "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/d10f0543",
-        "source": "github"
-      },
-      "files": ["docs/superpowers/specs/2026-03-26-image-prompt-redesign-design.md"]
+      "files": ["docs/superpowers/specs/2026-03-27-vp-summary-condense-design.md"]
     }
   ],
   "correlations": [
     {
-      "date": "3/26",
+      "date": "3/27",
       "member": "Joe",
       "status": "matched",
       "specCommits": 1,
       "dailyUpdateMention": true,
-      "matchedTasks": ["Agent 會議中討論優化 KOL 事件的相關資料格式，前端解析邏輯配合進行調整", "前端 Agent 訊息渲染邏輯調整，在訊息框最後加入兩種 KOL 表格"],
+      "matchedTasks": ["前端 Agent 訊息渲染邏輯調整，在訊息框最後加入兩種 KOL 表格"],
       "unmatchedSpecs": [],
-      "reasoning": "Daily update 清楚記錄了 KOL table event parsing 相關的規劃設計工作。具體包含討論 KOL 事件資料格式優化、前端解析邏輯調整，以及在 Agent 訊息框中新增 KOL 表格等實作進展，與 spec commit 內容高度吻合。"
+      "reasoning": "Daily update 中明確提到 KOL in Agent 前端平台開發，並描述了「在訊息框最後加入兩種 KOL 表格」的工作，與 KOL table rendering plan commit 相符。"
     },
     {
-      "date": "3/26",
-      "member": "Ted",
-      "status": "unmatched",
-      "specCommits": 1,
-      "dailyUpdateMention": false,
-      "matchedTasks": [],
-      "unmatchedSpecs": ["docs: update topic refresh optimization TODO"],
-      "reasoning": "Daily update 記錄的工作項目包括 KEYPO engine API gateway 優化、Fanti Insights API ES 遷移、KEYPO GPT report 等，但完全沒有提及 topic refresh optimization 相關的規劃設計工作。雖然正在進行 Fanti Insights API 開發，但沒有具體對應的 daily update 描述。"
-    },
-    {
-      "date": "3/26",
+      "date": "3/27",
       "member": "Aaron",
-      "status": "unmatched",
-      "specCommits": 3,
-      "dailyUpdateMention": false,
-      "matchedTasks": [],
-      "unmatchedSpecs": ["docs(specs): add feature flags redesign spec", "docs(specs): address spec review feedback", "docs(plans): add feature flags redesign implementation plan"],
-      "reasoning": "Daily update 記錄的工作內容為 KEYPO Agent 會議、DevOps 會議、MR review 和 KOL in Agent 測試，以及 KEYPO Agent 權限管理。雖然提及權限管理，但完全沒有提及 feature flags redesign 相關的規劃設計文件工作，三個 spec commits 均未在 daily update 中對應。"
+      "status": "partial",
+      "specCommits": 2,
+      "dailyUpdateMention": true,
+      "matchedTasks": ["測試 KOL in Agent", "Review KOL Agent MR"],
+      "unmatchedSpecs": ["docs: add KOL web search pre-lookup design spec", "docs: add KOL web search pre-lookup implementation plan"],
+      "reasoning": "Daily update 有提到 KOL Agent 相關工作（Review MR、測試），但未明確提及 web search pre-lookup 的設計或規劃工作，只能確認部分相關性。"
     },
     {
-      "date": "3/26",
-      "member": "哲緯",
+      "date": "3/27",
+      "member": "禎佑",
       "status": "partial",
-      "specCommits": 7,
+      "specCommits": 6,
       "dailyUpdateMention": true,
-      "matchedTasks": ["更改圖片生成邏輯，動態選取圖片焦點（物件/場景）", "新增萃取話題核心物件主體"],
-      "unmatchedSpecs": ["docs: add client feedback v2 spec and implementation plan", "docs: update spec per review feedback", "docs: add client feedback v2 design spec"],
-      "reasoning": "Daily update 中有提及 image prompt redesign 相關的工作（圖片焦點動態選取、話題核心物件萃取），對應了 5 個 image prompt redesign spec commits。然而，3 個 client feedback v2 相關的 spec commits（包括 spec、review feedback 和 design spec）在 daily update 中完全未提及。整體而言，部分 specs 有對應的實作進展，部分則完全未在日報中體現。"
+      "matchedTasks": ["重構路由，並測試", "增加監控 log (頻道影片列表, 關鍵字搜尋用戶)"],
+      "unmatchedSpecs": ["docs: add keyword_users captcha defense design spec", "docs: add keyword_users captcha defense implementation plan"],
+      "reasoning": "Daily update 中「重構路由」與 API route refactoring 相符，「增加監控 log (關鍵字搜尋用戶)」可對應 keyword_users diagnostics。但未提及 captcha defense 相關設計工作，故為部分吻合。"
+    },
+    {
+      "date": "3/27",
+      "member": "哲緯",
+      "status": "matched",
+      "specCommits": 1,
+      "dailyUpdateMention": true,
+      "matchedTasks": ["新增觀點摘要字數濃縮機制字數<120", "調整觀點摘要生成字數 prompt (80-100)"],
+      "unmatchedSpecs": [],
+      "reasoning": "Daily update 中 LSR 工項明確提到「新增觀點摘要字數濃縮機制」和「調整觀點摘要生成字數 prompt」，與 viewpoint summary condensing spec commit 直接相符。"
     }
   ],
   "summary": {
-    "totalSpecCommits": 12,
+    "totalSpecCommits": 10,
     "totalCorrelations": 4,
     "membersWithSpecs": 4,
-    "matched": 1,
-    "unmatched": 2,
-    "partial": 1
+    "matched": 2,
+    "unmatched": 0,
+    "partial": 2
   }
 }
