@@ -5,6 +5,7 @@ import {
 import { COLORS, THRESHOLDS, WEEK_DAYS } from "../constants";
 import { getStatus, getTrendIcon, isOnLeave } from "../utils";
 import { CustomTooltip, CardPanel, ColorDot } from "../components";
+import { PillGroup } from "../components/PillGroup";
 import type { CommitData, LeaveRange } from "../types";
 
 interface TrendViewProps {
@@ -43,22 +44,16 @@ export function TrendView({
       <div className="animate-in" style={{ animationDelay: "0.15s" }}>
         <CardPanel title="每日工時趨勢">
           <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 12, flexWrap: "wrap" }}>
-            <div style={{ display: "flex", gap: 2, background: COLORS.bg, borderRadius: 6, padding: 2 }}>
-              {[
+            <PillGroup
+              items={[
                 { key: "week", label: "1週" },
                 { key: "2weeks", label: "2週" },
                 { key: "month", label: "1月" },
                 { key: "all", label: "全部" },
-              ].map(r => (
-                <button key={r.key} onClick={() => onTrendRangeChange(r.key)} style={{
-                  padding: "4px 12px", borderRadius: 5, border: "none", cursor: "pointer",
-                  fontSize: 11, fontWeight: 600, fontFamily: "inherit",
-                  background: trendRange === r.key ? COLORS.accent : "transparent",
-                  color: trendRange === r.key ? "#fff" : COLORS.textDim,
-                  transition: "all 0.15s ease",
-                }}>{r.label}</button>
-              ))}
-            </div>
+              ]}
+              activeKey={trendRange}
+              onSelect={onTrendRangeChange}
+            />
             <span style={{ fontSize: 11, color: COLORS.textDim }}>
               {trendDates[0]}–{trendDates[trendDates.length - 1]}（{trendDates.length}天）
             </span>
