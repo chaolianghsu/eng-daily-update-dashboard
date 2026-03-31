@@ -10,7 +10,6 @@ interface PlanSpecViewProps {
   memberColors: Record<string, string>;
   dates: string[];
   activeDate: string;
-  onDateSelect: (d: string) => void;
 }
 
 const statusIcon = (status: PlanCorrelation["status"]): string => {
@@ -22,7 +21,7 @@ const statusIcon = (status: PlanCorrelation["status"]): string => {
   }
 };
 
-export default function PlanSpecView({ planAnalysisData, members, memberColors, dates, activeDate, onDateSelect }: PlanSpecViewProps) {
+export default function PlanSpecView({ planAnalysisData, members, memberColors, dates, activeDate }: PlanSpecViewProps) {
   const { planSpecs, correlations, summary } = planAnalysisData;
 
   if (!planSpecs || planSpecs.length === 0) {

@@ -40,7 +40,6 @@ const baseProps = {
   memberColors: { '哲緯': '#06b6d4' },
   dates: ['3/24'],
   activeDate: '3/24',
-  onDateSelect: vi.fn(),
 };
 
 describe('PlanSpecView', () => {
