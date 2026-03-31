@@ -42,4 +42,35 @@ describe("useAllIssues", () => {
     const { result } = renderHook(() => useAllIssues([], commitData as any, "3/5"));
     expect(result.current).toHaveLength(0);
   });
+
+  it("filters out issues referencing dates different from activeDate", () => {
+    const issues = [
+      { member: "A", severity: "🔴", text: "未回報 3/31" },
+      { member: "B", severity: "🔴", text: "未回報 3/30" },
+      { member: "C", severity: "🟠", text: "休假 3/31" },
+    ];
+    const { result } = renderHook(() => useAllIssues(issues, null, "3/30"));
+    expect(result.current).toHaveLength(1);
+    expect(result.current[0].member).toBe("B");
+  });
+
+  it("keeps issues with no date reference for any activeDate", () => {
+    const issues = [
+      { member: "A", severity: "🔴", text: "超時" },
+      { member: "B", severity: "🔴", text: "未回報 3/31" },
+    ];
+    const { result } = renderHook(() => useAllIssues(issues, null, "3/30"));
+    expect(result.current).toHaveLength(1);
+    expect(result.current[0].member).toBe("A");
+  });
+
+  it("keeps issue if any referenced date matches activeDate", () => {
+    const issues = [
+      { member: "A", severity: "🔴", text: "連續 2 天未回報 (3/27, 3/31)" },
+    ];
+    const { result } = renderHook(() => useAllIssues(issues, null, "3/27"));
+    expect(result.current).toHaveLength(1);
+    const result2 = renderHook(() => useAllIssues(issues, null, "3/30"));
+    expect(result2.result.current).toHaveLength(0);
+  });
 });
