@@ -24324,49 +24324,59 @@
     },
     "3/30": {
       "Joyce": {
-        "status": "🔴",
+        "status": "✅",
         "commitCount": 3,
-        "hours": null
+        "hours": 8
       },
       "Ivy": {
-        "status": "🔴",
+        "status": "✅",
         "commitCount": 26,
-        "hours": null
+        "hours": 5
       },
       "Jason": {
-        "status": "🔴",
+        "status": "✅",
         "commitCount": 14,
-        "hours": null
+        "hours": 6.5
+      },
+      "日銜": {
+        "status": "⚠️",
+        "commitCount": 0,
+        "hours": 7
       },
       "Wendy": {
-        "status": "🔴",
+        "status": "✅",
         "commitCount": 1,
-        "hours": null
+        "hours": 7.5
       },
       "侑呈": {
-        "status": "🔴",
+        "status": "✅",
         "commitCount": 10,
-        "hours": null
+        "hours": 5
       },
       "禎佑": {
-        "status": "🔴",
+        "status": "✅",
         "commitCount": 26,
-        "hours": null
+        "hours": 8.5
       },
       "Ted": {
-        "status": "🔴",
+        "status": "✅",
         "commitCount": 11,
-        "hours": null
+        "hours": 7.5
+      },
+      "家輝": {
+        "status": "⚠️",
+        "commitCount": 0,
+        "hours": 7.5
       },
       "Joe": {
-        "status": "🔴",
+        "status": "✅",
         "commitCount": 17,
-        "hours": null
+        "hours": 7
       },
       "Aaron": {
-        "status": "🔴",
+        "status": "✅",
         "commitCount": 20,
-        "hours": null
+        "hours": 7
       },
       "哲緯": {
         "status": "🔴",
@@ -24377,13 +24387,183 @@
   },
   "projectRisks": [
     {
-      "project": "shared-repo",
-      "soloContributor": "A",
+      "project": "KEYPO/keypo-backend",
+      "soloContributor": "Joyce",
       "severity": "🟡"
     },
     {
-      "project": "gitlab-only",
-      "soloContributor": "A",
+      "project": "KEYPO/keypo-frontend-2023",
+      "soloContributor": "Joe",
+      "severity": "🟡"
+    },
+    {
+      "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+      "soloContributor": "Joyce",
+      "severity": "🟡"
+    },
+    {
+      "project": "CrawlersV2/fanti-insights-api",
+      "soloContributor": "Ted",
+      "severity": "🟡"
+    },
+    {
+      "project": "CrawlersV2/mq-fb-insights-consumer",
+      "soloContributor": "侑呈",
+      "severity": "🟡"
+    },
+    {
+      "project": "KEYPO/keypo-engine/on-premises-api-gateway",
+      "soloContributor": "Aaron",
+      "severity": "🟡"
+    },
+    {
+      "project": "platform-infra/aiopsflow",
+      "soloContributor": "Aaron",
+      "severity": "🟡"
+    },
+    {
+      "project": "bigdata/2025-bigdata-app",
+      "soloContributor": "Ivy",
+      "severity": "🟡"
+    },
+    {
+      "project": "CrawlersV2/mq-fbmessage-consumer",
+      "soloContributor": "侑呈",
+      "severity": "🟡"
+    },
+    {
+      "project": "chris.su/kol-desc-parser",
+      "soloContributor": "禎佑",
+      "severity": "🟡"
+    },
+    {
+      "project": "sinyi/sinyi-dashboard",
+      "soloContributor": "Wendy",
+      "severity": "🟡"
+    },
+    {
+      "project": "bigdata/2025-bigdata-admin",
+      "soloContributor": "Ivy",
+      "severity": "🟡"
+    },
+    {
+      "project": "bigdata/2025-bigdata-admin-backend",
+      "soloContributor": "Ivy",
+      "severity": "🟡"
+    },
+    {
+      "project": "dailyview/2024-dailyview-admin-backend",
+      "soloContributor": "Jason",
+      "severity": "🟡"
+    },
+    {
+      "project": "henry.lee/fb-graph-api",
+      "soloContributor": "侑呈",
+      "severity": "🟡"
+    },
+    {
+      "project": "yuriy.lin/browser_service",
+      "soloContributor": "侑呈",
+      "severity": "🟡"
+    },
+    {
+      "project": "dailyview/dv-ai-draft",
+      "soloContributor": "Jason",
+      "severity": "🟡"
+    },
+    {
+      "project": "sinyi/newsindex-scrapy",
+      "soloContributor": "哲緯",
+      "severity": "🟡"
+    },
+    {
+      "project": "CrawlersV2/fbuser-scrapy",
+      "soloContributor": "侑呈",
+      "severity": "🟡"
+    },
+    {
+      "project": "chris.su/tiktok-crawl-api-v2",
+      "soloContributor": "禎佑",
+      "severity": "🟡"
+    },
+    {
+      "project": "platform-infra/observability",
+      "soloContributor": "Aaron",
+      "severity": "🟡"
+    },
+    {
+      "project": "chris.su/har-parser",
+      "soloContributor": "禎佑",
+      "severity": "🟡"
+    },
+    {
+      "project": "KEYPO/keypo-engine-api",
+      "soloContributor": "Ted",
+      "severity": "🟡"
+    },
+    {
+      "project": "CrawlersV2/fb-search-api",
+      "soloContributor": "侑呈",
+      "severity": "🟡"
+    },
+    {
+      "project": "henry.lee/fb-user-public-profile-scrapy",
+      "soloContributor": "侑呈",
+      "severity": "🟡"
+    },
+    {
+      "project": "CrawlersV2/fb-insights-scrapy",
+      "soloContributor": "侑呈",
+      "severity": "🟡"
+    },
+    {
+      "project": "henry.lee/fb-desktop-api",
+      "soloContributor": "侑呈",
+      "severity": "🟡"
+    },
+    {
+      "project": "CrawlersV2/fb-cdp",
+      "soloContributor": "侑呈",
+      "severity": "🟡"
+    },
+    {
+      "project": "CrawlersV2/mq-fbuser-consumer",
+      "soloContributor": "侑呈",
+      "severity": "🟡"
+    },
+    {
+      "project": "ivytools/claude-local-plugins",
+      "soloContributor": "Ivy",
+      "severity": "🟡"
+    },
+    {
+      "project": "yuriy.lin/omg_data_api",
+      "soloContributor": "侑呈",
+      "severity": "🟡"
+    },
+    {
+      "project": "llmprojects/keypo-agent",
+      "soloContributor": "Aaron",
+      "severity": "🟡"
+    },
+    {
+      "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+      "soloContributor": "Ted",
+      "severity": "🟡"
+    },
+    {
+      "project": "bigdata-54837596/line-social-radar",
+      "soloContributor": "哲緯",
+      "severity": "🟡"
+    },
+    {
+      "project": "bigdata-54837596/keykyc-iei-web-backend",
+      "soloContributor": "哲緯",
+      "severity": "🟡"
+    },
+    {
+      "project": "bigdata-54837596/keykyc-iei-web-frontend",
+      "soloContributor": "哲緯",
       "severity": "🟡"
     }
   ]
