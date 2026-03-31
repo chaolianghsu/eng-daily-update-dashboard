@@ -8,7 +8,7 @@ import { StatusOverview } from "./views/StatusOverview";
 import { DailyView } from "./views/DailyView";
 import { TrendView } from "./views/TrendView";
 import { WeeklyView } from "./views/WeeklyView";
-import { useCurrentWeek } from "./hooks/useCurrentWeek";
+import { useWeekNavigator } from "./hooks/useWeekNavigator";
 import { useDailyBarData } from "./hooks/useDailyBarData";
 import { useTrendData } from "./hooks/useTrendData";
 import { useWeeklySummary } from "./hooks/useWeeklySummary";
@@ -64,8 +64,8 @@ export default function App({ loadData }: { loadData: LoadData }) {
   const memberColors = Object.fromEntries(members.map((m, i) => [m, MEMBER_PALETTE[i % MEMBER_PALETTE.length]]));
   const issueMap = Object.fromEntries(issues.map(iss => [iss.member, iss]));
 
-  const currentWeek = useCurrentWeek(dates);
-  const dailyDates = currentWeek.dates;
+  const weekNav = useWeekNavigator(dates);
+  const dailyDates = weekNav.currentWeek.dates;
   const activeDate = (selectedDate && dailyDates.includes(selectedDate))
     ? selectedDate
     : dailyDates[dailyDates.length - 1] || dates[dates.length - 1];
@@ -142,9 +142,17 @@ export default function App({ loadData }: { loadData: LoadData }) {
 
         {view === "daily" && (
           <DailyView dailyDates={dailyDates} activeDate={activeDate} onDateSelect={setSelectedDate}
-            dayLabels={dayLabels} weekLabel={currentWeek.label} dailyBarData={dailyBarData}
+            dayLabels={dayLabels} dailyBarData={dailyBarData}
             chartHeight={chartHeight} memberColors={memberColors} issueMap={issueMap}
-            commitData={commitData} leave={leave} />
+            commitData={commitData} leave={leave}
+            weeks={weekNav.weeks} weekIndex={weekNav.weekIndex}
+            canGoPrev={weekNav.canGoPrev} canGoNext={weekNav.canGoNext}
+            isThisWeek={weekNav.isThisWeek} isLastWeek={weekNav.isLastWeek}
+            onPrevWeek={() => { weekNav.goToPrev(); setSelectedDate(null); }}
+            onNextWeek={() => { weekNav.goToNext(); setSelectedDate(null); }}
+            onThisWeek={() => { weekNav.goToThisWeek(); setSelectedDate(null); }}
+            onLastWeek={() => { weekNav.goToLastWeek(); setSelectedDate(null); }}
+            onSelectWeek={(i: number) => { weekNav.goToWeek(i); setSelectedDate(null); }} />
         )}
 
         {view === "trend" && (

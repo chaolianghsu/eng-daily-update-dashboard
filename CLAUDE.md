@@ -14,7 +14,7 @@ Engineering Department Daily Update Dashboard — a React dashboard for tracking
   - `main.appscript.tsx` — Apps Script entry (google.script.run loading)
   - `App.tsx` — Main Dashboard component (~170 lines), accepts `loadData` prop, state + routing
   - `views/` — View components: `DailyView.tsx`, `TrendView.tsx`, `WeeklyView.tsx`, `StatusOverview.tsx`
-  - `hooks/` — Custom hooks: `useCurrentWeek`, `useDailyBarData`, `useTrendData`, `useWeeklySummary`, `useAllIssues`
+  - `hooks/` — Custom hooks: `useWeekNavigator`, `useDailyBarData`, `useTrendData`, `useWeeklySummary`, `useAllIssues`
   - `CommitsView.tsx` — Commits tab with scatter chart, consistency grid, task warnings
   - `components.tsx` — Shared UI (CustomTooltip, CardPanel, ColorDot, StatusBadge)
   - `constants.ts` — COLORS, SEVERITY_COLORS, THRESHOLDS, palettes
