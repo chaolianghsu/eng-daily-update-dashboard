@@ -11,6 +11,7 @@ export function useAllIssues(
   activeDate: string
 ): Issue[] {
   return useMemo(() => {
+    if (!activeDate) return issues.filter(i => i.severity !== '🟢');
     const activeDateNum = dateToNum(activeDate);
     const base = issues.filter(i => {
       if (i.severity === '🟢') return false;
