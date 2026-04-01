@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 import { COLORS, THRESHOLDS, MEETING_HEAVY_PCT, WEEK_DAYS, MEMBER_PALETTE } from "./constants";
 import { tabStyle } from "./components";
+import { dateToNum } from "./utils";
 import { DateNavigator } from "./components/DateNavigator";
 import { SubViewPills } from "./components/SubViewPills";
 import CommitsView from "./CommitsView";
@@ -57,7 +58,7 @@ export default function App({ loadData }: { loadData: LoadData }) {
       });
   }, []);
 
-  const dates = rawData ? Object.keys(rawData) : [];
+  const dates = rawData ? Object.keys(rawData).sort((a, b) => dateToNum(a) - dateToNum(b)) : [];
   const members = rawData ? [...new Set(dates.flatMap(d => Object.keys(rawData[d])))] : [];
   const dayLabels = Object.fromEntries(dates.map(d => {
     const [m, dd] = d.split("/").map(Number);
