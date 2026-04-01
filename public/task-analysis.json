@@ -1,24 +1,60 @@
 {
-  "analysisDate": "2026-03-31",
-  "period": "3/27",
+  "analysisDate": "2026-04-01",
+  "period": "3/31",
   "warnings": [
     {
-      "date": "3/27",
-      "member": "Joe",
+      "date": "3/31",
+      "member": "侑呈",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "Fanti ES9 updated (3.5H)",
+      "commits": "未檢測到相關 commits",
+      "reasoning": "開發任務報告 3.5 小時工作量，已達到 ≥3H 閾值，但當天未檢測到任何相關 commits。按分析規則，此級別的開發任務應有相應的程式碼變更記錄，建議確認是否有遺漏的 commits 或任務性質描述不當。"
+    },
+    {
+      "date": "3/31",
+      "member": "Ted",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "協助子洵補觀測帳戶一個月資料 (5H)",
+      "commits": "未檢測到相關 commits",
+      "reasoning": "開發任務報告 5 小時工作量，遠超過 3H 閾值，但當天未檢測到任何相關 commits。按分析規則應有程式碼變更記錄，建議確認資料操作是否以其他形式記錄（如直接資料庫操作）或該任務是否應分類為非開發工作。"
+    },
+    {
+      "date": "3/31",
+      "member": "Jason",
       "severity": "🟡",
       "type": "outlier",
-      "task": "[Dev] KOL in Agent 前端平台開發 (4H)",
-      "commits": "KEYPO/keypo-frontend-2023 的 2 筆 commits（UI 時間顯示改進、文件更新）",
-      "reasoning": "Joe 報告開發工時 4H 用於 KOL in Agent 前端開發，但相關 commits 僅 2 筆。團隊平均開發工時 5.8H 對應 17.3 筆 commits（約 2.98 commits/hour），而 Joe 的 commit 產出比率僅 0.5 commits/hour（2筆÷4H），遠低於團隊平均約 6 倍，超過 2 倍差距門檻。兩筆 commits 內容為小規模修改（HH:mm 時間顯示微調、KOL 表格渲染文件），與 4 小時開發任務的預期輸出不相稱。"
+      "task": "DV AI 產文自動寄信 (2H) + Issue #2992 (2.5H)",
+      "commits": "3 commits (bigcrawler-scrapy, dailyview-admin-backend)",
+      "reasoning": "開發工時 5.5 小時與團隊平均相當，但 commits 僅 3 筆，遠低於團隊平均 13.9 筆（約 78% 落差，>2倍差距）。雖然任務有相關 commits，但產出效率顯著低於團隊水準，建議檢查是否有程式碼重用、設計討論或其他非 commit 形式的協作。"
+    },
+    {
+      "date": "3/31",
+      "member": "Wendy",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "UAT 資料準備 (2H) + 刑事局需求確認 (1.5H) 等多項 (7H 總計)",
+      "commits": "4 commits (sinyi-update-sentiment)",
+      "reasoning": "開發工時 7 小時高於團隊平均 5.5H，但 commits 僅 4 筆，遠低於團隊平均 13.9 筆（約 71% 落差，>2倍差距）。大部分任務涉及資料準備、需求討論、環境測試確認等工作，commits 較少可理解，但整體開發產出效率仍顯著低於團隊水準。"
+    },
+    {
+      "date": "3/31",
+      "member": "家輝",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "es9 同步寫入新版邏輯 (3H) + IT 相關費用調查 (2H)",
+      "commits": "2 commits (mq_es_consumer)",
+      "reasoning": "開發工時 6 小時高於團隊平均 5.5H，但 commits 僅 2 筆，遠低於團隊平均 13.9 筆（約 86% 落差，>2倍差距）。主要開發任務 es9 同步寫入報告 3 小時，commits 數量明顯不符，建議確認程式碼是否仍在測試/審查階段，或是否採用其他協作方式。"
     }
   ],
   "summary": {
-    "totalMembers": 10,
-    "totalWarnings": 1,
+    "totalMembers": 14,
+    "totalWarnings": 5,
     "byType": {
-      "low_output": 0,
+      "low_output": 2,
       "mismatch": 0,
-      "outlier": 1
+      "outlier": 3
     }
   }
 }

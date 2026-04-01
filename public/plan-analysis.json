@@ -1,176 +1,106 @@
 {
-  "analysisDate": "2026-03-31",
-  "period": "3/27",
+  "analysisDate": "2026-04-01",
+  "period": "3/31",
   "planSpecs": [
     {
-      "date": "3/27",
+      "date": "3/31",
       "member": "Joe",
       "commit": {
-        "title": "docs: update KOL table rendering plan - use state for instant display and add developer handoff for icons",
-        "sha": "8455e3df",
-        "project": "KEYPO/keypo-frontend-2023",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/8455e3df",
+        "title": "docs: add JP SEO frontend tasks inventory",
+        "sha": "200d072d",
+        "project": "KEYPO/keypo-international-website",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-international-website/-/commit/200d072d",
         "source": "gitlab"
       },
-      "files": ["docs/superpowers/plans/2025-03-25-kol-table-rendering.md"]
+      "files": ["docs/jp-seo-frontend-tasks.md"]
     },
     {
-      "date": "3/27",
-      "member": "Aaron",
-      "commit": {
-        "title": "docs: add KOL web search pre-lookup design spec",
-        "sha": "017f30b1",
-        "project": "llmprojects/keypo-agent",
-        "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/017f30b1",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/specs/2026-03-27-kol-web-search-prelookup-design.md"]
-    },
-    {
-      "date": "3/27",
-      "member": "Aaron",
-      "commit": {
-        "title": "docs: add KOL web search pre-lookup implementation plan",
-        "sha": "0f2b2bb6",
-        "project": "llmprojects/keypo-agent",
-        "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/0f2b2bb6",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/plans/2026-03-27-kol-web-search-prelookup.md"]
-    },
-    {
-      "date": "3/27",
+      "date": "3/31",
       "member": "禎佑",
       "commit": {
-        "title": "docs: add keyword_users diagnostics design spec",
-        "sha": "c14f965b",
-        "project": "chris.su/tiktok-crawl-api-v2",
-        "url": "https://biglab.buygta.today/chris.su/tiktok-crawl-api-v2/-/commit/c14f965b",
+        "title": "docs: 新增 lang_detect 語系判斷改進設計文件",
+        "sha": "1703be94",
+        "project": "chris.su/kol-desc-parser",
+        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/1703be94",
         "source": "gitlab"
       },
-      "files": ["docs/superpowers/specs/2026-03-27-keyword-users-diagnostics-design.md"]
+      "files": ["docs/superpowers/specs/2026-03-31-lang-detect-design.md"]
     },
     {
-      "date": "3/27",
+      "date": "3/31",
       "member": "禎佑",
       "commit": {
-        "title": "docs: add keyword_users diagnostics implementation plan",
-        "sha": "3e20dbfd",
-        "project": "chris.su/tiktok-crawl-api-v2",
-        "url": "https://biglab.buygta.today/chris.su/tiktok-crawl-api-v2/-/commit/3e20dbfd",
+        "title": "docs: 新增 lang_detect 改進實作計畫",
+        "sha": "79eecb6a",
+        "project": "chris.su/kol-desc-parser",
+        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/79eecb6a",
         "source": "gitlab"
       },
-      "files": ["docs/superpowers/plans/2026-03-27-keyword-users-diagnostics.md"]
+      "files": ["docs/superpowers/plans/2026-03-31-lang-detect-plan.md"]
     },
     {
-      "date": "3/27",
-      "member": "禎佑",
-      "commit": {
-        "title": "docs: add keyword_users captcha defense design spec",
-        "sha": "726e8f6a",
-        "project": "chris.su/tiktok-crawl-api-v2",
-        "url": "https://biglab.buygta.today/chris.su/tiktok-crawl-api-v2/-/commit/726e8f6a",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/specs/2026-03-27-keyword-users-captcha-defense-design.md"]
-    },
-    {
-      "date": "3/27",
-      "member": "禎佑",
-      "commit": {
-        "title": "docs: add keyword_users captcha defense implementation plan",
-        "sha": "b14a1388",
-        "project": "chris.su/tiktok-crawl-api-v2",
-        "url": "https://biglab.buygta.today/chris.su/tiktok-crawl-api-v2/-/commit/b14a1388",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/plans/2026-03-27-keyword-users-captcha-defense.md"]
-    },
-    {
-      "date": "3/27",
-      "member": "禎佑",
-      "commit": {
-        "title": "docs: add API route refactoring design spec",
-        "sha": "8c39d9d2",
-        "project": "chris.su/tiktok-crawl-api-v2",
-        "url": "https://biglab.buygta.today/chris.su/tiktok-crawl-api-v2/-/commit/8c39d9d2",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/specs/2026-03-27-api-route-refactoring-design.md"]
-    },
-    {
-      "date": "3/27",
-      "member": "禎佑",
-      "commit": {
-        "title": "docs: add API route refactoring implementation plan",
-        "sha": "a0335d4c",
-        "project": "chris.su/tiktok-crawl-api-v2",
-        "url": "https://biglab.buygta.today/chris.su/tiktok-crawl-api-v2/-/commit/a0335d4c",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/plans/2026-03-27-api-route-refactoring.md"]
-    },
-    {
-      "date": "3/27",
+      "date": "3/31",
       "member": "哲緯",
       "commit": {
-        "title": "docs: add viewpoint summary condensing spec",
-        "sha": "0cbaaf50",
-        "project": "bigdata-54837596/line-social-radar",
-        "url": "https://github.com/bigdata-54837596/line-social-radar/commit/0cbaaf50",
+        "title": "docs: add cross-layer image dedup implementation plan",
+        "sha": "aa5e04c3",
+        "project": "bigdata-54837596/line-social-radar-api",
+        "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/aa5e04c3",
         "source": "github"
       },
-      "files": ["docs/superpowers/specs/2026-03-27-vp-summary-condense-design.md"]
+      "files": ["docs/superpowers/plans/2026-03-31-cross-layer-image-dedup.md"]
+    },
+    {
+      "date": "3/31",
+      "member": "哲緯",
+      "commit": {
+        "title": "docs: add cross-layer image dedup design spec",
+        "sha": "f432740b",
+        "project": "bigdata-54837596/line-social-radar-api",
+        "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/f432740b",
+        "source": "github"
+      },
+      "files": ["docs/superpowers/specs/2026-03-31-cross-layer-image-dedup-design.md"]
     }
   ],
   "correlations": [
     {
-      "date": "3/27",
+      "date": "3/31",
       "member": "Joe",
-      "status": "matched",
+      "status": "partial",
       "specCommits": 1,
       "dailyUpdateMention": true,
-      "matchedTasks": ["前端 Agent 訊息渲染邏輯調整，在訊息框最後加入兩種 KOL 表格"],
-      "unmatchedSpecs": [],
-      "reasoning": "Daily update 中明確提到 KOL in Agent 前端平台開發，並描述了「在訊息框最後加入兩種 KOL 表格」的工作，與 KOL table rendering plan commit 相符。"
+      "matchedTasks": ["KEYPO 官網日文版 SEO/GEO 優化"],
+      "unmatchedSpecs": ["docs: add JP SEO frontend tasks inventory"],
+      "reasoning": "Daily update 提到進行中的「KEYPO 官網日文版 SEO/GEO 優化」計畫（於 4/1 工項中），與日本 SEO 前端領域相關。然而，daily update 未具體提到建立或維護任務清單的工作細節，僅提及策略層面的優化方向。因此判定為部分吻合。"
     },
     {
-      "date": "3/27",
-      "member": "Aaron",
-      "status": "partial",
+      "date": "3/31",
+      "member": "禎佑",
+      "status": "matched",
       "specCommits": 2,
       "dailyUpdateMention": true,
-      "matchedTasks": ["測試 KOL in Agent", "Review KOL Agent MR"],
-      "unmatchedSpecs": ["docs: add KOL web search pre-lookup design spec", "docs: add KOL web search pre-lookup implementation plan"],
-      "reasoning": "Daily update 有提到 KOL Agent 相關工作（Review MR、測試），但未明確提及 web search pre-lookup 的設計或規劃工作，只能確認部分相關性。"
+      "matchedTasks": ["優化語系判斷（目前僅針對語言做判別，調整為會判別特定地名關鍵字，且地區欄位設定為複數個）"],
+      "unmatchedSpecs": [],
+      "reasoning": "Daily update 中詳細記錄了「優化語系判斷」的具體進展與技術細節，包含當前遇到的問題（大量 AE 頻道被誤判為英文）和改進方案（新增特定地名關鍵字判別、支援複數地區欄位）。此內容與兩份設計與實作計畫文件完全吻合，明確表示該成員正按計畫進行語系判斷的優化工作。"
     },
     {
-      "date": "3/27",
-      "member": "禎佑",
-      "status": "partial",
-      "specCommits": 6,
-      "dailyUpdateMention": true,
-      "matchedTasks": ["重構路由，並測試", "增加監控 log (頻道影片列表, 關鍵字搜尋用戶)"],
-      "unmatchedSpecs": ["docs: add keyword_users captcha defense design spec", "docs: add keyword_users captcha defense implementation plan"],
-      "reasoning": "Daily update 中「重構路由」與 API route refactoring 相符，「增加監控 log (關鍵字搜尋用戶)」可對應 keyword_users diagnostics。但未提及 captcha defense 相關設計工作，故為部分吻合。"
-    },
-    {
-      "date": "3/27",
+      "date": "3/31",
       "member": "哲緯",
       "status": "matched",
-      "specCommits": 1,
+      "specCommits": 2,
       "dailyUpdateMention": true,
-      "matchedTasks": ["新增觀點摘要字數濃縮機制字數<120", "調整觀點摘要生成字數 prompt (80-100)"],
+      "matchedTasks": ["更改圖片沿用邏輯，於沿用清單增加最初沿用檔案欄位，避免類似話題沿用同一張圖片", "測試不同策略移除圖片有文字問題"],
       "unmatchedSpecs": [],
-      "reasoning": "Daily update 中 LSR 工項明確提到「新增觀點摘要字數濃縮機制」和「調整觀點摘要生成字數 prompt」，與 viewpoint summary condensing spec commit 直接相符。"
+      "reasoning": "Daily update 中詳述了 LSR 工作項目中「更改圖片沿用邏輯」和「測試不同策略移除圖片」的進展，這與 cross-layer image dedup 的設計目標直接對應。該成員清楚記錄了圖片去重邏輯實作的具體工作步驟，表明設計文件與實際開發工作高度同步，完全吻合。"
     }
   ],
   "summary": {
-    "totalSpecCommits": 10,
-    "totalCorrelations": 4,
-    "membersWithSpecs": 4,
+    "totalSpecCommits": 5,
+    "totalCorrelations": 3,
+    "membersWithSpecs": 3,
     "matched": 2,
     "unmatched": 0,
-    "partial": 2
+    "partial": 1
   }
 }
