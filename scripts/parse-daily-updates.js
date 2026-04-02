@@ -10,7 +10,7 @@ const ROOT = path.resolve(__dirname, '..');
 
 const MEETING_KEYWORDS = /meeting|會議|週會|讀書會|例會|討論|分享會|sync|臨時會/i;
 const LEAVE_KEYWORDS = /請假|休假/;
-const HOUR_PATTERN = /[（(]\s*(\d+(?:\.\d+)?)\s*(?:[Hh](?:r|our|ours)?|小時)[^)）]*[)）]/;
+const HOUR_PATTERN = /[（(][^)）]*?(\d+(?:\.\d+)?)\s*(?:[Hh](?:r|our|ours)?|小時)[^)）]*[)）]/;
 const WORK_HOUR_PATTERN = /工時[：:]\s*(\d+(?:\.\d+)?)\s*[Hh]/;
 
 // --- Parsing Functions ---

@@ -14,6 +14,15 @@ describe('parseHoursFromText', () => {
     expect(result.total).toBe(0);
   });
 
+  it("extracts hours when mixed with non-hour text inside parens like (branch, 4H)", () => {
+    const result = parseHoursFromText(
+      "1. [In Progress] KOL 開發 (branch, 4H)\n2. [In Progress] SEO 優化 (branch, trello, 3H)"
+    );
+    expect(result.status).toBe('reported');
+    expect(result.total).toBe(7);
+    expect(result.dev).toBe(7);
+  });
+
   it("returns status 'replied_no_hours' when no hours found", () => {
     const result = parseHoursFromText("今天做了很多事情但沒寫工時");
     expect(result.status).toBe('replied_no_hours');
