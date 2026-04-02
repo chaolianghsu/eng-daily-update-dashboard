@@ -73,4 +73,35 @@ describe("useAllIssues", () => {
     const result2 = renderHook(() => useAllIssues(issues, null, "3/30"));
     expect(result2.result.current).toHaveLength(0);
   });
+
+  describe("health alert integration", () => {
+    it("merges health alerts into output", () => {
+      const issues: any[] = [];
+      const healthAlerts = [
+        { member: "A", severity: "🔴", text: "連續低工時 (3天)", source: "trend" as const, type: "consecutive_low" as const },
+      ];
+      const { result } = renderHook(() => useAllIssues(issues, null, "3/5", healthAlerts));
+      expect(result.current).toHaveLength(1);
+      expect(result.current[0].source).toBe("trend");
+    });
+
+    it("dedupes health alerts with existing issues for same member", () => {
+      const issues = [{ member: "A", severity: "🔴", text: "超時" }];
+      const healthAlerts = [
+        { member: "A", severity: "🔴", text: "工時突降", source: "trend" as const, type: "hours_drop" as const },
+      ];
+      const { result } = renderHook(() => useAllIssues(issues, null, "3/5", healthAlerts));
+      expect(result.current).toHaveLength(2);
+    });
+
+    it("sorts merged results by severity", () => {
+      const issues = [{ member: "B", severity: "🟡", text: "偏低" }];
+      const healthAlerts = [
+        { member: "A", severity: "🔴", text: "連續低工時", source: "trend" as const, type: "consecutive_low" as const },
+      ];
+      const { result } = renderHook(() => useAllIssues(issues, null, "3/5", healthAlerts));
+      expect(result.current[0].severity).toBe("🔴");
+      expect(result.current[1].severity).toBe("🟡");
+    });
+  });
 });

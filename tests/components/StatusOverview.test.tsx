@@ -59,4 +59,22 @@ describe("StatusOverview", () => {
     render(<StatusOverview {...props} />);
     expect(screen.getByText("穩定")).toBeInTheDocument();
   });
+
+  it("renders trend badge for issues with source=trend", () => {
+    const props = {
+      ...baseProps,
+      allIssues: [{ member: "A", severity: "🔴", text: "連續低工時", source: "trend" as const }],
+    };
+    render(<StatusOverview {...props} />);
+    expect(screen.getByText("趨勢")).toBeInTheDocument();
+  });
+
+  it("does not render trend badge for issues without source", () => {
+    const props = {
+      ...baseProps,
+      allIssues: [{ member: "A", severity: "🔴", text: "超時" }],
+    };
+    render(<StatusOverview {...props} />);
+    expect(screen.queryByText("趨勢")).not.toBeInTheDocument();
+  });
 });

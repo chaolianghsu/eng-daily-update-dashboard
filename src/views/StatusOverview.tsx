@@ -85,7 +85,12 @@ export function StatusOverview({ allIssues, issues, members, rawData, dates, act
               }}>
                 <span style={{ fontSize: 14 }}>{iss.severity}</span>
                 <div>
-                  <div style={{ fontSize: 12, fontWeight: 700, color: sev?.sc || COLORS.text }}>{iss.member} <span style={{ fontWeight: 500, color: COLORS.textMuted }}>{iss.text}</span></div>
+                  <div style={{ fontSize: 12, fontWeight: 700, color: sev?.sc || COLORS.text }}>
+                    {iss.member} <span style={{ fontWeight: 500, color: COLORS.textMuted }}>{iss.text}</span>
+                    {(iss as any).source === "trend" && (
+                      <span style={{ fontSize: 9, padding: "1px 6px", background: "#f472b644", color: "#f472b6", borderRadius: 3, marginLeft: 6, fontWeight: 600 }}>趨勢</span>
+                    )}
+                  </div>
                   {hint && !isLeave && <div style={{ fontSize: 10, color: COLORS.textDim, marginTop: 2 }}>{hint}</div>}
                 </div>
               </div>
