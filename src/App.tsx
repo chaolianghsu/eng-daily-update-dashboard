@@ -16,11 +16,13 @@ import { useDailyBarData } from "./hooks/useDailyBarData";
 import { useTrendData } from "./hooks/useTrendData";
 import { useWeeklySummary } from "./hooks/useWeeklySummary";
 import { useAllIssues } from "./hooks/useAllIssues";
+import { useHealthAlerts } from "./hooks/useHealthAlerts";
+import { MemberView } from "./views/MemberView";
 import type { LoadData, CommitData, TaskAnalysisData, PlanAnalysisData } from "./types";
 import "./styles.css";
 
 export default function App({ loadData }: { loadData: LoadData }) {
-  const [view, setView] = useState<"detail" | "trend" | "weekly">("detail");
+  const [view, setView] = useState<"detail" | "trend" | "weekly" | "member">("detail");
   const [subView, setSubView] = useState<"hours" | "commits" | "planspec">("hours");
   const [rawData, setRawData] = useState<Record<string, Record<string, any>> | null>(null);
   const [issues, setIssues] = useState<any[]>([]);
@@ -78,7 +80,8 @@ export default function App({ loadData }: { loadData: LoadData }) {
   const dailyBarData = useDailyBarData(rawData, activeDate, members);
   const { trendDates, trendData, useWeeklyAgg, weekGroups } = useTrendData(rawData, dates, members, dayLabels, commitData, trendRange);
   const weeklySummary = useWeeklySummary(rawData, dates, members, commitData);
-  const allIssues = useAllIssues(issues, commitData, activeDate);
+  const healthAlerts = useHealthAlerts(rawData, members, dates, commitData, leave, null, activeDate);
+  const allIssues = useAllIssues(issues, commitData, activeDate, healthAlerts);
 
   const toggleMember = (m: string) => {
     const next = new Set(selectedMembers);
@@ -131,6 +134,7 @@ export default function App({ loadData }: { loadData: LoadData }) {
             { key: "detail", label: "📅 每日詳情" },
             { key: "trend", label: "📈 趨勢" },
             { key: "weekly", label: "📋 週報" },
+            { key: "member", label: "👤 成員" },
           ].map(tab => (
             <button key={tab.key} className={`tab-btn ${view === tab.key ? 'tab-active' : ''}`}
               onClick={() => setView(tab.key as any)} style={tabStyle(view === tab.key)}>
@@ -214,6 +218,20 @@ export default function App({ loadData }: { loadData: LoadData }) {
             commitData={commitData} leave={leave}
             dailyDates={dailyDates} dayLabels={dayLabels}
             onDateSelect={(d: string) => { setSelectedDate(d); setSubView("commits"); setView("detail"); }} />
+        )}
+
+        {view === "member" && (
+          <MemberView
+            rawData={rawData!}
+            members={members}
+            memberColors={memberColors}
+            dates={dates}
+            commitData={commitData}
+            leave={leave}
+            taskAnalysisData={taskAnalysisData}
+            healthAlerts={healthAlerts}
+            isMobile={isMobile}
+          />
         )}
 
         {/* Footer */}
