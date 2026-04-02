@@ -2054,10 +2054,10 @@
         "status": "reported"
       },
       "Joe": {
-        "total": null,
-        "meeting": null,
-        "dev": null,
-        "status": "replied_no_hours"
+        "total": 7,
+        "meeting": 0,
+        "dev": 7,
+        "status": "reported"
       },
       "Aaron": {
         "total": 7,
@@ -2108,11 +2108,6 @@
       "member": "Ted",
       "severity": "🟡",
       "text": "會議佔比 57%"
-    },
-    {
-      "member": "Joe",
-      "severity": "🟠",
-      "text": "有回覆無工時 4/1"
     },
     {
       "member": "Aaron",
