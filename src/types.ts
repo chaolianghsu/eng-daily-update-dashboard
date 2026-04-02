@@ -10,6 +10,7 @@ export interface Issue {
   member: string;
   severity: string;
   text: string;
+  source?: "threshold" | "trend";
 }
 
 export interface LeaveRange {
@@ -121,4 +122,28 @@ export interface StatusInfo {
   label: string;
   color: string;
   bg: string;
+}
+
+export interface HealthAlert {
+  member: string;
+  severity: "🔴" | "🟡" | "🟠";
+  text: string;
+  source: "threshold" | "trend";
+  type: "low_hours" | "high_hours" | "consecutive_low" | "meeting_heavy" |
+        "unreported" | "hours_drop" | "hours_spike" | "meeting_spike" | "commit_drop";
+}
+
+export interface MemberProfile {
+  hoursTrend: Array<{ date: string; total: number | null; meeting: number | null; dev: number | null; status: "normal" | "warning" | "danger" }>;
+  baseline: number | null;
+  recentAvg: number | null;
+  meetingPct: number | null;
+  consistencyGrid: Array<{ date: string; status: "✅" | "⚠️" | "🔴" | null }>;
+  consistencyRate: number;
+  projectDistribution: Array<{ project: string; count: number; pct: number }>;
+  totalCommits: number;
+  recentCommits: number;
+  prevCommits: number;
+  weeklyMeetingPct: Array<{ week: string; pct: number }>;
+  taskWarnings: Array<{ date: string; severity: string; type: string; task: string; reasoning: string }>;
 }

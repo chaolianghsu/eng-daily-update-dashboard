@@ -33,3 +33,15 @@ export const PROJECT_PALETTE = [
   "#06b6d4", "#22c55e", "#f59e0b", "#ef4444", "#a78bfa",
   "#ec4899", "#f97316", "#14b8a6", "#6366f1", "#84cc16",
 ];
+
+export const HEALTH_THRESHOLDS = {
+  extremeLow: 4,
+  extremeHigh: 11,
+  consecutiveLowDays: 3,
+  meetingHeavyPct: 60,
+  consecutiveUnreportedDays: 2,
+  rollingWindowDays: 20,
+  madMultiplier: 2,
+  madToSigma: 1.4826,
+  minDataPoints: 5,
+} as const;
