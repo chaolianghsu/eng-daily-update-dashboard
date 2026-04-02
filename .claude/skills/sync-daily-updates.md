@@ -14,6 +14,7 @@ Replaces `/fetch-daily-updates` and `/backfill-daily-updates`.
 - `chat-config.json` exists with `spaceId` and `memberMap`
 - `public/raw_data.json` exists with current data
 - Git remote is configured for push
+- `claude` CLI installed (required for Step 3.5 LLM fallback; if missing, Step 3.5 is skipped)
 
 ## Workflow
 
@@ -34,7 +35,7 @@ If today is a holiday (`是否放假 === "2"`):
 2. Send holiday skip notification (see Step 10)
 3. Stop — do not proceed to Step 1
 
-If the DGPA CSV fetch fails, fallback: treat Mon–Fri as workday, Sat–Sun as holiday.
+If the DGPA CSV fetch fails (404 or empty — common when the yearly URL changes), fallback: treat Mon–Fri as workday, Sat–Sun as holiday, and display "⚠️ DGPA CSV 抓取失敗，使用 Mon-Fri fallback。請更新 Step 0 的 CSV URL（https://data.gov.tw/dataset/14718）"。
 
 **Note:** The CSV URL is for 2026 (民國115年). Update yearly when the government publishes the next year's calendar at https://data.gov.tw/dataset/14718.
 
@@ -76,13 +77,17 @@ FAILURES=$(node -e "const d=require('/tmp/parsed-output.json'); const f=[]; for(
 echo "Parse failures: $FAILURES"
 ```
 
-If failures exist:
+If failures exist and `claude` CLI is available:
 
 ```bash
-node scripts/llm-reparse-failures.js /tmp/parsed-output.json /tmp/chat-messages.json \
-  | claude --print -m haiku > /tmp/llm-reparse.json
-node scripts/merge-parse-results.js /tmp/parsed-output.json /tmp/llm-reparse.json > /tmp/parsed-repaired.json
-mv /tmp/parsed-repaired.json /tmp/parsed-output.json
+if command -v claude >/dev/null 2>&1; then
+  node scripts/llm-reparse-failures.js /tmp/parsed-output.json /tmp/chat-messages.json \
+    | claude --print -m haiku > /tmp/llm-reparse.json
+  node scripts/merge-parse-results.js /tmp/parsed-output.json /tmp/llm-reparse.json > /tmp/parsed-repaired.json
+  mv /tmp/parsed-repaired.json /tmp/parsed-output.json
+else
+  echo "claude CLI not found, skipping LLM fallback"
+fi
 ```
 
 If no failures, skip this step.
