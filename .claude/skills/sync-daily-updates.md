@@ -66,6 +66,27 @@ If the result is too large and auto-saved to a file, note that file path.
 node scripts/parse-daily-updates.js /tmp/chat-messages.json > /tmp/parsed-output.json
 ```
 
+### Step 3.5: LLM fallback for parse failures
+
+Check if any entries have `replied_no_hours` status. If so, use Claude to re-extract hours from the original message text.
+
+```bash
+# Check for failures
+FAILURES=$(node -e "const d=require('/tmp/parsed-output.json'); const f=[]; for(const[date,v] of Object.entries(d.dateEntries||{})){for(const[m,e] of Object.entries(v.entry||v)){if(e.status==='replied_no_hours')f.push(m+' '+date)}} if(f.length)console.log(f.join(', ')); else console.log('none')")
+echo "Parse failures: $FAILURES"
+```
+
+If failures exist:
+
+```bash
+node scripts/llm-reparse-failures.js /tmp/parsed-output.json /tmp/chat-messages.json \
+  | claude --print -m haiku > /tmp/llm-reparse.json
+node scripts/merge-parse-results.js /tmp/parsed-output.json /tmp/llm-reparse.json > /tmp/parsed-repaired.json
+mv /tmp/parsed-repaired.json /tmp/parsed-output.json
+```
+
+If no failures, skip this step.
+
 ### Step 4: Merge data
 
 ```bash
