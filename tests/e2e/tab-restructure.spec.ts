@@ -6,12 +6,13 @@ test.describe('Tab Restructure', () => {
     await page.waitForSelector('.tab-btn');
   });
 
-  test('renders 3 main tabs', async ({ page }) => {
+  test('renders 4 main tabs', async ({ page }) => {
     const tabs = page.locator('.tab-btn');
-    await expect(tabs).toHaveCount(3);
+    await expect(tabs).toHaveCount(4);
     await expect(tabs.nth(0)).toContainText('每日詳情');
     await expect(tabs.nth(1)).toContainText('趨勢');
     await expect(tabs.nth(2)).toContainText('週報');
+    await expect(tabs.nth(3)).toContainText('成員');
   });
 
   test('tab switching works', async ({ page }) => {
