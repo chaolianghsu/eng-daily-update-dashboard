@@ -24048,6 +24048,176 @@
           }
         ]
       }
+    },
+    "4/3": {
+      "Ted": {
+        "count": 17,
+        "projects": [
+          "KEYPO/keypo-engine/keypo-engine-api-gateway"
+        ],
+        "items": [
+          {
+            "title": "test(priority-queue): add 6 integration tests covering slow path, timeout, L1/L2 ratio, work-conserving, no-starvation",
+            "sha": "c4551ba2",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/c4551ba2e9090426ed4ec8c838f232e2a52f09d5",
+            "datetime": "2026-04-03T00:54:00.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix(swrr): prevent cw accumulation in single-candidate cycles",
+            "sha": "76fe7ddc",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/76fe7ddc5e7c6953299993f773ab08778d4ffa46",
+            "datetime": "2026-04-03T01:09:48.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix(priority-queue): warn on multi-route config conflict (dispatch_conf)",
+            "sha": "de92373d",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/de92373da4615c7e075cf57470eb3ae26fa0129c",
+            "datetime": "2026-04-03T01:10:57.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "docs(priority-queue): add test strategy document",
+            "sha": "e8a5bf6d",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/e8a5bf6d9bd0676b1680928fa1a73f437ef56802",
+            "datetime": "2026-04-03T01:22:57.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "test(priority-queue): fill all spec acceptance criteria gaps (6 new tests)",
+            "sha": "60ccbc1b",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/60ccbc1bbf6aa5a3a8046dd11e0d6e9b1491ad1c",
+            "datetime": "2026-04-03T07:50:19.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix(tests): single route with production-like config, fix dispatch_conf conflict",
+            "sha": "bd5a90d3",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/bd5a90d32a30b62ce88d708826968d90bb485ea7",
+            "datetime": "2026-04-03T08:13:13.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix(priority-queue): share dispatch_conf across workers, lazy timer startup",
+            "sha": "5268ea90",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/5268ea9090615658dccdaf9fd565a6f19c1c7f19",
+            "datetime": "2026-04-03T09:08:49.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix(priority-queue): share SWRR state across workers via shared_dict",
+            "sha": "ef48d986",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/ef48d9868b666a7278008e7725e8d2fb09ae8863",
+            "datetime": "2026-04-03T09:30:03.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix(tests): adjust assertions for shared SWRR state and disable_fast_path",
+            "sha": "e8470803",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/e8470803147e797c36e2c91b363719d5d1d6fc82",
+            "datetime": "2026-04-03T09:40:39.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix(priority-queue): helm templates, Python SWRR alignment, require optimization",
+            "sha": "013c6457",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/013c64572fd212ec7ce75b286ba00248951aa3fd",
+            "datetime": "2026-04-03T10:18:27.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(priority-queue): add debug_log mode for staging verification",
+            "sha": "d04a469b",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/d04a469bb2ce1f513352fd2de4879021872991dc",
+            "datetime": "2026-04-03T10:56:40.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(priority-queue): add debug_log mode for staging verification",
+            "sha": "f0171b5a",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/f0171b5a95dc99cc2e5f7ec23bec66c1b3f7a204",
+            "datetime": "2026-04-03T11:02:30.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "test(priority-queue): add production config, burst recovery, tier re-entry, weight reversal tests",
+            "sha": "f1ed2e5b",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/f1ed2e5b1aabe970065371de69647b1c31a2a871",
+            "datetime": "2026-04-03T11:19:02.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "docs(priority-queue): update spec and design to reflect implementation changes",
+            "sha": "0e3e46bb",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/0e3e46bb8e41c654c9567df6c26cdb7590d2e638",
+            "datetime": "2026-04-03T11:40:44.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "docs(priority-queue): update spec and design to reflect implementation changes",
+            "sha": "f6184718",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/f61847180eb30a0abb61b40ea8853ce6964aa62c",
+            "datetime": "2026-04-03T11:53:13.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "docs(priority-queue): add staging verification runbook",
+            "sha": "c7e1e8e0",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/c7e1e8e09eb56419eb0013a9cc7bbe6eb7dccb9b",
+            "datetime": "2026-04-03T11:54:23.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "docs(priority-queue): add status and handoff guide for session continuity",
+            "sha": "7348b7d5",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/7348b7d5e49d626e7d462ab25d212e4e5e6507e1",
+            "datetime": "2026-04-03T12:01:59.000+08:00",
+            "source": "gitlab"
+          }
+        ]
+      },
+      "侑呈": {
+        "count": 2,
+        "projects": [
+          "yuriy.lin/kol_profile_info"
+        ],
+        "items": [
+          {
+            "title": "修復 MSSQL 斷線未自動重連：捕獲 InterfaceError",
+            "sha": "4a5b03c8",
+            "project": "yuriy.lin/kol_profile_info",
+            "url": "https://biglab.buygta.today/yuriy.lin/kol_profile_info/-/commit/4a5b03c82981007f3193123736e27e02a6b8407c",
+            "datetime": "2026-04-03T16:04:19.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "新增 tmux session 腳本與 Redis 監控",
+            "sha": "1ecc2c39",
+            "project": "yuriy.lin/kol_profile_info",
+            "url": "https://biglab.buygta.today/yuriy.lin/kol_profile_info/-/commit/1ecc2c39d71709bf522e67d340ee6073bc0f0128",
+            "datetime": "2026-04-03T16:21:26.000+08:00",
+            "source": "gitlab"
+          }
+        ]
+      }
     }
   },
   "analysis": {
@@ -25653,117 +25823,29 @@
         "commitCount": 25,
         "hours": 8
       }
+    },
+    "4/3": {
+      "侑呈": {
+        "status": "🔴",
+        "commitCount": 2,
+        "hours": null
+      },
+      "Ted": {
+        "status": "🔴",
+        "commitCount": 17,
+        "hours": null
+      }
     }
   },
   "projectRisks": [
     {
-      "project": "CrawlersV2/bigcrawler-scrapy",
-      "soloContributor": "日銜",
+      "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+      "soloContributor": "Ted",
       "severity": "🟡"
     },
     {
-      "project": "platform-infra/observability",
-      "soloContributor": "Aaron",
-      "severity": "🟡"
-    },
-    {
-      "project": "KEYPO/keypo-frontend-2023",
-      "soloContributor": "Joe",
-      "severity": "🟡"
-    },
-    {
-      "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
-      "soloContributor": "Joyce",
-      "severity": "🟡"
-    },
-    {
-      "project": "chris.su/tiktok-crawl-httpx",
-      "soloContributor": "禎佑",
-      "severity": "🟡"
-    },
-    {
-      "project": "wg-dashboard/web-crawler",
-      "soloContributor": "哲緯",
-      "severity": "🟡"
-    },
-    {
-      "project": "chris.su/kol-desc-parser",
-      "soloContributor": "禎佑",
-      "severity": "🟡"
-    },
-    {
-      "project": "KEYPO/keypo-backend",
-      "soloContributor": "Joe",
-      "severity": "🟡"
-    },
-    {
-      "project": "sinyi/newsindex-scrapy",
-      "soloContributor": "哲緯",
-      "severity": "🟡"
-    },
-    {
-      "project": "KEYPO/keypo-engine/on-premises-api-gateway",
-      "soloContributor": "Aaron",
-      "severity": "🟡"
-    },
-    {
-      "project": "bigdata/2025-bigdata-admin-backend",
-      "soloContributor": "Ivy",
-      "severity": "🟡"
-    },
-    {
-      "project": "sinyi/sinyi-update-sentiment",
-      "soloContributor": "Wendy",
-      "severity": "🟡"
-    },
-    {
-      "project": "CrawlersV2/mq_es_consumer",
-      "soloContributor": "家輝",
-      "severity": "🟡"
-    },
-    {
-      "project": "bigdata/2025-bigdata-admin",
-      "soloContributor": "Ivy",
-      "severity": "🟡"
-    },
-    {
-      "project": "bigdata/2025-bigdata-app",
-      "soloContributor": "Ivy",
-      "severity": "🟡"
-    },
-    {
-      "project": "platform-infra/aiopsflow",
-      "soloContributor": "Aaron",
-      "severity": "🟡"
-    },
-    {
-      "project": "dailyview/dv-ai-draft",
-      "soloContributor": "Jason",
-      "severity": "🟡"
-    },
-    {
-      "project": "llmprojects/keypo-agent",
-      "soloContributor": "Aaron",
-      "severity": "🟡"
-    },
-    {
-      "project": "dailyview/2024-dailyview-admin-backend",
-      "soloContributor": "Jason",
-      "severity": "🟡"
-    },
-    {
-      "project": "KEYPO/keypo-international-website",
-      "soloContributor": "Joe",
-      "severity": "🟡"
-    },
-    {
-      "project": "bigdata-54837596/line-social-radar",
-      "soloContributor": "哲緯",
-      "severity": "🟡"
-    },
-    {
-      "project": "bigdata-54837596/line-social-radar-api",
-      "soloContributor": "哲緯",
+      "project": "yuriy.lin/kol_profile_info",
+      "soloContributor": "侑呈",
       "severity": "🟡"
     }
   ]
