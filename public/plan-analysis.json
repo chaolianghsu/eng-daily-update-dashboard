@@ -1,106 +1,132 @@
 {
-  "analysisDate": "2026-04-01",
-  "period": "3/31",
+  "analysisDate": "2026-04-07",
+  "period": "4/3",
   "planSpecs": [
     {
-      "date": "3/31",
-      "member": "Joe",
+      "date": "4/3",
+      "member": "Ted",
       "commit": {
-        "title": "docs: add JP SEO frontend tasks inventory",
-        "sha": "200d072d",
-        "project": "KEYPO/keypo-international-website",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-international-website/-/commit/200d072d",
+        "title": "docs(priority-queue): add test strategy document",
+        "sha": "e8a5bf6d",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/e8a5bf6d",
         "source": "gitlab"
       },
-      "files": ["docs/jp-seo-frontend-tasks.md"]
+      "files": [
+        "docs/specs/priority-queue-v2/test-strategy.md"
+      ]
     },
     {
-      "date": "3/31",
-      "member": "禎佑",
+      "date": "4/3",
+      "member": "Ted",
       "commit": {
-        "title": "docs: 新增 lang_detect 語系判斷改進設計文件",
-        "sha": "1703be94",
-        "project": "chris.su/kol-desc-parser",
-        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/1703be94",
+        "title": "test(priority-queue): fill all spec acceptance criteria gaps (6 new tests)",
+        "sha": "60ccbc1b",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/60ccbc1b",
         "source": "gitlab"
       },
-      "files": ["docs/superpowers/specs/2026-03-31-lang-detect-design.md"]
+      "files": [
+        "docs/specs/priority-queue-v2/tasks.md"
+      ]
     },
     {
-      "date": "3/31",
-      "member": "禎佑",
+      "date": "4/3",
+      "member": "Ted",
       "commit": {
-        "title": "docs: 新增 lang_detect 改進實作計畫",
-        "sha": "79eecb6a",
-        "project": "chris.su/kol-desc-parser",
-        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/79eecb6a",
+        "title": "docs(priority-queue): update spec and design to reflect implementation changes",
+        "sha": "0e3e46bb",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/0e3e46bb",
         "source": "gitlab"
       },
-      "files": ["docs/superpowers/plans/2026-03-31-lang-detect-plan.md"]
+      "files": [
+        "docs/plans/2026-04-01-priority-queue-v2-design.md",
+        "docs/specs/priority-queue-v2/design.md",
+        "docs/specs/priority-queue-v2/requirements.md",
+        "docs/specs/priority-queue-v2/test-strategy.md"
+      ]
     },
     {
-      "date": "3/31",
-      "member": "哲緯",
+      "date": "4/3",
+      "member": "Ted",
       "commit": {
-        "title": "docs: add cross-layer image dedup implementation plan",
-        "sha": "aa5e04c3",
-        "project": "bigdata-54837596/line-social-radar-api",
-        "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/aa5e04c3",
-        "source": "github"
+        "title": "docs(priority-queue): update spec and design to reflect implementation changes",
+        "sha": "f6184718",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/f6184718",
+        "source": "gitlab"
       },
-      "files": ["docs/superpowers/plans/2026-03-31-cross-layer-image-dedup.md"]
+      "files": [
+        "docs/decisions/014-traffic-shaping-plugins.md",
+        "docs/decisions/015-priority-traffic-plugin.md",
+        "docs/plans/2026-03-12-rewrite-tests.md",
+        "docs/plans/2026-03-13-load-test-design.md",
+        "docs/plans/2026-03-14-mixed-load-test-design.md",
+        "docs/plans/2026-03-14-mixed-load-test-plan.md",
+        "docs/plans/2026-03-25-priority-traffic-plugin.md",
+        "docs/plans/2026-04-02-priority-queue-test-gap-fill.md",
+        "docs/plans/2026-04-02-priority-queue-test-improvement.md",
+        "docs/reports/load-test-constant-20260326.md",
+        "docs/reports/load-test-summary-202603.md",
+        "docs/reports/priority-req-queue-capacity-analysis.md",
+        "docs/reports/production-load-test-202603.md"
+      ]
     },
     {
-      "date": "3/31",
-      "member": "哲緯",
+      "date": "4/3",
+      "member": "Ted",
       "commit": {
-        "title": "docs: add cross-layer image dedup design spec",
-        "sha": "f432740b",
-        "project": "bigdata-54837596/line-social-radar-api",
-        "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/f432740b",
-        "source": "github"
+        "title": "docs(priority-queue): add staging verification runbook",
+        "sha": "c7e1e8e0",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/c7e1e8e0",
+        "source": "gitlab"
       },
-      "files": ["docs/superpowers/specs/2026-03-31-cross-layer-image-dedup-design.md"]
+      "files": [
+        "docs/runbooks/priority-queue-staging-verification.md"
+      ]
+    },
+    {
+      "date": "4/3",
+      "member": "Ted",
+      "commit": {
+        "title": "docs(priority-queue): add status and handoff guide for session continuity",
+        "sha": "7348b7d5",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/7348b7d5",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/plans/2026-04-03-priority-queue-v2-status.md"
+      ]
     }
   ],
   "correlations": [
     {
-      "date": "3/31",
-      "member": "Joe",
-      "status": "partial",
-      "specCommits": 1,
-      "dailyUpdateMention": true,
-      "matchedTasks": ["KEYPO 官網日文版 SEO/GEO 優化"],
-      "unmatchedSpecs": ["docs: add JP SEO frontend tasks inventory"],
-      "reasoning": "Daily update 提到進行中的「KEYPO 官網日文版 SEO/GEO 優化」計畫（於 4/1 工項中），與日本 SEO 前端領域相關。然而，daily update 未具體提到建立或維護任務清單的工作細節，僅提及策略層面的優化方向。因此判定為部分吻合。"
-    },
-    {
-      "date": "3/31",
-      "member": "禎佑",
-      "status": "matched",
-      "specCommits": 2,
-      "dailyUpdateMention": true,
-      "matchedTasks": ["優化語系判斷（目前僅針對語言做判別，調整為會判別特定地名關鍵字，且地區欄位設定為複數個）"],
-      "unmatchedSpecs": [],
-      "reasoning": "Daily update 中詳細記錄了「優化語系判斷」的具體進展與技術細節，包含當前遇到的問題（大量 AE 頻道被誤判為英文）和改進方案（新增特定地名關鍵字判別、支援複數地區欄位）。此內容與兩份設計與實作計畫文件完全吻合，明確表示該成員正按計畫進行語系判斷的優化工作。"
-    },
-    {
-      "date": "3/31",
-      "member": "哲緯",
-      "status": "matched",
-      "specCommits": 2,
-      "dailyUpdateMention": true,
-      "matchedTasks": ["更改圖片沿用邏輯，於沿用清單增加最初沿用檔案欄位，避免類似話題沿用同一張圖片", "測試不同策略移除圖片有文字問題"],
-      "unmatchedSpecs": [],
-      "reasoning": "Daily update 中詳述了 LSR 工作項目中「更改圖片沿用邏輯」和「測試不同策略移除圖片」的進展，這與 cross-layer image dedup 的設計目標直接對應。該成員清楚記錄了圖片去重邏輯實作的具體工作步驟，表明設計文件與實際開發工作高度同步，完全吻合。"
+      "date": "4/3",
+      "member": "Ted",
+      "status": "unmatched",
+      "specCommits": 6,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "docs(priority-queue): add test strategy document",
+        "test(priority-queue): fill all spec acceptance criteria gaps (6 new tests)",
+        "docs(priority-queue): update spec and design to reflect implementation changes",
+        "docs(priority-queue): update spec and design to reflect implementation changes",
+        "docs(priority-queue): add staging verification runbook",
+        "docs(priority-queue): add status and handoff guide for session continuity"
+      ],
+      "reasoning": "Ted 在 4/3 沒有提交 daily update，因此無法驗證其 6 個規劃/設計 commits 是否與日報相符。所有 priority-queue 相關的規劃文件、測試策略、驗證流程與狀態文件都未在 daily update 中提及。"
     }
   ],
   "summary": {
-    "totalSpecCommits": 5,
-    "totalCorrelations": 3,
-    "membersWithSpecs": 3,
-    "matched": 2,
-    "unmatched": 0,
-    "partial": 1
+    "totalSpecCommits": 6,
+    "totalCorrelations": 1,
+    "membersWithSpecs": 1,
+    "matched": 0,
+    "unmatched": 1,
+    "partial": 0
   }
 }
