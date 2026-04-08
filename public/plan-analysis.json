@@ -1,132 +1,135 @@
 {
-  "analysisDate": "2026-04-07",
-  "period": "4/3",
+  "analysisDate": "2026-04-08",
+  "period": "4/7",
   "planSpecs": [
     {
-      "date": "4/3",
-      "member": "Ted",
+      "date": "4/7",
+      "member": "哲緯",
       "commit": {
-        "title": "docs(priority-queue): add test strategy document",
-        "sha": "e8a5bf6d",
-        "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/e8a5bf6d",
-        "source": "gitlab"
+        "title": "docs: add image metadata matching spec and implementation plan",
+        "sha": "fe59babc",
+        "project": "bigdata-54837596/line-social-radar-api",
+        "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/fe59babc",
+        "source": "github"
       },
       "files": [
-        "docs/specs/priority-queue-v2/test-strategy.md"
+        "docs/superpowers/plans/2026-04-07-image-metadata-matching.md",
+        "docs/superpowers/specs/2026-04-07-image-metadata-matching-design.md"
       ]
     },
     {
-      "date": "4/3",
-      "member": "Ted",
+      "date": "4/7",
+      "member": "禎佑",
       "commit": {
-        "title": "test(priority-queue): fill all spec acceptance criteria gaps (6 new tests)",
-        "sha": "60ccbc1b",
-        "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/60ccbc1b",
+        "title": "docs: add design spec and implementation plan",
+        "sha": "b9729562",
+        "project": "chris.su/lang-detect",
+        "url": "https://biglab.buygta.today/chris.su/lang-detect/-/commit/b9729562",
         "source": "gitlab"
       },
       "files": [
-        "docs/specs/priority-queue-v2/tasks.md"
+        "docs/superpowers/plans/2026-04-07-lang-detect.md",
+        "docs/superpowers/specs/2026-04-07-lang-detect-design.md"
       ]
     },
     {
-      "date": "4/3",
+      "date": "4/7",
       "member": "Ted",
       "commit": {
-        "title": "docs(priority-queue): update spec and design to reflect implementation changes",
-        "sha": "0e3e46bb",
+        "title": "docs(priority-queue): sync design/impl/spec with implementation",
+        "sha": "9c84c758",
         "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/0e3e46bb",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/9c84c758",
         "source": "gitlab"
       },
       "files": [
         "docs/plans/2026-04-01-priority-queue-v2-design.md",
-        "docs/specs/priority-queue-v2/design.md",
+        "docs/plans/2026-04-01-priority-queue-v2-impl.md",
         "docs/specs/priority-queue-v2/requirements.md",
-        "docs/specs/priority-queue-v2/test-strategy.md"
+        "docs/specs/priority-queue-v2/tasks.md"
       ]
     },
     {
-      "date": "4/3",
+      "date": "4/7",
       "member": "Ted",
       "commit": {
-        "title": "docs(priority-queue): update spec and design to reflect implementation changes",
-        "sha": "f6184718",
+        "title": "docs(gateway): add client integration guide and fix connect timeout",
+        "sha": "24ce3ae1",
         "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/f6184718",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/24ce3ae1",
         "source": "gitlab"
       },
       "files": [
-        "docs/decisions/014-traffic-shaping-plugins.md",
-        "docs/decisions/015-priority-traffic-plugin.md",
-        "docs/plans/2026-03-12-rewrite-tests.md",
-        "docs/plans/2026-03-13-load-test-design.md",
-        "docs/plans/2026-03-14-mixed-load-test-design.md",
-        "docs/plans/2026-03-14-mixed-load-test-plan.md",
-        "docs/plans/2026-03-25-priority-traffic-plugin.md",
-        "docs/plans/2026-04-02-priority-queue-test-gap-fill.md",
-        "docs/plans/2026-04-02-priority-queue-test-improvement.md",
-        "docs/reports/load-test-constant-20260326.md",
-        "docs/reports/load-test-summary-202603.md",
-        "docs/reports/priority-req-queue-capacity-analysis.md",
-        "docs/reports/production-load-test-202603.md"
+        "docs/specs/client-integration-guide.md"
       ]
     },
     {
-      "date": "4/3",
+      "date": "4/7",
       "member": "Ted",
       "commit": {
-        "title": "docs(priority-queue): add staging verification runbook",
-        "sha": "c7e1e8e0",
+        "title": "refactor(config): per-route rate limit, ACL redesign, and config architecture spec",
+        "sha": "edef436a",
         "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/c7e1e8e0",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/edef436a",
         "source": "gitlab"
       },
       "files": [
-        "docs/runbooks/priority-queue-staging-verification.md"
-      ]
-    },
-    {
-      "date": "4/3",
-      "member": "Ted",
-      "commit": {
-        "title": "docs(priority-queue): add status and handoff guide for session continuity",
-        "sha": "7348b7d5",
-        "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/7348b7d5",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/plans/2026-04-03-priority-queue-v2-status.md"
+        "docs/specs/2026-04-07-gateway-config-architecture.md"
       ]
     }
   ],
   "correlations": [
     {
-      "date": "4/3",
-      "member": "Ted",
-      "status": "unmatched",
-      "specCommits": 6,
-      "dailyUpdateMention": false,
-      "matchedTasks": [],
-      "unmatchedSpecs": [
-        "docs(priority-queue): add test strategy document",
-        "test(priority-queue): fill all spec acceptance criteria gaps (6 new tests)",
-        "docs(priority-queue): update spec and design to reflect implementation changes",
-        "docs(priority-queue): update spec and design to reflect implementation changes",
-        "docs(priority-queue): add staging verification runbook",
-        "docs(priority-queue): add status and handoff guide for session continuity"
+      "date": "4/7",
+      "member": "哲緯",
+      "status": "matched",
+      "specCommits": 1,
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "新增圖片 metadata 比對規格與實作計畫",
+        "新增 use_metadata_matching 設定項",
+        "build_image_prompt 回傳 metadata",
+        "match_topics 支援基於 metadata 的比對"
       ],
-      "reasoning": "Ted 在 4/3 沒有提交 daily update，因此無法驗證其 6 個規劃/設計 commits 是否與日報相符。所有 priority-queue 相關的規劃文件、測試策略、驗證流程與狀態文件都未在 daily update 中提及。"
+      "unmatchedSpecs": [],
+      "reasoning": "Daily update 明確記錄「新增圖片 metadata 比對規格與實作計畫」，並詳列該功能的多項實作細節（GCSClient 方法、build_image_prompt、match_topics 等），與 commit「add image metadata matching spec and implementation plan」完全對應。"
+    },
+    {
+      "date": "4/7",
+      "member": "禎佑",
+      "status": "partial",
+      "specCommits": 1,
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "查詢 ES 中包含 'ti' 的主文內容，需將非中文內容刪除",
+        "開發語系判斷和輸出檔案"
+      ],
+      "unmatchedSpecs": [
+        "docs: add design spec and implementation plan (lang-detect)"
+      ],
+      "reasoning": "Daily update 中提到「查詢 ES 中包含 'ti' 的主文內容，需將非中文內容刪除」並「開發語系判斷」，這與語言檢測功能相關，但描述較為籠統，未明確提及設計規格文件或完整的 lang-detect 專案規劃，屬於相關領域但缺乏具體細節的部分吻合。"
+    },
+    {
+      "date": "4/7",
+      "member": "Ted",
+      "status": "matched",
+      "specCommits": 3,
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "priority-queue v2 (!49) staging 部署驗證",
+        "rate limit 架構 migrate to limit-req + local fallback plugin",
+        "config/docs 更新 - ACL redesign、串接說明"
+      ],
+      "unmatchedSpecs": [],
+      "reasoning": "Daily update 清楚記錄所有三個規劃/設計 commits 對應的工作：(1) priority-queue v2 設計與實作 (commit 9c84c758)，(2) 串接說明文件 (commit 24ce3ae1)，(3) config/docs 更新涵蓋 ACL redesign 和 rate limit 架構 (commit edef436a)。Daily update 中的 commit 哈希值 (edef436, 24ce3ae) 與 commit SHA 一致。"
     }
   ],
   "summary": {
-    "totalSpecCommits": 6,
-    "totalCorrelations": 1,
-    "membersWithSpecs": 1,
-    "matched": 0,
-    "unmatched": 1,
-    "partial": 0
+    "totalSpecCommits": 5,
+    "totalCorrelations": 3,
+    "membersWithSpecs": 3,
+    "matched": 2,
+    "unmatched": 0,
+    "partial": 1
   }
 }
