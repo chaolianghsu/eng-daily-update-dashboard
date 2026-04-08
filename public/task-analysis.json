@@ -7,36 +7,45 @@
       "member": "Joyce",
       "severity": "🔴",
       "type": "low_output",
-      "task": "玄武計畫 KEYPO engine API v3 (1H)、KEYPO 國際版 (1H)、玄武計畫 (RD) (1H)、玄武計畫 KEYPO 平台端進度同步 (1H)、玄武計畫-Fanti 測試問題同步 (1H)，共 5H 開發任務",
-      "commits": "無相關 commits（當日 0 筆）",
-      "reasoning": "Joyce 報告開發時數 5 小時，涉及多項玄武計畫和 KEYPO 平台的開發工作，但當日無任何 commit 記錄。開發任務時數已超過 3 小時門檻，應有對應的程式碼提交。"
+      "task": "開發任務 5H",
+      "commits": "0 筆",
+      "reasoning": "Joyce 報告開發時數 5 小時，但當天無任何 commits 記錄。依據分析規則，開發任務 ≥3H 且 0 commits 應標記為產出不足（critical）。"
     },
     {
       "date": "4/7",
       "member": "Jason",
       "severity": "🟡",
       "type": "outlier",
-      "task": "DV AI 產文新增回文觀點 (1H)、DV ES 每日同步問題排查 (2H)、網溫口碑排行 UAT 說明 (1H)、撰寫整理網溫關鍵字升級 script (2H)，共 6H 開發任務",
-      "commits": "1 commit (feat: 升級 Keypo Engine API 從 v2 到 v3)，來自 line-notify-backend-2023 專案",
-      "reasoning": "Jason 報告開發時數 6 小時，但當日僅 1 筆 commit，工時與產出比例 (6:1) 遠低於團隊平均 (6.2:13.2 ≈ 0.47)。實際比例差距約 12.8 倍，超過警示門檻 2 倍。建議確認是否有未提交的工作或工時統計偏差。"
+      "task": "開發任務 6H",
+      "commits": "1 筆 (KEYPO/line-notify-backend-2023)",
+      "reasoning": "Jason 開發時數 6 小時但僅 1 筆 commit，每小時 commits 比例 0.167，遠低於團隊平均 2.095 commits/小時（相差 12.5 倍），產出與工時報告嚴重不成比例。"
+    },
+    {
+      "date": "4/7",
+      "member": "侑呈",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發任務 3.5H",
+      "commits": "2 筆 (CrawlersV2/facebook-scrapy)",
+      "reasoning": "侑呈 開發時數 3.5 小時僅 2 筆 commit，每小時比例 0.571，低於團隊平均 2.095（相差 3.67 倍），工時投入與代碼產出失衡。"
     },
     {
       "date": "4/7",
       "member": "家輝",
       "severity": "🟡",
       "type": "outlier",
-      "task": "統計佳龍 docker 服務 (1H)、JP & AE 版啟動 es9 同步寫入 (2H)、大水庫資料同步 (1.5H)、google workspace dailyview.hk 網域轉移前置作業 (0.5H)、確認 gcp 季度報告時間 (0.5H)，共 5.5H 開發任務",
-      "commits": "2 commits (jp write es5 es9, ae write es5 es9) 來自 CrawlersV2/mq_es_consumer",
-      "reasoning": "家輝 報告開發時數 5.5 小時，但當日僅 2 筆 commit，工時與產出比例 (5.5:2) 明顯低於團隊平均 (6.2:13.2 ≈ 0.47)。實際比例差距約 5.85 倍，超過警示門檻 2 倍。建議確認大水庫資料同步和 docker 統計工作是否尚未 commit。"
+      "task": "開發任務 5.5H",
+      "commits": "2 筆 (CrawlersV2/mq_es_consumer)",
+      "reasoning": "家輝 開發時數 5.5 小時僅 2 筆 commit，每小時比例 0.364，遠低於團隊平均 2.095（相差 5.76 倍），產出與工時投入存在顯著落差。"
     }
   ],
   "summary": {
-    "totalMembers": 10,
-    "totalWarnings": 3,
+    "totalMembers": 11,
+    "totalWarnings": 4,
     "byType": {
       "low_output": 1,
       "mismatch": 0,
-      "outlier": 2
+      "outlier": 3
     }
   }
 }
