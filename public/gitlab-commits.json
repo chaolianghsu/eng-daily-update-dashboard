@@ -24220,6 +24220,459 @@
       }
     },
     "4/7": {
+      "Ted": {
+        "count": 29,
+        "projects": [
+          "KEYPO/keypo-engine/keypo-engine-api-gateway"
+        ],
+        "items": [
+          {
+            "title": "refactor(rate-limit): migrate from limit-count to limit-req as primary rate limiter",
+            "sha": "fd4d8626",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/fd4d86261d6e96da31f54fdb3f655a7578aba86f",
+            "datetime": "2026-04-07T09:25:34.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(plugin): add local-limit-req leaky bucket plugin for Redis fallback",
+            "sha": "32f66812",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/32f668120cf96e57d6c7caaa179dc72290427543",
+            "datetime": "2026-04-07T09:25:44.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "test(priority-queue): isolate PQ consumers and adapt rate limit tests",
+            "sha": "8c6a7c02",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/8c6a7c020e3aced32dadc93bbbbd88a9301f7c12",
+            "datetime": "2026-04-07T09:25:56.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "test(priority-queue): add Prometheus metrics smoke test",
+            "sha": "4548dbae",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/4548dbaee76ff068f00107c940e9c53cb05ba3e0",
+            "datetime": "2026-04-07T09:26:07.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "docs(priority-queue): sync design/impl/spec with implementation",
+            "sha": "9c84c758",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/9c84c7580105d3c5accc62a02d59b1a3a81275ea",
+            "datetime": "2026-04-07T09:26:18.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "chore(tools): add load test scripts and update visualizers",
+            "sha": "2f9a0856",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/2f9a0856b42f8913228f7092537b315a9f912be9",
+            "datetime": "2026-04-07T09:26:33.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "docs(gateway): add client integration guide and fix connect timeout",
+            "sha": "24ce3ae1",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/24ce3ae1cb14db2cc662f3aa9da92a47ce4627dc",
+            "datetime": "2026-04-07T14:01:38.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "refactor(priority-queue): rename sub-tiers vip/pro/free → L3/L2/L1",
+            "sha": "8a012117",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/8a012117fa820611ab8e8216990ae0b945f8fb07",
+            "datetime": "2026-04-07T14:21:08.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "refactor(tools): rename vip/pro/free → L3/L2/L1 in visualization tools",
+            "sha": "9f738c70",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/9f738c7046558c3ab368bea1449c18bee0c44e85",
+            "datetime": "2026-04-07T14:29:48.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'feat/enable-http-ingress' into 'develop'",
+            "sha": "14130cc2",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/14130cc2b16b4c17b1f626e202b4fe8bf156165a",
+            "datetime": "2026-04-07T08:13:15.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'feat/load-test-ramping' into 'develop'",
+            "sha": "956ebd9b",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/956ebd9bff54e4c2d86b44524fef382800db70cd",
+            "datetime": "2026-04-07T08:13:29.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "merge: integrate config-refactor-and-acl into priority-queue-v2",
+            "sha": "705aad31",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/705aad31891e8ffa7f0dabab34c7641d0b996860",
+            "datetime": "2026-04-07T16:25:35.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "chore: remove route-limit-req plugin (unused)",
+            "sha": "135338d8",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/135338d805bf376a6069334184934df2542baf3a",
+            "datetime": "2026-04-07T16:38:36.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix(config): re-enable limit-count plugin",
+            "sha": "50fa25dc",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/50fa25dc2f83364d0a2992aff3491e8107d4d069",
+            "datetime": "2026-04-07T16:44:27.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "merge: integrate origin/develop into priority-queue-v2",
+            "sha": "9f2cfa4b",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/9f2cfa4b4ff4c755e4da3bb5d438be08b56f9667",
+            "datetime": "2026-04-07T16:50:59.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'feat/priority-queue-v2' into 'develop'",
+            "sha": "a5058d13",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/a5058d13c3cd7bebe75dd0daaadb9c8dd419d1ab",
+            "datetime": "2026-04-07T08:51:05.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'feat/priority-queue-v2' into 'develop'",
+            "sha": "3828cc5b",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/3828cc5b2d138e0882ece0a25af5ba717fa6e28d",
+            "datetime": "2026-04-07T08:51:57.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix: remove stale conflict marker in routes.yaml.tpl",
+            "sha": "5f4465e9",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/5f4465e9b9cc9f86984018957e221a7a2d699080",
+            "datetime": "2026-04-07T18:18:15.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'feat/priority-queue-v2' into 'develop'",
+            "sha": "6e236fdf",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/6e236fdffff57459fef709459ce91ba2c2c88294",
+            "datetime": "2026-04-07T10:19:18.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'feat/priority-queue-v2' into 'develop'",
+            "sha": "813ff6a2",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/813ff6a22e7db4acc1eb90278c49da922d985e10",
+            "datetime": "2026-04-07T10:19:23.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "refactor: per-consumer rate limit and fix shared dict placement",
+            "sha": "2b9310de",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/2b9310de6a7f1f5779170546793c656e26424601",
+            "datetime": "2026-04-07T19:23:34.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'feat/priority-queue-v2' into 'develop'",
+            "sha": "fcb0a1e3",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/fcb0a1e3f695ba5180f896065ccc0bb2dc15323c",
+            "datetime": "2026-04-07T11:23:53.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'feat/priority-queue-v2' into 'develop'",
+            "sha": "3fdb1478",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/3fdb147868e47b9e0f4767c1282cec5bf57840c7",
+            "datetime": "2026-04-07T11:23:58.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix(helm): add request-id plugin to plugins list",
+            "sha": "b9ae356b",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/b9ae356b20fde1bc8ae9ff75bcad602e37531c48",
+            "datetime": "2026-04-07T19:29:40.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'feat/priority-queue-v2' into 'develop'",
+            "sha": "83b45370",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/83b4537017d54cdce62d32262c419bbfbbe51779",
+            "datetime": "2026-04-07T11:29:51.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'feat/priority-queue-v2' into 'develop'",
+            "sha": "00c54ee6",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/00c54ee6eeb72046bee2557dc21d54535d12ce8d",
+            "datetime": "2026-04-07T11:29:56.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "refactor(config): per-route rate limit, ACL redesign, and config architecture spec",
+            "sha": "edef436a",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/edef436a21907ae519dd0e8e994ff6ff72534490",
+            "datetime": "2026-04-07T22:09:06.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(config): add priority-queue to svc-v3",
+            "sha": "47d42d89",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/47d42d897294275c6b566cc3b7718bc3e4162b01",
+            "datetime": "2026-04-07T22:20:54.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "chore(config): adjust priority-queue rate=60 burst=300, weight 4:1",
+            "sha": "501fa26c",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/501fa26c02f5bf93f8654814f59b87e193aa515a",
+            "datetime": "2026-04-07T22:54:06.000+08:00",
+            "source": "gitlab"
+          }
+        ]
+      },
+      "Ivy": {
+        "count": 13,
+        "projects": [
+          "bigdata/2025-bigdata-app",
+          "bigdata/2025-bigdata-admin",
+          "bigdata/2025-bigdata-admin-backend"
+        ],
+        "items": [
+          {
+            "title": "fix(about-us): remove CAO member from CXO section",
+            "sha": "f46976e9",
+            "project": "bigdata/2025-bigdata-app",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-app/-/commit/f46976e994ba5dbd6be9d09f223764584965830c",
+            "datetime": "2026-04-07T13:57:03.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'hotfix/remove-cao' into 'main'",
+            "sha": "29f8fb04",
+            "project": "bigdata/2025-bigdata-app",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-app/-/commit/29f8fb041bff9c75c9afd1aef481240fc39af11f",
+            "datetime": "2026-04-07T05:58:10.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix(about-us): remove CAO member from CXO section",
+            "sha": "4b902da6",
+            "project": "bigdata/2025-bigdata-app",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-app/-/commit/4b902da613d08b3bd6d8b981964b548e5e12df77",
+            "datetime": "2026-04-07T13:58:21.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'hotfix/remove-cao' into 'main'",
+            "sha": "b34536a3",
+            "project": "bigdata/2025-bigdata-app",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-app/-/commit/b34536a345223b22f34aad6475c88bd045058f66",
+            "datetime": "2026-04-07T05:59:32.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'feat/corporate-governance' into 'develop'",
+            "sha": "764022bf",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/764022bfa1ad11a7e568e90958753e1b6288a287",
+            "datetime": "2026-04-07T03:44:25.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix(investor): add explicit row type to isDisabled callback",
+            "sha": "a6f7b738",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/a6f7b738cd59bab6e06fe8428d82938ae4f99d39",
+            "datetime": "2026-04-07T11:56:31.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'hotfix/governance-ts-fix' into 'develop'",
+            "sha": "30f4c8e5",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/30f4c8e5b7656b40132d72796e39cf502871a2f0",
+            "datetime": "2026-04-07T03:57:32.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'hotfix/governance-ts-fix' into 'develop'",
+            "sha": "380c84c1",
+            "project": "bigdata/2025-bigdata-admin",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/380c84c1ac93f07168a809890840645de9d747fb",
+            "datetime": "2026-04-07T03:59:16.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(investor_relations): add BoardDirector and GovernanceDocument models",
+            "sha": "c26e514f",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/c26e514f444a19669e3fbb8a9a237b1269e38660",
+            "datetime": "2026-04-07T10:30:44.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(investor_relations): add serializers, views, and URLs for governance",
+            "sha": "084fe95a",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/084fe95abc237a424d8e7af0872208b8d004aa53",
+            "datetime": "2026-04-07T10:31:02.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "test(investor_relations): add governance tests (46 tests)",
+            "sha": "c4e5fab5",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/c4e5fab550e9b6543e5351f7b2ec8e9236b6a842",
+            "datetime": "2026-04-07T10:31:03.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'feat/corporate-governance' into 'develop'",
+            "sha": "b74f9371",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/b74f9371612f437925b46af269095770a528922e",
+            "datetime": "2026-04-07T02:31:58.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'feat/corporate-governance' into 'develop'",
+            "sha": "900b557e",
+            "project": "bigdata/2025-bigdata-admin-backend",
+            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/900b557ea0c4d0c20e90a25083da65a89f46392b",
+            "datetime": "2026-04-07T03:42:02.000+00:00",
+            "source": "gitlab"
+          }
+        ]
+      },
+      "Aaron": {
+        "count": 11,
+        "projects": [
+          "llmprojects/keypo-agent",
+          "platform-infra/observability",
+          "kol/kol-agent",
+          "KEYPO/keypo-engine/on-premises-api-gateway"
+        ],
+        "items": [
+          {
+            "title": "feat(tracing): add HTTPX client instrumentation for outbound HTTP tracing",
+            "sha": "b3f1b03d",
+            "project": "llmprojects/keypo-agent",
+            "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/b3f1b03df722aa64e9e5dacd3ec9e844854dcdfb",
+            "datetime": "2026-04-07T17:16:15.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(docker): add AIOpsFlow webhook URL to env example",
+            "sha": "bd925ff7",
+            "project": "platform-infra/observability",
+            "url": "https://biglab.buygta.today/platform-infra/observability/-/commit/bd925ff7a5362df05b6fcdadae8d8b7f6590e309",
+            "datetime": "2026-04-07T12:24:09.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(grafana): add Keypo Engine API dashboard",
+            "sha": "20b21e14",
+            "project": "platform-infra/observability",
+            "url": "https://biglab.buygta.today/platform-infra/observability/-/commit/20b21e146cf093d72d512e1b5b92dc68353d1016",
+            "datetime": "2026-04-07T12:25:20.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat: integrate Langfuse tracing via OpenTelemetry",
+            "sha": "cc1e15ca",
+            "project": "kol/kol-agent",
+            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/cc1e15caffb49cb9b2d10013d848d97533995219",
+            "datetime": "2026-04-07T16:51:00.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'feature/langfuse-integration' into 'main'",
+            "sha": "97b65712",
+            "project": "kol/kol-agent",
+            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/97b657120a5d0bccaac136a9972f210555dc7ecb",
+            "datetime": "2026-04-07T09:01:12.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'feature/langfuse-integration' into 'main'",
+            "sha": "c56fe93c",
+            "project": "kol/kol-agent",
+            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/c56fe93c9b19dce6b60fadb62b236943cc28d3b2",
+            "datetime": "2026-04-07T09:02:37.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix: correct Langfuse OTEL attribute names and set trace I/O on root span",
+            "sha": "f377f1db",
+            "project": "kol/kol-agent",
+            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/f377f1db2cedb1e98e77c198da7e6731fcb08a54",
+            "datetime": "2026-04-07T17:42:53.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix: correct Langfuse OTEL attribute names and set trace I/O on root span",
+            "sha": "a40b04f7",
+            "project": "kol/kol-agent",
+            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/a40b04f714bb757f652a00f2691000e60e0773a9",
+            "datetime": "2026-04-07T09:45:00.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'feature/langfuse-integration' into 'main'",
+            "sha": "8ebae6a8",
+            "project": "kol/kol-agent",
+            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/8ebae6a8e4cf657ca3fb893a16bdd4a713c151b8",
+            "datetime": "2026-04-07T09:45:03.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'feature/langfuse-integration' into 'main'",
+            "sha": "014e58bf",
+            "project": "kol/kol-agent",
+            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/014e58bfdbff642dc244bf4a8435f750d94f2d17",
+            "datetime": "2026-04-07T09:45:20.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(consumers): add keypo-engine-api-dailyview-production consumer",
+            "sha": "5dc49f6f",
+            "project": "KEYPO/keypo-engine/on-premises-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/on-premises-api-gateway/-/commit/5dc49f6f14196f3659617c30502e55ddc8435981",
+            "datetime": "2026-04-07T17:11:57.000+08:00",
+            "source": "gitlab"
+          }
+        ]
+      },
       "哲緯": {
         "count": 35,
         "projects": [
@@ -24686,219 +25139,6 @@
           }
         ]
       },
-      "Aaron": {
-        "count": 11,
-        "projects": [
-          "platform-infra/observability",
-          "kol/kol-agent",
-          "llmprojects/keypo-agent",
-          "KEYPO/keypo-engine/on-premises-api-gateway"
-        ],
-        "items": [
-          {
-            "title": "feat(docker): add AIOpsFlow webhook URL to env example",
-            "sha": "bd925ff7",
-            "project": "platform-infra/observability",
-            "url": "https://biglab.buygta.today/platform-infra/observability/-/commit/bd925ff7a5362df05b6fcdadae8d8b7f6590e309",
-            "datetime": "2026-04-07T12:24:09.000+08:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "feat(grafana): add Keypo Engine API dashboard",
-            "sha": "20b21e14",
-            "project": "platform-infra/observability",
-            "url": "https://biglab.buygta.today/platform-infra/observability/-/commit/20b21e146cf093d72d512e1b5b92dc68353d1016",
-            "datetime": "2026-04-07T12:25:20.000+08:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "feat: integrate Langfuse tracing via OpenTelemetry",
-            "sha": "cc1e15ca",
-            "project": "kol/kol-agent",
-            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/cc1e15caffb49cb9b2d10013d848d97533995219",
-            "datetime": "2026-04-07T16:51:00.000+08:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "Merge branch 'feature/langfuse-integration' into 'main'",
-            "sha": "97b65712",
-            "project": "kol/kol-agent",
-            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/97b657120a5d0bccaac136a9972f210555dc7ecb",
-            "datetime": "2026-04-07T09:01:12.000+00:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "Merge branch 'feature/langfuse-integration' into 'main'",
-            "sha": "c56fe93c",
-            "project": "kol/kol-agent",
-            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/c56fe93c9b19dce6b60fadb62b236943cc28d3b2",
-            "datetime": "2026-04-07T09:02:37.000+00:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "fix: correct Langfuse OTEL attribute names and set trace I/O on root span",
-            "sha": "f377f1db",
-            "project": "kol/kol-agent",
-            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/f377f1db2cedb1e98e77c198da7e6731fcb08a54",
-            "datetime": "2026-04-07T17:42:53.000+08:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "fix: correct Langfuse OTEL attribute names and set trace I/O on root span",
-            "sha": "a40b04f7",
-            "project": "kol/kol-agent",
-            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/a40b04f714bb757f652a00f2691000e60e0773a9",
-            "datetime": "2026-04-07T09:45:00.000+00:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "Merge branch 'feature/langfuse-integration' into 'main'",
-            "sha": "8ebae6a8",
-            "project": "kol/kol-agent",
-            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/8ebae6a8e4cf657ca3fb893a16bdd4a713c151b8",
-            "datetime": "2026-04-07T09:45:03.000+00:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "Merge branch 'feature/langfuse-integration' into 'main'",
-            "sha": "014e58bf",
-            "project": "kol/kol-agent",
-            "url": "https://biglab.buygta.today/kol/kol-agent/-/commit/014e58bfdbff642dc244bf4a8435f750d94f2d17",
-            "datetime": "2026-04-07T09:45:20.000+00:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "feat(tracing): add HTTPX client instrumentation for outbound HTTP tracing",
-            "sha": "b3f1b03d",
-            "project": "llmprojects/keypo-agent",
-            "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/b3f1b03df722aa64e9e5dacd3ec9e844854dcdfb",
-            "datetime": "2026-04-07T17:16:15.000+08:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "feat(consumers): add keypo-engine-api-dailyview-production consumer",
-            "sha": "5dc49f6f",
-            "project": "KEYPO/keypo-engine/on-premises-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/on-premises-api-gateway/-/commit/5dc49f6f14196f3659617c30502e55ddc8435981",
-            "datetime": "2026-04-07T17:11:57.000+08:00",
-            "source": "gitlab"
-          }
-        ]
-      },
-      "Ivy": {
-        "count": 13,
-        "projects": [
-          "bigdata/2025-bigdata-app",
-          "bigdata/2025-bigdata-admin",
-          "bigdata/2025-bigdata-admin-backend"
-        ],
-        "items": [
-          {
-            "title": "fix(about-us): remove CAO member from CXO section",
-            "sha": "f46976e9",
-            "project": "bigdata/2025-bigdata-app",
-            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-app/-/commit/f46976e994ba5dbd6be9d09f223764584965830c",
-            "datetime": "2026-04-07T13:57:03.000+08:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "Merge branch 'hotfix/remove-cao' into 'main'",
-            "sha": "29f8fb04",
-            "project": "bigdata/2025-bigdata-app",
-            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-app/-/commit/29f8fb041bff9c75c9afd1aef481240fc39af11f",
-            "datetime": "2026-04-07T05:58:10.000+00:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "fix(about-us): remove CAO member from CXO section",
-            "sha": "4b902da6",
-            "project": "bigdata/2025-bigdata-app",
-            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-app/-/commit/4b902da613d08b3bd6d8b981964b548e5e12df77",
-            "datetime": "2026-04-07T13:58:21.000+08:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "Merge branch 'hotfix/remove-cao' into 'main'",
-            "sha": "b34536a3",
-            "project": "bigdata/2025-bigdata-app",
-            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-app/-/commit/b34536a345223b22f34aad6475c88bd045058f66",
-            "datetime": "2026-04-07T05:59:32.000+00:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "Merge branch 'feat/corporate-governance' into 'develop'",
-            "sha": "764022bf",
-            "project": "bigdata/2025-bigdata-admin",
-            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/764022bfa1ad11a7e568e90958753e1b6288a287",
-            "datetime": "2026-04-07T03:44:25.000+00:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "fix(investor): add explicit row type to isDisabled callback",
-            "sha": "a6f7b738",
-            "project": "bigdata/2025-bigdata-admin",
-            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/a6f7b738cd59bab6e06fe8428d82938ae4f99d39",
-            "datetime": "2026-04-07T11:56:31.000+08:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "Merge branch 'hotfix/governance-ts-fix' into 'develop'",
-            "sha": "30f4c8e5",
-            "project": "bigdata/2025-bigdata-admin",
-            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/30f4c8e5b7656b40132d72796e39cf502871a2f0",
-            "datetime": "2026-04-07T03:57:32.000+00:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "Merge branch 'hotfix/governance-ts-fix' into 'develop'",
-            "sha": "380c84c1",
-            "project": "bigdata/2025-bigdata-admin",
-            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin/-/commit/380c84c1ac93f07168a809890840645de9d747fb",
-            "datetime": "2026-04-07T03:59:16.000+00:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "feat(investor_relations): add BoardDirector and GovernanceDocument models",
-            "sha": "c26e514f",
-            "project": "bigdata/2025-bigdata-admin-backend",
-            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/c26e514f444a19669e3fbb8a9a237b1269e38660",
-            "datetime": "2026-04-07T10:30:44.000+08:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "feat(investor_relations): add serializers, views, and URLs for governance",
-            "sha": "084fe95a",
-            "project": "bigdata/2025-bigdata-admin-backend",
-            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/084fe95abc237a424d8e7af0872208b8d004aa53",
-            "datetime": "2026-04-07T10:31:02.000+08:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "test(investor_relations): add governance tests (46 tests)",
-            "sha": "c4e5fab5",
-            "project": "bigdata/2025-bigdata-admin-backend",
-            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/c4e5fab550e9b6543e5351f7b2ec8e9236b6a842",
-            "datetime": "2026-04-07T10:31:03.000+08:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "Merge branch 'feat/corporate-governance' into 'develop'",
-            "sha": "b74f9371",
-            "project": "bigdata/2025-bigdata-admin-backend",
-            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/b74f9371612f437925b46af269095770a528922e",
-            "datetime": "2026-04-07T02:31:58.000+00:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "Merge branch 'feat/corporate-governance' into 'develop'",
-            "sha": "900b557e",
-            "project": "bigdata/2025-bigdata-admin-backend",
-            "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/900b557ea0c4d0c20e90a25083da65a89f46392b",
-            "datetime": "2026-04-07T03:42:02.000+00:00",
-            "source": "gitlab"
-          }
-        ]
-      },
       "Jason": {
         "count": 1,
         "projects": [
@@ -25096,246 +25336,6 @@
             "project": "chris.su/lang-detect",
             "url": "https://biglab.buygta.today/chris.su/lang-detect/-/commit/ab78508aca5c7c5cce2c9a91da5ba8e3400c4db3",
             "datetime": "2026-04-07T17:43:07.000+08:00",
-            "source": "gitlab"
-          }
-        ]
-      },
-      "Ted": {
-        "count": 29,
-        "projects": [
-          "KEYPO/keypo-engine/keypo-engine-api-gateway"
-        ],
-        "items": [
-          {
-            "title": "refactor(rate-limit): migrate from limit-count to limit-req as primary rate limiter",
-            "sha": "fd4d8626",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/fd4d86261d6e96da31f54fdb3f655a7578aba86f",
-            "datetime": "2026-04-07T09:25:34.000+08:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "feat(plugin): add local-limit-req leaky bucket plugin for Redis fallback",
-            "sha": "32f66812",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/32f668120cf96e57d6c7caaa179dc72290427543",
-            "datetime": "2026-04-07T09:25:44.000+08:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "test(priority-queue): isolate PQ consumers and adapt rate limit tests",
-            "sha": "8c6a7c02",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/8c6a7c020e3aced32dadc93bbbbd88a9301f7c12",
-            "datetime": "2026-04-07T09:25:56.000+08:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "test(priority-queue): add Prometheus metrics smoke test",
-            "sha": "4548dbae",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/4548dbaee76ff068f00107c940e9c53cb05ba3e0",
-            "datetime": "2026-04-07T09:26:07.000+08:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "docs(priority-queue): sync design/impl/spec with implementation",
-            "sha": "9c84c758",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/9c84c7580105d3c5accc62a02d59b1a3a81275ea",
-            "datetime": "2026-04-07T09:26:18.000+08:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "chore(tools): add load test scripts and update visualizers",
-            "sha": "2f9a0856",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/2f9a0856b42f8913228f7092537b315a9f912be9",
-            "datetime": "2026-04-07T09:26:33.000+08:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "docs(gateway): add client integration guide and fix connect timeout",
-            "sha": "24ce3ae1",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/24ce3ae1cb14db2cc662f3aa9da92a47ce4627dc",
-            "datetime": "2026-04-07T14:01:38.000+08:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "refactor(priority-queue): rename sub-tiers vip/pro/free → L3/L2/L1",
-            "sha": "8a012117",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/8a012117fa820611ab8e8216990ae0b945f8fb07",
-            "datetime": "2026-04-07T14:21:08.000+08:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "refactor(tools): rename vip/pro/free → L3/L2/L1 in visualization tools",
-            "sha": "9f738c70",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/9f738c7046558c3ab368bea1449c18bee0c44e85",
-            "datetime": "2026-04-07T14:29:48.000+08:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "Merge branch 'feat/enable-http-ingress' into 'develop'",
-            "sha": "14130cc2",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/14130cc2b16b4c17b1f626e202b4fe8bf156165a",
-            "datetime": "2026-04-07T08:13:15.000+00:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "Merge branch 'feat/load-test-ramping' into 'develop'",
-            "sha": "956ebd9b",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/956ebd9bff54e4c2d86b44524fef382800db70cd",
-            "datetime": "2026-04-07T08:13:29.000+00:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "merge: integrate config-refactor-and-acl into priority-queue-v2",
-            "sha": "705aad31",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/705aad31891e8ffa7f0dabab34c7641d0b996860",
-            "datetime": "2026-04-07T16:25:35.000+08:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "chore: remove route-limit-req plugin (unused)",
-            "sha": "135338d8",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/135338d805bf376a6069334184934df2542baf3a",
-            "datetime": "2026-04-07T16:38:36.000+08:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "fix(config): re-enable limit-count plugin",
-            "sha": "50fa25dc",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/50fa25dc2f83364d0a2992aff3491e8107d4d069",
-            "datetime": "2026-04-07T16:44:27.000+08:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "merge: integrate origin/develop into priority-queue-v2",
-            "sha": "9f2cfa4b",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/9f2cfa4b4ff4c755e4da3bb5d438be08b56f9667",
-            "datetime": "2026-04-07T16:50:59.000+08:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "Merge branch 'feat/priority-queue-v2' into 'develop'",
-            "sha": "a5058d13",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/a5058d13c3cd7bebe75dd0daaadb9c8dd419d1ab",
-            "datetime": "2026-04-07T08:51:05.000+00:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "Merge branch 'feat/priority-queue-v2' into 'develop'",
-            "sha": "3828cc5b",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/3828cc5b2d138e0882ece0a25af5ba717fa6e28d",
-            "datetime": "2026-04-07T08:51:57.000+00:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "fix: remove stale conflict marker in routes.yaml.tpl",
-            "sha": "5f4465e9",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/5f4465e9b9cc9f86984018957e221a7a2d699080",
-            "datetime": "2026-04-07T18:18:15.000+08:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "Merge branch 'feat/priority-queue-v2' into 'develop'",
-            "sha": "6e236fdf",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/6e236fdffff57459fef709459ce91ba2c2c88294",
-            "datetime": "2026-04-07T10:19:18.000+00:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "Merge branch 'feat/priority-queue-v2' into 'develop'",
-            "sha": "813ff6a2",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/813ff6a22e7db4acc1eb90278c49da922d985e10",
-            "datetime": "2026-04-07T10:19:23.000+00:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "refactor: per-consumer rate limit and fix shared dict placement",
-            "sha": "2b9310de",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/2b9310de6a7f1f5779170546793c656e26424601",
-            "datetime": "2026-04-07T19:23:34.000+08:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "Merge branch 'feat/priority-queue-v2' into 'develop'",
-            "sha": "fcb0a1e3",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/fcb0a1e3f695ba5180f896065ccc0bb2dc15323c",
-            "datetime": "2026-04-07T11:23:53.000+00:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "Merge branch 'feat/priority-queue-v2' into 'develop'",
-            "sha": "3fdb1478",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/3fdb147868e47b9e0f4767c1282cec5bf57840c7",
-            "datetime": "2026-04-07T11:23:58.000+00:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "fix(helm): add request-id plugin to plugins list",
-            "sha": "b9ae356b",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/b9ae356b20fde1bc8ae9ff75bcad602e37531c48",
-            "datetime": "2026-04-07T19:29:40.000+08:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "Merge branch 'feat/priority-queue-v2' into 'develop'",
-            "sha": "83b45370",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/83b4537017d54cdce62d32262c419bbfbbe51779",
-            "datetime": "2026-04-07T11:29:51.000+00:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "Merge branch 'feat/priority-queue-v2' into 'develop'",
-            "sha": "00c54ee6",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/00c54ee6eeb72046bee2557dc21d54535d12ce8d",
-            "datetime": "2026-04-07T11:29:56.000+00:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "refactor(config): per-route rate limit, ACL redesign, and config architecture spec",
-            "sha": "edef436a",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/edef436a21907ae519dd0e8e994ff6ff72534490",
-            "datetime": "2026-04-07T22:09:06.000+08:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "feat(config): add priority-queue to svc-v3",
-            "sha": "47d42d89",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/47d42d897294275c6b566cc3b7718bc3e4162b01",
-            "datetime": "2026-04-07T22:20:54.000+08:00",
-            "source": "gitlab"
-          },
-          {
-            "title": "chore(config): adjust priority-queue rate=60 burst=300, weight 4:1",
-            "sha": "501fa26c",
-            "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/501fa26c02f5bf93f8654814f59b87e193aa515a",
-            "datetime": "2026-04-07T22:54:06.000+08:00",
             "source": "gitlab"
           }
         ]
@@ -27112,9 +27112,9 @@
         "hours": 7
       },
       "日銜": {
-        "status": "🔴",
+        "status": "✅",
         "commitCount": 21,
-        "hours": null
+        "hours": 7
       },
       "Wendy": {
         "status": "✅",
@@ -27160,6 +27160,21 @@
   },
   "projectRisks": [
     {
+      "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+      "soloContributor": "Ted",
+      "severity": "🟡"
+    },
+    {
+      "project": "bigdata/2025-bigdata-app",
+      "soloContributor": "Ivy",
+      "severity": "🟡"
+    },
+    {
+      "project": "llmprojects/keypo-agent",
+      "soloContributor": "Aaron",
+      "severity": "🟡"
+    },
+    {
       "project": "mason/threads-scrapy",
       "soloContributor": "哲緯",
       "severity": "🟡"
@@ -27175,11 +27190,6 @@
       "severity": "🟡"
     },
     {
-      "project": "bigdata/2025-bigdata-app",
-      "soloContributor": "Ivy",
-      "severity": "🟡"
-    },
-    {
       "project": "KEYPO/line-notify-backend-2023",
       "soloContributor": "Jason",
       "severity": "🟡"
@@ -27190,17 +27200,7 @@
       "severity": "🟡"
     },
     {
-      "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-      "soloContributor": "Ted",
-      "severity": "🟡"
-    },
-    {
       "project": "kol/kol-agent",
-      "soloContributor": "Aaron",
-      "severity": "🟡"
-    },
-    {
-      "project": "llmprojects/keypo-agent",
       "soloContributor": "Aaron",
       "severity": "🟡"
     },
