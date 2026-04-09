@@ -1,125 +1,211 @@
 {
-  "analysisDate": "2026-04-08",
-  "period": "4/7",
+  "analysisDate": "2026-04-09",
+  "period": "4/8",
   "planSpecs": [
     {
-      "date": "4/7",
-      "member": "Ted",
+      "date": "4/8",
+      "member": "禎佑",
       "commit": {
-        "title": "docs(priority-queue): sync design/impl/spec with implementation",
-        "sha": "9c84c758",
-        "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/9c84c758",
+        "title": "docs: manual relations 格式重構設計",
+        "sha": "c1dac90b",
+        "project": "chris.su/kol-desc-parser",
+        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/c1dac90b",
         "source": "gitlab"
       },
       "files": [
-        "docs/plans/2026-04-01-priority-queue-v2-design.md",
-        "docs/plans/2026-04-01-priority-queue-v2-impl.md",
-        "docs/specs/priority-queue-v2/requirements.md",
-        "docs/specs/priority-queue-v2/tasks.md"
+        "docs/superpowers/specs/2026-04-08-manual-relations-redesign-design.md"
       ]
     },
     {
-      "date": "4/7",
-      "member": "Ted",
+      "date": "4/8",
+      "member": "禎佑",
       "commit": {
-        "title": "docs(gateway): add client integration guide and fix connect timeout",
-        "sha": "24ce3ae1",
-        "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/24ce3ae1",
+        "title": "docs: manual relations 格式重構實作計畫",
+        "sha": "57acb60d",
+        "project": "chris.su/kol-desc-parser",
+        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/57acb60d",
         "source": "gitlab"
       },
       "files": [
-        "docs/specs/client-integration-guide.md"
+        "docs/superpowers/plans/2026-04-08-manual-relations-redesign.md"
       ]
     },
     {
-      "date": "4/7",
-      "member": "Ted",
+      "date": "4/8",
+      "member": "禎佑",
       "commit": {
-        "title": "refactor(config): per-route rate limit, ACL redesign, and config architecture spec",
-        "sha": "edef436a",
-        "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/edef436a",
+        "title": "docs: Google Sheet manual relations 匯入功能設計",
+        "sha": "6a127cfd",
+        "project": "chris.su/kol-desc-parser",
+        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/6a127cfd",
         "source": "gitlab"
       },
       "files": [
-        "docs/specs/2026-04-07-gateway-config-architecture.md"
+        "docs/superpowers/specs/2026-04-08-sheet-importer-design.md"
       ]
     },
     {
-      "date": "4/7",
+      "date": "4/8",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs: Google Sheet 匯入功能實作計畫",
+        "sha": "1b3a96f1",
+        "project": "chris.su/kol-desc-parser",
+        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/1b3a96f1",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-04-08-sheet-importer.md"
+      ]
+    },
+    {
+      "date": "4/8",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs: sheet importer spec 同步欄位對應修正",
+        "sha": "d28e2d10",
+        "project": "chris.su/kol-desc-parser",
+        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/d28e2d10",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-04-08-sheet-importer-design.md"
+      ]
+    },
+    {
+      "date": "4/8",
+      "member": "Ted",
+      "commit": {
+        "title": "docs(priority-queue): WFQ weighted fair queuing design spec",
+        "sha": "c9dd4c78",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/c9dd4c78",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-04-08-wfq-weighted-fair-queuing-design.md"
+      ]
+    },
+    {
+      "date": "4/8",
+      "member": "Ted",
+      "commit": {
+        "title": "docs(wfq): implementation plan for 3 WFQ approaches with multi-pod testing",
+        "sha": "72a4555e",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/72a4555e",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-04-08-wfq-weighted-fair-queuing.md",
+        "docs/superpowers/specs/2026-04-08-wfq-weighted-fair-queuing-design.md"
+      ]
+    },
+    {
+      "date": "4/8",
       "member": "哲緯",
       "commit": {
-        "title": "docs: add image metadata matching spec and implementation plan",
-        "sha": "fe59babc",
+        "title": "docs: add prompt refinement implementation plan",
+        "sha": "fea1a164",
         "project": "bigdata-54837596/line-social-radar-api",
-        "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/fe59babc",
+        "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/fea1a164",
         "source": "github"
       },
       "files": [
-        "docs/superpowers/plans/2026-04-07-image-metadata-matching.md",
-        "docs/superpowers/specs/2026-04-07-image-metadata-matching-design.md"
+        "docs/superpowers/plans/2026-04-08-prompt-refinement.md"
       ]
     },
     {
-      "date": "4/7",
-      "member": "禎佑",
+      "date": "4/8",
+      "member": "哲緯",
       "commit": {
-        "title": "docs: add design spec and implementation plan",
-        "sha": "b9729562",
-        "project": "chris.su/lang-detect",
-        "url": "https://biglab.buygta.today/chris.su/lang-detect/-/commit/b9729562",
-        "source": "gitlab"
+        "title": "docs: add prompt refinement design spec",
+        "sha": "96867bea",
+        "project": "bigdata-54837596/line-social-radar-api",
+        "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/96867bea",
+        "source": "github"
       },
       "files": [
-        "docs/superpowers/plans/2026-04-07-lang-detect.md",
-        "docs/superpowers/specs/2026-04-07-lang-detect-design.md"
+        "docs/superpowers/specs/2026-04-08-prompt-refinement-design.md"
+      ]
+    },
+    {
+      "date": "4/8",
+      "member": "哲緯",
+      "commit": {
+        "title": "Revert \"docs: add prompt refinement design spec\"",
+        "sha": "ff98a9d8",
+        "project": "bigdata-54837596/line-social-radar-api",
+        "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/ff98a9d8",
+        "source": "github"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-04-08-prompt-refinement-design.md"
+      ]
+    },
+    {
+      "date": "4/8",
+      "member": "哲緯",
+      "commit": {
+        "title": "docs: add prompt refinement design spec",
+        "sha": "0142d964",
+        "project": "bigdata-54837596/line-social-radar-api",
+        "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/0142d964",
+        "source": "github"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-04-08-prompt-refinement-design.md"
       ]
     }
   ],
   "correlations": [
     {
-      "date": "4/7",
-      "member": "Ted",
-      "status": "unmatched",
-      "specCommits": 3,
-      "dailyUpdateMention": false,
-      "matchedTasks": [],
-      "unmatchedSpecs": [
-        "docs(priority-queue): sync design/impl/spec with implementation",
-        "docs(gateway): add client integration guide and fix connect timeout",
-        "refactor(config): per-route rate limit, ACL redesign, and config architecture spec"
-      ],
-      "reasoning": "未提供 daily update，無法確認與規劃/設計 commits 的相關性。Ted 在 4/7 提交了三個規劃/設計類 commits，涵蓋優先佇列設計同步、API Gateway 用戶端整合指南和設定架構規範，但無對應的 daily update 記錄。"
-    },
-    {
-      "date": "4/7",
-      "member": "哲緯",
-      "status": "unmatched",
-      "specCommits": 1,
-      "dailyUpdateMention": false,
-      "matchedTasks": [],
-      "unmatchedSpecs": [
-        "docs: add image metadata matching spec and implementation plan"
-      ],
-      "reasoning": "未提供 daily update，無法確認與規劃/設計 commits 的相關性。哲緯在 4/7 提交了關於影像元資料匹配的設計規範和實作計畫，但無對應的 daily update 記錄。"
-    },
-    {
-      "date": "4/7",
+      "date": "4/8",
       "member": "禎佑",
       "status": "unmatched",
-      "specCommits": 1,
+      "specCommits": 5,
       "dailyUpdateMention": false,
       "matchedTasks": [],
       "unmatchedSpecs": [
-        "docs: add design spec and implementation plan"
+        "docs: manual relations 格式重構設計",
+        "docs: manual relations 格式重構實作計畫",
+        "docs: Google Sheet manual relations 匯入功能設計",
+        "docs: Google Sheet 匯入功能實作計畫",
+        "docs: sheet importer spec 同步欄位對應修正"
       ],
-      "reasoning": "未提供 daily update，無法確認與規劃/設計 commits 的相關性。禎佑在 4/7 提交了語言偵測的設計規範和實作計畫，但無對應的 daily update 記錄。"
+      "reasoning": "禎佑在 4/8 無 daily update 記錄。共有 5 個規劃/設計 commits 涉及 manual relations 重構和 Google Sheet 匯入功能設計，但完全無法與日報內容相對應或驗證工作進度。"
+    },
+    {
+      "date": "4/8",
+      "member": "Ted",
+      "status": "unmatched",
+      "specCommits": 2,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "docs(priority-queue): WFQ weighted fair queuing design spec",
+        "docs(wfq): implementation plan for 3 WFQ approaches with multi-pod testing"
+      ],
+      "reasoning": "Ted 在 4/8 無 daily update 記錄。共有 2 個規劃/設計 commits 涉及 WFQ weighted fair queuing 設計和實作計畫，但無任何日報文字可供驗證相關工作。"
+    },
+    {
+      "date": "4/8",
+      "member": "哲緯",
+      "status": "unmatched",
+      "specCommits": 4,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "docs: add prompt refinement implementation plan",
+        "docs: add prompt refinement design spec",
+        "Revert \"docs: add prompt refinement design spec\"",
+        "docs: add prompt refinement design spec"
+      ],
+      "reasoning": "哲緯在 4/8 無 daily update 記錄。共有 4 個規劃/設計 commits（含 1 個 revert）涉及 prompt refinement 設計和實作計畫，但完全無法與日報內容對應。"
     }
   ],
   "summary": {
-    "totalSpecCommits": 5,
+    "totalSpecCommits": 11,
     "totalCorrelations": 3,
     "membersWithSpecs": 3,
     "matched": 0,
