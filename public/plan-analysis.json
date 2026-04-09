@@ -162,54 +162,50 @@
     {
       "date": "4/8",
       "member": "禎佑",
-      "status": "unmatched",
+      "status": "matched",
       "specCommits": 5,
-      "dailyUpdateMention": false,
-      "matchedTasks": [],
-      "unmatchedSpecs": [
-        "docs: manual relations 格式重構設計",
-        "docs: manual relations 格式重構實作計畫",
-        "docs: Google Sheet manual relations 匯入功能設計",
-        "docs: Google Sheet 匯入功能實作計畫",
-        "docs: sheet importer spec 同步欄位對應修正"
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "將人工關聯的 sheet，導入現有 KOL 關聯流程 (5H)"
       ],
-      "reasoning": "禎佑在 4/8 無 daily update 記錄。共有 5 個規劃/設計 commits 涉及 manual relations 重構和 Google Sheet 匯入功能設計，但完全無法與日報內容相對應或驗證工作進度。"
+      "unmatchedSpecs": [],
+      "reasoning": "Daily update 第 2 項明確記錄「將人工關聯的 sheet，導入現有 KOL 關聯流程」耗時 5H，與全部 5 個 spec commits 的主題高度吻合：manual relations 格式重構設計與實作計畫、Google Sheet 匯入功能設計與實作計畫、及 sheet importer spec 欄位對應修正，均圍繞同一功能域（人工關聯 sheet 匯入 KOL 關聯流程）。這些設計文件是該實作工作的前置規劃，daily update 以完成實作為主要記錄，整體完全相符。"
     },
     {
       "date": "4/8",
       "member": "Ted",
-      "status": "unmatched",
+      "status": "matched",
       "specCommits": 2,
-      "dailyUpdateMention": false,
-      "matchedTasks": [],
-      "unmatchedSpecs": [
-        "docs(priority-queue): WFQ weighted fair queuing design spec",
-        "docs(wfq): implementation plan for 3 WFQ approaches with multi-pod testing"
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "確認問題過程中, 測試 3 種不同 Qos實作方式 (DRR/SWRR+rate tracker/token bucket) (c9dd4c7, 9d37b6e) (4H)",
+        "QoS multi-pod testing infra + k6 test scenarios T1-T4 (783ce06, fabaa35) (2H)"
       ],
-      "reasoning": "Ted 在 4/8 無 daily update 記錄。共有 2 個規劃/設計 commits 涉及 WFQ weighted fair queuing 設計和實作計畫，但無任何日報文字可供驗證相關工作。"
+      "unmatchedSpecs": [],
+      "reasoning": "Daily update 中直接以 commit SHA c9dd4c7 引用了 WFQ design spec commit（c9dd4c78），明確說明「測試 3 種不同 QoS 實作方式 (DRR/SWRR+rate tracker/token bucket)」耗時 4H，與 WFQ weighted fair queuing design spec 內容完全對應；另外「QoS multi-pod testing infra + k6 test scenarios T1-T4」工項也與 implementation plan 中的 3 種 WFQ 方法及 multi-pod testing 直接吻合。兩個 spec commits 均在 daily update 中有明確且可追溯的記錄，完全相符。"
     },
     {
       "date": "4/8",
       "member": "哲緯",
-      "status": "unmatched",
+      "status": "partial",
       "specCommits": 4,
-      "dailyUpdateMention": false,
-      "matchedTasks": [],
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "優化 SCENE_EXTRACT_PROMPT、STOCK_IMAGE_ANALYZE_PROMPT、SIMILARITY_METADATA_PROMPT 等 LSR API prompt 相關工作 (3H)"
+      ],
       "unmatchedSpecs": [
         "docs: add prompt refinement implementation plan",
-        "docs: add prompt refinement design spec",
-        "Revert \"docs: add prompt refinement design spec\"",
-        "docs: add prompt refinement design spec"
+        "docs: add prompt refinement design spec（含 revert 後重提交共 3 commits）"
       ],
-      "reasoning": "哲緯在 4/8 無 daily update 記錄。共有 4 個規劃/設計 commits（含 1 個 revert）涉及 prompt refinement 設計和實作計畫，但完全無法與日報內容對應。"
+      "reasoning": "Daily update 的 LSR API 工項（3H）包含多個 prompt 優化項目，顯示哲緯確實進行了 prompt 相關改進工作，與 prompt refinement 設計主題領域相關。然而 daily update 所記錄的均為直接的 prompt 修改實作（納入次要物件、使用簡短標籤、禁止隱喻式匹配等），並未明確提及撰寫 design spec 或 implementation plan 設計文件的工作，規劃文件的撰寫行為本身未在 daily update 中被記錄，因此判定為部分吻合。"
     }
   ],
   "summary": {
     "totalSpecCommits": 11,
     "totalCorrelations": 3,
     "membersWithSpecs": 3,
-    "matched": 0,
-    "unmatched": 3,
-    "partial": 0
+    "matched": 2,
+    "unmatched": 0,
+    "partial": 1
   }
 }
