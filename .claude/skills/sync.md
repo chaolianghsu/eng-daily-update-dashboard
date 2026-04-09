@@ -118,7 +118,7 @@ Display:
 
 Run automated task analysis:
 ```bash
-node scripts/prepare-task-analysis.js --date <M/D> | claude --print -m haiku > /tmp/sync-task-analysis.json 2>/dev/null
+node scripts/prepare-task-analysis.js --date <M/D> | claude --print --model haiku > /tmp/sync-task-analysis.json 2>/dev/null
 ```
 
 `<M/D>` = same target date as Stage 1. The script determines the analysis window internally.
@@ -171,7 +171,7 @@ Skip to Final Summary.
 
 Step 2 — AI correlation analysis:
 ```bash
-node scripts/prepare-plan-analysis.js --date <M/D> --specs /tmp/sync-plan-specs.json | claude --print --model haiku > /tmp/sync-plan-analysis.json 2>/dev/null
+node scripts/prepare-plan-analysis.js --date <M/D> --specs /tmp/sync-plan-specs.json | claude --print --model sonnet > /tmp/sync-plan-analysis.json 2>/dev/null
 ```
 
 If successful:
