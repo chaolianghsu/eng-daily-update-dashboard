@@ -2219,13 +2219,87 @@
         "dev": 9.5,
         "status": "reported"
       }
+    },
+    "4/8": {
+      "Joyce": {
+        "total": 9,
+        "meeting": 2,
+        "dev": 7,
+        "status": "reported"
+      },
+      "Ivy": {
+        "total": 7,
+        "meeting": 0,
+        "dev": 7,
+        "status": "reported"
+      },
+      "Jason": {
+        "total": 7,
+        "meeting": 0,
+        "dev": 7,
+        "status": "reported"
+      },
+      "日銜": {
+        "total": 7.5,
+        "meeting": 0,
+        "dev": 7.5,
+        "status": "reported"
+      },
+      "Wendy": {
+        "total": 8.5,
+        "meeting": 1,
+        "dev": 7.5,
+        "status": "reported"
+      },
+      "侑呈": {
+        "total": 7.5,
+        "meeting": 0,
+        "dev": 7.5,
+        "status": "reported"
+      },
+      "禎佑": {
+        "total": 8,
+        "meeting": 1,
+        "dev": 7,
+        "status": "reported"
+      },
+      "Ted": {
+        "total": 12.5,
+        "meeting": 1,
+        "dev": 11.5,
+        "status": "reported"
+      },
+      "家輝": {
+        "total": 6,
+        "meeting": 1,
+        "dev": 5,
+        "status": "reported"
+      },
+      "Joe": {
+        "total": 7,
+        "meeting": 2.5,
+        "dev": 4.5,
+        "status": "reported"
+      },
+      "Aaron": {
+        "total": 7,
+        "meeting": 1,
+        "dev": 6,
+        "status": "reported"
+      },
+      "哲緯": {
+        "total": 8.5,
+        "meeting": 0,
+        "dev": 8.5,
+        "status": "reported"
+      }
     }
   },
   "issues": [
     {
       "member": "Joyce",
-      "severity": "🟢",
-      "text": "穩定 8.5hr"
+      "severity": "🟡",
+      "text": "超時 9hr"
     },
     {
       "member": "Ivy",
@@ -2240,27 +2314,27 @@
     {
       "member": "日銜",
       "severity": "🟢",
-      "text": "穩定 7hr"
+      "text": "穩定 7.5hr"
     },
     {
       "member": "Wendy",
       "severity": "🟢",
-      "text": "穩定 7.5hr"
+      "text": "穩定 8.5hr"
     },
     {
       "member": "侑呈",
       "severity": "🟢",
-      "text": "穩定 7hr"
+      "text": "穩定 7.5hr"
     },
     {
       "member": "禎佑",
       "severity": "🟢",
-      "text": "穩定 8.5hr"
+      "text": "穩定 8hr"
     },
     {
       "member": "Ted",
       "severity": "🟡",
-      "text": "超時 13hr"
+      "text": "超時 12.5hr"
     },
     {
       "member": "Joe",
@@ -2270,12 +2344,12 @@
     {
       "member": "Aaron",
       "severity": "🟢",
-      "text": "穩定 7.5hr"
+      "text": "穩定 7hr"
     },
     {
       "member": "哲緯",
-      "severity": "🟡",
-      "text": "超時 11.5hr"
+      "severity": "🟢",
+      "text": "穩定 8.5hr"
     }
   ],
   "leave": {
@@ -2347,6 +2421,10 @@
       {
         "start": "3/31",
         "end": "3/31"
+      },
+      {
+        "start": "4/9",
+        "end": "4/9"
       }
     ],
     "Joe": [
@@ -2386,25 +2464,12 @@
         "start": "4/7",
         "end": "4/8"
       }
+    ],
+    "Ted": [
+      {
+        "start": "4/9",
+        "end": "4/9"
+      }
     ]
-  },
-  "dailyUpdates": [
-    {
-      "date": "4/7",
-      "member": "日銜",
-      "createTime": "2026-04-08T08:32:11.115999Z",
-      "text": "4/7 工項\n1.[In Progress] 高誠需求站台開發 (3.5H)\nfeat(iknow_stpi)\nfeat(eettaiwan)\nfeat(cio)\nfeat(nikkeiasia)\nfeat(smartauto)\nfeat(taipeitimes)\nfeat(moneydj)\nfeat(vistrondigital)\n2.[Done] 非社群各地區監控 (2.5H)\n3. [In Progress] 資料收錄到多餘網址站台處理(1H)\n\nblockers:\n\n4/8 今日工項\n1.高誠需求站台開發\n2.Issue處理\n3.資料收錄到多餘網址站台處理",
-      "total": 7
-    }
-  ],
-  "newDates": [],
-  "backfilled": [
-    {
-      "date": "4/7",
-      "member": "日銜",
-      "total": 7,
-      "meeting": 0,
-      "dev": 7
-    }
-  ]
+  }
 }
