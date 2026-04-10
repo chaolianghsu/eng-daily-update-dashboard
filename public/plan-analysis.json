@@ -1,211 +1,270 @@
 {
-  "analysisDate": "2026-04-09",
-  "period": "4/8",
+  "analysisDate": "2026-04-10",
+  "period": "4/9",
   "planSpecs": [
     {
-      "date": "4/8",
+      "date": "4/9",
       "member": "禎佑",
       "commit": {
-        "title": "docs: manual relations 格式重構設計",
-        "sha": "c1dac90b",
-        "project": "chris.su/kol-desc-parser",
-        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/c1dac90b",
+        "title": "docs: add filter_chinese design spec",
+        "sha": "b1f82513",
+        "project": "chris.su/lang-detect",
+        "url": "https://biglab.buygta.today/chris.su/lang-detect/-/commit/b1f82513",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/specs/2026-04-08-manual-relations-redesign-design.md"
+        "docs/superpowers/specs/2026-04-07-filter-chinese-design.md"
       ]
     },
     {
-      "date": "4/8",
+      "date": "4/9",
       "member": "禎佑",
       "commit": {
-        "title": "docs: manual relations 格式重構實作計畫",
-        "sha": "57acb60d",
-        "project": "chris.su/kol-desc-parser",
-        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/57acb60d",
+        "title": "docs: add filter_chinese implementation plan",
+        "sha": "afd7899f",
+        "project": "chris.su/lang-detect",
+        "url": "https://biglab.buygta.today/chris.su/lang-detect/-/commit/afd7899f",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/plans/2026-04-08-manual-relations-redesign.md"
+        "docs/superpowers/plans/2026-04-07-filter-chinese.md"
       ]
     },
     {
-      "date": "4/8",
+      "date": "4/9",
       "member": "禎佑",
       "commit": {
-        "title": "docs: Google Sheet manual relations 匯入功能設計",
-        "sha": "6a127cfd",
-        "project": "chris.su/kol-desc-parser",
-        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/6a127cfd",
+        "title": "docs: add filter_chinese_v2 design spec",
+        "sha": "7fec42ac",
+        "project": "chris.su/lang-detect",
+        "url": "https://biglab.buygta.today/chris.su/lang-detect/-/commit/7fec42ac",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/specs/2026-04-08-sheet-importer-design.md"
+        "docs/superpowers/specs/2026-04-07-filter-chinese-v2-design.md"
       ]
     },
     {
-      "date": "4/8",
+      "date": "4/9",
       "member": "禎佑",
       "commit": {
-        "title": "docs: Google Sheet 匯入功能實作計畫",
-        "sha": "1b3a96f1",
+        "title": "docs: parser ES-only 重構設計",
+        "sha": "015188c8",
         "project": "chris.su/kol-desc-parser",
-        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/1b3a96f1",
+        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/015188c8",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/plans/2026-04-08-sheet-importer.md"
+        "docs/superpowers/specs/2026-04-09-parser-es-only-design.md"
       ]
     },
     {
-      "date": "4/8",
+      "date": "4/9",
       "member": "禎佑",
       "commit": {
-        "title": "docs: sheet importer spec 同步欄位對應修正",
-        "sha": "d28e2d10",
+        "title": "docs: parser ES-only 重構實作計畫",
+        "sha": "259a2f15",
         "project": "chris.su/kol-desc-parser",
-        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/d28e2d10",
+        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/259a2f15",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/specs/2026-04-08-sheet-importer-design.md"
+        "docs/superpowers/plans/2026-04-09-parser-es-only.md"
       ]
     },
     {
-      "date": "4/8",
+      "date": "4/9",
       "member": "Ted",
       "commit": {
-        "title": "docs(priority-queue): WFQ weighted fair queuing design spec",
-        "sha": "c9dd4c78",
+        "title": "docs(wfq): staging test report — DRR weight ratio, rate limiting, L2 sub-tier",
+        "sha": "ec6b1059",
         "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/c9dd4c78",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/ec6b1059",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/specs/2026-04-08-wfq-weighted-fair-queuing-design.md"
+        "docs/reports/2026-04-09-wfq-drr-staging-test-report.md"
       ]
     },
     {
-      "date": "4/8",
-      "member": "Ted",
+      "date": "4/9",
+      "member": "Joyce",
       "commit": {
-        "title": "docs(wfq): implementation plan for 3 WFQ approaches with multi-pod testing",
-        "sha": "72a4555e",
-        "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/72a4555e",
+        "title": "docs(article_core): add highlight refactor ES-native spec and plan",
+        "sha": "a0d743cf",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/a0d743cf",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/plans/2026-04-08-wfq-weighted-fair-queuing.md",
-        "docs/superpowers/specs/2026-04-08-wfq-weighted-fair-queuing-design.md"
+        "docs/superpowers/plans/2026-04-08-highlight-refactor-es-native-plan.md",
+        "docs/superpowers/specs/2026-04-08-highlight-refactor-es-native-design.md"
       ]
     },
     {
-      "date": "4/8",
-      "member": "哲緯",
+      "date": "4/9",
+      "member": "Joyce",
       "commit": {
-        "title": "docs: add prompt refinement implementation plan",
-        "sha": "fea1a164",
-        "project": "bigdata-54837596/line-social-radar-api",
-        "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/fea1a164",
-        "source": "github"
+        "title": "docs(article_core): add NEAR highlight precision fix spec + plan",
+        "sha": "1c4c76eb",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/1c4c76eb",
+        "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/plans/2026-04-08-prompt-refinement.md"
+        "docs/superpowers/plans/2026-04-09-near-highlight-precision-fix.md",
+        "docs/superpowers/specs/2026-04-08-highlight-refactor-es-native-design.md"
       ]
     },
     {
-      "date": "4/8",
-      "member": "哲緯",
+      "date": "4/9",
+      "member": "Joyce",
       "commit": {
-        "title": "docs: add prompt refinement design spec",
-        "sha": "96867bea",
-        "project": "bigdata-54837596/line-social-radar-api",
-        "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/96867bea",
-        "source": "github"
+        "title": "docs(article_core): update D24 spec + plan for NEAR/wildcard 3-way routing",
+        "sha": "fc8103cf",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/fc8103cf",
+        "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/specs/2026-04-08-prompt-refinement-design.md"
+        "docs/superpowers/plans/2026-04-09-near-highlight-precision-fix.md",
+        "docs/superpowers/specs/2026-04-08-highlight-refactor-es-native-design.md"
       ]
     },
     {
-      "date": "4/8",
+      "date": "4/9",
       "member": "哲緯",
       "commit": {
-        "title": "Revert \"docs: add prompt refinement design spec\"",
-        "sha": "ff98a9d8",
-        "project": "bigdata-54837596/line-social-radar-api",
-        "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/ff98a9d8",
-        "source": "github"
+        "title": "docs: add threads-scrapy alerting improvements design spec",
+        "sha": "8f23a9c8",
+        "project": "CrawlersV2/bigprometheus",
+        "url": "https://biglab.buygta.today/CrawlersV2/bigprometheus/-/commit/8f23a9c8",
+        "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/specs/2026-04-08-prompt-refinement-design.md"
+        "docs/superpowers/specs/2026-04-09-threads-scrapy-alerting-improvements-design.md"
       ]
     },
     {
-      "date": "4/8",
+      "date": "4/9",
       "member": "哲緯",
       "commit": {
-        "title": "docs: add prompt refinement design spec",
-        "sha": "0142d964",
-        "project": "bigdata-54837596/line-social-radar-api",
-        "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/0142d964",
-        "source": "github"
+        "title": "docs: add threads-scrapy alerting improvements implementation plan",
+        "sha": "fb8980c8",
+        "project": "CrawlersV2/bigprometheus",
+        "url": "https://biglab.buygta.today/CrawlersV2/bigprometheus/-/commit/fb8980c8",
+        "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/specs/2026-04-08-prompt-refinement-design.md"
+        "docs/superpowers/plans/2026-04-09-threads-scrapy-alerting-improvements.md"
+      ]
+    },
+    {
+      "date": "4/9",
+      "member": "哲緯",
+      "commit": {
+        "title": "docs: add threads-scrapy alerting improvements design spec",
+        "sha": "5456400b",
+        "project": "CrawlersV2/bigprometheus",
+        "url": "https://biglab.buygta.today/CrawlersV2/bigprometheus/-/commit/5456400b",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-04-09-threads-scrapy-alerting-improvements.md",
+        "docs/superpowers/specs/2026-04-09-threads-scrapy-alerting-improvements-design.md"
+      ]
+    },
+    {
+      "date": "4/9",
+      "member": "Ivy",
+      "commit": {
+        "title": "chore(investor-relations): wip adjust InvestorContact layout and add plan docs",
+        "sha": "d0daa415",
+        "project": "bigdata/2025-bigdata-app",
+        "url": "https://biglab.buygta.today/bigdata/2025-bigdata-app/-/commit/d0daa415",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers-plans/ir-shareholder-services.md"
       ]
     }
   ],
   "correlations": [
     {
-      "date": "4/8",
+      "date": "4/9",
       "member": "禎佑",
       "status": "matched",
       "specCommits": 5,
       "dailyUpdateMention": true,
       "matchedTasks": [
-        "將人工關聯的 sheet，導入現有 KOL 關聯流程 (5H)"
+        "查詢 ES 中包含 'ti' 的主文內容，需將非中文內容排除，透過正則區分出各平台非中文的貼文（對應 filter_chinese design spec、implementation plan、v2 design spec）",
+        "優化 kol-desc-parser，重構程式碼，並調整成只支援 ES 來源（對應 parser ES-only 重構設計與實作計畫）"
       ],
       "unmatchedSpecs": [],
-      "reasoning": "Daily update 第 2 項明確記錄「將人工關聯的 sheet，導入現有 KOL 關聯流程」耗時 5H，與全部 5 個 spec commits 的主題高度吻合：manual relations 格式重構設計與實作計畫、Google Sheet 匯入功能設計與實作計畫、及 sheet importer spec 欄位對應修正，均圍繞同一功能域（人工關聯 sheet 匯入 KOL 關聯流程）。這些設計文件是該實作工作的前置規劃，daily update 以完成實作為主要記錄，整體完全相符。"
+      "reasoning": "五個 spec/plan commits 皆有對應的 daily update 工作描述。filter_chinese 三個文件（design spec、implementation plan、v2 design spec）對應第 5 項「查詢 ES 中包含 'ti' 的主文內容，需將非中文內容排除」及「透過正則區分出各平台非中文的貼文，並進一步針對帳號名稱做區分」，方向高度吻合。parser ES-only 兩個文件對應第 4 項「優化 kol-desc-parser，重構程式碼，並調整成只支援 ES 來源」，描述完全一致。"
     },
     {
-      "date": "4/8",
+      "date": "4/9",
       "member": "Ted",
-      "status": "matched",
-      "specCommits": 2,
-      "dailyUpdateMention": true,
-      "matchedTasks": [
-        "確認問題過程中, 測試 3 種不同 Qos實作方式 (DRR/SWRR+rate tracker/token bucket) (c9dd4c7, 9d37b6e) (4H)",
-        "QoS multi-pod testing infra + k6 test scenarios T1-T4 (783ce06, fabaa35) (2H)"
+      "status": "unmatched",
+      "specCommits": 1,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "docs(wfq): staging test report — DRR weight ratio, rate limiting, L2 sub-tier"
       ],
-      "unmatchedSpecs": [],
-      "reasoning": "Daily update 中直接以 commit SHA c9dd4c7 引用了 WFQ design spec commit（c9dd4c78），明確說明「測試 3 種不同 QoS 實作方式 (DRR/SWRR+rate tracker/token bucket)」耗時 4H，與 WFQ weighted fair queuing design spec 內容完全對應；另外「QoS multi-pod testing infra + k6 test scenarios T1-T4」工項也與 implementation plan 中的 3 種 WFQ 方法及 multi-pod testing 直接吻合。兩個 spec commits 均在 daily update 中有明確且可追溯的記錄，完全相符。"
+      "reasoning": "Ted 於 4/9 無提交 daily update，無法驗證 WFQ staging test report（涵蓋 DRR weight ratio、rate limiting、L2 sub-tier 測試結果）與當日實際工作的關聯性，判定為未提及。"
     },
     {
-      "date": "4/8",
-      "member": "哲緯",
+      "date": "4/9",
+      "member": "Joyce",
       "status": "partial",
-      "specCommits": 4,
+      "specCommits": 3,
       "dailyUpdateMention": true,
       "matchedTasks": [
-        "優化 SCENE_EXTRACT_PROMPT、STOCK_IMAGE_ANALYZE_PROMPT、SIMILARITY_METADATA_PROMPT 等 LSR API prompt 相關工作 (3H)"
+        "關鍵字 highlight 邏輯調整，建議使用 ES highlight 方式（對應 highlight refactor ES-native spec and plan）"
       ],
       "unmatchedSpecs": [
-        "docs: add prompt refinement implementation plan",
-        "docs: add prompt refinement design spec（含 revert 後重提交共 3 commits）"
+        "docs(article_core): add NEAR highlight precision fix spec + plan",
+        "docs(article_core): update D24 spec + plan for NEAR/wildcard 3-way routing"
       ],
-      "reasoning": "Daily update 的 LSR API 工項（3H）包含多個 prompt 優化項目，顯示哲緯確實進行了 prompt 相關改進工作，與 prompt refinement 設計主題領域相關。然而 daily update 所記錄的均為直接的 prompt 修改實作（納入次要物件、使用簡短標籤、禁止隱喻式匹配等），並未明確提及撰寫 design spec 或 implementation plan 設計文件的工作，規劃文件的撰寫行為本身未在 daily update 中被記錄，因此判定為部分吻合。"
+      "reasoning": "Daily update 第 1 項明確提到「關鍵字 highlight 邏輯調整，建議使用 ES highlight 方式，目前可以修改成由 ES 端處理」，與 highlight refactor ES-native spec and plan 高度吻合。然而 NEAR highlight precision fix 以及 NEAR/wildcard 3-way routing 相關設計文件在 4/9 daily update 中未明確提及；4/10 待辦雖提到「與 Ivy ma 討論萬用字元預期 highlight 方式」，但屬於隔日規劃，故整體判定為部分吻合。"
+    },
+    {
+      "date": "4/9",
+      "member": "哲緯",
+      "status": "partial",
+      "specCommits": 3,
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "Threads Grafana Dashboard 調整（與 bigprometheus threads-scrapy alerting 監控工作相關）"
+      ],
+      "unmatchedSpecs": [
+        "docs: add threads-scrapy alerting improvements design spec (8f23a9c8)",
+        "docs: add threads-scrapy alerting improvements implementation plan (fb8980c8)",
+        "docs: add threads-scrapy alerting improvements design spec (5456400b)"
+      ],
+      "reasoning": "Daily update 第 3 項提到「Threads Grafana Dashboard 調整」，4/10 待辦也有「Grafana Alert 通知調整」，與 bigprometheus 中的 threads-scrapy alerting improvements 具有關聯性（Prometheus/Grafana 為同一監控告警體系）。然而 daily update 中並未明確提及「設計 threads-scrapy 告警改進規格文件」，第 2 項 LSR 的「設計各階段警示系統」是針對 LSR 而非 threads-scrapy，故三個告警改進的 spec/plan commits 在 daily update 中未有明確對應描述，判定為部分吻合。"
+    },
+    {
+      "date": "4/9",
+      "member": "Ivy",
+      "status": "matched",
+      "specCommits": 1,
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "前台股東專區 UI Review（對應 investor-relations InvestorContact layout 調整與計畫文件）"
+      ],
+      "unmatchedSpecs": [],
+      "reasoning": "Commit 標題中的 InvestorContact 直接對應「股東聯絡」頁面，daily update 第 1 項明確提到「前台股東專區 UI Review」，與 investor-relations layout 調整及計畫文件（ir-shareholder-services.md）高度吻合。"
     }
   ],
   "summary": {
-    "totalSpecCommits": 11,
-    "totalCorrelations": 3,
-    "membersWithSpecs": 3,
+    "totalSpecCommits": 13,
+    "totalCorrelations": 5,
+    "membersWithSpecs": 5,
     "matched": 2,
-    "unmatched": 0,
-    "partial": 1
+    "unmatched": 1,
+    "partial": 2
   }
 }
