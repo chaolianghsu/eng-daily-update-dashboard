@@ -5,47 +5,38 @@
     {
       "date": "4/10",
       "member": "Wendy",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "活動文原始數據功能時程預估、v5 2023 年度資料搬遷、ES query QPS 估算、整理進度現況與各方同步 (4.5H)",
-      "commits": "cib-poc 新專案的 2 個 initial commits，不代表實質開發產出",
-      "reasoning": "開發任務總計 4.5 小時超過 3H 門檻，但當天並無相關開發 commits。2 筆 initial commit 不構成實質代碼貢獻。相比團隊平均 12.4 筆 commits，產出差距達 6 倍，是當日最低產出者。"
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發任務 (4.5H)",
+      "commits": "2 commits in wendyHsieh/cib-poc",
+      "reasoning": "Wendy 報告 4.5 小時開發時間，但當天僅有 2 筆 commits。工時與產出比例為 2.25 小時/commit，遠高於團隊平均 0.427 小時/commit（相差 5.27 倍），表示開發工時投入與程式碼產出明顯不成比例。"
     },
     {
       "date": "4/10",
       "member": "侑呈",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "KEYTECTOR (4H) + 其他 (2.5H) = 6.5H",
-      "commits": "facebook-scrapy 的 logrotate 設定 1 筆，與報告工作領域無關",
-      "reasoning": "開發任務 6.5 小時超過 3H 門檻，但當天無相關開發 commits。唯一的 commit 是日誌輪替設定，與 KEYTECTOR 開發或其他報告工作無直接關聯。相比團隊平均 12.4 筆，commit 產出極低，差距達 12.4 倍。"
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發任務 (6.5H)",
+      "commits": "1 commit in CrawlersV2/facebook-scrapy",
+      "reasoning": "侑呈報告 6.5 小時開發時間，但當天僅有 1 筆 commit。工時與產出比例為 6.5 小時/commit，遠高於團隊平均 0.427 小時/commit（相差 15.2 倍），顯示開發時間與程式碼貢獻存在重大落差，可能涉及環境建置或其他間接工作。"
     },
     {
       "date": "4/10",
       "member": "家輝",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "ES9 pipeline 系統優化 (5H) + 離職同仁設備處理 (1H) = 6H",
-      "commits": "keypo-q-huaan-v2 的 batch size 與 idle time 調整 1 筆，與 ES9 pipeline 優化無相關性",
-      "reasoning": "開發任務 6 小時超過 3H 門檻，但當天無相關 commits。唯一的 commit 涉及 KEYPO 批次配置，與報告的 ES9 pipeline 系統優化工作領域不符。相比團隊平均 12.4 筆，commit 產出低於期望，差距達 12.4 倍。"
-    },
-    {
-      "date": "4/10",
-      "member": "Joe",
-      "severity": "🟠",
-      "type": "mismatch",
-      "task": "移除主題關鍵詞中的萬用字元偵測與提示 (0.5H)",
-      "commits": "KEYPO 國際網站 SEO 優化 8 筆 commits（hreflang、JSON-LD structured data、heading 最佳化、FAQ schema 等）",
-      "reasoning": "任務描述涉及移除萬用字元偵測邏輯，但當日 commits 全數為 KEYPO 國際網站的 SEO feature 實現。任務與 commits 的技術領域明顯不符，提示可能存在記錄偏差或跨日期工作項目混淆。"
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發任務 (6H)",
+      "commits": "1 commit in KEYPO/keypo-q-huaan-v2",
+      "reasoning": "家輝報告 6 小時開發時間，但當天僅有 1 筆 commit。工時與產出比例為 6 小時/commit，遠高於團隊平均 0.427 小時/commit（相差 14.05 倍），工時產出比例明顯偏低，可能需要釐清當日工作內容。"
     }
   ],
   "summary": {
-    "totalMembers": 10,
-    "totalWarnings": 4,
+    "totalMembers": 11,
+    "totalWarnings": 3,
     "byType": {
-      "low_output": 3,
-      "mismatch": 1,
-      "outlier": 0
+      "low_output": 0,
+      "mismatch": 0,
+      "outlier": 3
     }
   }
 }
