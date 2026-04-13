@@ -4,48 +4,48 @@
   "warnings": [
     {
       "date": "4/10",
-      "member": "Jason",
+      "member": "Wendy",
       "severity": "🔴",
       "type": "low_output",
-      "task": "開發工作合計 5.5H（回補 KEYPO 關鍵字資料、測試 line notify 正式環境、回跑商圈聲量資料、Issue #3055/#3053 等）",
-      "commits": "無相關 commits 記錄",
-      "reasoning": "報告開發時數 5.5H ≥3H，但當天未有任何 commits 提交。所有報告工作均屬於開發任務，應該產生相應代碼提交或版本更新，但實際無任何紀錄，顯示可能存在工作內容與提交記錄的重大不符。"
-    },
-    {
-      "date": "4/10",
-      "member": "Wendy",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發工作合計 4.5H（功能時程預估 1H、資料搬遷 1.5H、ES query QPS 估算 1H、進度同步 1H）",
-      "commits": "2 筆 initial commits（於 wendyHsieh/cib-poc 專案）",
-      "reasoning": "報告開發時數 4.5H，實際提交 2 筆 commits。相對於團隊平均工時/commit 比例 0.44，本成員比例為 2.25，約為平均值的 5 倍以上。開發產出與報告工時存在顯著不符，遠低於團隊預期效率。"
+      "task": "活動文原始數據功能時程預估、v5 2023 年度資料搬遷、ES query QPS 估算、整理進度現況與各方同步 (4.5H)",
+      "commits": "cib-poc 新專案的 2 個 initial commits，不代表實質開發產出",
+      "reasoning": "開發任務總計 4.5 小時超過 3H 門檻，但當天並無相關開發 commits。2 筆 initial commit 不構成實質代碼貢獻。相比團隊平均 12.4 筆 commits，產出差距達 6 倍，是當日最低產出者。"
     },
     {
       "date": "4/10",
       "member": "侑呈",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發工作合計 6.5H（KEYTECTOR 4H、其他 2.5H）",
-      "commits": "1 筆 commit（facebook-scrapy logrotate 設定）",
-      "reasoning": "報告開發時數 6.5H，實際提交 1 筆 commit。相對於團隊平均工時/commit 比例 0.44，本成員比例為 6.5，約為平均值的 14.8 倍。開發工時報告與代碼提交存在極大落差，遠低於團隊預期產出效率。"
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "KEYTECTOR (4H) + 其他 (2.5H) = 6.5H",
+      "commits": "facebook-scrapy 的 logrotate 設定 1 筆，與報告工作領域無關",
+      "reasoning": "開發任務 6.5 小時超過 3H 門檻，但當天無相關開發 commits。唯一的 commit 是日誌輪替設定，與 KEYTECTOR 開發或其他報告工作無直接關聯。相比團隊平均 12.4 筆，commit 產出極低，差距達 12.4 倍。"
     },
     {
       "date": "4/10",
       "member": "家輝",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發工作合計 6H（ES9 pipeline 系統優化 5H、設備處理 1H）",
-      "commits": "1 筆 commit（KEYPO-q-huaan-v2 senti batch size & idle time）",
-      "reasoning": "報告開發時數 6H，實際提交 1 筆 commit。相對於團隊平均工時/commit 比例 0.44，本成員比例為 6，約為平均值的 13.6 倍。主要報告工作 ES9 pipeline 系統優化（5H）產出極少，與報告時數不相符，開發效率遠低於團隊平均水準。"
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "ES9 pipeline 系統優化 (5H) + 離職同仁設備處理 (1H) = 6H",
+      "commits": "keypo-q-huaan-v2 的 batch size 與 idle time 調整 1 筆，與 ES9 pipeline 優化無相關性",
+      "reasoning": "開發任務 6 小時超過 3H 門檻，但當天無相關 commits。唯一的 commit 涉及 KEYPO 批次配置，與報告的 ES9 pipeline 系統優化工作領域不符。相比團隊平均 12.4 筆，commit 產出低於期望，差距達 12.4 倍。"
+    },
+    {
+      "date": "4/10",
+      "member": "Joe",
+      "severity": "🟠",
+      "type": "mismatch",
+      "task": "移除主題關鍵詞中的萬用字元偵測與提示 (0.5H)",
+      "commits": "KEYPO 國際網站 SEO 優化 8 筆 commits（hreflang、JSON-LD structured data、heading 最佳化、FAQ schema 等）",
+      "reasoning": "任務描述涉及移除萬用字元偵測邏輯，但當日 commits 全數為 KEYPO 國際網站的 SEO feature 實現。任務與 commits 的技術領域明顯不符，提示可能存在記錄偏差或跨日期工作項目混淆。"
     }
   ],
   "summary": {
     "totalMembers": 10,
     "totalWarnings": 4,
     "byType": {
-      "low_output": 1,
-      "mismatch": 0,
-      "outlier": 3
+      "low_output": 3,
+      "mismatch": 1,
+      "outlier": 0
     }
   }
 }
