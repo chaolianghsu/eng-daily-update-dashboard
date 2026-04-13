@@ -30613,6 +30613,94 @@
             "source": "gitlab"
           }
         ]
+      },
+      "Jason": {
+        "count": 10,
+        "projects": [
+          "bigdata-54837596/eeg-backend"
+        ],
+        "items": [
+          {
+            "title": "Merge pull request #18 from bigdata-54837596/feature/keypo-v3-migration",
+            "sha": "744e3a99",
+            "project": "bigdata-54837596/eeg-backend",
+            "url": "https://github.com/bigdata-54837596/eeg-backend/commit/744e3a9975fdbffecfef72f607359803cac0584b",
+            "datetime": "2026-04-10T05:56:07Z",
+            "source": "github"
+          },
+          {
+            "title": "refactor: clean up code review issues",
+            "sha": "20ad8b2f",
+            "project": "bigdata-54837596/eeg-backend",
+            "url": "https://github.com/bigdata-54837596/eeg-backend/commit/20ad8b2f2fde01b5dbae832343c5dfc00b57e87f",
+            "datetime": "2026-04-10T05:53:24Z",
+            "source": "github"
+          },
+          {
+            "title": "fix: use DV_HK_* type format for v3, fix test fixtures for env independence",
+            "sha": "b67dcaba",
+            "project": "bigdata-54837596/eeg-backend",
+            "url": "https://github.com/bigdata-54837596/eeg-backend/commit/b67dcabaa7e65c232e1f31bf9356f33b2a8b7ec5",
+            "datetime": "2026-04-10T05:53:24Z",
+            "source": "github"
+          },
+          {
+            "title": "style: fix lint and format issues in test files",
+            "sha": "e90a0bac",
+            "project": "bigdata-54837596/eeg-backend",
+            "url": "https://github.com/bigdata-54837596/eeg-backend/commit/e90a0bacaeb66be0a891a72fdea6988f0819050d",
+            "datetime": "2026-04-10T05:53:24Z",
+            "source": "github"
+          },
+          {
+            "title": "docs: add KEYPO v3 env vars to CLAUDE.md",
+            "sha": "a8d3403d",
+            "project": "bigdata-54837596/eeg-backend",
+            "url": "https://github.com/bigdata-54837596/eeg-backend/commit/a8d3403dc5573010a1ecde7f69a05b3fd67a473b",
+            "datetime": "2026-04-10T05:53:24Z",
+            "source": "github"
+          },
+          {
+            "title": "feat: add KEYPO v3 version switch in KeypoClient",
+            "sha": "16009d9c",
+            "project": "bigdata-54837596/eeg-backend",
+            "url": "https://github.com/bigdata-54837596/eeg-backend/commit/16009d9c223c5dfd87f27dc0fbaa975ba47e7e13",
+            "datetime": "2026-04-10T05:53:24Z",
+            "source": "github"
+          },
+          {
+            "title": "feat: add KEYPO v3 API settings (version switch, URL, API key)",
+            "sha": "cfee214d",
+            "project": "bigdata-54837596/eeg-backend",
+            "url": "https://github.com/bigdata-54837596/eeg-backend/commit/cfee214dc5d84194fb44755b89db60f1bba39b45",
+            "datetime": "2026-04-10T05:53:24Z",
+            "source": "github"
+          },
+          {
+            "title": "test: add SyncService integration tests covering sync, retry, partial failure",
+            "sha": "162eef85",
+            "project": "bigdata-54837596/eeg-backend",
+            "url": "https://github.com/bigdata-54837596/eeg-backend/commit/162eef8532329f8b265dad04dd558b2203096f8e",
+            "datetime": "2026-04-10T05:53:24Z",
+            "source": "github"
+          },
+          {
+            "title": "test: add KeypoClient unit tests covering v2 auth, 4 APIs, error handling, hotkw date boundaries",
+            "sha": "01c58995",
+            "project": "bigdata-54837596/eeg-backend",
+            "url": "https://github.com/bigdata-54837596/eeg-backend/commit/01c58995d39214ece96296e6f3309d67d40a9651",
+            "datetime": "2026-04-10T05:53:24Z",
+            "source": "github"
+          },
+          {
+            "title": "test: add TopicSyncTaskFactory with 4 traits for sync testing",
+            "sha": "8f71b086",
+            "project": "bigdata-54837596/eeg-backend",
+            "url": "https://github.com/bigdata-54837596/eeg-backend/commit/8f71b086a039e9f3c75dc5e19ce9f160f9c2aff5",
+            "datetime": "2026-04-10T05:53:24Z",
+            "source": "github"
+          }
+        ]
       }
     }
   },
@@ -32430,8 +32518,8 @@
         "hours": 7.5
       },
       "Jason": {
-        "status": "⚠️",
-        "commitCount": 0,
+        "status": "✅",
+        "commitCount": 10,
         "hours": 7
       },
       "日銜": {
@@ -32550,6 +32638,11 @@
     {
       "project": "wendyHsieh/cib-poc",
       "soloContributor": "Wendy",
+      "severity": "🟡"
+    },
+    {
+      "project": "bigdata-54837596/eeg-backend",
+      "soloContributor": "Jason",
       "severity": "🟡"
     },
     {
