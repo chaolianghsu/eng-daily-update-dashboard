@@ -1,270 +1,162 @@
 {
-  "analysisDate": "2026-04-10",
-  "period": "4/9",
+  "analysisDate": "2026-04-13",
+  "period": "4/10",
   "planSpecs": [
     {
-      "date": "4/9",
-      "member": "禎佑",
+      "date": "4/10",
+      "member": "Aaron",
       "commit": {
-        "title": "docs: add filter_chinese design spec",
-        "sha": "b1f82513",
-        "project": "chris.su/lang-detect",
-        "url": "https://biglab.buygta.today/chris.su/lang-detect/-/commit/b1f82513",
+        "title": "docs: move API and TODO to docs/",
+        "sha": "3886f687",
+        "project": "kol/kol-agent",
+        "url": "",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/specs/2026-04-07-filter-chinese-design.md"
+        "docs/API.md",
+        "docs/PROMPT_RULE.md",
+        "docs/TODO.md"
       ]
     },
     {
-      "date": "4/9",
-      "member": "禎佑",
+      "date": "4/10",
+      "member": "Aaron",
       "commit": {
-        "title": "docs: add filter_chinese implementation plan",
-        "sha": "afd7899f",
-        "project": "chris.su/lang-detect",
-        "url": "https://biglab.buygta.today/chris.su/lang-detect/-/commit/afd7899f",
+        "title": "docs: add spec for Step 8 result validator",
+        "sha": "5812cb51",
+        "project": "kol/kol-agent",
+        "url": "",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/plans/2026-04-07-filter-chinese.md"
+        "docs/superpowers/specs/2026-04-10-result-validator-design.md"
       ]
     },
     {
-      "date": "4/9",
-      "member": "禎佑",
+      "date": "4/10",
+      "member": "Joe",
       "commit": {
-        "title": "docs: add filter_chinese_v2 design spec",
-        "sha": "7fec42ac",
-        "project": "chris.su/lang-detect",
-        "url": "https://biglab.buygta.today/chris.su/lang-detect/-/commit/7fec42ac",
+        "title": "docs: add JP SEO strategy reference and C/D/E implementation plan",
+        "sha": "796ead57",
+        "project": "KEYPO/keypo-international-website",
+        "url": "",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/specs/2026-04-07-filter-chinese-v2-design.md"
+        "docs/jp.md",
+        "docs/superpowers/plans/2026-04-09-jp-seo-cde-structured-data-metadata-content.md"
       ]
     },
     {
-      "date": "4/9",
-      "member": "禎佑",
-      "commit": {
-        "title": "docs: parser ES-only 重構設計",
-        "sha": "015188c8",
-        "project": "chris.su/kol-desc-parser",
-        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/015188c8",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/superpowers/specs/2026-04-09-parser-es-only-design.md"
-      ]
-    },
-    {
-      "date": "4/9",
-      "member": "禎佑",
-      "commit": {
-        "title": "docs: parser ES-only 重構實作計畫",
-        "sha": "259a2f15",
-        "project": "chris.su/kol-desc-parser",
-        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/259a2f15",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/superpowers/plans/2026-04-09-parser-es-only.md"
-      ]
-    },
-    {
-      "date": "4/9",
+      "date": "4/10",
       "member": "Ted",
       "commit": {
-        "title": "docs(wfq): staging test report — DRR weight ratio, rate limiting, L2 sub-tier",
-        "sha": "ec6b1059",
-        "project": "KEYPO/keypo-engine/keypo-engine-api-gateway",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-gateway/-/commit/ec6b1059",
+        "title": "docs: add keyword near-syntax migration reference for v2→v3",
+        "sha": "754ac38b",
+        "project": "KEYPO/keypo-newsletter",
+        "url": "",
         "source": "gitlab"
       },
       "files": [
-        "docs/reports/2026-04-09-wfq-drr-staging-test-report.md"
+        "docs/keyword-near-migration/Hanshin_中友百貨.md",
+        "docs/keyword-near-migration/Hanshin_台中LaLaport.md",
+        "docs/keyword-near-migration/Hanshin_台中大遠百.md",
+        "docs/keyword-near-migration/Hanshin_台中新光三越.md",
+        "docs/keyword-near-migration/Hanshin_台中漢神洲際.md",
+        "docs/keyword-near-migration/Hanshin_廣三SOGO.md",
+        "docs/keyword-near-migration/Hanshin_漢神集團.md",
+        "docs/keyword-near-migration/README.md",
+        "docs/keyword-near-migration/THSRDAILY_台灣高鐵.md",
+        "docs/keyword-near-migration/testuser_漢來海港.md"
       ]
     },
     {
-      "date": "4/9",
-      "member": "Joyce",
-      "commit": {
-        "title": "docs(article_core): add highlight refactor ES-native spec and plan",
-        "sha": "a0d743cf",
-        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/a0d743cf",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/superpowers/plans/2026-04-08-highlight-refactor-es-native-plan.md",
-        "docs/superpowers/specs/2026-04-08-highlight-refactor-es-native-design.md"
-      ]
-    },
-    {
-      "date": "4/9",
-      "member": "Joyce",
-      "commit": {
-        "title": "docs(article_core): add NEAR highlight precision fix spec + plan",
-        "sha": "1c4c76eb",
-        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/1c4c76eb",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/superpowers/plans/2026-04-09-near-highlight-precision-fix.md",
-        "docs/superpowers/specs/2026-04-08-highlight-refactor-es-native-design.md"
-      ]
-    },
-    {
-      "date": "4/9",
-      "member": "Joyce",
-      "commit": {
-        "title": "docs(article_core): update D24 spec + plan for NEAR/wildcard 3-way routing",
-        "sha": "fc8103cf",
-        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/fc8103cf",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/superpowers/plans/2026-04-09-near-highlight-precision-fix.md",
-        "docs/superpowers/specs/2026-04-08-highlight-refactor-es-native-design.md"
-      ]
-    },
-    {
-      "date": "4/9",
+      "date": "4/10",
       "member": "哲緯",
       "commit": {
-        "title": "docs: add threads-scrapy alerting improvements design spec",
-        "sha": "8f23a9c8",
-        "project": "CrawlersV2/bigprometheus",
-        "url": "https://biglab.buygta.today/CrawlersV2/bigprometheus/-/commit/8f23a9c8",
+        "title": "docs: add design for language filter leak fix",
+        "sha": "922e8aed",
+        "project": "mason/threads-scrapy",
+        "url": "",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/specs/2026-04-09-threads-scrapy-alerting-improvements-design.md"
+        "docs/superpowers/specs/2026-04-10-language-filter-fix-design.md"
       ]
     },
     {
-      "date": "4/9",
+      "date": "4/10",
       "member": "哲緯",
       "commit": {
-        "title": "docs: add threads-scrapy alerting improvements implementation plan",
-        "sha": "fb8980c8",
-        "project": "CrawlersV2/bigprometheus",
-        "url": "https://biglab.buygta.today/CrawlersV2/bigprometheus/-/commit/fb8980c8",
+        "title": "docs: add implementation plan for language filter leak fix",
+        "sha": "e7c17dcb",
+        "project": "mason/threads-scrapy",
+        "url": "",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/plans/2026-04-09-threads-scrapy-alerting-improvements.md"
-      ]
-    },
-    {
-      "date": "4/9",
-      "member": "哲緯",
-      "commit": {
-        "title": "docs: add threads-scrapy alerting improvements design spec",
-        "sha": "5456400b",
-        "project": "CrawlersV2/bigprometheus",
-        "url": "https://biglab.buygta.today/CrawlersV2/bigprometheus/-/commit/5456400b",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/superpowers/plans/2026-04-09-threads-scrapy-alerting-improvements.md",
-        "docs/superpowers/specs/2026-04-09-threads-scrapy-alerting-improvements-design.md"
-      ]
-    },
-    {
-      "date": "4/9",
-      "member": "Ivy",
-      "commit": {
-        "title": "chore(investor-relations): wip adjust InvestorContact layout and add plan docs",
-        "sha": "d0daa415",
-        "project": "bigdata/2025-bigdata-app",
-        "url": "https://biglab.buygta.today/bigdata/2025-bigdata-app/-/commit/d0daa415",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/superpowers-plans/ir-shareholder-services.md"
+        "docs/superpowers/plans/2026-04-10-language-filter-fix.md"
       ]
     }
   ],
   "correlations": [
     {
-      "date": "4/9",
-      "member": "禎佑",
-      "status": "matched",
-      "specCommits": 5,
-      "dailyUpdateMention": true,
-      "matchedTasks": [
-        "查詢 ES 中包含 'ti' 的主文內容，需將非中文內容排除，透過正則區分出各平台非中文的貼文（對應 filter_chinese design spec、implementation plan、v2 design spec）",
-        "優化 kol-desc-parser，重構程式碼，並調整成只支援 ES 來源（對應 parser ES-only 重構設計與實作計畫）"
+      "date": "4/10",
+      "member": "Aaron",
+      "status": "unmatched",
+      "specCommits": 2,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "docs: move API and TODO to docs/",
+        "docs: add spec for Step 8 result validator"
       ],
-      "unmatchedSpecs": [],
-      "reasoning": "五個 spec/plan commits 皆有對應的 daily update 工作描述。filter_chinese 三個文件（design spec、implementation plan、v2 design spec）對應第 5 項「查詢 ES 中包含 'ti' 的主文內容，需將非中文內容排除」及「透過正則區分出各平台非中文的貼文，並進一步針對帳號名稱做區分」，方向高度吻合。parser ES-only 兩個文件對應第 4 項「優化 kol-desc-parser，重構程式碼，並調整成只支援 ES 來源」，描述完全一致。"
+      "reasoning": "Aaron 在 4/10 沒有提交 daily update，因此無法對照其規劃/設計類 commits。兩筆 commits 分別為 API 文件整理搬移與 Step 8 result validator 的設計規格，均無法在 daily update 中找到對應記錄。"
     },
     {
-      "date": "4/9",
+      "date": "4/10",
+      "member": "Joe",
+      "status": "partial",
+      "specCommits": 1,
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "KEYPO 官網日文版 SEO/GEO 優化（4/11~4/12 In Progress）"
+      ],
+      "unmatchedSpecs": [],
+      "reasoning": "Joe 的 commit 是關於日文版 SEO 策略參考文件及 C/D/E 實作計畫，daily update 中的 4/11~4/12 工項有明確提及「KEYPO 官網日文版 SEO/GEO 優化」相關進度，但 4/10 當天的工項（工程部週會、玄武計畫上版討論）並未直接提及撰寫此規劃文件。日文 SEO 的工作領域吻合，但 daily update 未明確說明當天有進行規劃文件撰寫，故判定為部分吻合。"
+    },
+    {
+      "date": "4/10",
       "member": "Ted",
       "status": "unmatched",
       "specCommits": 1,
       "dailyUpdateMention": false,
       "matchedTasks": [],
       "unmatchedSpecs": [
-        "docs(wfq): staging test report — DRR weight ratio, rate limiting, L2 sub-tier"
+        "docs: add keyword near-syntax migration reference for v2→v3"
       ],
-      "reasoning": "Ted 於 4/9 無提交 daily update，無法驗證 WFQ staging test report（涵蓋 DRR weight ratio、rate limiting、L2 sub-tier 測試結果）與當日實際工作的關聯性，判定為未提及。"
+      "reasoning": "Ted 在 4/10 沒有提交 daily update，因此無法對照其規劃/設計類 commit。該 commit 為 keypo-newsletter 中關鍵字 near 語法 v2→v3 遷移的參考文件，內含多個客戶案例的遷移說明，但因缺乏 daily update 無從確認是否有提及此工作。"
     },
     {
-      "date": "4/9",
-      "member": "Joyce",
-      "status": "partial",
-      "specCommits": 3,
-      "dailyUpdateMention": true,
-      "matchedTasks": [
-        "關鍵字 highlight 邏輯調整，建議使用 ES highlight 方式（對應 highlight refactor ES-native spec and plan）"
-      ],
-      "unmatchedSpecs": [
-        "docs(article_core): add NEAR highlight precision fix spec + plan",
-        "docs(article_core): update D24 spec + plan for NEAR/wildcard 3-way routing"
-      ],
-      "reasoning": "Daily update 第 1 項明確提到「關鍵字 highlight 邏輯調整，建議使用 ES highlight 方式，目前可以修改成由 ES 端處理」，與 highlight refactor ES-native spec and plan 高度吻合。然而 NEAR highlight precision fix 以及 NEAR/wildcard 3-way routing 相關設計文件在 4/9 daily update 中未明確提及；4/10 待辦雖提到「與 Ivy ma 討論萬用字元預期 highlight 方式」，但屬於隔日規劃，故整體判定為部分吻合。"
-    },
-    {
-      "date": "4/9",
+      "date": "4/10",
       "member": "哲緯",
       "status": "partial",
-      "specCommits": 3,
+      "specCommits": 2,
       "dailyUpdateMention": true,
       "matchedTasks": [
-        "Threads Grafana Dashboard 調整（與 bigprometheus threads-scrapy alerting 監控工作相關）"
-      ],
-      "unmatchedSpecs": [
-        "docs: add threads-scrapy alerting improvements design spec (8f23a9c8)",
-        "docs: add threads-scrapy alerting improvements implementation plan (fb8980c8)",
-        "docs: add threads-scrapy alerting improvements design spec (5456400b)"
-      ],
-      "reasoning": "Daily update 第 3 項提到「Threads Grafana Dashboard 調整」，4/10 待辦也有「Grafana Alert 通知調整」，與 bigprometheus 中的 threads-scrapy alerting improvements 具有關聯性（Prometheus/Grafana 為同一監控告警體系）。然而 daily update 中並未明確提及「設計 threads-scrapy 告警改進規格文件」，第 2 項 LSR 的「設計各階段警示系統」是針對 LSR 而非 threads-scrapy，故三個告警改進的 spec/plan commits 在 daily update 中未有明確對應描述，判定為部分吻合。"
-    },
-    {
-      "date": "4/9",
-      "member": "Ivy",
-      "status": "matched",
-      "specCommits": 1,
-      "dailyUpdateMention": true,
-      "matchedTasks": [
-        "前台股東專區 UI Review（對應 investor-relations InvestorContact layout 調整與計畫文件）"
+        "Threads 日常需求處理",
+        "新稱正則加強判斷非中文語系文章"
       ],
       "unmatchedSpecs": [],
-      "reasoning": "Commit 標題中的 InvestorContact 直接對應「股東聯絡」頁面，daily update 第 1 項明確提到「前台股東專區 UI Review」，與 investor-relations layout 調整及計畫文件（ir-shareholder-services.md）高度吻合。"
+      "reasoning": "哲緯的兩筆 commits 均為 threads-scrapy 語言過濾洩漏問題的設計文件與實作計畫。daily update 中有提及 Threads 相關工作，特別是「新稱正則加強判斷非中文語系文章」與語言過濾問題高度相關，顯示哲緯當天確實在處理 Threads 語言判斷邏輯。然而 daily update 僅列出實作任務，未明確提及有撰寫設計規格或實作計畫文件，故判定為部分吻合。"
     }
   ],
   "summary": {
-    "totalSpecCommits": 13,
-    "totalCorrelations": 5,
-    "membersWithSpecs": 5,
-    "matched": 2,
-    "unmatched": 1,
+    "totalSpecCommits": 6,
+    "totalCorrelations": 4,
+    "membersWithSpecs": 4,
+    "matched": 0,
+    "unmatched": 2,
     "partial": 2
   }
 }
