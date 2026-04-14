@@ -1,162 +1,199 @@
 {
-  "analysisDate": "2026-04-13",
-  "period": "4/10",
+  "analysisDate": "2026-04-14",
+  "period": "4/11",
   "planSpecs": [
     {
-      "date": "4/10",
-      "member": "Aaron",
+      "date": "4/11",
+      "member": "Joyce",
       "commit": {
-        "title": "docs: move API and TODO to docs/",
-        "sha": "3886f687",
-        "project": "kol/kol-agent",
-        "url": "",
+        "title": "docs(superpowers): add plan for PostHotRank/PostHotChnl Stage 2 query parity fix",
+        "sha": "24b1680c",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/24b1680c",
+        "source": "gitlab"
+      },
+      "files": ["docs/superpowers/plans/2026-04-11-posthotrank-stage2-query-parity-fix.md"]
+    },
+    {
+      "date": "4/11",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs(superpowers): add spec + plan for sub_kw/subq highlight fix",
+        "sha": "fa5fb623",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/fa5fb623",
         "source": "gitlab"
       },
       "files": [
-        "docs/API.md",
-        "docs/PROMPT_RULE.md",
-        "docs/TODO.md"
+        "docs/superpowers/plans/2026-04-11-sub-kw-highlight-fix-plan.md",
+        "docs/superpowers/specs/2026-04-11-sub-kw-highlight-fix-design.md"
       ]
     },
     {
-      "date": "4/10",
-      "member": "Aaron",
+      "date": "4/11",
+      "member": "Joyce",
       "commit": {
-        "title": "docs: add spec for Step 8 result validator",
-        "sha": "5812cb51",
-        "project": "kol/kol-agent",
-        "url": "",
+        "title": "docs(superpowers): add CI/CD deploy workflow design spec",
+        "sha": "fe1030f9",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/fe1030f9",
+        "source": "gitlab"
+      },
+      "files": ["docs/superpowers/specs/2026-04-11-cicd-deploy-workflow-design.md"]
+    },
+    {
+      "date": "4/11",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs(superpowers): add CI/CD deploy workflow implementation plan",
+        "sha": "623c7b23",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/623c7b23",
+        "source": "gitlab"
+      },
+      "files": ["docs/superpowers/plans/2026-04-11-cicd-deploy-workflow.md"]
+    },
+    {
+      "date": "4/11",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs(superpowers): bump CI tool versions to match local dev",
+        "sha": "856e6bb8",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/856e6bb8",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/specs/2026-04-10-result-validator-design.md"
+        "docs/superpowers/plans/2026-04-11-cicd-deploy-workflow.md",
+        "docs/superpowers/specs/2026-04-11-cicd-deploy-workflow-design.md"
       ]
     },
     {
-      "date": "4/10",
-      "member": "Joe",
+      "date": "4/11",
+      "member": "Joyce",
       "commit": {
-        "title": "docs: add JP SEO strategy reference and C/D/E implementation plan",
-        "sha": "796ead57",
-        "project": "KEYPO/keypo-international-website",
-        "url": "",
+        "title": "docs(superpowers): correct pyproject.toml conflict resolution guidance",
+        "sha": "2419c684",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/2419c684",
         "source": "gitlab"
       },
       "files": [
-        "docs/jp.md",
-        "docs/superpowers/plans/2026-04-09-jp-seo-cde-structured-data-metadata-content.md"
+        "docs/superpowers/plans/2026-04-11-cicd-deploy-workflow.md",
+        "docs/superpowers/specs/2026-04-11-cicd-deploy-workflow-design.md"
       ]
     },
     {
-      "date": "4/10",
-      "member": "Ted",
+      "date": "4/11",
+      "member": "Joyce",
       "commit": {
-        "title": "docs: add keyword near-syntax migration reference for v2→v3",
-        "sha": "754ac38b",
-        "project": "KEYPO/keypo-newsletter",
-        "url": "",
+        "title": "docs(superpowers): sync plan and spec with actual CI/chart execution",
+        "sha": "be85cbcf",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/be85cbcf",
         "source": "gitlab"
       },
       "files": [
-        "docs/keyword-near-migration/Hanshin_中友百貨.md",
-        "docs/keyword-near-migration/Hanshin_台中LaLaport.md",
-        "docs/keyword-near-migration/Hanshin_台中大遠百.md",
-        "docs/keyword-near-migration/Hanshin_台中新光三越.md",
-        "docs/keyword-near-migration/Hanshin_台中漢神洲際.md",
-        "docs/keyword-near-migration/Hanshin_廣三SOGO.md",
-        "docs/keyword-near-migration/Hanshin_漢神集團.md",
-        "docs/keyword-near-migration/README.md",
-        "docs/keyword-near-migration/THSRDAILY_台灣高鐵.md",
-        "docs/keyword-near-migration/testuser_漢來海港.md"
+        "docs/superpowers/plans/2026-04-11-cicd-deploy-workflow.md",
+        "docs/superpowers/specs/2026-04-11-cicd-deploy-workflow-design.md"
       ]
     },
     {
-      "date": "4/10",
+      "date": "4/11",
+      "member": "哲緯",
+      "commit": {
+        "title": "docs: add threads-alerts instant query fix design spec",
+        "sha": "025535ab",
+        "project": "CrawlersV2/bigprometheus",
+        "url": "https://biglab.buygta.today/CrawlersV2/bigprometheus/-/commit/025535ab",
+        "source": "gitlab"
+      },
+      "files": ["docs/superpowers/specs/2026-04-11-threads-alerts-instant-query-fix-design.md"]
+    },
+    {
+      "date": "4/11",
+      "member": "哲緯",
+      "commit": {
+        "title": "docs: add threads-alerts instant query fix implementation plan",
+        "sha": "1a205575",
+        "project": "CrawlersV2/bigprometheus",
+        "url": "https://biglab.buygta.today/CrawlersV2/bigprometheus/-/commit/1a205575",
+        "source": "gitlab"
+      },
+      "files": ["docs/superpowers/plans/2026-04-11-threads-alerts-instant-query-fix.md"]
+    },
+    {
+      "date": "4/11",
+      "member": "哲緯",
+      "commit": {
+        "title": "docs: add threads-alerts instant query fix design spec",
+        "sha": "29bd04d8",
+        "project": "CrawlersV2/bigprometheus",
+        "url": "https://biglab.buygta.today/CrawlersV2/bigprometheus/-/commit/29bd04d8",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-04-11-threads-alerts-instant-query-fix.md",
+        "docs/superpowers/specs/2026-04-11-threads-alerts-instant-query-fix-design.md"
+      ]
+    },
+    {
+      "date": "4/11",
       "member": "哲緯",
       "commit": {
         "title": "docs: add design for language filter leak fix",
-        "sha": "922e8aed",
+        "sha": "dbcba19e",
         "project": "mason/threads-scrapy",
-        "url": "",
+        "url": "https://biglab.buygta.today/mason/threads-scrapy/-/commit/dbcba19e",
         "source": "gitlab"
       },
       "files": [
+        "docs/superpowers/plans/2026-04-10-language-filter-fix.md",
         "docs/superpowers/specs/2026-04-10-language-filter-fix-design.md"
-      ]
-    },
-    {
-      "date": "4/10",
-      "member": "哲緯",
-      "commit": {
-        "title": "docs: add implementation plan for language filter leak fix",
-        "sha": "e7c17dcb",
-        "project": "mason/threads-scrapy",
-        "url": "",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/superpowers/plans/2026-04-10-language-filter-fix.md"
       ]
     }
   ],
   "correlations": [
     {
-      "date": "4/10",
-      "member": "Aaron",
+      "date": "4/11",
+      "member": "Joyce",
       "status": "unmatched",
-      "specCommits": 2,
+      "specCommits": 7,
       "dailyUpdateMention": false,
       "matchedTasks": [],
       "unmatchedSpecs": [
-        "docs: move API and TODO to docs/",
-        "docs: add spec for Step 8 result validator"
+        "docs(superpowers): add plan for PostHotRank/PostHotChnl Stage 2 query parity fix",
+        "docs(superpowers): add spec + plan for sub_kw/subq highlight fix",
+        "docs(superpowers): add CI/CD deploy workflow design spec",
+        "docs(superpowers): add CI/CD deploy workflow implementation plan",
+        "docs(superpowers): bump CI tool versions to match local dev",
+        "docs(superpowers): correct pyproject.toml conflict resolution guidance",
+        "docs(superpowers): sync plan and spec with actual CI/chart execution"
       ],
-      "reasoning": "Aaron 在 4/10 沒有提交 daily update，因此無法對照其規劃/設計類 commits。兩筆 commits 分別為 API 文件整理搬移與 Step 8 result validator 的設計規格，均無法在 daily update 中找到對應記錄。"
+      "reasoning": "Joyce 在 4/11 有 7 筆規劃/設計類 commits，涵蓋 PostHotRank Stage 2 查詢修復計畫、sub_kw 關鍵字高亮修復設計與計畫、以及 CI/CD 部署流程設計規格與實作計畫（含多次迭代更新）。然而 Joyce 當日無提交 daily update，無法確認這些規劃工作是否已在每日回報中被提及。由於缺乏 daily update 作為比對依據，判定為 unmatched。"
     },
     {
-      "date": "4/10",
-      "member": "Joe",
-      "status": "partial",
-      "specCommits": 1,
-      "dailyUpdateMention": true,
-      "matchedTasks": [
-        "KEYPO 官網日文版 SEO/GEO 優化（4/11~4/12 In Progress）"
-      ],
-      "unmatchedSpecs": [],
-      "reasoning": "Joe 的 commit 是關於日文版 SEO 策略參考文件及 C/D/E 實作計畫，daily update 中的 4/11~4/12 工項有明確提及「KEYPO 官網日文版 SEO/GEO 優化」相關進度，但 4/10 當天的工項（工程部週會、玄武計畫上版討論）並未直接提及撰寫此規劃文件。日文 SEO 的工作領域吻合，但 daily update 未明確說明當天有進行規劃文件撰寫，故判定為部分吻合。"
-    },
-    {
-      "date": "4/10",
-      "member": "Ted",
-      "status": "unmatched",
-      "specCommits": 1,
-      "dailyUpdateMention": false,
-      "matchedTasks": [],
-      "unmatchedSpecs": [
-        "docs: add keyword near-syntax migration reference for v2→v3"
-      ],
-      "reasoning": "Ted 在 4/10 沒有提交 daily update，因此無法對照其規劃/設計類 commit。該 commit 為 keypo-newsletter 中關鍵字 near 語法 v2→v3 遷移的參考文件，內含多個客戶案例的遷移說明，但因缺乏 daily update 無從確認是否有提及此工作。"
-    },
-    {
-      "date": "4/10",
+      "date": "4/11",
       "member": "哲緯",
-      "status": "partial",
-      "specCommits": 2,
-      "dailyUpdateMention": true,
-      "matchedTasks": [
-        "Threads 日常需求處理",
-        "新稱正則加強判斷非中文語系文章"
+      "status": "unmatched",
+      "specCommits": 4,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "docs: add threads-alerts instant query fix design spec (025535ab)",
+        "docs: add threads-alerts instant query fix implementation plan",
+        "docs: add threads-alerts instant query fix design spec (29bd04d8)",
+        "docs: add design for language filter leak fix"
       ],
-      "unmatchedSpecs": [],
-      "reasoning": "哲緯的兩筆 commits 均為 threads-scrapy 語言過濾洩漏問題的設計文件與實作計畫。daily update 中有提及 Threads 相關工作，特別是「新稱正則加強判斷非中文語系文章」與語言過濾問題高度相關，顯示哲緯當天確實在處理 Threads 語言判斷邏輯。然而 daily update 僅列出實作任務，未明確提及有撰寫設計規格或實作計畫文件，故判定為部分吻合。"
+      "reasoning": "哲緯在 4/11 有 4 筆規劃/設計類 commits，主要包含 bigprometheus 的 threads-alerts 即時查詢修復設計規格與實作計畫（共 3 筆，屬同一功能的多次疊代），以及 threads-scrapy 的語言過濾器洩漏修復設計（1 筆，文件日期標注為 4/10）。哲緯當日無提交 daily update，無法與任何工作描述進行比對，判定為 unmatched。"
     }
   ],
   "summary": {
-    "totalSpecCommits": 6,
-    "totalCorrelations": 4,
-    "membersWithSpecs": 4,
+    "totalSpecCommits": 11,
+    "totalCorrelations": 2,
+    "membersWithSpecs": 2,
     "matched": 0,
     "unmatched": 2,
-    "partial": 2
+    "partial": 0
   }
 }
