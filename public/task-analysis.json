@@ -1,5 +1,5 @@
 {
-  "analysisDate": "2026-04-13",
+  "analysisDate": "2026-04-14",
   "period": "4/10",
   "warnings": [
     {
@@ -7,27 +7,27 @@
       "member": "Wendy",
       "severity": "🟡",
       "type": "outlier",
-      "task": "開發任務 (4.5H)",
-      "commits": "2 commits in wendyHsieh/cib-poc",
-      "reasoning": "Wendy 報告 4.5 小時開發時間，但當天僅有 2 筆 commits。工時與產出比例為 2.25 小時/commit，遠高於團隊平均 0.427 小時/commit（相差 5.27 倍），表示開發工時投入與程式碼產出明顯不成比例。"
+      "task": "開發任務 4.5H",
+      "commits": "2 筆 commits（wendyHsieh/cib-poc 初始化提交）",
+      "reasoning": "Wendy 的開發工時與 commit 產出比例顯著低於團隊平均。報告 4.5H 開發時數但僅有 2 筆提交，工時/commit 比例為 2.25H/commit，是團隊平均 0.43H/commit 的 5.27 倍，遠超過警示閾值（>2 倍）。這表示相對於投入的開發時間，代碼提交產出偏低，可能存在未提交的工作或時數記錄不準確。"
     },
     {
       "date": "4/10",
       "member": "侑呈",
       "severity": "🟡",
       "type": "outlier",
-      "task": "開發任務 (6.5H)",
-      "commits": "1 commit in CrawlersV2/facebook-scrapy",
-      "reasoning": "侑呈報告 6.5 小時開發時間，但當天僅有 1 筆 commit。工時與產出比例為 6.5 小時/commit，遠高於團隊平均 0.427 小時/commit（相差 15.2 倍），顯示開發時間與程式碼貢獻存在重大落差，可能涉及環境建置或其他間接工作。"
+      "task": "開發任務 6.5H",
+      "commits": "1 筆 commit（facebook-scrapy logrotate 日誌設定）",
+      "reasoning": "侑呈 的開發工時與 commit 產出比例顯著低於團隊平均。報告 6.5H 開發時數但僅有 1 筆提交，工時/commit 比例為 6.5H/commit，是團隊平均 0.43H/commit 的 15.22 倍，遠超過警示閾值（>2 倍）。完整的一天開發工時卻只有單一提交，反映產出與投入時間嚴重失衡。"
     },
     {
       "date": "4/10",
       "member": "家輝",
       "severity": "🟡",
       "type": "outlier",
-      "task": "開發任務 (6H)",
-      "commits": "1 commit in KEYPO/keypo-q-huaan-v2",
-      "reasoning": "家輝報告 6 小時開發時間，但當天僅有 1 筆 commit。工時與產出比例為 6 小時/commit，遠高於團隊平均 0.427 小時/commit（相差 14.05 倍），工時產出比例明顯偏低，可能需要釐清當日工作內容。"
+      "task": "開發任務 6H",
+      "commits": "1 筆 commit（keypo-q-huaan-v2 sentiment batch 參數調整）",
+      "reasoning": "家輝 的開發工時與 commit 產出比例顯著低於團隊平均。報告 6H 開發時數但僅有 1 筆提交，工時/commit 比例為 6H/commit，是團隊平均 0.43H/commit 的 14.05 倍，遠超過警示閾值（>2 倍）。一整天的開發投入卻僅產出單一提交，與團隊平均效率相差懸殊。"
     }
   ],
   "summary": {
