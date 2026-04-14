@@ -30702,6 +30702,827 @@
           }
         ]
       }
+    },
+    "4/11": {
+      "日銜": {
+        "count": 1,
+        "projects": [
+          "CrawlersV2/bigcrawler-scrapy"
+        ],
+        "items": [
+          {
+            "title": "feat(tcnews): add tcnews crawler",
+            "sha": "9576c2c3",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/9576c2c33a44e1664070d0717b1877625f70078a",
+            "datetime": "2026-04-11T00:08:37.000+08:00",
+            "source": "gitlab"
+          }
+        ]
+      },
+      "Joyce": {
+        "count": 31,
+        "projects": [
+          "KEYPO/keypo-engine/keypo-engine-api-v3"
+        ],
+        "items": [
+          {
+            "title": "test(audience_analysis): add failing tests for Stage 2 query legacy parity and empty-authors short-circuit",
+            "sha": "a0a70f25",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/a0a70f257523247a7b37d8e9e4714cea1f306f11",
+            "datetime": "2026-04-11T14:38:28.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix(audience_analysis): preserve filter query_string in Stage 2 to match legacy parity",
+            "sha": "349cc92f",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/349cc92f7eb7b62e1171bc0509d1c175349c45c4",
+            "datetime": "2026-04-11T14:38:54.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'fix/posthotrank-stage2-query-parity' into feature/add-deploy-config",
+            "sha": "b03752ca",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/b03752caa6c505573dc76f884551316b576fe0fa",
+            "datetime": "2026-04-11T14:41:28.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "docs(superpowers): add plan for PostHotRank/PostHotChnl Stage 2 query parity fix",
+            "sha": "24b1680c",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/24b1680ca65dd5eae7c48fd1e7909e6c8f5976bd",
+            "datetime": "2026-04-11T14:59:21.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "chore(gitignore): properly ignore plan_doc/ directory",
+            "sha": "45af4365",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/45af43655bb105867180c67c821c19968d10cacd",
+            "datetime": "2026-04-11T15:01:10.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'fix/posthotrank-stage2-query-parity' into 'develop'",
+            "sha": "f8a4e650",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/f8a4e650dd4bcb1a8314b53e188b61e0831b7eb5",
+            "datetime": "2026-04-11T07:01:18.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'fix/posthotrank-stage2-query-parity' into 'develop'",
+            "sha": "4aa820fe",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/4aa820fe7ea53df3e0001b8fe6f256264c4130f0",
+            "datetime": "2026-04-11T07:03:53.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(shared): add sub_kw_parser and subq_literal_extractor utilities",
+            "sha": "b1495995",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/b14959959c21dc6768e491f046a897dbb45789fa",
+            "datetime": "2026-04-11T18:27:35.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "refactor(middleware): use parse_sub_kw_parts in sub_kw query builder",
+            "sha": "0923bb93",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/0923bb938a7b000d7988099b81187a7e6d439b9d",
+            "datetime": "2026-04-11T18:30:50.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix(article_core): conditional highlight_query + match_phrase for sub_kw/subq",
+            "sha": "9f14a7f2",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/9f14a7f2861a15645ac42a10d4481c3d787f7799",
+            "datetime": "2026-04-11T18:32:10.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "docs(superpowers): add spec + plan for sub_kw/subq highlight fix",
+            "sha": "fa5fb623",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/fa5fb623b8f67cebbc44895feea3bb60856abd1c",
+            "datetime": "2026-04-11T18:32:45.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'fix/sub-kw-highlight' into feature/add-deploy-config",
+            "sha": "0336fbf9",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/0336fbf97bc7c392c66d92b10cc7d84f76a1a53c",
+            "datetime": "2026-04-11T18:35:26.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'fix/sub-kw-highlight' into 'develop'",
+            "sha": "aad01508",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/aad01508ab2dee791505c84cb370e3e5756d7d26",
+            "datetime": "2026-04-11T10:47:23.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'fix/sub-kw-highlight' into 'develop'",
+            "sha": "b566efba",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/b566efba64625022a1f5ce5331e91ff659dda2aa",
+            "datetime": "2026-04-11T10:54:47.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "chore(release): bump version to 3.0.0 and add CHANGELOG",
+            "sha": "ddd44fc1",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/ddd44fc12b16e866d50cfb9b7232336d0b6b3598",
+            "datetime": "2026-04-11T19:27:56.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'release/v3.0' into 'master'",
+            "sha": "de269f43",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/de269f436c0640cdfb2108da62f7e6d8f67c8a77",
+            "datetime": "2026-04-11T11:39:36.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "chore(release): v3.0.0 — first production cut from develop",
+            "sha": "a4f2e5d9",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/a4f2e5d9cc5da8dc31ecade32d5decd5bfcadd29",
+            "datetime": "2026-04-11T11:40:15.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'release/v3.0' into 'master'",
+            "sha": "8b26e76f",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/8b26e76fbc5052a6ec079a44daf6cc4109dd427e",
+            "datetime": "2026-04-11T11:40:15.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "chore: sync master v3.0.0 back into develop",
+            "sha": "81d98f51",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/81d98f515167b17337c0aad0860245590433b965",
+            "datetime": "2026-04-11T19:44:47.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "docs(superpowers): add CI/CD deploy workflow design spec",
+            "sha": "fe1030f9",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/fe1030f9a9d58c7f4264447b867042922ab84fb1",
+            "datetime": "2026-04-11T21:55:19.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "docs(superpowers): add CI/CD deploy workflow implementation plan",
+            "sha": "623c7b23",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/623c7b23a278548e502fb0e0fc1b9162897df257",
+            "datetime": "2026-04-11T22:10:12.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "docs(superpowers): bump CI tool versions to match local dev",
+            "sha": "856e6bb8",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/856e6bb84971d3acba2501cc51ea23ac7b6413b8",
+            "datetime": "2026-04-11T22:16:11.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'develop' into feature/deploy-infra",
+            "sha": "d77a3a38",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/d77a3a38490a4a75c23070e4f6cfd8248129ab73",
+            "datetime": "2026-04-11T22:25:30.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "docs(superpowers): correct pyproject.toml conflict resolution guidance",
+            "sha": "2419c684",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/2419c684156ec8fb0dd4904186b63f421b81a3c3",
+            "datetime": "2026-04-11T22:27:08.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "refactor(ci,chart): rewrite CI pipeline + split Helm values per-env for isolation",
+            "sha": "f7aaf1c1",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/f7aaf1c167201ef3c981bca8ba06c574064012ab",
+            "datetime": "2026-04-11T22:53:44.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix(chart): replace api.image.tag 'latest' default with Chart.AppVersion fallback",
+            "sha": "55d90e25",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/55d90e25dad958593e659b993bf03624604ef2d0",
+            "datetime": "2026-04-11T22:57:04.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "docs(superpowers): sync plan and spec with actual CI/chart execution",
+            "sha": "be85cbcf",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/be85cbcffad24ee6787038de2950d011c3e741b2",
+            "datetime": "2026-04-11T23:01:06.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'feature/deploy-infra' into 'develop'",
+            "sha": "a34be8f7",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/a34be8f773a09d5f6bf494b72cea687e0124090c",
+            "datetime": "2026-04-11T15:09:15.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'feature/deploy-infra' into 'develop'",
+            "sha": "0252d0e1",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/0252d0e1bf93a09c4bf9644241981c7ff7669d3e",
+            "datetime": "2026-04-11T15:16:31.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix(ci): build-api-image use docker:25.0.3 image and direct docker login",
+            "sha": "139dec2a",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/139dec2ad5c0646f8b9735808198c51ea3f8a8a1",
+            "datetime": "2026-04-11T23:26:22.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "chore(ci): pin docker to 29.3.1 to match local dev version",
+            "sha": "0cb0140a",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/0cb0140a49d76516f5dd1a974a5e3d0e9ea1ac26",
+            "datetime": "2026-04-11T23:31:32.000+08:00",
+            "source": "gitlab"
+          }
+        ]
+      },
+      "哲緯": {
+        "count": 67,
+        "projects": [
+          "CrawlersV2/bigprometheus",
+          "mason/threads-scrapy",
+          "bigdata-54837596/line-social-radar",
+          "bigdata-54837596/line-social-radar-api"
+        ],
+        "items": [
+          {
+            "title": "docs: add threads-alerts instant query fix design spec",
+            "sha": "025535ab",
+            "project": "CrawlersV2/bigprometheus",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigprometheus/-/commit/025535ab2bb6cf8adc219e82361a6b5f5940df64",
+            "datetime": "2026-04-11T02:17:09.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "docs: add threads-alerts instant query fix implementation plan",
+            "sha": "1a205575",
+            "project": "CrawlersV2/bigprometheus",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigprometheus/-/commit/1a20557596b4ce277f921cb07c798191e162b9c6",
+            "datetime": "2026-04-11T02:30:46.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix(alerting): add instant: true to all Prometheus queries",
+            "sha": "3c127809",
+            "project": "CrawlersV2/bigprometheus",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigprometheus/-/commit/3c1278093a1f20e27e3813d040127d32d856d519",
+            "datetime": "2026-04-11T02:36:38.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Bump version: 1.8.1 → 1.8.2",
+            "sha": "de59bf23",
+            "project": "CrawlersV2/bigprometheus",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigprometheus/-/commit/de59bf23d0064038bb4288858825de85716e2426",
+            "datetime": "2026-04-11T02:36:48.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'fix/threads-alerts-instant-query' into 'develop'",
+            "sha": "0d0316c5",
+            "project": "CrawlersV2/bigprometheus",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigprometheus/-/commit/0d0316c5c0463524a914003de289acdb3fb1f1ea",
+            "datetime": "2026-04-10T19:41:52.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "docs: add threads-alerts instant query fix design spec",
+            "sha": "29bd04d8",
+            "project": "CrawlersV2/bigprometheus",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigprometheus/-/commit/29bd04d87701bcd2ccd2579fab36becaa54200ac",
+            "datetime": "2026-04-10T19:42:39.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'fix/threads-alerts-instant-query' into 'develop'",
+            "sha": "49cc6fca",
+            "project": "CrawlersV2/bigprometheus",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigprometheus/-/commit/49cc6fcaa95bac0d13590e103da30b2395f19642",
+            "datetime": "2026-04-10T19:42:39.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'release/v1.8.2'",
+            "sha": "2f6cf80f",
+            "project": "CrawlersV2/bigprometheus",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigprometheus/-/commit/2f6cf80f568257592179bc68e893e1392f0b1307",
+            "datetime": "2026-04-11T03:43:09.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "docs: add design for language filter leak fix",
+            "sha": "dbcba19e",
+            "project": "mason/threads-scrapy",
+            "url": "https://biglab.buygta.today/mason/threads-scrapy/-/commit/dbcba19e3f2b148b0c2065ef53f8aaf2c731ac66",
+            "datetime": "2026-04-10T17:20:44.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'fix/language-filter-leak' into 'develop'",
+            "sha": "fb659c7b",
+            "project": "mason/threads-scrapy",
+            "url": "https://biglab.buygta.today/mason/threads-scrapy/-/commit/fb659c7b6d909e9d21e44fd80544ead1e4781056",
+            "datetime": "2026-04-10T17:20:45.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge pull request #71 from bigdata-54837596/fix/disable-layer3-main-entity-check",
+            "sha": "cb7285d5",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/cb7285d506cd3a4615a96d159ef14da5a6c73c24",
+            "datetime": "2026-04-11T14:57:24Z",
+            "source": "github"
+          },
+          {
+            "title": "release: bump version 1.12.0 → 1.12.1",
+            "sha": "184f3177",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/184f3177a8ca23e0ea03a5dbcea9786e5e1ee7b4",
+            "datetime": "2026-04-11T14:53:17Z",
+            "source": "github"
+          },
+          {
+            "title": "feat(stage4_7): gate Layer 3 main_entity check behind feature flag",
+            "sha": "7cd1cb01",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/7cd1cb01e1956f31611e3d4a3c2b5be362bef21b",
+            "datetime": "2026-04-11T14:53:17Z",
+            "source": "github"
+          },
+          {
+            "title": "Merge pull request #70 from bigdata-54837596/fix/send-report-email-stage4-7",
+            "sha": "b9067d2f",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/b9067d2f479ca0c7b53256a462129b68d658d59b",
+            "datetime": "2026-04-11T13:23:37Z",
+            "source": "github"
+          },
+          {
+            "title": "fix(report): download stage4_7 grounding_log in send_report_email",
+            "sha": "94009123",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/94009123cb96127d86f3b50c527ab516ab8efb9b",
+            "datetime": "2026-04-11T13:18:53Z",
+            "source": "github"
+          },
+          {
+            "title": "Merge pull request #69 from bigdata-54837596/feature/phase2-quality-improvements",
+            "sha": "e6c000e3",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/e6c000e34d6e5416b097c3aa487c2dade94bf7ed",
+            "datetime": "2026-04-11T12:36:33Z",
+            "source": "github"
+          },
+          {
+            "title": "style: apply black to test_stage4_replay_loader",
+            "sha": "bf8f0532",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/bf8f05321668fee4b2fa366d9eb5182a72a73670",
+            "datetime": "2026-04-11T12:31:34Z",
+            "source": "github"
+          },
+          {
+            "title": "release: bump version 1.11.0 → 1.12.0",
+            "sha": "8c4a7fdf",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/8c4a7fdfb49efa35d626102ff655fe3f63caaa91",
+            "datetime": "2026-04-11T12:26:47Z",
+            "source": "github"
+          },
+          {
+            "title": "test: format generate_pipeline_report tests and hoist os import",
+            "sha": "d8960a23",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/d8960a23c0159d72eff38a60ec6b39efb60043b0",
+            "datetime": "2026-04-11T11:54:18Z",
+            "source": "github"
+          },
+          {
+            "title": "feat(report): integrate Stage 4.7 grounding section and fix pipeline chain",
+            "sha": "60ffd839",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/60ffd839b7dc14dc1d24ce9786fab945df7485b9",
+            "datetime": "2026-04-11T11:54:15Z",
+            "source": "github"
+          },
+          {
+            "title": "test: add failing tests for report main flow stage4.7 integration",
+            "sha": "c4592b98",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/c4592b9830e3c16e479c677e83a27f3c0c2397b5",
+            "datetime": "2026-04-11T11:52:39Z",
+            "source": "github"
+          },
+          {
+            "title": "feat(report): add generate_stage4_7_section helper",
+            "sha": "d9dd7730",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/d9dd773086e01d52d548079d9e0c70a033e46ae9",
+            "datetime": "2026-04-11T11:50:29Z",
+            "source": "github"
+          },
+          {
+            "title": "test: add failing tests for generate_stage4_7_section",
+            "sha": "5822a35e",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/5822a35eac4fec3ba362f6975c80ccb7333a22c9",
+            "datetime": "2026-04-11T11:50:01Z",
+            "source": "github"
+          },
+          {
+            "title": "feat(report): add load_grounding_log helper with defensive read",
+            "sha": "230e3261",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/230e3261625e33d30c98d9ae00c9bb3447a1da22",
+            "datetime": "2026-04-11T11:49:20Z",
+            "source": "github"
+          },
+          {
+            "title": "test: add failing tests for grounding_log loader",
+            "sha": "87773e26",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/87773e26dddc0dd3a08e7345e971925d2c332b26",
+            "datetime": "2026-04-11T11:49:02Z",
+            "source": "github"
+          },
+          {
+            "title": "feat: implement stage4 replay comparison builder and main flow",
+            "sha": "ac45e30e",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/ac45e30e78df9f55516d2352c1348bc5427b5f93",
+            "datetime": "2026-04-11T11:46:32Z",
+            "source": "github"
+          },
+          {
+            "title": "test: add failing tests for stage4 replay comparison builder",
+            "sha": "172bef08",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/172bef08e7905520334ca9739edb152c33776434",
+            "datetime": "2026-04-11T11:45:36Z",
+            "source": "github"
+          },
+          {
+            "title": "feat: add stage4 replay skeleton with loader/matcher helpers",
+            "sha": "a1a29228",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/a1a29228e5905a80ce94cb4edf9b24bf8bd30f8e",
+            "datetime": "2026-04-11T11:45:07Z",
+            "source": "github"
+          },
+          {
+            "title": "test: add failing tests for stage4 replay loader helpers",
+            "sha": "0df0bc5b",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/0df0bc5b924d86119bd3816bd3313b5f931578f0",
+            "datetime": "2026-04-11T11:43:47Z",
+            "source": "github"
+          },
+          {
+            "title": "style: apply black to stage4 ban-training-knowledge tests",
+            "sha": "8c86203f",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/8c86203fd4f7addf9696905a9f7cebc794537a35",
+            "datetime": "2026-04-11T11:41:38Z",
+            "source": "github"
+          },
+          {
+            "title": "feat(stage4): add ban-training-knowledge rule to PROCESS_TOPIC_PROMPT",
+            "sha": "bd84ecfb",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/bd84ecfbfb615851e033e75e38edda7a15f7bdc4",
+            "datetime": "2026-04-11T11:41:34Z",
+            "source": "github"
+          },
+          {
+            "title": "test: add failing tests for stage4 prompt ban training knowledge section",
+            "sha": "8d59cb2c",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/8d59cb2cf4bfd3542c15f703448f2e2d89bb2c9a",
+            "datetime": "2026-04-11T11:40:00Z",
+            "source": "github"
+          },
+          {
+            "title": "docs: add 4/8 customer complaints calibration data for stage4 replay",
+            "sha": "08f4a9cf",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/08f4a9cfab447aff67e6ebf6217cfecb8f640c0d",
+            "datetime": "2026-04-11T11:39:36Z",
+            "source": "github"
+          },
+          {
+            "title": "hotfix(stage4_7): parallel regenerate + relax checks + GCS sync (#68)",
+            "sha": "36a9eec5",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/36a9eec51974c57b5809bc414260e27e28d1988c",
+            "datetime": "2026-04-11T05:30:28Z",
+            "source": "github"
+          },
+          {
+            "title": "Merge pull request #67 from bigdata-54837596/feature/stage4-7-grounding",
+            "sha": "ff5d8790",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/ff5d8790e56fe423059a68e86743a86495f2819c",
+            "datetime": "2026-04-11T03:59:56Z",
+            "source": "github"
+          },
+          {
+            "title": "docs(calibration): add intermediate calibration reports for audit trail",
+            "sha": "ee1d4753",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/ee1d4753f34b58a30b2f60c6f8e485a8052988d3",
+            "datetime": "2026-04-10T20:32:35Z",
+            "source": "github"
+          },
+          {
+            "title": "feat(stage4_7): calibration improvements for title evidence check",
+            "sha": "d4470ac6",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/d4470ac6fbe20a9d91c76286e4fedad7fd340ece",
+            "datetime": "2026-04-10T20:29:52Z",
+            "source": "github"
+          },
+          {
+            "title": "fix(calibration): enrich ground truth with title hints for NO.35/40/85/155",
+            "sha": "0f6839fe",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/0f6839fea9cb5b391dd1bf3a0cb7c350de17a7cb",
+            "datetime": "2026-04-10T19:47:46Z",
+            "source": "github"
+          },
+          {
+            "title": "fix(calibration): match topics by title hint, enrich ground truth with titles",
+            "sha": "2593fc2e",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/2593fc2ed071f33ce2b2635d52f328669f51ca9c",
+            "datetime": "2026-04-10T19:47:24Z",
+            "source": "github"
+          },
+          {
+            "title": "test(stage4_7): add E2E test with 2026-04-08 ground truth",
+            "sha": "ca56a64c",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/ca56a64ce924a45e7594d6eb2facb7be8b381c4f",
+            "datetime": "2026-04-10T19:44:35Z",
+            "source": "github"
+          },
+          {
+            "title": "feat(stage4_7): add ground truth and calibration script",
+            "sha": "8cff1aa0",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/8cff1aa0b91aa42a48c00f92a2a9b5a39764ea81",
+            "datetime": "2026-04-10T19:43:12Z",
+            "source": "github"
+          },
+          {
+            "title": "test(grounding): align retry_hints test with summary_claims schema",
+            "sha": "e09309dd",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/e09309ddf963a4f008fba6cdd1ec1dbd08acebc8",
+            "datetime": "2026-04-10T19:41:35Z",
+            "source": "github"
+          },
+          {
+            "title": "feat(pipeline): integrate Stage 4.7 into run_pipeline with feature flag",
+            "sha": "e137667b",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/e137667b562ecf9ec9e2968455a3e61ca797a33d",
+            "datetime": "2026-04-10T19:40:52Z",
+            "source": "github"
+          },
+          {
+            "title": "feat(stage4): add regenerate_topic_with_hint adapter for Stage 4.7",
+            "sha": "58b299ea",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/58b299ea44610b1617cb00c95a68109d6a178fd8",
+            "datetime": "2026-04-10T19:38:09Z",
+            "source": "github"
+          },
+          {
+            "title": "feat(stage4_7): add verify_topic_with_retry and run_grounding_check",
+            "sha": "d7628e5d",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/d7628e5dec0573be29e3fd8c97c2d0ef87b5eb75",
+            "datetime": "2026-04-10T19:35:37Z",
+            "source": "github"
+          },
+          {
+            "title": "feat(stage4_7): add verify_topic core function with L2+L3 checks",
+            "sha": "0f469d69",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/0f469d6980513ab2a04051a204434a3a4a61e21d",
+            "datetime": "2026-04-10T19:32:47Z",
+            "source": "github"
+          },
+          {
+            "title": "test(stage4): add parse tests for new Layer 1 schema",
+            "sha": "85cd65d0",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/85cd65d080cabd3edb3cd7f663da9b593ca7e05c",
+            "datetime": "2026-04-10T19:29:52Z",
+            "source": "github"
+          },
+          {
+            "title": "feat(stage4): add Layer 1 tone CoT, anchoring rules, and citation requirement",
+            "sha": "a39c04f1",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/a39c04f1d967335464d8e35aeb92387d0931a3a5",
+            "datetime": "2026-04-10T19:27:45Z",
+            "source": "github"
+          },
+          {
+            "title": "feat(grounding): add retry hints builder for Pass 2 regeneration",
+            "sha": "fc56c484",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/fc56c4849c375d8213782599664704db39edca1c",
+            "datetime": "2026-04-10T19:24:13Z",
+            "source": "github"
+          },
+          {
+            "title": "feat(grounding): add drop policy decision tree",
+            "sha": "09ea1871",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/09ea18716cc997f7ad92799e7386a83930cd5bea",
+            "datetime": "2026-04-10T19:23:37Z",
+            "source": "github"
+          },
+          {
+            "title": "feat(grounding): add check_title_evidence for title anchor validation",
+            "sha": "279ba737",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/279ba737613d851de815a504a419693028ade6b5",
+            "datetime": "2026-04-10T19:21:05Z",
+            "source": "github"
+          },
+          {
+            "title": "feat(grounding): add check_pov_article_pool validation",
+            "sha": "05bbac78",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/05bbac78f29cdfcff7efb7b1914b890a8bc1751a",
+            "datetime": "2026-04-10T19:20:31Z",
+            "source": "github"
+          },
+          {
+            "title": "feat(grounding): add check_pov_main_entity for entity overlap validation",
+            "sha": "adeca86d",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/adeca86d40d2f4733d5ba09919fc386761eb96bc",
+            "datetime": "2026-04-10T19:20:16Z",
+            "source": "github"
+          },
+          {
+            "title": "feat(grounding): add Tier 2 n-gram fallback for quote matching",
+            "sha": "f3b2f1d4",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/f3b2f1d4dc507145d08fc8f757b68555d4f3c5b6",
+            "datetime": "2026-04-10T19:18:08Z",
+            "source": "github"
+          },
+          {
+            "title": "feat(grounding): add quote_grounded_in_article Tier 1 exact match",
+            "sha": "1c2f2f79",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/1c2f2f79f00886d7ce57fe680d9af800fa782e0e",
+            "datetime": "2026-04-10T19:16:28Z",
+            "source": "github"
+          },
+          {
+            "title": "feat(grounding): add normalize_for_match utility with tests",
+            "sha": "5b46cdbd",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/5b46cdbdba6ac08680a37e5a42f0869c744ab7d3",
+            "datetime": "2026-04-10T19:14:36Z",
+            "source": "github"
+          },
+          {
+            "title": "feat(config): add Stage 4.7 grounding feature flag and thresholds",
+            "sha": "215b117d",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/215b117d1ff1e8193417e359add30658291de0b0",
+            "datetime": "2026-04-10T19:12:51Z",
+            "source": "github"
+          },
+          {
+            "title": "release: bump version 0.9.4 → 0.9.5",
+            "sha": "1f49bab2",
+            "project": "bigdata-54837596/line-social-radar-api",
+            "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/1f49bab218995d3d902ea2d26b3d951c2bfa4932",
+            "datetime": "2026-04-11T15:30:17Z",
+            "source": "github"
+          },
+          {
+            "title": "feat: add two-stage type-tag matching to stock similarity prompt",
+            "sha": "8d6639be",
+            "project": "bigdata-54837596/line-social-radar-api",
+            "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/8d6639be22a581a8891f5f4f167fbfaf520f174e",
+            "datetime": "2026-04-11T15:28:16Z",
+            "source": "github"
+          },
+          {
+            "title": "refactor: iterate CATEGORY_EN_MAP in object-focus regression test",
+            "sha": "69ccc1d4",
+            "project": "bigdata-54837596/line-social-radar-api",
+            "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/69ccc1d496fb3422e612488d932baa5a6fb4c346",
+            "datetime": "2026-04-11T15:25:47Z",
+            "source": "github"
+          },
+          {
+            "title": "feat: conditional template assembly removes category from object-focus prompts",
+            "sha": "b3c2a372",
+            "project": "bigdata-54837596/line-social-radar-api",
+            "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/b3c2a372bf29963445ce31f671014769d37bf65a",
+            "datetime": "2026-04-11T15:22:32Z",
+            "source": "github"
+          },
+          {
+            "title": "refactor: split IMAGE_PROMPT_TEMPLATE into OBJECT and SCENE variants",
+            "sha": "2c7ee282",
+            "project": "bigdata-54837596/line-social-radar-api",
+            "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/2c7ee28263750aaeb6222035395807284f68a936",
+            "datetime": "2026-04-11T15:20:12Z",
+            "source": "github"
+          },
+          {
+            "title": "feat: add STANDALONE TEST section to SCENE_EXTRACT_PROMPT",
+            "sha": "6506eaa8",
+            "project": "bigdata-54837596/line-social-radar-api",
+            "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/6506eaa88c1c8fc67d21103bd817acd829ddde58",
+            "datetime": "2026-04-11T15:16:38Z",
+            "source": "github"
+          },
+          {
+            "title": "chore: apply black formatting to image_gen.py",
+            "sha": "b49a340c",
+            "project": "bigdata-54837596/line-social-radar-api",
+            "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/b49a340c46eda12b7abdbe4e79f73c84ad3bcb67",
+            "datetime": "2026-04-11T15:14:35Z",
+            "source": "github"
+          },
+          {
+            "title": "feat: force scene fallback when key_object is context-dependent",
+            "sha": "3b591e70",
+            "project": "bigdata-54837596/line-social-radar-api",
+            "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/3b591e705b85ddb93d4d814454a4adf9a13bb19f",
+            "datetime": "2026-04-11T15:10:50Z",
+            "source": "github"
+          },
+          {
+            "title": "fix: narrow installation keyword and add None mixed-case test",
+            "sha": "5b16ae7d",
+            "project": "bigdata-54837596/line-social-radar-api",
+            "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/5b16ae7d5067bf6093f1bc15a8ca8365954984a8",
+            "datetime": "2026-04-11T15:08:26Z",
+            "source": "github"
+          },
+          {
+            "title": "feat: add is_context_dependent blocklist for standalone test",
+            "sha": "7dbff338",
+            "project": "bigdata-54837596/line-social-radar-api",
+            "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/7dbff3388181253e4d48ed3658e60e73d32e0dda",
+            "datetime": "2026-04-11T15:04:33Z",
+            "source": "github"
+          }
+        ]
+      }
     }
   },
   "analysis": {
@@ -32567,37 +33388,34 @@
         "commitCount": 18,
         "hours": 7.5
       }
+    },
+    "4/11": {
+      "Joyce": {
+        "status": "🔴",
+        "commitCount": 31,
+        "hours": null
+      },
+      "日銜": {
+        "status": "🔴",
+        "commitCount": 1,
+        "hours": null
+      },
+      "哲緯": {
+        "status": "🔴",
+        "commitCount": 67,
+        "hours": null
+      }
     }
   },
   "projectRisks": [
     {
-      "project": "llmprojects/keypo-agent",
-      "soloContributor": "Aaron",
-      "severity": "🟡"
-    },
-    {
-      "project": "chris.su/kol-desc-parser",
-      "soloContributor": "禎佑",
-      "severity": "🟡"
-    },
-    {
-      "project": "KEYPO/keypo-international-website",
-      "soloContributor": "Joe",
+      "project": "CrawlersV2/bigcrawler-scrapy",
+      "soloContributor": "日銜",
       "severity": "🟡"
     },
     {
       "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
       "soloContributor": "Joyce",
-      "severity": "🟡"
-    },
-    {
-      "project": "KEYPO/keypo-backend",
-      "soloContributor": "Joyce",
-      "severity": "🟡"
-    },
-    {
-      "project": "KEYPO/keypo-newsletter",
-      "soloContributor": "Ted",
       "severity": "🟡"
     },
     {
@@ -32611,42 +33429,12 @@
       "severity": "🟡"
     },
     {
-      "project": "CrawlersV2/bigcrawler-scrapy",
-      "soloContributor": "日銜",
-      "severity": "🟡"
-    },
-    {
-      "project": "bigdata/2025-bigdata-admin-backend",
-      "soloContributor": "Ivy",
-      "severity": "🟡"
-    },
-    {
-      "project": "KEYPO/keypo-q-huaan-v2",
-      "soloContributor": "家輝",
-      "severity": "🟡"
-    },
-    {
-      "project": "CrawlersV2/facebook-scrapy",
-      "soloContributor": "侑呈",
-      "severity": "🟡"
-    },
-    {
-      "project": "bigdata/2025-bigdata-admin",
-      "soloContributor": "Ivy",
-      "severity": "🟡"
-    },
-    {
-      "project": "wendyHsieh/cib-poc",
-      "soloContributor": "Wendy",
-      "severity": "🟡"
-    },
-    {
-      "project": "bigdata-54837596/eeg-backend",
-      "soloContributor": "Jason",
-      "severity": "🟡"
-    },
-    {
       "project": "bigdata-54837596/line-social-radar",
+      "soloContributor": "哲緯",
+      "severity": "🟡"
+    },
+    {
+      "project": "bigdata-54837596/line-social-radar-api",
       "soloContributor": "哲緯",
       "severity": "🟡"
     }
