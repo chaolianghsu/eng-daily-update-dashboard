@@ -1,40 +1,58 @@
 {
-  "analysisDate": "2026-04-14",
-  "period": "4/10",
+  "analysisDate": "2026-04-15",
+  "period": "4/14",
   "warnings": [
     {
-      "date": "4/10",
+      "date": "4/14",
+      "member": "Joyce",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "KEYPO engine API v3 (1H)、KEYPO 國際版 (3H)、KEYPO 測試機切換 (1H) 等 (5.5H dev)",
+      "commits": "8 commits 跨 KEYPO projects (keypo-engine-api-v3, keypo-backend)",
+      "reasoning": "開發工時 5.5H 產出 8 commits，工時/commit 比例 0.69 遠高於團隊平均 0.325，超過 2 倍臨界值，表示開發效率顯著低於團隊水準"
+    },
+    {
+      "date": "4/14",
+      "member": "Jason",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "ai 產文根據回饋調整 (2H)、網溫房溫 EEG 升級前整理 (3H) (5H dev)",
+      "commits": "3 commits 跨 dailyview projects (dv-ai-draft, dv-realestate)",
+      "reasoning": "開發工時 5H 產出 3 commits，工時/commit 比例 1.67 遠高於團隊平均 0.325，超過 2 倍，產出效率明顯偏低"
+    },
+    {
+      "date": "4/14",
+      "member": "日銜",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "非社群 Redis 監控 (2.5H dev)、Review MR (2.5H non-dev)、KOL 會議 (2H meeting)",
+      "commits": "39 commits 全來自 bigcrawler-scrapy",
+      "reasoning": "開發時數僅 2.5H 卻產出 39 commits，工時/commit 比例 0.064 遠低於團隊平均 0.325，不到平均的 1/5，效率異常高、超過 2 倍，存在數據異常"
+    },
+    {
+      "date": "4/14",
       "member": "Wendy",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發任務 4.5H",
-      "commits": "2 筆 commits（wendyHsieh/cib-poc 初始化提交）",
-      "reasoning": "Wendy 的開發工時與 commit 產出比例顯著低於團隊平均。報告 4.5H 開發時數但僅有 2 筆提交，工時/commit 比例為 2.25H/commit，是團隊平均 0.43H/commit 的 5.27 倍，遠超過警示閾值（>2 倍）。這表示相對於投入的開發時間，代碼提交產出偏低，可能存在未提交的工作或時數記錄不準確。"
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "v5 2025 年度資料搬遷至 IDC cluster (2H)、ES query pattern 整理 (1H) (3H dev)",
+      "commits": "1 commit (threads keyword search experiment results docs)",
+      "reasoning": "開發任務報告達 3 小時，當日僅 1 個相關 commit，無法對應開發工時，產出遠低於預期"
     },
     {
-      "date": "4/10",
+      "date": "4/14",
       "member": "侑呈",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發任務 6.5H",
-      "commits": "1 筆 commit（facebook-scrapy logrotate 日誌設定）",
-      "reasoning": "侑呈 的開發工時與 commit 產出比例顯著低於團隊平均。報告 6.5H 開發時數但僅有 1 筆提交，工時/commit 比例為 6.5H/commit，是團隊平均 0.43H/commit 的 15.22 倍，遠超過警示閾值（>2 倍）。完整的一天開發工時卻只有單一提交，反映產出與投入時間嚴重失衡。"
-    },
-    {
-      "date": "4/10",
-      "member": "家輝",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發任務 6H",
-      "commits": "1 筆 commit（keypo-q-huaan-v2 sentiment batch 參數調整）",
-      "reasoning": "家輝 的開發工時與 commit 產出比例顯著低於團隊平均。報告 6H 開發時數但僅有 1 筆提交，工時/commit 比例為 6H/commit，是團隊平均 0.43H/commit 的 14.05 倍，遠超過警示閾值（>2 倍）。一整天的開發投入卻僅產出單一提交，與團隊平均效率相差懸殊。"
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "KEYTECTOR (1.5H)、其他 (3H)、FBP (1H) (5.5H dev)、KOL 會議 (2H meeting)",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 5.5 小時，當日完全無任何 git commits，無法驗證開發進度，超過 3 小時的產出記錄缺失"
     }
   ],
   "summary": {
     "totalMembers": 11,
-    "totalWarnings": 3,
+    "totalWarnings": 5,
     "byType": {
-      "low_output": 0,
+      "low_output": 2,
       "mismatch": 0,
       "outlier": 3
     }
