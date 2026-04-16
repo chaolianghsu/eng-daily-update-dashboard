@@ -1,60 +1,33 @@
 {
-  "analysisDate": "2026-04-15",
-  "period": "4/14",
+  "analysisDate": "2026-04-16",
+  "period": "4/15",
   "warnings": [
     {
-      "date": "4/14",
-      "member": "Joyce",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "KEYPO engine API v3 (1H)、KEYPO 國際版 (3H)、KEYPO 測試機切換 (1H) 等 (5.5H dev)",
-      "commits": "8 commits 跨 KEYPO projects (keypo-engine-api-v3, keypo-backend)",
-      "reasoning": "開發工時 5.5H 產出 8 commits，工時/commit 比例 0.69 遠高於團隊平均 0.325，超過 2 倍臨界值，表示開發效率顯著低於團隊水準"
-    },
-    {
-      "date": "4/14",
+      "date": "4/15",
       "member": "Jason",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "ai 產文根據回饋調整 (2H)、網溫房溫 EEG 升級前整理 (3H) (5H dev)",
-      "commits": "3 commits 跨 dailyview projects (dv-ai-draft, dv-realestate)",
-      "reasoning": "開發工時 5H 產出 3 commits，工時/commit 比例 1.67 遠高於團隊平均 0.325，超過 2 倍，產出效率明顯偏低"
-    },
-    {
-      "date": "4/14",
-      "member": "日銜",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "非社群 Redis 監控 (2.5H dev)、Review MR (2.5H non-dev)、KOL 會議 (2H meeting)",
-      "commits": "39 commits 全來自 bigcrawler-scrapy",
-      "reasoning": "開發時數僅 2.5H 卻產出 39 commits，工時/commit 比例 0.064 遠低於團隊平均 0.325，不到平均的 1/5，效率異常高、超過 2 倍，存在數據異常"
-    },
-    {
-      "date": "4/14",
-      "member": "Wendy",
       "severity": "🔴",
       "type": "low_output",
-      "task": "v5 2025 年度資料搬遷至 IDC cluster (2H)、ES query pattern 整理 (1H) (3H dev)",
-      "commits": "1 commit (threads keyword search experiment results docs)",
-      "reasoning": "開發任務報告達 3 小時，當日僅 1 個相關 commit，無法對應開發工時，產出遠低於預期"
+      "task": "網溫 房溫 EEG 升級後整理 (4H)",
+      "commits": "無相關 commits",
+      "reasoning": "報告開發任務 4H，但當日無任何 commits 紀錄。開發工時超過 3H 的閾值，應有相應的程式碼變更記錄，建議確認工作進度或是否存在未上傳的程式碼。"
     },
     {
-      "date": "4/14",
+      "date": "4/15",
       "member": "侑呈",
       "severity": "🔴",
       "type": "low_output",
-      "task": "KEYTECTOR (1.5H)、其他 (3H)、FBP (1H) (5.5H dev)、KOL 會議 (2H meeting)",
-      "commits": "0 commits",
-      "reasoning": "報告開發工時 5.5 小時，當日完全無任何 git commits，無法驗證開發進度，超過 3 小時的產出記錄缺失"
+      "task": "KEYTECTOR (1.5H) + 其他 (3H)",
+      "commits": "無相關 commits",
+      "reasoning": "報告開發任務合計 4.5H（KEYTECTOR 1.5H + 其他 3H），但當日無任何 commits 紀錄。開發工時明顯超過 3H 的閾值，應有相應的程式碼變更，建議檢查工作進度或是否存在未上傳的程式碼。"
     }
   ],
   "summary": {
-    "totalMembers": 11,
-    "totalWarnings": 5,
+    "totalMembers": 10,
+    "totalWarnings": 2,
     "byType": {
       "low_output": 2,
       "mismatch": 0,
-      "outlier": 3
+      "outlier": 0
     }
   }
 }
