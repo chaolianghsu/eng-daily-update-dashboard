@@ -1,64 +1,195 @@
 {
-  "analysisDate": "2026-04-15",
-  "period": "4/14",
+  "analysisDate": "2026-04-16",
+  "period": "4/15",
   "planSpecs": [
     {
-      "date": "4/14",
-      "member": "禎佑",
+      "date": "4/15",
+      "member": "哲緯",
       "commit": {
-        "title": "docs: add kol_is_alive refactor design spec",
-        "sha": "83c790fc",
-        "project": "chris.su/kol-tools",
-        "url": "https://biglab.buygta.today/chris.su/kol-tools/-/commit/83c790fc",
+        "title": "feat: enable statistical grouping cron and add design docs",
+        "sha": "fbdaf5b7",
+        "project": "mason/threads-scrapy",
+        "url": "https://biglab.buygta.today/mason/threads-scrapy/-/commit/fbdaf5b7",
         "source": "gitlab"
       },
-      "files": ["docs/superpowers/specs/2026-04-14-kol-is-alive-refactor-design.md"]
+      "files": [
+        "docs/superpowers/plans/2026-04-15-redis-sync-cleanup.md",
+        "docs/superpowers/specs/2026-04-15-redis-sync-cleanup-design.md"
+      ]
     },
     {
-      "date": "4/14",
+      "date": "4/15",
       "member": "禎佑",
       "commit": {
-        "title": "docs: add kol_is_alive refactor implementation plan",
-        "sha": "f643eb56",
-        "project": "chris.su/kol-tools",
-        "url": "https://biglab.buygta.today/chris.su/kol-tools/-/commit/f643eb56",
+        "title": "docs: 人工關聯狀態回寫 Google Sheet 設計 spec",
+        "sha": "22153c7b",
+        "project": "chris.su/kol-desc-parser",
+        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/22153c7b",
         "source": "gitlab"
       },
-      "files": ["docs/superpowers/plans/2026-04-14-kol-is-alive-refactor.md"]
+      "files": [
+        "docs/superpowers/specs/2026-04-15-sheet-status-design.md"
+      ]
     },
     {
-      "date": "4/14",
+      "date": "4/15",
       "member": "禎佑",
       "commit": {
-        "title": "docs: add kol_missing_channels refactor design spec",
-        "sha": "5f38eb16",
-        "project": "chris.su/kol-tools",
-        "url": "https://biglab.buygta.today/chris.su/kol-tools/-/commit/5f38eb16",
+        "title": "docs: 人工關聯狀態回寫實作計畫",
+        "sha": "18aae9e3",
+        "project": "chris.su/kol-desc-parser",
+        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/18aae9e3",
         "source": "gitlab"
       },
-      "files": ["docs/superpowers/specs/2026-04-14-kol-missing-channels-refactor-design.md"]
+      "files": [
+        "docs/superpowers/plans/2026-04-15-sheet-status.md"
+      ]
+    },
+    {
+      "date": "4/15",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs: 修正 sheet status spec + plan — 同一個 spreadsheet 不同 tab",
+        "sha": "b0dfc7ec",
+        "project": "chris.su/kol-desc-parser",
+        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/b0dfc7ec",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-04-15-sheet-status.md",
+        "docs/superpowers/specs/2026-04-15-sheet-status-design.md"
+      ]
+    },
+    {
+      "date": "4/15",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs(realtime_trends): update spec and plan with review feedback",
+        "sha": "4739745e",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/4739745e",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-04-15-maintext-image-url.md",
+        "docs/superpowers/specs/2026-04-15-maintext-image-url-design.md"
+      ]
+    },
+    {
+      "date": "4/15",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs: add spec and plan for maintext pt/senti filter",
+        "sha": "6100273f",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/6100273f",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-04-15-maintext-pt-senti-filter.md",
+        "docs/superpowers/specs/2026-04-15-maintext-pt-senti-filter-design.md"
+      ]
+    },
+    {
+      "date": "4/15",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs: update plan with detailed TDD steps and code blocks",
+        "sha": "207a0763",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/207a0763",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-04-15-maintext-pt-senti-filter.md"
+      ]
+    },
+    {
+      "date": "4/15",
+      "member": "Ted",
+      "commit": {
+        "title": "docs(spec): AI summary brand/competitor tagging fix (#359)",
+        "sha": "3eaf2226",
+        "project": "KEYPO/keypo-newsletter",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-newsletter/-/commit/3eaf2226",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-04-15-ai-summary-brand-competitor-tagging-design.md"
+      ]
+    },
+    {
+      "date": "4/15",
+      "member": "Ted",
+      "commit": {
+        "title": "docs(spec): AI summary brand/competitor tagging fix (#359)",
+        "sha": "609331c3",
+        "project": "KEYPO/keypo-newsletter",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-newsletter/-/commit/609331c3",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-04-15-ai-summary-brand-competitor-tagging-design.md"
+      ]
     }
   ],
   "correlations": [
     {
-      "date": "4/14",
+      "date": "4/15",
+      "member": "哲緯",
+      "status": "unmatched",
+      "specCommits": 1,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "feat: enable statistical grouping cron and add design docs (redis-sync-cleanup)"
+      ],
+      "reasoning": "此 commit 新增了 redis-sync-cleanup 的設計文件（plan 與 spec），但哲緯的 daily update 完全未提及 Redis 清理相關工作。當日工作重心在 Threads 監控頻道機器人的重啟與擴展（HK/TW/AE/JP）、airflow 排程遷移，以及 SY notify 問題排查，與 redis-sync-cleanup 設計無任何對應。"
+    },
+    {
+      "date": "4/15",
       "member": "禎佑",
       "status": "partial",
       "specCommits": 3,
       "dailyUpdateMention": true,
       "matchedTasks": [
-        "重構 kol_is_alive，並增加支援 index profile_list (for kolr)（對應 kol_is_alive refactor design spec 與 implementation plan）"
+        "KOL頻道申請狀態工作表"
       ],
       "unmatchedSpecs": [],
-      "reasoning": "禎佑在 daily update 中明確提到「[Done] 重構 kol_is_alive，並增加支援 index profile_list (for kolr)」，與 kol_is_alive refactor design spec（83c790fc）及 kol_is_alive refactor implementation plan（f643eb56）高度吻合，這兩個 spec/plan commits 屬於 matched。至於 kol_missing_channels refactor design spec（5f38eb16），daily update 中有提到「[In Progress] 建立回爬機制（profile_list 中如果有 channel_list 漏爬的資料，需要收集起來，並回爬）」，顯示禎佑確實在處理 channel 漏爬問題，與 kol_missing_channels 的重構方向相關，但 daily update 未明確提及撰寫該 spec 文件本身，屬於部分吻合。因此整體評定為 partial。"
+      "reasoning": "三個 commits 皆圍繞「人工關聯狀態回寫 Google Sheet」的 spec 與 plan（含修正同一 spreadsheet 不同 tab 的細節）。Daily update 中有提到「[Done] KOL頻道申請狀態工作表」，與 sheet-status 設計方向相符，且同屬 kol-desc-parser 專案。然而 daily update 僅以一行帶過，未明確描述規劃/設計文件的撰寫過程，故判定為部分吻合。"
+    },
+    {
+      "date": "4/15",
+      "member": "Joyce",
+      "status": "matched",
+      "specCommits": 3,
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "即時大數據文章API，加入撈取image url 欄位",
+        "修改即時大數據文章API，加入可以用文章類型(pt) filter"
+      ],
+      "unmatchedSpecs": [],
+      "reasoning": "三個 commits 涵蓋兩個功能的規劃文件：maintext-image-url（加入 image url 欄位）及 maintext-pt-senti-filter（加入文章類型 pt filter）。Daily update 明確標示「[Done] 即時大數據文章API，加入撈取image url 欄位」及「[Done] 修改即時大數據文章API，加入可以用文章類型(pt) filter」，與兩組 spec/plan commits 高度對應，吻合程度良好。"
+    },
+    {
+      "date": "4/15",
+      "member": "Ted",
+      "status": "unmatched",
+      "specCommits": 2,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "docs(spec): AI summary brand/competitor tagging fix (#359)"
+      ],
+      "reasoning": "Ted 當日無提交 daily update，無法對照其規劃文件是否與工作描述相符。兩個 commits 均為 AI summary 品牌/競品標記修復的設計 spec，但缺乏 daily update 作為驗證基準，故判定為未提及。"
     }
   ],
   "summary": {
-    "totalSpecCommits": 3,
-    "totalCorrelations": 1,
-    "membersWithSpecs": 1,
-    "matched": 0,
-    "unmatched": 0,
+    "totalSpecCommits": 9,
+    "totalCorrelations": 4,
+    "membersWithSpecs": 4,
+    "matched": 1,
+    "unmatched": 2,
     "partial": 1
   }
 }
