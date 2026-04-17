@@ -1,195 +1,237 @@
 {
-  "analysisDate": "2026-04-16",
-  "period": "4/15",
+  "analysisDate": "2026-04-17",
+  "period": "4/16",
   "planSpecs": [
     {
-      "date": "4/15",
+      "date": "4/16",
+      "member": "Ted",
+      "commit": {
+        "title": "docs: add four KEYPO + GEO proposals (A/B/C/D) for leadership review",
+        "sha": "ea6abf62",
+        "project": "ted.juang/ai-listening",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-04-16-ai-sonar-proposals.md"
+      ]
+    },
+    {
+      "date": "4/16",
+      "member": "Ted",
+      "commit": {
+        "title": "docs: add KEYPO features reference based on operations manual",
+        "sha": "df4ffc21",
+        "project": "ted.juang/ai-listening",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/keypo-features-reference.md"
+      ]
+    },
+    {
+      "date": "4/16",
+      "member": "Ted",
+      "commit": {
+        "title": "docs: add proposals v2 with KEYPO integration facts",
+        "sha": "e510b4de",
+        "project": "ted.juang/ai-listening",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-04-16-ai-sonar-proposals-v2.md"
+      ]
+    },
+    {
+      "date": "4/16",
+      "member": "Ted",
+      "commit": {
+        "title": "docs: add PM execution plan with strategy A (skeleton + later deepen)",
+        "sha": "38739128",
+        "project": "ted.juang/ai-listening",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/team/pm-plan.md"
+      ]
+    },
+    {
+      "date": "4/16",
+      "member": "Ted",
+      "commit": {
+        "title": "docs: add Ted skeleton drafts (batch 1+2) for AI Listening proposal",
+        "sha": "649acd68",
+        "project": "ted.juang/ai-listening",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/team/competitor-landscape.md",
+        "docs/team/integration-tech-skeleton.md",
+        "docs/team/market-data-references.md",
+        "docs/team/naming-check.md",
+        "docs/team/narrative-skeleton-3versions.md",
+        "docs/team/needs-map-hypothesis.md",
+        "docs/team/product-positioning.md",
+        "docs/team/seo-vs-data-company.md",
+        "docs/team/target-customer-skeleton.md"
+      ]
+    },
+    {
+      "date": "4/16",
+      "member": "Ted",
+      "commit": {
+        "title": "docs: add Ted skeleton drafts (batch 3 part 1)",
+        "sha": "adc9b8a4",
+        "project": "ted.juang/ai-listening",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/demo/demo-script-v2.md",
+        "docs/team/prompt-and-competitor-strategy.md"
+      ]
+    },
+    {
+      "date": "4/16",
       "member": "哲緯",
       "commit": {
-        "title": "feat: enable statistical grouping cron and add design docs",
-        "sha": "fbdaf5b7",
+        "title": "docs: add channel meta to mssql spec and plan",
+        "sha": "1e595fbd",
         "project": "mason/threads-scrapy",
-        "url": "https://biglab.buygta.today/mason/threads-scrapy/-/commit/fbdaf5b7",
+        "url": "",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/plans/2026-04-15-redis-sync-cleanup.md",
-        "docs/superpowers/specs/2026-04-15-redis-sync-cleanup-design.md"
+        "docs/superpowers/plans/2026-04-16-channel-meta-to-mssql.md",
+        "docs/superpowers/specs/2026-04-16-channel-meta-to-mssql-design.md"
       ]
     },
     {
-      "date": "4/15",
-      "member": "禎佑",
+      "date": "4/16",
+      "member": "哲緯",
       "commit": {
-        "title": "docs: 人工關聯狀態回寫 Google Sheet 設計 spec",
-        "sha": "22153c7b",
-        "project": "chris.su/kol-desc-parser",
-        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/22153c7b",
+        "title": "docs: add spec for KEYPO trending keyword DAG",
+        "sha": "69bc8492",
+        "project": "CrawlersV2/bigairflow",
+        "url": "",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/specs/2026-04-15-sheet-status-design.md"
+        "docs/superpowers/specs/2026-04-16-keypo-keyword-dag-design.md"
       ]
     },
     {
-      "date": "4/15",
-      "member": "禎佑",
+      "date": "4/16",
+      "member": "Aaron",
       "commit": {
-        "title": "docs: 人工關聯狀態回寫實作計畫",
-        "sha": "18aae9e3",
-        "project": "chris.su/kol-desc-parser",
-        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/18aae9e3",
+        "title": "docs(ai-summary): add list api design spec",
+        "sha": "3d9d4288",
+        "project": "KEYPO/keypo-backend",
+        "url": "",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/plans/2026-04-15-sheet-status.md"
+        "docs/superpowers/specs/2026-04-16-ai-summary-list-api-design.md"
       ]
     },
     {
-      "date": "4/15",
-      "member": "禎佑",
+      "date": "4/16",
+      "member": "Aaron",
       "commit": {
-        "title": "docs: 修正 sheet status spec + plan — 同一個 spreadsheet 不同 tab",
-        "sha": "b0dfc7ec",
-        "project": "chris.su/kol-desc-parser",
-        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/b0dfc7ec",
+        "title": "docs(ai-summary): add list api implementation plan",
+        "sha": "a255b214",
+        "project": "KEYPO/keypo-backend",
+        "url": "",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/plans/2026-04-15-sheet-status.md",
-        "docs/superpowers/specs/2026-04-15-sheet-status-design.md"
+        "docs/superpowers/plans/2026-04-16-ai-summary-list-api.md"
       ]
     },
     {
-      "date": "4/15",
-      "member": "Joyce",
+      "date": "4/16",
+      "member": "Aaron",
       "commit": {
-        "title": "docs(realtime_trends): update spec and plan with review feedback",
-        "sha": "4739745e",
-        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/4739745e",
+        "title": "docs(ai-summary): add retrieve api design spec",
+        "sha": "b1cd28c8",
+        "project": "KEYPO/keypo-backend",
+        "url": "",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/plans/2026-04-15-maintext-image-url.md",
-        "docs/superpowers/specs/2026-04-15-maintext-image-url-design.md"
+        "docs/superpowers/specs/2026-04-16-ai-summary-retrieve-api-design.md"
       ]
     },
     {
-      "date": "4/15",
-      "member": "Joyce",
+      "date": "4/16",
+      "member": "Aaron",
       "commit": {
-        "title": "docs: add spec and plan for maintext pt/senti filter",
-        "sha": "6100273f",
-        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/6100273f",
+        "title": "docs(ai-summary): add retrieve api implementation plan",
+        "sha": "21d1342b",
+        "project": "KEYPO/keypo-backend",
+        "url": "",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/plans/2026-04-15-maintext-pt-senti-filter.md",
-        "docs/superpowers/specs/2026-04-15-maintext-pt-senti-filter-design.md"
-      ]
-    },
-    {
-      "date": "4/15",
-      "member": "Joyce",
-      "commit": {
-        "title": "docs: update plan with detailed TDD steps and code blocks",
-        "sha": "207a0763",
-        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/207a0763",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/superpowers/plans/2026-04-15-maintext-pt-senti-filter.md"
-      ]
-    },
-    {
-      "date": "4/15",
-      "member": "Ted",
-      "commit": {
-        "title": "docs(spec): AI summary brand/competitor tagging fix (#359)",
-        "sha": "3eaf2226",
-        "project": "KEYPO/keypo-newsletter",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-newsletter/-/commit/3eaf2226",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/superpowers/specs/2026-04-15-ai-summary-brand-competitor-tagging-design.md"
-      ]
-    },
-    {
-      "date": "4/15",
-      "member": "Ted",
-      "commit": {
-        "title": "docs(spec): AI summary brand/competitor tagging fix (#359)",
-        "sha": "609331c3",
-        "project": "KEYPO/keypo-newsletter",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-newsletter/-/commit/609331c3",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/superpowers/specs/2026-04-15-ai-summary-brand-competitor-tagging-design.md"
+        "docs/superpowers/plans/2026-04-16-ai-summary-retrieve-api.md"
       ]
     }
   ],
   "correlations": [
     {
-      "date": "4/15",
-      "member": "哲緯",
-      "status": "unmatched",
-      "specCommits": 1,
-      "dailyUpdateMention": false,
-      "matchedTasks": [],
-      "unmatchedSpecs": [
-        "feat: enable statistical grouping cron and add design docs (redis-sync-cleanup)"
-      ],
-      "reasoning": "此 commit 新增了 redis-sync-cleanup 的設計文件（plan 與 spec），但哲緯的 daily update 完全未提及 Redis 清理相關工作。當日工作重心在 Threads 監控頻道機器人的重啟與擴展（HK/TW/AE/JP）、airflow 排程遷移，以及 SY notify 問題排查，與 redis-sync-cleanup 設計無任何對應。"
-    },
-    {
-      "date": "4/15",
-      "member": "禎佑",
-      "status": "partial",
-      "specCommits": 3,
-      "dailyUpdateMention": true,
-      "matchedTasks": [
-        "KOL頻道申請狀態工作表"
-      ],
-      "unmatchedSpecs": [],
-      "reasoning": "三個 commits 皆圍繞「人工關聯狀態回寫 Google Sheet」的 spec 與 plan（含修正同一 spreadsheet 不同 tab 的細節）。Daily update 中有提到「[Done] KOL頻道申請狀態工作表」，與 sheet-status 設計方向相符，且同屬 kol-desc-parser 專案。然而 daily update 僅以一行帶過，未明確描述規劃/設計文件的撰寫過程，故判定為部分吻合。"
-    },
-    {
-      "date": "4/15",
-      "member": "Joyce",
-      "status": "matched",
-      "specCommits": 3,
-      "dailyUpdateMention": true,
-      "matchedTasks": [
-        "即時大數據文章API，加入撈取image url 欄位",
-        "修改即時大數據文章API，加入可以用文章類型(pt) filter"
-      ],
-      "unmatchedSpecs": [],
-      "reasoning": "三個 commits 涵蓋兩個功能的規劃文件：maintext-image-url（加入 image url 欄位）及 maintext-pt-senti-filter（加入文章類型 pt filter）。Daily update 明確標示「[Done] 即時大數據文章API，加入撈取image url 欄位」及「[Done] 修改即時大數據文章API，加入可以用文章類型(pt) filter」，與兩組 spec/plan commits 高度對應，吻合程度良好。"
-    },
-    {
-      "date": "4/15",
+      "date": "4/16",
       "member": "Ted",
       "status": "unmatched",
-      "specCommits": 2,
+      "specCommits": 6,
       "dailyUpdateMention": false,
       "matchedTasks": [],
       "unmatchedSpecs": [
-        "docs(spec): AI summary brand/competitor tagging fix (#359)"
+        "docs: add four KEYPO + GEO proposals (A/B/C/D) for leadership review",
+        "docs: add KEYPO features reference based on operations manual",
+        "docs: add proposals v2 with KEYPO integration facts",
+        "docs: add PM execution plan with strategy A (skeleton + later deepen)",
+        "docs: add Ted skeleton drafts (batch 1+2) for AI Listening proposal",
+        "docs: add Ted skeleton drafts (batch 3 part 1)"
       ],
-      "reasoning": "Ted 當日無提交 daily update，無法對照其規劃文件是否與工作描述相符。兩個 commits 均為 AI summary 品牌/競品標記修復的設計 spec，但缺乏 daily update 作為驗證基準，故判定為未提及。"
+      "reasoning": "Ted 在 4/16 完全沒有提交 daily update，因此無從比對其 6 筆規劃文件 commits 是否與工作內容相符。這些 commits 涵蓋 AI Listening 提案（A/B/C/D 四版）、KEYPO 功能參考文件、PM 執行計畫及多份骨架草稿，規模龐大，但缺乏對應的 daily update 記錄，屬於未提及（unmatched）。"
+    },
+    {
+      "date": "4/16",
+      "member": "哲緯",
+      "status": "matched",
+      "specCommits": 2,
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "將原頻道爬搜後寫入ES邏輯，更改為寫入mssql channel_list表",
+        "串接KEYPO ENGINE API的竄紅熱詞API，做為關鍵字搜索的輸入"
+      ],
+      "unmatchedSpecs": [],
+      "reasoning": "哲緯的兩筆規劃 commits 均與 daily update 吻合。commit「channel meta to mssql spec and plan」對應 daily update 中「將原頻道爬搜後寫入ES邏輯，更改為寫入mssql channel_list表」；commit「KEYPO trending keyword DAG spec」對應 daily update 中「串接KEYPO ENGINE API的竄紅熱詞API，做為關鍵字搜索的輸入」。設計文件與實際開發工作一致，規劃記錄完整。"
+    },
+    {
+      "date": "4/16",
+      "member": "Aaron",
+      "status": "matched",
+      "specCommits": 4,
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "AI 趨勢總結 MR：列表、Detail 頁面 API",
+        "AI 總結功能、相關 DB Schema 設定"
+      ],
+      "unmatchedSpecs": [],
+      "reasoning": "Aaron 的 4 筆 commits 均為 AI 趨勢總結（ai-summary）的 List API 與 Retrieve API 設計規格及實作計畫。Daily update 中明確記錄「AI 趨勢總結 MR (2 H)」，子項包含「AI 總結功能」、「列表, Detail 頁面 API」及「相關 DB Schema 設定」，與 spec commits 高度吻合。設計與實作同步進行，規劃文件有充分的工作記錄支撐。"
     }
   ],
   "summary": {
-    "totalSpecCommits": 9,
-    "totalCorrelations": 4,
-    "membersWithSpecs": 4,
-    "matched": 1,
-    "unmatched": 2,
-    "partial": 1
+    "totalSpecCommits": 12,
+    "totalCorrelations": 3,
+    "membersWithSpecs": 3,
+    "matched": 2,
+    "unmatched": 1,
+    "partial": 0
   }
 }
