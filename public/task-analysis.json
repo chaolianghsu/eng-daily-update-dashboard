@@ -1,33 +1,51 @@
 {
-  "analysisDate": "2026-04-16",
-  "period": "4/15",
+  "analysisDate": "2026-04-17",
+  "period": "4/16",
   "warnings": [
     {
-      "date": "4/15",
-      "member": "Jason",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "網溫 房溫 EEG 升級後整理 (4H)",
-      "commits": "無相關 commits",
-      "reasoning": "報告開發任務 4H，但當日無任何 commits 紀錄。開發工時超過 3H 的閾值，應有相應的程式碼變更記錄，建議確認工作進度或是否存在未上傳的程式碼。"
-    },
-    {
-      "date": "4/15",
+      "date": "4/16",
       "member": "侑呈",
       "severity": "🔴",
       "type": "low_output",
-      "task": "KEYTECTOR (1.5H) + 其他 (3H)",
-      "commits": "無相關 commits",
-      "reasoning": "報告開發任務合計 4.5H（KEYTECTOR 1.5H + 其他 3H），但當日無任何 commits 紀錄。開發工時明顯超過 3H 的閾值，應有相應的程式碼變更，建議檢查工作進度或是否存在未上傳的程式碼。"
+      "task": "KEYTECTOR (2H) + domain DNS 排查 + issues (1.5H) + 日本社群頻道分析 (8.5H)",
+      "commits": "0 筆",
+      "reasoning": "開發任務累計 12 小時，但當天未見任何相關 commits。KEYTECTOR、domain 分析、issues 處理、社群頻道分析都屬開發工作，應產生相應的代碼變更或 commits。"
+    },
+    {
+      "date": "4/16",
+      "member": "Joyce",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "KEYPO 國際版 (9H)",
+      "commits": "4 筆",
+      "reasoning": "開發時數 9 小時產出 4 筆 commits，比例 0.44，遠低於團隊平均 2.32（commits/hours）。工時投入與代碼產出的比例顯著低於團隊水平約 81%。"
+    },
+    {
+      "date": "4/16",
+      "member": "禎佑",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "優化 kol-desc-parser (3H) + KOL 頻道連結欄位 (0.5H) + tiktok link 開發 (2.5H) + tiktok 日版排程 (0.5H) 及其他",
+      "commits": "8 筆",
+      "reasoning": "開發時數 8.5 小時產出 8 筆 commits，比例 0.94，遠低於團隊平均 2.32（commits/hours）。工時投入與代碼產出的比例顯著低於團隊水平約 60%。"
+    },
+    {
+      "date": "4/16",
+      "member": "家輝",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "ES9 pipeline 系統優化 (2H) + es5 & es9 日版 pipeline (3H) + es5 pipeline 優化 (2H)",
+      "commits": "4 筆",
+      "reasoning": "開發時數 7.5 小時產出 4 筆 commits，比例 0.53，遠低於團隊平均 2.32（commits/hours）。工時投入與代碼產出的比例顯著低於團隊水平約 77%。"
     }
   ],
   "summary": {
     "totalMembers": 10,
-    "totalWarnings": 2,
+    "totalWarnings": 4,
     "byType": {
-      "low_output": 2,
+      "low_output": 1,
       "mismatch": 0,
-      "outlier": 0
+      "outlier": 3
     }
   }
 }
