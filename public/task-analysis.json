@@ -1,51 +1,33 @@
 {
-  "analysisDate": "2026-04-17",
-  "period": "4/16",
+  "analysisDate": "2026-04-21",
+  "period": "4/20",
   "warnings": [
     {
-      "date": "4/16",
+      "date": "4/20",
       "member": "侑呈",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "KEYTECTOR (2H) + domain DNS 排查 + issues (1.5H) + 日本社群頻道分析 (8.5H)",
-      "commits": "0 筆",
-      "reasoning": "開發任務累計 12 小時，但當天未見任何相關 commits。KEYTECTOR、domain 分析、issues 處理、社群頻道分析都屬開發工作，應產生相應的代碼變更或 commits。"
-    },
-    {
-      "date": "4/16",
-      "member": "Joyce",
       "severity": "🟡",
       "type": "outlier",
-      "task": "KEYPO 國際版 (9H)",
-      "commits": "4 筆",
-      "reasoning": "開發時數 9 小時產出 4 筆 commits，比例 0.44，遠低於團隊平均 2.32（commits/hours）。工時投入與代碼產出的比例顯著低於團隊水平約 81%。"
+      "task": "KEYTECTOR(1H) + 日本社群頻道分析(2H) + 其他(5H) = 12H",
+      "commits": "wendyHsieh/cib-poc: feat(prober) 新增 deep_probe 多路徑探測功能 (1 commit)",
+      "reasoning": "開發工時 12H 卻僅有 1 筆 commit，工時/commit 比例達 12:1，遠高於團隊平均 0.53:1（7.3H ÷ 13.8 commits），差距達 22.7 倍。工作產出與報告時數明顯不相符，建議釐清具體工作內容與 commit 記錄的落差。"
     },
     {
-      "date": "4/16",
-      "member": "禎佑",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "優化 kol-desc-parser (3H) + KOL 頻道連結欄位 (0.5H) + tiktok link 開發 (2.5H) + tiktok 日版排程 (0.5H) 及其他",
-      "commits": "8 筆",
-      "reasoning": "開發時數 8.5 小時產出 8 筆 commits，比例 0.94，遠低於團隊平均 2.32（commits/hours）。工時投入與代碼產出的比例顯著低於團隊水平約 60%。"
-    },
-    {
-      "date": "4/16",
+      "date": "4/20",
       "member": "家輝",
       "severity": "🟡",
       "type": "outlier",
-      "task": "ES9 pipeline 系統優化 (2H) + es5 & es9 日版 pipeline (3H) + es5 pipeline 優化 (2H)",
-      "commits": "4 筆",
-      "reasoning": "開發時數 7.5 小時產出 4 筆 commits，比例 0.53，遠低於團隊平均 2.32（commits/hours）。工時投入與代碼產出的比例顯著低於團隊水平約 77%。"
+      "task": "ES9 pipeline 系統優化(4H) + 更新 gitlab clone token(0.5H) + GCP Cloud Scheduler 測試(0.5H) + 建立遠傳 IDC 港版專用資料(1H) = 6H 開發工作",
+      "commits": "KEYPO/keypo-q-huaan-v2: add http_compress & log、fix author_is_verified (2 commits)",
+      "reasoning": "開發工時 6H 卻僅有 2 筆 commit，工時/commit 比例達 3:1，高於團隊平均 0.53:1，差距達 5.7 倍。工作涵蓋多個任務領域（pipeline 優化、token 更新、GCP 測試、資料庫建立），但 commit 數量不足以支撐報告的工作廣度與時數。"
     }
   ],
   "summary": {
     "totalMembers": 10,
-    "totalWarnings": 4,
+    "totalWarnings": 2,
     "byType": {
-      "low_output": 1,
+      "low_output": 0,
       "mismatch": 0,
-      "outlier": 3
+      "outlier": 2
     }
   }
 }
