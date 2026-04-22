@@ -11,9 +11,34 @@ labels:
     product: KEYPO
     primary_group: KEYPO
     known_exceptions:
+      # Cross-group exceptions(真 exception,不在 primary_group 內):
       - llmprojects/keypo-agent
-      # Add more as discovered via drift audit or IC feedback.
-      # Format: "group/project" matching GitLab project_path.
+
+      # Explicit enumeration of active KEYPO/* repos so phase1 LLM has
+      # concrete candidates (primary_group name alone is too abstract for
+      # good suggestions). Top active repos as of 2026-04-22.
+      # Fanti-prefixed repos (KEYPO/fanti_*) intentionally excluded —
+      # those belong to the Fanti label, not K5.
+      - KEYPO/keypo-backend
+      - KEYPO/keypo-frontend-2023
+      - KEYPO/keypo-engine-api
+      - KEYPO/keypo-engine/keypo-engine-api-v3
+      - KEYPO/keypo-engine/keypo-engine-api-gateway
+      - KEYPO/keypo-engine/on-premises-api-gateway
+      - KEYPO/keypo-engine/keypo-engine-gateway
+      - KEYPO/keypo-engine/data-collector
+      - KEYPO/keypo-engine/analyzer-and-qtool-testcase
+      - KEYPO/keypo-engine/qtool
+      - KEYPO/keypo-q-huaan-v2
+      - KEYPO/keypo-newsletter
+      - KEYPO/keypo-international-website
+      - KEYPO/line-notify-backend-2023
+      - KEYPO/keypo-data-api
+      - KEYPO/keypo-engine-layer
+      - KEYPO/keypo-questionnaire
+      - KEYPO/keypo-micro-portal
+      - KEYPO/keypo-status-check
+      # Regenerate via drift audit or GitLab API query on KEYPO/* activity.
 
   BD:
     product: BigData
