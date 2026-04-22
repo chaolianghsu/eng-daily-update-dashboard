@@ -84,28 +84,13 @@ async function main() {
 
   console.error(`[spike] ${fixtures.length} fixture(s), ${k5Candidates.length} K5 candidate repos`);
 
-  // ---- Phase 0.5: fetch repo activity once, reuse across fixtures ----------
-  const sinceDate = new Date(Date.now() - SINCE_DAYS * 24 * 3600 * 1000).toISOString();
+  // ---- Phase 0.5 v2: per-fixture historical activity windows ---------------
+  // v1 (b11e052) used a single `since = now - 7d` window, which fetched April MRs
+  // for our January GOLD fixtures → enrichment was useless for #302 whose actual
+  // fix MRs (!361, !363) are from Jan 13-15. v2 anchors the window to each
+  // fixture's issue.closed_at ± 7d (with +1d upper bound to catch fix-on-close).
   const gitlabCfg = JSON.parse(readFileSync(GITLAB_CONFIG_PATH, 'utf8'));
   const apiCall = makeApiCall({ baseUrl: gitlabCfg.baseUrl, token: gitlabCfg.token });
-
-  console.error(`[spike] fetching repo activity since ${sinceDate} for ${k5Candidates.length} repos...`);
-  const activityStart = Date.now();
-  const activity = await fetchRepoActivity({
-    apiCall,
-    candidateRepos: k5Candidates,
-    sinceDate,
-    mrLimit: 5,
-    commitLimit: 10,
-    concurrency: 5,
-    warn: (m) => console.error(`[gitlab] ${m}`),
-  });
-  const activityMs = Date.now() - activityStart;
-  const activityBlock = formatActivityForPrompt(activity);
-  console.error(
-    `[spike] activity fetched in ${activityMs}ms — ${Object.keys(activity.byRepo).length} repos, ` +
-      `~${activity.total_tokens_estimate} tokens`,
-  );
 
   // ---- Per-fixture A/B -----------------------------------------------------
   const results = [];
@@ -121,6 +106,32 @@ async function main() {
       similar_issues: fx.similar_issues ?? [],
       label_config: labelConfig,
     });
+
+    // Compute per-fixture historical activity window anchored to closed_at.
+    const closedAt = new Date(fx.issue.closed_at);
+    const sinceDate = new Date(closedAt.getTime() - SINCE_DAYS * 24 * 3600 * 1000).toISOString();
+    const untilDate = new Date(closedAt.getTime() + 1 * 24 * 3600 * 1000).toISOString();
+
+    console.error(
+      `[spike] fixture ${fx.issue.iid}: fetching activity window ${sinceDate} → ${untilDate}...`,
+    );
+    const activityStart = Date.now();
+    const activity = await fetchRepoActivity({
+      apiCall,
+      candidateRepos: k5Candidates,
+      sinceDate,
+      untilDate,
+      mrLimit: 5,
+      commitLimit: 10,
+      concurrency: 5,
+      warn: (m) => console.error(`[gitlab] ${m}`),
+    });
+    const activityMs = Date.now() - activityStart;
+    const activityBlock = formatActivityForPrompt(activity);
+    console.error(
+      `[spike] fixture ${fx.issue.iid}: activity fetched in ${activityMs}ms — ` +
+        `${Object.keys(activity.byRepo).length} repos, ~${activity.total_tokens_estimate} tokens`,
+    );
 
     console.error(`[spike] fixture ${fx.issue.iid}: running BASELINE...`);
     const baseStart = Date.now();
@@ -139,6 +150,13 @@ async function main() {
       iid: fx.issue.iid,
       title: fx.issue.title,
       ground_truth: { fix_repos: groundRepos, primary_repo: primary },
+      window: { since: sinceDate, until: untilDate, closed_at: fx.issue.closed_at },
+      activity: {
+        block: activityBlock,
+        total_tokens_estimate: activity.total_tokens_estimate,
+        repos_fetched: Object.keys(activity.byRepo).length,
+        fetch_ms: activityMs,
+      },
       baseline: {
         ...baseline.parsed,
         error: baseline.error,
@@ -163,8 +181,8 @@ async function main() {
 
   // ---- Report --------------------------------------------------------------
   const today = new Date().toISOString().slice(0, 10).replace(/-/g, '');
-  const reportPath = join(RESULTS_DIR, `spike-phase0.5-ab-${today}.md`);
-  writeFileSync(reportPath, renderReport({ results, agg, activity, activityBlock, sinceDate, k5Candidates }));
+  const reportPath = join(RESULTS_DIR, `spike-phase0.5-v2-ab-${today}.md`);
+  writeFileSync(reportPath, renderReport({ results, agg, k5Candidates }));
   console.error(`[spike] wrote ${reportPath}`);
   console.error('');
   console.error(renderSummary(agg));
@@ -403,13 +421,13 @@ function verdictFrom(agg) {
   return 'ABORT';
 }
 
-function renderReport({ results, agg, activity, activityBlock, sinceDate, k5Candidates }) {
+function renderReport({ results, agg, k5Candidates }) {
   const pct = (x) => (x == null ? 'n/a' : `${(x * 100).toFixed(0)}%`);
   const num = (x, d = 2) => (x == null ? 'n/a' : Number(x).toFixed(d));
   const verdict = verdictFrom(agg);
 
   const lines = [];
-  lines.push('# Phase 0.5 Spike — Repo Activity Enrichment A/B');
+  lines.push('# Phase 0.5 Spike v2 — Repo Activity Enrichment A/B (historical window)');
   lines.push('');
   lines.push(`Run date: ${new Date().toISOString()}`);
   lines.push('');
@@ -418,9 +436,17 @@ function renderReport({ results, agg, activity, activityBlock, sinceDate, k5Cand
   lines.push(`- Fixtures: ${agg.n} K5 GOLD (${results.map((r) => r.iid).join(', ')})`);
   lines.push(`- Baseline source: identical to production \`phase1-routing.mjs\` prompt (CLI mode, model=sonnet)`);
   lines.push(`- Enrichment recipe: baseline prompt + \`RECENT REPO ACTIVITY\` block appended before the invoke line`);
-  lines.push(`- Activity window: since ${sinceDate} (${process.env.SPIKE_SINCE_DAYS ?? 7} days)`);
+  lines.push(`- Activity window: **per-fixture historical** — anchored to each fixture's \`issue.closed_at\` (−${process.env.SPIKE_SINCE_DAYS ?? 7}d to +1d)`);
+  lines.push(`- MR query: \`state=all\` with \`updated_after/updated_before\` (v2; v1 used \`state=opened\` which misses already-merged fix MRs)`);
   lines.push(`- Candidate repos fetched: ${k5Candidates.length}`);
-  lines.push(`- Activity block size: ~${activity.total_tokens_estimate} tokens (${activityBlock.length} chars)`);
+  lines.push('');
+  lines.push('### Per-fixture activity windows');
+  lines.push('');
+  lines.push('| iid | closed_at | since | until | activity tokens | fetch ms |');
+  lines.push('|-----|-----------|-------|-------|-----------------|----------|');
+  for (const r of results) {
+    lines.push(`| ${r.iid} | ${r.window.closed_at} | ${r.window.since} | ${r.window.until} | ~${r.activity.total_tokens_estimate} | ${r.activity.fetch_ms} |`);
+  }
   lines.push('');
 
   lines.push('## Per-fixture diff');
@@ -478,28 +504,27 @@ function renderReport({ results, agg, activity, activityBlock, sinceDate, k5Cand
   lines.push('> n=3 is direction only, not statistical proof. Recommend re-running on ≥10 GOLD fixtures before committing to a prod change.');
   lines.push('');
 
-  lines.push('## Activity block (as injected)');
-  lines.push('');
-  lines.push('```');
-  lines.push(activityBlock);
-  lines.push('```');
-  lines.push('');
-
   lines.push('## Raw per-fixture outputs');
   lines.push('');
   for (const r of results) {
     lines.push(`### Fixture ${r.iid} — ${r.title}`);
     lines.push('');
     lines.push(`**Ground truth:** primary=\`${r.ground_truth.primary_repo}\`, all=${JSON.stringify(r.ground_truth.fix_repos)}`);
+    lines.push(`**Window:** since=\`${r.window.since}\`, until=\`${r.window.until}\` (anchored to closed_at=\`${r.window.closed_at}\`)`);
+    lines.push('');
+    lines.push('**Activity block (as injected):**');
+    lines.push('```');
+    lines.push(r.activity.block);
+    lines.push('```');
     lines.push('');
     lines.push('**Baseline**:');
     lines.push('```json');
-    lines.push(JSON.stringify(r.baseline, null, 2));
+    lines.push(JSON.stringify({ ...r.baseline }, null, 2));
     lines.push('```');
     lines.push('');
     lines.push('**Enriched**:');
     lines.push('```json');
-    lines.push(JSON.stringify(r.enriched, null, 2));
+    lines.push(JSON.stringify({ ...r.enriched }, null, 2));
     lines.push('```');
     lines.push('');
   }
