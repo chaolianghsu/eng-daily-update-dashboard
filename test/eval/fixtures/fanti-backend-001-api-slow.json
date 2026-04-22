@@ -1,0 +1,35 @@
+{
+  "name": "fanti-backend-001-api-slow",
+  "issue": {
+    "iid": 4023,
+    "title": "Fanti insights backend API /reports/summary 回應超過 10 秒",
+    "description": "前端呼叫 /reports/summary endpoint 常常 timeout,慢到 10 秒以上。pprof trace 顯示 DB query 是 full table scan,缺 index。需要在 reports 表的 (tenant_id, created_at) 加 composite index,並確認 ORM 產出的 query 會用到。",
+    "labels": ["Fanti", "P1_高"],
+    "project_path": "cdp/fanti-insights-backend",
+    "state": "closed"
+  },
+  "similar_issues": [
+    {
+      "iid": 3870,
+      "title": "Fanti backend /reports endpoint 很慢",
+      "labels": ["Fanti"],
+      "assignee": "leo.huang",
+      "closing_excerpt": "cdp/fanti-insights-backend 加 DB index,在 reports.tenant_id + created_at,query plan 從 seq scan 變 index scan。"
+    },
+    {
+      "iid": 3812,
+      "title": "backend API timeout",
+      "labels": ["Fanti"],
+      "assignee": "michael.lin",
+      "closing_excerpt": "cdp/fanti-insights-backend 重寫 aggregation query,避免 N+1。"
+    }
+  ],
+  "expected": {
+    "layer": "backend",
+    "expected_repos_any_of": ["cdp/fanti-insights-backend"],
+    "expected_assignees_any_of": ["leo.huang", "michael.lin"],
+    "min_confidence": 0.6,
+    "max_confidence": 1.0,
+    "plan_draft_required": true
+  }
+}

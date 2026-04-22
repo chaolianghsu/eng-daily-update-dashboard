@@ -1,0 +1,28 @@
+{
+  "name": "k5-infra-002-auth-token-expire",
+  "issue": {
+    "iid": 3095,
+    "title": "KEYPO 後台 auth token 比預期提早過期",
+    "description": "多個使用者回報在 KEYPO 後台操作到一半被登出,預期 token TTL 是 8 小時,但實際 2-3 小時就被踢出。檢查 JWT payload 發現 exp 欄位是對的,但 redis session key TTL 設成了 7200 秒 (2 小時) 而不是 28800 秒 (8 小時)。需要修正 session.ts 裡的常數。",
+    "labels": ["K5", "P2_中"],
+    "project_path": "KEYPO/keypo-admin-backend",
+    "state": "closed"
+  },
+  "similar_issues": [
+    {
+      "iid": 2901,
+      "title": "admin 後台 session TTL 錯誤",
+      "labels": ["K5"],
+      "assignee": "jason.chen",
+      "closing_excerpt": "KEYPO/keypo-admin-backend 的 session TTL 常數修正,改為從 config 讀取。"
+    }
+  ],
+  "expected": {
+    "layer": "n/a",
+    "expected_repos_any_of": ["KEYPO/keypo-admin-backend"],
+    "expected_assignees_any_of": ["jason.chen"],
+    "min_confidence": 0.5,
+    "max_confidence": 1.0,
+    "plan_draft_required": true
+  }
+}

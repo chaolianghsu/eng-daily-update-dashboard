@@ -1,0 +1,35 @@
+{
+  "name": "fanti-crawler-001-scrape-empty",
+  "issue": {
+    "iid": 4011,
+    "title": "Fanti insights 爬蟲 3/18 起抓不到文章 (回傳空陣列)",
+    "description": "Fanti 爬蟲從 3/18 開始,某個社群平台的文章抓不到,API 回 200 但 data array 是空的。手動測該平台網頁是正常的。推測是目標站點改了前端結構或加了 anti-bot,需要更新 parser selector 或換 playwright headless 跑。",
+    "labels": ["Fanti", "P1_高", "Bug"],
+    "project_path": "CrawlersV2/fanti-insights-api",
+    "state": "closed"
+  },
+  "similar_issues": [
+    {
+      "iid": 3921,
+      "title": "Fanti 爬蟲 selector 失效",
+      "labels": ["Fanti"],
+      "assignee": "benson.chang",
+      "closing_excerpt": "CrawlersV2/fanti-insights-api 更新 parser selector,改用新的 DOM 結構。加 sentry alert 偵測 empty result。"
+    },
+    {
+      "iid": 3855,
+      "title": "某個社群平台被 anti-bot 擋",
+      "labels": ["Fanti"],
+      "assignee": "dennis.wang",
+      "closing_excerpt": "CrawlersV2/fanti-insights-api 改用 playwright 模擬瀏覽器,帶 cookie 抓。"
+    }
+  ],
+  "expected": {
+    "layer": "crawler",
+    "expected_repos_any_of": ["CrawlersV2/fanti-insights-api"],
+    "expected_assignees_any_of": ["benson.chang", "dennis.wang"],
+    "min_confidence": 0.6,
+    "max_confidence": 1.0,
+    "plan_draft_required": true
+  }
+}

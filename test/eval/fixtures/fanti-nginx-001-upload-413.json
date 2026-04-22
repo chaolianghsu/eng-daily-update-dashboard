@@ -1,0 +1,28 @@
+{
+  "name": "fanti-nginx-001-upload-413",
+  "issue": {
+    "iid": 4049,
+    "title": "Fanti review 上傳大檔案回 413 Request Entity Too Large",
+    "description": "使用者在 review dashboard 上傳大於 5MB 的 CSV 會直接被 nginx 擋下,回 413。上層 app server 沒看到 request,代表是 nginx 層的 client_max_body_size 設太小。需要把上限調到 50MB,並在上傳 UI 加 file size hint。",
+    "labels": ["Fanti", "P2_中"],
+    "project_path": "cdp/fanti-review-nginx",
+    "state": "closed"
+  },
+  "similar_issues": [
+    {
+      "iid": 3912,
+      "title": "nginx 413 error 上傳失敗",
+      "labels": ["Fanti"],
+      "assignee": "kevin.yang",
+      "closing_excerpt": "cdp/fanti-review-nginx 調整 client_max_body_size 到 50MB,並 reload nginx config。"
+    }
+  ],
+  "expected": {
+    "layer": "nginx",
+    "expected_repos_any_of": ["cdp/fanti-review-nginx", "cdp/fanti-insights-nginx"],
+    "expected_assignees_any_of": ["kevin.yang"],
+    "min_confidence": 0.5,
+    "max_confidence": 1.0,
+    "plan_draft_required": true
+  }
+}

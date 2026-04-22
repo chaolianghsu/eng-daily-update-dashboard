@@ -1,0 +1,35 @@
+{
+  "name": "k5-infra-001-api-500-spike",
+  "issue": {
+    "iid": 3070,
+    "title": "KEYPO engine API 500 錯誤高峰 (每天下午 3 點)",
+    "description": "監控系統回報 KEYPO engine API 每天下午 3 點左右出現 500 錯誤高峰,持續約 10 分鐘,之後自動恢復。log 顯示 DB connection pool 耗盡,但沒有明顯的流量尖峰。推測:可能是某個 scheduled job 每天在那個時間跑,搶用 DB 連線。需要查是哪個 job 造成。",
+    "labels": ["K5", "P1_高", "Bug"],
+    "project_path": "KEYPO/keypo-engine-api-v3",
+    "state": "closed"
+  },
+  "similar_issues": [
+    {
+      "iid": 2880,
+      "title": "engine API DB connection pool exhausted",
+      "labels": ["K5"],
+      "assignee": "jason.chen",
+      "closing_excerpt": "KEYPO/keypo-engine-api-v3 的 scheduled job 沒 release connection,修在 scheduler.py。"
+    },
+    {
+      "iid": 2815,
+      "title": "API 定時出現 500",
+      "labels": ["K5"],
+      "assignee": "tony.wu",
+      "closing_excerpt": "KEYPO/keypo-engine-api-v3 增加 connection pool 監控 metric,定位到批次 job 造成。"
+    }
+  ],
+  "expected": {
+    "layer": "n/a",
+    "expected_repos_any_of": ["KEYPO/keypo-engine-api-v3"],
+    "expected_assignees_any_of": ["jason.chen", "tony.wu"],
+    "min_confidence": 0.6,
+    "max_confidence": 1.0,
+    "plan_draft_required": true
+  }
+}

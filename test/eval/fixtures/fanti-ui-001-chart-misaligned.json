@@ -1,0 +1,35 @@
+{
+  "name": "fanti-ui-001-chart-misaligned",
+  "issue": {
+    "iid": 4038,
+    "title": "Fanti insights dashboard 圖表 x 軸標籤重疊 (mobile viewport)",
+    "description": "在 mobile viewport (< 768px) 下,insights dashboard 的 trend chart x 軸標籤重疊成一團,看不清楚日期。桌機版正常。需要根據 viewport 寬度動態調整 tick interval,或旋轉 label 45 度。",
+    "labels": ["Fanti", "P3_低"],
+    "project_path": "cdp/fanti-insights-dashboard",
+    "state": "closed"
+  },
+  "similar_issues": [
+    {
+      "iid": 3901,
+      "title": "dashboard 圖表 mobile 顯示問題",
+      "labels": ["Fanti"],
+      "assignee": "rita.lai",
+      "closing_excerpt": "cdp/fanti-insights-dashboard 加 responsive tick interval 邏輯,解決重疊。"
+    },
+    {
+      "iid": 3842,
+      "title": "review dashboard 手機版樣式跑掉",
+      "labels": ["Fanti"],
+      "assignee": "eric.tsai",
+      "closing_excerpt": "cdp/fanti-review-dashboard 調整 CSS breakpoint。"
+    }
+  ],
+  "expected": {
+    "layer": "ui",
+    "expected_repos_any_of": ["cdp/fanti-insights-dashboard", "cdp/fanti-review-dashboard"],
+    "expected_assignees_any_of": ["rita.lai", "eric.tsai"],
+    "min_confidence": 0.5,
+    "max_confidence": 1.0,
+    "plan_draft_required": true
+  }
+}

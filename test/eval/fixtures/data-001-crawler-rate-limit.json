@@ -1,0 +1,28 @@
+{
+  "name": "data-001-crawler-rate-limit",
+  "issue": {
+    "iid": 7012,
+    "title": "Data ops 某個爬蟲撞到 429 rate limit 被對方封 IP",
+    "description": "Data ops 組在跑的某個第三方 API 爬蟲,近一週頻繁收到 429 rate limit,對方平台一度把我們 IP block。我們之前沒 rate limiting,是拼命打。需要:1) 在 client 加 token bucket 限流;2) 收到 429 時 exponential backoff;3) IP 若被封,要能切到 proxy pool。",
+    "labels": ["Data", "P1_高"],
+    "project_path": "Crawlers/daily-crawler",
+    "state": "closed"
+  },
+  "similar_issues": [
+    {
+      "iid": 6701,
+      "title": "某 API 爬蟲被 block",
+      "labels": ["Data"],
+      "assignee": "paul.wu",
+      "closing_excerpt": "Crawlers/daily-crawler 加 rate limiter + backoff,並接入 proxy rotator。"
+    }
+  ],
+  "expected": {
+    "layer": "n/a",
+    "expected_repos_any_of": ["Crawlers/daily-crawler"],
+    "expected_assignees_any_of": ["paul.wu"],
+    "min_confidence": 0.5,
+    "max_confidence": 1.0,
+    "plan_draft_required": true
+  }
+}

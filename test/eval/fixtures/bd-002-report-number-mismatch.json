@@ -1,0 +1,28 @@
+{
+  "name": "bd-002-report-number-mismatch",
+  "issue": {
+    "iid": 5035,
+    "title": "BigData 報表數字與上游 dashboard 對不上",
+    "description": "客戶回報 BD 產出的週報總和與他們的內部 dashboard 對不上,差約 3%。抽查發現 timezone 處理不一致:上游用 UTC,我們 pipeline 某一段用 Asia/Taipei,日界點的 events 被歸到錯的那一天。需要統一所有 pipeline 內部 timestamp 為 UTC,report 顯示層再轉時區。",
+    "labels": ["BD", "P2_中", "Bug"],
+    "project_path": "bigdata/report-service",
+    "state": "closed"
+  },
+  "similar_issues": [
+    {
+      "iid": 4792,
+      "title": "報表 timezone 不一致",
+      "labels": ["BD"],
+      "assignee": "nick.huang",
+      "closing_excerpt": "bigdata/report-service 統一用 UTC,加 timezone conversion test。"
+    }
+  ],
+  "expected": {
+    "layer": "n/a",
+    "expected_repos_any_of": ["bigdata/report-service"],
+    "expected_assignees_any_of": ["nick.huang"],
+    "min_confidence": 0.5,
+    "max_confidence": 1.0,
+    "plan_draft_required": true
+  }
+}

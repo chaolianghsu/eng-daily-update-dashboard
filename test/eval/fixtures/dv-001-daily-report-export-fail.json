@@ -1,0 +1,35 @@
+{
+  "name": "dv-001-daily-report-export-fail",
+  "issue": {
+    "iid": 6018,
+    "title": "DailyView 報表匯出 PDF 失敗 (中文字變亂碼)",
+    "description": "DV 使用者匯出 PDF 報表時,中文字都變成 □□□ 方塊。本地測試正常,production 出錯。推測是 production container 少了 Noto Sans TC 字型,pdf 產生器 fallback 到沒中文字的 default。修法:在 Docker image 加裝中文字型,或在 pdf lib config 指定 bundled 字型。",
+    "labels": ["DV", "P2_中"],
+    "project_path": "dv-report",
+    "state": "closed"
+  },
+  "similar_issues": [
+    {
+      "iid": 5901,
+      "title": "PDF 匯出中文亂碼",
+      "labels": ["DV"],
+      "assignee": "sophia.liu",
+      "closing_excerpt": "dv-report 的 Dockerfile 加裝 fonts-noto-cjk,重 build image 後解決。"
+    },
+    {
+      "iid": 5860,
+      "title": "report 匯出失敗",
+      "labels": ["DV"],
+      "assignee": "ivan.hsu",
+      "closing_excerpt": "dv-report 加上 font 檢查 startup probe。"
+    }
+  ],
+  "expected": {
+    "layer": "n/a",
+    "expected_repos_any_of": ["dv-report"],
+    "expected_assignees_any_of": ["sophia.liu", "ivan.hsu"],
+    "min_confidence": 0.6,
+    "max_confidence": 1.0,
+    "plan_draft_required": true
+  }
+}

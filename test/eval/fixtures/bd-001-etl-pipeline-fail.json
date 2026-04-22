@@ -1,0 +1,35 @@
+{
+  "name": "bd-001-etl-pipeline-fail",
+  "issue": {
+    "iid": 5020,
+    "title": "BigData ETL pipeline 3/15 起每晚跑失敗 (worker OOM)",
+    "description": "每晚排程的 ETL job 從 3/15 起連續失敗,worker log 顯示 OOM killed。近期資料量成長約 40%,推測是 batch size 沒跟著調,單一 worker 一次吃太多 rows 爆記憶體。需要:1) 把 batch_size 從 10000 調到 3000;2) 加入 memory watermark 監控;3) 評估是否要 scale worker pod 記憶體。",
+    "labels": ["BD", "P1_高"],
+    "project_path": "bigdata/etl-pipeline",
+    "state": "closed"
+  },
+  "similar_issues": [
+    {
+      "iid": 4810,
+      "title": "ETL worker OOM",
+      "labels": ["BD"],
+      "assignee": "nick.huang",
+      "closing_excerpt": "bigdata/etl-pipeline 調 batch_size,並加 chunked iterator。"
+    },
+    {
+      "iid": 4755,
+      "title": "nightly job 失敗",
+      "labels": ["BD"],
+      "assignee": "annie.chen",
+      "closing_excerpt": "bigdata/etl-pipeline 的 scheduler 增加 retry + alert。"
+    }
+  ],
+  "expected": {
+    "layer": "n/a",
+    "expected_repos_any_of": ["bigdata/etl-pipeline"],
+    "expected_assignees_any_of": ["nick.huang", "annie.chen"],
+    "min_confidence": 0.6,
+    "max_confidence": 1.0,
+    "plan_draft_required": true
+  }
+}

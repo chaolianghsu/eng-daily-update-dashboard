@@ -1,0 +1,20 @@
+{
+  "name": "unsure-002-cold-start",
+  "issue": {
+    "iid": 8002,
+    "title": "信義區專案新系統某個模組 crash (第一次遇到)",
+    "description": "信義區專案新接的一個子系統,使用者回報某個功能點按鈕沒反應,console 有 stack trace 但訊息是 internal module,第一次遇到這類 issue,之前沒有相似案例。",
+    "labels": ["信義", "P2_中"],
+    "project_path": "sinyi/new-module",
+    "state": "opened"
+  },
+  "similar_issues": [],
+  "expected": {
+    "layer": "n/a",
+    "expected_repos_any_of": [],
+    "expected_assignees_any_of": [],
+    "min_confidence": 0.0,
+    "max_confidence": 0.49,
+    "plan_draft_required": false
+  }
+}

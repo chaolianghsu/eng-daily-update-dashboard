@@ -1,0 +1,35 @@
+{
+  "name": "k5-agent-002-tool-call-timeout",
+  "issue": {
+    "iid": 3108,
+    "title": "keypo agent 工具呼叫 timeout (tool_use timeout)",
+    "description": "agent 在呼叫外部 tool (search / fetch) 時,若 tool 回應超過 30 秒會直接 timeout,但沒有把 partial 結果回給使用者,agent 就整個卡死。想要的行為:tool timeout 時應該 fallback,告知使用者「這個工具太慢了,換別的方式」,而不是整個 agent 無法繼續。",
+    "labels": ["K5", "P2_中", "Bug"],
+    "project_path": "llmprojects/keypo-agent",
+    "state": "closed"
+  },
+  "similar_issues": [
+    {
+      "iid": 2950,
+      "title": "agent tool_use 卡住",
+      "labels": ["K5"],
+      "assignee": "henry.lee",
+      "closing_excerpt": "llmprojects/keypo-agent/tools.py 增加 per-tool timeout 與 fallback 訊息,issue 解決。"
+    },
+    {
+      "iid": 2820,
+      "title": "外部 API 慢導致 agent 長時間無回應",
+      "labels": ["K5"],
+      "assignee": "walt.peng",
+      "closing_excerpt": "在 llmprojects/keypo-agent 加上 circuit breaker,超時 fallback 到 cached response。"
+    }
+  ],
+  "expected": {
+    "layer": "n/a",
+    "expected_repos_any_of": ["llmprojects/keypo-agent"],
+    "expected_assignees_any_of": ["henry.lee", "walt.peng"],
+    "min_confidence": 0.6,
+    "max_confidence": 1.0,
+    "plan_draft_required": true
+  }
+}

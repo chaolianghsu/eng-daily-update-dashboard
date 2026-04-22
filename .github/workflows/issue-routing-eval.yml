@@ -1,0 +1,33 @@
+name: Issue Routing Eval
+
+on:
+  pull_request:
+    paths:
+      - 'lib/llm/**'
+      - 'test/eval/fixtures/**'
+      - 'test/eval/run-eval.mjs'
+      - '.github/workflows/issue-routing-eval.yml'
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Lint fixtures (offline)
+        env:
+          EVAL_OFFLINE: '1'
+        run: bun run issue-routing:eval
+
+      - name: Run eval (online, if API key available)
+        if: ${{ secrets.ANTHROPIC_API_KEY != '' }}
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: bun run issue-routing:eval

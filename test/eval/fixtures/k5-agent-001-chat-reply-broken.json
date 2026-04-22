@@ -1,0 +1,36 @@
+{
+  "name": "k5-agent-001-chat-reply-broken",
+  "issue": {
+    "iid": 3062,
+    "title": "keypo agent chat 回覆失敗 (沒有回訊息)",
+    "description": "使用者反映 keypo agent 在 chat 介面長對話後不回訊息,console 出現 'agent ran out of turns' 類訊息。重現步驟:在同一個 session 連續問 10 題以上,第 11 題無回應,agent 一直 spinning。影響:使用者以為 agent 掛了,實際是 turn limit 打到上限。期待行為:超過 turn limit 時,agent 應明確告知使用者並結束 session,而不是 silent fail。",
+    "labels": ["K5", "P1_高"],
+    "project_path": "llmprojects/keypo-agent",
+    "state": "closed"
+  },
+  "similar_issues": [
+    {
+      "iid": 2999,
+      "title": "agent ran out of turns — 長對話後 silent fail",
+      "labels": ["K5"],
+      "assignee": "henry.lee",
+      "closing_excerpt": "已修正在 llmprojects/keypo-agent,增加 turn limit exceeded 的 graceful error message,並把 max_turns 由 10 提升到 25。",
+      "resolution_hint": "在 agent loop 加 turn limit handler"
+    },
+    {
+      "iid": 2874,
+      "title": "keypo agent 偶爾無回應",
+      "labels": ["K5"],
+      "assignee": "walt.peng",
+      "closing_excerpt": "llmprojects/keypo-agent 的 session timeout 邏輯有 bug, 修在 session.py。"
+    }
+  ],
+  "expected": {
+    "layer": "n/a",
+    "expected_repos_any_of": ["llmprojects/keypo-agent"],
+    "expected_assignees_any_of": ["henry.lee", "walt.peng"],
+    "min_confidence": 0.6,
+    "max_confidence": 1.0,
+    "plan_draft_required": true
+  }
+}
