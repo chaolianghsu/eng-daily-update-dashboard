@@ -1,0 +1,49 @@
+{
+  "fixture_id": "k5-304",
+  "extraction_date": "2026-04-22",
+  "tier": "GOLD",
+  "issue": {
+    "iid": 304,
+    "project_path": "techcenter/reportcenter_confidential",
+    "title": "20260108 - 某客戶_聲量有超出100筆的聲量數值，不過AI報告顯示聲量不足，暫時無法提供精確的GPT分析結果",
+    "description": "客戶某客戶於09:20、09:21:48查詢出來的聲量各是36,720、36,721筆，不過他們AI報告卻有跑出來以下文字，無法分析\n\n因聲量不足，暫時無法提供精確的GPT分析結果。\n\n我用自己的帳號於11:02:59複查是能夠正常產出資料的，如下圖及附檔報告\n\n![image](/uploads/da77ee05186746e42e088349f220dc74/image.png){width=900 height=538}\n\n請見以下為客戶設定的帳號資訊以及AI報告下載的PDF檔案、文章列表，再麻煩協助排查，感謝。\n\n帳號：jessicachi\n\n時間: 1/6-1/9\n\n範圍: 標題、內文、來源頻道\n\n來源: 新聞、社群、討論區、部落格\n\n類型: 主文、回文\n\n關鍵字：\n((某客戶&富邦媒)|富邦媒|摩天商城|某客戶shopping|((某客戶|mono|OEOE|E0E0|EOEO|0E0E|mo家)&(情報|平台|廠商|免運|商城|商場|購物|線上|賣場|網拍|網購|電商|優惠|評價|快速到貨|出貨|送貨|寄錯|給錯|客服|客訴|投訴|申訴|檢舉|服務|態度差|態度不好|糾紛|服務品質差|服務品質不好|口氣差|口氣不好|退貨|假貨|水貨|瑕疵|品質差|二手|舊品|用過的|退費|退款|假貨|訂閱|個資|缺件|延*配|延遲|少寄|少給|過保|機王|過期|當機|死機|破損|紅利金|信用卡|紅包|加購|打折|折扣|某客戶|蝦皮|某客戶|酷澎|網家|品牌日|品牌週|品牌周|超品日|超品週|超品周))|某客戶購物網|某客戶購物台|某客戶摩天商城|某客戶書店|某客戶618|桃子購物|桃子網|桃子幣|某某購物|摸摸購物|mo幣|mo卡|mo編|摸編|某客戶愛漂亮)!+line!加賴!性愛!交友!貸!借款!魔膜!貼膜![交易]![買賣]![無主]![代買]!交易方式：!交易方式:!折扣代碼:!折扣代碼：!站內信!(#黑特&買家)!(某客戶購物中心&旗艦館)![菜單]!台茂購物中心!遠東巨城購物中心!(某客戶&twice)!某客戶 paradise!Mo Mo Paradise!Mo-Mo-Paradise!某客戶-Paradise!(某客戶&壽喜燒)!(某客戶&藍鯨)!虛擬角色!怪物模型!我會聽從主人的命令!某客戶 challenge!某客戶挑戰!某客戶 挑戰!(某客戶&自殺)!某客戶入侵卡通片!某客戶影片都市傳說!(某客戶&危險遊戲)!Shane Dawson!(某客戶&藝術作品)!(某客戶&藝術家&(雕塑|木雕))!(google&某客戶&圖片)!姑獲鳥!教唆別人自殘!加德滿都!某客戶 TV!(某客戶&綜合台)!(某客戶&追劇台)!某客戶's march!轉播!租金!百口mo編!(某客戶&親子台)!某客戶親子台!鄧佳華!sp__某客戶!越南某客戶!(某客戶&默默&一家人)!某客戶TV!某客戶醬!某客戶張 主持!某客戶 小桃!(毛毛&某客戶)!(莫莫&阿嘎)!某客戶改造女神!Q某客戶!蘇宇馨某客戶!席晴!林欣穎!小孟![出售]!酷咕鴨母嬰用品推薦!不動產經紀!不動產買賣!百萬經紀人!群義房屋!售屋!房屋買賣!某客戶綜合台!Mono Material!某客戶家族!(MONO&Lourdes)!某客戶 Café!純銀某客戶!小時尚衣著!牛妹妹Jasmine Niu!沙田萬怡酒店!Little Closet 小衣櫥!mono音源!某客戶台!貝森朵夫!衣服日記!(sense&shop)!(韓國&某客戶&純銀)!可樂果韓組!韓國某客戶純銀飾家\n\n![image](/uploads/42f233eefa515933cc8a34e4fcb4b97a/image.png){width=900 height=266}\n\n![image](/uploads/9cd0d59ff8fd992e8e1336422fdc8451/image.png){width=900 height=262}\n\n![image](/uploads/8b6f7ea813760a29fd5f24b4c62305eb/image.png){width=900 height=426}\n\n[客戶09.21.48下載的報告.pdf](/uploads/b37b8c92b42d5499c19920e10dcd7535/客戶09.21.48下載的報告.pdf)\n\n[客戶09.20下載的報告.pdf](/uploads/6def22a273be5c1dafdc30593d9edd50/客戶09.20下載的報告.pdf)\n\n[Joanne11.02.59下載的報告.pdf](/uploads/5a5c3e341e7224b44afa5f0d0eec2cd9/Joanne11.02.59下載的報告.pdf)",
+    "labels": [
+      "Bug",
+      "Data",
+      "K5",
+      "P1_高"
+    ],
+    "state": "closed",
+    "closed_at": "2026-02-11T03:21:43.736Z",
+    "assignee": "ted.juang"
+  },
+  "ground_truth": {
+    "outcome": "likely_fixed",
+    "fix_repos": [
+      "KEYPO/keypo-engine-api"
+    ],
+    "primary_repo": "KEYPO/keypo-engine-api"
+  },
+  "provenance": {
+    "mr_cross_refs": {
+      "signal": "high",
+      "repos": [
+        "KEYPO/keypo-engine-api"
+      ]
+    },
+    "assignee_heuristic": {
+      "signal": "none",
+      "reason": "no commit data (v0: skipped)"
+    },
+    "llm_extractor": {
+      "signal": "high",
+      "repos": [
+        "KEYPO/keypo-engine-api"
+      ],
+      "reasoning": "System notes 顯示 issue 被 mentioned in merge request KEYPO/keypo-engine-api!557，且 comments 中 walt.peng 提到「審MR中」，ted.juang 確認已上測試環境並緊急部署至正式環境，修復方向為新增 OpenAI API fallback 機制。"
+    },
+    "agreement_count": 2,
+    "promotion_rule": "2_of_3_agree"
+  },
+  "similar_context": null
+}

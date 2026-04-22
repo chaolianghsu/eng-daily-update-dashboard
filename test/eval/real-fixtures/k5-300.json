@@ -1,0 +1,48 @@
+{
+  "fixture_id": "k5-300",
+  "extraction_date": "2026-04-22",
+  "tier": "GOLD",
+  "issue": {
+    "iid": 300,
+    "project_path": "techcenter/reportcenter_confidential",
+    "title": "20260105 - 試用帳號_帳號到期後更新延長的時間前推播了先前設定的速報",
+    "description": "客戶名稱：網銀國際股份有限公司\n\n試用帳號：wanin20251110\n\n客戶郵件：minos.chen@wanin.tw\n\n客戶原先是開11/24-28，當初有設定過日報\n\n後續由於簽核關係比較久又延續帳號，起訖日為1/15-31\n\n我們是在12/31更新這個試用帳號的使用日期\n\n不過，今天客戶有反應收到先前設定的日報，不過帳號卻還不能使用的狀況\n\n目前查看以下log紀錄確實是有寄送速報給客戶\n\n另外，也有發現其實在11/28帳號到期後，日報有持續發送到12/5才停止\n\n需要麻煩協助排查，感謝\n\n![image](/uploads/850028350b8442c57abf1c1888f68e4c/image.png){width=900 height=420}\n\n![image](/uploads/374ff17b264be845cf4656cd96734ed5/image.png){width=900 height=458}",
+    "labels": [
+      "Bug",
+      "K5",
+      "P1_高"
+    ],
+    "state": "closed",
+    "closed_at": "2026-01-28T03:33:20.532Z",
+    "assignee": "joanne.lin"
+  },
+  "ground_truth": {
+    "outcome": "likely_fixed",
+    "fix_repos": [
+      "KEYPO/keypo-backend"
+    ],
+    "primary_repo": "KEYPO/keypo-backend"
+  },
+  "provenance": {
+    "mr_cross_refs": {
+      "signal": "high",
+      "repos": [
+        "KEYPO/keypo-backend"
+      ]
+    },
+    "assignee_heuristic": {
+      "signal": "none",
+      "reason": "no commit data (v0: skipped)"
+    },
+    "llm_extractor": {
+      "signal": "high",
+      "repos": [
+        "KEYPO/keypo-backend"
+      ],
+      "reasoning": "系統記錄顯示此 issue 被 mentioned in merge request KEYPO/keypo-backend!366，且 joyce 最終留言確認已完成正式機更新，sabinesabine 也測試 OK，修復明確對應至 KEYPO/keypo-backend。"
+    },
+    "agreement_count": 2,
+    "promotion_rule": "2_of_3_agree"
+  },
+  "similar_context": null
+}

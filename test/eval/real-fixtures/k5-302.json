@@ -1,0 +1,48 @@
+{
+  "fixture_id": "k5-302",
+  "extraction_date": "2026-04-22",
+  "tier": "GOLD",
+  "issue": {
+    "iid": 302,
+    "project_path": "techcenter/reportcenter_confidential",
+    "title": "20260106 - 錯誤訊息顯示Unknown error",
+    "description": "錯誤訊息顯示Unknown error，看起來應該是因為左括號跟字詞中間少了符號連接的關係，再請確認顯示內容，感謝!\n\n![image](/uploads/08b7e5f77b7864007a5c4aa90d98143c/image.png){width=900 height=498}",
+    "labels": [
+      "Bug",
+      "K5",
+      "P1_高"
+    ],
+    "state": "closed",
+    "closed_at": "2026-01-28T03:33:02.438Z",
+    "assignee": "Ivyma"
+  },
+  "ground_truth": {
+    "outcome": "likely_fixed",
+    "fix_repos": [
+      "KEYPO/keypo-backend"
+    ],
+    "primary_repo": "KEYPO/keypo-backend"
+  },
+  "provenance": {
+    "mr_cross_refs": {
+      "signal": "high",
+      "repos": [
+        "KEYPO/keypo-backend"
+      ]
+    },
+    "assignee_heuristic": {
+      "signal": "none",
+      "reason": "no commit data (v0: skipped)"
+    },
+    "llm_extractor": {
+      "signal": "high",
+      "repos": [
+        "KEYPO/keypo-backend"
+      ],
+      "reasoning": "System notes 明確顯示有兩個 merge request（KEYPO/keypo-backend!361 與 !363）被提及，且 joe 在 comment 中確認問題原因為 keypo-backend 的 error_i18n.json 缺少對應 KEY，修改後 joyce 確認更新完成並關閉 issue。"
+    },
+    "agreement_count": 2,
+    "promotion_rule": "2_of_3_agree"
+  },
+  "similar_context": null
+}
