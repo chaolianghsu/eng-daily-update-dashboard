@@ -1,0 +1,2978 @@
+{
+  "aggregate": {
+    "total": 135,
+    "sig1_fires": 3,
+    "sig2_fires": 2,
+    "both_fire": 0,
+    "both_fire_and_agree": 0,
+    "only_sig1": 3,
+    "only_sig2": 2,
+    "neither": 130
+  },
+  "per_issue": [
+    {
+      "iid": 3092,
+      "title": "20260421 - 竄紅社群Hashtag產業手搖飲50嵐結果有誤",
+      "closed_at": "2026-04-22T05:53:50.240Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3064,
+      "title": "20260413_Threads資料量異常減少",
+      "closed_at": "2026-04-15T03:24:50.568Z",
+      "assignee": "Ivyma",
+      "labels": [
+        "Bug",
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3063,
+      "title": "20260413_斷字調整",
+      "closed_at": "2026-04-22T00:00:07.086Z",
+      "assignee": "Alyssa",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3059,
+      "title": "20260410 - 墨新聞漏文",
+      "closed_at": "2026-04-22T02:51:45.477Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3058,
+      "title": "20260409 - 卡卡洛普漏文",
+      "closed_at": "2026-04-15T03:27:36.053Z",
+      "assignee": "byron.you",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3049,
+      "title": "20260406 - fb粉專沒資料",
+      "closed_at": "2026-04-21T00:00:10.200Z",
+      "assignee": "Alyssa",
+      "labels": [
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3044,
+      "title": "20260330 - 關鍵字搜尋結果出現英文字詞中間的片段",
+      "closed_at": "2026-04-08T00:00:03.790Z",
+      "assignee": "Ivyma",
+      "labels": [
+        "Bug",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3043,
+      "title": "20260330 - DIGITIMES中斷",
+      "closed_at": "2026-04-17T00:00:08.752Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3042,
+      "title": "20260330-熱門關鍵字出現類似的字詞",
+      "closed_at": "2026-03-31T03:31:23.019Z",
+      "assignee": "Alyssa",
+      "labels": [
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3041,
+      "title": "20260330 - Threads重複貼文",
+      "closed_at": "2026-04-10T00:00:05.258Z",
+      "assignee": "Ivyma",
+      "labels": [
+        "Bug",
+        "K5",
+        "P2_中"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3038,
+      "title": "20260327 - Mobile01漏文",
+      "closed_at": "2026-04-22T00:00:09.876Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3036,
+      "title": "20260324 - 熱門頻道出現兩個一樣的頻道名稱",
+      "closed_at": "2026-04-17T00:00:11.320Z",
+      "assignee": "Alyssa",
+      "labels": [
+        "Bug",
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3035,
+      "title": "20260324 - MoneyDJ理財網中斷收錄",
+      "closed_at": "2026-04-17T00:00:12.079Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3034,
+      "title": "20260324 - 今日新聞沒有資料",
+      "closed_at": "2026-04-17T00:00:12.686Z",
+      "assignee": "Alyssa",
+      "labels": [
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3032,
+      "title": "20260320 - 關鍵字測試結果疑慮",
+      "closed_at": "2026-04-10T00:00:07.820Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3031,
+      "title": "20260320 - 求職天眼通資料有漏",
+      "closed_at": "2026-04-17T00:00:13.584Z",
+      "assignee": "Alyssa",
+      "labels": [
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3030,
+      "title": "20260319_港版資料庫查詢都錯誤沒有資料",
+      "closed_at": "2026-03-19T09:52:24.633Z",
+      "assignee": "Ivyma",
+      "labels": [
+        "Bug",
+        "K5",
+        "P0_緊急"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3028,
+      "title": "20260319 - threads漏收文章",
+      "closed_at": "2026-04-08T00:00:08.161Z",
+      "assignee": "betsy.chang",
+      "labels": [
+        "Bug",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3026,
+      "title": "20260319 - BEAUTY漏收文章",
+      "closed_at": "2026-04-22T00:00:10.657Z",
+      "assignee": "clara.chung",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3025,
+      "title": "20260319 - 新竹消防局Line推播群組開通需求",
+      "closed_at": "2026-03-23T02:51:23.301Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3024,
+      "title": "20260319 - JUKSY街星收錄中斷",
+      "closed_at": "2026-04-08T08:22:19.483Z",
+      "assignee": "clara.chung",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3023,
+      "title": "20260319 - Hypebeast漏掉收文章",
+      "closed_at": "2026-04-10T00:00:08.972Z",
+      "assignee": "clara.chung",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3021,
+      "title": "20260318 -  Hypebeast漏掉收文章",
+      "closed_at": "2026-04-01T09:22:08.627Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3020,
+      "title": "20260318 - 客戶儀表版KEYPO Agent跟報告下載不見了",
+      "closed_at": "2026-03-23T02:52:18.874Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3018,
+      "title": "20260318 - Zeek玩家誌文章漏收",
+      "closed_at": "2026-04-10T00:00:09.875Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "Bug",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3017,
+      "title": "20260318 - LINE TODAY理財版漏收",
+      "closed_at": "2026-04-10T00:00:10.447Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "Bug",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3015,
+      "title": "20260313-民報資料中斷",
+      "closed_at": "2026-04-17T00:00:14.634Z",
+      "assignee": "Alyssa",
+      "labels": [
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3014,
+      "title": "20260313 - KEYPO報告下載問題",
+      "closed_at": "2026-04-16T00:00:08.348Z",
+      "assignee": "betsy.chang",
+      "labels": [
+        "Bug",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3012,
+      "title": "20260313-壹蘋新聞中斷",
+      "closed_at": "2026-04-09T00:00:08.480Z",
+      "assignee": "clara.chung",
+      "labels": [
+        "Bug",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3010,
+      "title": "20260313 - Mobile01文章漏收",
+      "closed_at": "2026-03-13T09:01:07.386Z",
+      "assignee": null,
+      "labels": [
+        "Bug",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3007,
+      "title": "20260312 - 好房網收錄中斷",
+      "closed_at": "2026-03-12T09:44:28.118Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3006,
+      "title": "20260312 - Telegram推播Threads文章時隔16個多小時",
+      "closed_at": "2026-03-13T09:05:32.288Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3003,
+      "title": "20260310 - 臉書粉專靠北銀行員中斷收錄",
+      "closed_at": "2026-03-20T00:00:10.525Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "Bug",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3002,
+      "title": "20260309 關鍵領袖_更換標題後的查詢結果顯示有問題",
+      "closed_at": "2026-03-19T00:00:05.499Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3001,
+      "title": "20260309 東森新聞fb漏收資料",
+      "closed_at": "2026-03-26T00:00:07.396Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 3000,
+      "title": "20260309 - LINE Today漏收文章",
+      "closed_at": "2026-04-10T00:00:11.857Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2998,
+      "title": "20260309 日本資料源_斷字切詞",
+      "closed_at": "2026-03-25T00:00:08.385Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2997,
+      "title": "20260309 日本資料源_熱詞網路",
+      "closed_at": "2026-03-17T04:05:14.800Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2996,
+      "title": "20260309 日本資料源_竄紅社群Hashtag文章列表空白",
+      "closed_at": "2026-03-24T01:39:53.207Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "Bug",
+        "K5"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2995,
+      "title": "20260309 客戶儀表板_關鍵字紀錄有誤",
+      "closed_at": "2026-03-12T02:14:58.842Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "Bug",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2994,
+      "title": "20260309 日本資料源_指定頻道觀測中熱門關鍵字 計算邏輯有誤",
+      "closed_at": "2026-03-21T00:00:06.534Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2990,
+      "title": "20260304 - 中時_新聞漏收",
+      "closed_at": "2026-03-04T08:25:48.708Z",
+      "assignee": "byron.you",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2989,
+      "title": "20260304 - 斷字切詞_新增2組詞語",
+      "closed_at": "2026-03-06T07:08:40.792Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2988,
+      "title": "20260304_特定新聞來源資料停在3/3 20:12",
+      "closed_at": "2026-03-12T00:00:06.439Z",
+      "assignee": "Ivyma",
+      "labels": [
+        "Bug",
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2987,
+      "title": "20260303 - [日版KEYPO] 熱門排行榜 / 新聞熱門文章無資料",
+      "closed_at": "2026-03-27T00:00:09.073Z",
+      "assignee": "sabinesabine",
+      "labels": [
+        "Bug",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2986,
+      "title": "20260303 - [日版KEYPO]進階篩選查無資料",
+      "closed_at": "2026-04-22T05:48:15.067Z",
+      "assignee": "sabinesabine",
+      "labels": [
+        "K5",
+        "P2_中"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2985,
+      "title": "20260302-斷字切詞調整",
+      "closed_at": "2026-03-12T00:00:08.018Z",
+      "assignee": "Alyssa",
+      "labels": [
+        "Bug",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2983,
+      "title": "20260225 - 新聞收錄到延伸閱讀",
+      "closed_at": "2026-03-12T00:00:09.077Z",
+      "assignee": "Alyssa",
+      "labels": [
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2982,
+      "title": "20260224 - 粉專文章收錄有漏",
+      "closed_at": "2026-03-11T00:00:04.492Z",
+      "assignee": "Alyssa",
+      "labels": [
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2981,
+      "title": "20260224 - 自由時報_收錄異常",
+      "closed_at": "2026-03-03T06:25:22.498Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2980,
+      "title": "20260224 - 立報_文章漏收",
+      "closed_at": "2026-04-10T00:00:13.501Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2979,
+      "title": "20260224 - Mashdigi_漏新聞",
+      "closed_at": "2026-02-25T02:59:48.879Z",
+      "assignee": "byron.you",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2978,
+      "title": "20260224 - Telegram_推播群組創立需求_和雲行動",
+      "closed_at": "2026-03-06T00:00:04.282Z",
+      "assignee": "clara.chung",
+      "labels": [
+        "K5",
+        "P1_高",
+        "Push"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2976,
+      "title": "20260223 - 緯來新聞網_中斷收錄",
+      "closed_at": "2026-03-03T06:31:46.985Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "Bug",
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2975,
+      "title": "20260223 - 關鍵字設定找不到文章",
+      "closed_at": "2026-03-03T06:53:39.351Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2971,
+      "title": "20260213 - 經濟日報_漏收文章",
+      "closed_at": "2026-03-03T06:53:54.420Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2970,
+      "title": "20260213 - 遊戲大亂鬥_沒有正常收錄",
+      "closed_at": "2026-03-03T06:54:09.344Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2969,
+      "title": "20260210 - 斷字切詞問題",
+      "closed_at": "2026-02-26T09:07:26.119Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2968,
+      "title": "20260210 - KEYPO官網：日本版版頭畫面抽換",
+      "closed_at": "2026-02-18T00:00:03.049Z",
+      "assignee": "EddieWang",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2967,
+      "title": "20260210｜KEYPO 官網｜更換影音連結（急）",
+      "closed_at": "2026-02-10T05:52:53.761Z",
+      "assignee": "JennyLee",
+      "labels": [
+        "K5",
+        "P0_緊急"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2966,
+      "title": "20260209 - Google Chat_推播群組創立需求_和泰聯網",
+      "closed_at": "2026-02-19T00:00:03.194Z",
+      "assignee": "clara.chung",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2965,
+      "title": "20260209 | KEYPO | 語意判讀問題",
+      "closed_at": "2026-02-19T00:00:04.284Z",
+      "assignee": "berry.shih",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2962,
+      "title": "20260205 - KEYPO：產品官網(英/日文版)header的選項皆跳轉回中文版",
+      "closed_at": "2026-02-25T03:41:19.477Z",
+      "assignee": "EddieWang",
+      "labels": [
+        "K5",
+        "P1_高",
+        "W2_小型"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2960,
+      "title": "20260204 - KEYPO前台與實際數字有落差",
+      "closed_at": "2026-02-20T00:00:03.162Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2959,
+      "title": "20260204 - 斷字切詞問題",
+      "closed_at": "2026-02-14T00:00:03.974Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2958,
+      "title": "20260202 - line推播群組創立需求_新北市水利局",
+      "closed_at": "2026-02-10T00:00:03.987Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "K5",
+        "P0_緊急"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2957,
+      "title": "20260130 - FBG ●【美妝公社】● 收錄中斷",
+      "closed_at": "2026-03-05T07:13:50.313Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2956,
+      "title": "20260130 上報 文章收錄有問題",
+      "closed_at": "2026-02-08T00:00:02.956Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2954,
+      "title": "20260129 - IEK產業情報網 文章漏收",
+      "closed_at": "2026-02-10T04:18:05.822Z",
+      "assignee": "byron.you",
+      "labels": [
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2953,
+      "title": "20260129 - 翻爆_漏收文章",
+      "closed_at": "2026-02-10T04:17:49.965Z",
+      "assignee": "byron.you",
+      "labels": [
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2952,
+      "title": "20260129 - KEYPO：udn女子漾收錄異常",
+      "closed_at": "2026-02-08T00:00:03.802Z",
+      "assignee": "EddieWang",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2950,
+      "title": "20260127 - 想確認新聞收錄時間",
+      "closed_at": "2026-02-10T04:12:09.777Z",
+      "assignee": "byron.you",
+      "labels": [
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2949,
+      "title": "20260127 - 經濟日報 文章漏收",
+      "closed_at": "2026-02-10T04:08:54.375Z",
+      "assignee": "byron.you",
+      "labels": [
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2948,
+      "title": "20260127 - 獨家報導 新聞漏收",
+      "closed_at": "2026-02-10T04:07:01.104Z",
+      "assignee": "byron.you",
+      "labels": [
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2947,
+      "title": "20260127 - 奧丁丁新聞網站 收錄中斷",
+      "closed_at": "2026-02-08T00:00:06.018Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2946,
+      "title": "20260127 - yam蕃薯藤新聞 收錄中斷",
+      "closed_at": "2026-02-07T00:00:04.643Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2945,
+      "title": "20260123 - mobile01 文章回文數量有落差",
+      "closed_at": "2026-01-28T02:31:04.223Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2943,
+      "title": "20260122 - Line群推播申請__天成開發股份有限公司",
+      "closed_at": "2026-01-31T00:00:03.944Z",
+      "assignee": "clara.chung",
+      "labels": [
+        "K5",
+        "P0_緊急",
+        "Push"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2939,
+      "title": "20260121 - KEYPO Agent敘述內容問題",
+      "closed_at": "2026-02-18T00:00:06.156Z",
+      "assignee": "Ivyma",
+      "labels": [
+        "Agent",
+        "Bug",
+        "K5",
+        "P2_中"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2935,
+      "title": "20260121 - 斷字切詞問題",
+      "closed_at": "2026-01-22T10:13:24.504Z",
+      "assignee": "richard.lee",
+      "labels": [
+        "Bug",
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2934,
+      "title": "20260121 - 請問熱門關鍵字沒有\"全支付\"的原因",
+      "closed_at": "2026-02-04T00:00:06.382Z",
+      "assignee": "Ivyma",
+      "labels": [
+        "Bug",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2930,
+      "title": "20260119_許願_資料來源也可以分情緒跟文章類型",
+      "closed_at": "2026-01-22T10:30:37.443Z",
+      "assignee": "neil.chang",
+      "labels": [
+        "Feature",
+        "K5",
+        "P2_中"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2929,
+      "title": "20260119_許願_進階篩選可以有一鍵關閉的選項",
+      "closed_at": "2026-01-22T10:33:14.025Z",
+      "assignee": "tanya.kang",
+      "labels": [
+        "Feature",
+        "K5",
+        "P2_中"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2927,
+      "title": "20260108 - 快樂工作人雜誌從2025/11中開始沒有收錄",
+      "closed_at": "2026-01-28T03:20:12.497Z",
+      "assignee": "Ivyma",
+      "labels": [
+        "Bug",
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2925,
+      "title": "20260116 AI報告下載後資料出現錯誤",
+      "closed_at": "2026-01-19T01:56:15.773Z",
+      "assignee": "Alyssa",
+      "labels": [
+        "Bug",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2918,
+      "title": "20260115 - 斷字切詞找不到文章",
+      "closed_at": "2026-01-23T08:31:04.090Z",
+      "assignee": "Alyssa",
+      "labels": [
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2915,
+      "title": "20260115情緒調整",
+      "closed_at": "2026-01-15T02:22:35.947Z",
+      "assignee": null,
+      "labels": [
+        "Bug",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2913,
+      "title": "20260112 - [KEYPO] 頻道名稱更新",
+      "closed_at": "2026-01-23T00:00:08.734Z",
+      "assignee": "allen",
+      "labels": [
+        "K5",
+        "P0_緊急"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2912,
+      "title": "20260112 - KEYPO Agent 另開分頁顯示異常",
+      "closed_at": "2026-01-19T03:08:09.146Z",
+      "assignee": "sylvia.wu",
+      "labels": [
+        "Bug",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2911,
+      "title": "20260108 - 斷字切詞問題",
+      "closed_at": "2026-01-09T10:51:33.847Z",
+      "assignee": "leamon.lee",
+      "labels": [
+        "BD",
+        "Bug",
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 2910,
+      "title": "20260108 - AI報告免責聲明文字錯誤",
+      "closed_at": "2026-02-14T00:00:06.876Z",
+      "assignee": "Ivyma",
+      "labels": [
+        "Bug",
+        "K5",
+        "P2_中"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 364,
+      "title": "20260420 - 和泰推播異常",
+      "closed_at": "2026-04-20T04:32:37.352Z",
+      "assignee": null,
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 353,
+      "title": "20260402-信件補發",
+      "closed_at": "2026-04-07T01:54:27.528Z",
+      "assignee": "Alyssa",
+      "labels": [
+        "Feature",
+        "K5"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 352,
+      "title": "20260402_高誠德州儀器團隊需求網站清單",
+      "closed_at": "2026-04-15T03:44:59.328Z",
+      "assignee": "byron.you",
+      "labels": [
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 349,
+      "title": "20260327 - 新竹市政府 文章下載去重",
+      "closed_at": "2026-04-15T03:46:30.328Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 347,
+      "title": "20260326-客戶使用紀錄協助",
+      "closed_at": "2026-03-31T01:56:36.783Z",
+      "assignee": "Alyssa",
+      "labels": [
+        "Feature",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 344,
+      "title": "20260318 - 高誠公關KEYPO與OP資料有落差",
+      "closed_at": "2026-04-01T09:35:50.286Z",
+      "assignee": "byron.you",
+      "labels": [
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 343,
+      "title": "20260312-新聞未收錄",
+      "closed_at": "2026-03-13T07:32:16.840Z",
+      "assignee": null,
+      "labels": [
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 342,
+      "title": "20260311-高鐵電子報關鍵字調整",
+      "closed_at": "2026-03-31T01:56:54.549Z",
+      "assignee": "Alyssa",
+      "labels": [
+        "Feature",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 341,
+      "title": "20260305 - 盤點企業帳號，未開立KEYPO帳號的客戶",
+      "closed_at": "2026-03-13T10:43:38.216Z",
+      "assignee": "joyce",
+      "labels": [
+        "Feature",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [
+          {
+            "repo": "KEYPO/keypo-engine-api",
+            "count": 4
+          }
+        ],
+        "confidence": "high",
+        "fires": true
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 340,
+      "title": "20260304_Threads資料量減少",
+      "closed_at": "2026-03-18T03:04:04.204Z",
+      "assignee": null,
+      "labels": [
+        "Bug",
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 337,
+      "title": "20260302 - KEYPO Agent回答時間區間有誤",
+      "closed_at": "2026-04-08T19:47:21.324Z",
+      "assignee": "joe",
+      "labels": [
+        "Bug",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [
+          {
+            "repo": "KEYPO/keypo-international-website",
+            "count": 15
+          }
+        ],
+        "confidence": "high",
+        "fires": true
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 336,
+      "title": "20260226 - AI報告資料有誤",
+      "closed_at": "2026-04-01T09:37:47.062Z",
+      "assignee": "Alyssa",
+      "labels": [
+        "Bug",
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 334,
+      "title": "20260225 - telegram推播主題顯示微調",
+      "closed_at": "2026-04-01T09:38:52.499Z",
+      "assignee": "Alyssa",
+      "labels": [
+        "Feature",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 333,
+      "title": "20260225 - Threads收錄中斷的問題",
+      "closed_at": "2026-03-04T03:51:54.943Z",
+      "assignee": null,
+      "labels": [
+        "Data",
+        "K5",
+        "P0_緊急"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 332,
+      "title": "20260224 - TVBS收錄有你可能會喜歡、延伸閱讀的文字",
+      "closed_at": "2026-03-04T03:52:10.515Z",
+      "assignee": null,
+      "labels": [
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 331,
+      "title": "20260224 - 基隆市政府推播從line轉移至Google Chat",
+      "closed_at": "2026-02-26T01:53:20.106Z",
+      "assignee": "wendyHsieh",
+      "labels": [
+        "K5",
+        "P1_高",
+        "Push"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 330,
+      "title": "20260224 - 中華日報_新聞有漏收",
+      "closed_at": "2026-03-03T06:54:20.887Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "Bug",
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 329,
+      "title": "20260224 - 聯合新聞網00:21的新聞09:50還沒收錄",
+      "closed_at": "2026-03-03T06:54:47.441Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "Bug",
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 328,
+      "title": "20260224 - 好房網新聞找不到",
+      "closed_at": "2026-03-03T06:10:46.805Z",
+      "assignee": "Ivyma",
+      "labels": [
+        "Bug",
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 327,
+      "title": "20260224 - Telegram推播_自由時報的新聞晚進",
+      "closed_at": "2026-03-04T03:53:09.123Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 326,
+      "title": "20260223 - 饗賓地點評論速報異常",
+      "closed_at": "2026-02-25T05:15:10.186Z",
+      "assignee": "Alyssa",
+      "labels": [
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 325,
+      "title": "20260222 - APP顯示異常",
+      "closed_at": "2026-03-04T03:53:57.099Z",
+      "assignee": "Ivyma",
+      "labels": [
+        "Bug",
+        "K5",
+        "P0_緊急"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 324,
+      "title": "20260221 - AI報告的探索概念給我兩個一樣的段落說明",
+      "closed_at": "2026-04-01T09:39:14.680Z",
+      "assignee": "Ivyma",
+      "labels": [
+        "Bug",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 323,
+      "title": "20260212 - pchome新聞找不到",
+      "closed_at": "2026-03-25T03:44:13.152Z",
+      "assignee": "Ivyma",
+      "labels": [
+        "Bug",
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 322,
+      "title": "20260211 - 遠見文章有出現在KEYPO系統但速報沒收到",
+      "closed_at": "2026-03-25T03:46:59.512Z",
+      "assignee": "walt.peng",
+      "labels": [
+        "Bug",
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 321,
+      "title": "20260210 - 春樹_斷字切詞優化需求",
+      "closed_at": "2026-02-26T01:49:19.713Z",
+      "assignee": "richard.lee",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 320,
+      "title": "20260209 - 橘子_速報出現排除字詞的文章",
+      "closed_at": "2026-02-25T03:14:13.340Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 319,
+      "title": "20260209 - Agent 不能不用KEYPO資料 自己回答問題",
+      "closed_at": "2026-03-25T03:54:33.035Z",
+      "assignee": "Ivyma",
+      "labels": [
+        "Bug",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 315,
+      "title": "20260202 - 許願 - 系統管理優化：可直接刪除主題、新增主題、檢視客戶的進階篩選和多維度分析",
+      "closed_at": "2026-02-25T03:27:00.685Z",
+      "assignee": null,
+      "labels": [
+        "Bug",
+        "K5",
+        "P2_中"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 314,
+      "title": "20260130 - 續約用_基隆Line推播群組成本確認",
+      "closed_at": "2026-02-25T03:26:10.727Z",
+      "assignee": "wendyHsieh",
+      "labels": [
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 313,
+      "title": "20260129 - 漢神品牌電子報",
+      "closed_at": "2026-03-27T08:12:31.346Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "Feature",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 312,
+      "title": "20260128 - 中時新聞今日只有兩筆",
+      "closed_at": "2026-02-11T03:19:10.671Z",
+      "assignee": "byron.you",
+      "labels": [
+        "Bug",
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 311,
+      "title": "20260126 - 急件 telegram群組建立需求",
+      "closed_at": "2026-01-28T03:37:24.974Z",
+      "assignee": "Alyssa",
+      "labels": [
+        "K5",
+        "P1_高",
+        "Push"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 310,
+      "title": "20260119 - 情緒判讀修正",
+      "closed_at": "2026-02-11T03:19:53.807Z",
+      "assignee": "Ivyma",
+      "labels": [
+        "Bug",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 308,
+      "title": "20260115_IG頻道有但收錄到的文章很少",
+      "closed_at": "2026-01-16T04:12:56.783Z",
+      "assignee": "Ivyma",
+      "labels": [
+        "Bug",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 307,
+      "title": "20260115_請問情緒判讀為負面原因",
+      "closed_at": "2026-01-19T03:19:53.090Z",
+      "assignee": "Ivyma",
+      "labels": [
+        "Bug",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 306,
+      "title": "20260112 - KEYPO Agent的回答結果問題",
+      "closed_at": "2026-02-11T03:21:03.658Z",
+      "assignee": "Ivyma",
+      "labels": [
+        "Agent",
+        "Bug",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 305,
+      "title": "20260112 - 高鐵品牌電子報關鍵字調整",
+      "closed_at": "2026-03-11T04:53:55.457Z",
+      "assignee": "ted.juang",
+      "labels": [
+        "Feature",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 304,
+      "title": "20260108 - momo_聲量有超出100筆的聲量數值，不過AI報告顯示聲量不足，暫時無法提供精確的GPT分析結果",
+      "closed_at": "2026-02-11T03:21:43.736Z",
+      "assignee": "ted.juang",
+      "labels": [
+        "Bug",
+        "Data",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [
+          "KEYPO/keypo-engine-api"
+        ],
+        "fires": true
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 303,
+      "title": "企業管理後台_連動到所屬帳號",
+      "closed_at": "2026-01-07T08:44:07.572Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "Bug",
+        "K5",
+        "P0_緊急"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 302,
+      "title": "20260106 - 錯誤訊息顯示Unknown error",
+      "closed_at": "2026-01-28T03:33:02.438Z",
+      "assignee": "Ivyma",
+      "labels": [
+        "Bug",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [
+          "KEYPO/keypo-backend"
+        ],
+        "fires": true
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 301,
+      "title": "20260106 - telegram轉移到google chat需求",
+      "closed_at": "2026-01-21T03:37:27.157Z",
+      "assignee": "Alyssa",
+      "labels": [
+        "Feature",
+        "K5",
+        "P1_高",
+        "Push"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 300,
+      "title": "20260105 - 試用帳號_帳號到期後更新延長的時間前推播了先前設定的速報",
+      "closed_at": "2026-01-28T03:33:20.532Z",
+      "assignee": "joanne.lin",
+      "labels": [
+        "Bug",
+        "K5",
+        "P1_高"
+      ],
+      "sig1": {
+        "repos": [
+          "KEYPO/keypo-backend"
+        ],
+        "fires": true
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    },
+    {
+      "iid": 299,
+      "title": "20260105 - 考試院telegram推播延遲",
+      "closed_at": "2026-01-28T03:33:38.825Z",
+      "assignee": "walt.peng",
+      "labels": [
+        "Data",
+        "K5",
+        "P1_高",
+        "Push"
+      ],
+      "sig1": {
+        "repos": [],
+        "fires": false
+      },
+      "sig2": {
+        "repos": [],
+        "confidence": "none",
+        "fires": false
+      },
+      "agreement": false,
+      "intersection": []
+    }
+  ]
+}
