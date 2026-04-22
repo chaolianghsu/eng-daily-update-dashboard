@@ -10,9 +10,25 @@ function doGet() {
 /**
  * Receives JSON data from Claude sync skill and writes to Sheets.
  * Expected payload: { rawData: {...}, issues: [...], leave: {...} }
+ *
+ * Also dispatches Google Chat CARD_CLICKED events (issue routing approval
+ * buttons) to the local Node backend via onIssueRoutingAction_(). See bottom
+ * of this file for details.
  */
 function doPost(e) {
   var data = JSON.parse(e.postData.contents);
+
+  // Issue-routing approval button dispatch — Chat CARD_CLICKED events carry a
+  // `type` field and a nested `action.actionMethodName`. Sheet-sync payloads
+  // do neither, so this check is safe to run first.
+  if (data && data.type === 'CARD_CLICKED' &&
+      data.action && typeof data.action.actionMethodName === 'string' &&
+      /^(approveIssue|editIssue|dismissIssue)$/.test(data.action.actionMethodName)) {
+    return ContentService
+      .createTextOutput(JSON.stringify(onIssueRoutingAction_(data)))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+
   var ss = SpreadsheetApp.getActiveSpreadsheet();
 
   // Clear specified sheets before writing (for rebuild)
@@ -599,4 +615,83 @@ function formatDate_(val) {
 function dateToNum_(d) {
   var parts = String(d).split('/');
   return Number(parts[0]) * 100 + Number(parts[1]);
+}
+
+// ---------------------------------------------------------------------------
+// Issue Routing — Chat approval button dispatcher.
+// Forwards Google Chat CARD_CLICKED events to the local Node backend
+// (scripts/handle-approval-webhook.mjs) over HTTPS with a shared secret.
+// Configure via ScriptProperties:
+//   ISSUE_ROUTING_BACKEND_URL    e.g. https://myhost.example.com/approve-webhook
+//   ISSUE_ROUTING_INTERNAL_TOKEN shared secret matching Node INTERNAL_TOKEN
+// ---------------------------------------------------------------------------
+
+function onIssueRoutingAction_(event) {
+  var props = PropertiesService.getScriptProperties();
+  var backend = props.getProperty('ISSUE_ROUTING_BACKEND_URL') || '';
+  var internalToken = props.getProperty('ISSUE_ROUTING_INTERNAL_TOKEN') || '';
+
+  var action = event.action && event.action.actionMethodName;
+  var rawParams = (event.action && event.action.parameters) || [];
+  var params = {};
+  for (var i = 0; i < rawParams.length; i++) {
+    params[rawParams[i].key] = rawParams[i].value;
+  }
+  var userId = event.user && event.user.name;
+
+  if (!backend || !internalToken) {
+    return cardResponse_('⚠️ Backend not configured (ISSUE_ROUTING_BACKEND_URL / ISSUE_ROUTING_INTERNAL_TOKEN).');
+  }
+
+  var endpoint = action === 'approveIssue' ? '/approve'
+               : action === 'editIssue'    ? '/edit'
+               : action === 'dismissIssue' ? '/dismiss'
+               : null;
+  if (!endpoint) return cardResponse_('Unknown action: ' + action);
+
+  var payload = {
+    issue_uid: params.issue_uid,
+    action_token: params.token,
+    user_id: userId
+  };
+  if (action === 'editIssue' && event.formInput && event.formInput.edited_plan) {
+    payload.edit_body = event.formInput.edited_plan;
+  }
+
+  try {
+    var res = UrlFetchApp.fetch(backend + endpoint, {
+      method: 'post',
+      contentType: 'application/json',
+      headers: { 'X-Internal-Auth': internalToken },
+      payload: JSON.stringify(payload),
+      muteHttpExceptions: true
+    });
+    var code = res.getResponseCode();
+    var body = {};
+    try { body = JSON.parse(res.getContentText()); } catch (parseErr) { body = { error: 'bad json' }; }
+    if (code === 200) {
+      return cardResponse_(buildStatusMessage_(body));
+    }
+    return cardResponse_('⚠️ Backend error (' + code + '): ' + (body.error || 'unknown'));
+  } catch (e) {
+    console.error('onIssueRoutingAction_ error', e);
+    return cardResponse_('⚠️ 無法連接 backend: ' + e.message);
+  }
+}
+
+function buildStatusMessage_(body) {
+  if (body.status === 'approved') {
+    return '✅ Approved — GitLab comment posted' +
+           (body.gitlab_note_url ? ': ' + body.gitlab_note_url : '.');
+  }
+  if (body.status === 'edited') {
+    return '✏️ Edited & posted' +
+           (body.gitlab_note_url ? ' — ' + body.gitlab_note_url : '.');
+  }
+  if (body.status === 'dismissed') return '❌ Dismissed';
+  return 'OK';
+}
+
+function cardResponse_(text) {
+  return { actionResponse: { type: 'UPDATE_MESSAGE' }, text: text };
 }
