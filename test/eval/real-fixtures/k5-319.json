@@ -1,0 +1,48 @@
+{
+  "fixture_id": "k5-319",
+  "extraction_date": "2026-04-22",
+  "tier": "SILVER",
+  "issue": {
+    "iid": 319,
+    "project_path": "techcenter/reportcenter_confidential",
+    "title": "20260209 - Agent 不能不用KEYPO資料 自己回答問題",
+    "description": "Agent 不能不用KEYPO資料 自己回答問題，但我記得我們的優點是擁有KEYPO資料加上AI的知識背景，再請確認釐清，感謝!\n\nhttps://insight.keypo.ai/copilot?id=5a972bc1-93fb-427a-a4ae-2fcf07e1d1ed\n\n![image](/uploads/cab08b92395c76a61fe9bd5e0f038b17/image.png){width=362 height=381}",
+    "labels": [
+      "Bug",
+      "K5",
+      "P1_高"
+    ],
+    "state": "closed",
+    "closed_at": "2026-03-25T03:54:33.035Z",
+    "assignee": "Ivyma"
+  },
+  "ground_truth": {
+    "outcome": "likely_fixed",
+    "fix_repos": [
+      "KEYPO/keypo-engine/on-premises-api-gateway"
+    ],
+    "primary_repo": "KEYPO/keypo-engine/on-premises-api-gateway"
+  },
+  "provenance": {
+    "mr_cross_refs": {
+      "signal": "none",
+      "repos": []
+    },
+    "assignee_heuristic": {
+      "signal": "high",
+      "repos": [
+        "KEYPO/keypo-engine/on-premises-api-gateway"
+      ],
+      "closing_commenter": "aaron.li",
+      "reason": "@aaron.li has commits in 1 repo(s) within ±14d window"
+    },
+    "llm_extractor": {
+      "signal": "low",
+      "repos": [],
+      "reasoning": "LLM error: claude CLI exited 1: "
+    },
+    "agreement_count": 1,
+    "promotion_rule": "1_high_no_contradiction"
+  },
+  "similar_context": null
+}

@@ -7,6 +7,8 @@ import { describe, it, expect } from 'vitest';
 import {
   extractMrCrossRefs,
   extractAssigneeHeuristic,
+  extractClosingCommenterHeuristic,
+  identifyClosingCommenter,
   classifyIssueOutcome,
   buildLLMExtractorPrompt,
   parseLLMExtractorOutput,
@@ -90,6 +92,169 @@ describe('extractAssigneeHeuristic', () => {
       assigneeCommitsByRepo: {},
     });
     expect(r.confidence).toBe('none');
+  });
+});
+
+// ---- extractClosingCommenterHeuristic (signal 2b) ---------------------------
+
+describe('extractClosingCommenterHeuristic', () => {
+  const closedAt = '2026-04-10T00:00:00Z';
+  const closedTs = new Date(closedAt).getTime();
+  const DAY = 86400 * 1000;
+
+  function makeComment({ username, body = 'ok', daysBeforeClose = 0, system = false }) {
+    const ts = new Date(closedTs - daysBeforeClose * DAY).toISOString();
+    return {
+      body,
+      system,
+      author: { username },
+      created_at: ts,
+    };
+  }
+
+  it('high: closing commenter has 2+ commits in one repo within window', () => {
+    const r = extractClosingCommenterHeuristic({
+      issue: { closed_at: closedAt },
+      comments: [
+        makeComment({ username: 'joe', body: '看看這個問題', daysBeforeClose: 5 }),
+        makeComment({ username: 'joyce', body: '已更新至測試機', daysBeforeClose: 0 }),
+      ],
+      commenterCommitsByRepo: {
+        'KEYPO/keypo-backend': { joyce: [closedTs - 3 * DAY, closedTs - 1 * DAY] },
+      },
+    });
+    expect(r.confidence).toBe('high');
+    expect([...r.repos]).toEqual(['KEYPO/keypo-backend']);
+    expect(r.closing_commenter).toBe('joyce');
+  });
+
+  it('none: closing commenter is CSM with no commits in repos', () => {
+    const r = extractClosingCommenterHeuristic({
+      issue: { closed_at: closedAt },
+      comments: [
+        makeComment({ username: 'Ivyma', body: '已與客戶確認', daysBeforeClose: 0 }),
+      ],
+      commenterCommitsByRepo: {
+        'KEYPO/keypo-backend': { joe: [closedTs - 1 * DAY] },
+      },
+    });
+    expect(r.confidence).toBe('none');
+    expect(r.closing_commenter).toBe('Ivyma');
+    expect(r.repos.size).toBe(0);
+  });
+
+  it('med: closing commenter has exactly 1 commit in 1 repo', () => {
+    const r = extractClosingCommenterHeuristic({
+      issue: { closed_at: closedAt },
+      comments: [
+        makeComment({ username: 'joyce', body: '已修正', daysBeforeClose: 0 }),
+      ],
+      commenterCommitsByRepo: {
+        'KEYPO/keypo-backend': { joyce: [closedTs - 2 * DAY] },
+      },
+    });
+    expect(r.confidence).toBe('med');
+    expect([...r.repos]).toEqual(['KEYPO/keypo-backend']);
+  });
+
+  it('none: no user comments → return none with reason', () => {
+    const r = extractClosingCommenterHeuristic({
+      issue: { closed_at: closedAt },
+      comments: [],
+      commenterCommitsByRepo: {},
+    });
+    expect(r.confidence).toBe('none');
+    expect(r.closing_commenter).toBe(null);
+    expect(r.reason).toMatch(/no closing user comment/i);
+  });
+
+  it('last commenter is also the assignee — still counts', () => {
+    const r = extractClosingCommenterHeuristic({
+      issue: {
+        closed_at: closedAt,
+        assignee: { username: 'joyce' },
+      },
+      comments: [
+        makeComment({ username: 'joyce', body: '已修正', daysBeforeClose: 0 }),
+      ],
+      commenterCommitsByRepo: {
+        'KEYPO/keypo-backend': { joyce: [closedTs - 1 * DAY, closedTs - 3 * DAY] },
+      },
+    });
+    expect(r.confidence).toBe('high');
+    expect(r.closing_commenter).toBe('joyce');
+  });
+
+  it('commits outside ±14d window are ignored', () => {
+    const r = extractClosingCommenterHeuristic({
+      issue: { closed_at: closedAt },
+      comments: [
+        makeComment({ username: 'joyce', body: '已修正', daysBeforeClose: 0 }),
+      ],
+      commenterCommitsByRepo: {
+        // 20 days before close — outside window
+        'KEYPO/keypo-backend': { joyce: [closedTs - 20 * DAY] },
+      },
+    });
+    expect(r.confidence).toBe('none');
+    expect(r.repos.size).toBe(0);
+  });
+
+  it('bot commenter (gitlab-bot) is skipped — fall back to previous user', () => {
+    const r = extractClosingCommenterHeuristic({
+      issue: { closed_at: closedAt },
+      comments: [
+        makeComment({ username: 'joyce', body: '已更新', daysBeforeClose: 1 }),
+        makeComment({ username: 'gitlab-bot', body: 'auto-close reminder', daysBeforeClose: 0 }),
+      ],
+      commenterCommitsByRepo: {
+        'KEYPO/keypo-backend': { joyce: [closedTs - 1 * DAY, closedTs - 2 * DAY] },
+      },
+    });
+    expect(r.closing_commenter).toBe('joyce');
+    expect(r.confidence).toBe('high');
+  });
+
+  it('multiple closing comments in last minutes — take the last one', () => {
+    const t0 = new Date(closedTs - 10 * 60 * 1000).toISOString();
+    const t1 = new Date(closedTs - 5 * 60 * 1000).toISOString();
+    const t2 = new Date(closedTs - 1 * 60 * 1000).toISOString();
+    const r = extractClosingCommenterHeuristic({
+      issue: { closed_at: closedAt },
+      comments: [
+        { body: 'a', system: false, author: { username: 'joe' }, created_at: t0 },
+        { body: 'b', system: false, author: { username: 'ivyma' }, created_at: t1 },
+        { body: 'c', system: false, author: { username: 'joyce' }, created_at: t2 },
+      ],
+      commenterCommitsByRepo: {
+        'KEYPO/keypo-backend': { joyce: [closedTs - 1 * DAY] },
+      },
+    });
+    expect(r.closing_commenter).toBe('joyce');
+    expect(r.confidence).toBe('med');
+  });
+
+  it('low: commits spread across 2+ repos → ambiguous', () => {
+    const r = extractClosingCommenterHeuristic({
+      issue: { closed_at: closedAt },
+      comments: [
+        makeComment({ username: 'joyce', body: '已修正', daysBeforeClose: 0 }),
+      ],
+      commenterCommitsByRepo: {
+        'KEYPO/keypo-backend': { joyce: [closedTs - 1 * DAY] },
+        'KEYPO/keypo-frontend-2023': { joyce: [closedTs - 2 * DAY] },
+      },
+    });
+    expect(r.confidence).toBe('low');
+    expect(r.repos.size).toBe(2);
+  });
+
+  it('system notes are never considered as the closing commenter', () => {
+    const r = identifyClosingCommenter([
+      { body: '已更新', system: false, author: { username: 'joyce' }, created_at: '2026-04-09T00:00:00Z' },
+      { body: 'closed', system: true, author: { username: 'gitlab-bot' }, created_at: '2026-04-10T00:00:00Z' },
+    ]);
+    expect(r?.username).toBe('joyce');
   });
 });
 

@@ -1,0 +1,413 @@
+{
+  "train_metrics": {
+    "n_cases": 3,
+    "p_at_1": 0,
+    "r_at_3": 1,
+    "cross_repo_recall_avg": 1,
+    "assignee_r_at_3": 0,
+    "ece": 0.3,
+    "judge_avg": 2.5,
+    "judge_distribution": {
+      "1-2": 0,
+      "2-3": 3,
+      "3-4": 0,
+      "4-5": 0
+    },
+    "per_label_breakdown": {
+      "Bug": {
+        "n_cases": 3,
+        "p_at_1": 0,
+        "r_at_3": 1,
+        "assignee_r_at_3": 0,
+        "judge_avg": 2.5
+      },
+      "K5": {
+        "n_cases": 3,
+        "p_at_1": 0,
+        "r_at_3": 1,
+        "assignee_r_at_3": 0,
+        "judge_avg": 2.5
+      },
+      "P1_高": {
+        "n_cases": 3,
+        "p_at_1": 0,
+        "r_at_3": 1,
+        "assignee_r_at_3": 0,
+        "judge_avg": 2.5
+      },
+      "Data": {
+        "n_cases": 1,
+        "p_at_1": 0,
+        "r_at_3": 1,
+        "assignee_r_at_3": 0,
+        "judge_avg": 2.25
+      }
+    },
+    "per_outcome_breakdown": {
+      "likely_fixed": {
+        "n_cases": 3,
+        "p_at_1": 0,
+        "r_at_3": 1,
+        "judge_avg": 2.5
+      }
+    }
+  },
+  "test_metrics": {
+    "n_cases": 2,
+    "p_at_1": 0,
+    "r_at_3": 0,
+    "cross_repo_recall_avg": 0,
+    "assignee_r_at_3": 0,
+    "ece": 0.30000000000000004,
+    "judge_avg": 2.375,
+    "judge_distribution": {
+      "1-2": 0,
+      "2-3": 2,
+      "3-4": 0,
+      "4-5": 0
+    },
+    "per_label_breakdown": {
+      "Bug": {
+        "n_cases": 2,
+        "p_at_1": 0,
+        "r_at_3": 0,
+        "assignee_r_at_3": 0,
+        "judge_avg": 2.375
+      },
+      "K5": {
+        "n_cases": 2,
+        "p_at_1": 0,
+        "r_at_3": 0,
+        "assignee_r_at_3": 0,
+        "judge_avg": 2.375
+      },
+      "P0_緊急": {
+        "n_cases": 1,
+        "p_at_1": 0,
+        "r_at_3": 0,
+        "assignee_r_at_3": 0,
+        "judge_avg": 2.25
+      },
+      "P1_高": {
+        "n_cases": 1,
+        "p_at_1": 0,
+        "r_at_3": 0,
+        "assignee_r_at_3": 0,
+        "judge_avg": 2.5
+      }
+    },
+    "per_outcome_breakdown": {
+      "likely_fixed": {
+        "n_cases": 2,
+        "p_at_1": 0,
+        "r_at_3": 0,
+        "judge_avg": 2.375
+      }
+    }
+  },
+  "per_fixture": [
+    {
+      "split": "train",
+      "fixture_id": 300,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "KEYPO/keypo-newsletter",
+          "KEYPO/keypo-backend"
+        ],
+        "suggested_assignees": [],
+        "reasoning": "Issue 描述試用帳號到期後速報與日報仍持續發送的異常行為，核心問題涉及帳號有效期校驗與電子報排程觸發邏輯，最相關的 repo 為 keypo-newsletter（速報/日報發送機制）與 keypo-backend（試用帳號有效期管理）。",
+        "confidence": 0.32,
+        "caveats": [
+          "Cold start：無相似歷史 issue，無法從歷史資料推算 assignee，建議由 triage 人員手動指定負責人。",
+          "速報發送異常可能橫跨多個服務（排程觸發、帳號有效期驗證、發信服務），實際根因 repo 需工程師進一步確認。",
+          "Issue 同時描述兩個問題：(1) 帳號尚未可用時提前收到速報；(2) 11/28 到期後日報持續發送至 12/5——兩者可能為同一根因，也可能需分開追蹤。",
+          "techcenter/reportcenter_confidential 為通報來源 project，並非實際修復 repo，路由仍需對應到 KEYPO group 下的實作 repo。"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 1,
+        "correctness": 4,
+        "coverage": 2,
+        "avg": 2.75,
+        "reasoning": "Repo 選擇 (keypo-newsletter + keypo-backend) 技術上合理，能覆蓋排程發送與帳號效期兩個根因方向，診斷邏輯正確。但 plan_draft 完全缺席，無任何具體排查步驟（例如檢查排程 queue、延長帳號時是否重觸發舊設定、11/28–12/5 持續發送的 job 未停止的原因），且未提及 assignee、風險（誤發給無效帳號的資料洩漏疑慮）或優先排查層（排程 vs. 帳號有效期驗證），整體可執行性極低。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": false,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": false,
+          "ground_truth_assignee": null,
+          "suggested": []
+        },
+        "confidence": {
+          "stated": 0.32,
+          "was_correct": false,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 2.75,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 300,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 302,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "KEYPO/keypo-frontend-2023",
+          "KEYPO/keypo-backend",
+          "KEYPO/keypo-engine-api"
+        ],
+        "suggested_assignees": [],
+        "reasoning": "此 issue 帶有 K5 label，屬於 KEYPO 產品範疇；錯誤訊息顯示「Unknown error」且描述提到括號與字詞間缺少連接符號，可能源自前端 error message render 邏輯或後端回傳的 error payload 格式問題，優先建議 keypo-frontend-2023，其次 keypo-backend 與 keypo-engine-api。",
+        "confidence": 0.28,
+        "caveats": [
+          "冷啟動：無任何歷史相似 issue，無法根據歷史 assignee 頻率推薦處理人員",
+          "issue 來源 project 為 techcenter/reportcenter_confidential，可能是 reportcenter 自有模組而非 KEYPO 主線 repo，建議 triage 人員先確認錯誤實際發生在哪個系統",
+          "錯誤截圖（image.png）需登入 GitLab 才能查看，triage 人員應先閱圖確認錯誤出現於前端 UI 還是 API 回應，再決定最終路由",
+          "若確認為 reportcenter 自有邏輯，suggested_repos 可能全部不適用，需重新判斷"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 1,
+        "correctness": 3,
+        "coverage": 2,
+        "avg": 2.5,
+        "reasoning": "三個 repo 建議在 K5/KEYPO 情境下合理，frontend-first 優先符合「UI 顯示問題」直覺，reasoning 的診斷方向（前端 render 邏輯 vs 後端 error payload 格式）技術上 plausible。但 plan_draft 完全為空，信心低導致跳過，actionability 為零；coverage 亦不足——無 assignee 建議、無風險評估、P1_高 urgency 完全未反映。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": false,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": false,
+          "ground_truth_assignee": null,
+          "suggested": []
+        },
+        "confidence": {
+          "stated": 0.28,
+          "was_correct": false,
+          "bucket": "0-0.3"
+        },
+        "plan_quality": {
+          "judge_avg": 2.5,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 302,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 304,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "llmprojects/keypo-agent",
+          "KEYPO/keypo-backend",
+          "KEYPO/keypo-engine-api"
+        ],
+        "suggested_assignees": [],
+        "reasoning": "Issue 核心為 AI 報告中的聲量門檻判斷邏輯異常：客戶查詢時有 36,720+ 筆卻觸發「聲量不足」錯誤，且同帳號稍後可正常產出，指向 GPT 分析前的 volume check 邏輯或資料索引時序問題，最可能在 llmprojects/keypo-agent（LLM 分析層）或 KEYPO/keypo-backend（報告產生後端）。",
+        "confidence": 0.3,
+        "caveats": [
+          "冷啟動：無任何相似歷史 issue，路由完全基於 label (K5, Data) 與描述推斷，不確定性高",
+          "問題具時序性（09:20-09:21 失敗，11:02 正常），可能是資料索引延遲或快取問題，Data label 所指的資料層也不應排除",
+          "無歷史 assignee 記錄，建議由 K5 team lead 手動指派熟悉 AI 報告模組的成員",
+          "suggested_repos 均來自 K5 known_exceptions；若問題根源在資料管線端，應改查 CrawlersV2 群組下的相關 repo"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 3,
+        "actionability": 1,
+        "correctness": 3,
+        "coverage": 2,
+        "avg": 2.25,
+        "reasoning": "Repo 指向（keypo-agent、keypo-backend）對 LLM 報告產生路徑合理，時序索引假說也能解釋兩小時後可正常產出的現象，但完全缺乏 plan_draft、未提 assignee、也未追究帳號差異（jessicachi vs 管理員帳號）是否涉及權限或快取分層，覆蓋面明顯不足。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": false,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": false,
+          "ground_truth_assignee": null,
+          "suggested": []
+        },
+        "confidence": {
+          "stated": 0.3,
+          "was_correct": false,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 2.25,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 304,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "test",
+      "fixture_id": 3030,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "KEYPO/keypo-data-api",
+          "KEYPO/keypo-backend",
+          "KEYPO/keypo-international-website"
+        ],
+        "suggested_assignees": [],
+        "reasoning": "標題明確指出「港版資料庫查詢都錯誤沒有資料」，屬 K5 產品後端資料存取層問題，優先懷疑 keypo-data-api 或 keypo-backend；「港版」字樣暗示可能涉及國際版部署，keypo-international-website 亦列入候選。",
+        "confidence": 0.28,
+        "caveats": [
+          "無相似歷史 issue，屬 cold start，信心分數低於 0.5",
+          "issue 描述僅有一張截圖、無任何文字說明，無法判斷具體錯誤來源（API 層、DB 連線、查詢邏輯）",
+          "「港版」可能指特定環境配置（HK 資料庫節點）或國際版功能模組，需 triage 人員先確認",
+          "無歷史 assignee 資料，無法推薦負責人，請 triage 人員依當前值班或模組擁有者指派"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 3,
+        "actionability": 1,
+        "correctness": 3,
+        "coverage": 2,
+        "avg": 2.25,
+        "reasoning": "Repo 建議方向合理，keypo-data-api 與 keypo-backend 是港版 DB 查詢問題的合理起點，但 plan_draft 完全缺席導致 actionability 為零；P0 緊急等級應有 assignee 建議與緊急處置步驟，keypo-international-website 的關聯性也缺乏佐證。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": false,
+          "r_at_3": false,
+          "cross_repo_recall": 0
+        },
+        "assignee": {
+          "r_at_3": false,
+          "ground_truth_assignee": null,
+          "suggested": []
+        },
+        "confidence": {
+          "stated": 0.28,
+          "was_correct": false,
+          "bucket": "0-0.3"
+        },
+        "plan_quality": {
+          "judge_avg": 2.25,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 3030,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P0_緊急"
+        ]
+      }
+    },
+    {
+      "split": "test",
+      "fixture_id": 319,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "llmprojects/keypo-agent",
+          "KEYPO/keypo-backend",
+          "KEYPO/keypo-engine-api"
+        ],
+        "suggested_assignees": [],
+        "reasoning": "此 issue 標籤為 K5，描述 KEYPO Agent（Copilot）無法脫離 KEYPO 資料自行回答問題，行為問題最直接對應 `llmprojects/keypo-agent`；若為資料查詢或後端邏輯問題則可能延伸至 `keypo-backend` 或 `keypo-engine-api`。",
+        "confidence": 0.32,
+        "caveats": [
+          "冷啟動：無任何相似歷史 issue，路由完全依賴 issue 描述與 label config 推斷，準確度偏低",
+          "無歷史 assignee 資料，無法依頻率推薦負責人，建議 triage 人員手動指派熟悉 Agent/LLM 邏輯的成員",
+          "issue 附圖顯示 Copilot 介面，確認問題是『不應回答純 AI 知識問題』還是『應該要能回答但壞掉了』——兩者路由方向不同",
+          "描述中提到『我們的優點是 KEYPO 資料加上 AI 知識背景』，可能是 prompt / system instruction 設定問題，不一定是 bug，建議先確認產品規格"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 1,
+        "correctness": 3,
+        "coverage": 2,
+        "avg": 2.5,
+        "reasoning": "Repo 建議方向合理，`keypo-agent` 作為主要切入點符合 bug 描述（Agent 行為層問題），延伸至 backend/engine-api 也有邏輯依據；但 plan_draft 完全缺席、assignee 與風險均為空，提案實際可執行性為零。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": false,
+          "r_at_3": false,
+          "cross_repo_recall": 0
+        },
+        "assignee": {
+          "r_at_3": false,
+          "ground_truth_assignee": null,
+          "suggested": []
+        },
+        "confidence": {
+          "stated": 0.32,
+          "was_correct": false,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 2.5,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 319,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P1_高"
+        ]
+      }
+    }
+  ],
+  "meta": {
+    "n_train": 3,
+    "n_test": 2,
+    "split_date": "2026-03-19T09:52:24.633Z",
+    "run_started_at": "2026-04-22T15:20:58.958Z",
+    "run_finished_at": "2026-04-22T15:22:40.695Z",
+    "total_cost_usd_estimate": null
+  }
+}

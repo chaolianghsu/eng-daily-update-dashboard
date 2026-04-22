@@ -192,7 +192,7 @@ async function main() {
   console.log(JSON.stringify(agg, null, 2));
 
   // 6. Write output
-  const outDir = join(REPO_ROOT, 'test/eval/real-fixtures');
+  const outDir = join(REPO_ROOT, 'test/eval/diagnostics');
   const jsonOut = join(outDir, 'signal-validation-K5-20260422.json');
   writeFileSync(jsonOut, JSON.stringify({ aggregate: agg, per_issue: results }, null, 2));
   console.log(`\nJSON → ${jsonOut}`);

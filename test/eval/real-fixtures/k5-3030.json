@@ -1,0 +1,48 @@
+{
+  "fixture_id": "k5-3030",
+  "extraction_date": "2026-04-22",
+  "tier": "SILVER",
+  "issue": {
+    "iid": 3030,
+    "project_path": "techcenter/reportcenter",
+    "title": "20260319_港版資料庫查詢都錯誤沒有資料",
+    "description": "![image](/uploads/423b0b651d3237049dd841cc3b85bdca/image.png){width=900 height=541}",
+    "labels": [
+      "Bug",
+      "K5",
+      "P0_緊急"
+    ],
+    "state": "closed",
+    "closed_at": "2026-03-19T09:52:24.633Z",
+    "assignee": "Ivyma"
+  },
+  "ground_truth": {
+    "outcome": "likely_fixed",
+    "fix_repos": [
+      "KEYPO/keypo-engine-api"
+    ],
+    "primary_repo": "KEYPO/keypo-engine-api"
+  },
+  "provenance": {
+    "mr_cross_refs": {
+      "signal": "none",
+      "repos": []
+    },
+    "assignee_heuristic": {
+      "signal": "high",
+      "repos": [
+        "KEYPO/keypo-engine-api"
+      ],
+      "closing_commenter": "joyce",
+      "reason": "@joyce has commits in 1 repo(s) within ±14d window"
+    },
+    "llm_extractor": {
+      "signal": "low",
+      "repos": [],
+      "reasoning": "工程部已確認排除 ES 版本差異問題並恢復香港資料服務，但所有評論均屬運維操作層面的說明，未提及任何具體的程式碼修復 repo，無法從現有資訊中推斷出 fix_repos。"
+    },
+    "agreement_count": 1,
+    "promotion_rule": "1_high_no_contradiction"
+  },
+  "similar_context": null
+}

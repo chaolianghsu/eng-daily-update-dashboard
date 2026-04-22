@@ -17,7 +17,8 @@ import { fileURLToPath } from 'node:url';
 import { spawn } from 'node:child_process';
 import {
   extractMrCrossRefs,
-  extractAssigneeHeuristic,
+  extractClosingCommenterHeuristic,
+  identifyClosingCommenter,
   classifyIssueOutcome,
   buildLLMExtractorPrompt,
   parseLLMExtractorOutput,
@@ -189,13 +190,22 @@ function extractJsonFromText(text) {
 
 // ---- Per-issue pipeline ------------------------------------------------------
 
-async function processIssue({ issue, projectPath, client, labelCfgForLabel, label, logger, llmStats }) {
-  const notes = await client.fetchIssueNotes(projectPath, issue.iid);
+async function processIssue({ issue, projectPath, client, labelCfgForLabel, label, logger, llmStats, commenterCommitsByRepo, notes }) {
+  // notes may be pre-fetched (when the caller did a prefetch pass to gather
+  // closing commenters). Otherwise fetch them now.
+  if (!notes) {
+    notes = await client.fetchIssueNotes(projectPath, issue.iid);
+  }
   const systemNotes = notes.filter((n) => n.system);
   const userNotes = notes.filter((n) => !n.system);
 
   const mrRefs = extractMrCrossRefs(systemNotes);
-  const assigneeHeuristic = extractAssigneeHeuristic({ issue, assigneeCommitsByRepo: null });
+  // Signal 2b: closing-commenter commit heuristic (replaces deprecated signal 2a).
+  const assigneeHeuristic = extractClosingCommenterHeuristic({
+    issue,
+    comments: notes,
+    commenterCommitsByRepo,
+  });
   const det = classifyIssueOutcome({ issue, comments: notes });
 
   // Build LLM prompt and call
@@ -261,6 +271,114 @@ async function runPool(items, worker, concurrency) {
   });
   await Promise.all(workers);
   return results;
+}
+
+// ---- Signal 2b: prefetch commits for closing commenters ---------------------
+
+/**
+ * Given a set of candidate repos, a set of usernames, and a date range, fetch
+ * all commits and return:
+ *   { repoPath: { username: [ts_ms, ...] } }
+ *
+ * Case-insensitive username matching is handled inside the heuristic; here we
+ * store authors by their raw lowercase name + gitlab username where available.
+ *
+ * Uses raw fetch (not GitLab client) for pagination control. Skips repos that
+ * can't be resolved.
+ */
+async function prefetchUserCommits({ baseUrl, token, repos, usernames, sinceIso, untilIso, logger }) {
+  const result = {};
+  if (!repos || repos.length === 0) return result;
+  if (!usernames || usernames.size === 0) return result;
+
+  const wantedUsernames = new Set([...usernames].map((u) => u.toLowerCase()));
+  const gitlabAuthorsByUsername = new Map(); // alias resolution: author_name -> username
+
+  // Optional: widen matching by GitLab memberMap reverse lookup (author_name → username).
+  // memberMap entries like {"joyce.kuo": "Joyce"} map a GitLab commit author to a display name.
+  // We invert that so if `joyce.kuo` appears as a commit author, we also tag it as username `joyce`.
+  // memberMap is passed in by caller via `aliasMap` in future; here we skip it and rely on
+  // case-insensitive direct match.
+  void gitlabAuthorsByUsername;
+
+  const headers = { 'PRIVATE-TOKEN': token };
+  for (const repo of repos) {
+    const encoded = encodeURIComponent(repo);
+    // resolve project id (just to confirm existence & consistent URL)
+    let projectId;
+    try {
+      const projRes = await fetch(`${baseUrl}/api/v4/projects/${encoded}`, { headers });
+      if (!projRes.ok) {
+        logger?.warn?.(`[prefetch] skip ${repo}: HTTP ${projRes.status}`);
+        continue;
+      }
+      const proj = await projRes.json();
+      projectId = proj.id;
+    } catch (err) {
+      logger?.warn?.(`[prefetch] skip ${repo}: ${err.message}`);
+      continue;
+    }
+
+    const perUser = {};
+    let page = 1;
+    const totalBefore = Object.values(perUser).reduce((n, a) => n + a.length, 0);
+    void totalBefore;
+    while (true) {
+      const params = new URLSearchParams({
+        per_page: '100',
+        page: String(page),
+        all: 'true',
+      });
+      if (sinceIso) params.set('since', sinceIso);
+      if (untilIso) params.set('until', untilIso);
+      const url = `${baseUrl}/api/v4/projects/${projectId}/repository/commits?${params.toString()}`;
+      let commits;
+      try {
+        const res = await fetch(url, { headers });
+        if (!res.ok) {
+          logger?.warn?.(`[prefetch] ${repo} page ${page}: HTTP ${res.status}`);
+          break;
+        }
+        commits = await res.json();
+      } catch (err) {
+        logger?.warn?.(`[prefetch] ${repo} page ${page}: ${err.message}`);
+        break;
+      }
+      if (!Array.isArray(commits) || commits.length === 0) break;
+      for (const c of commits) {
+        const author = (c.author_name || c.author_email || '').toLowerCase().trim();
+        if (!author) continue;
+        // Direct match
+        if (!wantedUsernames.has(author)) {
+          // Loose match: author could be "joyce.kuo" vs username "joyce" — accept if
+          // the wanted username is a prefix before a dot.
+          let matched = false;
+          for (const u of wantedUsernames) {
+            if (author === u) { matched = true; break; }
+            if (author.startsWith(`${u}.`) || author.startsWith(`${u}_`)) { matched = true; break; }
+            if (author === u.toLowerCase()) { matched = true; break; }
+          }
+          if (!matched) continue;
+        }
+        // Bucket under every matching wanted username for easy lookup.
+        for (const u of wantedUsernames) {
+          if (author === u || author.startsWith(`${u}.`) || author.startsWith(`${u}_`)) {
+            const ts = new Date(c.committed_date || c.created_at || c.authored_date).getTime();
+            if (Number.isNaN(ts)) continue;
+            if (!perUser[u]) perUser[u] = [];
+            perUser[u].push(ts);
+          }
+        }
+      }
+      if (commits.length < 100) break;
+      page += 1;
+      if (page > 30) break; // safety cap
+    }
+    if (Object.keys(perUser).length > 0) {
+      result[repo] = perUser;
+    }
+  }
+  return result;
 }
 
 // ---- Fetch closed issues by label -------------------------------------------
@@ -348,8 +466,10 @@ function buildReport({ args, stats, outcomesHistogram, topRepos, costUSD, llmSta
     '',
     '## Known Gaps / TODOs',
     '',
-    '- Assignee heuristic (signal 2) **disabled in v0** — needs cross-repo commit',
-    '  fetching, which is expensive. Re-enable in v1.1 once we have a commits cache.',
+    '- Signal 2b (closing-commenter commit heuristic) replaces deprecated signal 2a.',
+    '  Validation (2026-04-22, 135 K5 issues) showed signal 2a had 0% agreement',
+    '  with signal 1; this team\'s assignees are CSMs, not fixers. Signal 2b uses',
+    '  the last non-bot user comment before close (often the actual fixer).',
     '- Anonymization is conservative; expand blacklist if review surfaces leaked',
     '  customer names.',
     '- CLI fallback path (claude --print) can\'t force tool_use; we rely on JSON',
@@ -397,6 +517,67 @@ async function main() {
   const mode = process.env.ANTHROPIC_API_KEY ? 'sdk' : 'cli';
   logger.log(`[extract] LLM mode: ${mode}`);
 
+  // ---- Signal 2b prefetch pass --------------------------------------------
+  // 1. Fetch notes for every candidate issue (bounded concurrency)
+  // 2. Identify the closing commenter per issue
+  // 3. Compute global date-range across all issue close dates (±14d)
+  // 4. Fetch commits by those commenters across K5 candidate repos in that range
+  logger.log(`[extract] prefetch pass: fetching notes for ${candidates.length} issues to ID closing commenters...`);
+
+  const notesByIssue = new Map(); // key: `${projectPath}#${iid}` → notes[]
+  const closingCommenters = new Set();
+  const closeTimestamps = [];
+  await runPool(candidates, async (item) => {
+    try {
+      const notes = await client.fetchIssueNotes(item.projectPath, item.issue.iid);
+      notesByIssue.set(`${item.projectPath}#${item.issue.iid}`, notes);
+      const closer = identifyClosingCommenter(notes, {
+        issueAuthor: item.issue?.author?.username,
+      });
+      if (closer?.username) closingCommenters.add(closer.username);
+      if (item.issue.closed_at) {
+        const ts = new Date(item.issue.closed_at).getTime();
+        if (!Number.isNaN(ts)) closeTimestamps.push(ts);
+      }
+    } catch (err) {
+      logger.warn(`[extract] prefetch notes #${item.issue?.iid}: ${err.message}`);
+    }
+  }, CONCURRENCY);
+
+  logger.log(`[extract]   ${closingCommenters.size} unique closing commenters: ${[...closingCommenters].slice(0, 10).join(', ')}${closingCommenters.size > 10 ? '...' : ''}`);
+
+  // Derive commit-fetch date window: [min(close) - 14d, max(close) + 1d]
+  let commenterCommitsByRepo = {};
+  if (closeTimestamps.length > 0 && closingCommenters.size > 0) {
+    const minClose = Math.min(...closeTimestamps);
+    const maxClose = Math.max(...closeTimestamps);
+    const rangeStart = new Date(minClose - 14 * 86400 * 1000).toISOString();
+    const rangeEnd = new Date(maxClose + 1 * 86400 * 1000).toISOString();
+
+    // Candidate repos from label config: primary_group repos + known_exceptions.
+    const candidateRepos = [];
+    for (const r of labelCfgForLabel?.known_exceptions ?? []) candidateRepos.push(r);
+    // Note: primary_group alone doesn't enumerate repos, so we rely on the
+    // explicit enumeration in known_exceptions (per config/label-routing.yaml).
+
+    logger.log(`[extract] prefetch commits: ${candidateRepos.length} repos × ${closingCommenters.size} users from ${rangeStart.slice(0,10)} to ${rangeEnd.slice(0,10)}...`);
+    commenterCommitsByRepo = await prefetchUserCommits({
+      baseUrl: gitlabCfg.baseUrl,
+      token: gitlabCfg.token,
+      repos: candidateRepos,
+      usernames: closingCommenters,
+      sinceIso: rangeStart,
+      untilIso: rangeEnd,
+      logger,
+    });
+    const nRepos = Object.keys(commenterCommitsByRepo).length;
+    const nPairs = Object.values(commenterCommitsByRepo).reduce((s, m) => s + Object.keys(m).length, 0);
+    logger.log(`[extract]   prefetched commits across ${nRepos} repos, ${nPairs} (repo,user) pairs with ≥1 commit`);
+  } else {
+    logger.log('[extract]   prefetch skipped (no close_at timestamps or no commenters)');
+  }
+  // ---- End prefetch pass ---------------------------------------------------
+
   const stats = { fetched: candidates.length, gold: 0, silver: 0, bronze: 0, skip: 0, errors: 0 };
   const outcomesHistogram = {};
   const repoMentions = new Map();
@@ -408,6 +589,7 @@ async function main() {
   const results = await runPool(candidates, async (item) => {
     if (stopEarly) return null;
     try {
+      const cacheKey = `${item.projectPath}#${item.issue.iid}`;
       const r = await processIssue({
         issue: item.issue,
         projectPath: item.projectPath,
@@ -416,6 +598,8 @@ async function main() {
         label: args.label,
         logger,
         llmStats,
+        commenterCommitsByRepo,
+        notes: notesByIssue.get(cacheKey) ?? null,
       });
       const { combined, fixture } = r;
       outcomesHistogram[combined.outcome] = (outcomesHistogram[combined.outcome] ?? 0) + 1;

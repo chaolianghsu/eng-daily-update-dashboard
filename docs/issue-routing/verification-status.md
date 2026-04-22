@@ -73,7 +73,7 @@ On Approve: plan becomes GitLab comment
 
 ### Evidence
 - `test/eval/results/eval-2026-04-22-07-10.json`
-- `test/eval/real-fixtures/signal-validation-K5-20260422.json` (diagnostic on 135 K5 issues)
+- `test/eval/diagnostics/signal-validation-K5-20260422.json` (diagnostic on 135 K5 issues)
 
 ---
 
@@ -103,13 +103,13 @@ On Approve: plan becomes GitLab comment
 
 ## Overall Verification Matrix
 
-| Step | Mechanically works | Runs in eval | Quality measured | Statistically valid | Real-user validated |
-|---|---|---|---|---|---|
-| 1. 釐清問題 | ✅ | ✅ | ⚠️ judge 2.5/5 | ❌ n=3 | ❌ |
-| 2. 找到 repos | ✅ | ✅ | ✅ R@3=100%,P@1=0% | ❌ n=3 | ❌ |
-| 3. 產生 plan | ✅ | ❌ (skipped) | ❌ | ❌ | ❌ |
-| IC Approve→ GitLab comment | ✅(unit+int) | ❌(not in real flow) | — | — | ❌ |
-| Chat post idempotency | ✅(unit+int) | ❌ | — | — | ❌ |
+| Step                       | Mechanically works | Runs in eval        | Quality measured              | Statistically valid | Real-user validated |
+| -------------------------- | ------------------ | ------------------- | ----------------------------- | ------------------- | ------------------- |
+| 1. 釐清問題                    | ✅                  | ✅                   | ⚠️ judge 2.4–2.7/5            | ❌ n=5               | ❌                   |
+| 2. 找到 repos                | ✅                  | ✅                   | ⚠️ R@3=100% train / 0% test, P@1=0% | ❌ n=5               | ❌                   |
+| 3. 產生 plan                 | ✅                  | ❌ (skipped)         | ❌                             | ❌                   | ❌                   |
+| IC Approve→ GitLab comment | ✅(unit+int)        | ❌(not in real flow) | —                             | —                   | ❌                   |
+| Chat post idempotency      | ✅(unit+int)        | ❌                   | —                             | —                   | ❌                   |
 
 Legend:
 - ✅ = verified with data
@@ -132,8 +132,15 @@ Legend:
 - **Top-1 ranking(2)**: System picks wrong repo as top-1 100% of time in sample. IC UX impact unknown.
 
 ### What's structurally verified impossible
-- ❌ **Signal 2 (assignee heuristic) for K5**: CSM assignees ≠ engineering commit authors. 0% overlap(135-issue validation). Alternative signals(2b closing commenter, etc.)not yet tried.
-- ❌ **High GOLD yield from deterministic signals alone**: 2.2% MR coverage is a hard ceiling. More ground truth requires either signal 2b, keyword matching, OR human labeling.
+- ❌ **Signal 2a (assignee heuristic) for K5**: CSM assignees ≠ engineering commit authors. 0% overlap(135-issue validation).
+- ❌ **High GOLD yield from deterministic signals alone**: 2.2% MR coverage is a hard ceiling. More ground truth requires signal 2b, keyword matching, OR human labeling.
+
+### Signal 2b (closing-commenter heuristic) — first run results (2026-04-22)
+- Replaces deprecated signal 2a. Identifies the last non-bot user comment before close, checks their commits in candidate repos within ±14d.
+- **Yield: 0 GOLD + 2 SILVER on 135 K5 issues** (`k5-3030` joyce → keypo-engine-api; `k5-319` aaron.li → on-premises-api-gateway). Both fixtures point to KEYPO engineers, semantically valid.
+- ⚠️ This run hit Claude CLI rate limits mid-extraction (76 LLM errors / 135 issues). Three baseline GOLDs (k5-300/302/304) could not be reproduced in this rerun and were restored from git (commit `279381a`); they remain valid evidence.
+- ⚠️ **Phase II eval on the 2 new SILVERs: P@1=0%, R@3=0%**. Phase 1 LLM does not currently route these to their fix repos (e.g., k5-319 → ground truth `on-premises-api-gateway`, top-3 was `llmprojects/keypo-agent`/`keypo-backend`/`keypo-engine-api`). Means signal 2b widens the eval to harder cases the current system fails — this is *additional production failure surface area now visible*, not regression.
+- Production extractor needs retry-with-backoff on CLI rate-limit errors before re-running on a larger label set.
 
 ---
 

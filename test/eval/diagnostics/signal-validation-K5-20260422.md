@@ -76,4 +76,4 @@ For now: **3 GOLD fixtures from signal 1 are the eval dataset**. Accept this con
 
 ## Full data
 
-`test/eval/real-fixtures/signal-validation-K5-20260422.json` — all 135 issues with per-issue signal breakdown.
+`test/eval/diagnostics/signal-validation-K5-20260422.json` — all 135 issues with per-issue signal breakdown.
