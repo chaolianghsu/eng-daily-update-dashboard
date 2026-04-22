@@ -7,13 +7,21 @@
     "build:appscript": "vite build --config vite.config.appscript.ts && bun scripts/build-appscript.ts",
     "test": "vitest run",
     "test:watch": "vitest",
+    "test:unit": "vitest run test/unit",
+    "test:integration": "vitest run test/integration",
     "deploy:appscript": "bun run build:appscript && cd appscript && clasp push && clasp deploy -i AKfycbxMfzEiZoAq5igmL69qN711mCrpX9Mv0vjnxb1IiEqpkC0h_ZVR2me2SNlX82YvNEGp -d \"$(date +%Y-%m-%d)\"",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "issue-routing:migrate": "node scripts/migrate.mjs",
+    "issue-routing:collect": "node scripts/collect-new-issues.mjs",
+    "issue-routing:analyze": "node scripts/analyze-and-post.mjs",
+    "issue-routing:audit": "node scripts/audit-routing-config.mjs",
+    "issue-routing:eval": "node test/eval/run-eval.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.58.2",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
+    "@types/better-sqlite3": "^7.6.13",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^4.0.0",
@@ -23,8 +31,11 @@
     "vitest": "^3.0.0"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.90.0",
+    "better-sqlite3": "^12.9.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "recharts": "2.12.7"
+    "recharts": "2.12.7",
+    "yaml": "^2.8.3"
   }
 }

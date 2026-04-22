@@ -13,3 +13,10 @@ appscript/index.html
 test-results/
 .gstack/
 .worktrees/
+
+# Issue routing system (feat/issue-routing)
+db/issue-routing.sqlite
+db/issue-routing.sqlite-journal
+db/issue-routing.sqlite-wal
+db/issue-routing.sqlite-shm
+db/issue-routing.sqlite.cron-lock
