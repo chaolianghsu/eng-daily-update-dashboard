@@ -1,0 +1,67 @@
+# Label → Repo routing configuration
+#
+# Updated via PR. Reviewed by eng lead.
+# Drift audit runs monthly via scripts/audit-routing-config.mjs → DM's
+# user when actual repo (based on recent fix patterns) differs from config.
+#
+# See docs/superpowers/plans/2026-04-22-issue-routing.md for design rationale.
+
+labels:
+  K5:
+    product: KEYPO
+    primary_group: KEYPO
+    known_exceptions:
+      - llmprojects/keypo-agent
+      # Add more as discovered via drift audit or IC feedback.
+      # Format: "group/project" matching GitLab project_path.
+
+  BD:
+    product: BigData
+    primary_group: bigdata
+    known_exceptions:
+      - bigdata1  # experimental / poc fork group
+
+  DV:
+    product: DailyView
+    primary_group: dailyview
+    known_exceptions:
+      - dv-report
+      - dv-survey
+
+  Fanti:
+    product: Fanti
+    primary_group: null  # intentionally cross-group — no single primary
+    layers:
+      crawler:
+        - CrawlersV2/fanti-insights-api
+      backend:
+        - cdp/fanti-insights-backend
+        - cdp/fanti-review-backend
+      ui:
+        - cdp/fanti-insights-dashboard
+        - cdp/fanti-review-dashboard
+      nginx:
+        - cdp/fanti-review-nginx
+        - cdp/fanti-insights-nginx
+      keypo_integration:
+        - KEYPO/fanti_info_web
+        - KEYPO/fanti_manager
+
+  Data:
+    product: Data ops
+    primary_group: Crawlers
+    known_exceptions:
+      - CrawlersV2
+      - bigdata1
+
+  信義:
+    product: Xinyi
+    primary_group: sinyi
+
+# Labels that are type/priority metadata, not product routing signals
+ignore_for_routing:
+  - P1_高
+  - P2_中
+  - P3_低
+  - Bug
+  - Feature
