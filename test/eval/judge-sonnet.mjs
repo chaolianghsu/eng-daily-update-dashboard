@@ -20,7 +20,12 @@
 
 import { execFile as defaultExecFile } from 'node:child_process';
 
-const DEFAULT_MODEL = 'sonnet-4-5';
+// NOTE: Claude CLI 2.1.x doesn't expose an explicit `sonnet-4-5` alias; only `sonnet`
+// (→ latest, currently 4.6) and `haiku` / `opus` are reliable. Using `sonnet` here
+// means the judge shares the same model family as phase1/phase2 — version
+// decorrelation is lost. For cross-family independence, swap to `haiku` or wire
+// via codex CLI (Gemini/GPT) as a separate judge path.
+const DEFAULT_MODEL = 'sonnet';
 const DEFAULT_TIMEOUT_MS = 60_000;
 const DESCRIPTION_TRUNCATE = 800;
 
