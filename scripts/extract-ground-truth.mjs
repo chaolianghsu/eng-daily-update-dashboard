@@ -14,7 +14,6 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { spawn } from 'node:child_process';
 import {
   extractMrCrossRefs,
   extractClosingCommenterHeuristic,
@@ -26,6 +25,7 @@ import {
   buildFixtureJson,
   EXTRACTOR_TOOL,
 } from '../lib/ground-truth-extractor.mjs';
+import { callClaudeCliWithToolRetrying } from '../lib/llm/cli-fallback.mjs';
 import { createGitLabClient, GitLabApiError } from '../lib/gitlab-client.mjs';
 import { loadLabelRouting, validateConfig, getRepoSuggestions } from '../lib/config.mjs';
 
@@ -109,83 +109,25 @@ async function runLLMViaSdk(prompt) {
 }
 
 /**
- * Shell out to `claude --print` with a prompt that asks for JSON matching the
- * EXTRACTOR_TOOL schema. We can't force tool_use via the CLI, so we ask for
- * structured JSON output and parse it into the same shape.
+ * Call claude CLI with retry-with-backoff via the shared fallback wrapper.
+ * Transient failures (rate-limit exit 1, timeout, malformed JSON) are retried
+ * up to 3 times with exponential backoff + jitter. Schema mismatches fail fast.
  */
 async function runLLMViaClaudeCli(prompt, logger) {
-  const wrappedPrompt = [
+  const response = await callClaudeCliWithToolRetrying({
     prompt,
-    '',
-    '=== OUTPUT CONTRACT ===',
-    '你必須回傳「純 JSON」(不要 markdown code fence, 不要任何解釋文字),',
-    '欄位如下:',
-    '{',
-    '  "outcome": "likely_fixed" | "duplicate" | "wont_fix" | "customer_error" | "no_fix_needed" | "unclear",',
-    '  "fix_repos": ["group/project", ...],',
-    '  "primary_repo": "group/project" | "",',
-    '  "confidence": "high" | "med" | "low",',
-    '  "reasoning": "1-2 句 zh-TW"',
-    '}',
-    '只輸出這個 JSON,其他都不要。',
-  ].join('\n');
-
-  const stdout = await runClaudeCli(wrappedPrompt);
-  const parsed = extractJsonFromText(stdout);
-  if (!parsed) {
-    throw new Error(`claude CLI: could not parse JSON from output: ${stdout.slice(0, 200)}`);
-  }
-  // Normalize into the same shape parseLLMExtractorOutput expects.
-  const fake = { type: 'tool_use', name: EXTRACTOR_TOOL.name, input: parsed };
-  return { parsed: parseLLMExtractorOutput(fake), usage: null };
-}
-
-function runClaudeCli(prompt) {
-  return new Promise((resolve, reject) => {
-    const proc = spawn('claude', ['--print', '--model', 'sonnet'], {
-      stdio: ['pipe', 'pipe', 'pipe'],
-    });
-    let out = '';
-    let err = '';
-    proc.stdout.on('data', (d) => { out += d.toString(); });
-    proc.stderr.on('data', (d) => { err += d.toString(); });
-    proc.on('error', reject);
-    proc.on('close', (code) => {
-      if (code !== 0) {
-        reject(new Error(`claude CLI exited ${code}: ${err.slice(0, 500)}`));
-      } else {
-        resolve(out);
-      }
-    });
-    proc.stdin.write(prompt);
-    proc.stdin.end();
+    toolSchema: EXTRACTOR_TOOL,
+    model: 'sonnet',
+    maxAttempts: 3,
+    baseDelayMs: 1500,
+    onRetry: ({ attempt, err, delayMs }) => {
+      logger.warn(
+        `[extract] LLM retry ${attempt}/3 after ${err.code}: ${err.message.slice(0, 80)} (sleep ${Math.round(delayMs)}ms)`,
+      );
+    },
   });
-}
-
-function extractJsonFromText(text) {
-  if (!text) return null;
-  // Strip markdown fences if present.
-  const noFence = text.replace(/```(?:json)?\s*([\s\S]*?)\s*```/g, '$1').trim();
-  // Find first "{" and matching close
-  const start = noFence.indexOf('{');
-  if (start < 0) return null;
-  let depth = 0;
-  for (let i = start; i < noFence.length; i++) {
-    const ch = noFence[i];
-    if (ch === '{') depth++;
-    else if (ch === '}') {
-      depth--;
-      if (depth === 0) {
-        const slice = noFence.slice(start, i + 1);
-        try {
-          return JSON.parse(slice);
-        } catch {
-          return null;
-        }
-      }
-    }
-  }
-  return null;
+  const toolUse = response.content[0];
+  return { parsed: parseLLMExtractorOutput(toolUse), usage: null };
 }
 
 // ---- Per-issue pipeline ------------------------------------------------------

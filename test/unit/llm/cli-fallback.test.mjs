@@ -8,7 +8,10 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { EventEmitter } from 'node:events';
 
-import { callClaudeCliWithTool } from '../../../lib/llm/cli-fallback.mjs';
+import {
+  callClaudeCliWithTool,
+  callClaudeCliWithToolRetrying,
+} from '../../../lib/llm/cli-fallback.mjs';
 
 const sampleTool = {
   name: 'route_issue',
@@ -290,5 +293,218 @@ describe('callClaudeCliWithTool', () => {
     }).catch((e) => e);
     expect(err.code).toBe('cli_invalid_json');
     expect(String(err.raw ?? '')).toContain('this is definitely');
+  });
+});
+
+describe('callClaudeCliWithToolRetrying', () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  /**
+   * Build a scripted mock spawn whose behavior differs per call. `scripts` is
+   * an array; the Nth invocation uses scripts[N-1]. Each script is a function
+   * (proc) => void that drives the child process events.
+   */
+  function makeScriptedSpawn(scripts) {
+    let call = 0;
+    return vi.fn().mockImplementation((cmd, args, opts) => {
+      const proc = new EventEmitter();
+      proc.stdout = new EventEmitter();
+      proc.stderr = new EventEmitter();
+      proc.stdin = { write: vi.fn(), end: vi.fn() };
+      proc.__cmd = cmd;
+      proc.__args = args;
+      proc.__opts = opts;
+      proc.__emitStdout = (chunk) => proc.stdout.emit('data', chunk);
+      proc.__emitStderr = (chunk) => proc.stderr.emit('data', chunk);
+      proc.__emitClose = (code) => proc.emit('close', code);
+      const script = scripts[Math.min(call, scripts.length - 1)];
+      call += 1;
+      queueMicrotask(() => script(proc));
+      return proc;
+    });
+  }
+
+  it('succeeds on first try → one spawn, no sleep', async () => {
+    const spawn = makeScriptedSpawn([
+      (proc) => {
+        proc.__emitStdout(JSON.stringify(validPayload));
+        proc.__emitClose(0);
+      },
+    ]);
+    const sleep = vi.fn().mockResolvedValue(undefined);
+    const result = await callClaudeCliWithToolRetrying({
+      prompt: 'test',
+      toolSchema: sampleTool,
+      spawn,
+      sleep,
+    });
+    expect(spawn).toHaveBeenCalledTimes(1);
+    expect(sleep).not.toHaveBeenCalled();
+    expect(result.content[0].input).toEqual(validPayload);
+  });
+
+  it('retries on cli_error (exit 1), succeeds on 2nd attempt', async () => {
+    const spawn = makeScriptedSpawn([
+      (proc) => {
+        proc.__emitStderr('rate limited');
+        proc.__emitClose(1);
+      },
+      (proc) => {
+        proc.__emitStdout(JSON.stringify(validPayload));
+        proc.__emitClose(0);
+      },
+    ]);
+    const sleep = vi.fn().mockResolvedValue(undefined);
+    const result = await callClaudeCliWithToolRetrying({
+      prompt: 'test',
+      toolSchema: sampleTool,
+      spawn,
+      sleep,
+      baseDelayMs: 100,
+    });
+    expect(spawn).toHaveBeenCalledTimes(2);
+    expect(sleep).toHaveBeenCalledTimes(1);
+    expect(result.content[0].input).toEqual(validPayload);
+  });
+
+  it('retries on cli_invalid_json, succeeds on 2nd attempt', async () => {
+    const spawn = makeScriptedSpawn([
+      (proc) => {
+        proc.__emitStdout('not json at all');
+        proc.__emitClose(0);
+      },
+      (proc) => {
+        proc.__emitStdout(JSON.stringify(validPayload));
+        proc.__emitClose(0);
+      },
+    ]);
+    const sleep = vi.fn().mockResolvedValue(undefined);
+    const result = await callClaudeCliWithToolRetrying({
+      prompt: 'test',
+      toolSchema: sampleTool,
+      spawn,
+      sleep,
+      baseDelayMs: 100,
+    });
+    expect(spawn).toHaveBeenCalledTimes(2);
+    expect(result.content[0].input).toEqual(validPayload);
+  });
+
+  it('does NOT retry on cli_schema_mismatch (LLM answered wrongly)', async () => {
+    const bogus = { layer: 'n/a' }; // missing required fields
+    const spawn = makeScriptedSpawn([
+      (proc) => {
+        proc.__emitStdout(JSON.stringify(bogus));
+        proc.__emitClose(0);
+      },
+    ]);
+    const sleep = vi.fn().mockResolvedValue(undefined);
+    const err = await callClaudeCliWithToolRetrying({
+      prompt: 'test',
+      toolSchema: sampleTool,
+      spawn,
+      sleep,
+    }).catch((e) => e);
+    expect(err.code).toBe('cli_schema_mismatch');
+    expect(spawn).toHaveBeenCalledTimes(1);
+    expect(sleep).not.toHaveBeenCalled();
+  });
+
+  it('gives up after maxAttempts, throws last error with attempts count', async () => {
+    const script = (proc) => {
+      proc.__emitStderr('rate limited');
+      proc.__emitClose(1);
+    };
+    const spawn = makeScriptedSpawn([script, script, script]);
+    const sleep = vi.fn().mockResolvedValue(undefined);
+    const err = await callClaudeCliWithToolRetrying({
+      prompt: 'test',
+      toolSchema: sampleTool,
+      spawn,
+      sleep,
+      maxAttempts: 3,
+      baseDelayMs: 100,
+    }).catch((e) => e);
+    expect(err.code).toBe('cli_error');
+    expect(err.attempts).toBe(3);
+    expect(spawn).toHaveBeenCalledTimes(3);
+    expect(sleep).toHaveBeenCalledTimes(2); // sleep between, not after last
+  });
+
+  it('maxAttempts=1 disables retry', async () => {
+    const spawn = makeScriptedSpawn([
+      (proc) => {
+        proc.__emitStderr('boom');
+        proc.__emitClose(1);
+      },
+    ]);
+    const sleep = vi.fn().mockResolvedValue(undefined);
+    const err = await callClaudeCliWithToolRetrying({
+      prompt: 'test',
+      toolSchema: sampleTool,
+      spawn,
+      sleep,
+      maxAttempts: 1,
+    }).catch((e) => e);
+    expect(err.code).toBe('cli_error');
+    expect(err.attempts).toBe(1);
+    expect(spawn).toHaveBeenCalledTimes(1);
+    expect(sleep).not.toHaveBeenCalled();
+  });
+
+  it('backoff is non-decreasing across retries', async () => {
+    const script = (proc) => {
+      proc.__emitStderr('boom');
+      proc.__emitClose(1);
+    };
+    const spawn = makeScriptedSpawn([script, script, script]);
+    const sleepCalls = [];
+    const sleep = vi.fn().mockImplementation((ms) => {
+      sleepCalls.push(ms);
+      return Promise.resolve();
+    });
+    await callClaudeCliWithToolRetrying({
+      prompt: 'test',
+      toolSchema: sampleTool,
+      spawn,
+      sleep,
+      maxAttempts: 3,
+      baseDelayMs: 100,
+      maxDelayMs: 10_000,
+    }).catch(() => {});
+    expect(sleepCalls).toHaveLength(2);
+    // Exponential: attempt2 delay ≈ 100 * 2^0, attempt3 delay ≈ 100 * 2^1
+    // with ±25% jitter, so strictly: second >= first * 1.5 (conservative).
+    expect(sleepCalls[1]).toBeGreaterThan(sleepCalls[0]);
+  });
+
+  it('calls onRetry callback with attempt metadata', async () => {
+    const spawn = makeScriptedSpawn([
+      (proc) => {
+        proc.__emitStderr('boom');
+        proc.__emitClose(1);
+      },
+      (proc) => {
+        proc.__emitStdout(JSON.stringify(validPayload));
+        proc.__emitClose(0);
+      },
+    ]);
+    const sleep = vi.fn().mockResolvedValue(undefined);
+    const onRetry = vi.fn();
+    await callClaudeCliWithToolRetrying({
+      prompt: 'test',
+      toolSchema: sampleTool,
+      spawn,
+      sleep,
+      onRetry,
+      baseDelayMs: 100,
+    });
+    expect(onRetry).toHaveBeenCalledTimes(1);
+    const arg = onRetry.mock.calls[0][0];
+    expect(arg.attempt).toBe(1);
+    expect(arg.err.code).toBe('cli_error');
+    expect(typeof arg.delayMs).toBe('number');
   });
 });
