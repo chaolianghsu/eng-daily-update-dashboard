@@ -1,0 +1,273 @@
+{
+  "train_metrics": {
+    "n_cases": 2,
+    "p_at_1": 0,
+    "r_at_3": 0,
+    "cross_repo_recall_avg": 0,
+    "assignee_r_at_3": 0,
+    "ece": 0.24000000000000002,
+    "judge_avg": 0,
+    "judge_distribution": {
+      "1-2": 2,
+      "2-3": 0,
+      "3-4": 0,
+      "4-5": 0
+    },
+    "per_label_breakdown": {
+      "Bug": {
+        "n_cases": 2,
+        "p_at_1": 0,
+        "r_at_3": 0,
+        "assignee_r_at_3": 0,
+        "judge_avg": 0
+      },
+      "K5": {
+        "n_cases": 2,
+        "p_at_1": 0,
+        "r_at_3": 0,
+        "assignee_r_at_3": 0,
+        "judge_avg": 0
+      },
+      "P1_高": {
+        "n_cases": 2,
+        "p_at_1": 0,
+        "r_at_3": 0,
+        "assignee_r_at_3": 0,
+        "judge_avg": 0
+      }
+    },
+    "per_outcome_breakdown": {
+      "likely_fixed": {
+        "n_cases": 2,
+        "p_at_1": 0,
+        "r_at_3": 0,
+        "judge_avg": 0
+      }
+    }
+  },
+  "test_metrics": {
+    "n_cases": 1,
+    "p_at_1": 0,
+    "r_at_3": 0,
+    "cross_repo_recall_avg": 0,
+    "assignee_r_at_3": 0,
+    "ece": 0.3,
+    "judge_avg": 0,
+    "judge_distribution": {
+      "1-2": 1,
+      "2-3": 0,
+      "3-4": 0,
+      "4-5": 0
+    },
+    "per_label_breakdown": {
+      "Bug": {
+        "n_cases": 1,
+        "p_at_1": 0,
+        "r_at_3": 0,
+        "assignee_r_at_3": 0,
+        "judge_avg": 0
+      },
+      "Data": {
+        "n_cases": 1,
+        "p_at_1": 0,
+        "r_at_3": 0,
+        "assignee_r_at_3": 0,
+        "judge_avg": 0
+      },
+      "K5": {
+        "n_cases": 1,
+        "p_at_1": 0,
+        "r_at_3": 0,
+        "assignee_r_at_3": 0,
+        "judge_avg": 0
+      },
+      "P1_高": {
+        "n_cases": 1,
+        "p_at_1": 0,
+        "r_at_3": 0,
+        "assignee_r_at_3": 0,
+        "judge_avg": 0
+      }
+    },
+    "per_outcome_breakdown": {
+      "likely_fixed": {
+        "n_cases": 1,
+        "p_at_1": 0,
+        "r_at_3": 0,
+        "judge_avg": 0
+      }
+    }
+  },
+  "per_fixture": [
+    {
+      "split": "train",
+      "fixture_id": 300,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "techcenter/reportcenter_confidential"
+        ],
+        "suggested_assignees": [],
+        "reasoning": "此 issue 標記 K5（KEYPO 產品）並為 Bug 類型，問題核心在試用帳號到期或延長後速報／日報排程邏輯異常（帳號到期後仍持續發送、延長前也提前觸發）；發報排程最可能實作於 issue 所在的 reportcenter 專案，故以原始 project 作為首選路由目標。",
+        "confidence": 0.28,
+        "caveats": [
+          "冷啟動：無歷史相似 issue，無法根據過去 assignee 頻率推薦負責人，建議由 triage 人員指派熟悉試用帳號與排程模組的工程師",
+          "K5 label config 未列出明確 candidates 清單，僅能根據 issue 所在專案推薦 techcenter/reportcenter_confidential，實際負責 repo 需確認",
+          "發報排程邏輯可能跨越多個服務（帳號有效期管理、通知 queue、速報觸發器），若 reportcenter 本身不含排程邏輯，應進一步排查 KEYPO primary_group 下的其他後端服務",
+          "issue 描述提到帳號到期後日報持續發送至 12/5 才停止（延遲約 7 天），可能是 cron job 未正確讀取帳號狀態，建議確認是否有獨立的排程 worker repo"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "error": "exec_failure",
+        "raw": "Command failed: claude --print --model sonnet-4-5\n"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": false,
+          "r_at_3": false,
+          "cross_repo_recall": 0
+        },
+        "assignee": {
+          "r_at_3": false,
+          "ground_truth_assignee": null,
+          "suggested": []
+        },
+        "confidence": {
+          "stated": 0.28,
+          "was_correct": false,
+          "bucket": "0-0.3"
+        },
+        "plan_quality": {
+          "judge_avg": 0,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 300,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 302,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "llmprojects/keypo-agent"
+        ],
+        "suggested_assignees": [],
+        "reasoning": "此 issue 帶有 K5 label，屬於 KEYPO 產品線；錯誤訊息顯示「Unknown error」且描述提及括號與字詞間缺少連接符號，推測為前端訊息格式解析或後端錯誤回傳問題，但 label config 中 K5 僅明確列出 llmprojects/keypo-agent 作為 known exception，其餘 KEYPO group repo 無法從 config 確定。",
+        "confidence": 0.2,
+        "caveats": [
+          "冷啟動：無任何相似歷史 issue，無法根據過去 assignee 頻率推薦負責人，suggested_assignees 為空。",
+          "K5 label_config 僅提供 primary_group 名稱 (KEYPO) 與單一 known_exception (llmprojects/keypo-agent)，缺乏完整 repo 候選清單，建議 triage 人員手動確認實際目標 repo。",
+          "Issue 來源專案 techcenter/reportcenter_confidential 不在 K5 已知例外清單內，需人工確認此專案是否隸屬 KEYPO 產品線，或應路由至 reportcenter 相關維護者。",
+          "錯誤訊息截圖無法讀取（需登入 GitLab），實際 stack trace 或 error type 未知，可能影響路由判斷。"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "error": "exec_failure",
+        "raw": "Command failed: claude --print --model sonnet-4-5\n"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": false,
+          "r_at_3": false,
+          "cross_repo_recall": 0
+        },
+        "assignee": {
+          "r_at_3": false,
+          "ground_truth_assignee": null,
+          "suggested": []
+        },
+        "confidence": {
+          "stated": 0.2,
+          "was_correct": false,
+          "bucket": "0-0.3"
+        },
+        "plan_quality": {
+          "judge_avg": 0,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 302,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "test",
+      "fixture_id": 304,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "llmprojects/keypo-agent",
+          "CrawlersV2",
+          "bigdata1"
+        ],
+        "suggested_assignees": [],
+        "reasoning": "此 issue 帶有 K5 與 Data 標籤：AI 報告產生（GPT 分析聲量門檻判斷邏輯失效）指向 K5 known exception `llmprojects/keypo-agent`；聲量資料在不同時間點回傳結果不一致，資料管線異常的可能性使 Data 候選 `CrawlersV2`、`bigdata1` 也列入參考。",
+        "confidence": 0.3,
+        "caveats": [
+          "冷啟動：無任何相似歷史 issue，無法依過去 assignee 頻率推薦人員，suggested_assignees 留空，請 triage 人員依 K5/Data 負責人補充。",
+          "issue 實際根因極可能在 techcenter/reportcenter_confidential（報告中心本身的聲量門檻判斷或快取邏輯），但該 repo 不在 label_config 候選清單中，triage 人員應確認是否需補充路由目標。",
+          "症狀為同一查詢條件下不同時間點結果不一致（客戶 09:20/09:21 失敗，Joanne 11:02 成功），可能是快取競態、帳號層級權限差異或動態資料更新所致，根因未明確前路由方向仍有不確定性。",
+          "Data label 所對應的資料管線（Crawlers 群組）不一定是此 bug 的根因——聲量數值 36,720 筆本身存在，問題更可能在 AI 報告層的門檻判斷；Data 候選僅供交叉比對用。"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "error": "exec_failure",
+        "raw": "Command failed: claude --print --model sonnet-4-5\n"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": false,
+          "r_at_3": false,
+          "cross_repo_recall": 0
+        },
+        "assignee": {
+          "r_at_3": false,
+          "ground_truth_assignee": null,
+          "suggested": []
+        },
+        "confidence": {
+          "stated": 0.3,
+          "was_correct": false,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 0,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 304,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    }
+  ],
+  "meta": {
+    "n_train": 2,
+    "n_test": 1,
+    "split_date": "2026-02-11T03:21:43.736Z",
+    "run_started_at": "2026-04-22T06:44:40.233Z",
+    "run_finished_at": "2026-04-22T06:46:26.336Z",
+    "total_cost_usd_estimate": null
+  }
+}
