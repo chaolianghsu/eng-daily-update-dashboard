@@ -61,20 +61,32 @@ export async function runEvalV2({
   phase2Fn,
   judgeFn,
   splitDate,
+  splitFn,
   buildContext = defaultBuildContext,
   logger = { info: () => {}, warn: () => {} },
   concurrency = DEFAULT_CONCURRENCY,
 }) {
   const runStart = new Date().toISOString();
-  const splitTs = splitDate ? new Date(splitDate).getTime() : Date.now();
 
-  const train = [];
-  const test = [];
-  for (const fx of fixtures || []) {
-    const closedAt = fx?.issue?.closed_at ?? fx?.closed_at;
-    const ts = closedAt ? new Date(closedAt).getTime() : null;
-    if (ts != null && ts < splitTs) train.push(fx);
-    else test.push(fx);
+  let train;
+  let test;
+  let splitMeta = { strategy: 'temporal', split_date: null };
+  if (typeof splitFn === 'function') {
+    const out = splitFn(fixtures || []);
+    train = out.train ?? [];
+    test = out.test ?? [];
+    splitMeta = { strategy: out.strategy ?? 'custom', split_date: splitDate ? new Date(splitDate).toISOString() : null };
+  } else {
+    const splitTs = splitDate ? new Date(splitDate).getTime() : Date.now();
+    train = [];
+    test = [];
+    for (const fx of fixtures || []) {
+      const closedAt = fx?.issue?.closed_at ?? fx?.closed_at;
+      const ts = closedAt ? new Date(closedAt).getTime() : null;
+      if (ts != null && ts < splitTs) train.push(fx);
+      else test.push(fx);
+    }
+    splitMeta.split_date = splitDate ? new Date(splitDate).toISOString() : null;
   }
 
   const runOne = async (fx) => {
@@ -130,7 +142,8 @@ export async function runEvalV2({
     meta: {
       n_train: train.length,
       n_test: test.length,
-      split_date: splitDate ? new Date(splitDate).toISOString() : null,
+      split_date: splitMeta.split_date,
+      split_strategy: splitMeta.strategy,
       run_started_at: runStart,
       run_finished_at: runEnd,
       total_cost_usd_estimate: null,
@@ -196,6 +209,57 @@ function loadLabelConfig(path = LABEL_CONFIG_PATH) {
   return parseYAML(readFileSync(path, 'utf8'));
 }
 
+// Deterministic PRNG (mulberry32) — seeded so stratified splits are reproducible.
+function mulberry32(seed) {
+  let a = seed >>> 0;
+  return function () {
+    a = (a + 0x6d2b79f5) >>> 0;
+    let t = a;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+/**
+ * Stratified split by ground_truth.primary_repo.
+ * Each stratum is shuffled (seeded) then split 70/30; strata with n<2 put the
+ * single fixture into train. Guarantees both splits see a representative mix.
+ *
+ * @param {number} [trainFrac=0.7]
+ * @param {number} [seed=42]
+ * @returns {(fixtures: object[]) => {train: object[], test: object[], strategy: string}}
+ */
+export function makeStratifiedSplitByPrimaryRepo(trainFrac = 0.7, seed = 42) {
+  return function splitFn(fixtures) {
+    const strata = new Map();
+    for (const fx of fixtures) {
+      const key = fx?.ground_truth?.primary_repo ?? '__unknown__';
+      if (!strata.has(key)) strata.set(key, []);
+      strata.get(key).push(fx);
+    }
+    const rand = mulberry32(seed);
+    const train = [];
+    const test = [];
+    for (const [, items] of strata) {
+      // Fisher-Yates with seeded RNG
+      const shuffled = items.slice();
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(rand() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      if (shuffled.length < 2) {
+        train.push(...shuffled);
+        continue;
+      }
+      const nTrain = Math.max(1, Math.round(shuffled.length * trainFrac));
+      train.push(...shuffled.slice(0, nTrain));
+      test.push(...shuffled.slice(nTrain));
+    }
+    return { train, test, strategy: `stratified_primary_repo(frac=${trainFrac},seed=${seed})` };
+  };
+}
+
 function defaultSplitDate(fixtures) {
   // 70/30 by closed_at: sort ascending, pick the value at index floor(0.7 * n).
   const dates = fixtures
@@ -214,6 +278,7 @@ function formatSummary(result) {
   const lines = [];
   const fmt = (x) => (typeof x === 'number' ? x.toFixed(3) : String(x));
   lines.push('=== EVAL v2 SUMMARY ===');
+  lines.push(`Split strategy: ${result.meta.split_strategy ?? 'temporal'}`);
   lines.push(`Split date: ${result.meta.split_date}`);
   lines.push(`n_train: ${result.meta.n_train}   n_test: ${result.meta.n_test}`);
   lines.push('');
@@ -266,7 +331,9 @@ async function mainCLI() {
       label_config: lc,
     });
 
+  const strategy = process.env.EVAL_SPLIT_STRATEGY || 'temporal';
   const splitDate = defaultSplitDate(fixtures);
+  const splitFn = strategy === 'stratified' ? makeStratifiedSplitByPrimaryRepo() : undefined;
 
   const result = await runEvalV2({
     fixtures,
@@ -275,6 +342,7 @@ async function mainCLI() {
     phase2Fn: (ctx, phase1) => runPhase2Plan(ctx, phase1),
     judgeFn: defaultRunJudge,
     splitDate,
+    splitFn,
     buildContext,
     logger: { info: (m) => console.error(`[info] ${m}`), warn: (m) => console.error(`[warn] ${m}`) },
   });

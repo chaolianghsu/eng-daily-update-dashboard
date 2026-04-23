@@ -8,7 +8,7 @@ import {
   aggregate,
   confidenceBucket,
 } from '../../test/eval/gap-analyzer.mjs';
-import { runEvalV2 } from '../../test/eval/multi-metric-eval.mjs';
+import { runEvalV2, makeStratifiedSplitByPrimaryRepo } from '../../test/eval/multi-metric-eval.mjs';
 import {
   buildJudgePrompt,
   parseJudgeOutput,
@@ -259,6 +259,42 @@ describe('runEvalV2', () => {
     expect(result.meta.n_train).toBe(0);
     expect(result.meta.n_test).toBe(0);
     expect(result.per_fixture).toEqual([]);
+  });
+
+  it('accepts a custom splitFn (stratified by primary_repo)', async () => {
+    const mk = (id, repo) =>
+      baseFixture({
+        id,
+        closed_at: '2026-03-01T00:00:00Z',
+        ground_truth: { primary_repo: repo, fix_repos: [repo], assignee: 'x', outcome: 'likely_fixed' },
+      });
+    const fixtures = [
+      mk('a1', 'repo-A'), mk('a2', 'repo-A'), mk('a3', 'repo-A'), mk('a4', 'repo-A'),
+      mk('b1', 'repo-B'), mk('b2', 'repo-B'), mk('b3', 'repo-B'), mk('b4', 'repo-B'),
+    ];
+
+    const splitFn = makeStratifiedSplitByPrimaryRepo(0.75, 1);
+    const result = await runEvalV2({
+      fixtures,
+      labelConfig: { labels: {} },
+      phase1Fn: vi.fn().mockResolvedValue(basePhase1()),
+      phase2Fn: vi.fn().mockResolvedValue(basePhase2()),
+      judgeFn: vi.fn().mockResolvedValue(baseJudge()),
+      splitFn,
+    });
+
+    expect(result.meta.n_train).toBe(6);
+    expect(result.meta.n_test).toBe(2);
+    expect(result.meta.split_strategy).toMatch(/stratified_primary_repo/);
+    // Both strata must be represented in train; test must also have both.
+    const trainRepos = new Set(
+      result.per_fixture.filter((r) => r.split === 'train').map((r) => r.fixture_id[0])
+    );
+    const testRepos = new Set(
+      result.per_fixture.filter((r) => r.split === 'test').map((r) => r.fixture_id[0])
+    );
+    expect(trainRepos.size).toBe(2);
+    expect(testRepos.size).toBe(2);
   });
 
   it('skips phase2 when confidence < 0.5', async () => {
