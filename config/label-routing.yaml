@@ -93,3 +93,65 @@ ignore_for_routing:
   - P3_低
   - Bug
   - Feature
+
+# Repo-level descriptions injected into Phase 1 prompt as routing hints.
+# Purpose: help the LLM disambiguate between similarly-named KEYPO repos when
+# R@3 is already high but P@1 is low (diagnosed 2026-04-23 stratified baseline:
+# P@1=0.60 vs R@3=0.92). Seed descriptions are team-reviewed best-effort;
+# refine via PR as routing post-mortems surface better wording.
+repo_descriptions:
+  # KEYPO core (K5 label)
+  KEYPO/keypo-backend: |
+    主 API / 後台 server。處理 user / auth / 報表 / 速報 / 推播 / portal /
+    agent 錯誤訊息 / 試用帳號 / 資料管理後台等核心業務邏輯。大部分
+    「後台操作問題」、「使用者看不到資料」、「通知/推播異常」、「速報內容
+    錯誤」都在這裡修。
+  KEYPO/keypo-frontend-2023: |
+    前端 React SPA(使用者 UI 畫面)。版面、圖表渲染、互動行為、樣式問題。
+    純 UI / 前端 bug 才在這裡修;資料內容不對的問題通常不在這裡。
+  KEYPO/keypo-engine-api: |
+    資料查詢引擎對外 API。處理「探索概念」、主題查詢、聲量數值計算、
+    港版/日版/海外資料庫查詢等資料端問題。資料查不到 / 查錯 / 引擎無回應
+    多數落在這裡。
+  KEYPO/keypo-engine/keypo-engine-api-v3: |
+    engine-api v3(次世代查詢 API)。新版查詢介面、新 schema 相關問題。
+  KEYPO/keypo-engine/keypo-engine-api-gateway: |
+    engine API gateway(內部路由/限流/認證層)。多半是連線、授權、429
+    等 gateway 層問題,極少涉及資料本身。
+  KEYPO/keypo-engine/on-premises-api-gateway: |
+    on-premises(客戶私有部署)專用的 engine gateway。只有 on-prem 客戶
+    的環境問題才在這裡。
+  KEYPO/keypo-engine/data-collector: |
+    engine 內部的資料收集器。資料進來得太慢 / 缺漏 / 排程失敗等 pipeline
+    問題,但不是爬蟲端(爬蟲見 CrawlersV2/bigcrawler-scrapy)。
+  KEYPO/keypo-engine/qtool: |
+    內部查詢工具(eng 除錯 / 資料人員用)。工具 bug 才在這裡。
+  KEYPO/keypo-newsletter: |
+    電子報/定期郵件發送服務。收信異常、排程、格式、寄件人錯誤。
+  KEYPO/keypo-data-api: |
+    對外資料 API(非 engine-api)。外部整合合作夥伴拉資料的 API。
+  KEYPO/keypo-micro-portal: |
+    小型入口網站(特定活動 / 合作網站)。
+  KEYPO/keypo-status-check: |
+    服務健康檢查。status 頁面 / uptime 監控相關。
+  KEYPO/keypo-q-huaan-v2: |
+    華安客製版(客戶專案)。只有華安客戶相關才路由到這裡。
+  KEYPO/keypo-international-website: |
+    國際版官網(marketing 頁面)。
+  KEYPO/line-notify-backend-2023: |
+    LINE 通知的 backend。LINE 群組推播失敗 / 格式錯誤等。
+  KEYPO/keypo-engine-layer: |
+    engine 的共用 layer(shared library)。較少直接 routing,多為上游修
+    時順帶修補。
+  KEYPO/keypo-questionnaire: |
+    問卷系統。問卷題目、填答流程、結果匯出。
+
+  # Crawlers (K5 label cross-group + Data label)
+  CrawlersV2/bigcrawler-scrapy: |
+    主要新聞來源爬蟲。新聞網站沒有文章、來源斷線、數量不對、抓不到新
+    文章,多半在這裡修。是 K5 label 下最常被修的「資料來源層」問題的
+    歸屬處。
+  llmprojects/keypo-agent: |
+    KEYPO 的 LLM agent 實作(對話、工具呼叫、回覆邏輯)。agent 對話
+    功能本身的 bug(卡住、回覆錯、工具呼叫失敗)在這裡;而 agent 的
+    「錯誤訊息顯示」問題通常在 keypo-backend。

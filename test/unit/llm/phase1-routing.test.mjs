@@ -6,6 +6,7 @@ import {
   runPhase1Routing,
   LLMApiError,
   ROUTING_TOOL,
+  renderRepoNotes,
 } from '../../../lib/llm/phase1-routing.mjs';
 
 const baseConfig = () => ({
@@ -201,6 +202,69 @@ describe('runPhase1Routing', () => {
     const user = call.messages.find((m) => m.role === 'user').content;
     const combined = `${system}\n${user}`;
     expect(combined).toMatch(/n\/a/);
+  });
+
+  it('injects REPO NOTES block when repo_descriptions matches issue labels', async () => {
+    const client = makeMockClient();
+    const cfg = baseConfig();
+    cfg.labels.K5 = {
+      primary_group: 'KEYPO',
+      known_exceptions: ['KEYPO/keypo-backend', 'KEYPO/keypo-engine-api'],
+    };
+    cfg.repo_descriptions = {
+      'KEYPO/keypo-backend': '主 API / 後台 server。處理 user / 速報 / 推播。',
+      'KEYPO/keypo-engine-api': '資料查詢引擎對外 API。探索概念 / 海外查詢。',
+      'dailyview/unrelated': '不該出現的 repo。',
+    };
+    await runPhase1Routing(baseContext({ label_config: cfg }), { client });
+    const user = client.messages.create.mock.calls[0][0].messages[0].content;
+    expect(user).toContain('=== REPO NOTES');
+    expect(user).toContain('KEYPO/keypo-backend');
+    expect(user).toContain('KEYPO/keypo-engine-api');
+    // Unrelated repo (no matching label) must not leak in
+    expect(user).not.toContain('dailyview/unrelated');
+    // And the raw JSON LABEL CONFIG dump must NOT include repo_descriptions
+    // (avoid a giant blob of all repos in the model's context)
+    expect(user).not.toContain('"repo_descriptions"');
+  });
+
+  it('omits REPO NOTES block when repo_descriptions is absent', async () => {
+    const client = makeMockClient();
+    await runPhase1Routing(baseContext(), { client });
+    const user = client.messages.create.mock.calls[0][0].messages[0].content;
+    expect(user).not.toContain('REPO NOTES');
+  });
+
+  it('renderRepoNotes scopes candidates to labels on the issue', () => {
+    const cfg = {
+      labels: {
+        K5: { primary_group: 'KEYPO', known_exceptions: ['KEYPO/keypo-backend'] },
+        BD: { primary_group: 'bigdata', known_exceptions: ['bigdata/etl'] },
+      },
+      repo_descriptions: {
+        'KEYPO/keypo-backend': 'backend',
+        'bigdata/etl': 'etl',
+      },
+    };
+    const out = renderRepoNotes(cfg, { labels: ['K5'] });
+    expect(out).toContain('KEYPO/keypo-backend');
+    expect(out).not.toContain('bigdata/etl');
+  });
+
+  it('renderRepoNotes returns empty string when no matching descriptions', () => {
+    const cfg = {
+      labels: { K5: { primary_group: 'KEYPO', known_exceptions: ['KEYPO/foo'] } },
+      repo_descriptions: { 'other/repo': 'x' },
+    };
+    expect(renderRepoNotes(cfg, { labels: ['K5'] })).toBe('');
+  });
+
+  it('system prompt instructs model to use REPO NOTES for top-1 choice', async () => {
+    const client = makeMockClient();
+    await runPhase1Routing(baseContext(), { client });
+    const sys = client.messages.create.mock.calls[0][0].system;
+    expect(sys).toContain('REPO NOTES');
+    expect(sys).toMatch(/top-1/i);
   });
 
   it('uses provided client and does NOT instantiate Anthropic SDK', async () => {
