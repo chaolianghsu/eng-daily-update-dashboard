@@ -274,15 +274,17 @@ function findThreads(messages, queryKeyword) {
   for (const msg of messages) {
     const text = msg.text || '';
     if (!text.includes(queryKeyword)) continue;
-    const dm = text.match(/(\d{4})\/(\d{2})\/(\d{2})/);
-    if (dm) {
-      const threadDate = `${parseInt(dm[2])}/${parseInt(dm[3])}`;
-      threads[threadDate] = {
-        threadName: msg.thread?.name,
-        starterName: msg.name,
-        threadDate,
-      };
-    }
+    // Year 2-4 digits tolerates typos like "026/04/23"; bare M/D at the start covers year-less headers.
+    const dm =
+      text.match(/\b\d{2,4}\/(\d{1,2})\/(\d{1,2})\b/) ||
+      text.match(/^\s*(\d{1,2})\/(\d{1,2})\b/);
+    if (!dm) continue;
+    const threadDate = `${parseInt(dm[1])}/${parseInt(dm[2])}`;
+    threads[threadDate] = {
+      threadName: msg.thread?.name,
+      starterName: msg.name,
+      threadDate,
+    };
   }
   return threads;
 }
@@ -487,4 +489,5 @@ module.exports = {
   generateIssues,
   parseLeaveMessages,
   parseMessagesFile,
+  findThreads,
 };

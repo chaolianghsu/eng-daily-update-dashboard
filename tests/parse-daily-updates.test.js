@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { parseHoursFromText, generateIssues } from '../scripts/parse-daily-updates.js';
+import { parseHoursFromText, generateIssues, findThreads } from '../scripts/parse-daily-updates.js';
 
 describe('parseHoursFromText', () => {
   it("returns status 'reported' when hours found", () => {
@@ -27,6 +27,42 @@ describe('parseHoursFromText', () => {
     const result = parseHoursFromText("今天做了很多事情但沒寫工時");
     expect(result.status).toBe('replied_no_hours');
     expect(result.total).toBeNull();
+  });
+});
+
+describe('findThreads', () => {
+  const msg = (text, threadName = 'threads/t1') => ({
+    text,
+    thread: { name: threadName },
+    name: 'messages/m1',
+  });
+
+  it('indexes standard "2026/04/23 Daily Update" header', () => {
+    const threads = findThreads([msg('2026/04/23 Daily Update')], 'Daily Update');
+    expect(threads['4/23']).toBeDefined();
+    expect(threads['4/23'].threadDate).toBe('4/23');
+  });
+
+  it('tolerates 3-digit-year typo like "026/04/23 Daily Update"', () => {
+    const threads = findThreads([msg('026/04/23 Daily Update')], 'Daily Update');
+    expect(threads['4/23']).toBeDefined();
+    expect(threads['4/23'].threadDate).toBe('4/23');
+  });
+
+  it('tolerates 2-digit-year like "26/04/23 Daily Update"', () => {
+    const threads = findThreads([msg('26/04/23 Daily Update')], 'Daily Update');
+    expect(threads['4/23']).toBeDefined();
+  });
+
+  it('tolerates year-less "4/23 Daily Update" header', () => {
+    const threads = findThreads([msg('4/23 Daily Update')], 'Daily Update');
+    expect(threads['4/23']).toBeDefined();
+    expect(threads['4/23'].threadDate).toBe('4/23');
+  });
+
+  it('skips messages that do not include the query keyword', () => {
+    const threads = findThreads([msg('2026/04/23 random note')], 'Daily Update');
+    expect(Object.keys(threads)).toHaveLength(0);
   });
 });
 
