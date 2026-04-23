@@ -13,6 +13,9 @@ labels:
     known_exceptions:
       # Cross-group exceptions(真 exception,不在 primary_group 內):
       - llmprojects/keypo-agent
+      - CrawlersV2/bigcrawler-scrapy
+      # K5 issues about crawling/data-source problems are routinely fixed
+      # in bigcrawler-scrapy (17/31 fixtures in B2b baseline 2026-04-23).
 
       # Explicit enumeration of active KEYPO/* repos so phase1 LLM has
       # concrete candidates (primary_group name alone is too abstract for

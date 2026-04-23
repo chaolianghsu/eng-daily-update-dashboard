@@ -166,6 +166,27 @@ Saved at `test/eval/results/eval-baseline-n31.json`. 70/30 split by `closed_at` 
 
 **Third finding**: k5-304 Phase 1 CLI call failed (non-retriable path? exit code 1). One-off, not a systemic issue, but worth checking the retry wrapper is applied to phase1-routing.mjs and phase2-plan.mjs (currently only extractor uses `callClaudeCliWithToolRetrying`).
 
+### Phase C step 1 (2026-04-23): add `CrawlersV2/bigcrawler-scrapy` to K5 known_exceptions
+Single-line yaml edit (`config/label-routing.yaml`). Rationale: 17/31 fixtures have this repo as `primary_repo`, but K5 label config listed only KEYPO/* + llmprojects/keypo-agent — the router had no way to emit it.
+
+| Metric | Baseline (n=31) | Phase C step 1 | Delta |
+|---|---:|---:|---:|
+| **Train P@1** | 0.048 | **0.762** | **+0.714** |
+| **Train R@3** | 0.143 | **0.905** | **+0.762** |
+| Test P@1 | 0.111 | 0.300 | +0.189 |
+| Test R@3 | 0.778 | **1.000** | +0.222 |
+| bigcrawler-scrapy R@3 | 0/17 | **17/17** | — |
+| Train Judge avg | 2.54 | 2.57 | +0.04 |
+| Test Judge avg | 1.72 | **2.52** | **+0.80** |
+| Train ECE | 0.257 | 0.457 | +0.200 ⚠️ |
+| Test ECE | 0.182 | 0.019 | -0.163 |
+
+**ECE regression on train** is expected: P@1 jumped from 5% to 76% but confidence stayed in the 0.3-0.5 range from baseline — now the model is under-confident on cases it gets right. Not a functional regression; a signal that confidence thresholds need re-calibration after prompt/config changes.
+
+**Assignee R@3 still 0.000** across both splits. Root cause: `ground_truth.assignee` is `null` for all 31 fixtures (extractor doesn't populate it; signal 2a deprecated, signal 2b's `closing_commenter` not written to ground_truth), AND `similar_context.issues` is empty for all 31 fixtures (extractor doesn't fetch similar issues), AND the Phase 1 prompt says assignees must come from similar_issues. Three cascading gaps, all in the fixture pipeline — not a router issue. Deferred to a follow-up extractor change.
+
+Results file: `test/eval/results/eval-2026-04-23-10-17.json`
+
 ---
 
 ## What to do with this
