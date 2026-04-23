@@ -1,0 +1,52 @@
+{
+  "fixture_id": "k5-259",
+  "extraction_date": "2026-04-23",
+  "tier": "GOLD",
+  "issue": {
+    "iid": 259,
+    "project_path": "techcenter/reportcenter_confidential",
+    "title": "[20251105] 以下帳號若開啟篩選條件資料就會跑不出來",
+    "description": "帳號:ENG_ASSESSMENT\n\n客戶有反饋當開啟目前設置的篩選器之後資料就跑不出來，不開起就可以，初步判斷應該是篩選器中設置太多條件，所以跑不動\n\n要麻煩協助確認，若真的是篩選器影響再麻煩做優化\n\n![784016387.495898](/uploads/0e941e8443f2f0dafd2b2d1dde24370d/784016387.495898.mp4)",
+    "labels": [
+      "Bug",
+      "K5",
+      "P1_高"
+    ],
+    "state": "closed",
+    "closed_at": "2025-12-24T09:19:29.425Z",
+    "assignee": "Alyssa"
+  },
+  "ground_truth": {
+    "outcome": "likely_fixed",
+    "fix_repos": [
+      "KEYPO/keypo-engine-api"
+    ],
+    "primary_repo": "KEYPO/keypo-engine-api"
+  },
+  "provenance": {
+    "mr_cross_refs": {
+      "signal": "high",
+      "repos": [
+        "KEYPO/keypo-engine-api"
+      ]
+    },
+    "assignee_heuristic": {
+      "signal": "high",
+      "repos": [
+        "KEYPO/keypo-engine-api"
+      ],
+      "closing_commenter": "joyce",
+      "reason": "@joyce has commits in 1 repo(s) within ±14d window"
+    },
+    "llm_extractor": {
+      "signal": "high",
+      "repos": [
+        "KEYPO/keypo-engine-api"
+      ],
+      "reasoning": "aaron.li 在 comment #10 明確開了 MR 至 KEYPO/keypo-engine-api!545（system notes 也記錄 KEYPO/keypo-engine-api!548 被提及），修復 too_many_clauses 問題；測試通過後 joyce 完成上版並關閉 issue。"
+    },
+    "agreement_count": 3,
+    "promotion_rule": "2_of_3_agree"
+  },
+  "similar_context": null
+}

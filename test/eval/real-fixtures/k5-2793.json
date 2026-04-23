@@ -1,0 +1,48 @@
+{
+  "fixture_id": "k5-2793",
+  "extraction_date": "2026-04-23",
+  "tier": "SILVER",
+  "issue": {
+    "iid": 2793,
+    "project_path": "techcenter/reportcenter",
+    "title": "設計王_2023/12/22開始中斷收錄",
+    "description": "設計王https://www.designwant.com/\n看起來從2023/12/22開始中斷收錄\n\n客戶需求文章，如果可以的話，想麻煩先單篇收錄，感謝\nhttps://www.designwant.com/article/12083\n\n![image](/uploads/ac7a3d1fccffdac157b1b1b3331f931c/image.png){width=1014 height=519}",
+    "labels": [
+      "Bug",
+      "K5",
+      "P1_高"
+    ],
+    "state": "closed",
+    "closed_at": "2025-11-25T04:10:38.211Z",
+    "assignee": "joanne.lin"
+  },
+  "ground_truth": {
+    "outcome": "likely_fixed",
+    "fix_repos": [
+      "CrawlersV2/bigcrawler-scrapy"
+    ],
+    "primary_repo": "CrawlersV2/bigcrawler-scrapy"
+  },
+  "provenance": {
+    "mr_cross_refs": {
+      "signal": "none",
+      "repos": []
+    },
+    "assignee_heuristic": {
+      "signal": "none",
+      "repos": [],
+      "closing_commenter": "joanne.lin",
+      "reason": "no commits in window for @joanne.lin"
+    },
+    "llm_extractor": {
+      "signal": "high",
+      "repos": [
+        "CrawlersV2/bigcrawler-scrapy"
+      ],
+      "reasoning": "評論 #2 與 #13 明確指出修復 MR 位於 CrawlersV2/bigcrawler-scrapy（MR #3598），評論 #15 mason 另提交修正 MR #3628 並回補資料，#17 block.lee 確認已上版，#18 joanne.lin 確認問題解決，整個修復流程清楚。"
+    },
+    "agreement_count": 1,
+    "promotion_rule": "1_high_no_contradiction"
+  },
+  "similar_context": null
+}

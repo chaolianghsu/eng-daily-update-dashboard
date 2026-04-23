@@ -1,0 +1,48 @@
+{
+  "fixture_id": "k5-2795",
+  "extraction_date": "2026-04-23",
+  "tier": "SILVER",
+  "issue": {
+    "iid": 2795,
+    "project_path": "techcenter/reportcenter",
+    "title": "babyhome才藝興趣、坐月子版位沒資料",
+    "description": "關鍵字:你|我|他\n\n聚焦:BabyHome親子討論區（頻道/才藝興趣)、BabyHome親子討論區（頻道  /  坐月子）\n\n區間:近半年\n\n7月後幾乎沒有資料\n\n![image](/uploads/3b7c0746e70b77305f2613e2042ea827/image.png){width=619 height=271}\n\n![image](/uploads/1878d5fa6810fe667d6a78752056d9dc/image.png){width=628 height=285}\n\n客戶文章\n\nhttps://forum.babyhome.com.tw/topic/5057874\n\nhttps://forum.babyhome.com.tw/topic/5057402",
+    "labels": [
+      "Data",
+      "K5",
+      "P1_高"
+    ],
+    "state": "closed",
+    "closed_at": "2025-11-14T00:00:08.706Z",
+    "assignee": "Alyssa"
+  },
+  "ground_truth": {
+    "outcome": "likely_fixed",
+    "fix_repos": [
+      "CrawlersV2/bigcrawler-scrapy"
+    ],
+    "primary_repo": "CrawlersV2/bigcrawler-scrapy"
+  },
+  "provenance": {
+    "mr_cross_refs": {
+      "signal": "none",
+      "repos": []
+    },
+    "assignee_heuristic": {
+      "signal": "none",
+      "repos": [],
+      "closing_commenter": "mason",
+      "reason": "no commits in window for @mason"
+    },
+    "llm_extractor": {
+      "signal": "high",
+      "repos": [
+        "CrawlersV2/bigcrawler-scrapy"
+      ],
+      "reasoning": "lgw85246 在 comment #5 明確提到已完成 branch 並附上 CrawlersV2/bigcrawler-scrapy 的 MR #3612 連結，mason 後續也確認已回補資料並關閉 issue。"
+    },
+    "agreement_count": 1,
+    "promotion_rule": "1_high_no_contradiction"
+  },
+  "similar_context": null
+}

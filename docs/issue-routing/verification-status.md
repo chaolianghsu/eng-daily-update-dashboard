@@ -142,6 +142,30 @@ Legend:
 - ⚠️ **Phase II eval on the 2 new SILVERs: P@1=0%, R@3=0%**. Phase 1 LLM does not currently route these to their fix repos (e.g., k5-319 → ground truth `on-premises-api-gateway`, top-3 was `llmprojects/keypo-agent`/`keypo-backend`/`keypo-engine-api`). Means signal 2b widens the eval to harder cases the current system fails — this is *additional production failure surface area now visible*, not regression.
 - Production extractor needs retry-with-backoff on CLI rate-limit errors before re-running on a larger label set.
 
+### B1 + B2b (2026-04-23): retry-with-backoff + extended K5 window
+- **B1 (commit `ced7d15`)**: exponential backoff + jitter retry wrapper around `claude --print` (`callClaudeCliWithToolRetrying` in `lib/llm/cli-fallback.mjs`). Max 3 attempts on `cli_error | cli_timeout | cli_invalid_json`; `cli_schema_mismatch` not retried.
+- **B2b rerun**: `--since 2025-10-01 --limit 300` on K5 label. **283 issues fetched, 0 LLM errors** (vs 76 errors in 2026-04-22 run). Rate-limit fragility resolved.
+- **Fixture yield jumped**: 3 GOLD + 1 SILVER (n=4) → **15 GOLD + 16 SILVER (n=31)**.
+- **Top 5 fix_repos**: `CrawlersV2/bigcrawler-scrapy` (18), `KEYPO/keypo-engine-api` (13), `KEYPO/keypo-backend` (9), `llmprojects/keypo-agent` (6), `KEYPO/keypo-engine/data-collector` (5).
+
+### Phase II eval baseline on n=31 fixtures (2026-04-23)
+Saved at `test/eval/results/eval-baseline-n31.json`. 70/30 split by `closed_at` (2026-01-17 cutoff).
+
+| Metric | Train (n=21) | Test (n=10) |
+|---|---:|---:|
+| P@1 | 0.048 (1/21) | 0.111 (1/9 evaluable) |
+| R@3 | 0.143 (3/21) | 0.778 (7/9) |
+| Cross-repo recall | 0.143 | 0.778 |
+| Assignee R@3 | 0.000 | 0.000 |
+| ECE | 0.257 | 0.182 |
+| Judge avg (1–5) | 2.54 | 1.72 |
+
+**Key finding — repo-mapping gap**: Router never emits `CrawlersV2/bigcrawler-scrapy` as a suggestion. Train set has **13/21 (62%) fixtures with `bigcrawler-scrapy` as primary_repo**; router instead suggests truncated `CrawlersV2` or unrelated `KEYPO/keypo-engine/data-collector`. This single gap drags train R@3 to 14%. Test split accidentally contains 0 bigcrawler-scrapy cases (newer issues, different workload mix), hence the inverted train/test gap (70% vs 14%).
+
+**Second finding — assignee R@3 = 0 across both splits**. Router does not produce assignee suggestions at all (or produces names not matching K5 CSM assignees). Needs investigation before Phase 1 prompt tuning.
+
+**Third finding**: k5-304 Phase 1 CLI call failed (non-retriable path? exit code 1). One-off, not a systemic issue, but worth checking the retry wrapper is applied to phase1-routing.mjs and phase2-plan.mjs (currently only extractor uses `callClaudeCliWithToolRetrying`).
+
 ---
 
 ## What to do with this

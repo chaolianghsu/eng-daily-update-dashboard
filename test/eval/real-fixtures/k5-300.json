@@ -1,6 +1,6 @@
 {
   "fixture_id": "k5-300",
-  "extraction_date": "2026-04-22",
+  "extraction_date": "2026-04-23",
   "tier": "GOLD",
   "issue": {
     "iid": 300,
@@ -31,15 +31,19 @@
       ]
     },
     "assignee_heuristic": {
-      "signal": "none",
-      "reason": "no commit data (v0: skipped)"
+      "signal": "high",
+      "repos": [
+        "KEYPO/keypo-engine-api"
+      ],
+      "closing_commenter": "joyce",
+      "reason": "@joyce has commits in 1 repo(s) within ±14d window"
     },
     "llm_extractor": {
       "signal": "high",
       "repos": [
         "KEYPO/keypo-backend"
       ],
-      "reasoning": "系統記錄顯示此 issue 被 mentioned in merge request KEYPO/keypo-backend!366，且 joyce 最終留言確認已完成正式機更新，sabinesabine 也測試 OK，修復明確對應至 KEYPO/keypo-backend。"
+      "reasoning": "system notes 明確顯示有 merge request KEYPO/keypo-backend!366，且 joyce 在 comment #8 確認已完成正式機更新，修復內容為帳號起始日需 ≤ 今日才發送速報。"
     },
     "agreement_count": 2,
     "promotion_rule": "2_of_3_agree"

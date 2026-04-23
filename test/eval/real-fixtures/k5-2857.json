@@ -1,20 +1,20 @@
 {
-  "fixture_id": "k5-302",
+  "fixture_id": "k5-2857",
   "extraction_date": "2026-04-23",
   "tier": "GOLD",
   "issue": {
-    "iid": 302,
-    "project_path": "techcenter/reportcenter_confidential",
-    "title": "20260106 - 錯誤訊息顯示Unknown error",
-    "description": "錯誤訊息顯示Unknown error，看起來應該是因為左括號跟字詞中間少了符號連接的關係，再請確認顯示內容，感謝!\n\n![image](/uploads/08b7e5f77b7864007a5c4aa90d98143c/image.png){width=900 height=498}",
+    "iid": 2857,
+    "project_path": "techcenter/reportcenter",
+    "title": "20251127 - 速報比預設的時間晚兩小時才發送",
+    "description": "帳號:wanin20251110\n\n速報主題【集團競品】每日新聞\n\n設定11/26 17:15發前一天的速報，但11/26 19:23才收到，再麻煩確認延誤的原因，感謝\n\n![image](/uploads/1c649d18c7e5fbc9b85371c4a37db415/image.png){width=736 height=352}",
     "labels": [
       "Bug",
       "K5",
       "P1_高"
     ],
     "state": "closed",
-    "closed_at": "2026-01-28T03:33:02.438Z",
-    "assignee": "Ivyma"
+    "closed_at": "2026-02-04T00:00:08.674Z",
+    "assignee": "Alyssa"
   },
   "ground_truth": {
     "outcome": "likely_fixed",
@@ -43,7 +43,7 @@
       "repos": [
         "KEYPO/keypo-backend"
       ],
-      "reasoning": "System notes 明確顯示此 issue 被 mention 於 KEYPO/keypo-backend 的兩個 MR（!361、!363），且 joe 的留言也確認問題根因在 keypo-backend 的 error_i18n.json 設定檔中缺少對應 KEY，修復工作已在該 repo 完成並驗證無誤。"
+      "reasoning": "System notes 明確顯示此 issue 被 mentioned in merge request KEYPO/keypo-backend!352 與 KEYPO/keypo-backend!366，且 comment #12 確認修正已完成上版。"
     },
     "agreement_count": 2,
     "promotion_rule": "2_of_3_agree"

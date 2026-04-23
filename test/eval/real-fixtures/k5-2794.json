@@ -1,0 +1,48 @@
+{
+  "fixture_id": "k5-2794",
+  "extraction_date": "2026-04-23",
+  "tier": "SILVER",
+  "issue": {
+    "iid": 2794,
+    "project_path": "techcenter/reportcenter",
+    "title": "華視_漏收文章",
+    "description": "華視的文章收錄趨勢曲線看起來沒問題，但是有漏收客戶需求的文章，需要再麻煩協助排查\n\n如果可以，單篇文章請先收錄，感謝\nhttps://www.cts.com.tw/market_news/2584.html\n\n![image](/uploads/81994587488d4175bc51e497abe1cb39/image.png)\n![image](/uploads/0412529a0ca62f4b67373fc2e1d3b813/image.png)",
+    "labels": [
+      "Bug",
+      "K5",
+      "P1_高"
+    ],
+    "state": "closed",
+    "closed_at": "2025-10-28T03:37:42.034Z",
+    "assignee": "joanne.lin"
+  },
+  "ground_truth": {
+    "outcome": "likely_fixed",
+    "fix_repos": [
+      "CrawlersV2/bigcrawler-scrapy"
+    ],
+    "primary_repo": "CrawlersV2/bigcrawler-scrapy"
+  },
+  "provenance": {
+    "mr_cross_refs": {
+      "signal": "none",
+      "repos": []
+    },
+    "assignee_heuristic": {
+      "signal": "none",
+      "repos": [],
+      "closing_commenter": "joanne.lin",
+      "reason": "no commits in window for @joanne.lin"
+    },
+    "llm_extractor": {
+      "signal": "high",
+      "repos": [
+        "CrawlersV2/bigcrawler-scrapy"
+      ],
+      "reasoning": "評論 #2 和 #7 中 lgw85246 明確提出兩個針對 CrawlersV2/bigcrawler-scrapy 的 merge request (MR #3597、#3599)，分別新增 author css 及抓取市場快訊。mason 於評論 #11 確認已上版，joanne.lin 於評論 #12 確認抽查沒問題，issue 已修復。"
+    },
+    "agreement_count": 1,
+    "promotion_rule": "1_high_no_contradiction"
+  },
+  "similar_context": null
+}

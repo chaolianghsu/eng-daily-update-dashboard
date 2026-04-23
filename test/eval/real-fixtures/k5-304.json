@@ -1,6 +1,6 @@
 {
   "fixture_id": "k5-304",
-  "extraction_date": "2026-04-22",
+  "extraction_date": "2026-04-23",
   "tier": "GOLD",
   "issue": {
     "iid": 304,
@@ -33,14 +33,16 @@
     },
     "assignee_heuristic": {
       "signal": "none",
-      "reason": "no commit data (v0: skipped)"
+      "repos": [],
+      "closing_commenter": "ted.juang",
+      "reason": "no commits in window for @ted.juang"
     },
     "llm_extractor": {
       "signal": "high",
       "repos": [
         "KEYPO/keypo-engine-api"
       ],
-      "reasoning": "System notes 顯示 issue 被 mentioned in merge request KEYPO/keypo-engine-api!557，且 comments 中 walt.peng 提到「審MR中」，ted.juang 確認已上測試環境並緊急部署至正式環境，修復方向為新增 OpenAI API fallback 機制。"
+      "reasoning": "System notes 顯示 MR 在 KEYPO/keypo-engine-api!557 被提及，且 comments 確認已針對 OpenAI API quota limit 問題新增 fallback HA 機制並上正式環境，修復流程明確。"
     },
     "agreement_count": 2,
     "promotion_rule": "2_of_3_agree"

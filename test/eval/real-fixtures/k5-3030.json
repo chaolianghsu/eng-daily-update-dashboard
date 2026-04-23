@@ -1,6 +1,6 @@
 {
   "fixture_id": "k5-3030",
-  "extraction_date": "2026-04-22",
+  "extraction_date": "2026-04-23",
   "tier": "SILVER",
   "issue": {
     "iid": 3030,
@@ -37,9 +37,9 @@
       "reason": "@joyce has commits in 1 repo(s) within ±14d window"
     },
     "llm_extractor": {
-      "signal": "low",
+      "signal": "med",
       "repos": [],
-      "reasoning": "工程部已確認排除 ES 版本差異問題並恢復香港資料服務，但所有評論均屬運維操作層面的說明，未提及任何具體的程式碼修復 repo，無法從現有資訊中推斷出 fix_repos。"
+      "reasoning": "comment #2 明確說明工程部已協助排除問題、KEYPO 香港資料已恢復正常，屬於基礎設施/資料庫切換操作問題而非程式碼修正，因此無法從 comments 或 system notes 中確認具體的 fix repo 路徑。"
     },
     "agreement_count": 1,
     "promotion_rule": "1_high_no_contradiction"

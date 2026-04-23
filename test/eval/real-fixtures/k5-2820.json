@@ -1,0 +1,49 @@
+{
+  "fixture_id": "k5-2820",
+  "extraction_date": "2026-04-23",
+  "tier": "SILVER",
+  "issue": {
+    "iid": 2820,
+    "project_path": "techcenter/reportcenter",
+    "title": "圖片下方的文字請問可否收錄",
+    "description": "客戶的關鍵字(昇恆昌)是設立在此篇文章的圖片下方\n\n想詢問是否可以協助收錄呢?\n\n如果可以的話，再麻煩協助收錄進去，感謝\n\nhttps://playing.ltn.com.tw/article/32212\n\n![image](/uploads/77337ec3063503f54c224b89725c67a1/image.png)",
+    "labels": [
+      "Bug",
+      "Data",
+      "K5",
+      "P1_高"
+    ],
+    "state": "closed",
+    "closed_at": "2025-11-25T03:58:58.695Z",
+    "assignee": "joanne.lin"
+  },
+  "ground_truth": {
+    "outcome": "likely_fixed",
+    "fix_repos": [
+      "CrawlersV2/bigcrawler-scrapy"
+    ],
+    "primary_repo": "CrawlersV2/bigcrawler-scrapy"
+  },
+  "provenance": {
+    "mr_cross_refs": {
+      "signal": "none",
+      "repos": []
+    },
+    "assignee_heuristic": {
+      "signal": "none",
+      "repos": [],
+      "closing_commenter": "joanne.lin",
+      "reason": "no commits in window for @joanne.lin"
+    },
+    "llm_extractor": {
+      "signal": "high",
+      "repos": [
+        "CrawlersV2/bigcrawler-scrapy"
+      ],
+      "reasoning": "留言 #2 明確提到在 CrawlersV2/bigcrawler-scrapy 建立 MR #3623 並調整 remove_tags 以修復圖片下方文字的收錄問題。留言 #10 joanne.lin 確認圖片底下的文字已成功收錄，問題已解決。"
+    },
+    "agreement_count": 1,
+    "promotion_rule": "1_high_no_contradiction"
+  },
+  "similar_context": null
+}

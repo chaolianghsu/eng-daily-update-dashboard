@@ -1,0 +1,52 @@
+{
+  "fixture_id": "k5-2832",
+  "extraction_date": "2026-04-23",
+  "tier": "GOLD",
+  "issue": {
+    "iid": 2832,
+    "project_path": "techcenter/reportcenter",
+    "title": "報告下載的熱門關鍵字出現奇怪的英文",
+    "description": "關鍵字:\n\n((NENE&炸雞)|bb.q|本村炸雞|Bonchon|橋村|BHC|起家雞)!(文末享好禮|抽獎 ~|文末ㄔ獎|((分享|留言|文末|活動辦法|1f|1樓)&(抽|獲得|送|驚喜|ㄔㄐ|扌由|好禮|送禮))|好禮大方送|好康大方送|得獎|獎品|獎勵|名單|好康|留言處有驚喜|一樓有驚喜|一樓找驚喜|一樓找好禮|一樓抽|好禮見文末|直播送|驚喜在留言處|驚喜在第一則留言|請看第一則留言處|扌由|贈書|文末有禮|留言抽|留言有驚喜|抽好禮|抽出得獎者|留言有禮|貼文1樓|簽到抽|留言有彩蛋|抽出得獎者有獎徵答|抽萬元大獎|ㄔㄓ|分享設公開|留言與分享貼文|抽獎中|文末ㄔㄐ|(抽 好禮 ~3)|留言處有神級驚喜|留言有驚喜|有機會抽到|文末好禮|登錄購買發票再抽|買再抽|留言送好禮|1樓抽好禮|留言處還有好康|留言處有驚喜|下單抽|公開分享直接抽|扌由好禮|有機會抽到|一樓有夢幻好禮|一樓送|1樓送​|文末有|有機會抽到|文末好禮|登錄購買發票再抽|買再抽|留言送好禮|1樓抽好禮|留言處還有好康|留言處有驚喜|下單抽|公開分享直接抽|已結單|抽咖啡|歲末年終回饋|扌由好禮|月月抽|#扌由|加碼送|立即抽|文內抽|本文抽|一樓有小驚喜|內文有好禮|文末抽獎|文末有好禮|諾羅敦珍娜|梅山大地震|抽獎|抽抽樂|贈獎|開獎|得獎|中獎|扌由獎|揪獎|chou獎|來抽|快抽|抽起來|抽一波|一起扌由|參加抽獎|參加扌由|抽出|留言傳|傳送門|下方留言|留言領攻略|底下留言|留言按讚+分享|文下留言|留言就私|留言先吃|折扣碼|票投|請見留言處|婚事將近|1111|人力銀行|Potato Corner|巴倫司康|Little Planet|临沂|花蓮10間|GOGO卡|白沙屯|慈濟|潔西卡|jessicaho|館長|陳之漢|謝景祥|濟州島|四件套|霸凌|五張截圖|神仙眷侶|首爾東大門住宿|(BHC-5733)|林喇仔湯勒|琳記甜品|假義消)\n\n(Hart tiramisu|敲敲提拉米蘇|Les Amis Honnetes 鯛魚燒|Knotted 甜甜圈|The truffle Bakery|OUVERT SEOUL|韓點糖)!越共\n\n區間:2024/10/21~2025/10/20\n\n這是熱門關鍵字的結果，但產出內容跟報告下載不同，報告下載出現奇怪的英文\n\n![image](/uploads/1f8c38a0d9cf60c13946be414ac7f1d0/image.png){width=683 height=266}\n\n報告下載\n\n![image](/uploads/9218d3e01ab5366465c7a1135933e30d/image.png){width=584 height=294}\n\n[KEYPO網路輿情調查報告__100_.pptx](/uploads/001d0c7cf55f7495a3b83124a815f595/KEYPO網路輿情調查報告__100_.pptx)",
+    "labels": [
+      "Bug",
+      "K5",
+      "P1_高"
+    ],
+    "state": "closed",
+    "closed_at": "2025-11-28T00:00:07.603Z",
+    "assignee": "Alyssa"
+  },
+  "ground_truth": {
+    "outcome": "likely_fixed",
+    "fix_repos": [
+      "KEYPO/keypo-backend"
+    ],
+    "primary_repo": "KEYPO/keypo-backend"
+  },
+  "provenance": {
+    "mr_cross_refs": {
+      "signal": "high",
+      "repos": [
+        "KEYPO/keypo-backend"
+      ]
+    },
+    "assignee_heuristic": {
+      "signal": "high",
+      "repos": [
+        "KEYPO/keypo-engine-api"
+      ],
+      "closing_commenter": "joyce",
+      "reason": "@joyce has commits in 1 repo(s) within ±14d window"
+    },
+    "llm_extractor": {
+      "signal": "high",
+      "repos": [
+        "KEYPO/keypo-backend"
+      ],
+      "reasoning": "System notes 明確記錄此 issue 被 mentioned in merge request KEYPO/keypo-backend!344，且 joyce 在 comment 中確認修正已更新至測試機，sabinesabine 複測 OK，Alyssa 也收到完成通知，修復流程完整。"
+    },
+    "agreement_count": 2,
+    "promotion_rule": "2_of_3_agree"
+  },
+  "similar_context": null
+}

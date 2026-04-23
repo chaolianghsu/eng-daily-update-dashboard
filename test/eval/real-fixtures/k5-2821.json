@@ -1,0 +1,52 @@
+{
+  "fixture_id": "k5-2821",
+  "extraction_date": "2026-04-23",
+  "tier": "GOLD",
+  "issue": {
+    "iid": 2821,
+    "project_path": "techcenter/reportcenter",
+    "title": "20251106_頻道篩選名稱重複",
+    "description": "#### 專案或系統 (非必填)：\n\n\n#### 問題描述 (可包含圖片或檔案。若為緊急狀況，請說明緊急程度，若無則由RD評估)：\n\n頻道篩選名稱重複\n\n![image](/uploads/8ae77bcfb9d2100de9fd7e897cae4020/image.png){width=1077 height=414}\n\n![image](/uploads/c3dd375cde5d809e33785eed97407991/image.png){width=1068 height=498}",
+    "labels": [
+      "Bug",
+      "K5",
+      "P2_中"
+    ],
+    "state": "closed",
+    "closed_at": "2025-12-24T00:00:08.273Z",
+    "assignee": "Ivyma"
+  },
+  "ground_truth": {
+    "outcome": "likely_fixed",
+    "fix_repos": [
+      "KEYPO/keypo-engine-api"
+    ],
+    "primary_repo": "KEYPO/keypo-engine-api"
+  },
+  "provenance": {
+    "mr_cross_refs": {
+      "signal": "high",
+      "repos": [
+        "KEYPO/keypo-engine-api"
+      ]
+    },
+    "assignee_heuristic": {
+      "signal": "high",
+      "repos": [
+        "KEYPO/keypo-engine-api"
+      ],
+      "closing_commenter": "joyce",
+      "reason": "@joyce has commits in 1 repo(s) within ±14d window"
+    },
+    "llm_extractor": {
+      "signal": "high",
+      "repos": [
+        "KEYPO/keypo-engine-api"
+      ],
+      "reasoning": "System notes 顯示兩個 merge request（KEYPO/keypo-engine-api!544 與 KEYPO/keypo-engine-api!548）均在此 issue 中被提及，且 comments 中 joyce 通知已更新至測試機、ted.juang 確認測試符合預期，顯示修正已在 KEYPO/keypo-engine-api 完成並驗收。"
+    },
+    "agreement_count": 3,
+    "promotion_rule": "2_of_3_agree"
+  },
+  "similar_context": null
+}

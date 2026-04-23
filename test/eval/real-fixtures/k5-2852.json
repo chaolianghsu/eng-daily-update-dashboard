@@ -1,0 +1,50 @@
+{
+  "fixture_id": "k5-2852",
+  "extraction_date": "2026-04-23",
+  "tier": "GOLD",
+  "issue": {
+    "iid": 2852,
+    "project_path": "techcenter/reportcenter",
+    "title": "網站開發圖片底下的文字收錄需求",
+    "description": "由於客戶昇恆昌的行銷形式改為將'昇恆昌'置入在網站的圖片下方\n\n以下10個網站需要麻煩協助開發圖片底下的文字也一併收錄，感謝\n\n中央社\nhttps://www.cna.com.tw\n\n聯合新聞網\nhttps://udn.com/news/index\n\n民視新聞網\nhttps://www.ftvnews.com.tw\n\n自由時報\nhttps://www.ltn.com.tw\n\n經濟日報\nhttps://money.udn.com\n\n工商時報\nhttps://www.ctee.com.tw\n\n中時新聞網\nhttps://www.chinatimes.com\n\nETtoday新聞雲\nhttps://www.ettoday.net\n\nTVBS新聞網\nhttps://news.tvbs.com.tw\n\n中央通訊社\nhttps://www.cna.com.tw",
+    "labels": [
+      "Data",
+      "K5",
+      "P1_高"
+    ],
+    "state": "closed",
+    "closed_at": "2026-01-03T00:00:08.659Z",
+    "assignee": "joanne.lin"
+  },
+  "ground_truth": {
+    "outcome": "likely_fixed",
+    "fix_repos": [
+      "CrawlersV2/bigcrawler-scrapy"
+    ],
+    "primary_repo": "CrawlersV2/bigcrawler-scrapy"
+  },
+  "provenance": {
+    "mr_cross_refs": {
+      "signal": "high",
+      "repos": [
+        "CrawlersV2/bigcrawler-scrapy"
+      ]
+    },
+    "assignee_heuristic": {
+      "signal": "none",
+      "repos": [],
+      "closing_commenter": "joanne.lin",
+      "reason": "no commits in window for @joanne.lin"
+    },
+    "llm_extractor": {
+      "signal": "high",
+      "repos": [
+        "CrawlersV2/bigcrawler-scrapy"
+      ],
+      "reasoning": "留言 #3 lgw85246 明確列出 10 個網站對應的 merge requests，全部指向 CrawlersV2/bigcrawler-scrapy，且 system notes 也記錄了多個來自該 repo 的 MR mentions，確認修復已完成。"
+    },
+    "agreement_count": 2,
+    "promotion_rule": "2_of_3_agree"
+  },
+  "similar_context": null
+}

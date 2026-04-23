@@ -1,0 +1,49 @@
+{
+  "fixture_id": "k5-2783",
+  "extraction_date": "2026-04-23",
+  "tier": "SILVER",
+  "issue": {
+    "iid": 2783,
+    "project_path": "techcenter/reportcenter",
+    "title": "20251015_VOGUE、GQ文章找不到",
+    "description": "#### 專案或系統 (非必填)：\n\n\n\n\n#### 問題描述 (可包含圖片或檔案。若為緊急狀況，請說明緊急程度，若無則由RD評估)：\n\nVOGUE、GQ文章找不到\n\nhttps://www.vogue.com.tw/special/lgstyler-0813?fbclid=IwY2xjawNa_7ZleHRuA2FlbQIxMABicmlkETFpTUoxRnZnaUtwakdzeGpGAR73fOPcd4cYHgbA7fUYKlvUa0W4ZZK1ZA-y7Ipp_3U2sx81WBgbf0EFJGO5ZQ_aem_0XXJ4fm9B7ouZgbUUxDZiw\n\nhttps://www.gq.com.tw/special/lgstyler-george?fbclid=IwY2xjawNbAAlleHRuA2FlbQIxMABicmlkETFkQ25aRDJ1bFdnUkFHNlh1AR5g2CwCwKH31_RLlxFW6jEJ8Xet6puoo0aKUJSD7iLDATQGyzE4FmBta61t_w_aem_j6nLpD1cIROcCNXC8nFHhQ\n\n![image](/uploads/63de51fc418df8f15d908f73fa53beb1/image.png){width=2027 height=999}\n![image](/uploads/d8f0da9ce2e988b4ebe4ac5468ab170a/image.png){width=2131 height=1353}\n\n![image](/uploads/9a52f13309d44a162baad1dd61034a76/image.png){width=2057 height=1006}\n![image](/uploads/e42d8dc29ec1734a67233522987f5005/image.png){width=2098 height=1002}",
+    "labels": [
+      "Bug",
+      "Data",
+      "K5",
+      "P1_高"
+    ],
+    "state": "closed",
+    "closed_at": "2025-10-20T03:43:58.691Z",
+    "assignee": "Ivyma"
+  },
+  "ground_truth": {
+    "outcome": "likely_fixed",
+    "fix_repos": [
+      "CrawlersV2/bigcrawler-scrapy"
+    ],
+    "primary_repo": "CrawlersV2/bigcrawler-scrapy"
+  },
+  "provenance": {
+    "mr_cross_refs": {
+      "signal": "none",
+      "repos": []
+    },
+    "assignee_heuristic": {
+      "signal": "none",
+      "repos": [],
+      "closing_commenter": "mason",
+      "reason": "no commits in window for @mason"
+    },
+    "llm_extractor": {
+      "signal": "high",
+      "repos": [
+        "CrawlersV2/bigcrawler-scrapy"
+      ],
+      "reasoning": "評論 #2 中 lgw85246 明確提供兩個指向 CrawlersV2/bigcrawler-scrapy 的 Merge Request 連結（MR #3577、#3578），修復 VOGUE 和 GQ 爬蟲。後續評論確認文章已進入系統，重複文章問題亦已處理完成。"
+    },
+    "agreement_count": 1,
+    "promotion_rule": "1_high_no_contradiction"
+  },
+  "similar_context": null
+}

@@ -1,0 +1,48 @@
+{
+  "fixture_id": "k5-2894",
+  "extraction_date": "2026-04-23",
+  "tier": "SILVER",
+  "issue": {
+    "iid": 2894,
+    "project_path": "techcenter/reportcenter",
+    "title": "20251223 - 收錄到延伸閱讀",
+    "description": "關鍵字:vitabox&ai\n\n區間: 一年\n\n有收錄道延伸閱讀，再麻煩調整、刪除\n\n![image](/uploads/47b426ed11b9fd7edf1facacdb5b2748/image.png){width=689 height=334}\n\nhttps://www.managertoday.com.tw/articles/view/65508?",
+    "labels": [
+      "Data",
+      "K5",
+      "P1_高"
+    ],
+    "state": "closed",
+    "closed_at": "2026-01-07T00:00:04.389Z",
+    "assignee": "Alyssa"
+  },
+  "ground_truth": {
+    "outcome": "likely_fixed",
+    "fix_repos": [
+      "CrawlersV2/bigcrawler-scrapy"
+    ],
+    "primary_repo": "CrawlersV2/bigcrawler-scrapy"
+  },
+  "provenance": {
+    "mr_cross_refs": {
+      "signal": "none",
+      "repos": []
+    },
+    "assignee_heuristic": {
+      "signal": "none",
+      "repos": [],
+      "closing_commenter": "mason",
+      "reason": "no commits in window for @mason"
+    },
+    "llm_extractor": {
+      "signal": "high",
+      "repos": [
+        "CrawlersV2/bigcrawler-scrapy"
+      ],
+      "reasoning": "留言 #3 中 lgw85246 明確提到已在 CrawlersV2/bigcrawler-scrapy 建立 MR #3787 完成修復，後續 mason 也確認新邏輯已上版並手動清除相關資料。"
+    },
+    "agreement_count": 1,
+    "promotion_rule": "1_high_no_contradiction"
+  },
+  "similar_context": null
+}

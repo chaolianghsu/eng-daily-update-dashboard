@@ -1,0 +1,49 @@
+{
+  "fixture_id": "k5-2792",
+  "extraction_date": "2026-04-23",
+  "tier": "SILVER",
+  "issue": {
+    "iid": 2792,
+    "project_path": "techcenter/reportcenter",
+    "title": "壹蘋新聞網_文章漏收",
+    "description": "壹蘋新聞網\n\n趨勢圖看起來正常，不過有篇文章漏收，需要麻煩協助排查並收錄，感謝\n\nhttps://tw.nextapple.com/press/20251013/3595DB97AA8B7DCB3DDF480EEF909E70\n\n![image](/uploads/05564328e69a7e8e77dce4b90768ada1/image.png)\n![image](/uploads/39952e15bd67d758e16630b6d6457204/image.png)",
+    "labels": [
+      "Bug",
+      "Data",
+      "K5",
+      "P1_高"
+    ],
+    "state": "closed",
+    "closed_at": "2025-10-28T03:33:39.121Z",
+    "assignee": "joanne.lin"
+  },
+  "ground_truth": {
+    "outcome": "likely_fixed",
+    "fix_repos": [
+      "CrawlersV2/bigcrawler-scrapy"
+    ],
+    "primary_repo": "CrawlersV2/bigcrawler-scrapy"
+  },
+  "provenance": {
+    "mr_cross_refs": {
+      "signal": "none",
+      "repos": []
+    },
+    "assignee_heuristic": {
+      "signal": "none",
+      "repos": [],
+      "closing_commenter": "joanne.lin",
+      "reason": "no commits in window for @joanne.lin"
+    },
+    "llm_extractor": {
+      "signal": "high",
+      "repos": [
+        "CrawlersV2/bigcrawler-scrapy"
+      ],
+      "reasoning": "評論 #3 明確附上 CrawlersV2/bigcrawler-scrapy 的 MR 連結，說明已新增側欄區塊修正漏收原因；評論 #5/#6 確認上版後抽查正常，問題已解決。"
+    },
+    "agreement_count": 1,
+    "promotion_rule": "1_high_no_contradiction"
+  },
+  "similar_context": null
+}

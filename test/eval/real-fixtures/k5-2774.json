@@ -1,0 +1,50 @@
+{
+  "fixture_id": "k5-2774",
+  "extraction_date": "2026-04-23",
+  "tier": "GOLD",
+  "issue": {
+    "iid": 2774,
+    "project_path": "techcenter/reportcenter",
+    "title": "line today的遊戲基地頻道文章未收錄",
+    "description": "初步看起來應該是整個頻道未收錄，要再麻煩協助確認\n\nhttps://today.line.me/tw/v3/publisher/100350\n\n客戶需求文章\n\nhttps://today.line.me/tw/v3/article/pePPM3a",
+    "labels": [
+      "Data",
+      "K5",
+      "P1_高"
+    ],
+    "state": "closed",
+    "closed_at": "2025-12-03T00:00:09.856Z",
+    "assignee": "Alyssa"
+  },
+  "ground_truth": {
+    "outcome": "likely_fixed",
+    "fix_repos": [
+      "CrawlersV2/bigcrawler-scrapy"
+    ],
+    "primary_repo": "CrawlersV2/bigcrawler-scrapy"
+  },
+  "provenance": {
+    "mr_cross_refs": {
+      "signal": "high",
+      "repos": [
+        "CrawlersV2/bigcrawler-scrapy"
+      ]
+    },
+    "assignee_heuristic": {
+      "signal": "none",
+      "repos": [],
+      "closing_commenter": "mason",
+      "reason": "no commits in window for @mason"
+    },
+    "llm_extractor": {
+      "signal": "high",
+      "repos": [
+        "CrawlersV2/bigcrawler-scrapy"
+      ],
+      "reasoning": "留言 #4 中 JethroLo 明確提供了 CrawlersV2/bigcrawler-scrapy 的 MR 連結（!3604），system notes 也顯示該 issue 被 mention 於 bigcrawler-scrapy!3648，留言 #10 確認修復完成，留言 #11 mason 宣告明日上版。"
+    },
+    "agreement_count": 2,
+    "promotion_rule": "2_of_3_agree"
+  },
+  "similar_context": null
+}

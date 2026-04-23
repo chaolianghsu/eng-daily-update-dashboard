@@ -1,0 +1,48 @@
+{
+  "fixture_id": "k5-2892",
+  "extraction_date": "2026-04-23",
+  "tier": "SILVER",
+  "issue": {
+    "iid": 2892,
+    "project_path": "techcenter/reportcenter",
+    "title": "20251223_KEYPO Agent的錯誤訊息沒有單位",
+    "description": "#### 專案或系統 (非必填)：\n\n\n\n\n#### 問題描述 (可包含圖片或檔案。若為緊急狀況，請說明緊急程度，若無則由RD評估)：\n\nKEYPO Agent的錯誤訊息沒有單位，客戶會混淆不知道是20筆還是20字\n\n![image](/uploads/1b08618d5978d66fcb88a3b343824695/image.png){width=900 height=463}",
+    "labels": [
+      "Bug",
+      "K5",
+      "P1_高"
+    ],
+    "state": "closed",
+    "closed_at": "2026-01-21T03:19:44.049Z",
+    "assignee": "Ivyma"
+  },
+  "ground_truth": {
+    "outcome": "likely_fixed",
+    "fix_repos": [
+      "KEYPO/keypo-backend"
+    ],
+    "primary_repo": "KEYPO/keypo-backend"
+  },
+  "provenance": {
+    "mr_cross_refs": {
+      "signal": "none",
+      "repos": []
+    },
+    "assignee_heuristic": {
+      "signal": "none",
+      "repos": [],
+      "closing_commenter": "Ivyma",
+      "reason": "no commits in window for @Ivyma"
+    },
+    "llm_extractor": {
+      "signal": "high",
+      "repos": [
+        "KEYPO/keypo-backend"
+      ],
+      "reasoning": "aaron.li 在 comment #2 明確提供了指向 KEYPO/keypo-backend 的 MR 連結（MR !353），joyce 確認 MR 後安排上版，並於 comment #4 確認正式機更新完成。"
+    },
+    "agreement_count": 1,
+    "promotion_rule": "1_high_no_contradiction"
+  },
+  "similar_context": null
+}

@@ -1,0 +1,48 @@
+{
+  "fixture_id": "k5-2879",
+  "extraction_date": "2026-04-23",
+  "tier": "SILVER",
+  "issue": {
+    "iid": 2879,
+    "project_path": "techcenter/reportcenter",
+    "title": "20251210 - 中廣新聞網12/7後沒文章、LINE TODAY文章未收錄",
+    "description": "中廣新聞網12/7後沒文章\n\n關鍵字:你|我|他\n\n時間:一周\n\n![image](/uploads/111f8b2364f40dbd2fbf5909242d8671/image.png){width=679 height=304}\n\n客戶文章:\n\nhttps://bccnews.com.tw/archives/750187\n\n\nLINE TODAY文章未收錄\n\n關鍵字:明德水庫枯水季衝擊觀光\n\n時間:12/10\n\n未收錄文章\n\nhttps://today.line.me/tw/v3/article/Za5epJ7\n\n\n聚焦:LINE TODAY（作者  /  中廣新聞網）\n\n關鍵字:你|我|他\n\n每天的文章量不可能都只有一兩筆，再麻煩協助確認，感謝~\n\n![image](/uploads/338d0980904bee20c25d83cbb487a81d/image.png){width=714 height=298}\n\nhttps://today.line.me/tw/v3/publisher/100006",
+    "labels": [
+      "Data",
+      "K5",
+      "P1_高"
+    ],
+    "state": "closed",
+    "closed_at": "2026-01-23T00:00:11.419Z",
+    "assignee": "Alyssa"
+  },
+  "ground_truth": {
+    "outcome": "likely_fixed",
+    "fix_repos": [
+      "CrawlersV2/bigcrawler-scrapy"
+    ],
+    "primary_repo": "CrawlersV2/bigcrawler-scrapy"
+  },
+  "provenance": {
+    "mr_cross_refs": {
+      "signal": "none",
+      "repos": []
+    },
+    "assignee_heuristic": {
+      "signal": "none",
+      "repos": [],
+      "closing_commenter": "mason",
+      "reason": "no commits in window for @mason"
+    },
+    "llm_extractor": {
+      "signal": "high",
+      "repos": [
+        "CrawlersV2/bigcrawler-scrapy"
+      ],
+      "reasoning": "留言 #2 中 lgw85246 明確列出三個 MR（#3752、#3756、#3757）均指向 CrawlersV2/bigcrawler-scrapy，分別修正 LINE TODAY 爬文範圍、翻頁邏輯與 publisher 爬取，問題已有具體修復紀錄。"
+    },
+    "agreement_count": 1,
+    "promotion_rule": "1_high_no_contradiction"
+  },
+  "similar_context": null
+}

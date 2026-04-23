@@ -1,0 +1,49 @@
+{
+  "fixture_id": "k5-2762",
+  "extraction_date": "2026-04-23",
+  "tier": "SILVER",
+  "issue": {
+    "iid": 2762,
+    "project_path": "techcenter/reportcenter",
+    "title": "台灣線報_網站改版沒資料",
+    "description": "篩選器有台灣線報，不過沒有任何資料出現\n\n需要麻煩協助排查處理，感謝\n\n![image](/uploads/d8444c9031b420c53e9d53c3946ff221/image.png)\n\n![image](/uploads/d430dd29c2e1c6240d103601f8685511/image.png)",
+    "labels": [
+      "Bug",
+      "Data",
+      "K5",
+      "P1_高"
+    ],
+    "state": "closed",
+    "closed_at": "2025-10-20T04:48:22.292Z",
+    "assignee": "joanne.lin"
+  },
+  "ground_truth": {
+    "outcome": "likely_fixed",
+    "fix_repos": [
+      "CrawlersV2/bigcrawler-scrapy"
+    ],
+    "primary_repo": "CrawlersV2/bigcrawler-scrapy"
+  },
+  "provenance": {
+    "mr_cross_refs": {
+      "signal": "none",
+      "repos": []
+    },
+    "assignee_heuristic": {
+      "signal": "none",
+      "repos": [],
+      "closing_commenter": "joanne.lin",
+      "reason": "no commits in window for @joanne.lin"
+    },
+    "llm_extractor": {
+      "signal": "high",
+      "repos": [
+        "CrawlersV2/bigcrawler-scrapy"
+      ],
+      "reasoning": "評論 #2 中 lgw85246 明確提供了 MR 連結指向 CrawlersV2/bigcrawler-scrapy，並確認已完成修復。評論 #3 中 joanne.lin 確認數據已逐漸恢復正常。"
+    },
+    "agreement_count": 1,
+    "promotion_rule": "1_high_no_contradiction"
+  },
+  "similar_context": null
+}

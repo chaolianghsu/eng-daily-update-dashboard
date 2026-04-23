@@ -1,0 +1,51 @@
+{
+  "fixture_id": "k5-2814",
+  "extraction_date": "2026-04-23",
+  "tier": "GOLD",
+  "issue": {
+    "iid": 2814,
+    "project_path": "techcenter/reportcenter",
+    "title": "mashdigi 於7/19開始收錄中斷",
+    "description": "網站 https://mashdigi.com/於 7/19開始收錄中斷\n\n需要麻煩查核並恢復收錄，感謝\n\n![image](/uploads/34ca42f8f7813b8650e385e1e1e1c8c3/image.png)\n\n![image](/uploads/2b36dd85d0b9747b5ca7e22e11651966/image.png){width=1044 height=623}",
+    "labels": [
+      "Bug",
+      "Data",
+      "K5",
+      "P1_高"
+    ],
+    "state": "closed",
+    "closed_at": "2025-11-10T01:49:57.507Z",
+    "assignee": "joanne.lin"
+  },
+  "ground_truth": {
+    "outcome": "likely_fixed",
+    "fix_repos": [
+      "CrawlersV2/bigcrawler-scrapy"
+    ],
+    "primary_repo": "CrawlersV2/bigcrawler-scrapy"
+  },
+  "provenance": {
+    "mr_cross_refs": {
+      "signal": "high",
+      "repos": [
+        "CrawlersV2/bigcrawler-scrapy"
+      ]
+    },
+    "assignee_heuristic": {
+      "signal": "none",
+      "repos": [],
+      "closing_commenter": "joanne.lin",
+      "reason": "no commits in window for @joanne.lin"
+    },
+    "llm_extractor": {
+      "signal": "high",
+      "repos": [
+        "CrawlersV2/bigcrawler-scrapy"
+      ],
+      "reasoning": "留言 #2 及 #5 均明確提交 MR 至 CrawlersV2/bigcrawler-scrapy（!3617、!3621、!3624），針對網站改版修復 CSS 及 category 選取器；留言 #9 joanne.lin 確認收錄已恢復，問題已修復。"
+    },
+    "agreement_count": 2,
+    "promotion_rule": "2_of_3_agree"
+  },
+  "similar_context": null
+}

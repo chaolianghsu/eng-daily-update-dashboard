@@ -1,0 +1,54 @@
+{
+  "fixture_id": "k5-2815",
+  "extraction_date": "2026-04-23",
+  "tier": "GOLD",
+  "issue": {
+    "iid": 2815,
+    "project_path": "techcenter/reportcenter",
+    "title": "文章以按讚數多到少排序出現錯誤",
+    "description": "關鍵字:\n\n(YAKIMA|之前往龜山的路上看到這台Land Rover|想請問前輩們我的車大約23公斤重有無適合休旅車的攜車架能載愛車|內裝大部分已完成車款是a180 4wd|車頂籃v.s車頂平台 哪個好用|跟老婆商量中秋連假要不要再去福壽山一次)!washington!washingtonfood\n\n區間:2025/7/1~2025/2025/11/3\n\n文章以按讚數多到少排序，但出現按讚數較少的排在較多的前面\n\n![image](/uploads/2c6cf9da76d987d8dd08ecdc8d92333d/image.png){width=675 height=256}",
+    "labels": [
+      "Bug",
+      "K5",
+      "P1_高"
+    ],
+    "state": "closed",
+    "closed_at": "2026-01-03T00:00:10.254Z",
+    "assignee": "Alyssa"
+  },
+  "ground_truth": {
+    "outcome": "likely_fixed",
+    "fix_repos": [
+      "KEYPO/keypo-engine-api"
+    ],
+    "primary_repo": "KEYPO/keypo-engine-api"
+  },
+  "provenance": {
+    "mr_cross_refs": {
+      "signal": "high",
+      "repos": [
+        "KEYPO/keypo-engine-api",
+        "KEYPO/keypo-engine/keypo-engine-api-v2"
+      ]
+    },
+    "assignee_heuristic": {
+      "signal": "high",
+      "repos": [
+        "KEYPO/keypo-engine-api"
+      ],
+      "closing_commenter": "joyce",
+      "reason": "@joyce has commits in 1 repo(s) within ±14d window"
+    },
+    "llm_extractor": {
+      "signal": "high",
+      "repos": [
+        "KEYPO/keypo-engine-api",
+        "KEYPO/keypo-engine/keypo-engine-api-v2"
+      ],
+      "reasoning": "System notes 明確顯示此 issue 被 mention 在 KEYPO/keypo-engine-api!553、!554 及 KEYPO/keypo-engine/keypo-engine-api-v2!60 三個 MR 中。comment #4 joyce 說明已採用 ES 處理方式完成修正並更新測試機，comment #5 sabinesabine 複測通過，確認排序問題已修復。"
+    },
+    "agreement_count": 3,
+    "promotion_rule": "2_of_3_agree"
+  },
+  "similar_context": null
+}

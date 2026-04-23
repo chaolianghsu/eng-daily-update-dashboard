@@ -1,0 +1,48 @@
+{
+  "fixture_id": "k5-2866",
+  "extraction_date": "2026-04-23",
+  "tier": "SILVER",
+  "issue": {
+    "iid": 2866,
+    "project_path": "techcenter/reportcenter",
+    "title": "JUKSY 街星新聞沒有文章",
+    "description": "關鍵字:你|我|他|的\n\n聚焦:Juksy街星\n\n時間:一年\n\n都沒有資料\n\n![image](/uploads/41cb24d1206dca32ba475cb188b3891c/image.png){width=680 height=302}\n\n客戶文章\n\nhttps://www.juksy.com/article/138796",
+    "labels": [
+      "Data",
+      "K5",
+      "P1_高"
+    ],
+    "state": "closed",
+    "closed_at": "2026-01-23T00:00:12.537Z",
+    "assignee": "Alyssa"
+  },
+  "ground_truth": {
+    "outcome": "likely_fixed",
+    "fix_repos": [
+      "CrawlersV2/bigcrawler-scrapy"
+    ],
+    "primary_repo": "CrawlersV2/bigcrawler-scrapy"
+  },
+  "provenance": {
+    "mr_cross_refs": {
+      "signal": "none",
+      "repos": []
+    },
+    "assignee_heuristic": {
+      "signal": "none",
+      "repos": [],
+      "closing_commenter": "mason",
+      "reason": "no commits in window for @mason"
+    },
+    "llm_extractor": {
+      "signal": "high",
+      "repos": [
+        "CrawlersV2/bigcrawler-scrapy"
+      ],
+      "reasoning": "comment #2 中 lgw85246 明確提供了 CrawlersV2/bigcrawler-scrapy 的 merge request 連結（MR #3721），說明爬蟲網站改版修復。comment #12 中 mason 確認已更改完畢並上版，issue 隨後關閉。"
+    },
+    "agreement_count": 1,
+    "promotion_rule": "1_high_no_contradiction"
+  },
+  "similar_context": null
+}

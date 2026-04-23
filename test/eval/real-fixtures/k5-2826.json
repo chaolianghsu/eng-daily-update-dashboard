@@ -1,0 +1,48 @@
+{
+  "fixture_id": "k5-2826",
+  "extraction_date": "2026-04-23",
+  "tier": "SILVER",
+  "issue": {
+    "iid": 2826,
+    "project_path": "techcenter/reportcenter",
+    "title": "mamibuy回文未收錄",
+    "description": "主文有收錄，但留言都沒收錄(總共有3則留言)，再麻煩協助確認，並補收錄感謝\n\nhttps://www.mamibuy.com.tw/talk/article/253697\n\n關鍵字:七星級泡腳機\n\n區間:11/1~11/6\n\n![image](/uploads/c0c010eec6c07a37cc0102fea2ab7471/image.png){width=679 height=303}",
+    "labels": [
+      "Data",
+      "K5",
+      "P1_高"
+    ],
+    "state": "closed",
+    "closed_at": "2025-11-23T00:00:07.741Z",
+    "assignee": "Alyssa"
+  },
+  "ground_truth": {
+    "outcome": "likely_fixed",
+    "fix_repos": [
+      "CrawlersV2/bigcrawler-scrapy"
+    ],
+    "primary_repo": "CrawlersV2/bigcrawler-scrapy"
+  },
+  "provenance": {
+    "mr_cross_refs": {
+      "signal": "none",
+      "repos": []
+    },
+    "assignee_heuristic": {
+      "signal": "none",
+      "repos": [],
+      "closing_commenter": "mason",
+      "reason": "no commits in window for @mason"
+    },
+    "llm_extractor": {
+      "signal": "high",
+      "repos": [
+        "CrawlersV2/bigcrawler-scrapy"
+      ],
+      "reasoning": "評論 #2 明確提到在 CrawlersV2/bigcrawler-scrapy 的 MR #3638 新增 comment_src = 'commonforum'，補上 mamibuy blog 區塊的留言收錄功能。評論 #3 確認修復完成，上版後將正常收錄留言。"
+    },
+    "agreement_count": 1,
+    "promotion_rule": "1_high_no_contradiction"
+  },
+  "similar_context": null
+}

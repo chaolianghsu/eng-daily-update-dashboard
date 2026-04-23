@@ -1,0 +1,48 @@
+{
+  "fixture_id": "k5-2803",
+  "extraction_date": "2026-04-23",
+  "tier": "SILVER",
+  "issue": {
+    "iid": 2803,
+    "project_path": "techcenter/reportcenter",
+    "title": "經濟日報文章未收錄",
+    "description": "未收錄文章:\n\nhttps://money.udn.com/money/story/5613/9099936\n\nhttps://money.udn.com/money/story/5621/9099875\n\n用關鍵字(你|我|他|的)\n\n聚焦:經濟日報\n\n時間:10/28\n\n有發現凌晨1-4點都沒文章，剛好上述兩篇都是在這個區段發文，再麻煩協助確認原因，感謝~\n\n![image](/uploads/e6a42b889a521f85d048148f73e96369/image.png){width=590 height=289}",
+    "labels": [
+      "Data",
+      "K5",
+      "P1_高"
+    ],
+    "state": "closed",
+    "closed_at": "2025-11-13T00:00:04.599Z",
+    "assignee": "Alyssa"
+  },
+  "ground_truth": {
+    "outcome": "likely_fixed",
+    "fix_repos": [
+      "CrawlersV2/bigcrawler-scrapy"
+    ],
+    "primary_repo": "CrawlersV2/bigcrawler-scrapy"
+  },
+  "provenance": {
+    "mr_cross_refs": {
+      "signal": "none",
+      "repos": []
+    },
+    "assignee_heuristic": {
+      "signal": "none",
+      "repos": [],
+      "closing_commenter": "mason",
+      "reason": "no commits in window for @mason"
+    },
+    "llm_extractor": {
+      "signal": "high",
+      "repos": [
+        "CrawlersV2/bigcrawler-scrapy"
+      ],
+      "reasoning": "Comment #2 明確附上 merge request 連結（CrawlersV2/bigcrawler-scrapy/-/merge_requests/3607），Comment #5 詳述修改了 mu.py、mu_1.py、mu_2.py 等爬蟲檔案以改善關鍵字查詢範圍，mason 於 Comment #8 確認修復原因並宣布本週四上版。"
+    },
+    "agreement_count": 1,
+    "promotion_rule": "1_high_no_contradiction"
+  },
+  "similar_context": null
+}

@@ -1,0 +1,49 @@
+{
+  "fixture_id": "k5-2761",
+  "extraction_date": "2026-04-23",
+  "tier": "SILVER",
+  "issue": {
+    "iid": 2761,
+    "project_path": "techcenter/reportcenter",
+    "title": "記者爆料網_網站中斷",
+    "description": "客戶需求文章，如果可以的話請先協助收錄，感謝\n\nhttps://new-reporter.com/news/66949/\n\n目前查看是網站改版中斷收錄，需要麻煩協助處理。\n\n![image](/uploads/2e0958f557290ba4c4037de04c4b5f76/image.png)\n\n![image](/uploads/3f3d8d9c7868da84023226231ddd0a82/image.png)",
+    "labels": [
+      "Bug",
+      "Data",
+      "K5",
+      "P1_高"
+    ],
+    "state": "closed",
+    "closed_at": "2025-10-21T09:47:01.224Z",
+    "assignee": "joanne.lin"
+  },
+  "ground_truth": {
+    "outcome": "likely_fixed",
+    "fix_repos": [
+      "CrawlersV2/bigcrawler-scrapy"
+    ],
+    "primary_repo": "CrawlersV2/bigcrawler-scrapy"
+  },
+  "provenance": {
+    "mr_cross_refs": {
+      "signal": "none",
+      "repos": []
+    },
+    "assignee_heuristic": {
+      "signal": "none",
+      "repos": [],
+      "closing_commenter": "joanne.lin",
+      "reason": "no commits in window for @joanne.lin"
+    },
+    "llm_extractor": {
+      "signal": "high",
+      "repos": [
+        "CrawlersV2/bigcrawler-scrapy"
+      ],
+      "reasoning": "評論 #3 中 lgw85246 明確提到 branch 已完成，並附上 CrawlersV2/bigcrawler-scrapy 的 MR #3564 連結；後續 joanne.lin 確認單篇收錄正常、網站收錄也恢復正常。"
+    },
+    "agreement_count": 1,
+    "promotion_rule": "1_high_no_contradiction"
+  },
+  "similar_context": null
+}

@@ -1,0 +1,50 @@
+{
+  "fixture_id": "k5-244",
+  "extraction_date": "2026-04-23",
+  "tier": "GOLD",
+  "issue": {
+    "iid": 244,
+    "project_path": "techcenter/reportcenter_confidential",
+    "title": "20251016_速報Excel版主題聲量數值沒有千分位",
+    "description": "速報Excel版主題聲量數值沒有千分位\n\n![image](/uploads/5cebff01e13eae1613b24a1832abd07b/image.png){width=1103 height=427}",
+    "labels": [
+      "Bug",
+      "K5",
+      "P2_中"
+    ],
+    "state": "closed",
+    "closed_at": "2025-11-26T03:51:27.054Z",
+    "assignee": "Ivyma"
+  },
+  "ground_truth": {
+    "outcome": "likely_fixed",
+    "fix_repos": [
+      "KEYPO/keypo-backend"
+    ],
+    "primary_repo": "KEYPO/keypo-backend"
+  },
+  "provenance": {
+    "mr_cross_refs": {
+      "signal": "high",
+      "repos": [
+        "KEYPO/keypo-backend"
+      ]
+    },
+    "assignee_heuristic": {
+      "signal": "none",
+      "repos": [],
+      "closing_commenter": "ted.juang",
+      "reason": "no commits in window for @ted.juang"
+    },
+    "llm_extractor": {
+      "signal": "high",
+      "repos": [
+        "KEYPO/keypo-backend"
+      ],
+      "reasoning": "System notes 中明確記載此 issue 被提及於 KEYPO/keypo-backend 的兩個 MR（!319、!326），且 ted.juang 留言確認已上版並驗證完成，符合預期。"
+    },
+    "agreement_count": 2,
+    "promotion_rule": "2_of_3_agree"
+  },
+  "similar_context": null
+}

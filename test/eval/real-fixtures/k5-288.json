@@ -1,19 +1,19 @@
 {
-  "fixture_id": "k5-302",
+  "fixture_id": "k5-288",
   "extraction_date": "2026-04-23",
   "tier": "GOLD",
   "issue": {
-    "iid": 302,
+    "iid": 288,
     "project_path": "techcenter/reportcenter_confidential",
-    "title": "20260106 - 錯誤訊息顯示Unknown error",
-    "description": "錯誤訊息顯示Unknown error，看起來應該是因為左括號跟字詞中間少了符號連接的關係，再請確認顯示內容，感謝!\n\n![image](/uploads/08b7e5f77b7864007a5c4aa90d98143c/image.png){width=900 height=498}",
+    "title": "20251217 - 從後台跟portal開啟新增日本資料後，系統還是看不到",
+    "description": "從後台跟portal開啟新增日本資料後，系統還是看不到，再請確認，感謝!\n\n![image](/uploads/dd3ea3922ef54174869f69e125ab7b6b/image.png){width=900 height=527}\n![image](/uploads/33367bbc37c66bf7b6611bcbadeffb2b/image.png){width=900 height=509}\n![image](/uploads/2a6367d26c42668e5d69ea381d87e39c/image.png){width=900 height=516}",
     "labels": [
       "Bug",
       "K5",
       "P1_高"
     ],
     "state": "closed",
-    "closed_at": "2026-01-28T03:33:02.438Z",
+    "closed_at": "2026-01-28T03:34:27.664Z",
     "assignee": "Ivyma"
   },
   "ground_truth": {
@@ -43,7 +43,7 @@
       "repos": [
         "KEYPO/keypo-backend"
       ],
-      "reasoning": "System notes 明確顯示此 issue 被 mention 於 KEYPO/keypo-backend 的兩個 MR（!361、!363），且 joe 的留言也確認問題根因在 keypo-backend 的 error_i18n.json 設定檔中缺少對應 KEY，修復工作已在該 repo 完成並驗證無誤。"
+      "reasoning": "System notes 明確顯示 MR KEYPO/keypo-backend!366 被提及，且 joyce 在 comment 中確認程式已修正並完成正式機更新，測試人員 sabinesabine 也確認測試 OK 可安排上版。"
     },
     "agreement_count": 2,
     "promotion_rule": "2_of_3_agree"

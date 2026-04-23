@@ -1,0 +1,48 @@
+{
+  "fixture_id": "k5-2860",
+  "extraction_date": "2026-04-23",
+  "tier": "SILVER",
+  "issue": {
+    "iid": 2860,
+    "project_path": "techcenter/reportcenter",
+    "title": "[20251201] 新聞沒資料",
+    "description": "關鍵字:你|我|他|的\n\n區間:半年\n\n------------------------------------------------------------------------------------------\n\n聚焦:美麗島電子報\n\n11/29後沒文章收錄\n\n![image](/uploads/0bd4e4bfdc1df08e48b831d9d5e39bf4/image.png){width=690 height=311}\n\n客戶文章:\n\nhttps://m.my-formosa.com.tw/DOC_221882.htm\n\n--------------------------------------------------------------------------------------------------\n\n聚焦:知新聞\n\n只有12/1有文章\n\n![image](/uploads/83510c2d730bff8c331cf0d989a7f990/image.png){width=688 height=302}\n\n客戶文章:\n\nhttps://www.knews.com.tw/news/AE3F993786AB8748E7D71C66F59B1AF7\n\n----------------------------------------------------------------------------------------------\n\n聚焦:豐雲學堂\n\n10/14後沒文章\n\n![image](/uploads/35eb35b2d6b55d16c0b2957e6dea48b6/image.png){width=692 height=310}\n\n客戶文章:\n\nhttps://www.sinotrade.com.tw/richclub/news/692d0bc28ff59b56a619e310\n\n----------------------------------------------------------------------------------------\n\n聚焦:梅花新聞網\n\n只有8/8有文章\n\n![image](/uploads/519029c9f6598ac21fe168ecb95cc78a/image.png){width=680 height=317}\n\n客戶文章:\n\nhttps://www.i-meihua.com/Article/Detail/38581\n\n-----------------------------------------------------------------------------------------\n\n農傳媒文章未收錄(有多篇未收錄再麻煩協助檢查)\n\n客戶文章:\n\nhttps://www.agriharvest.tw/archives/130542\n\nhttps://www.agriharvest.tw/archives/130514\n\n-----------------------------------------------------------------------------------\n\n聚焦:沃草\n\n完全沒資料\n\n![image](/uploads/d7bde8dc9a157183fd15b3e73ddb6f41/image.png){width=685 height=295}\n\n---------------------------------------------------------------------------------------\n\n聚焦:上報\n\n資料量明顯少很多\n\n![image](/uploads/97764cec99d6a73b82e824da74cb4ce0/image.png){width=683 height=253}\n\n這些都沒收錄\n\n![image](/uploads/ba9a3c6cf5c42d8deedd3591b711290a/image.png){width=724 height=313}\n\n--------------------------------------------------------------------------\n\n聚焦:臺灣時報\n\n2025/12/2 12:00後就沒資料\n\n![image](/uploads/cb47a08934d50f265427d830b8364b09/image.png){width=679 height=293}\n\n客戶文章:\nhttps://www.taiwantimes.com.tw/app-container/app-content/new/new-content-detail?blogId=blog-9a739d57-86ab-4ff5-ae75-561c88440e45",
+    "labels": [
+      "Data",
+      "K5",
+      "P1_高"
+    ],
+    "state": "closed",
+    "closed_at": "2025-12-12T09:51:52.682Z",
+    "assignee": "Alyssa"
+  },
+  "ground_truth": {
+    "outcome": "likely_fixed",
+    "fix_repos": [
+      "CrawlersV2/bigcrawler-scrapy"
+    ],
+    "primary_repo": "CrawlersV2/bigcrawler-scrapy"
+  },
+  "provenance": {
+    "mr_cross_refs": {
+      "signal": "none",
+      "repos": []
+    },
+    "assignee_heuristic": {
+      "signal": "none",
+      "repos": [],
+      "closing_commenter": "Alyssa",
+      "reason": "no commits in window for @Alyssa"
+    },
+    "llm_extractor": {
+      "signal": "high",
+      "repos": [
+        "CrawlersV2/bigcrawler-scrapy"
+      ],
+      "reasoning": "多個 comments 中 JethroLo 明確列出針對各新聞站的 MR（知新聞、豐雲學堂、梅花新聞網、沃草、美麗島電子報）皆指向 CrawlersV2/bigcrawler-scrapy，mason 最終確認所有文章已補且需修復的站點皆已修復上版。"
+    },
+    "agreement_count": 1,
+    "promotion_rule": "1_high_no_contradiction"
+  },
+  "similar_context": null
+}
