@@ -10,6 +10,8 @@ labels:
   K5:
     product: KEYPO
     primary_group: KEYPO
+    default_assignees:
+      - Joyce
     known_exceptions:
       # Cross-group exceptions(真 exception,不在 primary_group 內):
       - llmprojects/keypo-agent
@@ -78,6 +80,8 @@ labels:
   Data:
     product: Data ops
     primary_group: Crawlers
+    default_assignees:
+      - Walt
     known_exceptions:
       - CrawlersV2
       - bigdata1

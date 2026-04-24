@@ -301,6 +301,48 @@ describe('runPhase1Routing', () => {
     }
   });
 
+  it('overrides suggested_assignees with config default_assignees for issue labels', async () => {
+    // LLM's output is discarded for assignees — config is authoritative.
+    // Reason: GitLab clears assignee on close, so historical inference is
+    // pointless. Policy lives in label-routing.yaml.
+    const cfg = baseConfig();
+    cfg.labels.K5.default_assignees = ['Joyce'];
+    cfg.labels.Data = { primary_group: 'Crawlers', default_assignees: ['Walt'] };
+    const client = makeMockClient(validToolInput()); // LLM suggests 'alice'
+
+    const result = await runPhase1Routing(
+      baseContext({
+        new_issue: { labels: ['K5', 'P1_高'], project_path: 'KEYPO/keypo-backend' },
+        label_config: cfg,
+      }),
+      { client },
+    );
+    expect(result.suggested_assignees).toEqual(['Joyce']);
+  });
+
+  it('unions default_assignees from multiple labels, dedups, caps at 3', async () => {
+    const cfg = baseConfig();
+    cfg.labels.K5.default_assignees = ['Joyce', 'Shared'];
+    cfg.labels.Data = { primary_group: 'Crawlers', default_assignees: ['Walt', 'Shared'] };
+    const client = makeMockClient(validToolInput());
+
+    const result = await runPhase1Routing(
+      baseContext({
+        new_issue: { labels: ['K5', 'Data'] },
+        label_config: cfg,
+      }),
+      { client },
+    );
+    expect(result.suggested_assignees.length).toBeLessThanOrEqual(3);
+    expect(new Set(result.suggested_assignees)).toEqual(new Set(['Joyce', 'Shared', 'Walt']));
+  });
+
+  it('keeps LLM suggested_assignees when no label has default_assignees', async () => {
+    const client = makeMockClient(validToolInput()); // alice
+    const result = await runPhase1Routing(baseContext(), { client });
+    expect(result.suggested_assignees).toEqual(['alice']);
+  });
+
   it('maps cliFallback cli_error to LLMApiError code api_error', async () => {
     const prevKey = process.env.ANTHROPIC_API_KEY;
     delete process.env.ANTHROPIC_API_KEY;

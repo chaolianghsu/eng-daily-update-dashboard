@@ -102,6 +102,31 @@ describe('validateConfig', () => {
     const cfg = { labels: { K5: { product: 'KEYPO', primary_group: 'KEYPO' } } };
     expect(() => validateConfig(cfg)).not.toThrow();
   });
+
+  it('accepts default_assignees as array of non-empty strings', () => {
+    const cfg = {
+      labels: {
+        K5: { product: 'KEYPO', primary_group: 'KEYPO', default_assignees: ['Joyce'] },
+        Data: { product: 'Data', primary_group: 'Crawlers', default_assignees: ['Walt'] },
+      },
+    };
+    expect(() => validateConfig(cfg)).not.toThrow();
+  });
+
+  it('rejects default_assignees when not an array', () => {
+    const cfg = { labels: { K5: { primary_group: 'KEYPO', default_assignees: 'Joyce' } } };
+    expect(() => validateConfig(cfg)).toThrow(/default_assignees.*array/i);
+  });
+
+  it('rejects default_assignees with empty or non-string entries', () => {
+    const bad = [
+      { labels: { K5: { primary_group: 'KEYPO', default_assignees: [''] } } },
+      { labels: { K5: { primary_group: 'KEYPO', default_assignees: [123] } } },
+    ];
+    for (const cfg of bad) {
+      expect(() => validateConfig(cfg)).toThrow();
+    }
+  });
 });
 
 describe('getRepoSuggestions', () => {

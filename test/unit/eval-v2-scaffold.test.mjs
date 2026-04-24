@@ -129,6 +129,73 @@ describe('analyzeGap', () => {
     expect(m.assignee.r_at_3).toBe(true);
   });
 
+  it('assignee R@3 falls back to config default_assignees when ground truth is null', () => {
+    const fx = baseFixture({
+      ground_truth: { primary_repo: 'KEYPO/keypo-backend', fix_repos: ['KEYPO/keypo-backend'], assignee: null, outcome: 'likely_fixed' },
+      labels: ['K5', 'P1_高'],
+    });
+    const labelConfig = {
+      labels: {
+        K5: { primary_group: 'KEYPO', default_assignees: ['Joyce'] },
+      },
+    };
+    // Suggested includes Joyce (config) — hit
+    const hit = analyzeGap({
+      fixture: fx,
+      phase1Output: basePhase1({ suggested_assignees: ['Joyce'], suggested_repos: ['KEYPO/keypo-backend'] }),
+      phase2Output: null,
+      judgeResult: null,
+      labelConfig,
+    });
+    expect(hit.assignee.r_at_3).toBe(true);
+    expect(hit.assignee.ground_truth_assignee).toBe('Joyce');
+    expect(hit.assignee.ground_truth_source).toBe('config_default');
+
+    // Suggested missing Joyce — miss
+    const miss = analyzeGap({
+      fixture: fx,
+      phase1Output: basePhase1({ suggested_assignees: ['SomeoneElse'], suggested_repos: ['KEYPO/keypo-backend'] }),
+      phase2Output: null,
+      judgeResult: null,
+      labelConfig,
+    });
+    expect(miss.assignee.r_at_3).toBe(false);
+  });
+
+  it('assignee fallback returns 0 when config has no default for the labels', () => {
+    const fx = baseFixture({
+      ground_truth: { primary_repo: 'bigdata/etl', fix_repos: ['bigdata/etl'], assignee: null, outcome: 'likely_fixed' },
+      labels: ['BD'],
+    });
+    const m = analyzeGap({
+      fixture: fx,
+      phase1Output: basePhase1({ suggested_assignees: ['anyone'] }),
+      phase2Output: null,
+      judgeResult: null,
+      labelConfig: { labels: { BD: { primary_group: 'bigdata' } } }, // no default_assignees
+    });
+    expect(m.assignee.r_at_3).toBe(false);
+    expect(m.assignee.ground_truth_assignee).toBeNull();
+  });
+
+  it('real ground-truth assignee takes precedence over config fallback', () => {
+    const fx = baseFixture({
+      ground_truth: { primary_repo: 'bigdata/etl', fix_repos: ['bigdata/etl'], assignee: 'nick.huang', outcome: 'likely_fixed' },
+      labels: ['K5'],
+    });
+    const labelConfig = { labels: { K5: { primary_group: 'KEYPO', default_assignees: ['Joyce'] } } };
+    const m = analyzeGap({
+      fixture: fx,
+      phase1Output: basePhase1({ suggested_assignees: ['nick.huang'] }),
+      phase2Output: null,
+      judgeResult: null,
+      labelConfig,
+    });
+    expect(m.assignee.r_at_3).toBe(true);
+    expect(m.assignee.ground_truth_assignee).toBe('nick.huang');
+    expect(m.assignee.ground_truth_source).toBe('fixture');
+  });
+
   it('confidence bucket assignment is correct', () => {
     const m = analyzeGap({
       fixture: baseFixture(),

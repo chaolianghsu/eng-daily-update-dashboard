@@ -13,11 +13,11 @@
  * @param {object|null} params.judgeResult - judge output or null/error
  * @returns {object} per-fixture metrics
  */
-export function analyzeGap({ fixture, phase1Output, phase2Output, judgeResult }) {
+export function analyzeGap({ fixture, phase1Output, phase2Output, judgeResult, labelConfig }) {
   const gt = fixture?.ground_truth ?? {};
   const primaryRepo = gt.primary_repo ?? null;
   const fixRepos = Array.isArray(gt.fix_repos) ? gt.fix_repos : [];
-  const gtAssignee = gt.assignee ?? null;
+  const rawGtAssignee = gt.assignee ?? null;
 
   const suggested = Array.isArray(phase1Output?.suggested_repos) ? phase1Output.suggested_repos : [];
   const suggestedAssignees = Array.isArray(phase1Output?.suggested_assignees)
@@ -35,6 +35,25 @@ export function analyzeGap({ fixture, phase1Output, phase2Output, judgeResult })
     const suggestedSet = new Set(suggested);
     const hits = fixRepos.filter((r) => suggestedSet.has(r)).length;
     cross_repo_recall = hits / fixRepos.length;
+  }
+
+  // Assignee ground truth: prefer the fixture's recorded value; otherwise fall
+  // back to the config's `default_assignees` for any of the issue's labels.
+  // Rationale: GitLab clears `assignee` when an issue is closed, so historical
+  // fixtures always have gt.assignee === null. The label-routing.yaml policy
+  // (K5 → Joyce, Data → Walt, ...) is the authoritative expectation.
+  let gtAssignee = rawGtAssignee;
+  let gtAssigneeSource = rawGtAssignee ? 'fixture' : null;
+  if (!gtAssignee) {
+    const issueLabels = Array.isArray(fixture?.issue?.labels) ? fixture.issue.labels : [];
+    for (const label of issueLabels) {
+      const defaults = labelConfig?.labels?.[label]?.default_assignees ?? [];
+      if (defaults.length > 0) {
+        gtAssignee = defaults[0];
+        gtAssigneeSource = 'config_default';
+        break;
+      }
+    }
   }
 
   const assigneeTop3 = suggestedAssignees.slice(0, 3);
@@ -61,6 +80,7 @@ export function analyzeGap({ fixture, phase1Output, phase2Output, judgeResult })
     assignee: {
       r_at_3: assignee_r_at_3,
       ground_truth_assignee: gtAssignee,
+      ground_truth_source: gtAssigneeSource,
       suggested: suggestedAssignees,
     },
     confidence: {

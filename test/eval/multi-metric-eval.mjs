@@ -112,6 +112,7 @@ export async function runEvalV2({
         phase1Output: phase1,
         phase2Output: phase2,
         judgeResult,
+        labelConfig,
       });
       return { fixture_id: fx.id ?? fx.issue?.iid, phase1, phase2, judgeResult, metrics };
     } catch (err) {
