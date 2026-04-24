@@ -555,6 +555,31 @@ describe('buildJudgePrompt', () => {
     expect(prompt).not.toMatch(/primary_repo/);
     expect(prompt).not.toMatch(/outcome/);
   });
+
+  it('renders risks when phase2 provides them so judge can score coverage on risk awareness', () => {
+    const prompt = buildJudgePrompt({
+      issue: { title: 'T', description: 'D', labels: [] },
+      phase1Output: basePhase1(),
+      phase2Output: basePhase2({
+        risks: [
+          '修改 export.py 可能影響 Excel / PDF 匯出',
+          '需監控 error rate 30 分鐘',
+        ],
+      }),
+    });
+    expect(prompt).toContain('risks');
+    expect(prompt).toContain('修改 export.py 可能影響');
+    expect(prompt).toContain('需監控 error rate');
+  });
+
+  it('renders "(none)" for risks when phase2 does not provide them', () => {
+    const prompt = buildJudgePrompt({
+      issue: { title: 'T', description: 'D', labels: [] },
+      phase1Output: basePhase1(),
+      phase2Output: basePhase2({ risks: undefined }),
+    });
+    expect(prompt).toMatch(/risks:\s*\(none/);
+  });
 });
 
 describe('parseJudgeOutput', () => {

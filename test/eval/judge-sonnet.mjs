@@ -103,6 +103,10 @@ export function buildJudgePrompt({ issue, phase1Output, phase2Output }) {
     Array.isArray(phase2Output?.plan_draft) && phase2Output.plan_draft.length > 0
       ? phase2Output.plan_draft.map((s, i) => `  ${i + 1}. ${s}`).join('\n')
       : '(none — 低信心跳過或未生成)';
+  const risksLines =
+    Array.isArray(phase2Output?.risks) && phase2Output.risks.length > 0
+      ? phase2Output.risks.map((s, i) => `  ${i + 1}. ${s}`).join('\n')
+      : '(none — 未列出風險)';
 
   return [
     '你是一個 code review judge。不是實作者。以下 issue 有一個路由/計畫提案,請用 rubric 評分。',
@@ -111,7 +115,7 @@ export function buildJudgePrompt({ issue, phase1Output, phase2Output }) {
     '1. Relevance — 提案的 repo 建議對這個 issue 內容是否 plausible',
     '2. Actionability — plan_draft 是具體可執行還是抽象口號',
     '3. Correctness — 基於 issue description 看,提案的診斷路徑是否技術合理',
-    '4. Coverage — 是否提到了主要相關面向(repo、assignee、風險)',
+    '4. Coverage — 是否提到了主要相關面向(repo、assignee、風險)。risks 欄位若具體且相關則加分,若只寫「沒有風險」或空則扣分。',
     '',
     '嚴格使用 JSON output: {"relevance": N, "actionability": N, "correctness": N, "coverage": N, "reasoning": "...(1-2 zh-TW 句子)"}',
     '',
@@ -129,6 +133,8 @@ export function buildJudgePrompt({ issue, phase1Output, phase2Output }) {
     `confidence: ${confidence}`,
     'plan_draft:',
     planDraftLines,
+    'risks:',
+    risksLines,
   ].join('\n');
 }
 

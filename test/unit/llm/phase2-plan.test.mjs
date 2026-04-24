@@ -57,6 +57,10 @@ const validPlanInput = () => ({
     '實作修正並 review',
     '部署後驗證使用者匯出流程',
   ],
+  risks: [
+    '修改 CSV 生成可能影響其他匯出格式(Excel / PDF)',
+    '部署後需監控 error rate 30 分鐘,異常需 rollback',
+  ],
 });
 
 function makeMockClient(toolInput = validPlanInput()) {
@@ -75,12 +79,15 @@ describe('PLAN_TOOL schema', () => {
   it('has expected name, description, and required fields', () => {
     expect(PLAN_TOOL.name).toBe('generate_plan');
     expect(PLAN_TOOL.description).toMatch(/plan/);
-    expect(PLAN_TOOL.input_schema.required).toEqual(['summary', 'plan_draft']);
+    expect(PLAN_TOOL.input_schema.required).toEqual(['summary', 'plan_draft', 'risks']);
     const props = PLAN_TOOL.input_schema.properties;
     expect(props.summary.type).toBe('string');
     expect(props.plan_draft.type).toBe('array');
     expect(props.plan_draft.items.type).toBe('string');
     expect(props.plan_draft.maxItems).toBe(5);
+    expect(props.risks.type).toBe('array');
+    expect(props.risks.items.type).toBe('string');
+    expect(props.risks.maxItems).toBe(3);
   });
 });
 
@@ -227,6 +234,25 @@ describe('runPhase2Plan', () => {
     const user = call.messages.find((m) => m.role === 'user').content;
     const combined = `${system}\n${user}`;
     expect(combined).toMatch(/確認一下|看看|可執行|工程步驟/);
+  });
+
+  it('prompt asks the model to produce risks (regression / rollout concerns)', async () => {
+    const client = makeMockClient();
+    await runPhase2Plan(baseContext(), highConfidencePhase1(), { client });
+    const call = client.messages.create.mock.calls[0][0];
+    const system = call.system || '';
+    const user = call.messages.find((m) => m.role === 'user').content;
+    const combined = `${system}\n${user}`;
+    expect(combined).toMatch(/risks|風險|回歸|rollback|副作用|影響範圍/);
+  });
+
+  it('missing risks field in tool input → throws LLMApiError with code "invalid_json"', async () => {
+    const bad = validPlanInput();
+    delete bad.risks;
+    const client = makeMockClient(bad);
+    await expect(
+      runPhase2Plan(baseContext(), highConfidencePhase1(), { client })
+    ).rejects.toMatchObject({ name: 'LLMApiError', code: 'invalid_json' });
   });
 
   it('uses provided client and does NOT instantiate Anthropic SDK (no ANTHROPIC_API_KEY needed)', async () => {
