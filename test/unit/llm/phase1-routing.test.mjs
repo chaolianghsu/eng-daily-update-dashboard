@@ -343,6 +343,21 @@ describe('runPhase1Routing', () => {
     expect(result.suggested_assignees).toEqual(['alice']);
   });
 
+  it('system prompt contains concrete confidence anchors and at least one example', async () => {
+    const client = makeMockClient();
+    await runPhase1Routing(baseContext(), { client });
+    const sys = client.messages.create.mock.calls[0][0].system;
+    // Anchors present for 0.85-0.95 and < 0.5 buckets
+    expect(sys).toMatch(/0\.85[^0-9]/);
+    expect(sys).toMatch(/0\.9/);
+    expect(sys).toMatch(/<\s?0\.5/);
+    // Worked example — a concrete scenario mapped to a concrete confidence
+    expect(sys).toMatch(/範例/);
+    // Caveats must not be framed as a confidence down-modifier
+    expect(sys).not.toMatch(/不要用「我不太確定」/);
+    expect(sys).toMatch(/caveats.*(沒有|空陣列|\[\])/);
+  });
+
   it('maps cliFallback cli_error to LLMApiError code api_error', async () => {
     const prevKey = process.env.ANTHROPIC_API_KEY;
     delete process.env.ANTHROPIC_API_KEY;
