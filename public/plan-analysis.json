@@ -1,237 +1,317 @@
 {
-  "analysisDate": "2026-04-17",
-  "period": "4/16",
+  "analysisDate": "2026-04-24",
+  "period": "4/23",
   "planSpecs": [
     {
-      "date": "4/16",
-      "member": "Ted",
+      "date": "4/23",
+      "member": "日銜",
       "commit": {
-        "title": "docs: add four KEYPO + GEO proposals (A/B/C/D) for leadership review",
-        "sha": "ea6abf62",
-        "project": "ted.juang/ai-listening",
-        "url": "",
+        "title": "docs: add biglink backup queue design, plan and flow",
+        "sha": "e0031711",
+        "project": "CrawlersV2/bigcrawler-scrapy",
+        "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/e0031711",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/specs/2026-04-16-ai-sonar-proposals.md"
+        "docs/superpowers/plans/2026-04-20-biglink-backup-queue.md",
+        "docs/superpowers/specs/2026-04-20-biglink-backup-flow.md",
+        "docs/superpowers/specs/2026-04-20-biglink-backup-queue-design.md"
       ]
     },
     {
-      "date": "4/16",
-      "member": "Ted",
+      "date": "4/23",
+      "member": "禎佑",
       "commit": {
-        "title": "docs: add KEYPO features reference based on operations manual",
-        "sha": "df4ffc21",
-        "project": "ted.juang/ai-listening",
-        "url": "",
+        "title": "Add project standards and info export design spec",
+        "sha": "c74b2cfd",
+        "project": "chris.su/kol-lookup-v2",
+        "url": "https://biglab.buygta.today/chris.su/kol-lookup-v2/-/commit/c74b2cfd",
         "source": "gitlab"
       },
       "files": [
-        "docs/keypo-features-reference.md"
+        "docs/claude.md",
+        "docs/superpowers/specs/2026-04-23-info-export-design.md"
       ]
     },
     {
-      "date": "4/16",
-      "member": "Ted",
+      "date": "4/23",
+      "member": "禎佑",
       "commit": {
-        "title": "docs: add proposals v2 with KEYPO integration facts",
-        "sha": "e510b4de",
-        "project": "ted.juang/ai-listening",
-        "url": "",
+        "title": "Add info export implementation plan",
+        "sha": "da6c4ff8",
+        "project": "chris.su/kol-lookup-v2",
+        "url": "https://biglab.buygta.today/chris.su/kol-lookup-v2/-/commit/da6c4ff8",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/specs/2026-04-16-ai-sonar-proposals-v2.md"
+        "docs/superpowers/plans/2026-04-23-info-export.md"
       ]
     },
     {
-      "date": "4/16",
-      "member": "Ted",
+      "date": "4/23",
+      "member": "禎佑",
       "commit": {
-        "title": "docs: add PM execution plan with strategy A (skeleton + later deepen)",
-        "sha": "38739128",
-        "project": "ted.juang/ai-listening",
-        "url": "",
+        "title": "docs: add channel_id fetcher design spec",
+        "sha": "be7547a7",
+        "project": "chris.su/kol-lookup-v2",
+        "url": "https://biglab.buygta.today/chris.su/kol-lookup-v2/-/commit/be7547a7",
         "source": "gitlab"
       },
       "files": [
-        "docs/team/pm-plan.md"
+        "docs/superpowers/specs/2026-04-23-channel-id-fetcher-design.md"
       ]
     },
     {
-      "date": "4/16",
-      "member": "Ted",
+      "date": "4/23",
+      "member": "禎佑",
       "commit": {
-        "title": "docs: add Ted skeleton drafts (batch 1+2) for AI Listening proposal",
-        "sha": "649acd68",
-        "project": "ted.juang/ai-listening",
-        "url": "",
+        "title": "Add channel_id fetcher implementation plan",
+        "sha": "1099f91f",
+        "project": "chris.su/kol-lookup-v2",
+        "url": "https://biglab.buygta.today/chris.su/kol-lookup-v2/-/commit/1099f91f",
         "source": "gitlab"
       },
       "files": [
-        "docs/team/competitor-landscape.md",
-        "docs/team/integration-tech-skeleton.md",
-        "docs/team/market-data-references.md",
-        "docs/team/naming-check.md",
-        "docs/team/narrative-skeleton-3versions.md",
-        "docs/team/needs-map-hypothesis.md",
-        "docs/team/product-positioning.md",
-        "docs/team/seo-vs-data-company.md",
-        "docs/team/target-customer-skeleton.md"
+        "docs/superpowers/plans/2026-04-23-channel-id-fetcher.md"
       ]
     },
     {
-      "date": "4/16",
+      "date": "4/23",
       "member": "Ted",
       "commit": {
-        "title": "docs: add Ted skeleton drafts (batch 3 part 1)",
-        "sha": "adc9b8a4",
-        "project": "ted.juang/ai-listening",
-        "url": "",
+        "title": "docs(spec): keyword guardrail config — editable tokens, delete LLM extractor, skip_regexp/skip_llm flags",
+        "sha": "73013f89",
+        "project": "KEYPO/keypo-newsletter",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-newsletter/-/commit/73013f89",
         "source": "gitlab"
       },
       "files": [
-        "docs/demo/demo-script-v2.md",
-        "docs/team/prompt-and-competitor-strategy.md"
+        "docs/superpowers/specs/2026-04-23-keyword-guardrail-config-design.md"
       ]
     },
     {
-      "date": "4/16",
+      "date": "4/23",
+      "member": "Ted",
+      "commit": {
+        "title": "docs(spec): fix — add admin validation for empty tokens, complete test impact list",
+        "sha": "2c7609e3",
+        "project": "KEYPO/keypo-newsletter",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-newsletter/-/commit/2c7609e3",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-04-23-keyword-guardrail-config-design.md"
+      ]
+    },
+    {
+      "date": "4/23",
+      "member": "Ted",
+      "commit": {
+        "title": "Merge branch 'spec/pre-send-approval' into 'develop'",
+        "sha": "da0a8fef",
+        "project": "KEYPO/keypo-newsletter",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-newsletter/-/commit/da0a8fef",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/DEPLOYMENT.md",
+        "docs/superpowers/plans/2026-04-20-pre-send-approval.md",
+        "docs/superpowers/specs/2026-04-20-pre-send-approval-design.md",
+        "docs/superpowers/specs/2026-04-23-keyword-guardrail-config-design.md"
+      ]
+    },
+    {
+      "date": "4/23",
+      "member": "Ted",
+      "commit": {
+        "title": "Merge branch 'spec/pre-send-approval' into 'develop'",
+        "sha": "1c8eed3b",
+        "project": "KEYPO/keypo-newsletter",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-newsletter/-/commit/1c8eed3b",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/DEPLOYMENT.md",
+        "docs/superpowers/plans/2026-04-20-pre-send-approval.md",
+        "docs/superpowers/specs/2026-04-20-pre-send-approval-design.md",
+        "docs/superpowers/specs/2026-04-23-keyword-guardrail-config-design.md"
+      ]
+    },
+    {
+      "date": "4/23",
+      "member": "Wendy",
+      "commit": {
+        "title": "docs: add spec and plan for MySQL gone away fix",
+        "sha": "fb79f4a9",
+        "project": "sinyi/sinyi-dashboard",
+        "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/fb79f4a9",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-04-22-fix-mysql-gone-away-in-sync-jobs.md",
+        "docs/superpowers/specs/2026-04-22-fix-mysql-gone-away-in-sync-jobs-design.md"
+      ]
+    },
+    {
+      "date": "4/23",
+      "member": "Wendy",
+      "commit": {
+        "title": "docs: add plan for applying 9e67cc5 optimizations to catalog and trust",
+        "sha": "06ddceab",
+        "project": "sinyi/sinyi-dashboard",
+        "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/06ddceab",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-04-22-social-news-sync-lock-timeout-fix.md"
+      ]
+    },
+    {
+      "date": "4/23",
+      "member": "Aaron",
+      "commit": {
+        "title": "docs: add cancel-run feature design spec",
+        "sha": "6fd06358",
+        "project": "llmprojects/keypo-agent",
+        "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/6fd06358",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-04-23-cancel-run-design.md"
+      ]
+    },
+    {
+      "date": "4/23",
+      "member": "Aaron",
+      "commit": {
+        "title": "docs: add cancel-run implementation plan",
+        "sha": "a3e3da66",
+        "project": "llmprojects/keypo-agent",
+        "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/a3e3da66",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-04-23-cancel-run.md"
+      ]
+    },
+    {
+      "date": "4/23",
       "member": "哲緯",
       "commit": {
-        "title": "docs: add channel meta to mssql spec and plan",
-        "sha": "1e595fbd",
-        "project": "mason/threads-scrapy",
-        "url": "",
-        "source": "gitlab"
+        "title": "Merge pull request #103 from bigdata-54837596/docs/full-sync-v1.13.34",
+        "sha": "5c545bd6",
+        "project": "bigdata-54837596/line-social-radar",
+        "url": "https://github.com/bigdata-54837596/line-social-radar/commit/5c545bd6",
+        "source": "github"
       },
       "files": [
-        "docs/superpowers/plans/2026-04-16-channel-meta-to-mssql.md",
-        "docs/superpowers/specs/2026-04-16-channel-meta-to-mssql-design.md"
+        "docs/ALERTING.md",
+        "docs/GCP_DEPLOYMENT.md",
+        "docs/OBSERVABILITY.md",
+        "docs/PIPELINE_FLOW.md"
       ]
     },
     {
-      "date": "4/16",
+      "date": "4/23",
       "member": "哲緯",
       "commit": {
-        "title": "docs: add spec for KEYPO trending keyword DAG",
-        "sha": "69bc8492",
-        "project": "CrawlersV2/bigairflow",
-        "url": "",
-        "source": "gitlab"
+        "title": "docs: sync all documentation to v1.13.34 project state",
+        "sha": "e5dede4c",
+        "project": "bigdata-54837596/line-social-radar",
+        "url": "https://github.com/bigdata-54837596/line-social-radar/commit/e5dede4c",
+        "source": "github"
       },
       "files": [
-        "docs/superpowers/specs/2026-04-16-keypo-keyword-dag-design.md"
-      ]
-    },
-    {
-      "date": "4/16",
-      "member": "Aaron",
-      "commit": {
-        "title": "docs(ai-summary): add list api design spec",
-        "sha": "3d9d4288",
-        "project": "KEYPO/keypo-backend",
-        "url": "",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/superpowers/specs/2026-04-16-ai-summary-list-api-design.md"
-      ]
-    },
-    {
-      "date": "4/16",
-      "member": "Aaron",
-      "commit": {
-        "title": "docs(ai-summary): add list api implementation plan",
-        "sha": "a255b214",
-        "project": "KEYPO/keypo-backend",
-        "url": "",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/superpowers/plans/2026-04-16-ai-summary-list-api.md"
-      ]
-    },
-    {
-      "date": "4/16",
-      "member": "Aaron",
-      "commit": {
-        "title": "docs(ai-summary): add retrieve api design spec",
-        "sha": "b1cd28c8",
-        "project": "KEYPO/keypo-backend",
-        "url": "",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/superpowers/specs/2026-04-16-ai-summary-retrieve-api-design.md"
-      ]
-    },
-    {
-      "date": "4/16",
-      "member": "Aaron",
-      "commit": {
-        "title": "docs(ai-summary): add retrieve api implementation plan",
-        "sha": "21d1342b",
-        "project": "KEYPO/keypo-backend",
-        "url": "",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/superpowers/plans/2026-04-16-ai-summary-retrieve-api.md"
+        "docs/ALERTING.md",
+        "docs/GCP_DEPLOYMENT.md",
+        "docs/OBSERVABILITY.md",
+        "docs/PIPELINE_FLOW.md"
       ]
     }
   ],
   "correlations": [
     {
-      "date": "4/16",
-      "member": "Ted",
+      "date": "4/23",
+      "member": "日銜",
       "status": "unmatched",
-      "specCommits": 6,
+      "specCommits": 1,
       "dailyUpdateMention": false,
       "matchedTasks": [],
-      "unmatchedSpecs": [
-        "docs: add four KEYPO + GEO proposals (A/B/C/D) for leadership review",
-        "docs: add KEYPO features reference based on operations manual",
-        "docs: add proposals v2 with KEYPO integration facts",
-        "docs: add PM execution plan with strategy A (skeleton + later deepen)",
-        "docs: add Ted skeleton drafts (batch 1+2) for AI Listening proposal",
-        "docs: add Ted skeleton drafts (batch 3 part 1)"
-      ],
-      "reasoning": "Ted 在 4/16 完全沒有提交 daily update，因此無從比對其 6 筆規劃文件 commits 是否與工作內容相符。這些 commits 涵蓋 AI Listening 提案（A/B/C/D 四版）、KEYPO 功能參考文件、PM 執行計畫及多份骨架草稿，規模龐大，但缺乏對應的 daily update 記錄，屬於未提及（unmatched）。"
+      "unmatchedSpecs": ["docs: add biglink backup queue design, plan and flow"],
+      "reasoning": "日銜 4/23 daily update 提及非社群架構調整、日版環境測試、IDC機房部署、數據需求申請消化等工作，完全未提及 biglink 備援佇列的設計規劃。該 commit 文件名稱顯示設計日期為 4/20，可能是補推的文件，但 4/23 進度回報中並無相關說明。"
     },
     {
-      "date": "4/16",
-      "member": "哲緯",
-      "status": "matched",
-      "specCommits": 2,
-      "dailyUpdateMention": true,
-      "matchedTasks": [
-        "將原頻道爬搜後寫入ES邏輯，更改為寫入mssql channel_list表",
-        "串接KEYPO ENGINE API的竄紅熱詞API，做為關鍵字搜索的輸入"
-      ],
-      "unmatchedSpecs": [],
-      "reasoning": "哲緯的兩筆規劃 commits 均與 daily update 吻合。commit「channel meta to mssql spec and plan」對應 daily update 中「將原頻道爬搜後寫入ES邏輯，更改為寫入mssql channel_list表」；commit「KEYPO trending keyword DAG spec」對應 daily update 中「串接KEYPO ENGINE API的竄紅熱詞API，做為關鍵字搜索的輸入」。設計文件與實際開發工作一致，規劃記錄完整。"
-    },
-    {
-      "date": "4/16",
-      "member": "Aaron",
+      "date": "4/23",
+      "member": "禎佑",
       "status": "matched",
       "specCommits": 4,
       "dailyUpdateMention": true,
       "matchedTasks": [
-        "AI 趨勢總結 MR：列表、Detail 頁面 API",
-        "AI 總結功能、相關 DB Schema 設定"
+        "重開一個 kol-lookup-v2：匯出 KEYDERS 時序資料 (info + 去 meta 取 channel_id)",
+        "開發取 channel_id 流程 (現階段 IG 僅 KOL 數據有存真實的 channel_id)"
       ],
       "unmatchedSpecs": [],
-      "reasoning": "Aaron 的 4 筆 commits 均為 AI 趨勢總結（ai-summary）的 List API 與 Retrieve API 設計規格及實作計畫。Daily update 中明確記錄「AI 趨勢總結 MR (2 H)」，子項包含「AI 總結功能」、「列表, Detail 頁面 API」及「相關 DB Schema 設定」，與 spec commits 高度吻合。設計與實作同步進行，規劃文件有充分的工作記錄支撐。"
+      "reasoning": "禎佑 4/23 daily update 明確提及 kol-lookup-v2 專案的 channel_id 取得流程開發（對應 channel_id fetcher design spec 與 plan），以及匯出 KEYDERS 時序資料含 info 資訊（對應 info export design spec 與 plan）。四筆 spec/plan commits 皆與 daily update 描述高度吻合。"
+    },
+    {
+      "date": "4/23",
+      "member": "Ted",
+      "status": "matched",
+      "specCommits": 4,
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "日品牌電子報 - 寄送前審核功能上線正式環境",
+        "關鍵字防護設定升級 - 後台可編輯品牌競品清單、檢查開關"
+      ],
+      "unmatchedSpecs": [],
+      "reasoning": "Ted 4/23 daily update 明確記錄「寄送前審核功能上線」（對應 spec/pre-send-approval merge commits）與「關鍵字防護設定升級 - 後台可編輯品牌競品清單、檢查開關」（對應 keyword guardrail config spec commits）。四筆 spec commits 皆直接對應 daily update 中已完成的功能項目，吻合度高。"
+    },
+    {
+      "date": "4/23",
+      "member": "Wendy",
+      "status": "unmatched",
+      "specCommits": 2,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "docs: add spec and plan for MySQL gone away fix",
+        "docs: add plan for applying 9e67cc5 optimizations to catalog and trust"
+      ],
+      "reasoning": "Wendy 4/23 無提交 daily update，無法確認 MySQL gone away 修復設計及 catalog/trust 同步優化計劃是否與當日工作相符。commits 文件名稱顯示設計日期為 4/22，可能是補推的規劃文件，但缺乏 daily update 佐證。"
+    },
+    {
+      "date": "4/23",
+      "member": "Aaron",
+      "status": "unmatched",
+      "specCommits": 2,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "docs: add cancel-run feature design spec",
+        "docs: add cancel-run implementation plan"
+      ],
+      "reasoning": "Aaron 4/23 無提交 daily update，無法確認 keypo-agent 的 cancel-run 功能設計與實作計劃是否與當日工作相符。缺乏 daily update 無法進行比對。"
+    },
+    {
+      "date": "4/23",
+      "member": "哲緯",
+      "status": "unmatched",
+      "specCommits": 2,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "Merge pull request #103 from bigdata-54837596/docs/full-sync-v1.13.34",
+        "docs: sync all documentation to v1.13.34 project state"
+      ],
+      "reasoning": "哲緯 4/23 無提交 daily update，無法確認 line-social-radar v1.13.34 的文件同步工作（ALERTING、GCP_DEPLOYMENT、OBSERVABILITY、PIPELINE_FLOW 等文件更新）是否與當日工作相符。缺乏 daily update 無法進行比對。"
     }
   ],
   "summary": {
-    "totalSpecCommits": 12,
-    "totalCorrelations": 3,
-    "membersWithSpecs": 3,
+    "totalSpecCommits": 15,
+    "totalCorrelations": 6,
+    "membersWithSpecs": 6,
     "matched": 2,
-    "unmatched": 1,
+    "unmatched": 4,
     "partial": 0
   }
 }
