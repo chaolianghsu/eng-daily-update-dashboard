@@ -137,6 +137,18 @@ describe('runPhase1Routing', () => {
     expect(userMessage).toMatch(/NO SIMILAR ISSUES FOUND/);
   });
 
+  it('cold-start prompt must NOT hard-cap confidence (prior bug)', async () => {
+    // Step 2f regression: "Set confidence ≤ 0.5" on cold-start forced every
+    // fixture to conf ≤ 0.5, which in turn gated Phase 2 and inflated ECE.
+    // Cold-start should be a soft signal, not a cap.
+    const client = makeMockClient();
+    await runPhase1Routing(baseContext({ similar_issues: [] }), { client });
+    const call = client.messages.create.mock.calls[0][0];
+    const userMessage = call.messages.find((m) => m.role === 'user').content;
+    expect(userMessage).not.toMatch(/confidence\s*[≤<]=?\s*0\.5/i);
+    expect(userMessage).not.toMatch(/Set confidence\s*[≤<]/i);
+  });
+
   it('prompt includes excerpt text from similar_issues when non-empty', async () => {
     const client = makeMockClient();
     const similar = [
@@ -232,7 +244,9 @@ describe('runPhase1Routing', () => {
     const client = makeMockClient();
     await runPhase1Routing(baseContext(), { client });
     const user = client.messages.create.mock.calls[0][0].messages[0].content;
-    expect(user).not.toContain('REPO NOTES');
+    // The "=== REPO NOTES" block header should not appear; the phrase
+    // "REPO NOTES" may still appear inside the cold-start soft note.
+    expect(user).not.toContain('=== REPO NOTES');
   });
 
   it('renderRepoNotes scopes candidates to labels on the issue', () => {
