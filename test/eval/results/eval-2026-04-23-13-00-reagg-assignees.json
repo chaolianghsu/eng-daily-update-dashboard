@@ -1,0 +1,2145 @@
+{
+  "train_metrics": {
+    "n_cases": 22,
+    "p_at_1": 0.9545454545454546,
+    "r_at_3": 1,
+    "cross_repo_recall_avg": 1,
+    "assignee_r_at_3": 1,
+    "ece": 0.5436363636363637,
+    "judge_avg": 2.5113636363636362,
+    "judge_distribution": {
+      "1-2": 1,
+      "2-3": 17,
+      "3-4": 4,
+      "4-5": 0
+    },
+    "per_label_breakdown": {
+      "Bug": {
+        "n_cases": 17,
+        "p_at_1": 0.9411764705882353,
+        "r_at_3": 1,
+        "assignee_r_at_3": 1,
+        "judge_avg": 2.4705882352941178
+      },
+      "K5": {
+        "n_cases": 22,
+        "p_at_1": 0.9545454545454546,
+        "r_at_3": 1,
+        "assignee_r_at_3": 1,
+        "judge_avg": 2.5113636363636362
+      },
+      "P1_高": {
+        "n_cases": 20,
+        "p_at_1": 0.95,
+        "r_at_3": 1,
+        "assignee_r_at_3": 1,
+        "judge_avg": 2.5125
+      },
+      "P2_中": {
+        "n_cases": 1,
+        "p_at_1": 1,
+        "r_at_3": 1,
+        "assignee_r_at_3": 1,
+        "judge_avg": 2.75
+      },
+      "P0_緊急": {
+        "n_cases": 1,
+        "p_at_1": 1,
+        "r_at_3": 1,
+        "assignee_r_at_3": 1,
+        "judge_avg": 2.25
+      },
+      "Data": {
+        "n_cases": 11,
+        "p_at_1": 1,
+        "r_at_3": 1,
+        "assignee_r_at_3": 1,
+        "judge_avg": 2.4318181818181817
+      }
+    },
+    "per_outcome_breakdown": {
+      "likely_fixed": {
+        "n_cases": 22,
+        "p_at_1": 0.9545454545454546,
+        "r_at_3": 1,
+        "judge_avg": 2.5113636363636362
+      }
+    }
+  },
+  "test_metrics": {
+    "n_cases": 9,
+    "p_at_1": 1,
+    "r_at_3": 1,
+    "cross_repo_recall_avg": 1,
+    "assignee_r_at_3": 1,
+    "ece": 0.5911111111111111,
+    "judge_avg": 2.6944444444444446,
+    "judge_distribution": {
+      "1-2": 0,
+      "2-3": 8,
+      "3-4": 1,
+      "4-5": 0
+    },
+    "per_label_breakdown": {
+      "Bug": {
+        "n_cases": 4,
+        "p_at_1": 1,
+        "r_at_3": 1,
+        "assignee_r_at_3": 1,
+        "judge_avg": 2.625
+      },
+      "K5": {
+        "n_cases": 9,
+        "p_at_1": 1,
+        "r_at_3": 1,
+        "assignee_r_at_3": 1,
+        "judge_avg": 2.6944444444444446
+      },
+      "P1_高": {
+        "n_cases": 8,
+        "p_at_1": 1,
+        "r_at_3": 1,
+        "assignee_r_at_3": 1,
+        "judge_avg": 2.6875
+      },
+      "P2_中": {
+        "n_cases": 1,
+        "p_at_1": 1,
+        "r_at_3": 1,
+        "assignee_r_at_3": 1,
+        "judge_avg": 2.75
+      },
+      "Data": {
+        "n_cases": 6,
+        "p_at_1": 1,
+        "r_at_3": 1,
+        "assignee_r_at_3": 1,
+        "judge_avg": 2.75
+      }
+    },
+    "per_outcome_breakdown": {
+      "likely_fixed": {
+        "n_cases": 9,
+        "p_at_1": 1,
+        "r_at_3": 1,
+        "judge_avg": 2.6944444444444446
+      }
+    }
+  },
+  "per_fixture": [
+    {
+      "split": "train",
+      "fixture_id": 288,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "KEYPO/keypo-engine-api",
+          "KEYPO/keypo-backend",
+          "KEYPO/keypo-frontend-2023"
+        ],
+        "suggested_assignees": [
+          "Joyce"
+        ],
+        "reasoning": "Issue 核心症狀為「日本資料看不到」，直接對應 keypo-engine-api 的職責描述「港版/日版/海外資料庫查詢」，為最可能的 root-cause 位置；但「從後台/portal 新增」的操作路徑也可能涉及 keypo-backend 的後台 CRUD 流程，需確認資料是否有正確寫入。",
+        "confidence": 0.37,
+        "caveats": [
+          "Cold start：無相似歷史 issue，無法從過去案例驗證路由方向",
+          "Issue 內容幾乎全為截圖，缺乏具體錯誤訊息或 API response，無法區分症狀屬於查詢層還是後台寫入層",
+          "「看不到」可能是資料未寫入（keypo-backend CRUD 失敗）或資料已存在但查詢未返回（keypo-engine-api 日版查詢邏輯），兩者 fix 位置不同，需 triage 人員先確認後台操作是否成功",
+          "無歷史 assignee 可參考，建議由熟悉日版功能的成員人工指派"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 1,
+        "correctness": 3,
+        "coverage": 2,
+        "avg": 2.5,
+        "reasoning": "Repo 選擇合理，keypo-engine-api 對應日版查詢、keypo-backend 對應寫入 CRUD，診斷方向（寫入 vs 查詢）技術上可信。但 plan_draft 完全缺席，無法驅動任何調查行動，且未提及 assignee、資料管道風險或具體驗證步驟（如確認 DB 是否有紀錄、API response 是否正確）。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": false,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Joyce",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.37,
+          "was_correct": false,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 2.5,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 288,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 2832,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "KEYPO/keypo-backend",
+          "KEYPO/keypo-engine-api"
+        ],
+        "suggested_assignees": [
+          "Joyce"
+        ],
+        "reasoning": "報告下載（PPTX 產生與下載鏈路）明確屬於 KEYPO/keypo-backend 的職責（「AI 報告的產生流程與下載鏈路」），故列為 top-1；但若「奇怪的英文」實為熱門關鍵字查詢結果資料內容錯誤，則 root cause 應在 KEYPO/keypo-engine-api（負責資料查詢計算邏輯與查詢結果內容）。",
+        "confidence": 0.38,
+        "caveats": [
+          "冷啟動：無任何相似歷史 issue，無法從過往修復紀錄佐證正確 repo",
+          "issue 問題現象主要透過截圖呈現，「奇怪的英文」具體內容無法從文字描述判斷，需打開附件 PPTX 與截圖才能確認 root cause 是報告產生流程 bug 或是 engine 資料層回傳錯誤",
+          "熱門關鍵字查詢結果頁面與報告下載結果不一致，可能涉及兩個 repo 的交界，建議同時 ping keypo-backend 與 keypo-engine-api 負責人共同確認",
+          "無歷史 assignee 可參考，建議由 triage 人員依 repo 負責人名單手動指派"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 3,
+        "actionability": 1,
+        "correctness": 3,
+        "coverage": 2,
+        "avg": 2.25,
+        "reasoning": "提案雙路徑推論（keypo-backend 負責報告產生鏈路、keypo-engine-api 負責查詢資料內容）方向合理，對應「熱門關鍵字顯示異常英文」確有可能發生在資料層或呈現層；但 plan_draft 明確標示為 none，無任何可執行步驟，且 assignee、layer、風險評估全部缺席，覆蓋度嚴重不足。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Joyce",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.38,
+          "was_correct": true,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 2.25,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 2832,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 244,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "KEYPO/keypo-backend",
+          "KEYPO/keypo-frontend-2023"
+        ],
+        "suggested_assignees": [
+          "Joyce"
+        ],
+        "reasoning": "速報 Excel 版的產生與下載流程屬於 keypo-backend 的職責（REPO NOTES 明載「速報寄送與推播排程 / AI 報告的產生流程與下載鏈路」），千分位格式通常在 Excel 檔案生成端套用，因此 top-1 指向 keypo-backend；若 Excel 由前端觸發並自行組裝格式，則次選 keypo-frontend-2023。",
+        "confidence": 0.38,
+        "caveats": [
+          "無相似歷史 issue，屬冷啟動 (cold start)，依規則信心分數不得超過 0.5",
+          "Issue 內容極簡（僅一行標題 + 截圖），截圖無法讀取，無法確認千分位問題是在 Excel 生成邏輯、資料傳遞層還是前端格式化",
+          "需先確認「速報 Excel 版」的產生邏輯位於 backend（如 openpyxl/xlsxwriter 等）還是 frontend（如前端觸發下載並自行格式化），才能確定最終路由",
+          "keypo-engine-api 可排除：此問題為格式顯示問題，非數字本身計算錯誤"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 1,
+        "correctness": 4,
+        "coverage": 2,
+        "avg": 2.75,
+        "reasoning": "Repo 選擇邏輯合理——Excel 千分位格式通常在檔案生成端處理，指向 keypo-backend 為主、frontend 為次是技術上站得住腳的判斷。但 plan_draft 完全缺失，沒有具體診斷步驟（如搜尋 Excel cell format 相關程式碼、確認是哪個 library 在寫 number cell），加上 assignee 與風險欄位皆空，整體提案可操作性極低。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Joyce",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.38,
+          "was_correct": true,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 2.75,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 244,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P2_中"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 300,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "KEYPO/keypo-backend",
+          "KEYPO/keypo-newsletter"
+        ],
+        "suggested_assignees": [
+          "Joyce"
+        ],
+        "reasoning": "此 issue 的核心症狀為試用帳號到期後排程未停止(日報持續送到 12/5)、以及帳號延長日期更新前已觸發速報推播,根據 REPO NOTES,keypo-backend 明確負責「試用帳號到期」與「速報寄送與推播排程」,是最可能的 root-cause 修復目標;若速報實際由電子報服務發出,則 keypo-newsletter(電子報/定期郵件發送服務,負責收信異常與排程)亦需確認。",
+        "confidence": 0.45,
+        "caveats": [
+          "冷啟動 (cold start)：無任何相似歷史 issue,無法從歷史資料驗證路由正確性,依規則 confidence 須 < 0.5",
+          "無法確認「速報/日報」是由 keypo-backend 排程直接寄出,還是委由 keypo-newsletter 處理,若為後者則修復點可能轉移",
+          "issue 主要資訊以截圖呈現(log 內容),關鍵技術細節無法從文字確認,增加路由不確定性",
+          "無歷史 assignee 資料,無法推薦具體負責人,建議由 triage 人員依當前 on-call 或 keypo-backend owner 指派"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 1,
+        "correctness": 4,
+        "coverage": 2,
+        "avg": 2.75,
+        "reasoning": "Repo 選擇合理，reasoning 正確拆解了「到期後排程未停止」與「延長前提早觸發」兩個獨立 bug，指向 keypo-backend（帳號生命週期邏輯）與 keypo-newsletter（寄送排程）技術方向可信；但 plan_draft 完全缺失，毫無可執行的排查步驟，且未指定 assignee、未評估是否有其他試用帳號同樣受影響的 scope/risk，覆蓋面嚴重不足。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Joyce",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.45,
+          "was_correct": true,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 2.75,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 300,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 302,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "KEYPO/keypo-backend",
+          "KEYPO/keypo-frontend-2023"
+        ],
+        "suggested_assignees": [
+          "Joyce"
+        ],
+        "reasoning": "Issue 描述為錯誤訊息顯示「Unknown error」且訊息文字格式有缺漏符號，依 REPO NOTES，keypo-backend 明確負責「agent 錯誤訊息顯示邏輯」，後端回傳的 error response 格式錯誤通常在此修；若問題實為前端 catch 後的 fallback 文字渲染，則屬 keypo-frontend-2023「文字顯示錯誤」的範疇。",
+        "confidence": 0.35,
+        "caveats": [
+          "冷啟動：無相似歷史 issue，無歷史 assignee 可參考，信心分數依規則設定 ≤ 0.5",
+          "issue 內文極簡，主要資訊來自截圖，缺乏 API response body、console log 或操作步驟等具體線索",
+          "「Unknown error」可能是後端回傳的格式化錯誤訊息，也可能是前端 try/catch 的 fallback 字串，需開發者確認錯誤來源層",
+          "「左括號跟字詞中間少了符號連接」的描述語焉不詳，可能是字串拼接 bug（後端）或 i18n 格式化（前端），需進一步 reproduce"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 1,
+        "correctness": 3,
+        "coverage": 2,
+        "avg": 2.5,
+        "reasoning": "Repo 建議合理，後端 error response 格式與前端 fallback 渲染都是 'Unknown error + 缺符號' 這類 bug 的常見源頭，技術診斷方向不離譜。但 plan_draft 完全缺席、assignee 與風險均未填，實質上等於只提交了 repo 猜測而無任何可執行內容，信心 0.35 導致整個提案近乎空洞。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Joyce",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.35,
+          "was_correct": true,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 2.5,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 302,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 2815,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "KEYPO/keypo-engine-api",
+          "KEYPO/keypo-frontend-2023",
+          "KEYPO/keypo-backend"
+        ],
+        "suggested_assignees": [
+          "Joyce"
+        ],
+        "reasoning": "按讚數排序結果錯誤屬於「查詢計算邏輯」問題，依 REPO NOTES 描述，KEYPO/keypo-engine-api 負責「所有資料本身與查詢計算邏輯的問題，包含文章列表與實際聲量對不上」，排序順序錯亂最可能是 engine-api 層的排序邏輯 bug；前端 keypo-frontend-2023 僅負責純畫面渲染，若排序參數正確傳遞則與前端無關，列為次要候選。",
+        "confidence": 0.42,
+        "caveats": [
+          "冷啟動 (cold start)：無相似歷史 issue，無法從過去解決紀錄確認歸屬，confidence 依規則壓在 0.5 以下",
+          "issue 描述缺乏具體 API endpoint 或後端錯誤訊息，排序邏輯錯誤可能在 engine-api 計算層、也可能是前端傳錯排序參數，需開發者確認請求/回應內容才能定位",
+          "關鍵字欄位內容疑似雜訊（YAKIMA|龜山|攜車架…），非有效路由依據，已忽略",
+          "無歷史 assignee 資料，建議 triage 人員依熟悉文章查詢排序模組的工程師手動指派"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 1,
+        "correctness": 3,
+        "coverage": 2,
+        "avg": 2.5,
+        "reasoning": "Repo 指向 keypo-engine-api 的推論邏輯合理，符合「排序為查詢計算層問題」的歸因框架；但 plan_draft 完全缺失，且未觸及排序 bug 常見根因（如分頁 offset 干擾全域排序、likes count 聚合誤差、索引欄位型別問題），assignee 與風險評估也付之闕如，整體可操作性與覆蓋度嚴重不足。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Joyce",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.42,
+          "was_correct": true,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 2.5,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 2815,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 3030,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "KEYPO/keypo-engine-api",
+          "KEYPO/keypo-engine/keypo-engine-api-gateway",
+          "KEYPO/keypo-engine/keypo-engine-api-v3"
+        ],
+        "suggested_assignees": [
+          "Joyce"
+        ],
+        "reasoning": "Issue 標題明確指出「港版資料庫查詢都錯誤沒有資料」，根據 REPO NOTES，KEYPO/keypo-engine-api 明確涵蓋「港版/日版/海外資料庫查詢」職責，且「查出錯誤資料」、「資料沒進來」皆屬該 repo 的管轄範圍；若問題出在港版的連線路由或授權層，則次要嫌疑為 keypo-engine-api-gateway。",
+        "confidence": 0.42,
+        "caveats": [
+          "無任何相似歷史 issue，屬於 cold start，建議人工確認路由",
+          "問題描述幾乎只有截圖，缺乏文字說明（錯誤訊息、API endpoint、影響範圍），難以區分是資料查詢層還是 gateway 路由/授權層問題",
+          "需確認港版是否走獨立 gateway 或獨立資料庫節點，若是 gateway 層的連線失敗則路由應調整為 keypo-engine-api-gateway",
+          "suggested_assignees 為空：無歷史相似 issue 可推算負責人，請 triage 人員依對港版熟悉程度手動指派"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 3,
+        "actionability": 1,
+        "correctness": 3,
+        "coverage": 2,
+        "avg": 2.25,
+        "reasoning": "repo 建議對「港版資料庫查詢錯誤」場景合理，keypo-engine-api 直接對應海外查詢職責，gateway 作為次要嫌疑亦有邏輯依據，但 keypo-engine-api-v3 未附說明，略顯堆疊；plan_draft 完全缺失（低信心跳過）使 actionability 降至最低，且無 assignee 建議、無 P0 風險處置說明，coverage 嚴重不足。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Joyce",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.42,
+          "was_correct": true,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 2.25,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 3030,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P0_緊急"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 259,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "KEYPO/keypo-engine-api",
+          "KEYPO/keypo-backend",
+          "KEYPO/keypo-frontend-2023"
+        ],
+        "suggested_assignees": [
+          "Joyce"
+        ],
+        "reasoning": "issue 描述為帳號開啟篩選器後資料無法載出，初步研判根因在「查詢計算邏輯」效能瓶頸；依 REPO NOTES，keypo-engine-api 負責所有「資料本身」與「查詢計算邏輯」問題（包含頻道/來源篩選的資料清單與數值計算），故列為 top-1；若問題實為 API 請求 timeout 或後台流程阻塞，則可能落在 keypo-backend。",
+        "confidence": 0.38,
+        "caveats": [
+          "無相似歷史 issue（cold start），依規則信心度設為 ≤ 0.5",
+          "描述僅附影片，缺乏具體錯誤訊息、API response log 或 query plan，無法確認根因層",
+          "「篩選條件太多導致查詢慢」（engine 層計算效能）vs.「API 請求 timeout 或後台查詢上限」（backend 層流程）兩種根因皆有可能，建議先查 server / engine log 釐清",
+          "帳號 ENG_ASSESSMENT 的篩選器具體條件內容未揭露，難以縮小 repo 範圍",
+          "影片無法在 triage 階段直接查看，建議請回報者補充文字描述或 HAR / network trace"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 1,
+        "correctness": 4,
+        "coverage": 2,
+        "avg": 2.75,
+        "reasoning": "診斷路徑將篩選器效能問題指向 keypo-engine-api 查詢計算層，技術邏輯合理，repo 選擇有依據；但 plan_draft 完全缺席、assignee 為空、風險未評估，對 P1 高優先級 bug 而言可執行性與覆蓋度均嚴重不足。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Joyce",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.38,
+          "was_correct": true,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 2.75,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 259,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 304,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "KEYPO/keypo-engine-api",
+          "KEYPO/keypo-backend",
+          "CrawlersV2/bigcrawler-scrapy"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "AI 報告顯示「聲量不足，暫時無法提供精確的 GPT 分析結果」，但客戶實際查詢聲量高達 36,720 筆；依 REPO NOTES，keypo-engine-api 明確負責「聲量數值計算與閾值判斷、AI 報告內的資料分析與『聲量不足/聲量過多』類判讀邏輯」，症狀直接對應其職責，應為首要排查目標；keypo-backend 則作為次選，因其負責「AI 報告的產生流程與下載鏈路」，帳號間行為差異可能源自產生流程層的快取或 race condition。",
+        "confidence": 0.45,
+        "caveats": [
+          "冷啟動 (NO SIMILAR ISSUES FOUND)：無任何歷史相似 issue 佐證，依規則 confidence 強制壓在 0.5 以下。",
+          "帳號間行為不一致（客戶帳號 jessicachi 於 09:20-09:21 復現，內部帳號 Joanne 於 11:02 無法復現），時間差約 1.5 小時，需確認是暫時性資料更新還是固定邏輯 bug，若已無法穩定複現則排查難度大幅上升。",
+          "同時帶有 Data label，指向 Crawlers 方向；若 1/6–1/9 期間特定來源資料有延遲進入，根本原因可能在 CrawlersV2/bigcrawler-scrapy 或 keypo-engine/data-collector，而非 engine-api 閾值邏輯本身。",
+          "無歷史 assignee 資料可供推薦，建議 triage 人員手動指派熟悉 AI 報告聲量閾值判斷邏輯的工程師。"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 3,
+        "actionability": 1,
+        "correctness": 3,
+        "coverage": 2,
+        "avg": 2.25,
+        "reasoning": "keypo-engine-api 與 keypo-backend 的選擇方向正確，理由也吻合症狀（閾值邏輯、報告產生流程），但納入 bigcrawler-scrapy 與問題不符——資料量 36,720 筆確實存在，爬蟲層不是瓶頸。plan_draft 完全缺席，P1 bug 既無具體排查步驟、也無指派人選，最關鍵的線索「同查詢條件下帳號 jessicachi 失敗但其他帳號成功」未被展開為可操作的復現與比對路徑。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.45,
+          "was_correct": true,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 2.25,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 304,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 2845,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "KEYPO/keypo-engine-api",
+          "KEYPO/keypo-backend",
+          "KEYPO/keypo-frontend-2023"
+        ],
+        "suggested_assignees": [
+          "Joyce"
+        ],
+        "reasoning": "Issue 明確提到點選「探索概念」後無法產生圖表,REPO NOTES 中 keypo-engine-api 明確列舉「探索概念、主題查詢、聲量數值計算」為其職責範疇,是最直接的根因候選;AI 報告無法下載為連帶症狀,keypo-backend 雖負責報告產生流程,但依 REPO NOTES 規則,資料查詢計算本身不對屬 keypo-engine-api 範疇,應先從資料層著手。",
+        "confidence": 0.45,
+        "caveats": [
+          "無任何歷史相似 issue(cold start),依校準規則信心分數必須低於 0.5",
+          "issue 附有截圖但在此不可見,截圖可能包含錯誤訊息或狀態碼等有助精確路由的細節",
+          "若探索概念修復後 AI 報告下載仍失敗,需進一步確認 keypo-backend 報告產生與下載鏈路",
+          "suggested_assignees 因無歷史資料而留空,請 triage 人員依 keypo-engine-api 實際成員指派"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 1,
+        "correctness": 3,
+        "coverage": 2,
+        "avg": 2.5,
+        "reasoning": "Repo 選擇有邏輯根據（engine-api 負責概念計算、backend 負責報告流程、frontend 負責圖表渲染），優先級排序也合理。但 plan_draft 完全缺席、無 assignee 建議、未區分「資料層查無結果」vs「渲染/timeout 錯誤」兩種根本不同的排查路徑，可操作性極低。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Joyce",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.45,
+          "was_correct": true,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 2.5,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 2845,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 2866,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy",
+          "KEYPO/keypo-engine-api",
+          "KEYPO/keypo-engine/data-collector"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "Issue 描述為 JUKSY 街星新聞完全沒有文章資料,符合 REPO NOTES 中 CrawlersV2/bigcrawler-scrapy 的職責說明「新聞網站沒有文章、來源斷線、數量不對,多半在這裡修」,屬資料來源層問題應優先路由至爬蟲 repo;若爬蟲端已抓取但查詢層看不到資料,則需進一步排查 keypo-engine-api 或 data-collector。",
+        "confidence": 0.42,
+        "caveats": [
+          "冷啟動 (cold start)：無相似歷史 issue,無法從過去修復紀錄驗證路由正確性。",
+          "Issue 說明大部分為截圖,缺乏詳細錯誤訊息或 log,無法確認問題究竟發生在爬蟲抓取層還是資料查詢/分析層。",
+          "「一年都沒有資料」可能是爬蟲從未收錄 juksy.com,也可能是曾收錄但資料管道中斷,兩種情境的修復 repo 不同,建議 triage 人員先確認 bigcrawler-scrapy 是否有 juksy 的 spider。",
+          "無歷史 assignee 可參考,建議由熟悉爬蟲維運的人員接單後再視情況轉派。"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 1,
+        "correctness": 3,
+        "coverage": 2,
+        "avg": 2.5,
+        "reasoning": "Repo 路由的主力選擇 bigcrawler-scrapy 對「新聞完全沒有資料」症狀而言很合理，診斷鏈（爬蟲 → API → data-collector）邏輯也成立，但 plan_draft 欄位直接空白，完全沒有可執行步驟。最嚴重的缺漏是對「長達一年都沒有資料」這個關鍵異常（可能代表 spider 設定被改、網站結構異動或 source 被移除）完全未提及，也無 assignee 建議與風險評估。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.42,
+          "was_correct": true,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 2.5,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 2866,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 2794,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy",
+          "KEYPO/keypo-engine/data-collector"
+        ],
+        "suggested_assignees": [
+          "Joyce"
+        ],
+        "reasoning": "Issue 症狀為特定來源（華視 cts.com.tw）有文章漏收，趨勢曲線正常但個別文章未被收錄，根據 REPO NOTES，「新聞網站沒有文章、抓不到新文章，多半在 CrawlersV2/bigcrawler-scrapy 修」，且該 repo 明確是 K5 label 下資料來源層問題的首選歸屬，故 top-1 指向爬蟲層；若爬蟲已抓到但未進入引擎，則需排查 keypo-engine/data-collector。",
+        "confidence": 0.42,
+        "caveats": [
+          "冷啟動 (cold start)：無任何歷史相似 issue，無法從歷史頻率驗證路由方向。",
+          "Issue 描述主要為截圖與趨勢圖，缺少具體錯誤訊息或爬蟲日誌，難以區分是爬蟲層未抓取還是資料進入 pipeline 後遺失。",
+          "建議 triage 人員先確認 CrawlersV2/bigcrawler-scrapy 中是否有針對 cts.com.tw/market_news 路徑的 spider，再決定是否需同時排查 data-collector。",
+          "suggested_assignees 為空，因無歷史 issue 可參考處理人員。"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 5,
+        "actionability": 1,
+        "correctness": 4,
+        "coverage": 2,
+        "avg": 3,
+        "reasoning": "repo 選擇與 K5 爬蟲場景高度吻合（bigcrawler-scrapy 為首選，data-collector 為次級），診斷邏輯（趨勢正常但個別 URL 漏收 → URL pattern 過濾問題）技術上合理；但 plan_draft 完全缺席，未給出具體排查步驟（如確認 /market_news/ 路徑是否在 spider 白名單內、如何手動補收單篇），也未指派 assignee，客戶明確要求的單篇立即收錄需求完全未被回應。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Joyce",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.42,
+          "was_correct": true,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 3,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 2794,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 2783,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy",
+          "KEYPO/keypo-engine-api"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "issue 症狀為特定新聞網站(VOGUE、GQ)文章找不到,與 REPO NOTES 中 CrawlersV2/bigcrawler-scrapy「新聞網站沒有文章、抓不到新文章,多半在這裡修;是 K5 label 下最常被修的資料來源層問題歸屬處」高度吻合,且 Data label 明確指向 Crawlers group;若爬蟲端確認已有資料但仍查無結果,則需轉往 keypo-engine-api 查詢層排查。",
+        "confidence": 0.38,
+        "caveats": [
+          "冷啟動:無任何相似歷史 issue,無法從過去案例驗證 repo 歸屬,confidence 依規則壓至 0.5 以下",
+          "issue 描述以截圖為主、文字極少,無法判斷文章是『從未被爬取』還是『爬取後在查詢層找不到』,兩條路徑分別對應不同 repo",
+          "建議 triage 人員先確認 bigcrawler-scrapy 中是否存在 VOGUE/GQ spider 及其近期執行紀錄,再決定是否轉往 keypo-engine-api",
+          "無歷史 assignee 資料,建議指派給熟悉爬蟲/Data 層的值班 RD"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 1,
+        "correctness": 4,
+        "coverage": 2,
+        "avg": 2.75,
+        "reasoning": "repo 選擇合理且診斷邏輯清晰——爬蟲層（bigcrawler-scrapy）→ 查詢層（keypo-engine-api）的兩段式排查路徑技術上站得住腳；但 plan_draft 完全缺席，沒有任何可執行步驟，assignee 也空白，亦未提及常見風險（網站改版、反爬封鎖、URL 參數含 fbclid 導致去重失敗），覆蓋度嚴重不足。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.38,
+          "was_correct": true,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 2.75,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 2783,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 2793,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy",
+          "KEYPO/keypo-engine/data-collector"
+        ],
+        "suggested_assignees": [
+          "Joyce"
+        ],
+        "reasoning": "issue 描述設計王網站從 2023/12/22 起「中斷收錄」,與 REPO NOTES 對 CrawlersV2/bigcrawler-scrapy 的職責描述高度吻合:「新聞網站沒有文章、來源斷線、抓不到新文章,多半在這裡修,是 K5 label 下最常被修的資料來源層問題」。次選 data-collector 保留給萬一爬蟲端正常、問題出在內部收集 pipeline 排程失敗的情境。",
+        "confidence": 0.42,
+        "caveats": [
+          "冷啟動:無任何歷史相似 issue,信心分數依規則保守設定 ≤ 0.5",
+          "無歷史 assignee 紀錄,無法推薦負責人,需 triage 人員依當前 on-call 或 domain 知識指派",
+          "issue 內容僅有網址與截圖,缺少錯誤日誌或具體錯誤訊息,難以排除是 data-collector pipeline 而非爬蟲本身失效",
+          "客戶要求「單篇手動收錄」可能需要額外的 backfill/手動觸發機制,triage 時需確認是否有此功能或需另開 task"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 1,
+        "correctness": 4,
+        "coverage": 2,
+        "avg": 2.75,
+        "reasoning": "repo 選擇與 K5 爬蟲斷線問題高度吻合，次選 data-collector 的 fallback 邏輯亦技術合理；但 plan_draft 完全缺席使可執行性為零，且未回應 issue 中客戶明確提出的「單篇收錄」緊急需求，assignee 與風險欄位皆空白。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Joyce",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.42,
+          "was_correct": true,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 2.75,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 2793,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 2762,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy",
+          "KEYPO/keypo-engine-api",
+          "KEYPO/keypo-engine/data-collector"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "Issue 標題明確提及「網站改版沒資料」,篩選器雖有「台灣線報」來源卻無任何資料呈現,高度符合 CrawlersV2/bigcrawler-scrapy 的職責描述——「新聞網站沒有文章、來源斷線、抓不到新文章,多半在這裡修」;Data label 的 primary_group 亦為 Crawlers,雙重指向爬蟲層為最可能的 root-cause。",
+        "confidence": 0.42,
+        "caveats": [
+          "Cold start:無任何相似歷史 issue,依規則信心分數上限 < 0.5。",
+          "Issue 描述極短且主要附截圖,無法確認是爬蟲端抓不到資料,還是資料已入庫但查詢計算層過濾邏輯有誤(後者屬 keypo-engine-api 職責)。",
+          "建議先確認後端 pipeline 是否有「台灣線報」近期的爬取紀錄;若資料已入庫但查詢結果為空,則應轉往 keypo-engine-api 排查。",
+          "無歷史 assignee 可參考,建議 triage 人員依各 repo 當前 owner 指派。"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 1,
+        "correctness": 4,
+        "coverage": 3,
+        "avg": 3,
+        "reasoning": "「網站改版沒資料」直指爬蟲層，CrawlersV2/bigcrawler-scrapy 做為首選 repo 診斷路徑技術上合理，加上 data-collector 作為次級候選也站得住腳。但 plan_draft 完全缺席、assignees 為空、未點出任何風險或排查步驟，低信心不該是跳過計畫的理由，導致可執行性得分極低。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.42,
+          "was_correct": true,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 3,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 2762,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 2894,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy",
+          "KEYPO/keypo-engine-api"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "issue 描述 managertoday.com.tw 某篇文章被收錄進「延伸閱讀」須刪除，搭配 Data label，根據 REPO NOTES「CrawlersV2/bigcrawler-scrapy 是主要新聞來源爬蟲，新聞文章被誤收或數量不對多半在此修」，最可能是爬蟲層誤收該文章所致；若問題是查詢結果篩選邏輯未正確排除該文章，則次選為 KEYPO/keypo-engine-api（負責文章列表與聲量資料查詢）。",
+        "confidence": 0.38,
+        "caveats": [
+          "冷啟動：無相似歷史 issue，無法從過去路由記錄確認慣例。",
+          "issue 描述極簡短且主要依賴截圖，無法判斷根本原因是「爬蟲層不該收錄此文章」還是「引擎查詢層需將該文章從延伸閱讀排除」，兩者修法不同。",
+          "「延伸閱讀」功能的 repo 歸屬尚不確定，建議 triage 人員先確認此功能的資料流再決定路由。",
+          "無歷史 assignee 可參考，建議由 triage 人員依 on-call 或熟悉爬蟲／engine 的工程師指派。"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 3,
+        "actionability": 1,
+        "correctness": 3,
+        "coverage": 2,
+        "avg": 2.25,
+        "reasoning": "Repo 指向爬蟲與 API 查詢層尚屬合理，但「延伸閱讀」功能更可能是推薦/篩選邏輯問題，keypo-engine-api 應列為主選而非次選；plan_draft 完全缺席，無任何可執行步驟，assignee 與風險也未涉及，整體可操作性極低。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.38,
+          "was_correct": true,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 2.25,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 2894,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 2814,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy",
+          "KEYPO/keypo-engine/data-collector"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "mashdigi.com 自 7/19 起「收錄中斷」屬於新聞來源抓取斷線的典型症狀；根據 REPO NOTES，CrawlersV2/bigcrawler-scrapy 負責「主要新聞來源爬蟲，新聞網站沒有文章、來源斷線、抓不到新文章，多半在這裡修」，是 K5+Data label 下資料來源層問題的首要歸屬。若爬蟲端正常但資料仍未進入系統，則可進一步追查 data-collector pipeline。",
+        "confidence": 0.42,
+        "caveats": [
+          "冷啟動 (cold start)：無任何相似歷史 issue，無法從歷史佐證路由正確性，依規則 confidence ≤ 0.5",
+          "issue 描述極度簡短且主要依賴截圖，無法從文字確認根因是爬蟲失敗、目標網站反爬/結構變更，還是 data-collector pipeline 斷線",
+          "無歷史 assignee 資料，無法推薦指派人員，建議 triage 人員依爬蟲負責人名單手動指派",
+          "截圖內容未知（無法讀取圖片），可能含有更多診斷線索，建議 triage 人員查看圖片後再確認路由"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 1,
+        "correctness": 4,
+        "coverage": 3,
+        "avg": 3,
+        "reasoning": "Repo 選擇邏輯清晰，bigcrawler-scrapy 作為爬蟲斷線首要排查點與 K5+Data 標籤高度吻合，cascade 到 data-collector 的兩層診斷路徑技術上合理。但 plan_draft 完全缺失、assignee 為空，對 P1 高優先級 issue 而言可執行性極低，也未提及資料缺口回補或可能的反爬因素等風險面向。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.42,
+          "was_correct": true,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 3,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 2814,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 2820,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy",
+          "KEYPO/keypo-engine/data-collector"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "此 issue 反映特定新聞文章中圖片下方文字無法被收錄,屬於「資料來源層抓取缺漏」問題;依 REPO NOTES 所述,CrawlersV2/bigcrawler-scrapy 負責主要新聞來源爬蟲,是 K5+Data label 下「抓不到內容 / 資料來源層缺漏」類問題的主要歸屬處。",
+        "confidence": 0.42,
+        "caveats": [
+          "冷啟動:無相似歷史 issue,top-1 repo 判斷純粹依賴 REPO NOTES 描述,請 triage 人員人工複核",
+          "issue 描述僅有文字說明與圖片截圖,未說明該 URL 是否已在爬蟲覆蓋範圍內;需確認是 HTML 解析問題(圖片下方文字未提取)還是該來源根本未收錄,兩者修法不同",
+          "suggested_assignees 為空:歷史資料不足,無法推薦負責人,請依 bigcrawler-scrapy 維護者名單手動指派"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 1,
+        "correctness": 3,
+        "coverage": 2,
+        "avg": 2.5,
+        "reasoning": "建議的 bigcrawler-scrapy 方向合理——圖片下方文字屬於爬蟲 DOM 解析缺漏，指向新聞爬蟲 repo 是正確的；但 plan_draft 完全缺失（低信心跳過），assignee 未指定、無風險評估，可執行性與覆蓋度嚴重不足。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.42,
+          "was_correct": true,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 2.5,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 2820,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 2826,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "此 issue 反映 mamibuy 論壇的留言(回文)未被收錄,屬於外部資料來源爬取不完整的問題;REPO NOTES 指出 CrawlersV2/bigcrawler-scrapy 負責「資料來源層」問題,包含特定網站數量不對、抓不到內容等情境,且 Data label 的 primary_group 為 Crawlers,均指向此 repo。",
+        "confidence": 0.42,
+        "caveats": [
+          "無相似歷史 issue(cold start),信心分數依規則壓至 ≤ 0.5",
+          "無法確認 mamibuy 回文(留言)爬取邏輯是否已存在於 bigcrawler-scrapy;若該 spider 根本未實作留言抓取,則可能需要新功能而非 bug 修復",
+          "無歷史 assignee 可供參考,建議由 triage 人員依爬蟲組負責人手動分配"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 1,
+        "correctness": 4,
+        "coverage": 2,
+        "avg": 2.75,
+        "reasoning": "Repo 指向 CrawlersV2/bigcrawler-scrapy 邏輯合理——主文收錄而回文漏收，明顯是爬蟲未處理留言分頁或 API endpoint 的問題，診斷方向技術上正確。但 plan_draft 完全缺席、assignee 空白、無風險評估，對 P1_高 的 issue 而言可操作性極低，提案僅停留在路由識別層級，無法直接驅動修復行動。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.42,
+          "was_correct": true,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 2.75,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 2826,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 2879,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "Issue 描述中廣新聞網 12/7 後無文章、LINE TODAY 特定文章未收錄,核心症狀為「新聞來源爬蟲斷線或抓不到新文章」,完全對應 CrawlersV2/bigcrawler-scrapy 的職責描述:「新聞網站沒有文章、來源斷線、數量不對、抓不到新文章,多半在這裡修,是 K5 label 下最常被修的資料來源層問題歸屬處」;LINE TODAY 部分疑為 BCC 來源的聚焦版,應屬同一爬蟲管線。",
+        "confidence": 0.42,
+        "caveats": [
+          "冷啟動:無相似歷史 issue,無法從歷史路由記錄交叉驗證推斷,信心值依規則壓低至 0.5 以下。",
+          "LINE TODAY 是否有獨立爬蟲模組尚不明確,若 LINE TODAY 並非透過 BCC 來源抓取,可能需要另行查看是否有專屬 parser/spider。",
+          "Issue 關鍵資訊多以截圖呈現,文字描述偏簡短,無具體錯誤訊息或 log,難以完全排除是 data-collector(KEYPO/keypo-engine/data-collector)下游 pipeline 問題。",
+          "無歷史 assignee 紀錄可參考,建議人工指派熟悉 CrawlersV2 爬蟲的工程師。"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 5,
+        "actionability": 1,
+        "correctness": 4,
+        "coverage": 2,
+        "avg": 3,
+        "reasoning": "Repo 選擇正確，BCC 停更 + LINE TODAY 聚焦版共用爬蟲管線的診斷邏輯也合理，Correctness 無明顯失誤。但 plan_draft 完全缺席，無任何具體排查步驟（如確認 spider 名稱、檢查 selector 變動、查 Scrapy log），加上未指定 assignee 且完全未提及 P1_高 的緊急性與風險，Coverage 與 Actionability 嚴重不足。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.42,
+          "was_correct": true,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 3,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 2879,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 2761,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "Issue 描述「網站改版中斷收錄」,屬於新聞來源因網站改版導致爬蟲失效的典型情境;REPO NOTES 明確指出 CrawlersV2/bigcrawler-scrapy 負責「新聞網站沒有文章、來源斷線、數量不對、抓不到新文章」,且該 repo 同時列於 K5 與 Data 兩個 label 的 known_exceptions,與本 issue 同時帶 K5+Data label 完全吻合。",
+        "confidence": 0.45,
+        "caveats": [
+          "冷啟動:無任何歷史相似 issue,依規定信心分數壓在 0.5 以下",
+          "Issue 附有兩張截圖但無法直接讀取截圖內容,截圖中可能含有 error log 或頁面結構資訊,建議 triage 人員開圖確認是否有 pipeline 層或 data-collector 層的錯誤訊息",
+          "無歷史 assignee 資料可供參考,建議手動指派熟悉 bigcrawler-scrapy 爬蟲維護的開發者"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "error": "exec_failure",
+        "raw": "Command failed: claude --print --model sonnet\n"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.45,
+          "was_correct": true,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 0,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 2761,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 2860,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy",
+          "KEYPO/keypo-engine/data-collector"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "多個新聞來源（美麗島電子報、知新聞、農傳媒、沃草等）在不同日期後停止收錄文章，症狀完全符合 REPO NOTES 對 CrawlersV2/bigcrawler-scrapy 的職責描述：「新聞網站沒有文章、來源斷線、抓不到新文章，多半在這裡修」，為 K5 label 下最常見的資料來源層問題歸屬處。若爬蟲層確認正常但資料仍未進入系統，則可進一步排查 KEYPO/keypo-engine/data-collector 的 pipeline 排程。",
+        "confidence": 0.42,
+        "caveats": [
+          "無相似歷史 issue（cold start），依規則 confidence 設為 ≤ 0.5",
+          "涉及 8+ 個不同新聞來源，停止收錄時間各異（8/8、10/14、11/29、12/1、12/2），可能是多個爬蟲規則各別失效，而非單一共同原因，需逐一排查各來源的 scraper 設定",
+          "描述以截圖為主、缺少具體錯誤訊息或 log，無法判斷是網站改版（CSS selector 失效）、robots.txt 封鎖、還是排程問題",
+          "無歷史 assignee 資料可參考，suggested_assignees 為空，建議由 Crawlers team 主管指派"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 2,
+        "correctness": 3,
+        "coverage": 2,
+        "avg": 2.75,
+        "reasoning": "三個來源的斷點日期各異（10/14、11/29、12/1），強烈暗示是個別 spider 層問題而非統一 pipeline 故障，但提案未區分此細節、未點名各自的 spider 名稱，診斷路徑稍顯籠統。plan_draft 因低信心完全缺席，且無 assignee 建議與 P1_高 緊急度的風險說明，可執行性與覆蓋度明顯不足。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.42,
+          "was_correct": true,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 2.75,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 2860,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "test",
+      "fixture_id": 2857,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "KEYPO/keypo-backend",
+          "KEYPO/keypo-newsletter"
+        ],
+        "suggested_assignees": [
+          "Joyce"
+        ],
+        "reasoning": "此 issue 為速報排程延誤兩小時問題，根據 REPO NOTES，KEYPO/keypo-backend 明確負責「速報寄送與推播排程」，是最可能的 root-cause 修復目標；若問題出在郵件寄送層而非排程觸發層，則 KEYPO/keypo-newsletter（負責電子報/定期郵件發送服務，含收信異常與排程問題）為備選。",
+        "confidence": 0.42,
+        "caveats": [
+          "Cold start：無相似歷史 issue，無法從過去案例驗證路由正確性，依規則 confidence < 0.5。",
+          "症狀為固定延誤兩小時，root cause 可能在排程觸發邏輯 (keypo-backend) 或郵件佇列/發送層 (keypo-newsletter)，需工程師查 server log 確認。",
+          "延誤恰好兩小時有可能是時區 offset 設定錯誤 (UTC+8 vs UTC+0)，建議優先確認排程時間的時區處理邏輯。",
+          "issue 描述主要為文字說明加截圖，缺少錯誤訊息或 log，診斷資訊不足。",
+          "無歷史 assignee 資料，建議 triage 人員根據團隊分工手動指派負責人。"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 1,
+        "correctness": 3,
+        "coverage": 2,
+        "avg": 2.5,
+        "reasoning": "Repo 選擇合理，keypo-backend（排程觸發）+ keypo-newsletter（寄送層）是速報延誤的正確排查範圍；但 plan_draft 完全缺席，且未點出「整整兩小時」這個強烈的 timezone offset 特徵（UTC vs UTC+2、或 DST 切換），診斷路徑停在 repo 層而未深入具體的技術假設與驗證步驟，assignee 與影響範圍風險也均未提及。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Joyce",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.42,
+          "was_correct": true,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 2.5,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 2857,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "test",
+      "fixture_id": 2892,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "KEYPO/keypo-backend",
+          "llmprojects/keypo-agent"
+        ],
+        "suggested_assignees": [
+          "Joyce"
+        ],
+        "reasoning": "依據 REPO NOTES，KEYPO Agent 的「錯誤訊息顯示」邏輯明確歸屬於 keypo-backend（原文：「agent 的『錯誤訊息顯示』問題通常在 keypo-backend」），錯誤訊息缺少單位（筆／字）屬於顯示格式問題，故 top-1 為 keypo-backend；llmprojects/keypo-agent 列為次選，因若單位缺失發生在 agent 生成回覆的邏輯層，則 root-cause 會在該 repo。",
+        "confidence": 0.45,
+        "caveats": [
+          "冷啟動：無任何相似歷史 issue，confidence 依規則壓在 0.5 以下",
+          "issue 描述幾乎全為截圖，文字資訊不足，無法確認缺少單位的問題發生在 backend 格式化層還是 agent 回覆生成層",
+          "若「單位缺失」是 agent LLM 回覆本身就沒有帶入，則 root-cause 可能在 llmprojects/keypo-agent，請 triage 人員確認錯誤訊息的產生位置"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 1,
+        "correctness": 3,
+        "coverage": 2,
+        "avg": 2.5,
+        "reasoning": "repo 選擇合理，keypo-backend 為首選且有 REPO NOTES 支撐，llmprojects/keypo-agent 列為次選亦符合「單位缺失可能在 agent 生成層」的診斷思路；但 plan_draft 完全缺席，無法指引開發者去哪個檔案或函式查找格式化邏輯，assignee 與風險評估也均未覆蓋，整體對下游執行者幾乎無參考價值。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Joyce",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.45,
+          "was_correct": true,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 2.5,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 2892,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "test",
+      "fixture_id": 2821,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "KEYPO/keypo-engine-api",
+          "KEYPO/keypo-frontend-2023",
+          "KEYPO/keypo-backend"
+        ],
+        "suggested_assignees": [
+          "Joyce"
+        ],
+        "reasoning": "REPO NOTES 明確指出「頻道/來源篩選的資料清單(名稱重複、來源缺失、分類錯誤)」屬於 keypo-engine-api 的職責;同時 keypo-frontend-2023 的 REPO NOTES 也特別說明「下拉名稱重複/不完整這類看似 UI 但實際是資料內容錯誤,不在這裡修 — 那是 keypo-engine-api 的資料層問題」,故 top-1 指向 keypo-engine-api。",
+        "confidence": 0.42,
+        "caveats": [
+          "冷啟動：無相似歷史 issue,無法從歷史資料驗證路由正確性",
+          "issue 描述幾乎全為截圖,無法確認問題的實際根因是資料層重複還是前端渲染重複掛載",
+          "若名稱重複是前端 component 重複渲染所致(而非資料本身重複),應路由至 keypo-frontend-2023",
+          "建議 triage 人員查看截圖內容,確認 API 回傳資料是否本身就有重複項目,再決定最終指派 repo"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 1,
+        "correctness": 4,
+        "coverage": 2,
+        "avg": 2.75,
+        "reasoning": "Repo 指向 keypo-engine-api 的邏輯有 REPO NOTES 明確支撐，技術診斷路徑合理（重複名稱是資料層而非 UI 問題）；但 plan_draft 完全缺失、assignees 為空、無風險評估，實際可執行性為零，coverage 嚴重不足。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Joyce",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.42,
+          "was_correct": true,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 2.75,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 2821,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P2_中"
+        ]
+      }
+    },
+    {
+      "split": "test",
+      "fixture_id": 2788,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "KEYPO/keypo-engine-api",
+          "CrawlersV2/bigcrawler-scrapy",
+          "KEYPO/keypo-backend"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "issue 描述在特定時間範圍(2019–2020)查詢資料時，點擊文章一直出現錯誤訊息；依 REPO NOTES，keypo-engine-api 負責「資料查詢引擎對外 API — 所有資料本身與查詢計算邏輯的問題」，舊時間段資料查詢失敗最可能在此層修復，列為 top-1；同時 Data label 指向 Crawlers group，舊資料若有 pipeline 缺漏亦可能導致查無內容並報錯，次選 CrawlersV2/bigcrawler-scrapy。",
+        "confidence": 0.35,
+        "caveats": [
+          "cold start：無歷史相似 issue，信心分數依規則不得超過 0.5",
+          "issue 描述內容幾乎全為截圖，錯誤訊息文字不可見，無法判斷根因是 engine query 失敗、資料缺漏還是後端 API exception",
+          "K5 與 Data 兩個 label 並存，可能為跨 team 問題（查詢層 + 資料供給層）",
+          "建議 triage 人員先索取截圖中的完整錯誤訊息或 server log，再決定路由"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 3,
+        "actionability": 1,
+        "correctness": 3,
+        "coverage": 2,
+        "avg": 2.25,
+        "reasoning": "keypo-engine-api 列為首選有合理依據，keypo-backend 次選也站得住腳，但 bigcrawler-scrapy 對「點擊文章出現錯誤訊息」的直接相關性偏弱（爬蟲缺漏造成資料不存在，不代表會觸發 error message，應優先排查 API/後端層）。plan_draft 完全缺席是最大扣分項，無診斷步驟、無 assignee、無風險評估，信心 0.35 雖低但不足以豁免產出任何可執行方向。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.35,
+          "was_correct": true,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 2.25,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 2788,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "test",
+      "fixture_id": 2803,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "Issue 描述為特定時段（凌晨1-4點）經濟日報（money.udn.com）文章未收錄；依據 REPO NOTES，CrawlersV2/bigcrawler-scrapy 負責「新聞網站沒有文章、來源斷線、數量不對、抓不到新文章」，與本 issue 症狀直接對應，為資料來源爬蟲層問題的主要歸屬。",
+        "confidence": 0.43,
+        "caveats": [
+          "冷啟動 (cold start)：無任何相似歷史 issue，confidence 依規則設為 ≤ 0.5",
+          "凌晨1-4點整段無文章，需確認是爬蟲排程中斷、來源端封鎖/反爬，還是下游 data-collector pipeline 的收錄失敗，後者應轉至 KEYPO/keypo-engine/data-collector",
+          "無歷史 assignee 可參考，suggested_assignees 留空，請 triage 人員依現有爬蟲維護名單指派"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 1,
+        "correctness": 4,
+        "coverage": 2,
+        "avg": 2.75,
+        "reasoning": "Repo 選擇合理，CrawlersV2/bigcrawler-scrapy 對應「新聞源斷線/文章數量不對」的症狀描述與本 issue 的凌晨缺口現象高度吻合，診斷方向技術上站得住腳。然而 plan_draft 完全缺失、assignee 空白、未提及潛在根因假說（如排程 cron gap、夜間限速、站點結構變動），可操作性與覆蓋度均嚴重不足。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.43,
+          "was_correct": true,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 2.75,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 2803,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "test",
+      "fixture_id": 2795,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy",
+          "KEYPO/keypo-engine/data-collector",
+          "KEYPO/keypo-engine-api"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "Issue 描述 BabyHome 親子討論區特定版位（才藝興趣、坐月子）自 7 月後幾乎無資料,症狀與特定來源斷線或版位未被採集相符;依 REPO NOTES「新聞網站沒有文章、來源斷線、數量不對、抓不到新文章,多半在這裡修」,首選 CrawlersV2/bigcrawler-scrapy 作為 root-cause 目標;若非爬蟲端,則可能是 data-collector pipeline 排程失敗或 keypo-engine-api 的來源篩選清單缺失所致。",
+        "confidence": 0.35,
+        "caveats": [
+          "無相似歷史 issue,冷啟動狀態,信心度偏低",
+          "Issue 主要以截圖呈現,缺乏 error log 或具體錯誤訊息,無法確認斷點在爬蟲層、pipeline 層或查詢層",
+          "BabyHome 論壇可能有獨立的專屬爬蟲 repo(非 bigcrawler-scrapy),需人工確認 CrawlersV2 下是否有其他相關 repo",
+          "需確認 7 月斷點是否對應某次部署、基礎設施變更或 BabyHome 網站結構異動",
+          "無歷史 assignee 資料可參考,建議由熟悉 CrawlersV2 的成員人工指派"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 2,
+        "correctness": 4,
+        "coverage": 3,
+        "avg": 3.25,
+        "reasoning": "Repo 選擇邏輯清晰，爬蟲→pipeline→API 的診斷順序與症狀（特定版位 7 月後斷料）技術上合理，首選 CrawlersV2/bigcrawler-scrapy 符合 repo notes 描述；但 plan_draft 完全缺失且無 assignee，對 P1 高優先 issue 而言可執行性幾乎為零，coverage 也未提及任何風險（如網站結構異動、IP 封鎖）。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.35,
+          "was_correct": true,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 3.25,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 2795,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "test",
+      "fixture_id": 2774,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "Line Today 遊戲基地頻道整個未收錄，屬於「資料來源層爬蟲未抓取特定頻道」的問題；REPO NOTES 明確指出 CrawlersV2/bigcrawler-scrapy 負責「新聞網站沒有文章、來源斷線、數量不對、抓不到新文章」，與本 issue 症狀直接對應，且 Data label 的 primary_group 為 Crawlers、known_exceptions 包含 CrawlersV2，進一步佐證此路由。",
+        "confidence": 0.42,
+        "caveats": [
+          "無任何相似歷史 issue（冷啟動），依規則信心值上限為 0.5",
+          "suggested_assignees 無歷史資料可推薦，需 triage 人員依團隊分工自行指派",
+          "根本原因未確認：可能是從未新增此頻道來源（需設定新爬蟲規則），或原本有收錄但近期因平台 API 變動 / 反爬蟲機制異動而中斷，兩種情況處理方式不同，建議先釐清",
+          "issue 描述僅含頻道 URL 與單篇文章連結，細節極少，建議確認是歷史資料完全空白還是特定日期後才停止收錄"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 1,
+        "correctness": 4,
+        "coverage": 2,
+        "avg": 2.75,
+        "reasoning": "Repo 路由合理——整個頻道未收錄是典型的爬蟲來源層問題，CrawlersV2/bigcrawler-scrapy 的對應描述與症狀直接吻合，診斷邏輯技術上正確。但 plan_draft 完全缺席，低信心不應成為跳過排查步驟的理由，至少應列出：確認是否有該頻道的 spider、頻道 URL pattern 是否異動、最後一次成功抓取時間等基本切入點，coverage 因缺少 assignee、風險評估、具體行動項而嚴重不足。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.42,
+          "was_correct": true,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 2.75,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 2774,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "test",
+      "fixture_id": 2792,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy",
+          "KEYPO/keypo-engine/data-collector"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "此 issue 描述壹蘋新聞網特定文章漏收,屬於「新聞網站抓不到新文章」的爬蟲層問題;根據 REPO NOTES,CrawlersV2/bigcrawler-scrapy 是主要新聞來源爬蟲,「新聞網站沒有文章、數量不對、抓不到新文章多半在這裡修」,且為 K5 label 下資料來源層問題的主要歸屬處。若爬蟲端規則無異常,可進一步確認 keypo-engine/data-collector 的 pipeline 排程是否有缺漏。",
+        "confidence": 0.42,
+        "caveats": [
+          "冷啟動:無相似歷史 issue,依規則 confidence 壓至 0.5 以下",
+          "Issue 描述以截圖為主、文字說明極少,無法判斷是爬蟲規則問題、反爬機制阻擋、還是特殊 URL 格式(如動態渲染)導致漏收",
+          "趨勢圖顯示正常代表大多數文章有收錄,屬單篇偶發性漏收,root cause 定位仍需人工排查爬蟲 log",
+          "無法推薦 assignees:歷史 issue 為零,無從根據過去處理頻率判斷負責人"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 1,
+        "correctness": 4,
+        "coverage": 2,
+        "avg": 2.75,
+        "reasoning": "repo 建議合理、診斷邏輯正確（爬蟲層優先排查，再確認 data-collector pipeline），但 plan_draft 完全缺失使整份提案毫無可執行性；coverage 明顯不足：assignee 空白、layer 標 n/a（明明是資料層 K5）、P1 高優先也未帶出任何時限或風險說明。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.42,
+          "was_correct": true,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 2.75,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 2792,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "test",
+      "fixture_id": 2852,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "此 issue 要求針對 10 個新聞網站額外收錄圖片下方的文字,屬於爬蟲層的資料擷取能力擴充需求;依據 REPO NOTES,CrawlersV2/bigcrawler-scrapy 負責主要新聞來源爬蟲,凡新聞網站資料抓取或來源內容缺漏問題皆歸屬此處,且 Data label 的 primary_group 亦明確指向 Crawlers 群組。",
+        "confidence": 0.42,
+        "caveats": [
+          "冷啟動 (cold start):無任何相似歷史 issue,無法從過往紀錄驗證歸屬,依規則信心分數壓低至 0.5 以下。",
+          "issue 同時帶有 K5 label,若該圖片文字收錄後需進入 KEYPO 聲量計算流程,可能需要同步確認 KEYPO/keypo-engine/data-collector 或 keypo-engine-api 是否需要調整 ingestion pipeline。",
+          "無歷史 assignee 資料可供參考,suggested_assignees 為空,請 triage 人員手動指派熟悉 Scrapy 爬蟲開發的工程師。",
+          "10 個網站中 cna.com.tw 重複出現兩次(中央社與中央通訊社),建議開發前先確認是否為同一網站需求或筆誤。"
+        ]
+      },
+      "phase2": null,
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 1,
+        "correctness": 4,
+        "coverage": 2,
+        "avg": 2.75,
+        "reasoning": "Repo 指向 CrawlersV2/bigcrawler-scrapy 技術上合理，10 個新聞站擴充圖片 caption 抓取確實屬於爬蟲層；但 plan_draft 完全缺失，且未指派任何 assignee、未提示各站 selector 差異風險（10 站 HTML 結構各異，工時估算複雜），coverage 嚴重不足。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.42,
+          "was_correct": true,
+          "bucket": "0.3-0.5"
+        },
+        "plan_quality": {
+          "judge_avg": 2.75,
+          "has_plan_draft": false,
+          "plan_draft_length": 0
+        },
+        "__fixture_id": 2852,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    }
+  ],
+  "meta": {
+    "n_train": 22,
+    "n_test": 9,
+    "split_date": "2026-01-17T00:00:07.749Z",
+    "split_strategy": "stratified_primary_repo(frac=0.7,seed=42)",
+    "run_started_at": "2026-04-23T12:53:31.230Z",
+    "run_finished_at": "2026-04-23T13:00:46.702Z",
+    "total_cost_usd_estimate": null,
+    "merged_at": "2026-04-24T02:22:07.443Z",
+    "merged_from": {
+      "n_train": 1,
+      "n_test": 9,
+      "split_date": "2026-01-17T00:00:07.749Z",
+      "split_strategy": "preserved_from_prior_run",
+      "run_started_at": "2026-04-24T02:17:49.104Z",
+      "run_finished_at": "2026-04-24T02:22:07.442Z",
+      "total_cost_usd_estimate": null
+    },
+    "reaggregated_at": "2026-04-24T02:32:44.844Z",
+    "reaggregated_with": "assignee config default_assignees"
+  }
+}
