@@ -102,17 +102,26 @@ ignore_for_routing:
 repo_descriptions:
   # KEYPO core (K5 label)
   KEYPO/keypo-backend: |
-    主 API / 後台 server。處理 user / auth / 報表 / 速報 / 推播 / portal /
-    agent 錯誤訊息 / 試用帳號 / 資料管理後台等核心業務邏輯。大部分
-    「後台操作問題」、「使用者看不到資料」、「通知/推播異常」、「速報內容
-    錯誤」都在這裡修。
+    主 API / 後台 server。處理流程/權限/通知/後台 CRUD 等「非資料計算」
+    類問題:user / auth / 試用帳號到期 / portal 後台操作 / 速報寄送與推播
+    排程 / AI 報告的產生流程與下載鏈路 / 通知 (LINE 以外) / agent 錯誤訊息
+    顯示邏輯。不處理資料查詢計算本身 — 若 issue 是「查出來的數字不對」、
+    「資料內容錯誤」、「資料沒進來」、「AI 報告內容/文章列表對不上實際
+    聲量」,那是 keypo-engine-api 的職責,不是這裡。
   KEYPO/keypo-frontend-2023: |
-    前端 React SPA(使用者 UI 畫面)。版面、圖表渲染、互動行為、樣式問題。
-    純 UI / 前端 bug 才在這裡修;資料內容不對的問題通常不在這裡。
+    前端 React SPA(使用者 UI 畫面)。限定純畫面層問題:版面錯位、圖表
+    渲染失敗、按鈕無反應、樣式異常、文字顯示錯誤。若「看到錯誤的資料」、
+    「篩選選項不對」、「下拉名稱重複/不完整」這類看似 UI 但實際是資料
+    內容錯誤,不在這裡修 — 那是 keypo-engine-api 或 keypo-backend 的資料
+    層問題。
   KEYPO/keypo-engine-api: |
-    資料查詢引擎對外 API。處理「探索概念」、主題查詢、聲量數值計算、
-    港版/日版/海外資料庫查詢等資料端問題。資料查不到 / 查錯 / 引擎無回應
-    多數落在這裡。
+    資料查詢引擎對外 API — 所有「資料本身」與「查詢計算邏輯」的問題。
+    包括:探索概念、主題查詢、聲量數值計算與閾值判斷、AI 報告內的資料
+    分析與「聲量不足/聲量過多」類判讀邏輯、港版/日版/海外資料庫查詢、
+    頻道/來源篩選的資料清單(名稱重複、來源缺失、分類錯誤)、文章列表
+    與實際聲量對不上。關鍵區分:issue 只要提到「數字不對」、「查出錯誤
+    資料」、「AI 報告分析結果錯誤」、「聲量/來源不完整」就屬於這裡,
+    而不是 keypo-backend(後者只負責流程/通知/後台操作)。
   KEYPO/keypo-engine/keypo-engine-api-v3: |
     engine-api v3(次世代查詢 API)。新版查詢介面、新 schema 相關問題。
   KEYPO/keypo-engine/keypo-engine-api-gateway: |
