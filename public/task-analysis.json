@@ -8,17 +8,17 @@
       "severity": "🔴",
       "type": "low_output",
       "task": "ES9 pipeline 系統優化 (5H)",
-      "commits": "無相關 commits 記錄",
-      "reasoning": "報告開發任務 5 小時（超過 3 小時閾值），但當天無任何相關 commits。ES9 pipeline 系統優化應該產生程式碼變更，無 commits 關聯表示工作產出與報告時數可能存在落差。"
+      "commits": "無",
+      "reasoning": "開發優化任務報告 5 小時卻沒有任何 commit 記錄，符合低產出警示條件（dev 任務 ≥3H 但 0 筆 commits）"
     },
     {
       "date": "4/23",
       "member": "侑呈",
       "severity": "🟡",
       "type": "outlier",
-      "task": "日本社群頻道分析 (11H)",
-      "commits": "2 commits (keytector/keytector-cib, wendyHsieh/cib-poc — 管線優化)",
-      "reasoning": "報告 11 小時開發工作，卻僅有 2 筆 commits。相比團隊平均 7.7H 對應 19.8 commits，侑呈的工時/產出比例低於團隊平均 15 倍。此外 commits 內容（管線優化）與報告任務（社群頻道分析）領域不符，產出效率明顯異常。"
+      "task": "日本社群頻道分析 (11H) + 其他 (1H)",
+      "commits": "2 筆（keytector/keytector-cib、wendyHsieh/cib-poc）",
+      "reasoning": "報告開發工時 12 小時，但僅有 2 筆 commits。與團隊平均工時 7.7H 對應 19.8 commits 相比，工時/commit 比例相差約 15 倍，明顯偏離團隊平均水準"
     }
   ],
   "summary": {
