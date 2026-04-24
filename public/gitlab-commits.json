@@ -38342,7 +38342,7 @@
             "source": "github"
           },
           {
-            "title": "release: bump version 1.13.27 ��� 1.13.28",
+            "title": "release: bump version 1.13.27 → 1.13.28",
             "sha": "f1c941c4",
             "project": "bigdata-54837596/line-social-radar",
             "url": "https://github.com/bigdata-54837596/line-social-radar/commit/f1c941c42c0180c00f6e732551077a9346abd88a",
@@ -41342,21 +41342,6 @@
   },
   "projectRisks": [
     {
-      "project": "chris.su/kol-desc-parser",
-      "soloContributor": "禎佑",
-      "severity": "🟡"
-    },
-    {
-      "project": "KEYPO/keypo-q-huaan-v2",
-      "soloContributor": "家輝",
-      "severity": "🟡"
-    },
-    {
-      "project": "mason/transition",
-      "soloContributor": "哲緯",
-      "severity": "🟡"
-    },
-    {
       "project": "bigdata/2025-bigdata-app",
       "soloContributor": "Ivy",
       "severity": "🟡"
@@ -41367,7 +41352,7 @@
       "severity": "🟡"
     },
     {
-      "project": "chris.su/testpy",
+      "project": "chris.su/kol-lookup",
       "soloContributor": "禎佑",
       "severity": "🟡"
     },
@@ -41377,23 +41362,48 @@
       "severity": "🟡"
     },
     {
-      "project": "KEYPO/keypo-frontend-2023",
-      "soloContributor": "Joe",
-      "severity": "🟡"
-    },
-    {
       "project": "KEYPO/keypo-newsletter",
       "soloContributor": "Ted",
       "severity": "🟡"
     },
     {
-      "project": "keytector/keytector-cib",
+      "project": "chris.su/kol-lookup-v2",
+      "soloContributor": "禎佑",
+      "severity": "🟡"
+    },
+    {
+      "project": "KEYPO/keypo-engine/on-premises-api-gateway",
+      "soloContributor": "Aaron",
+      "severity": "🟡"
+    },
+    {
+      "project": "llmprojects/keypo-agent",
+      "soloContributor": "Aaron",
+      "severity": "🟡"
+    },
+    {
+      "project": "dailyview/dv-ai-draft",
+      "soloContributor": "Jason",
+      "severity": "🟡"
+    },
+    {
+      "project": "dailyview/2024-dailyview-admin",
+      "soloContributor": "Jason",
+      "severity": "🟡"
+    },
+    {
+      "project": "sinyi/sinyi-dashboard",
       "soloContributor": "Wendy",
       "severity": "🟡"
     },
     {
-      "project": "chris.su/kol-lookup-v2",
-      "soloContributor": "禎佑",
+      "project": "bigdata-54837596/line-social-radar",
+      "soloContributor": "哲緯",
+      "severity": "🟡"
+    },
+    {
+      "project": "bigdata-54837596/line-social-radar-api",
+      "soloContributor": "哲緯",
       "severity": "🟡"
     }
   ]
