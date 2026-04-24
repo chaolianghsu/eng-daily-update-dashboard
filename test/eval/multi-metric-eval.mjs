@@ -230,6 +230,119 @@ function mulberry32(seed) {
  * @param {number} [seed=42]
  * @returns {(fixtures: object[]) => {train: object[], test: object[], strategy: string}}
  */
+/**
+ * Build a splitFn that assigns each fixture to the split it had in a prior
+ * eval run. Fixtures whose id is not in the prior run are dropped.
+ *
+ * Use this when rerunning a subset of fixtures (e.g. backfilling fixtures that
+ * hit a CLI rate-limit) — we want the same train/test membership as the
+ * authoritative baseline so the re-aggregation is apples-to-apples.
+ *
+ * @param {Array<{split: 'train'|'test', fixture_id: string|number}>} existingPerFixture
+ * @returns {(fixtures: object[]) => {train: object[], test: object[], strategy: string}}
+ */
+export function buildPreservingSplitFn(existingPerFixture) {
+  const idToSplit = new Map();
+  for (const r of existingPerFixture || []) {
+    if (r?.fixture_id != null && (r.split === 'train' || r.split === 'test')) {
+      idToSplit.set(String(r.fixture_id), r.split);
+    }
+  }
+  return function splitFn(fixtures) {
+    const train = [];
+    const test = [];
+    for (const fx of fixtures || []) {
+      const id = fx?.id ?? fx?.issue?.iid;
+      const split = idToSplit.get(String(id));
+      if (split === 'train') train.push(fx);
+      else if (split === 'test') test.push(fx);
+      // Unknown ids are silently dropped — callers should filter upstream.
+    }
+    return { train, test, strategy: 'preserved_from_prior_run' };
+  };
+}
+
+/**
+ * Parse rerun CLI flags: `--only-ids a,b,c` and `--merge-into path`.
+ * Numeric-looking ids are parsed as integers; otherwise kept as strings.
+ *
+ * @param {string[]} argv - argv without node / script entries (e.g. process.argv.slice(2))
+ * @returns {{ onlyIds: Array<number|string>, mergeInto?: string }}
+ */
+export function parseRerunArgs(argv) {
+  const out = { onlyIds: [] };
+  for (let i = 0; i < (argv?.length ?? 0); i++) {
+    const a = argv[i];
+    if (a === '--only-ids' && i + 1 < argv.length) {
+      out.onlyIds = argv[++i]
+        .split(',')
+        .map((s) => s.trim())
+        .filter(Boolean)
+        .map((s) => (/^-?\d+$/.test(s) ? Number(s) : s));
+    } else if (a === '--merge-into' && i + 1 < argv.length) {
+      out.mergeInto = argv[++i];
+    }
+  }
+  return out;
+}
+
+/**
+ * Merge a rerun result into an existing eval result. Entries in
+ * `existing.per_fixture` whose fixture_id matches an entry in
+ * `rerun.per_fixture` are replaced; others are kept as-is. Both
+ * `train_metrics` and `test_metrics` are recomputed from the merged set so the
+ * final JSON is self-consistent.
+ *
+ * @param {object} existing - prior eval result (train_metrics, test_metrics, per_fixture, meta)
+ * @param {object} rerun    - rerun result for a subset of fixtures
+ * @returns {object} merged result (new object; inputs not mutated)
+ */
+export function mergeEvalResults(existing, rerun) {
+  const rerunById = new Map();
+  for (const r of rerun?.per_fixture ?? []) {
+    if (r?.fixture_id != null) rerunById.set(String(r.fixture_id), r);
+  }
+
+  const mergedPerFixture = (existing?.per_fixture ?? []).map((r) => {
+    const hit = rerunById.get(String(r.fixture_id));
+    if (hit) {
+      rerunById.delete(String(r.fixture_id));
+      return hit;
+    }
+    return r;
+  });
+  // Any rerun entries whose ids were not in the existing run are appended.
+  for (const leftover of rerunById.values()) {
+    mergedPerFixture.push(leftover);
+  }
+
+  const trainMetricsInput = mergedPerFixture
+    .filter((r) => r.split === 'train')
+    .map((r) => r.metrics)
+    .filter(Boolean);
+  const testMetricsInput = mergedPerFixture
+    .filter((r) => r.split === 'test')
+    .map((r) => r.metrics)
+    .filter(Boolean);
+
+  const nTrain = mergedPerFixture.filter((r) => r.split === 'train').length;
+  const nTest = mergedPerFixture.filter((r) => r.split === 'test').length;
+
+  return {
+    ...existing,
+    train_metrics: aggregate(trainMetricsInput),
+    test_metrics: aggregate(testMetricsInput),
+    per_fixture: mergedPerFixture,
+    meta: {
+      ...(existing?.meta ?? {}),
+      n_train: nTrain,
+      n_test: nTest,
+      merged_at: new Date().toISOString(),
+      merged_from: rerun?.meta ?? null,
+    },
+  };
+}
+
 export function makeStratifiedSplitByPrimaryRepo(trainFrac = 0.7, seed = 42) {
   return function splitFn(fixtures) {
     const strata = new Map();
@@ -296,8 +409,9 @@ function formatSummary(result) {
 }
 
 async function mainCLI() {
-  const fixtures = loadFixtures();
-  if (fixtures.length === 0) {
+  const rerunArgs = parseRerunArgs(process.argv.slice(2));
+  const allFixtures = loadFixtures();
+  if (allFixtures.length === 0) {
     console.error(
       JSON.stringify({
         error: 'no fixtures found',
@@ -331,9 +445,37 @@ async function mainCLI() {
       label_config: lc,
     });
 
-  const strategy = process.env.EVAL_SPLIT_STRATEGY || 'temporal';
-  const splitDate = defaultSplitDate(fixtures);
-  const splitFn = strategy === 'stratified' ? makeStratifiedSplitByPrimaryRepo() : undefined;
+  // --only-ids + --merge-into: backfill a subset, then merge into an existing JSON.
+  const isRerun = rerunArgs.onlyIds.length > 0;
+  let fixtures = allFixtures;
+  let splitFn;
+  let splitDate;
+  let existingResult = null;
+
+  if (isRerun) {
+    if (!rerunArgs.mergeInto) {
+      console.error('--only-ids requires --merge-into <path-to-existing-eval.json>');
+      process.exit(1);
+    }
+    const mergePath = join(PROJECT_ROOT, rerunArgs.mergeInto);
+    existingResult = JSON.parse(readFileSync(mergePath, 'utf8'));
+    const idSet = new Set(rerunArgs.onlyIds.map((x) => String(x)));
+    fixtures = allFixtures.filter((fx) => {
+      const id = String(fx?.id ?? fx?.issue?.iid);
+      return idSet.has(id);
+    });
+    if (fixtures.length === 0) {
+      console.error(`--only-ids matched no fixtures. ids=${[...idSet].join(',')}`);
+      process.exit(1);
+    }
+    splitFn = buildPreservingSplitFn(existingResult.per_fixture ?? []);
+    splitDate = existingResult?.meta?.split_date ?? defaultSplitDate(allFixtures);
+    console.error(`[info] rerun mode: ${fixtures.length} fixture(s), merging into ${rerunArgs.mergeInto}`);
+  } else {
+    const strategy = process.env.EVAL_SPLIT_STRATEGY || 'temporal';
+    splitDate = defaultSplitDate(fixtures);
+    splitFn = strategy === 'stratified' ? makeStratifiedSplitByPrimaryRepo() : undefined;
+  }
 
   const result = await runEvalV2({
     fixtures,
@@ -347,13 +489,21 @@ async function mainCLI() {
     logger: { info: (m) => console.error(`[info] ${m}`), warn: (m) => console.error(`[warn] ${m}`) },
   });
 
-  console.log(formatSummary(result));
+  const finalResult = existingResult ? mergeEvalResults(existingResult, result) : result;
 
-  // Write full JSON
+  console.log(formatSummary(finalResult));
+
+  // Write full JSON. Rerun mode overwrites the original path; fresh runs
+  // write a timestamped file so they never clobber each other.
   if (!existsSync(RESULTS_DIR)) mkdirSync(RESULTS_DIR, { recursive: true });
-  const ts = new Date().toISOString().replace(/[:T]/g, '-').slice(0, 16);
-  const outPath = join(RESULTS_DIR, `eval-${ts}.json`);
-  writeFileSync(outPath, JSON.stringify(result, null, 2));
+  let outPath;
+  if (isRerun) {
+    outPath = join(PROJECT_ROOT, rerunArgs.mergeInto);
+  } else {
+    const ts = new Date().toISOString().replace(/[:T]/g, '-').slice(0, 16);
+    outPath = join(RESULTS_DIR, `eval-${ts}.json`);
+  }
+  writeFileSync(outPath, JSON.stringify(finalResult, null, 2));
   console.error(`\nFull results: ${outPath}`);
 }
 

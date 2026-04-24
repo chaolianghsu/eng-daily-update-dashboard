@@ -279,4 +279,44 @@ describe('runPhase1Routing', () => {
       if (prevKey !== undefined) process.env.ANTHROPIC_API_KEY = prevKey;
     }
   });
+
+  it('calls injected cliFallback when no client and no apiKey (retry wrapper plumb point)', async () => {
+    const prevKey = process.env.ANTHROPIC_API_KEY;
+    delete process.env.ANTHROPIC_API_KEY;
+    try {
+      const cliFallback = vi.fn().mockResolvedValue({
+        content: [
+          { type: 'tool_use', name: 'route_issue', input: validToolInput() },
+        ],
+      });
+      const result = await runPhase1Routing(baseContext(), { cliFallback });
+      expect(cliFallback).toHaveBeenCalledTimes(1);
+      const args = cliFallback.mock.calls[0][0];
+      expect(args.toolSchema).toBe(ROUTING_TOOL);
+      expect(args.prompt).toContain('issue');
+      expect(args.model).toBe('sonnet');
+      expect(result.suggested_repos).toEqual(['techcenter/reportcenter']);
+    } finally {
+      if (prevKey !== undefined) process.env.ANTHROPIC_API_KEY = prevKey;
+    }
+  });
+
+  it('maps cliFallback cli_error to LLMApiError code api_error', async () => {
+    const prevKey = process.env.ANTHROPIC_API_KEY;
+    delete process.env.ANTHROPIC_API_KEY;
+    try {
+      const rateLimitErr = Object.assign(new Error('claude CLI exited 1: '), {
+        code: 'cli_error',
+        exitCode: 1,
+      });
+      const cliFallback = vi.fn().mockRejectedValue(rateLimitErr);
+      const err = await runPhase1Routing(baseContext(), { cliFallback })
+        .catch((e) => e);
+      expect(err).toBeInstanceOf(LLMApiError);
+      expect(err.code).toBe('api_error');
+      expect(err.cliCode).toBe('cli_error');
+    } finally {
+      if (prevKey !== undefined) process.env.ANTHROPIC_API_KEY = prevKey;
+    }
+  });
 });

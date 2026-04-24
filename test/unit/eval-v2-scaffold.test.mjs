@@ -8,7 +8,13 @@ import {
   aggregate,
   confidenceBucket,
 } from '../../test/eval/gap-analyzer.mjs';
-import { runEvalV2, makeStratifiedSplitByPrimaryRepo } from '../../test/eval/multi-metric-eval.mjs';
+import {
+  runEvalV2,
+  makeStratifiedSplitByPrimaryRepo,
+  buildPreservingSplitFn,
+  mergeEvalResults,
+  parseRerunArgs,
+} from '../../test/eval/multi-metric-eval.mjs';
 import {
   buildJudgePrompt,
   parseJudgeOutput,
@@ -297,6 +303,40 @@ describe('runEvalV2', () => {
     expect(testRepos.size).toBe(2);
   });
 
+  it('preserves split assignments from an existing run when rerunning select fixtures', async () => {
+    // Two fixtures, previously partitioned into train + test by some earlier run.
+    // A preserving splitFn must keep them in their original splits.
+    const existingPerFixture = [
+      { split: 'train', fixture_id: 2860 },
+      { split: 'test', fixture_id: 2821 },
+      { split: 'test', fixture_id: 2788 },
+    ];
+    const splitFn = buildPreservingSplitFn(existingPerFixture);
+
+    const fixtures = [
+      baseFixture({ id: 2860 }),
+      baseFixture({ id: 2821 }),
+      baseFixture({ id: 2788 }),
+    ];
+
+    const result = await runEvalV2({
+      fixtures,
+      labelConfig: { labels: {} },
+      phase1Fn: vi.fn().mockResolvedValue(basePhase1()),
+      phase2Fn: vi.fn().mockResolvedValue(basePhase2()),
+      judgeFn: vi.fn().mockResolvedValue(baseJudge()),
+      splitFn,
+    });
+
+    expect(result.meta.n_train).toBe(1);
+    expect(result.meta.n_test).toBe(2);
+    expect(result.meta.split_strategy).toMatch(/preserved/);
+    const trainIds = result.per_fixture.filter((r) => r.split === 'train').map((r) => r.fixture_id);
+    const testIds = result.per_fixture.filter((r) => r.split === 'test').map((r) => r.fixture_id);
+    expect(trainIds).toEqual([2860]);
+    expect(testIds.sort()).toEqual([2788, 2821]);
+  });
+
   it('skips phase2 when confidence < 0.5', async () => {
     const fixtures = [baseFixture({ closed_at: '2026-01-01T00:00:00Z' })];
     const phase1Fn = vi.fn().mockResolvedValue(basePhase1({ confidence: 0.3 }));
@@ -314,6 +354,102 @@ describe('runEvalV2', () => {
 
     expect(phase1Fn).toHaveBeenCalled();
     expect(phase2Fn).not.toHaveBeenCalled();
+  });
+});
+
+describe('parseRerunArgs', () => {
+  it('parses --only-ids and --merge-into', () => {
+    const args = parseRerunArgs(['--only-ids', '2821,2788,2774', '--merge-into', 'results/foo.json']);
+    expect(args.onlyIds).toEqual([2821, 2788, 2774]);
+    expect(args.mergeInto).toBe('results/foo.json');
+  });
+
+  it('handles string (non-numeric) ids', () => {
+    const args = parseRerunArgs(['--only-ids', 'k5-2821,k5-2788']);
+    expect(args.onlyIds).toEqual(['k5-2821', 'k5-2788']);
+    expect(args.mergeInto).toBeUndefined();
+  });
+
+  it('returns empty onlyIds when flag absent', () => {
+    expect(parseRerunArgs(['--other-flag', 'x']).onlyIds).toEqual([]);
+  });
+});
+
+describe('mergeEvalResults', () => {
+  it('replaces per_fixture entries matching rerun ids and re-aggregates both splits', () => {
+    // Existing run: 3 fixtures, 1 train (hit), 2 test (both errors).
+    const mkEntry = (id, split, hit, error = null) => ({
+      split,
+      fixture_id: id,
+      phase1: hit ? { suggested_repos: ['r1'], suggested_assignees: [], confidence: 0.9, caveats: [] } : null,
+      phase2: null,
+      judgeResult: hit ? { avg: 4 } : null,
+      error,
+      metrics: hit
+        ? {
+            routing: { p_at_1: 1, r_at_3: 1, cross_repo_recall: 1 },
+            assignee: { r_at_3: 0 },
+            calibration: { confidence: 0.9, bucket: '0.9-1.0', correct: 1 },
+            judge: { avg: 4 },
+            context: { label: 'K5', outcome: 'likely_fixed' },
+          }
+        : null,
+    });
+    const existing = {
+      train_metrics: {},
+      test_metrics: {},
+      per_fixture: [
+        mkEntry(100, 'train', true),
+        mkEntry(200, 'test', false, 'Phase1 CLI fallback'),
+        mkEntry(201, 'test', false, 'Phase1 CLI fallback'),
+      ],
+      meta: { n_train: 1, n_test: 2, split_strategy: 'stratified_primary_repo' },
+    };
+
+    // Rerun replaces the two failed test entries with successful ones.
+    const rerun = {
+      train_metrics: {},
+      test_metrics: {},
+      per_fixture: [
+        mkEntry(200, 'test', true),
+        mkEntry(201, 'test', true),
+      ],
+      meta: { n_train: 0, n_test: 2, split_strategy: 'preserved_from_prior_run' },
+    };
+
+    const merged = mergeEvalResults(existing, rerun);
+
+    // Per-fixture: original 1 train + 2 newly-populated test
+    expect(merged.per_fixture).toHaveLength(3);
+    const test200 = merged.per_fixture.find((r) => r.fixture_id === 200);
+    expect(test200.error).toBeNull();
+    expect(test200.metrics).toBeTruthy();
+
+    // Aggregates recomputed: all 2 test cases now hit → P@1 = 1.0
+    expect(merged.test_metrics.n_cases).toBe(2);
+    expect(merged.test_metrics.p_at_1).toBe(1);
+    expect(merged.train_metrics.n_cases).toBe(1);
+    expect(merged.meta.n_train).toBe(1);
+    expect(merged.meta.n_test).toBe(2);
+  });
+
+  it('preserves non-matching existing entries untouched', () => {
+    const mkMinimal = (id, split) => ({ split, fixture_id: id, error: 'prior fail', metrics: null });
+    const existing = {
+      train_metrics: {},
+      test_metrics: {},
+      per_fixture: [mkMinimal(1, 'train'), mkMinimal(2, 'train')],
+      meta: { n_train: 2, n_test: 0 },
+    };
+    const rerun = {
+      train_metrics: {},
+      test_metrics: {},
+      per_fixture: [{ split: 'train', fixture_id: 1, error: null, metrics: null }],
+      meta: { n_train: 1, n_test: 0 },
+    };
+    const merged = mergeEvalResults(existing, rerun);
+    const two = merged.per_fixture.find((r) => r.fixture_id === 2);
+    expect(two.error).toBe('prior fail');
   });
 });
 
