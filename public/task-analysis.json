@@ -1,33 +1,69 @@
 {
-  "analysisDate": "2026-04-24",
-  "period": "4/23",
+  "analysisDate": "2026-04-27",
+  "period": "4/21-4/24",
   "warnings": [
+    {
+      "date": "4/21",
+      "member": "侑呈",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "[Dev] Facebook 新增 Redis 版本鎖定 (6.5H)",
+      "commits": "1 commit: fix(facebook-scrapy) 鎖定 Redis 版本 7.4.8-alpine",
+      "reasoning": "開發時數 6.5 小時僅產出 1 個 commit，比例為 0.15 commits/hour，遠低於團隊平均 3.03 commits/hour（僅約 5%），明顯偏離預期生產力"
+    },
+    {
+      "date": "4/22",
+      "member": "侑呈",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "[Dev] CT Monitor 監控 + recheck pool 功能 (8H)",
+      "commits": "4 commits across keytector/keytector-cib and wendyHsieh/cib-poc",
+      "reasoning": "開發時數 8 小時產出 4 個 commits，比例為 0.5 commits/hour，遠低於團隊平均 2.21 commits/hour（僅約 23%），與預期工作量明顯不符"
+    },
+    {
+      "date": "4/22",
+      "member": "家輝",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "[Dev] ES9 pipeline 系統優化相關工作 (6H)",
+      "commits": "1 commit: tweak senti",
+      "reasoning": "開發時數 6 小時僅產出 1 個 commit，比例為 0.17 commits/hour，遠低於團隊平均 2.21 commits/hour（僅約 8%），工作成果與時間投入嚴重不成比例"
+    },
     {
       "date": "4/23",
       "member": "家輝",
       "severity": "🔴",
       "type": "low_output",
-      "task": "ES9 pipeline 系統優化 (5H)",
-      "commits": "無",
-      "reasoning": "開發優化任務報告 5 小時卻沒有任何 commit 記錄，符合低產出警示條件（dev 任務 ≥3H 但 0 筆 commits）"
+      "task": "[Dev] ES9 pipeline 系統優化相關工作 (7H)",
+      "commits": "0 commits found",
+      "reasoning": "開發時數 7 小時但完全無任何 commit 記錄，無法驗證代碼層面的開發成果"
     },
     {
-      "date": "4/23",
+      "date": "4/24",
       "member": "侑呈",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "[Dev] 信義補收漏文、KEYTECTOR 工作 (6H)",
+      "commits": "0 commits found",
+      "reasoning": "開發時數 6 小時但完全無任何 commit 記錄，無法驗證報告的開發任務是否已完成或進展狀況"
+    },
+    {
+      "date": "4/24",
+      "member": "家輝",
       "severity": "🟡",
       "type": "outlier",
-      "task": "日本社群頻道分析 (11H) + 其他 (1H)",
-      "commits": "2 筆（keytector/keytector-cib、wendyHsieh/cib-poc）",
-      "reasoning": "報告開發工時 12 小時，但僅有 2 筆 commits。與團隊平均工時 7.7H 對應 19.8 commits 相比，工時/commit 比例相差約 15 倍，明顯偏離團隊平均水準"
+      "task": "[Dev] ES9 pipeline 系統優化、leo 帳號處理 (7.5H)",
+      "commits": "4 commits: tweak dv es insert, tweak ae jp, add phrase merge",
+      "reasoning": "開發時數 7.5 小時僅產出 4 個 commits，比例為 0.53 commits/hour，遠低於團隊平均 3.06 commits/hour（僅約 17%），相同工作領域連日低產出，需要關注"
     }
   ],
   "summary": {
-    "totalMembers": 8,
-    "totalWarnings": 2,
+    "totalMembers": 14,
+    "totalWarnings": 6,
     "byType": {
-      "low_output": 1,
+      "low_output": 2,
       "mismatch": 0,
-      "outlier": 1
+      "outlier": 4
     }
   }
 }
