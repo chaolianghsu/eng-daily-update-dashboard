@@ -1,0 +1,2481 @@
+{
+  "train_metrics": {
+    "n_cases": 22,
+    "p_at_1": 0.9545454545454546,
+    "r_at_3": 1,
+    "cross_repo_recall_avg": 1,
+    "assignee_r_at_3": 1,
+    "ece": 0.14954545454545448,
+    "judge_avg": 4.306818181818182,
+    "judge_distribution": {
+      "1-2": 2,
+      "2-3": 0,
+      "3-4": 0,
+      "4-5": 20
+    },
+    "per_label_breakdown": {
+      "Bug": {
+        "n_cases": 17,
+        "p_at_1": 0.9411764705882353,
+        "r_at_3": 1,
+        "assignee_r_at_3": 1,
+        "judge_avg": 4.4411764705882355
+      },
+      "K5": {
+        "n_cases": 22,
+        "p_at_1": 0.9545454545454546,
+        "r_at_3": 1,
+        "assignee_r_at_3": 1,
+        "judge_avg": 4.306818181818182
+      },
+      "P1_高": {
+        "n_cases": 20,
+        "p_at_1": 0.95,
+        "r_at_3": 1,
+        "assignee_r_at_3": 1,
+        "judge_avg": 4.2875
+      },
+      "P2_中": {
+        "n_cases": 1,
+        "p_at_1": 1,
+        "r_at_3": 1,
+        "assignee_r_at_3": 1,
+        "judge_avg": 4.75
+      },
+      "P0_緊急": {
+        "n_cases": 1,
+        "p_at_1": 1,
+        "r_at_3": 1,
+        "assignee_r_at_3": 1,
+        "judge_avg": 4.25
+      },
+      "Data": {
+        "n_cases": 11,
+        "p_at_1": 1,
+        "r_at_3": 1,
+        "assignee_r_at_3": 1,
+        "judge_avg": 4
+      }
+    },
+    "per_outcome_breakdown": {
+      "likely_fixed": {
+        "n_cases": 22,
+        "p_at_1": 0.9545454545454546,
+        "r_at_3": 1,
+        "judge_avg": 4.306818181818182
+      }
+    }
+  },
+  "test_metrics": {
+    "n_cases": 9,
+    "p_at_1": 1,
+    "r_at_3": 1,
+    "cross_repo_recall_avg": 1,
+    "assignee_r_at_3": 1,
+    "ece": 0.1466666666666666,
+    "judge_avg": 4.722222222222222,
+    "judge_distribution": {
+      "1-2": 0,
+      "2-3": 0,
+      "3-4": 0,
+      "4-5": 9
+    },
+    "per_label_breakdown": {
+      "Bug": {
+        "n_cases": 4,
+        "p_at_1": 1,
+        "r_at_3": 1,
+        "assignee_r_at_3": 1,
+        "judge_avg": 4.75
+      },
+      "K5": {
+        "n_cases": 9,
+        "p_at_1": 1,
+        "r_at_3": 1,
+        "assignee_r_at_3": 1,
+        "judge_avg": 4.722222222222222
+      },
+      "P1_高": {
+        "n_cases": 8,
+        "p_at_1": 1,
+        "r_at_3": 1,
+        "assignee_r_at_3": 1,
+        "judge_avg": 4.6875
+      },
+      "P2_中": {
+        "n_cases": 1,
+        "p_at_1": 1,
+        "r_at_3": 1,
+        "assignee_r_at_3": 1,
+        "judge_avg": 5
+      },
+      "Data": {
+        "n_cases": 6,
+        "p_at_1": 1,
+        "r_at_3": 1,
+        "assignee_r_at_3": 1,
+        "judge_avg": 4.75
+      }
+    },
+    "per_outcome_breakdown": {
+      "likely_fixed": {
+        "n_cases": 9,
+        "p_at_1": 1,
+        "r_at_3": 1,
+        "judge_avg": 4.722222222222222
+      }
+    }
+  },
+  "per_fixture": [
+    {
+      "split": "train",
+      "fixture_id": 288,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "KEYPO/keypo-engine-api",
+          "KEYPO/keypo-backend"
+        ],
+        "suggested_assignees": [
+          "Joyce"
+        ],
+        "reasoning": "REPO NOTES 明確將「日版／港版／海外資料庫查詢」歸屬 keypo-engine-api，issue 症狀「新增日本資料後系統看不到」直接命中此 repo 的資料查詢職責；但「從後台／portal 新增」的 CRUD 操作屬 keypo-backend 範疇，須確認資料是否成功寫入後才能鎖定根因層。",
+        "confidence": 0.65,
+        "caveats": [
+          "需請 reporter 說明「新增日本資料」的具體操作步驟（例如：啟用日版監控範圍 vs. 個別資料來源匯入），以區分問題出在 engine-api 查詢層還是 keypo-backend CRUD 層",
+          "三張截圖為外部上傳連結，內容無法直接判讀，建議請 reporter 補充文字描述操作流程與預期結果"
+        ]
+      },
+      "phase2": {
+        "summary": "日本資料經由後台與 portal 新增後，前端查詢仍無法顯示，為 P1 高優先級 Bug。根因尚未確定，需先驗證 keypo-backend CRUD 寫入是否成功落庫，再排查 keypo-engine-api 查詢層是否正確索引到日本區域資料。由於 issue 描述僅附圖無文字說明，操作路徑與預期結果尚不明確，需 reporter 補充完整重現步驟。目前無相似歷史 issue 可參考，屬 cold-start 情境，需謹慎逐層排查。",
+        "plan_draft": [
+          "請 reporter 以文字補充操作步驟（後台/portal 具體選單路徑、新增的資料類型與欄位值）及預期顯示位置，以取代截圖作為重現基準。",
+          "在 keypo-backend 日本資料 CRUD 端點加入 request/response structured log，重現新增操作，直接查詢資料庫驗證記錄是否存在且 region/locale 欄位值正確。",
+          "若 DB 寫入確認成功，在 keypo-engine-api 的日本資料查詢入口加入 debug log，手動呼叫查詢 API（帶相同 region 參數）驗證資料是否被查詢條件命中。",
+          "比對 keypo-backend 寫入的資料 schema 與 keypo-engine-api 查詢過濾規則（region enum、啟用狀態欄位、索引同步條件），找出不匹配處並修正。",
+          "修復後在 staging 環境執行完整端對端流程（新增日本資料 → 查詢驗證 → 後台與 portal 雙端顯示），通過後部署並請 reporter 驗收。"
+        ],
+        "risks": [
+          "若修改 keypo-engine-api 查詢過濾條件，可能連帶影響港版或其他海外區域資料的查詢結果；部署後需監控其他區域查詢的 error rate 與回傳筆數，出現異常時以 feature flag 或 revert commit rollback。",
+          "日本資料可能依賴定時同步排程寫入 engine-api 索引，若問題根因在同步延遲而非程式邏輯，修改 CRUD 層後仍需等待排程執行才能驗證，需監控同步任務的 lag 與失敗率指標。",
+          "截圖資訊不完整且無操作路徑文字說明，若 reporter 無法及時補充重現步驟，問題可能無法在開發環境精確重現，有拉長診斷時間、違反 P1 SLA 的風險。"
+        ]
+      },
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 5,
+        "correctness": 4,
+        "coverage": 5,
+        "avg": 4.5,
+        "reasoning": "雙 repo 診斷路徑（keypo-backend 負責 CRUD 寫入、keypo-engine-api 負責日版查詢）對「新增後看不到」症狀技術上直接命中，reasoning 引用 REPO NOTES 作為依據，邏輯可信；五步驟依序驗證寫入→查詢→schema 比對→修復→staging E2E，具體且可操作。risks 三條均有實質內容：跨區域 filter 影響、排程同步 lag、截圖資訊不足導致 P1 SLA 風險，整體覆蓋度優於平均。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": false,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Joyce",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.65,
+          "was_correct": false,
+          "bucket": "0.5-0.7"
+        },
+        "plan_quality": {
+          "judge_avg": 4.5,
+          "has_plan_draft": true,
+          "plan_draft_length": 5
+        },
+        "__fixture_id": 288,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 2832,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "KEYPO/keypo-backend",
+          "KEYPO/keypo-engine-api",
+          "KEYPO/keypo-frontend-2023"
+        ],
+        "suggested_assignees": [
+          "Joyce"
+        ],
+        "reasoning": "REPO NOTES 明確指出 keypo-backend 負責「AI 報告的產生流程與下載鏈路」，而 issue 描述的核心症狀正是「報告下載」產出的熱門關鍵字內容與 UI 顯示不符，直接命中此職責範圍。次選 keypo-engine-api 以備「奇怪的英文」實為查詢引擎回傳的資料內容錯誤。",
+        "confidence": 0.82,
+        "caveats": [
+          "附件 PPTX 需實際開啟確認「奇怪的英文」的具體內容（截圖文字辨識度有限），以判斷是 export 渲染問題還是資料層回傳值異常"
+        ]
+      },
+      "phase2": {
+        "summary": "熱門關鍵字分析結果在 UI 顯示與 PPTX 報告下載輸出之間存在內容不一致的問題，報告中出現異常英文字串。問題根源可能有二：keypo-backend 報告產生鏈路對熱門關鍵字欄位的序列化方式與 UI API 不同，或 keypo-engine-api 查詢引擎回傳的原始資料中存在未映射的英文欄位名稱或 enum 代碼。目前缺乏歷史相似 issue 可參照，需以附件 PPTX 實際內容作為診斷起點，確認異常英文的具體位置與格式後，才能鎖定是資料層、序列化層還是 export 渲染層的問題。此 bug 標記為 P1，直接影響下載產出的可讀性與客戶信任度，需優先處理。",
+        "plan_draft": [
+          "下載附件 PPTX 並開啟，記錄「異常英文」出現的頁面編號、欄位標題與字串內容，判斷是欄位 key 名稱外漏、i18n 缺漏，還是未轉換的 enum 代碼（例如 keyword_type、chart_label 等）",
+          "在 keypo-backend 定位報告下載的 API endpoint，逐層追蹤熱門關鍵字資料的序列化流程，與同功能的 UI API response 做 diff，找出欄位命名或資料結構的差異點",
+          "若 keypo-backend 序列化結果一致，進入 keypo-engine-api，檢查熱門關鍵字查詢的回傳 schema，確認是否存在未映射至中文的英文 field name 或原始引擎代碼直接流出",
+          "撰寫整合測試：以相同的關鍵字查詢條件與時間區間，分別呼叫 UI API 與報告下載 API，斷言兩者熱門關鍵字欄位的 label 與 value 格式完全一致",
+          "修正後在 staging 環境以相同查詢條件重新產生 PPTX，人工逐頁驗證熱門關鍵字段落不再出現異常英文，並執行現有測試套件確認無回歸"
+        ],
+        "risks": [
+          "若問題根源在序列化層，修正須涵蓋所有報告段落（非僅熱門關鍵字），避免其他圖表或表格標題出現類似英文回歸；上線後需抽查至少 3 種不同報告類型的下載輸出",
+          "報告下載為非同步產生流程，staging 難以完全模擬生產環境的查詢規模與 timeout 邊界條件；上線後需監控報告產生任務的 error rate 與失敗佇列數量，若 error rate 上升超過基準 5% 則觸發 rollback",
+          "若 keypo-engine-api 有 schema 異動，需同步通知 keypo-frontend-2023 確認 UI 顯示邏輯未受影響；rollback 條件為以 keypo-backend 上一個穩定 tag 重新部署，engine-api 端視異動範圍決定是否需同步回退"
+        ]
+      },
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 5,
+        "correctness": 4,
+        "coverage": 5,
+        "avg": 4.5,
+        "reasoning": "Repo 選擇邏輯清晰，以報告下載鏈路命中 keypo-backend 為主、keypo-engine-api 為次選，診斷路徑（UI API vs 下載 API 序列化 diff）是處理此類欄位外漏 bug 的標準手法，技術合理。Risks 區塊給出量化條件（error rate 超 5% rollback、抽查 3 種報告類型），是本提案最亮眼之處，大幅提升可執行性與可驗收性。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Joyce",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.82,
+          "was_correct": true,
+          "bucket": "0.7-0.9"
+        },
+        "plan_quality": {
+          "judge_avg": 4.5,
+          "has_plan_draft": true,
+          "plan_draft_length": 5
+        },
+        "__fixture_id": 2832,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 244,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "KEYPO/keypo-backend",
+          "KEYPO/keypo-frontend-2023"
+        ],
+        "suggested_assignees": [
+          "Joyce"
+        ],
+        "reasoning": "REPO NOTES 將「速報寄送與推播排程」及「AI 報告的產生流程與下載鏈路」歸屬於 keypo-backend，Excel 版速報的數值千分位格式化屬後端產生 Excel 檔案時的輸出格式問題，命中 keypo-backend 的職責描述。",
+        "confidence": 0.72,
+        "caveats": [
+          "需確認「速報 Excel」是後端直接產生檔案（如 openpyxl / xlsxwriter 輸出）還是前端匯出；若為前端渲染後再匯出，則應移至 keypo-frontend-2023"
+        ]
+      },
+      "phase2": {
+        "summary": "速報 Excel 版的主題聲量數值未顯示千分位，導致大數字閱讀困難，影響所有使用速報 Excel 下載功能的使用者。問題根源高機率在後端 Excel 產生邏輯中，對應數值欄位未設定千分位數字格式（如 openpyxl / xlsxwriter 的 number_format 未配置）。目前無法排除為前端渲染後匯出的情境，因此需先定位速報 Excel 的實際產生路徑，再決定修改位置。此問題為格式顯示缺陷，不影響數值正確性，但需確認修正範圍是否涵蓋同一流程產生的其他數值欄位。",
+        "plan_draft": [
+          "在 keypo-backend 定位速報 Excel 產生入口（搜尋 report / excel / 速報 相關路由與 service），確認使用的 Excel 套件（openpyxl / xlsxwriter / pandas ExcelWriter）及主題聲量欄位的 cell 寫入程式碼位置。",
+          "若確認為後端直接產生 Excel：在對應欄位的 cell 寫入或 column 定義處新增千分位 number_format（如 openpyxl 的 `cell.number_format = '#,##0'`），並掃描同一 Excel 產生邏輯中所有聲量相關數值欄位，統一補齊格式。",
+          "若確認為前端匯出（keypo-frontend-2023）：定位 Excel 匯出函式，對聲量數值欄位套用千分位格式化（如 SheetJS 的 numFmt 設定或前端格式化函式），確保匯出時數值格式正確。",
+          "在測試環境重現問題：下載速報 Excel，以 Excel / LibreOffice 開啟，驗證主題聲量欄位修復後正確顯示千分位，並抽查其他數值欄位（如總聲量、正負評比例等）格式一致性。",
+          "新增或更新對應的單元測試 / 整合測試，斷言 Excel 輸出中聲量數值欄位的 number_format 或格式化字串符合千分位規格，防止後續回歸。"
+        ],
+        "risks": [
+          "若同一 Excel 產生流程供多種報表類型（日報、週報、月報、自訂區間）共用，格式變更會同步影響所有類型；上線前需全類型下載回歸，確認無版面或欄位位移異常。",
+          "若數值欄位原為純文字字串（非 Excel 數字型別），改為數字格式後，若有下游自動化流程讀取該 Excel（如 ETL、客戶自動解析腳本），可能因型別變更導致解析失敗；需確認是否存在下游依賴，並在上線後監控相關 pipeline 錯誤率。",
+          "千分位格式在不同地區設定的 Excel（如英文版 vs 中文版）顯示行為可能有差異；影響範圍僅限 Excel 格式顯示，監控上線後使用者回報與速報下載錯誤率，若出現格式異常可 hotfix rollback 移除 number_format 變更。"
+        ]
+      },
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 5,
+        "correctness": 5,
+        "coverage": 5,
+        "avg": 4.75,
+        "reasoning": "提案清楚區分「後端產生 Excel」與「前端匯出」兩條診斷路徑，並給出具體的套件名稱與 number_format 語法範例，可操作性極高；risks 三點均具體且切中要害——共用模板影響範圍、字串轉數字型別的下游破壞、地區 locale 差異——完全不是空洞填充，整體品質接近教科書水準。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Joyce",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.72,
+          "was_correct": true,
+          "bucket": "0.7-0.9"
+        },
+        "plan_quality": {
+          "judge_avg": 4.75,
+          "has_plan_draft": true,
+          "plan_draft_length": 5
+        },
+        "__fixture_id": 244,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P2_中"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 300,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "KEYPO/keypo-backend",
+          "KEYPO/keypo-newsletter"
+        ],
+        "suggested_assignees": [
+          "Joyce"
+        ],
+        "reasoning": "REPO NOTES 明確將「試用帳號到期」與「速報寄送與推播排程」歸屬 keypo-backend；此 issue 核心症狀（帳號到期後速報持續寄送至 12/5、延期更新後在帳號啟用前提早推播）完全命中 keypo-backend 的職責描述，為直接關鍵字命中。keypo-newsletter 列為次要候選，視實際郵件寄送排程的實作位置而定。",
+        "confidence": 0.9,
+        "caveats": [
+          "需向 reporter 確認：客戶收到的速報是原 11/24-28 期間設定的舊排程任務，還是 12/31 更新帳號後重新設定的新排程，以釐清排程清除或重建的觸發點"
+        ]
+      },
+      "phase2": {
+        "summary": "試用帳號到期後，速報排程任務未被正確停止，導致帳號過期後仍持續寄送約 7 天。帳號起訖日於 12/31 更新延長後，舊排程任務疑似未被取消即重建，造成在新帳號啟用日（1/15）前便提前推播速報。問題核心在 keypo-backend 的帳號狀態機（到期/延期）與速報排程生命週期的聯動邏輯存在缺口。keypo-newsletter 的實際寄送排程需一併追查，釐清排程任務是在 backend 管理還是 newsletter 服務內部觸發。建議向 reporter 釐清客戶收到的速報是原 11/24-28 期間的舊排程，還是 12/31 更新後重新觸發的任務，以精確定位排程重建的觸發點。",
+        "plan_draft": [
+          "重現問題：在 staging 環境建立試用帳號並設定速報排程，手動將帳號到期日設為當前時間過去 1 小時，執行排程觸發流程，驗證速報任務是否仍繼續執行（預期應立即停止）。",
+          "追查 keypo-backend 帳號到期的排程清除邏輯：定位帳號狀態由 active → expired 時觸發的 hook 或 background job，檢查是否有針對 expired 狀態主動 cancel 或 delete 相關速報排程任務的程式碼，並確認 12/5 停止寄送的機制為何（是任務自然 TTL 還是手動介入）。",
+          "追查帳號起訖日更新（延期）時的排程重建流程：定位 12/31 更新帳號起訖日時觸發的更新路徑，確認舊排程任務是否先被取消再依新起訖日重建，或直接新增導致在帳號啟用前（1/15 之前）即提前觸發推播。",
+          "實作修補：帳號到期或暫停時，主動 cancel 所有相關速報排程任務；帳號日期更新時，先刪除舊排程再依新起訖日重建，確保排程的 valid_from / valid_until 邊界與帳號狀態一致。",
+          "新增整合測試覆蓋「試用帳號到期 → 排程停止」與「帳號延期更新 → 舊排程取消、新排程依新起訖日生效」兩個完整生命週期情境，部署後查詢 keypo-newsletter 寄送 log 驗證無誤觸發記錄。"
+        ],
+        "risks": [
+          "排程清除邏輯若未嚴格限定於試用帳號狀態機，可能誤影響正式帳號的速報排程；修補上線前需完整回歸測試正式帳號的排程更新流程，確認 fix 不改變正式帳號行為。",
+          "修復後需監控 keypo-newsletter 的每日速報實際寄送量；若寄送量出現異常下降（合法排程被誤刪），應立即 rollback 並重建受影響帳號的排程任務。",
+          "資料庫中可能存在其他已過期試用帳號的殘留排程任務，建議在部署修補前執行一次清理腳本，識別並取消所有與已過期帳號關聯的待執行排程，避免上線後殘留任務被誤觸發。"
+        ]
+      },
+      "judgeResult": {
+        "relevance": 5,
+        "actionability": 5,
+        "correctness": 5,
+        "coverage": 5,
+        "avg": 5,
+        "reasoning": "提案精準命中兩個獨立缺陷（到期後排程未立即停止、延期更新後舊排程未先取消即重建），repo 選擇與 assignee 均有根據，plan_draft 五步驟具體可操作且帶技術細節（valid_from/valid_until 邊界、staging 驗證）。risks 三條皆針對此 fix 的真實副作用（誤影響正式帳號、寄送量監控、殘留排程清理），無空洞或泛泛陳述，整體提案品質高。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Joyce",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.9,
+          "was_correct": true,
+          "bucket": "0.9-1"
+        },
+        "plan_quality": {
+          "judge_avg": 5,
+          "has_plan_draft": true,
+          "plan_draft_length": 5
+        },
+        "__fixture_id": 300,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 302,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "KEYPO/keypo-backend",
+          "KEYPO/keypo-frontend-2023",
+          "KEYPO/keypo-engine-api"
+        ],
+        "suggested_assignees": [
+          "Joyce"
+        ],
+        "reasoning": "REPO NOTES 明確指出 keypo-backend 負責「agent 錯誤訊息顯示邏輯」,issue 標題「錯誤訊息顯示Unknown error」直接命中此職責,為 top-1 候選;但「左括號跟字詞中間少了符號連接」亦可能是查詢語法解析問題,導致 keypo-engine-api 回傳非預期結果後前端以 Unknown error 作為 fallback 顯示。",
+        "confidence": 0.7,
+        "caveats": [
+          "請向 reporter 確認 Unknown error 出現在哪個功能或頁面(例如關鍵字搜尋輸入、AI 報告觸發、特定後台操作),有助於判斷是 backend 錯誤訊息處理、engine-api 查詢解析,還是 frontend fallback 顯示問題",
+          "截圖無法在此環境確認內容,需查看上傳圖片釐清實際錯誤情境與輸入內容"
+        ]
+      },
+      "phase2": {
+        "summary": "此 P1 Bug 為使用者操作時出現「Unknown error」錯誤提示，疑似因查詢語法中左括號與後接字詞之間缺少分隔符號，導致解析失敗後錯誤訊息未被正確包裝。根據路由判斷，問題可能橫跨三個層面：keypo-engine-api 查詢解析階段拋出非預期例外、keypo-backend 錯誤處理邏輯未正確轉換錯誤詳情，或 keypo-frontend-2023 以 fallback 文字覆蓋了原始錯誤描述。由於截圖無法直接確認觸發情境，需先釐清錯誤發生的功能頁面與實際輸入內容，再逐層追蹤 error propagation 路徑。目前為 cold start，無歷史相似 issue 可參考，需從頭定位根因。",
+        "plan_draft": [
+          "向 reporter 索取觸發步驟（功能頁面名稱、實際輸入內容、重現條件），並將釐清結果記錄至 issue comment 作為後續修復依據",
+          "在 keypo-engine-api 重現錯誤：以含左括號且缺少後接分隔符號的語法執行查詢，檢查 API response 的 error payload 是否包含可辨識的 error code 或結構化訊息，記錄實際回傳格式",
+          "追蹤 keypo-backend 錯誤處理路徑：定位 engine-api 錯誤回傳後的 unwrap 與轉換邏輯，搜尋「Unknown error」字串的來源行號，修正為回傳具體 error code 與訊息",
+          "在 keypo-frontend-2023 定位 fallback 顯示邏輯：搜尋「Unknown error」字串，確認是否因 error response 格式不符預期而觸發 fallback，必要時修正 error boundary 顯示為後端實際訊息",
+          "新增針對「左括號後缺少分隔符號」語法的單元測試或整合測試，覆蓋 engine-api 解析邊界條件，部署至 staging 環境執行完整驗證後再上線"
+        ],
+        "risks": [
+          "修正解析邏輯可能影響其他使用相似括號語法的查詢功能，上線後需監控 keypo-engine-api 的 5xx error rate，若上升超過基線 10% 則立即 revert 相關 commit",
+          "若 frontend fallback 邏輯被修改，需確認所有其他錯誤碼路徑仍能正確顯示對應訊息，避免原本正常運作的錯誤提示在修改後消失或顯示異常",
+          "此問題可能僅在特定複雜語法組合或特定使用者輸入模式下觸發，開發環境若無法完整重現，需在 staging 以多種語法組合執行壓力測試，確認修復不引入新的解析迴歸"
+        ]
+      },
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 4,
+        "correctness": 4,
+        "coverage": 5,
+        "avg": 4.25,
+        "reasoning": "提案完整涵蓋三層架構（engine-api → backend → frontend），從查詢語法解析異常到 Unknown error fallback 的診斷路徑邏輯清晰，步驟具備具體搜尋目標（字串定位、API response 格式驗證）且可直接執行。risks 欄位提出三個針對性風險（解析迴歸監控、error boundary 覆蓋確認、staging 多語法壓測），均與此 bug 直接相關，coverage 表現優異。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Joyce",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.7,
+          "was_correct": true,
+          "bucket": "0.7-0.9"
+        },
+        "plan_quality": {
+          "judge_avg": 4.25,
+          "has_plan_draft": true,
+          "plan_draft_length": 5
+        },
+        "__fixture_id": 302,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 2815,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "KEYPO/keypo-engine-api",
+          "KEYPO/keypo-frontend-2023"
+        ],
+        "suggested_assignees": [
+          "Joyce"
+        ],
+        "reasoning": "按讚數排序結果順序錯誤屬於「查詢計算邏輯」問題，REPO NOTES 明確將 keypo-engine-api 定義為「所有資料本身與查詢計算邏輯的問題」，並補充「文章列表與實際聲量對不上」亦歸此處；keypo-frontend-2023 的 REPO NOTES 則明示「看到錯誤的資料」不在前端修，因此 engine-api 為 top-1。",
+        "confidence": 0.75,
+        "caveats": [
+          "需確認按讚數排序邏輯是由 engine-api 後端執行還是前端自行 client-side 排序，以確認正確 repo"
+        ]
+      },
+      "phase2": {
+        "summary": "文章列表依按讚數由多到少排序時，排序結果出現順序倒置的錯誤，按讚數較少的文章排在較多的前面。問題範圍涵蓋特定關鍵字搜尋結果在指定時間區間內的文章列表。Phase 1 路由判斷排序邏輯屬後端查詢計算範疇，主責 repo 為 keypo-engine-api；但需先確認排序是由後端 API 執行還是前端 client-side 處理，以確定修復位置。若為後端問題，可能涉及 search index 欄位對應或排序參數傳遞錯誤；若為前端問題，則須轉至 keypo-frontend-2023。",
+        "plan_draft": [
+          "重現問題：使用相同關鍵字與時間區間，直接呼叫 engine-api 的文章列表 endpoint，擷取原始 response JSON，比對回傳資料中按讚數欄位是否已在 API 層就順序錯誤，以判斷問題出在後端還是前端。",
+          "審查 keypo-engine-api 中處理按讚數排序的查詢邏輯：確認排序欄位名稱是否對應到正確的 likes/reaction count 欄位、排序方向參數（desc/asc）是否被正確傳遞，以及 null 值或零值是否被特殊處理導致排序異常。",
+          "檢查分頁邏輯：若排序結合 offset/cursor pagination，確認跨頁時排序欄位是否作為 tie-breaker（搭配 unique id 二次排序），避免 likes 數相同的文章因缺少穩定排序鍵而導致順序不穩定。",
+          "實作修復並撰寫回歸測試：新增單元測試或 integration test，建立已知 likes 數的測試文章集合，發出排序查詢後 assert 回傳順序符合 desc 規則，防止日後同類排序邏輯退化。",
+          "部署至 staging 環境，使用與 bug report 相同的關鍵字與時間區間執行驗收測試，截圖確認排序順序正確後，再提交 production 部署。"
+        ],
+        "risks": [
+          "排序邏輯若為共用模組，修改 likes 排序可能連帶影響「按日期排序」「按相關性排序」等其他排序模式——部署後需逐一驗證各排序模式的結果是否仍正確，監控 API error rate 及前端回報的異常搜尋結果。",
+          "若修復涉及 Elasticsearch / search index 的 mapping 或 sort script 變更，重新 index 期間可能造成查詢效能劣化或短暫結果不一致——監控 p95 查詢延遲，並準備 rollback 至舊排序邏輯的 feature flag 或快速 revert 路徑。",
+          "前端或 CDN 若對文章列表 API 有快取，修復部署後舊快取仍可能回傳錯誤排序結果——部署完成後主動清除相關 cache key，並驗證快取過期時間設定不會遮蔽修復效果。"
+        ]
+      },
+      "judgeResult": {
+        "relevance": 5,
+        "actionability": 5,
+        "correctness": 5,
+        "coverage": 5,
+        "avg": 5,
+        "reasoning": "提案精準識別 engine-api 為主要診斷目標，並以「先直呼 API 隔離前後端責任 → 審查排序欄位與 null 處理 → 驗證分頁 tie-breaker」的路徑還原問題根因，技術邏輯嚴謹；risks 欄位覆蓋了共用排序模組回歸、ES index 重建效能劣化及 CDN 快取遮蔽修復等三個具體且高相關的技術風險，各項均附監控與 rollback 建議，品質屬最高級。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Joyce",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.75,
+          "was_correct": true,
+          "bucket": "0.7-0.9"
+        },
+        "plan_quality": {
+          "judge_avg": 5,
+          "has_plan_draft": true,
+          "plan_draft_length": 5
+        },
+        "__fixture_id": 2815,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 3030,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "KEYPO/keypo-engine-api",
+          "KEYPO/keypo-backend",
+          "CrawlersV2/bigcrawler-scrapy"
+        ],
+        "suggested_assignees": [
+          "Joyce"
+        ],
+        "reasoning": "REPO NOTES 明確將「港版/日版/海外資料庫查詢」歸屬於 keypo-engine-api，issue 標題「港版資料庫查詢都錯誤沒有資料」直接命中此關鍵字；「查詢錯誤/無資料」屬於資料查詢計算層問題而非後台流程，故 keypo-engine-api 為 top-1，keypo-backend 與 bigcrawler-scrapy 作為次選以備資料未進來的情況。",
+        "confidence": 0.88,
+        "caveats": [
+          "issue 描述僅有截圖，錯誤細節需人工查看圖片內容以確認是查詢層回傳錯誤還是資料根本未進資料庫"
+        ]
+      },
+      "phase2": {
+        "summary": "港版（香港）資料庫查詢全面回傳錯誤且無資料，屬 P0 緊急事件，影響所有依賴港版資料的報表與下游系統。問題可能發生在兩個層面：keypo-engine-api 查詢計算層本身回傳錯誤，或資料根本未由爬蟲成功寫入港版資料庫。因 issue 描述僅含截圖，錯誤細節需透過 server log 與資料庫直查來釐清根本原因。若為查詢層錯誤，修復範圍集中在 keypo-engine-api；若為資料缺失，則需同步追查 bigcrawler-scrapy 爬蟲流程。",
+        "plan_draft": [
+          "查閱 keypo-engine-api 生產環境日誌，過濾港版查詢的 error log，記錄錯誤代碼、exception type、stack trace 及首次發生時間戳記",
+          "直接查詢港版資料庫，取得最新一筆資料的 ingestion 時間，判斷資料是否持續寫入；若資料表為空或停止更新，立即 escalate 至 bigcrawler-scrapy 爬蟲排程",
+          "在 keypo-engine-api staging 環境以相同查詢參數重現錯誤，取得完整 request / response，定位錯誤發生的程式碼位置",
+          "依根本原因實施修復（查詢層 bug fix 或爬蟲補抓），並在 staging 對台版、日版執行回歸測試，驗證其他地區查詢結果不受影響",
+          "部署修復至 production 後，以港版查詢端點驗證回傳資料正常，確認 error rate 在 15 分鐘內歸零後結案"
+        ],
+        "risks": [
+          "修改 keypo-engine-api 港版查詢邏輯可能連帶影響台版、日版等共用同一查詢路徑的功能，需在 staging 對所有地區執行完整回歸，確認 query result 無異常",
+          "若資料缺口已持續一段時間，補抓歷史資料期間可能造成爬蟲佇列積壓，需監控 bigcrawler-scrapy 的 job queue 長度與延遲，避免影響其他地區的正常爬取",
+          "上線後持續觀察 keypo-engine-api 港版查詢的 error rate 與 p99 延遲；若 15 分鐘內 error rate 未歸零或 p99 異常攀升，立即 rollback 本次部署並重新排查"
+        ]
+      },
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 5,
+        "correctness": 4,
+        "coverage": 4,
+        "avg": 4.25,
+        "reasoning": "repo 選擇邏輯清晰，keypo-engine-api 對應查詢層、bigcrawler-scrapy 對應資料缺口，分層合理；plan_draft 五步驟含具體指標（15 分鐘 error rate 歸零、p99 監控），可直接執行。risks 三點均切題——多地區共用查詢路徑的 regression 風險、歷史補抓造成爬蟲佇列積壓、rollback 觸發條件——屬高品質具體風險描述。扣分點：issue description 幾乎只有圖片無文字，提案只能依靠標題推斷，無法確認截圖內容是否揭示更多根因線索；assignee 建議 Joyce 未附選人理由，略薄。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Joyce",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.88,
+          "was_correct": true,
+          "bucket": "0.7-0.9"
+        },
+        "plan_quality": {
+          "judge_avg": 4.25,
+          "has_plan_draft": true,
+          "plan_draft_length": 5
+        },
+        "__fixture_id": 3030,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P0_緊急"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 259,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "KEYPO/keypo-engine-api",
+          "KEYPO/keypo-backend"
+        ],
+        "suggested_assignees": [
+          "Joyce"
+        ],
+        "reasoning": "REPO NOTES 明確將「查詢計算邏輯」與「篩選的資料清單/來源篩選處理」歸屬於 keypo-engine-api；本 issue 症狀「開啟篩選條件後資料跑不出來，初判篩選條件設置太多條件跑不動」直接命中「查詢計算邏輯」效能瓶頸，應為 engine-api 層在處理多條件 filter 時的查詢逾時或效能問題。keypo-backend 列為次要候選，若問題出在 API gateway 傳入篩選參數的序列化或超時配置則需連帶確認。",
+        "confidence": 0.78,
+        "caveats": [
+          "影片附件需確認篩選器的具體條件組合與數量，以區分是 query timeout、記憶體不足或邏輯錯誤",
+          "需確認 ENG_ASSESSMENT 帳號的篩選條件是否有特殊設定（如跨多個頻道/來源大範圍篩選），或其他帳號也有相同問題但未回報"
+        ]
+      },
+      "phase2": {
+        "summary": "某帳號在啟用已設定的篩選器後報表資料無法載入，停用篩選則恢復正常，研判為多條件 filter 組合觸發 keypo-engine-api 查詢效能瓶頸（逾時或記憶體壓力）。問題核心集中在 engine-api 的查詢計算層，多個篩選條件同時作用可能導致全表掃描或缺少複合索引。keypo-backend 的 API gateway 超時配置亦需連帶檢查，以釐清逾時發生在哪一層。此 issue 為 P1 高優先，需盡快重現並取得 query execution plan 再決定優化策略。",
+        "plan_draft": [
+          "在 staging 環境以該帳號身份重現問題：擷取目前啟用的完整篩選條件清單（條件數量、欄位類型、跨來源/跨頻道範圍），執行相同查詢，記錄回應時間或錯誤訊息",
+          "在 keypo-engine-api 開啟 slow query log，針對多條件 filter 查詢取得 EXPLAIN / query execution plan，定位是否為全表掃描、缺少複合索引或 N+1 子查詢",
+          "比對 keypo-engine-api 的 query timeout 設定與 keypo-backend API gateway 的 request timeout，判斷逾時層次；若為 timeout 觸發，評估是否需新增分頁（pagination）或 streaming 回傳機制",
+          "針對多條件 filter 路徑實作優化（新增複合索引、拆分子查詢或加入條件預篩短路邏輯），並補充整合測試覆蓋「大量篩選條件組合」場景，確保正常回傳資料",
+          "部署優化版至 staging，以相同條件驗證查詢回應時間降至可接受門檻後，再上線 production 並觀察 24 小時"
+        ],
+        "risks": [
+          "新增索引或改寫 query 可能影響 keypo-engine-api 其他高頻查詢路徑的效能，上線後需持續監控整體查詢 P95/P99 latency 與 error rate；若 error rate 超過基線 2 倍，立即執行 rollback",
+          "若優化方向為調高 timeout 閾值，可能導致慢查詢佔用 DB connection pool 過久，需同步監控 DB 連線使用率與 pool 排隊數，避免連鎖影響其他帳號的查詢",
+          "此次以單一帳號的篩選條件為重現基準，其他帳號若存在不同的大範圍跨來源篩選組合，優化效果可能不全面；建議上線後觀察整體報表查詢成功率至少 1 週，確認無新增無資料回報案例"
+        ]
+      },
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 5,
+        "correctness": 4,
+        "coverage": 5,
+        "avg": 4.5,
+        "reasoning": "keypo-engine-api 定為主責（多條件 filter 查詢效能瓶頸）、keypo-backend 為次要確認點（timeout 配置），與 issue 症狀高度吻合；plan_draft 五步驟從 staging 重現、slow query log、EXPLAIN、逾時層次比對到索引優化，技術路徑嚴謹且逐步可執行。Risks 欄位列出三個具體風險（索引影響其他查詢路徑、timeout 調升耗盡 connection pool、單帳號基準不全面），並附 rollback 條件與監控指標，整體覆蓋完整。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Joyce",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.78,
+          "was_correct": true,
+          "bucket": "0.7-0.9"
+        },
+        "plan_quality": {
+          "judge_avg": 4.5,
+          "has_plan_draft": true,
+          "plan_draft_length": 5
+        },
+        "__fixture_id": 259,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 304,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "KEYPO/keypo-engine-api",
+          "KEYPO/keypo-backend"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "Issue 核心症狀為「AI 報告顯示聲量不足」，REPO NOTES 明確將「AI 報告內的資料分析與『聲量不足/聲量過多』類判讀邏輯、聲量數值計算與閾值判斷」歸屬於 keypo-engine-api，關鍵字「聲量不足」直接命中；keypo-backend 列為次要候選，因其負責「AI 報告的產生流程與下載鏈路」，可排查帳號 jessicachi 與 Joanne 查詢結果不一致的流程差異。",
+        "confidence": 0.88,
+        "caveats": [
+          "同一關鍵字、同一時間範圍，客戶帳號 jessicachi 於 09:20 顯示聲量不足，Joanne 於 11:02 卻正常產出，需確認是否為時間差造成的資料索引延遲（而非閾值 bug），這會影響修復方向"
+        ]
+      },
+      "phase2": {
+        "summary": "某客戶帳號於查詢時，AI 報告觸發「聲量不足」判讀，但實際聲量超過 3.6 萬筆，遠高於合理閾值，顯示 keypo-engine-api 的閾值判斷邏輯或資料傳遞存在異常。同一查詢條件下，內部帳號於約兩小時後複查卻能正常產出報告，指向時間差造成的資料索引延遲，或帳號層級的查詢分流差異。核心排查方向為 engine-api 的聲量閾值判斷程式路徑，以及 keypo-backend 報告產生流程中讀取資料快照的時機。若確認為索引延遲所致，修復方向為在索引尚未完成時延後閾值判斷，而非立即回傳不足訊息。",
+        "plan_draft": [
+          "在 keypo-engine-api 定位「聲量不足」閾值判斷程式路徑，記錄觸發條件（聲量下限值、計算方式），確認是否存在帳號層級或時間窗口相關的分支邏輯。",
+          "從 server-side log 萃取客戶帳號 09:20 與內部帳號 11:02 兩次請求的索引時間戳與聲量計算中間值，量化兩次查詢之間的索引完成狀態差異。",
+          "在 staging 環境重現客戶帳號查詢條件（相同時間範圍、相同關鍵字組合），觀察 engine-api 回傳的聲量數值與閾值比較結果，確認是否可穩定重現「聲量不足」誤判。",
+          "若確認為索引延遲導致，在 keypo-engine-api 實作延遲偵測保護邏輯：當報告產生時資料索引尚未完成時，標記為「資料擷取中」而非觸發「聲量不足」判讀，並撰寫對應單元測試覆蓋此邊界條件。",
+          "部署修復版本至 staging 後，以相同帳號與時間條件執行端對端驗證，確認 AI 報告能正常產出；通過後部署至 production 並觀察 24 小時內「聲量不足」錯誤的觸發率變化。"
+        ],
+        "risks": [
+          "修改閾值判斷邏輯可能影響真正低聲量的合法場景（正常應觸發「聲量不足」的查詢），上線後需監控該錯誤訊息觸發率是否異常下降，以避免掩蓋真實低聲量案例。",
+          "若改動涉及資料索引讀取時機，可能影響所有 AI 報告的產生流程效能，需監控報告產生 P95 latency；若上線後 AI 報告成功率下降超過 5% 或 latency 顯著上升，立即回滾 engine-api 相關 commit。",
+          "此問題可能在高併發或索引延遲窗口較長時才重現，開發環境難以完整模擬；建議在 production 部署後保留詳細 log 至少 72 小時，並設置索引延遲超過閾值時的告警。"
+        ]
+      },
+      "judgeResult": {
+        "relevance": 5,
+        "actionability": 5,
+        "correctness": 4,
+        "coverage": 5,
+        "avg": 4.75,
+        "reasoning": "repo 選擇直接對應症狀（閾值判斷 → keypo-engine-api，帳號流程差異 → keypo-backend），五步驟計畫具體可執行且附帶量化監控指標（P95 latency、5% 成功率門檻、72 小時 log 保留）。correctness 輕微扣分：計畫以索引延遲作為唯一假設，未探索帳號層級快取、不同 query 參數序列化差異或報告產生時的快照時間點等替代診斷路徑，若索引延遲假設不成立，step 3 的重現方向可能偏離。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.88,
+          "was_correct": true,
+          "bucket": "0.7-0.9"
+        },
+        "plan_quality": {
+          "judge_avg": 4.75,
+          "has_plan_draft": true,
+          "plan_draft_length": 5
+        },
+        "__fixture_id": 304,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 2845,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "KEYPO/keypo-engine-api",
+          "KEYPO/keypo-backend",
+          "KEYPO/keypo-frontend-2023"
+        ],
+        "suggested_assignees": [
+          "Joyce"
+        ],
+        "reasoning": "REPO NOTES 明確將「探索概念」的查詢計算邏輯歸屬於 keypo-engine-api；issue 描述「點選探索概念卻無法產生圖表」直接命中該 repo 的職責關鍵字。AI 報告無法下載為連帶症狀，根源在於探索概念資料查詢層失敗，而非 keypo-backend 的報告下載流程本身。",
+        "confidence": 0.9,
+        "caveats": [
+          "可請 reporter 提供 console log 或錯誤訊息，確認是 engine-api 查詢回傳空值還是前端圖表渲染失敗"
+        ]
+      },
+      "phase2": {
+        "summary": "「探索概念」功能在執行複合布林關鍵字查詢、時間區間設為一年時，回傳空資料導致圖表無法渲染。此問題根源研判在 keypo-engine-api 的探索概念查詢計算層，而非前端渲染或報告下載流程本身。AI 報告無法下載為連帶症狀，只要探索概念 API 回傳正常資料即可解除。此為 P1 高優先度缺陷，目前無歷史相似案例可參考，需從 API 層重新追查。",
+        "plan_draft": [
+          "在 staging 環境重現問題：使用相同複合布林關鍵字與一年時間區間發送探索概念請求，擷取完整 HTTP request/response（含 status code、response body、耗時）。",
+          "檢查 keypo-engine-api 對應時間區間的 server log，定位探索概念查詢是回傳空陣列、拋出例外、還是查詢逾時，確定失敗點。",
+          "審查 keypo-engine-api 探索概念查詢邏輯，驗證複合布林運算子（AND、OR、N•ONE / N.ONE 特殊語法）與長時間區間（≥365 天）的邊界條件是否正確處理。",
+          "若 engine-api 確認回傳空值，向上追查資料索引層：驗證該關鍵字對應的資料在指定一年區間內確實已被正確索引並可查詢。",
+          "修復後新增整合測試：覆蓋複合布林關鍵字 + 一年時間區間的探索概念查詢，確保回傳結果非空且圖表資料結構符合 schema。"
+        ],
+        "risks": [
+          "查詢邏輯修改可能影響其他長時間區間或複雜關鍵字的探索概念請求：部署後監控探索概念 API 的 p95 回應時間與 error rate，若 error rate 上升超過基準 1% 則觸發 rollback。",
+          "若根因涉及索引結構或 aggregation pipeline 調整，可能影響其他報告類型的查詢效能：部署前在 staging 執行回歸測試，覆蓋趨勢分析與聲量統計功能。",
+          "N•ONE / N.ONE 特殊符號語法在不同資料量規模下可能有不同解析行為，staging 環境資料量較小可能無法完整重現：上線後保留快速 hotfix 通道，並觀察前 24 小時內的探索概念成功率指標。"
+        ]
+      },
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 5,
+        "correctness": 5,
+        "coverage": 4,
+        "avg": 4.5,
+        "reasoning": "Plan draft 技術路徑清晰——從 staging 重現、server log 定位失敗點、特殊符號語法審查到索引層追查，邏輯鏈條完整且與 issue 描述高度吻合；risks 欄位具體列出 p95 + error rate 閾值與 rollback 條件，明顯優於空白或泛泛聲稱無風險。扣分點在於：layer 標為 n/a 而非明確定位（engine-api 應屬 data/query 層），且 plan 未分支考慮前端圖表渲染邏輯本身（如 schema 不符或空資料 guard 缺失）可能獨立導致圖表無法顯示的情境，探索概念的 frontend 責任雖列入 suggested_repos 但 plan_draft 步驟未對應覆蓋。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Joyce",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.9,
+          "was_correct": true,
+          "bucket": "0.9-1"
+        },
+        "plan_quality": {
+          "judge_avg": 4.5,
+          "has_plan_draft": true,
+          "plan_draft_length": 5
+        },
+        "__fixture_id": 2845,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 2866,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy",
+          "KEYPO/keypo-engine-api"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "Issue 核心症狀為「特定新聞網站 juksy.com 長達一年完全無文章資料」，REPO NOTES 明確指出 CrawlersV2/bigcrawler-scrapy 是「新聞網站沒有文章、來源斷線、抓不到新文章」的歸屬處，關鍵詞直接命中。若爬蟲端確認已有資料入庫但查詢仍缺漏，則需轉至 keypo-engine-api（來源缺失／頻道篩選問題）。",
+        "confidence": 0.88,
+        "caveats": [
+          "需確認 juksy.com 是否曾被納入爬蟲來源清單，抑或從未 onboard（新增來源 vs 修復斷線，處理路徑不同）"
+        ]
+      },
+      "phase2": {
+        "summary": "某新聞頻道在系統中已持續約一年未出現任何文章資料，屬 P1 高優先度資料缺失事件。初步需釐清該來源是否曾被納入爬蟲清單：若從未 onboard，走新增 spider 路徑；若已 onboard 但斷線，則走修復路徑，兩者處理步驟不同。若爬蟲端資料已確認入庫，則問題可能出在 keypo-engine-api 的頻道篩選或來源黑白名單設定。本次冷啟動無歷史案例可參考，建議依序從爬蟲設定 → 資料庫查詢 → API 篩選層逐層排查。",
+        "plan_draft": [
+          "在 CrawlersV2/bigcrawler-scrapy 設定目錄中搜尋目標網站域名，判斷是否存在對應 spider；若不存在，建立新 spider 並設定 start_urls、item pipeline、及 crawl frequency",
+          "若 spider 已存在，執行 spider dry-run 並擷取完整 scrapy log，定位 HTTP 狀態碼錯誤、CSS/XPath selector 失效、或被反爬機制封鎖的具體行號",
+          "查詢爬蟲資料庫中目標來源的最後成功抓取時間與歷史文章總筆數，確認資料斷點時間，作為後續回填時間範圍的依據",
+          "若爬蟲端資料已入庫，在 keypo-engine-api 檢查來源白名單／黑名單設定及頻道篩選規則，確認目標來源是否被過濾排除",
+          "修復或新增 spider 並重新部署後，對目標來源執行指定時間範圍的回填抓取，並在前端查詢介面驗證文章可正確呈現"
+        ],
+        "risks": [
+          "大量回填抓取可能短時間內觸發目標網站的 rate limit 或反爬封鎖，需在 spider 設定 DOWNLOAD_DELAY 及 AUTOTHROTTLE，並監控回填期間的爬蟲成功率與 HTTP 4xx/5xx 比例",
+          "修改 keypo-engine-api 來源篩選規則屬全域設定，可能影響其他頻道的文章可見性；上線後需監控整體搜尋結果數量與 API error rate，並備妥 rollback commit 以便快速還原",
+          "若目標網站曾改版導致 HTML 結構異動，修復後的 selector 邏輯需在 staging 環境以近期多篇文章頁驗證，避免影片頁、廣告頁等非文章頁誤採集造成髒資料入庫"
+        ]
+      },
+      "judgeResult": {
+        "relevance": 5,
+        "actionability": 5,
+        "correctness": 5,
+        "coverage": 5,
+        "avg": 5,
+        "reasoning": "提案技術路徑完整，從確認 spider 存在性、dry-run log 分析、DB 斷點查詢、API 過濾層逐層遞推，診斷邏輯嚴謹且符合爬蟲資料管線的標準排查流程。risks 三條均為此情境下真實潛在問題（回填觸發限速、全域篩選規則副作用、HTML 改版誤採集），具體可操作，無空洞描述。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.88,
+          "was_correct": true,
+          "bucket": "0.7-0.9"
+        },
+        "plan_quality": {
+          "judge_avg": 5,
+          "has_plan_draft": true,
+          "plan_draft_length": 5
+        },
+        "__fixture_id": 2866,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 2794,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy",
+          "KEYPO/keypo-engine/data-collector"
+        ],
+        "suggested_assignees": [
+          "Joyce"
+        ],
+        "reasoning": "依據 REPO NOTES，CrawlersV2/bigcrawler-scrapy 負責「新聞網站沒有文章、抓不到新文章」的來源層問題，是 K5 label 下最常見的資料來源層修補處；issue 描述的「漏收文章」搭配具體的 cts.com.tw 文章 URL，直接命中此 repo 的職責關鍵字。",
+        "confidence": 0.87,
+        "caveats": [
+          "趨勢曲線顯示整體收錄正常，漏收可能源自特定 URL pattern（如 /market_news/ 路徑）未被 parser 涵蓋，需爬蟲人員確認 cts.com.tw 現有抓取規則的覆蓋範圍"
+        ]
+      },
+      "phase2": {
+        "summary": "某媒體客戶的整體文章收錄趨勢曲線顯示正常，但特定欄目下的文章未被收錄，初步研判為爬蟲規則未涵蓋該網站的特定 URL 路徑所致。此問題屬資料來源層的局部漏收，影響範圍限於該媒體的特定欄目，不影響其他來源整體收錄品質。P1 高優先級代表客戶端有立即補收需求，需同步進行：手動單篇補收與爬蟲規則修補。修補方向為在 CrawlersV2/bigcrawler-scrapy 中擴充目標站點的路徑覆蓋規則，並驗證 parser 是否能正確解析該路徑下的 HTML 結構。",
+        "plan_draft": [
+          "在 CrawlersV2/bigcrawler-scrapy 中檢索目標媒體網站的現有爬蟲設定，列出已涵蓋的 URL 路徑模式，確認 /market_news/ 路徑是否缺少抓取規則或被 deny list 排除。",
+          "使用現有補收工具或後台 API 手動觸發指定文章 URL 的單篇收錄，驗證文章能成功解析並入庫，作為快速解決客戶即時需求的緊急處置。",
+          "在目標媒體站點的爬蟲設定中新增 /market_news/ 路徑規則，在本機執行爬蟲 dry-run，抽查 3-5 篇文章的解析結果（標題、發布時間、內文）是否符合預期。",
+          "新增或補充 unit test，覆蓋 /market_news/ URL pattern 的 parser 邏輯，確保標題、時間戳、內文欄位在該路徑 HTML 結構下能正確提取，測試通過後再合併主線。",
+          "部署修補版本後，在後續 24 小時內查核該媒體頻道的每日文章收錄數量趨勢，確認漏收問題已解除且無新增解析錯誤。"
+        ],
+        "risks": [
+          "新增路徑規則可能提升對目標網站的請求頻率，需監控爬蟲端的 HTTP 4xx/5xx 錯誤率，若出現 429 Too Many Requests 或 403 封鎖需立即回退規則並調整 crawl delay。",
+          "/market_news/ 欄目的 HTML 結構若與現有 parser 假設不一致（如 DOM 層級差異、時間格式不同），可能導致標題或發布時間欄位解析偏移，上線前須人工抽查解析結果，出現欄位缺值率 > 10% 時視為需回滾條件。",
+          "影響範圍僅限該媒體特定欄目，但若爬蟲設定與其他欄目共用同一 spider class，修改可能連帶影響既有欄目的抓取行為，部署後需確認原有欄目的收錄數量未出現異常下降。"
+        ]
+      },
+      "judgeResult": {
+        "relevance": 5,
+        "actionability": 5,
+        "correctness": 5,
+        "coverage": 4,
+        "avg": 4.75,
+        "reasoning": "提案精準命中 CrawlersV2/bigcrawler-scrapy 的職責範圍，五步執行路徑（路徑排查→手動補收→規則新增→單元測試→上線監控）直接可操作且量化標準具體；risks 三點皆有明確回滾條件（429/403 封鎖、欄位缺值率 > 10%、既有欄目數量異常）屬高質量。扣一分因 layer 標記為 n/a 而非明確的 data-collection 層，且 suggested_repos 中的 data-collector 完全未出現在 plan_draft 步驟中，略有前後不一致。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Joyce",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.87,
+          "was_correct": true,
+          "bucket": "0.7-0.9"
+        },
+        "plan_quality": {
+          "judge_avg": 4.75,
+          "has_plan_draft": true,
+          "plan_draft_length": 5
+        },
+        "__fixture_id": 2794,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 2783,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy",
+          "KEYPO/keypo-engine-api"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "Issue 描述的「VOGUE、GQ文章找不到」直接命中 bigcrawler-scrapy REPO NOTES 中「新聞網站沒有文章、抓不到新文章」的職責描述，且 Data label 的 known exception 亦明確指向 CrawlersV2；若文章已入庫但查詢層過濾所致，次要懷疑為 keypo-engine-api 的來源篩選邏輯。",
+        "confidence": 0.88,
+        "caveats": [
+          "需先確認這兩篇文章是否從未進入系統（爬蟲端從未抓取），還是已入庫但搜尋時找不到（engine 查詢層問題），以決定最終路由"
+        ]
+      },
+      "phase2": {
+        "summary": "VOGUE 與 GQ 兩個媒體來源的特定文章在系統中無法查詢到，影響媒體監測數據完整性，優先級為 P1_高。問題根本原因需先釐清：可能是爬蟲端從未抓取（bigcrawler-scrapy 端），或是文章已入庫但搜尋查詢層過濾所致（keypo-engine-api 端）。本次診斷應以資料庫直查作為第一步，以決定後續修復方向是爬蟲側還是查詢側。由於無相似歷史 issue 可參考，需特別留意這兩個媒體是否有 bot 防護或 JS 動態渲染導致爬取失敗的邊界條件。",
+        "plan_draft": [
+          "直接查詢資料庫（或 Elasticsearch index），以這兩篇文章的完整 URL 或標題關鍵字搜尋，確認文章是否已存在於系統；記錄查詢結果（有 / 無）作為後續分支判斷依據。",
+          "若文章未入庫：檢視 bigcrawler-scrapy 中 VOGUE 與 GQ 對應 spider 的設定（selector、allowed_domains、robots.txt 行為），在 staging 環境手動執行該 spider 並抓取目標 URL，重現爬取失敗情況並記錄 response status / HTML 結構。",
+          "若文章已入庫但查詢不到：檢視 keypo-engine-api 的來源篩選邏輯（source whitelist、channel filter、date range filter），撈取對應 API query log，定位文章被排除的具體條件。",
+          "依診斷結果實作修正：爬蟲側需修正 selector 或新增 JS 渲染支援並補抓歷史文章；查詢側需修正篩選條件並驗證修改前後 API 回傳結果差異，兩種情況均需在測試環境通過 spot check 後才部署。",
+          "部署至 production 後，執行驗證：搜尋這兩個來源最近 7 天的文章，確認可正常出現在查詢結果，並通知回報方驗收。"
+        ],
+        "risks": [
+          "若修改 VOGUE/GQ spider 的 selector 或爬取策略，可能連帶影響這兩個來源其他文章的抓取行為；部署後需監控 24 小時內這兩個媒體的新增文章數量（article ingestion rate）是否回到正常水位，異常時應暫停該 spider 並回滾設定。",
+          "若問題在 keypo-engine-api 查詢側，修改 source filter 邏輯可能誤開或誤關其他媒體來源的查詢結果，造成非預期的回歸；需在修改前後對 API 回傳做 diff 比對，確認只影響目標來源，且 error rate 無上升。",
+          "目標文章頁面可能含有 bot 防護（Cloudflare / rate limiting）或 JavaScript 動態渲染，此邊界條件在開發環境難以穩定重現；若爬取需要 headless browser 或 proxy，需評估對爬蟲基礎設施的改動範圍，避免影響其他媒體的正常爬取頻率。"
+        ]
+      },
+      "judgeResult": {
+        "relevance": 5,
+        "actionability": 5,
+        "correctness": 5,
+        "coverage": 5,
+        "avg": 5,
+        "reasoning": "提案精準命中「文章找不到」的兩大根因（未入庫 vs 已入庫但查詢層被過濾），並以清晰的分支邏輯串連五步驟診斷路徑，技術方向完全合理。risks 三項均具體可操作（article ingestion rate 監控、API diff 比對、bot 防護與 JS 渲染邊界條件），覆蓋了 repo、assignee、風險各面向，是少見的高品質提案。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.88,
+          "was_correct": true,
+          "bucket": "0.7-0.9"
+        },
+        "plan_quality": {
+          "judge_avg": 5,
+          "has_plan_draft": true,
+          "plan_draft_length": 5
+        },
+        "__fixture_id": 2783,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 2793,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy"
+        ],
+        "suggested_assignees": [
+          "Joyce"
+        ],
+        "reasoning": "Issue 描述「設計王自 2023/12/22 中斷收錄」直接命中 REPO NOTES 中 bigcrawler-scrapy 的職責「新聞網站沒有文章、來源斷線、抓不到新文章」，屬 K5 label 下最典型的資料來源層問題，fix target 明確。",
+        "confidence": 0.9,
+        "caveats": [
+          "客戶要求單篇手動收錄，需確認是否有手動入庫流程，或需等爬蟲修復後重新補抓",
+          "可請 reporter 確認中斷範圍：是設計王全站皆未收錄，或僅特定欄目/頁面失效"
+        ]
+      },
+      "phase2": {
+        "summary": "某內容來源網站自 2023/12/22 起全面中斷收錄，屬 P1 資料來源斷線事件，影響該站所有文章無法入庫。初步研判為對應 Spider 的解析邏輯或請求設定與目標網站現行結構不相容，需定位中斷根因後修復並補抓缺漏資料。此外，客戶已提出單篇補抓的緊急需求，需評估是否有手動入庫快速通道可先行處理。",
+        "plan_draft": [
+          "1. 在 bigcrawler-scrapy 中定位該來源對應的 Spider，執行 git log 查閱 2023/12/22 前後的 commit，比對是否有選擇器、請求標頭或中介層設定的異動",
+          "2. 在 staging 環境執行該 Spider 並抓取目標頁面，擷取完整 HTTP 回應（狀態碼、response body、重導向鏈），定位解析失敗的具體節點（XPath/CSS 選擇器、JS 渲染、反爬封鎖等）",
+          "3. 對比目標網站現行 HTML 結構與 Spider 預期結構，修正選擇器或新增必要的 header/cookie/User-Agent 設定，並補寫單元測試覆蓋新解析邏輯的正常與邊界案例",
+          "4. 修復後在 staging 驗證單篇目標文章可成功解析入庫，再部署至 production 並手動觸發單篇補抓，確認資料庫記錄完整且無格式異常",
+          "5. 單篇驗收通過後，規劃分批補抓 2023/12/22 起缺漏的歷史資料，設定適當的 request delay 與批次大小，避免對目標網站造成集中高頻請求"
+        ],
+        "risks": [
+          "目標網站若在修復期間再次改版，已修正的選擇器可能再度失效；部署後需監控該 Spider 的成功率指標，若 7 天內成功率低於 80% 則暫停排程並回報",
+          "歷史缺漏資料補抓為高頻批量請求，可能觸發目標網站的 rate limit 或 IP 封鎖，導致補抓中途失敗；需以小批次加延遲方式執行，並預備更換出口 IP 的 rollback 方案",
+          "手動單篇入庫若繞過標準去重與驗證流程，可能產生重複記錄或欄位缺漏；補抓後需查詢資料庫確認該篇文章 ID 唯一性與必要欄位完整性"
+        ]
+      },
+      "judgeResult": {
+        "relevance": 5,
+        "actionability": 5,
+        "correctness": 4,
+        "coverage": 5,
+        "avg": 4.75,
+        "reasoning": "Repo 指向與 K5 爬蟲斷線場景完全吻合，plan_draft 五步驟技術細節具體（git log 日期範圍、staging HTTP 回應、選擇器修正、單篇驗收、批次補抓節流），risks 三條均有量化指標與 rollback 方案，屬高品質提案。唯一扣分點在於步驟一直接跳至 git log，未先確認 Spider 排程是否仍在執行或查閱現有 error log，若根因為基礎設施層（排程停止、網路封鎖）則診斷路徑略有繞路之虞。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Joyce",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.9,
+          "was_correct": true,
+          "bucket": "0.9-1"
+        },
+        "plan_quality": {
+          "judge_avg": 4.75,
+          "has_plan_draft": true,
+          "plan_draft_length": 5
+        },
+        "__fixture_id": 2793,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 2762,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy",
+          "KEYPO/keypo-engine-api"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "Issue 標題明確指出「網站改版沒資料」，完全命中 REPO NOTES 中 bigcrawler-scrapy 的職責關鍵字「新聞網站沒有文章、來源斷線、抓不到新文章」，研判為台灣線報來源網站改版後爬蟲 spider 失效；若爬蟲端確認資料已進來，則需進一步查 keypo-engine-api 的來源篩選資料清單是否有缺漏。",
+        "confidence": 0.88,
+        "caveats": [
+          "需確認「台灣線報」是否確為 bigcrawler-scrapy 管理的爬蟲來源，部分小型或特殊來源可能由其他爬蟲程式負責"
+        ]
+      },
+      "phase2": {
+        "summary": "台灣線報來源在前端篩選器中存在，但無任何文章資料回傳，研判為來源網站改版後爬蟲 spider 的 HTML 解析規則失效，導致資料完全斷流。需優先在 bigcrawler-scrapy 中定位對應 spider，比對網站改版後的 DOM 結構差異並修正 selector。若爬蟲端確認資料已正常入庫，則需進一步排查 keypo-engine-api 中該來源的篩選設定是否存在遺漏或停用。此問題標記 P1_高，影響所有使用該來源的查詢功能，需盡速修復並評估缺失期間的資料回補範圍。",
+        "plan_draft": [
+          "在 bigcrawler-scrapy 中定位台灣線報對應的 spider，執行 `scrapy crawl <spider_name> --logfile /tmp/crawl.log`，檢查 HTTP 回應碼、item 解析數量與 error traceback，確定斷流點。",
+          "開啟目標來源網站，用 browser DevTools 比對目前 HTML DOM 結構與 spider 中現有的 XPath/CSS selector，針對改版後節點差異更新解析規則。",
+          "修正 selector 後重跑 spider，驗證抓取到的 item 數量與改版前基準相符，並直接查詢資料庫確認資料寫入成功。",
+          "在 keypo-engine-api 查詢台灣線報的來源設定（來源 ID、slug、對應表、啟用狀態），排查是否因改版期間被標記停用或來源記錄缺失。",
+          "部署修正後，在前端篩選器選取台灣線報驗證文章列表正常出現，評估缺失時段範圍並執行歷史資料回補作業，完成後記錄回補起訖日期於 issue 中。"
+        ],
+        "risks": [
+          "Spider selector 修改可能波及同一 spider 抓取的其他欄位（標題、發布時間、分類標籤），上線後需監控資料解析成功率（item field 完整性），若空值率異常上升需立即 rollback 並重新比對 DOM。",
+          "來源網站若持續頻繁改版，爬蟲維護成本將反覆升高；建議此次修復後評估是否改接 RSS 或官方 API；同時在 bigcrawler-scrapy 為此 spider 補上爬取失敗告警，避免未來再次靜默斷流超過 24 小時。",
+          "補抓缺失期間的歷史資料時，大量請求可能觸發來源網站的頻率限制或 IP 封鎖，需設定合理的 `DOWNLOAD_DELAY` / `AUTOTHROTTLE` 參數，並在回補期間監控來源端回應碼（403/429）。"
+        ]
+      },
+      "judgeResult": {
+        "relevance": 5,
+        "actionability": 5,
+        "correctness": 5,
+        "coverage": 5,
+        "avg": 5,
+        "reasoning": "「網站改版沒資料」直接命中爬蟲失效場景，bigcrawler-scrapy 作為主責 repo 完全合理，keypo-engine-api 作為次要排查點（來源啟用狀態）邏輯嚴謹，兩層假設形成互補的排查樹。plan_draft 五步驟全部附具體指令或操作路徑（scrapy crawl 指令、DevTools DOM 比對、DB 寫入驗證、歷史回補）；risks 三條均針對此 issue 情境提出量化監控點（空值率、DOWNLOAD_DELAY、403/429 回應碼），絕非泛泛而談，是本提案最突出之處。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.88,
+          "was_correct": true,
+          "bucket": "0.7-0.9"
+        },
+        "plan_quality": {
+          "judge_avg": 5,
+          "has_plan_draft": true,
+          "plan_draft_length": 5
+        },
+        "__fixture_id": 2762,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 2894,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy",
+          "KEYPO/keypo-engine-api"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "Data label 明確指向 Crawlers 群組,bigcrawler-scrapy 負責新聞來源爬蟲與文章收錄;「有收錄到延伸閱讀」的 managertoday.com.tw 特定文章需調整/刪除,最可能的根因是資料來源層的收錄控制(黑名單/排除規則)。若排除邏輯屬查詢過濾範疇,則次要可能在 keypo-engine-api 的文章篩選層。",
+        "confidence": 0.68,
+        "caveats": [
+          "需確認此文章的排除是透過 crawler 黑名單機制下架，還是 engine-api 查詢過濾層處理",
+          "需向 reporter 確認是要一次性刪除此單篇文章，還是整個來源 (managertoday.com.tw) 需從關鍵字結果中排除"
+        ]
+      },
+      "phase2": {
+        "summary": "某篇來自特定新聞來源的文章，被錯誤收錄至關鍵字「vitabox&ai」一年區間的延伸閱讀結果中，需進行調整或移除。問題根因有兩個可能路徑：爬蟲收錄控制層（bigcrawler-scrapy 的 blacklist/排除規則）或 keypo-engine-api 的查詢過濾層。需優先釐清需求範圍——是單篇文章一次性刪除，還是整個來源網站全域排除——才能決定修改位置與策略。此為 P1 高優先，影響延伸閱讀推薦內容的品質，需盡快處理。",
+        "plan_draft": [
+          "向 reporter 確認需求範圍：單篇文章刪除（以 URL 或 article_id 為準），或將整個來源網站從該關鍵字（或全域）的延伸閱讀中排除，記錄結果作為後續實作依據",
+          "在 bigcrawler-scrapy 搜尋該來源網域的 spider 設定與 blacklist/exclude 規則，定位文章收錄的觸發條件，判斷排除邏輯應寫在 crawler 層還是 engine-api 層",
+          "依確認結果擇一實作：(a) 單篇刪除 — 在資料庫或 search index 中以 URL/article_id 定位並刪除該筆資料；(b) 來源排除 — 在爬蟲黑名單或 engine-api 篩選條件中新增該網域規則，並部署至 staging 驗證",
+          "對目標關鍵字與指定時間區間重新執行延伸閱讀查詢，驗證該文章不再出現於結果，並截圖記錄作為修復憑證回覆給 reporter",
+          "若修改位於 keypo-engine-api 過濾層，補撰 regression test 覆蓋「已排除來源不得出現在延伸閱讀查詢結果」的情境，防止後續邏輯異動造成回歸"
+        ],
+        "risks": [
+          "若以來源層黑名單排除整個網站，可能連帶下架其他關鍵字中合法收錄的同來源文章，需在部署前查詢該來源在其他關鍵字的出現頻率，評估 blast radius",
+          "單篇刪除若未同步補上持久排除規則，下次爬取週期仍可能重新收錄該文章；需確認是否在 crawler 層加入 URL 級別的永久跳過機制",
+          "修改 engine-api 篩選邏輯若缺乏測試覆蓋，上線後需監控延伸閱讀查詢的 error rate 與結果數量是否異常，若結果數驟降或出現 500 則立即 rollback 此次 filter 變更"
+        ]
+      },
+      "judgeResult": {
+        "error": "exec_failure",
+        "raw": "Command failed: claude --print --model sonnet\n"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.68,
+          "was_correct": true,
+          "bucket": "0.5-0.7"
+        },
+        "plan_quality": {
+          "judge_avg": 0,
+          "has_plan_draft": true,
+          "plan_draft_length": 5
+        },
+        "__fixture_id": 2894,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 2814,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "Issue 描述 mashdigi.com 自 7/19 起「收錄中斷」,直接命中 CrawlersV2/bigcrawler-scrapy 在 REPO NOTES 的職責說明:「新聞網站沒有文章、來源斷線、抓不到新文章,多半在這裡修」;Data label 的 primary_group 亦指向 Crawlers 層,進一步確認路由。",
+        "confidence": 0.88,
+        "caveats": [
+          "截圖內容無法直接讀取,若圖中含有具體錯誤訊息或 log,請 triage 人員確認是否需要調整路由。"
+        ]
+      },
+      "phase2": {
+        "summary": "某新聞網站自 7/19 起收錄完全中斷，目前無新文章進入資料庫，屬 P1 級資料斷線事件。可能原因包含：網站改版導致 HTML 結構異動、啟用新的反爬機制、或 spider 依賴的第三方介面失效。影響範圍集中在該站的每日文章產量，若未及時修復將產生歷史資料缺口，補抓成本隨時間遞增。初步路由至 CrawlersV2/bigcrawler-scrapy，需工程師重現錯誤後判斷修復層級。",
+        "plan_draft": [
+          "在 bigcrawler-scrapy repo 中定位負責該新聞站的 spider 檔案，執行 git log --since='2026-07-18' -- <spider_file> 取得 7/19 前後的變更記錄",
+          "在 staging 環境執行該 spider（scrapy crawl <spider_name> --loglevel=DEBUG），取得完整 error log，記錄第一個失敗的 HTTP status code 與 response body",
+          "對比 7/19 前後目標站點的 HTTP response（curl -I 比對 headers、檢查 robots.txt 是否異動），判斷是反爬封鎖、HTML 結構改版，還是 JavaScript 動態渲染導致靜態 parser 失效",
+          "依診斷結果擇一修復：更新 CSS selector/XPath、調整 request headers/User-Agent、或引入 Splash/Playwright 處理 JS 渲染；同步新增 unit test 覆蓋新的 parser 邏輯",
+          "部署修復版本後，觸發 backfill job 補抓 7/19 至今的缺口（建議以天為單位分批執行），並在 dashboard 驗證該站每日文章數量回復至歷史正常水位，觀察 48 小時確認穩定"
+        ],
+        "risks": [
+          "若修改了 spider 共用的 base class 或 middleware（如 headers、retry 策略），可能連帶影響其他使用相同基礎設施的新聞站收錄量，部署後需檢查其他站點的當日文章產量是否異常",
+          "補抓歷史缺口（數天份量）時，密集請求可能觸發目標站點的 rate limit 或 IP 黑名單，需在 backfill job 中設定合理的 DOWNLOAD_DELAY，並監控 HTTP 429/403 error rate；若封鎖發生，rollback 條件為停止 backfill job 並切換出口 IP",
+          "若網站已啟用 JavaScript 動態渲染，引入 Splash 或 Playwright 會增加 crawler 執行時間與資源消耗，需監控 crawl job 的記憶體用量與執行時長，確認不影響其他 spider 的排程"
+        ]
+      },
+      "judgeResult": {
+        "error": "exec_failure",
+        "raw": "Command failed: claude --print --model sonnet\n"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.88,
+          "was_correct": true,
+          "bucket": "0.7-0.9"
+        },
+        "plan_quality": {
+          "judge_avg": 0,
+          "has_plan_draft": true,
+          "plan_draft_length": 5
+        },
+        "__fixture_id": 2814,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 2820,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy",
+          "KEYPO/keypo-engine/data-collector"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "issue 核心症狀是「新聞文章圖片下方的文字（含客戶關鍵字昇恆昌）未被系統收錄」，屬於爬蟲結構解析層的擷取缺漏問題；REPO NOTES 明確將「新聞網站抓不到文章/內容」歸屬 CrawlersV2/bigcrawler-scrapy，playing.ltn.com.tw 為主流新聞來源，圖片下方 caption/figcaption 結構需爬蟲特殊處理才能擷取。",
+        "confidence": 0.87,
+        "caveats": [
+          "需確認 playing.ltn.com.tw 是否已列於爬蟲支援來源白名單，若為新來源則需先評估接入成本",
+          "圖片下方文字的 HTML 結構（alt text、caption、figcaption 或純 p 段落）需人工查看原始頁面確認，以決定解析方式"
+        ]
+      },
+      "phase2": {
+        "summary": "某新聞網站文章在圖片下方包含客戶監測關鍵字，但現有爬蟲未能擷取該圖片 caption 區域的文字內容，導致監測資料出現遺漏。問題核心在於 playing.ltn.com.tw 的 Spider 對 figcaption、alt text 或圖片下方 p 段落等 DOM 結構未設對應 selector。此缺漏屬於爬蟲結構解析層的擷取不完整問題，影響客戶關鍵字在該來源的涵蓋率，優先級定為 P1。需先確認該來源是否已在爬蟲支援白名單，再依實際 HTML 結構補充解析規則並驗證資料入庫。",
+        "plan_draft": [
+          "使用瀏覽器開發工具檢視 playing.ltn.com.tw/article/32212 的原始 DOM，定位圖片下方文字所在的確切 HTML 元素（figcaption / p / div[class~=caption] 等），記錄完整 XPath 或 CSS selector",
+          "在 CrawlersV2/bigcrawler-scrapy 中找到 playing.ltn.com.tw 對應 Spider，檢查現有 content 欄位的 selector 是否涵蓋上述元素；若 playing.ltn.com.tw 尚未列於白名單，先提 PR 新增來源設定並評估 crawl rate 限制",
+          "修改 Spider，新增圖片 caption 區域的 selector，對同站至少 10 篇含圖片說明的文章執行 scrapy crawl 本地測試，驗證 caption 欄位有非空輸出且不破壞原有正文欄位",
+          "在 KEYPO/keypo-engine/data-collector 端確認 caption 欄位已納入 ingestion mapping 與全文索引設定，必要時新增欄位 schema 並寫入單元測試",
+          "重跑目標文章的抓取任務，在 data-collector 側查詢索引確認關鍵字已可被搜尋命中，並記錄 before/after 的命中數作為驗收依據"
+        ],
+        "risks": [
+          "修改 Spider selector 可能影響 playing.ltn.com.tw 其他文章的正文擷取完整性；部署後需對近 30 天已抓取文章執行 regression check，監控 content 欄位平均字數與空值率是否出現異常波動，若空值率上升超過 5% 立即回滾該 Spider 版本",
+          "若 playing.ltn.com.tw 屬新接入來源或需大量補抓歷史文章，高頻請求可能觸發目標網站的反爬機制（IP 封鎖 / rate limit）；須確認 crawl delay 設定並在非尖峰時段執行補抓，監控 HTTP 4xx/5xx 比率",
+          "圖片下方文字的 DOM 結構依賴目標網站前端實作，網站改版後 selector 可能失效導致 caption 欄位靜默為空；需在 Spider 層新增 caption 欄位空值率監控告警（建議閾值 > 30% 時觸發通知）"
+        ]
+      },
+      "judgeResult": {
+        "relevance": 5,
+        "actionability": 5,
+        "correctness": 5,
+        "coverage": 5,
+        "avg": 5,
+        "reasoning": "診斷路徑完全正確：圖片 caption 未被 Spider selector 涵蓋是典型爬蟲結構缺漏，CrawlersV2/bigcrawler-scrapy + data-collector 雙層定位精準。risks 三條均具體可量測（空值率閾值、HTTP 4xx 監控、selector 靜默失效告警），不是空洞聲明，計畫步驟有驗收依據（before/after 命中數），屬於高品質提案。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.87,
+          "was_correct": true,
+          "bucket": "0.7-0.9"
+        },
+        "plan_quality": {
+          "judge_avg": 5,
+          "has_plan_draft": true,
+          "plan_draft_length": 5
+        },
+        "__fixture_id": 2820,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 2826,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "issue 描述「留言都沒收錄」屬於爬蟲未抓到資料的問題，直接命中 REPO NOTES 中 bigcrawler-scrapy「數量不對、抓不到新文章」及「資料來源層問題歸屬」的職責描述；Data label 的 known_exceptions 也明確指向 CrawlersV2 群組。",
+        "confidence": 0.85,
+        "caveats": [
+          "需確認 mamibuy 留言（回文）爬取是否為既有功能範圍，還是從未實作過的新需求"
+        ]
+      },
+      "phase2": {
+        "summary": "某篇 mamibuy 討論文章的主文已成功爬取入庫，但其下 3 則回文（留言）在指定日期區間內均未收錄，導致關鍵字相關的留言互動數據不完整。初步研判原因有二：一是 bigcrawler-scrapy 的 mamibuy spider 從未實作留言爬取邏輯（功能缺失），二是留言採動態載入或分頁 API，現有爬蟲未處理此端點（回歸）。此議題標記 P1 高優先，需先釐清屬新需求或既有功能故障，再決定修補範圍。影響面限於 mamibuy 來源的留言互動量數據，報表中相關計數將偏低直至補收完成。",
+        "plan_draft": [
+          "1. 搜尋 bigcrawler-scrapy repo 中 mamibuy spider 檔案，逐行檢查是否存在留言 / 回文 / comment 相關的 selector、API endpoint 或 parse 方法，記錄現有爬取範圍，確認留言爬取是功能缺失還是邏輯錯誤。",
+          "2. 使用 browser DevTools Network tab 對目標文章頁面進行抓包，記錄留言資料的實際 HTTP endpoint（含 request headers、query params、分頁參數），判斷是否需要登入 cookie 或特定 User-Agent。",
+          "3. 依步驟 2 的 endpoint 規格，在 mamibuy spider 中實作或修補留言爬取邏輯（新增 parse_comments 方法或修正現有 selector），確保輸出欄位符合既有資料 schema。",
+          "4. 在本機執行修補後的 spider，針對指定日期區間抓取，驗證目標文章的留言數量與頁面實際顯示一致（預期至少 3 則），並檢查 item pipeline 寫入結果無欄位遺漏。",
+          "5. 補收指定區間歷史留言資料並寫入正式資料庫，同時新增 unit test 覆蓋留言欄位解析，確保未來爬取不再跳過回文。"
+        ],
+        "risks": [
+          "若此次為新增留言欄位（schema 變更），需同步確認下游報表 SQL / ETL 是否相容新欄位，避免空值導致聚合計算錯誤；上線前需在 staging 環境跑完整 pipeline 驗證。",
+          "mamibuy 留言可能採 JavaScript 動態渲染或需帶登入 session，headless 爬蟲環境可能無法重現，需監控補收期間的 HTTP 4xx / 5xx error rate；若錯誤率超過 10%，暫停補收並回報來源限制。",
+          "補收歷史區間資料時，高頻請求可能觸發來源網站 rate limit 或 IP 封鎖，建議設定每次請求間隔並準備 rollback 腳本，可快速刪除本次補收資料重新執行。"
+        ]
+      },
+      "judgeResult": {
+        "relevance": 5,
+        "actionability": 4,
+        "correctness": 5,
+        "coverage": 5,
+        "avg": 4.75,
+        "reasoning": "bigcrawler-scrapy 對應「留言未收錄」的爬蟲診斷完全命中，repo 選擇與技術診斷路徑（spider 檔案 → network 抓包 → 實作補丁 → 補收）均正確且有技術依據；risks 三條具體有閾值（10% error rate、rollback 腳本），加分明顯。Actionability 扣一分：步驟 5 補收機制未指明觸發方式（手動腳本/排程？），unit test 案例也未預先列舉，留有模糊空間。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.85,
+          "was_correct": true,
+          "bucket": "0.7-0.9"
+        },
+        "plan_quality": {
+          "judge_avg": 4.75,
+          "has_plan_draft": true,
+          "plan_draft_length": 5
+        },
+        "__fixture_id": 2826,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 2879,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "Issue 描述中廣新聞網 12/7 後無文章、LINE TODAY 文章未收錄，直接命中 REPO NOTES 中 bigcrawler-scrapy 的職責說明：「新聞網站沒有文章、來源斷線、抓不到新文章，多半在這裡修」；Data label 的 primary_group 亦為 Crawlers，且 CrawlersV2 列於 known_exceptions，進一步確認路由目標。",
+        "confidence": 0.9,
+        "caveats": [
+          "issue 包含兩個不同來源（中廣新聞網、LINE TODAY），建議確認是否為同一 spider 問題或需分兩筆 ticket 處理。"
+        ]
+      },
+      "phase2": {
+        "summary": "某新聞網站自 12/7 起文章收錄中斷，疑似 spider selector 失效或目標網站 HTML 結構異動導致 parse 失敗。另一聚合平台亦有特定時段文章未收錄，且該平台同時轉載前述網站內容，兩者可能共享同一上游來源或個別 spider 均有問題。此 P1 問題影響關鍵字監控的即時性，若不修復將造成持續性資料缺口。建議先確認兩個來源是否為同一 spider，再決定是合併修復或拆票處理。",
+        "plan_draft": [
+          "重現問題：在本地環境執行 bigcrawler-scrapy 中對應的新聞網站 spider，抓取 12/7 前後日期範圍的文章列表，對比 12/6 與 12/8 輸出數量，記錄 HTTP status code、response body 及 selector 命中結果。",
+          "檢查 HTML 結構差異：使用 curl 或 scrapy shell 抓取目標網站首頁與文章列表頁，對比現有 spider 的 XPath / CSS selector，定位 12/7 後失效的欄位（文章列表容器、分頁邏輯、URL pattern）。",
+          "重現聚合平台未收錄問題：執行對應 spider 並帶入特定日期參數，抓取該平台的文章列表頁，記錄 parse 結果，確認是入口 URL 已變更、反爬機制觸發（403/429），或 item extractor 邏輯錯誤。",
+          "修復 spider：依重現結果更新 selector / middleware / User-Agent 或 cookie 策略，撰寫或更新對應 unit test 覆蓋新舊 HTML 結構，確保 CI 通過後再 deploy。",
+          "執行 backfill 補抓：部署修復版後，針對 12/7 至今的缺口日期執行補抓任務，驗證入庫文章數量恢復至歷史正常水位，並通知回報者確認關鍵字搜尋結果已補齊。"
+        ],
+        "risks": [
+          "Backfill 大量歷史文章可能造成資料庫寫入 QPS 突增或觸發重複文章去重邏輯異常，需在 backfill 前設置批次寫入限速，並監控 DB write latency 與重複率；若重複率超過 5% 應暫停 backfill 並排查去重邏輯。",
+          "兩個來源若屬獨立 spider，修復其中一個可能遮蔽另一個仍未收錄的問題；需分別驗證兩個來源的文章數量恢復正常，並考慮是否拆分兩筆 ticket 獨立追蹤。",
+          "目標網站若為動態反爬更新（非結構性改版），短期修復後仍可能再次中斷；需在 CI 或監控系統中設置每日文章數量下限告警（建議閾值低於歷史平均 30% 即觸發），以便及早發現下次斷線。"
+        ]
+      },
+      "judgeResult": {
+        "relevance": 5,
+        "actionability": 5,
+        "correctness": 5,
+        "coverage": 5,
+        "avg": 5,
+        "reasoning": "路由命中精準，bigcrawler-scrapy 對應 Crawlers primary_group 且 REPO NOTES 明確說明「新聞網站沒有文章多半在這裡修」，reasoning 有明確來源依據；plan_draft 五步驟從本地重現、selector 差異分析、聚合平台重現到修復與 backfill 邏輯完整，技術用語具體（scrapy shell、XPath/CSS selector、403/429 反爬判斷），risks 三項均附量化門檻（5% 重複率、30% 文章量下限告警）且針對「兩來源需分別驗證」的實際風險有明確提醒，整體無明顯缺漏。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.9,
+          "was_correct": true,
+          "bucket": "0.9-1"
+        },
+        "plan_quality": {
+          "judge_avg": 5,
+          "has_plan_draft": true,
+          "plan_draft_length": 5
+        },
+        "__fixture_id": 2879,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 2761,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "Issue 描述「網站改版中斷收錄」直接命中 REPO NOTES 中 bigcrawler-scrapy 的職責：「新聞網站沒有文章、來源斷線、抓不到新文章」；記者爆料網(new-reporter.com)屬於外部新聞來源爬蟲需修復的典型案例，且帶有 Data label，default assignee 為 Walt。",
+        "confidence": 0.9,
+        "caveats": [
+          "Reporter 同時附上一篇具體文章 URL，需確認是僅補收這一篇，還是需要全面修復該來源爬蟲"
+        ]
+      },
+      "phase2": {
+        "summary": "某新聞來源網站因改版導致爬蟲收錄中斷，目前無法正常入庫新文章。問題根因為網站 HTML 結構變更，bigcrawler-scrapy 對應 spider 的選擇器已失效。報告方同時附上一篇具體文章 URL，需判斷是單篇補收還是需全面修復該來源爬蟲。此問題屬 P1 高優先，影響該來源所有後續文章的即時性。建議優先修復 spider 並補跑缺失區間的歷史文章。",
+        "plan_draft": [
+          "在 bigcrawler-scrapy 中執行 new-reporter.com 對應 spider，擷取完整錯誤 traceback 與實際 HTTP response，記錄改版後的 status code 與 DOM 根節點差異",
+          "對比改版前後的 HTML 結構，定位 article list selector 與 article content selector（標題、內文、日期、作者）的變更點，更新 spider 的 CSS/XPath 規則",
+          "使用報告方提供的文章 URL 執行 spider 單篇抓取，驗證解析輸出符合 pipeline 預期欄位格式與資料完整性",
+          "在測試環境執行完整回歸測試，涵蓋列表頁分頁、單篇解析、去重邏輯，確認最近 20 篇文章均可正確收錄且無重複入庫",
+          "部署修復版本後，補跑中斷期間（改版日至今）的歷史文章回填，並設定監控警報：若該來源每日入庫筆數低於基準值 50% 則觸發通知"
+        ],
+        "risks": [
+          "改版後網站可能內建反爬機制（rate limiting / User-Agent 檢查 / bot detection）；若修復後短時間大量請求觸發封鎖，需立即降低爬取頻率並評估是否啟用 proxy rotation，rollback 條件為連續 3 次請求均返回 403/429",
+          "分頁邏輯若隨改版一併變動，可能造成歷史文章重複收錄或漏收；需在 staging 環境以 URL dedup 機制驗證，並監控去重命中率是否異常攀升",
+          "若 new-reporter.com spider 繼承共用 base spider class，選擇器修改可能連帶影響其他使用同一 base 的來源；部署後需監控整體爬蟲 error rate 24 小時，異常上升則優先 rollback 此 PR"
+        ]
+      },
+      "judgeResult": {
+        "relevance": 5,
+        "actionability": 5,
+        "correctness": 5,
+        "coverage": 5,
+        "avg": 5,
+        "reasoning": "repo 選擇精準對應新聞爬蟲中斷場景，plan_draft 五步驟從 traceback 擷取、selector 差異比對、單篇驗證、回歸測試到歷史回填皆有明確操作目標與驗收條件，技術診斷路徑完全合理。risks 三項均具體且帶有 rollback 觸發條件（403/429 連續三次、去重命中率異常、整體 error rate 監控 24h），涵蓋 repo、assignee、風險三維度無缺漏。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.9,
+          "was_correct": true,
+          "bucket": "0.9-1"
+        },
+        "plan_quality": {
+          "judge_avg": 5,
+          "has_plan_draft": true,
+          "plan_draft_length": 5
+        },
+        "__fixture_id": 2761,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "fixture_id": 2860,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy",
+          "KEYPO/keypo-engine/data-collector"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "Issue 描述美麗島電子報、知新聞、農傳媒、沃草、臺灣時報等多個新聞來源於不同時間點後停止收錄文章,與 REPO NOTES 對 CrawlersV2/bigcrawler-scrapy 的職責「新聞網站沒有文章、來源斷線、抓不到新文章,多半在這裡修」直接命中;多站同時斷收亦可能涉及 data-collector 排程或 pipeline 層面的系統性異常。",
+        "confidence": 0.9,
+        "caveats": [
+          "多個不同來源同時出現斷收且時間點各異,需確認是各自 spider 問題還是共用 IP/User-Agent 被封鎖的系統性原因"
+        ]
+      },
+      "phase2": {
+        "summary": "多個新聞來源在不同時間點陸續停止收錄文章，涉及至少七個站點，斷收時間從數月前延伸至近期，屬 P1 高優先度問題。各站斷收時間點不一致，可能是個別 spider 因目標站 DOM 結構變更而失效，也可能是共用爬取層（IP／User-Agent）遭多站封鎖的系統性原因，需分層排查。問題橫跨 bigcrawler-scrapy 抓取層與 data-collector 排程／pipeline 層，兩端均需確認。客戶已提供具體文章 URL，可直接作為重現測試的入口，有助快速縮小根因範圍。",
+        "plan_draft": [
+          "在 bigcrawler-scrapy 中，針對各斷收站點以客戶提供的具體文章 URL 手動執行對應 spider，記錄 HTTP 狀態碼與回應內容，區分「網站 DOM 結構變更導致解析失敗」vs「請求被目標站拒絕（403／429／503）」兩類根因。",
+          "若確認為 DOM 結構變更，逐一比對各站 spider 的 selector／XPath 與目前線上頁面結構，更新解析邏輯後新增對應 unit test，確保測試覆蓋新舊兩版結構的解析路徑。",
+          "若多站同時出現 403／429，切換備用 User-Agent 或 proxy pool 對相同 URL 重新執行，判斷是否為 IP／UA 系統性封鎖；若確認，更新爬取策略（輪換 UA、加入 request delay、啟用 proxy rotation）並在 staging 環境驗證後部署。",
+          "在 data-collector 檢查各斷收站點排程任務的最後執行時間戳與執行 log，定位任務是否存在靜默失敗（exit code 0 但無資料寫入）或排程未觸發的情況，並修復對應的錯誤處理與告警缺失。",
+          "修復部署後，以各站最新文章 URL 執行端對端驗證，確認文章成功寫入資料庫，並在 monitoring dashboard 觀察各站每日收錄數量是否回到歷史基準線（連續 24 小時正常）。"
+        ],
+        "risks": [
+          "若統一調整 User-Agent 輪換或 proxy 策略，可能連帶影響目前正常運作的其他站點爬取穩定性；上線後需監控全站爬取成功率，若整體錯誤率上升超過 5% 需立即回滾該設定變更。",
+          "各站 spider selector 改動後，需回歸測試共用同一 base spider 或 mixin 的其他站點，避免繼承關係導致非預期解析中斷；建議在 CI 中補充 spider 回歸測試套件。",
+          "部分站點斷收時間長達數月，若執行歷史資料補收，需監控 pipeline queue 積壓深度與 DB write latency，避免大批量補收衝擊線上查詢效能；必要時分批限速補收，設定每批次上限。"
+        ]
+      },
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 5,
+        "correctness": 4,
+        "coverage": 5,
+        "avg": 4.5,
+        "reasoning": "CrawlersV2/bigcrawler-scrapy 與 data-collector 的組合選擇非常切題，plan_draft 以具體 URL 重現、HTTP 狀態碼分流（DOM 解析失敗 vs. 封鎖）再到排程靜默失敗的診斷路徑技術上完全合理；唯一小扣點是 reasoning 中提及了農傳媒、沃草、臺灣時報等 issue 描述中未出現的站點，略有資訊不準確。三個 risks 均具體且直接對應 plan 步驟（全站 UA 策略、base spider 繼承回歸、補收衝擊 DB），屬高品質風險覆蓋。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.9,
+          "was_correct": true,
+          "bucket": "0.9-1"
+        },
+        "plan_quality": {
+          "judge_avg": 4.5,
+          "has_plan_draft": true,
+          "plan_draft_length": 5
+        },
+        "__fixture_id": 2860,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "test",
+      "fixture_id": 2857,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "KEYPO/keypo-backend",
+          "KEYPO/keypo-newsletter"
+        ],
+        "suggested_assignees": [
+          "Joyce"
+        ],
+        "reasoning": "REPO NOTES 明確將「速報寄送與推播排程」歸屬至 KEYPO/keypo-backend，issue 描述的「速報延遲兩小時才發送」直接命中此關鍵字；若延遲發生在郵件投遞層而非排程觸發層，則 keypo-newsletter 的排程設定亦需同步確認。",
+        "confidence": 0.88,
+        "caveats": [
+          "需確認速報寄送架構：若 keypo-backend 只負責觸發排程、實際郵件由 keypo-newsletter 執行，則 root-cause 可能在後者而非前者"
+        ]
+      },
+      "phase2": {
+        "summary": "某客戶訂閱的速報被設定於 17:15 發送，實際收到時間延遲約 2 小時（19:23），屬 P1 高優先級 Bug。延遲時長恰好為 2 小時，高度懷疑是時區處理錯誤所致（例如排程以 UTC 執行，而使用者輸入的是 UTC+8 台北時間）。問題可能出在 keypo-backend 的排程觸發層，亦可能在 keypo-newsletter 的郵件投遞層，需分段追查才能鎖定 root cause。建議優先比對排程觸發 log 的實際 triggered_at 與 scheduled_at，再向下追查郵件佇列進出時間差。",
+        "plan_draft": [
+          "至 keypo-backend 查閱排程觸發 log，依速報主題關鍵字過濾，確認 11/26 該任務的實際 triggered_at 是否為 UTC 17:15（對應 UTC+8 01:15）而非 UTC+8 17:15，藉此判斷時區解析是否有誤。",
+          "若 keypo-backend 觸發時間正確（UTC+8 17:15），進入 keypo-newsletter 郵件佇列 log，量測郵件從 enqueue 到實際投遞（delivered_at）的時間差，確認是否有佇列阻塞、retry 或 rate-limit 行為導致延遲。",
+          "檢查速報排程設定的時區欄位（DB schema 或設定檔），確認使用者輸入的 local time 在儲存時是否有明確 timezone 標註；若發現欄位缺乏 timezone offset，實作修正使其統一轉換為 UTC 儲存。",
+          "在 staging 環境重現：建立與問題速報相同設定的測試速報，監控排程觸發時間與郵件投遞時間，驗證修正後「使用者輸入 local time → 儲存為 UTC → 排程以 UTC+8 正確觸發」的完整流程。",
+          "撰寫單元測試涵蓋 local time → UTC 轉換邊界情境（跨日、DST 若適用），通過後部署至 staging 執行回歸測試，確認所有現有速報排程的 triggered_at 未受影響，方可上 production。"
+        ],
+        "risks": [
+          "時區修正若改動排程儲存或觸發邏輯，可能影響全體用戶現有速報的觸發時間點；上線前需清查 DB 中所有速報的 scheduled_at 欄位，確認修正方向不會導致其他速報提早或反向延後，建議於 off-peak 時段部署並在首批速報發出後立即核對 triggered_at vs scheduled_at 差值。",
+          "若 keypo-backend 與 keypo-newsletter 各自存有時區補償邏輯，雙側同時修正可能造成補償疊加、速報時間偏移方向相反；修改前需明確確認兩個 repo 的時區處理邊界，避免重複校正。",
+          "Rollback 條件：部署後 60 分鐘內，若任意速報的實際投遞時間與預設時間差異超過 5 分鐘，立即 rollback；持續監控指標為 delivery_delay_seconds（P95）與排程 log 中 triggered_at − scheduled_at 的分佈。"
+        ]
+      },
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 5,
+        "correctness": 4,
+        "coverage": 5,
+        "avg": 4.5,
+        "reasoning": "排程與時區診斷路徑技術上合理，5步驟皆附具體 log 欄位（triggered_at、delivered_at、delivery_delay_seconds P95）與 staging 驗證流程，可操作性極高；risks 三點具體相關，尤其雙側時區補償疊加風險與量化 rollback 條件為高品質覆蓋。唯延遲恰好 2 小時（19:23 − 17:15）與純 UTC vs UTC+8（應差 8 小時）的假說不吻合，提案未明確說明為何推斷為時區問題而非佇列阻塞或其他根因，輕微削弱診斷正確性。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Joyce",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.88,
+          "was_correct": true,
+          "bucket": "0.7-0.9"
+        },
+        "plan_quality": {
+          "judge_avg": 4.5,
+          "has_plan_draft": true,
+          "plan_draft_length": 5
+        },
+        "__fixture_id": 2857,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "test",
+      "fixture_id": 2892,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "KEYPO/keypo-backend",
+          "llmprojects/keypo-agent"
+        ],
+        "suggested_assignees": [
+          "Joyce"
+        ],
+        "reasoning": "REPO NOTES 明確指出「agent 的錯誤訊息顯示問題通常在 keypo-backend」,且 keypo-backend 職責描述包含「agent 錯誤訊息顯示邏輯」,issue 描述的「錯誤訊息沒有單位」直接命中此條目。llmprojects/keypo-agent 列為次要候選,因若問題出在 agent 回傳文字本身的格式則需一併確認。",
+        "confidence": 0.88,
+        "caveats": [
+          "需確認「沒有單位」是後端格式化時遺漏,還是 agent 本身回傳的文字就缺少單位;若為後者,修復點可能移至 llmprojects/keypo-agent。"
+        ]
+      },
+      "phase2": {
+        "summary": "KEYPO Agent 回傳的錯誤訊息缺少數量單位（如「筆」、「字」），導致使用者無法判斷數字的語意，影響使用者對錯誤狀態的正確理解。根據路由分析，主要修復點在 keypo-backend 的錯誤訊息格式化邏輯，但若 agent 本身回傳的文字就不含單位，則需同步修復 llmprojects/keypo-agent 的回傳格式。此問題屬 P1 高優先級，需儘速定位根源並修復，避免用戶持續產生誤判。",
+        "plan_draft": [
+          "在 keypo-backend 中搜尋 agent 錯誤訊息的組裝位置（例如 error message formatter 或 response builder），檢查數字欄位是否有加上對應單位（筆、字、則等）；若有遺漏，補上正確單位字串並撰寫單元測試覆蓋該格式化函式。",
+          "在 llmprojects/keypo-agent 中擷取 agent 實際回傳的 raw error payload，比對其中的數字欄位是否已含單位；若 agent 層就缺少單位，修改 agent 的 prompt template 或 output parser，確保輸出格式包含明確單位。",
+          "在本機或 staging 環境重現觸發錯誤訊息的情境（例如超出查詢限制），驗證修復後的訊息中數字後方已正確附加單位，且中英文格式一致。",
+          "新增或更新 integration test，覆蓋錯誤訊息包含單位的斷言，防止後續迭代回歸。",
+          "部署至 staging 後，由 QA 或 Joyce 對照原始 issue 截圖驗收；確認無誤後合併並部署至 production，並通知相關 stakeholder 已修復。"
+        ],
+        "risks": [
+          "若同時修改 keypo-backend 格式化邏輯與 keypo-agent prompt，兩處變動可能產生單位重複（例如「20筆筆」）或格式衝突，上線前需在 staging 對所有錯誤類型（數量限制、字數限制等）逐一驗證，確保單位只出現一次且語意正確。",
+          "修改 agent prompt template 可能影響 agent 其他回傳場景的輸出格式（非錯誤訊息路徑），需在 staging 對正常查詢流程執行回歸測試，監控 agent response 的格式是否有非預期變化。",
+          "影響範圍限於 KEYPO Agent 錯誤訊息顯示，不涉及核心查詢邏輯；上線後監控 error rate 與 agent timeout 指標 24 小時，若有異常升高則 rollback 至前一版本。"
+        ]
+      },
+      "judgeResult": {
+        "relevance": 5,
+        "actionability": 4,
+        "correctness": 4,
+        "coverage": 5,
+        "avg": 4.5,
+        "reasoning": "提案精準命中 keypo-backend（格式化層）與 keypo-agent（prompt/output parser 層）兩個真實可能的根因，risks 欄位具體點出「單位重複（20筆筆）」此一修雙層時的實際陷阱，十分加分。plan 步驟可操作，但未指出具體的檔案路徑或函式名稱模式，故 actionability 扣一分。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Joyce",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.88,
+          "was_correct": true,
+          "bucket": "0.7-0.9"
+        },
+        "plan_quality": {
+          "judge_avg": 4.5,
+          "has_plan_draft": true,
+          "plan_draft_length": 5
+        },
+        "__fixture_id": 2892,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "test",
+      "fixture_id": 2821,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "KEYPO/keypo-engine-api",
+          "KEYPO/keypo-frontend-2023"
+        ],
+        "suggested_assignees": [
+          "Joyce"
+        ],
+        "reasoning": "REPO NOTES 明確將「頻道/來源篩選的資料清單(名稱重複、來源缺失、分類錯誤)」歸屬於 keypo-engine-api;並特別說明「下拉名稱重複/不完整」這類看似 UI 的問題實為資料內容錯誤,不屬於 keypo-frontend-2023。issue 標題「頻道篩選名稱重複」直接命中 keypo-engine-api 的職責關鍵字。",
+        "confidence": 0.88,
+        "caveats": [
+          "截圖無法直接存取,需請 reporter 說明重複的頻道名稱與重現步驟,以輔助資料層定位根因"
+        ]
+      },
+      "phase2": {
+        "summary": "頻道篩選下拉選單出現名稱重複的問題，導致使用者無法正確區分不同頻道來源，影響報表篩選的準確性。根據路由結論，根因位於 keypo-engine-api 的資料層，而非前端渲染邏輯——重複名稱是資料內容本身的問題，不是顯示端的 bug。目前截圖無法直接存取，重現所需的具體頻道名稱與操作步驟須向 reporter 索取。在取得明確重現條件前，工程師應優先排查 API 查詢層是否缺少去重機制或資料庫中存在重複記錄。",
+        "plan_draft": [
+          "向 reporter 索取：重複出現的頻道名稱（至少兩筆）、重現步驟（日期範圍、篩選條件、環境），並要求附上 Network tab 的 API response 截圖以輔助定位",
+          "在 keypo-engine-api 中定位頻道清單查詢端點，檢查 SQL 或 ORM 查詢是否缺少 DISTINCT／GROUP BY 去重，以及是否有多個資料來源 JOIN 導致笛卡兒積",
+          "查詢資料庫中頻道表，執行 SELECT name, COUNT(*) ... GROUP BY name HAVING COUNT(*) > 1，列出實際重複記錄並判斷是資料骯髒還是查詢邏輯缺陷",
+          "依根因選擇修復方案：若為查詢缺陷則在 API 層加入去重邏輯並補充單元測試；若為髒資料則撰寫資料清理 migration script，並在 staging 執行後人工驗證",
+          "部署至 staging，以 reporter 提供的條件重現原始場景，驗證頻道清單無重複；通過後再部署 production 並通知 reporter 驗收"
+        ],
+        "risks": [
+          "頻道清單 API 若被報表篩選、搜尋、匯出等多個功能共用，修改查詢去重邏輯可能改變返回集合大小，需對所有呼叫端執行回歸測試並監控 API error rate 及下游功能的頻道數量一致性",
+          "若重複頻道對應不同資料來源（source ID 不同但名稱相同），直接去重可能遮蔽合法的多來源頻道，需與 PM／reporter 確認業務語義後再決定去重粒度，避免誤刪有效資料",
+          "若根因為資料庫既有髒資料，清理腳本在 production 執行有不可逆風險；需在低峰時段執行、事先備份目標表，並準備回滾腳本，rollback 條件為清理後任一相關報表出現頻道資料缺失告警"
+        ]
+      },
+      "judgeResult": {
+        "relevance": 5,
+        "actionability": 5,
+        "correctness": 5,
+        "coverage": 5,
+        "avg": 5,
+        "reasoning": "提案精準命中 API 層去重邏輯 vs 髒資料兩條根因路徑，plan_draft 從索取重現資訊到 staging 驗收均附有可直接執行的具體動作（含實際 SQL），不含任何模糊口號。risks 三條均高度相關且具備可操作的 rollback 條件，涵蓋回歸測試、業務語義確認、生產資料不可逆風險，整體為各維度頂分表現。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Joyce",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.88,
+          "was_correct": true,
+          "bucket": "0.7-0.9"
+        },
+        "plan_quality": {
+          "judge_avg": 5,
+          "has_plan_draft": true,
+          "plan_draft_length": 5
+        },
+        "__fixture_id": 2821,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "K5",
+          "P2_中"
+        ]
+      }
+    },
+    {
+      "split": "test",
+      "fixture_id": 2788,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "KEYPO/keypo-engine-api",
+          "KEYPO/keypo-backend",
+          "CrawlersV2/bigcrawler-scrapy"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "issue 症狀為「查詢 2019-2020 年資料時查看文章出現錯誤訊息」，直接命中 keypo-engine-api 在 REPO NOTES 中「資料查詢引擎、文章列表、資料本身問題」的職責描述；特定年份範圍限定的錯誤屬於資料查詢計算層，應優先由 engine-api 排查舊資料索引或存取異常。",
+        "confidence": 0.75,
+        "caveats": [
+          "截圖中的錯誤訊息文字不可見，需向 reporter 確認具體錯誤代碼或訊息內容（API timeout、資料不存在、還是其他）",
+          "需確認 2019-2020 年資料過去是否曾正常可存取，以判斷是近期變更造成的退化或長期問題"
+        ]
+      },
+      "phase2": {
+        "summary": "系統在查詢 2019-2020 年份資料並開啟文章時持續出現錯誤訊息，影響特定年份範圍的文章查閱功能，問題範圍明確但根因尚未釐清。截圖中的具體錯誤訊息文字不可辨識，無法判斷是 API timeout、資料不存在還是其他例外，需向 reporter 索取詳細錯誤代碼才能精確定位。初步判斷問題集中在 keypo-engine-api 對舊資料的索引存取層，可能與歷史資料格式遷移、索引缺失或近期部署引入的破壞性變更有關。由於過去是否曾正常運作不明，需同步比對部署紀錄與錯誤日誌，判斷是退化 (regression) 或長期潛伏問題。",
+        "plan_draft": [
+          "向 reporter 索取瀏覽器 console 或 Network tab 的完整錯誤代碼與 HTTP status，以及可重現問題的查詢條件（關鍵字、日期範圍、具體文章 ID 範例）",
+          "在 keypo-engine-api 檢索處理 2019-2020 年份資料查詢的相關 endpoint，抓取過去 30 天的 git log 與部署紀錄，定位是否有破壞性變更（schema 異動、索引重建、API 版本升級）",
+          "直接對 keypo-engine-api 發出 2019-2020 年份文章查詢請求，收集完整的 server-side error log 與 stack trace，確認錯誤發生位置（查詢層 / 索引層 / 資料取得層）",
+          "檢查 Elasticsearch 或資料庫中 2019-2020 年份資料的索引狀態，驗證欄位格式是否與現行版本相容，以及是否存在因遷移不完整造成的資料缺失",
+          "修復後在 staging 環境以多筆不同條件的 2019-2020 年文章執行迴歸測試，驗證錯誤訊息不再出現後再部署至 production"
+        ],
+        "risks": [
+          "若根因為索引遷移不完整，重建或修補索引期間可能短暫影響全體使用者的查詢效能，需監控 keypo-engine-api 的 error rate 與 p99 回應時間，並預備 rollback 至修復前索引快照的方案",
+          "修改舊資料存取邏輯可能連帶影響 bigcrawler-scrapy 的歷史資料寫入流程（若共用同一存取或格式轉換層），部署前需確認 CrawlersV2 側無共用依賴",
+          "若需批次修復 2019-2020 年資料，應安排在離峰時段執行並設定進度監控，避免大量 I/O 佔用資源影響當日正常查詢；批次執行前須備份受影響資料集作為 rollback 依據"
+        ]
+      },
+      "judgeResult": {
+        "relevance": 4,
+        "actionability": 5,
+        "correctness": 4,
+        "coverage": 5,
+        "avg": 4.5,
+        "reasoning": "keypo-engine-api 作為主要排查目標與 issue 症狀（特定年份資料查詢錯誤）高度吻合，技術診斷路徑從收集錯誤碼 → git log 破壞性變更 → Elasticsearch 索引相容性的遞進順序合理；plan_draft 五步驟具體可執行，risks 三項均帶有具體情境與緩解措施（index rollback、共用依賴確認、離峰執行），bigcrawler-scrapy 納入稍顯牽強但仍有合理根據。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.75,
+          "was_correct": true,
+          "bucket": "0.7-0.9"
+        },
+        "plan_quality": {
+          "judge_avg": 4.5,
+          "has_plan_draft": true,
+          "plan_draft_length": 5
+        },
+        "__fixture_id": 2788,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "test",
+      "fixture_id": 2803,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "issue 描述凌晨 1–4 點整段時間「經濟日報 money.udn.com 文章未收錄」，直接命中 CrawlersV2/bigcrawler-scrapy 的 REPO NOTES 職責：「新聞網站沒有文章、來源斷線、數量不對、抓不到新文章,多半在這裡修」，屬爬蟲資料來源層問題。",
+        "confidence": 0.88,
+        "caveats": [
+          "需確認凌晨時段是爬蟲端未觸發/失敗，還是文章已爬取但未寫入 pipeline（若為後者，應改路由至 KEYPO/keypo-engine/data-collector）"
+        ]
+      },
+      "phase2": {
+        "summary": "10/28 凌晨 1–4 點，經濟日報（money.udn.com）整段時間區間的文章未被系統收錄，至少兩篇已確認遺漏。問題可能出在爬蟲排程未於該時段觸發、或觸發後因網路逾時／反爬機制導致抓取失敗。若文章已爬取但未寫入後續 pipeline，則需分層排查資料傳遞路徑，可能需要改路由至 data-collector。此問題影響該來源當日凌晨時段所有文章的完整性，若屬系統性排程缺口，其他時段或其他來源也可能存在類似潛在風險。",
+        "plan_draft": [
+          "查閱 CrawlersV2/bigcrawler-scrapy 在 10/28 凌晨 1–4 點的 scheduler 排程記錄，確認「經濟日報」spider job 是否有被觸發（比對 job start log 是否存在）",
+          "若 job 已觸發，提取同時段的 spider error log，定位具體失敗原因（HTTP 4xx/5xx、connection timeout、或疑似反爬封鎖的 302/403 回應）",
+          "若 job 未觸發，回溯 cron 設定檔與 scheduler worker 健康狀態，確認是否有排程缺口、worker 異常下線、或 memory/CPU 資源耗盡導致 job 被跳過",
+          "在本地環境以凌晨時段目標 URL pattern 手動執行爬蟲，驗證 money.udn.com 是否對特定時段啟用額外的 rate-limit、動態渲染（JavaScript lazy-load）或需 cookie 的驗證機制",
+          "修復並部署至 staging 後，執行凌晨缺口時段的 backfill 抓取，並新增回歸測試覆蓋「經濟日報排程連續性」與「凌晨時段文章收錄數 > 0」兩個斷言"
+        ],
+        "risks": [
+          "Backfill 寫入時可能與既有資料重複：需確認 pipeline 具備以 article ID 為鍵的冪等去重保護，或先在 staging 驗證去重邏輯，避免線上資料重複污染",
+          "調整 spider 行為（headers、rate、user-agent）以應對反爬機制，可能連帶影響日間正常抓取頻率與成功率，修復後需監控日間文章收錄量是否出現下降（建議設定 alert threshold：日間每小時收錄 < 預期基準的 70% 時觸發告警）",
+          "若根因在 scheduler/worker 層，修復後需連續觀察 3 天凌晨 1–4 點時段的文章收錄數；若仍有缺口（< 預期量的 80%）則視為修復未完全，需回滾並升級排查 infra 層問題"
+        ]
+      },
+      "judgeResult": {
+        "relevance": 5,
+        "actionability": 5,
+        "correctness": 5,
+        "coverage": 5,
+        "avg": 5,
+        "reasoning": "repo 指向完全命中（爬蟲排程 + 特定來源斷收），plan_draft 五步驟從 log 分層診斷到 backfill 回歸測試，路徑清晰可直接執行；risks 三項均附具體閾值（70%/80% alert、3 天觀察期）與冪等去重驗證，是本 rubric 中最高品質的風險敘述。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.88,
+          "was_correct": true,
+          "bucket": "0.7-0.9"
+        },
+        "plan_quality": {
+          "judge_avg": 5,
+          "has_plan_draft": true,
+          "plan_draft_length": 5
+        },
+        "__fixture_id": 2803,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "test",
+      "fixture_id": 2795,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy",
+          "KEYPO/keypo-engine-api"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "Issue 帶有 Data label 且描述「7月後幾乎沒有資料」,客戶並附上 babyhome.com.tw 文章連結佐證來源文章確實存在;REPO NOTES 明確指出 CrawlersV2/bigcrawler-scrapy 負責「來源斷線、數量不對、抓不到新文章」等資料來源層問題,與此症狀高度吻合。若爬蟲資料正常但特定版位未出現在 KEYPO 查詢結果,則次要候選為 keypo-engine-api(負責頻道/來源篩選的資料清單)。",
+        "confidence": 0.75,
+        "caveats": [
+          "需確認 BabyHome 才藝興趣、坐月子版位是否在 bigcrawler-scrapy 中有對應的爬蟲設定,或由獨立爬蟲維護",
+          "可請 reporter 確認客戶提供的文章連結在資料庫中是否完全查無,以區分『爬蟲未抓取』vs『引擎未索引/版位設定缺失』"
+        ]
+      },
+      "phase2": {
+        "summary": "BabyHome 親子討論區的才藝興趣與坐月子兩個版位，自7月起資料量幾乎歸零，問題已持續近半年。症狀與來源爬蟲中斷或版位設定缺失高度吻合，屬 P1 資料斷線事件。根因需分兩層排查：爬蟲層（bigcrawler-scrapy 未成功抓取）或引擎層（keypo-engine-api 版位設定未涵蓋這兩個版位）。客戶提供的具體文章連結可作為資料庫覆蓋率的直接驗證依據，應優先用於區分兩種根因再決定修復路徑。",
+        "plan_draft": [
+          "查詢 bigcrawler-scrapy 爬蟲設定檔，列出才藝興趣與坐月子版位對應的 spider 名稱，並檢索 crawl job 記錄，找出最後一次成功抓取的時間戳記",
+          "以提供的兩筆文章連結對應的 topic ID，直接查詢後端資料庫（Elasticsearch index 或相應 DB），輸出是否命中，以判斷問題出在爬蟲層還是引擎索引層",
+          "若資料庫查無上述文章，讀取 bigcrawler-scrapy 在7月前後的 crawl logs，定位錯誤類型（HTTP 403/404、rate limit、DOM selector 失效），並重現抓取失敗情境",
+          "若資料庫已有文章但 KEYPO 結果缺失，檢查 keypo-engine-api 的頻道/版位 ID 白名單設定，確認才藝興趣與坐月子的版位 ID 是否在索引範圍內，缺少則補入並重新索引",
+          "修復完成後執行回補（backfill）流程，補抓近半年缺失資料，完成後驗證兩個版位的近半年資料量曲線恢復至斷線前水準"
+        ],
+        "risks": [
+          "回補近半年大量缺失資料時，爬蟲請求頻率需嚴格控制，BabyHome 若偵測到異常流量可能觸發 IP 封鎖或 rate limit，需監控爬蟲成功率與 HTTP 狀態碼，必要時降速或分批執行",
+          "若 BabyHome 在7月後已更動 DOM 結構或版位 URL 格式，修復後的 selector 邏輯需同步驗證其他 BabyHome 版位（育兒、媽咪話題等）是否受影響，防止靜默式回歸",
+          "keypo-engine-api 版位設定調整可能連帶影響其他使用相同頻道設定的查詢，上線後需監控相關版位的 API error rate 及查詢結果總數，並保留調整前的設定快照以備 rollback"
+        ]
+      },
+      "judgeResult": {
+        "relevance": 5,
+        "actionability": 5,
+        "correctness": 5,
+        "coverage": 4,
+        "avg": 4.75,
+        "reasoning": "提案以「爬蟲層 vs 引擎索引層」為核心假設完全符合 Data label + 特定版位斷線的症狀，並善用客戶附上的文章 URL 作為資料庫查詢的 pivot，診斷路徑清晰且可立即執行。risks 三項均具體相關（backfill rate limit、DOM 回歸、API 設定擴散），加分明顯；扣分點在於 assignees（Walt、Joyce）選派理由未在 reasoning 中說明，layer 填 n/a 略顯敷衍。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.75,
+          "was_correct": true,
+          "bucket": "0.7-0.9"
+        },
+        "plan_quality": {
+          "judge_avg": 4.75,
+          "has_plan_draft": true,
+          "plan_draft_length": 5
+        },
+        "__fixture_id": 2795,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "test",
+      "fixture_id": 2774,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "issue 描述「整個頻道未收錄」並附上 LINE Today publisher URL，直接命中 REPO NOTES 中 CrawlersV2/bigcrawler-scrapy 的職責「新聞網站沒有文章、來源斷線、抓不到新文章」，屬於資料來源層的爬蟲問題；Data label 亦明確指向 Crawlers group。",
+        "confidence": 0.88,
+        "caveats": [
+          "需確認遊戲基地頻道是否曾經被收錄過（regression）或從未設定（新頻道未上線）"
+        ]
+      },
+      "phase2": {
+        "summary": "某個 LINE Today 發布者頻道的文章完全未被收錄，屬於整個頻道層級的缺漏，非單篇文章問題。需先釐清該頻道是否曾被正常收錄（regression）或從未加入爬蟲設定（新頻道未上線）。此問題標記為 P1_高，直接影響客戶所需文章的資料完整性，需優先排查 bigcrawler-scrapy 的 spider 設定與執行日誌。兩種情境的修復路徑不同，需以日誌與 git history 為依據判斷後再動手。",
+        "plan_draft": [
+          "在 bigcrawler-scrapy 中搜尋對應 publisher ID 的 spider 設定檔，判斷該頻道是否已存在收錄設定，並記錄設定檔路徑與版本。",
+          "查詢爬蟲排程系統與 Scrapy 執行日誌（最近 30 天），確認是否有針對該頻道的任務記錄，以及最後一次成功抓取的時間與失敗原因。",
+          "在 staging 環境手動執行 spider 對該 publisher URL 發出抓取請求，記錄 HTTP status code、HTML/JSON 解析結果與任何 exception stack trace。",
+          "若屬 regression：對照 git log 找出設定異動的 commit，還原或修補設定，並補抓缺漏時間區間的歷史文章（分批執行，每批間隔至少 30 秒以避免 rate limit）。",
+          "若屬新頻道未設定：新增 spider config 與排程任務，部署至 staging 完整驗證文章可正確入庫後，再推送至 production 並驗證資料庫中出現對應文章記錄。"
+        ],
+        "risks": [
+          "補抓歷史文章若範圍超過 7 天，大量請求可能觸發 LINE Today 的 rate limit 或 IP 封鎖；需分批補抓並即時監控 HTTP 429/5xx error rate，若錯誤率上升立即暫停任務。",
+          "新增或修改 spider 設定若 publisher_id 條件設定錯誤，可能誤抓其他頻道資料或產生重複文章記錄；上線後需監控入庫文章的 publisher_id 分佈，確認無異常資料混入。",
+          "Production 爬蟲所使用的 headers / session token / proxy 設定與 staging 可能不同，staging 測試成功不代表 production 必然正常；部署後需在 production 執行一次驗證抓取，確認文章實際入庫，若失敗需立即停用新設定並回滾至前一版。"
+        ]
+      },
+      "judgeResult": {
+        "relevance": 5,
+        "actionability": 5,
+        "correctness": 4,
+        "coverage": 5,
+        "avg": 4.75,
+        "reasoning": "提案精準命中爬蟲層問題（Data label + LINE Today publisher URL），repo 選擇與診斷路徑均合理；plan_draft 以 spider config 搜尋 → 日誌查詢 → staging 手動驗證 → regression/新頻道兩分支的結構清晰可執行，risks 三項均具體且附帶緩解措施（rate limit 分批、publisher_id 驗證、production 回滾）。Correctness 扣一分是因為未提及 LINE Today 可能使用 JavaScript 動態渲染或需要特定 session/cookie，此為此類新聞網站常見的技術壁壘，值得在診斷步驟 3 前先確認頁面渲染方式。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.88,
+          "was_correct": true,
+          "bucket": "0.7-0.9"
+        },
+        "plan_quality": {
+          "judge_avg": 4.75,
+          "has_plan_draft": true,
+          "plan_draft_length": 5
+        },
+        "__fixture_id": 2774,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "test",
+      "fixture_id": 2792,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "REPO NOTES 明確指出「新聞網站沒有文章、抓不到新文章、數量不對」屬於 CrawlersV2/bigcrawler-scrapy 的職責,且特別標注「是 K5 label 下最常被修的資料來源層問題歸屬」;issue 描述「壹蘋新聞網文章漏收」直接命中該 repo 的「來源斷線/抓不到新文章」關鍵詞。",
+        "confidence": 0.9,
+        "caveats": [
+          "reporter 已提供遺漏文章的完整 URL,建議先確認該文章是否因爬蟲 selector 規則變更或 robots/反爬機制導致漏抓,再判斷是否需要補收"
+        ]
+      },
+      "phase2": {
+        "summary": "壹蘋新聞網有一篇文章未被系統收錄，但整體趨勢圖數據正常，推測為單篇或特定批次的漏抓，而非全面性斷線。問題根因可能為爬蟲 selector 無法匹配該文章的 DOM 結構，或該文章觸發了網站的反爬機制（robots.txt 限制、動態載入、IP 封鎖等）。此 issue 標記 P1，對資料完整性有直接影響，需儘速定位根因並補收該筆資料。修復後亦須確認同時段是否有其他文章受到相同機制影響而漏收。",
+        "plan_draft": [
+          "在本地爬蟲環境對漏收文章的 URL 執行 scrapy fetch（或對應 spider 的 parse 流程），取得原始 HTTP response，記錄 status code、redirect chain 與最終 HTML 內容。",
+          "比對該文章的 DOM 結構與現行 spider selector 規則，定位漏收點（selector 失效 / JS 動態渲染 / 結構版本差異 / robots 封鎖）。",
+          "依根因實施修復：若為 selector 問題則更新規則並新增對應 unit test 覆蓋新 DOM 結構；若為反爬問題則評估 User-Agent 輪換、request delay 或 Splash/Playwright 渲染策略。",
+          "手動觸發補收任務，對該文章 URL 執行 re-crawl，驗證資料寫入資料庫後，在儀表板確認文章出現且欄位（標題、日期、來源）解析正確。",
+          "查詢同日期區間壹蘋新聞網其他文章的收錄量，與歷史基準比對，確認是否有其他文章同樣漏收，若有則批次補收並回報影響範圍。"
+        ],
+        "risks": [
+          "修改 selector 規則可能影響壹蘋新聞網現有所有抓取路徑；部署前須在 staging 環境跑完整回歸，確認舊文章類型仍能正常解析，監控部署後 24 小時的文章收錄數量是否在正常波動範圍內，若驟降則 rollback selector 變更。",
+          "補收單篇文章時若請求頻率過高，可能觸發網站頻率限制或 IP 封鎖，進而影響後續正常爬取排程；補收前應確認 download delay 設定，並監控補收期間及之後 1 小時的 HTTP 403/429 error rate。",
+          "若漏收根因為網站進行了全面性 DOM 改版，修正後需持續觀察 7 日內每日文章收錄量趨勢；若數量仍低於歷史基準 20% 以上，需暫停該來源爬取並升級排查，避免大量空白資料污染資料集。"
+        ]
+      },
+      "judgeResult": {
+        "relevance": 5,
+        "actionability": 5,
+        "correctness": 5,
+        "coverage": 5,
+        "avg": 5,
+        "reasoning": "Repo 指向 CrawlersV2/bigcrawler-scrapy 完全命中「新聞網站文章漏收」這類爬蟲來源層問題，K5 label 佐證更強化可信度。Plan draft 五步驟層層遞進（fetch → selector 比對 → 修復 → 補收驗證 → 批次影響評估），三條 risks 皆具體點出 selector 回歸、頻率封鎖、DOM 全面改版三個不同維度的生產風險，並各自附有監控閾值與 rollback 策略，屬少見的高品質提案。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.9,
+          "was_correct": true,
+          "bucket": "0.9-1"
+        },
+        "plan_quality": {
+          "judge_avg": 5,
+          "has_plan_draft": true,
+          "plan_draft_length": 5
+        },
+        "__fixture_id": 2792,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Bug",
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    },
+    {
+      "split": "test",
+      "fixture_id": 2852,
+      "phase1": {
+        "layer": "n/a",
+        "suggested_repos": [
+          "CrawlersV2/bigcrawler-scrapy"
+        ],
+        "suggested_assignees": [
+          "Walt",
+          "Joyce"
+        ],
+        "reasoning": "此 issue 要求在 10 個主要新聞網站新增「圖片底下文字(圖說)」的爬取能力,屬於爬蟲層的功能開發;REPO NOTES 明確指出 CrawlersV2/bigcrawler-scrapy 負責「主要新聞來源爬蟲」且是「K5 label 下資料來源層問題的歸屬處」,本次列出的 CNA、UDN、ETtoday 等網站均為其現有涵蓋的主流新聞來源。",
+        "confidence": 0.88,
+        "caveats": [
+          "部分網站(如 ETtoday、TVBS)的圖片說明文字可能以動態渲染方式載入,需由開發人員確認各站 DOM 結構後再評估工時"
+        ]
+      },
+      "phase2": {
+        "summary": "某客戶行銷追蹤需求新增「圖片底部說明文字（圖說）」收錄，目前 10 個目標新聞網站的爬蟲均未解析此欄位。這些站點（含 CNA、UDN、ETtoday 等）已在現有爬蟲涵蓋範圍內，但缺少圖說 selector 的實作，屬爬蟲層功能擴充。部分站點的圖說區塊可能以 JavaScript 動態渲染，需分站確認 DOM 載入時機再決定是否啟用 Splash/Selenium。功能上線後每篇文章將多一個圖說欄位，儲存 schema 與下游 pipeline 須同步評估相容性。",
+        "plan_draft": [
+          "逐一檢查 10 個目標網站的圖說 DOM 結構：以 browser DevTools 擷取靜態 HTML，確認圖說是靜態內嵌或 JS 非同步注入，列出各站的 CSS selector / XPath 及需要 Splash 處理的站點清單。",
+          "在各站 Spider 中新增 `image_captions` 欄位：靜態站使用 `response.css()` 抓取，動態站啟用 Splash middleware 並設定適當 wait time，加入 null-safe 處理確保圖說缺失時不中斷流程。",
+          "更新 Item Pipeline 與下游儲存 schema：新增 `image_captions` 欄位定義，確認 DB migration 或 index 無需 downtime，並通知相關消費端（報表、清洗腳本）欄位變更。",
+          "針對每個目標網站各抓取 3–5 篇真實文章，逐篇比對爬取結果與瀏覽器截圖，驗證圖說內容非空、無亂碼、且對應正確圖片位置。",
+          "部署至 staging 環境執行完整抓取流程，監控 error rate 與各站 `image_captions` 空值率無異常（空值率 < 10% 為基準），確認無回歸後再 promote 至 production。"
+        ],
+        "risks": [
+          "動態渲染站點（如 ETtoday、TVBS）若圖說由前端 JS 非同步注入，靜態爬蟲可能持續回傳空值而不報錯（無聲失敗）；上線後需持續監控各站 `image_captions` 空值率，若某站驟增至 50% 以上，應立即暫停該站圖說寫入並重新檢查 selector。",
+          "新增欄位可能影響下游消費端（資料清洗 script、指標計算、報表匯出）對 schema 欄位數或型別的假設，需在 staging 驗證所有消費端相容後再部署，rollback 條件為任一下游服務出現 schema parse error。",
+          "目標新聞網站改版頻率高，selector 可能在數週內失效；建議將各站 `image_captions` 空值率納入既有爬蟲健康監控，設定告警閾值，避免靜默失效累積影響客戶報告品質。"
+        ]
+      },
+      "judgeResult": {
+        "relevance": 5,
+        "actionability": 5,
+        "correctness": 4,
+        "coverage": 4,
+        "avg": 4.5,
+        "reasoning": "計畫技術路徑完整，靜/動態站點分流、空值率閾值（<10% / >50% 告警）、下游 schema rollback 條件均具體可執行，risks 欄位品質高。唯 issue 中「中央社」與「中央通訊社」實為同一 URL（cna.com.tw）出現兩次，計畫未標注此重複，可能導致 Spider 重工或計算件數偏差；另 layer 標為 n/a 略顯草率（應為 data/crawler 層），coverage 小扣分。"
+      },
+      "metrics": {
+        "routing": {
+          "p_at_1": true,
+          "r_at_3": true,
+          "cross_repo_recall": 1
+        },
+        "assignee": {
+          "r_at_3": true,
+          "ground_truth_assignee": "Walt",
+          "ground_truth_source": "config_default",
+          "suggested": [
+            "Walt",
+            "Joyce"
+          ]
+        },
+        "confidence": {
+          "stated": 0.88,
+          "was_correct": true,
+          "bucket": "0.7-0.9"
+        },
+        "plan_quality": {
+          "judge_avg": 4.5,
+          "has_plan_draft": true,
+          "plan_draft_length": 5
+        },
+        "__fixture_id": 2852,
+        "__ground_truth_outcome": "likely_fixed",
+        "__labels": [
+          "Data",
+          "K5",
+          "P1_高"
+        ]
+      }
+    }
+  ],
+  "meta": {
+    "n_train": 22,
+    "n_test": 9,
+    "split_date": "2026-01-17T00:00:07.749Z",
+    "split_strategy": "stratified_primary_repo(frac=0.7,seed=42)",
+    "run_started_at": "2026-04-24T08:08:41.414Z",
+    "run_finished_at": "2026-04-24T08:28:58.240Z",
+    "total_cost_usd_estimate": null,
+    "merged_at": "2026-04-27T03:38:17.055Z",
+    "merged_from": {
+      "n_train": 5,
+      "n_test": 9,
+      "split_date": "2026-01-17T00:00:07.749Z",
+      "split_strategy": "preserved_from_prior_run",
+      "run_started_at": "2026-04-27T03:29:37.815Z",
+      "run_finished_at": "2026-04-27T03:38:17.054Z",
+      "total_cost_usd_estimate": null
+    }
+  }
+}
