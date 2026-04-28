@@ -1,69 +1,51 @@
 {
-  "analysisDate": "2026-04-27",
-  "period": "4/21-4/24",
+  "analysisDate": "2026-04-28",
+  "period": "4/27",
   "warnings": [
     {
-      "date": "4/21",
-      "member": "侑呈",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "[Dev] Facebook 新增 Redis 版本鎖定 (6.5H)",
-      "commits": "1 commit: fix(facebook-scrapy) 鎖定 Redis 版本 7.4.8-alpine",
-      "reasoning": "開發時數 6.5 小時僅產出 1 個 commit，比例為 0.15 commits/hour，遠低於團隊平均 3.03 commits/hour（僅約 5%），明顯偏離預期生產力"
-    },
-    {
-      "date": "4/22",
-      "member": "侑呈",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "[Dev] CT Monitor 監控 + recheck pool 功能 (8H)",
-      "commits": "4 commits across keytector/keytector-cib and wendyHsieh/cib-poc",
-      "reasoning": "開發時數 8 小時產出 4 個 commits，比例為 0.5 commits/hour，遠低於團隊平均 2.21 commits/hour（僅約 23%），與預期工作量明顯不符"
-    },
-    {
-      "date": "4/22",
-      "member": "家輝",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "[Dev] ES9 pipeline 系統優化相關工作 (6H)",
-      "commits": "1 commit: tweak senti",
-      "reasoning": "開發時數 6 小時僅產出 1 個 commit，比例為 0.17 commits/hour，遠低於團隊平均 2.21 commits/hour（僅約 8%），工作成果與時間投入嚴重不成比例"
-    },
-    {
-      "date": "4/23",
-      "member": "家輝",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "[Dev] ES9 pipeline 系統優化相關工作 (7H)",
-      "commits": "0 commits found",
-      "reasoning": "開發時數 7 小時但完全無任何 commit 記錄，無法驗證代碼層面的開發成果"
-    },
-    {
-      "date": "4/24",
+      "date": "4/27",
       "member": "侑呈",
       "severity": "🔴",
       "type": "low_output",
-      "task": "[Dev] 信義補收漏文、KEYTECTOR 工作 (6H)",
-      "commits": "0 commits found",
-      "reasoning": "開發時數 6 小時但完全無任何 commit 記錄，無法驗證報告的開發任務是否已完成或進展狀況"
+      "task": "Fanti (8H)、X關鍵字探索 (1H)、KEYTECTOR (4H)，共12H",
+      "commits": "0 commits",
+      "reasoning": "報告了 12 小時的開發工作，包括 Fanti 8 小時、KEYTECTOR 4 小時（均超過 3 小時閾值），但當天完全沒有任何相關 commits 記錄，無法追蹤代碼產出進度。"
     },
     {
-      "date": "4/24",
+      "date": "4/27",
+      "member": "禎佑",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "KOL 數據 (3H)、Threads 數據申請表 (2H)、開發 Threads 貼文 comment 檢查工具 (1H)、研究 KOL ES 過濾 (1H)，共7H",
+      "commits": "2 commits (chris.su/kol-lookup-v2)",
+      "reasoning": "報告 7 小時開發工作卻只有 2 個 commits，每小時 commit 數 (2/7≈0.29) 遠低於團隊平均 (14.6/7.2≈2.03)，差距約 7 倍，表示工作進度與代碼產出嚴重不相稱。"
+    },
+    {
+      "date": "4/27",
+      "member": "Ted",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "ui/ux 資料呈現 (0.5H)、後端設計 (0.5H)、處理 fanti issue 與資料搬遷 (7H)、清空 staging 資料 (1H)、日品牌電子報 (1H)，共10H",
+      "commits": "5 commits (KEYPO/keypo-frontend-2023)",
+      "reasoning": "報告 10 小時開發工作（超過團隊平均 7.2 小時），但只有 5 個 commits（遠低於平均 14.6），每小時 commit 數 (5/10=0.5) 與平均相差 4 倍，代碼產出效率明顯低於團隊水準。"
+    },
+    {
+      "date": "4/27",
       "member": "家輝",
       "severity": "🟡",
       "type": "outlier",
-      "task": "[Dev] ES9 pipeline 系統優化、leo 帳號處理 (7.5H)",
-      "commits": "4 commits: tweak dv es insert, tweak ae jp, add phrase merge",
-      "reasoning": "開發時數 7.5 小時僅產出 4 個 commits，比例為 0.53 commits/hour，遠低於團隊平均 3.06 commits/hour（僅約 17%），相同工作領域連日低產出，需要關注"
+      "task": "ES9 pipeline 系統優化 (0.5H)、協助分析部同仁 (0.5H)、bigscrapy 自動打包排程 (2H)、盤點 GCP 專案與警報調整 (2H)、合約說明 PPT (1H)、ES5 pipeline 重啟機制 (1H)，共7H",
+      "commits": "1 commit (KEYPO/keypo-q-huaan-v2 - 'audo add keypo user')",
+      "reasoning": "報告 7 小時開發工作卻只有 1 個 commit，且 commit 內容與報告的多個任務（pipeline 優化、GCP 盤點、自動排程等）關聯度低，每小時 commit 數 (1/7≈0.14) 與平均 (14.6/7.2≈2.03) 相差超過 14 倍，反映報告工作與實際代碼產出的巨大落差。"
     }
   ],
   "summary": {
-    "totalMembers": 14,
-    "totalWarnings": 6,
+    "totalMembers": 10,
+    "totalWarnings": 4,
     "byType": {
-      "low_output": 2,
+      "low_output": 1,
       "mismatch": 0,
-      "outlier": 4
+      "outlier": 3
     }
   }
 }

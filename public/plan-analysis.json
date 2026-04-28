@@ -1,317 +1,152 @@
 {
-  "analysisDate": "2026-04-24",
-  "period": "4/23",
+  "analysisDate": "2026-04-28",
+  "period": "4/27",
   "planSpecs": [
     {
-      "date": "4/23",
-      "member": "日銜",
-      "commit": {
-        "title": "docs: add biglink backup queue design, plan and flow",
-        "sha": "e0031711",
-        "project": "CrawlersV2/bigcrawler-scrapy",
-        "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/e0031711",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/superpowers/plans/2026-04-20-biglink-backup-queue.md",
-        "docs/superpowers/specs/2026-04-20-biglink-backup-flow.md",
-        "docs/superpowers/specs/2026-04-20-biglink-backup-queue-design.md"
-      ]
-    },
-    {
-      "date": "4/23",
-      "member": "禎佑",
-      "commit": {
-        "title": "Add project standards and info export design spec",
-        "sha": "c74b2cfd",
-        "project": "chris.su/kol-lookup-v2",
-        "url": "https://biglab.buygta.today/chris.su/kol-lookup-v2/-/commit/c74b2cfd",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/claude.md",
-        "docs/superpowers/specs/2026-04-23-info-export-design.md"
-      ]
-    },
-    {
-      "date": "4/23",
-      "member": "禎佑",
-      "commit": {
-        "title": "Add info export implementation plan",
-        "sha": "da6c4ff8",
-        "project": "chris.su/kol-lookup-v2",
-        "url": "https://biglab.buygta.today/chris.su/kol-lookup-v2/-/commit/da6c4ff8",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/superpowers/plans/2026-04-23-info-export.md"
-      ]
-    },
-    {
-      "date": "4/23",
-      "member": "禎佑",
-      "commit": {
-        "title": "docs: add channel_id fetcher design spec",
-        "sha": "be7547a7",
-        "project": "chris.su/kol-lookup-v2",
-        "url": "https://biglab.buygta.today/chris.su/kol-lookup-v2/-/commit/be7547a7",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/superpowers/specs/2026-04-23-channel-id-fetcher-design.md"
-      ]
-    },
-    {
-      "date": "4/23",
-      "member": "禎佑",
-      "commit": {
-        "title": "Add channel_id fetcher implementation plan",
-        "sha": "1099f91f",
-        "project": "chris.su/kol-lookup-v2",
-        "url": "https://biglab.buygta.today/chris.su/kol-lookup-v2/-/commit/1099f91f",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/superpowers/plans/2026-04-23-channel-id-fetcher.md"
-      ]
-    },
-    {
-      "date": "4/23",
-      "member": "Ted",
-      "commit": {
-        "title": "docs(spec): keyword guardrail config — editable tokens, delete LLM extractor, skip_regexp/skip_llm flags",
-        "sha": "73013f89",
-        "project": "KEYPO/keypo-newsletter",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-newsletter/-/commit/73013f89",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/superpowers/specs/2026-04-23-keyword-guardrail-config-design.md"
-      ]
-    },
-    {
-      "date": "4/23",
-      "member": "Ted",
-      "commit": {
-        "title": "docs(spec): fix — add admin validation for empty tokens, complete test impact list",
-        "sha": "2c7609e3",
-        "project": "KEYPO/keypo-newsletter",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-newsletter/-/commit/2c7609e3",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/superpowers/specs/2026-04-23-keyword-guardrail-config-design.md"
-      ]
-    },
-    {
-      "date": "4/23",
-      "member": "Ted",
-      "commit": {
-        "title": "Merge branch 'spec/pre-send-approval' into 'develop'",
-        "sha": "da0a8fef",
-        "project": "KEYPO/keypo-newsletter",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-newsletter/-/commit/da0a8fef",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/DEPLOYMENT.md",
-        "docs/superpowers/plans/2026-04-20-pre-send-approval.md",
-        "docs/superpowers/specs/2026-04-20-pre-send-approval-design.md",
-        "docs/superpowers/specs/2026-04-23-keyword-guardrail-config-design.md"
-      ]
-    },
-    {
-      "date": "4/23",
-      "member": "Ted",
-      "commit": {
-        "title": "Merge branch 'spec/pre-send-approval' into 'develop'",
-        "sha": "1c8eed3b",
-        "project": "KEYPO/keypo-newsletter",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-newsletter/-/commit/1c8eed3b",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/DEPLOYMENT.md",
-        "docs/superpowers/plans/2026-04-20-pre-send-approval.md",
-        "docs/superpowers/specs/2026-04-20-pre-send-approval-design.md",
-        "docs/superpowers/specs/2026-04-23-keyword-guardrail-config-design.md"
-      ]
-    },
-    {
-      "date": "4/23",
+      "date": "4/27",
       "member": "Wendy",
       "commit": {
-        "title": "docs: add spec and plan for MySQL gone away fix",
-        "sha": "fb79f4a9",
-        "project": "sinyi/sinyi-dashboard",
-        "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/fb79f4a9",
+        "title": "docs: add cloud deployment design spec",
+        "sha": "f72e5a9d",
+        "project": "keytector/keytector-cib",
+        "url": "https://biglab.buygta.today/keytector/keytector-cib/-/commit/f72e5a9d",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/plans/2026-04-22-fix-mysql-gone-away-in-sync-jobs.md",
-        "docs/superpowers/specs/2026-04-22-fix-mysql-gone-away-in-sync-jobs-design.md"
+        "docs/superpowers/specs/2026-04-27-cloud-deployment-design.md"
       ]
     },
     {
-      "date": "4/23",
+      "date": "4/27",
       "member": "Wendy",
       "commit": {
-        "title": "docs: add plan for applying 9e67cc5 optimizations to catalog and trust",
-        "sha": "06ddceab",
-        "project": "sinyi/sinyi-dashboard",
-        "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/06ddceab",
+        "title": "docs: add cloud deployment implementation plan",
+        "sha": "000eef30",
+        "project": "keytector/keytector-cib",
+        "url": "https://biglab.buygta.today/keytector/keytector-cib/-/commit/000eef30",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/plans/2026-04-22-social-news-sync-lock-timeout-fix.md"
+        "docs/superpowers/plans/2026-04-27-cloud-deployment.md"
       ]
     },
     {
-      "date": "4/23",
+      "date": "4/27",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs: add channel sync design spec",
+        "sha": "4c60a8b8",
+        "project": "chris.su/kol-lookup-v2",
+        "url": "https://biglab.buygta.today/chris.su/kol-lookup-v2/-/commit/4c60a8b8",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-04-27-channel-sync-design.md"
+      ]
+    },
+    {
+      "date": "4/27",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs(plans): cross-link rapidkw_growth coverage plan",
+        "sha": "368643af",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/368643af",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-04-27-rapidkw-gnd-heuristic-fix.md",
+        "docs/superpowers/plans/2026-04-27-rapidkw-growth-coverage.md"
+      ]
+    },
+    {
+      "date": "4/27",
       "member": "Aaron",
       "commit": {
-        "title": "docs: add cancel-run feature design spec",
-        "sha": "6fd06358",
+        "title": "docs(spec): add web search sources design",
+        "sha": "85f74f44",
         "project": "llmprojects/keypo-agent",
-        "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/6fd06358",
+        "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/85f74f44",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/specs/2026-04-23-cancel-run-design.md"
+        "docs/superpowers/specs/2026-04-27-web-search-sources-design.md"
       ]
     },
     {
-      "date": "4/23",
+      "date": "4/27",
       "member": "Aaron",
       "commit": {
-        "title": "docs: add cancel-run implementation plan",
-        "sha": "a3e3da66",
+        "title": "docs(plan): add web search sources implementation plan",
+        "sha": "e97878fb",
         "project": "llmprojects/keypo-agent",
-        "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/a3e3da66",
+        "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/e97878fb",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/plans/2026-04-23-cancel-run.md"
-      ]
-    },
-    {
-      "date": "4/23",
-      "member": "哲緯",
-      "commit": {
-        "title": "Merge pull request #103 from bigdata-54837596/docs/full-sync-v1.13.34",
-        "sha": "5c545bd6",
-        "project": "bigdata-54837596/line-social-radar",
-        "url": "https://github.com/bigdata-54837596/line-social-radar/commit/5c545bd6",
-        "source": "github"
-      },
-      "files": [
-        "docs/ALERTING.md",
-        "docs/GCP_DEPLOYMENT.md",
-        "docs/OBSERVABILITY.md",
-        "docs/PIPELINE_FLOW.md"
-      ]
-    },
-    {
-      "date": "4/23",
-      "member": "哲緯",
-      "commit": {
-        "title": "docs: sync all documentation to v1.13.34 project state",
-        "sha": "e5dede4c",
-        "project": "bigdata-54837596/line-social-radar",
-        "url": "https://github.com/bigdata-54837596/line-social-radar/commit/e5dede4c",
-        "source": "github"
-      },
-      "files": [
-        "docs/ALERTING.md",
-        "docs/GCP_DEPLOYMENT.md",
-        "docs/OBSERVABILITY.md",
-        "docs/PIPELINE_FLOW.md"
+        "docs/superpowers/plans/2026-04-27-web-search-sources.md"
       ]
     }
   ],
   "correlations": [
     {
-      "date": "4/23",
-      "member": "日銜",
+      "date": "4/27",
+      "member": "Wendy",
+      "status": "matched",
+      "specCommits": 2,
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "佈署規劃 (1.5H, link)"
+      ],
+      "unmatchedSpecs": [],
+      "reasoning": "Daily update 在 KETECTOR 項目下明確標記「佈署規劃 (1.5H)」為 Done，與兩筆 commits 的內容（cloud deployment design spec 及 implementation plan）直接對應。設計規格文件與實作計畫均屬 KETECTOR 佈署規劃工作的產出，吻合度高。"
+    },
+    {
+      "date": "4/27",
+      "member": "禎佑",
       "status": "partial",
       "specCommits": 1,
       "dailyUpdateMention": true,
-      "matchedTasks": ["非社群架構調整 (3.5H) — 已完成初步開發並使用日版環境測試"],
+      "matchedTasks": [
+        "開發同步 KEYDERS 頻道時序資料",
+        "開發時序資料(頻道)改成每日從 KOL ES 同步到 postgreSQL",
+        "規劃未來新增新頻道時，應該要有的流程"
+      ],
       "unmatchedSpecs": [],
-      "reasoning": "Daily update 提到「非社群架構調整」並已完成初步開發與日版環境測試，biglink 屬於非社群爬蟲基礎設施的一部分，因此 biglink backup queue 的規劃設計文件可能與此工項相關。然而 daily update 未明確提及 biglink backup queue 的設計或規劃工作，僅以概括性的「架構調整」描述，吻合程度不完整，判定為部分吻合。"
+      "reasoning": "Daily update 中有多項與頻道同步相關的開發工作（KEYDERS 頻道時序資料同步、KOL ES 同步至 postgreSQL），以及一筆規劃項目「規劃未來新增新頻道時，應該要有的流程」，與 channel sync design spec commit 的主題高度相關。然而 daily update 以開發任務描述為主，並未明確提及「撰寫設計規格文件」此一產出，因此判定為部分吻合。"
     },
     {
-      "date": "4/23",
-      "member": "禎佑",
+      "date": "4/27",
+      "member": "Joyce",
       "status": "matched",
-      "specCommits": 4,
+      "specCommits": 1,
       "dailyUpdateMention": true,
       "matchedTasks": [
-        "重開一個 kol-lookup-v2 — 匯出 KEYDERS 時序資料 (info + 去 meta 取 channel_id)",
-        "重開一個 kol-lookup-v2 — 開發取 channel_id 流程 (現階段 IG 僅 KOL 數據有存真實的 channel_id)"
+        "竄紅新聞關鍵字修正(4H)"
       ],
       "unmatchedSpecs": [],
-      "reasoning": "Daily update 明確記錄「重開一個 kol-lookup-v2」專案，並具體提到「匯出 KEYDERS 時序資料（info + 去 meta 取 channel_id）」及「開發取 channel_id 流程」，與 info export design spec、info export implementation plan、channel_id fetcher design spec、channel_id fetcher implementation plan 等四個 commit 高度吻合，判定為完全吻合。"
+      "reasoning": "commit 標題 cross-link rapidkw_growth coverage plan，文件包含 rapidkw-gnd-heuristic-fix 及 rapidkw-growth-coverage 兩份計畫。Daily update 中「竄紅新聞關鍵字修正(4H)」已標記 Done，「rapidkw」即對應「竄紅關鍵字」（rapid/trending keyword），heuristic fix 與 growth coverage 均屬關鍵字修正工作範疇，兩者直接對應，吻合。"
     },
     {
-      "date": "4/23",
-      "member": "Ted",
-      "status": "matched",
-      "specCommits": 4,
-      "dailyUpdateMention": true,
-      "matchedTasks": [
-        "日品牌電子報 - 寄送前審核功能上線正式環境",
-        "關鍵字防護設定升級 - 後台可編輯品牌競品清單、檢查開關 (2H)"
-      ],
-      "unmatchedSpecs": [],
-      "reasoning": "Daily update 明確記錄「寄送前審核功能上線正式環境」與「關鍵字防護設定升級（後台可編輯品牌競品清單、檢查開關）」，直接對應 spec/pre-send-approval 分支的 merge commits 及 keyword-guardrail-config design spec 的兩個修訂 commits，判定為完全吻合。"
-    },
-    {
-      "date": "4/23",
-      "member": "Wendy",
-      "status": "unmatched",
-      "specCommits": 2,
-      "dailyUpdateMention": false,
-      "matchedTasks": [],
-      "unmatchedSpecs": [
-        "docs: add spec and plan for MySQL gone away fix",
-        "docs: add plan for applying 9e67cc5 optimizations to catalog and trust"
-      ],
-      "reasoning": "Wendy 當日無 daily update，無法確認 MySQL gone away 修復規劃及 social news sync lock timeout 優化計畫是否有對應的工作報告，判定為未吻合。"
-    },
-    {
-      "date": "4/23",
+      "date": "4/27",
       "member": "Aaron",
-      "status": "unmatched",
+      "status": "partial",
       "specCommits": 2,
-      "dailyUpdateMention": false,
-      "matchedTasks": [],
-      "unmatchedSpecs": [
-        "docs: add cancel-run feature design spec",
-        "docs: add cancel-run implementation plan"
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "KEYPO Agent resume run (1H)",
+        "KEYPO Agent 討論 (1H)"
       ],
-      "reasoning": "Aaron 當日無 daily update，無法確認 cancel-run 功能的設計 spec 及實作計畫是否有對應的工作報告，判定為未吻合。"
-    },
-    {
-      "date": "4/23",
-      "member": "哲緯",
-      "status": "unmatched",
-      "specCommits": 2,
-      "dailyUpdateMention": false,
-      "matchedTasks": [],
-      "unmatchedSpecs": [
-        "Merge pull request #103 from bigdata-54837596/docs/full-sync-v1.13.34",
-        "docs: sync all documentation to v1.13.34 project state"
-      ],
-      "reasoning": "哲緯當日無 daily update，無法確認 line-social-radar v1.13.34 版本文件同步工作（ALERTING、GCP_DEPLOYMENT、OBSERVABILITY、PIPELINE_FLOW 等文件更新）是否有對應的工作報告，判定為未吻合。"
+      "unmatchedSpecs": [],
+      "reasoning": "兩筆 commits 均屬 llmprojects/keypo-agent 專案，內容為 web search sources 的設計規格與實作計畫。Daily update 中有大量 KEYPO Agent 相關工作（resume run、歷史紀錄 API、Backend 串接、討論、Frontend），專案領域完全吻合，「KEYPO Agent 討論」最有可能涵蓋 web search sources 的規劃討論。然而 daily update 並未明確提及「web search」或「搜尋來源」功能，無法確認設計文件的撰寫是當日工作項目之一，因此判定為部分吻合。"
     }
   ],
   "summary": {
-    "totalSpecCommits": 15,
-    "totalCorrelations": 6,
-    "membersWithSpecs": 6,
+    "totalSpecCommits": 6,
+    "totalCorrelations": 4,
+    "membersWithSpecs": 4,
     "matched": 2,
-    "unmatched": 3,
-    "partial": 1
+    "unmatched": 0,
+    "partial": 2
   }
 }
