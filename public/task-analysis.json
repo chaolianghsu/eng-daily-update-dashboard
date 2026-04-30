@@ -1,51 +1,69 @@
 {
-  "analysisDate": "2026-04-28",
-  "period": "4/27",
+  "analysisDate": "2026-04-30",
+  "period": "4/28-4/29",
   "warnings": [
     {
-      "date": "4/27",
-      "member": "侑呈",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "Fanti (8H)、X關鍵字探索 (1H)、KEYTECTOR (4H)，共12H",
-      "commits": "0 commits",
-      "reasoning": "報告了 12 小時的開發工作，包括 Fanti 8 小時、KEYTECTOR 4 小時（均超過 3 小時閾值），但當天完全沒有任何相關 commits 記錄，無法追蹤代碼產出進度。"
+      "date": "4/28",
+      "member": "Wendy",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "GCP 專案申請、GCS 建立、OCR 模組整合、數據分析整理 (6.5H dev)",
+      "commits": "6 筆 keytector commits (build, feat GCS upload, refactor)",
+      "reasoning": "開發時數 6.5H 與 6 筆 commits 的比例（1.08 H/commit）遠高於團隊平均（0.39 H/commit），倍數達 2.77 倍，顯示工時產出比低於預期，可能有未提交的工作或評估時數過高"
     },
     {
-      "date": "4/27",
+      "date": "4/28",
+      "member": "Aaron",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "月會、KEYPO Agent Frontend (3H dev)",
+      "commits": "1 筆 llmprojects/keypo-agent feat (health endpoint)",
+      "reasoning": "開發時數 3H 與 1 筆 commit 的比例（3.0 H/commit）遠高於團隊平均（0.39 H/commit），倍數達 7.69 倍，表示開發產出明顯低於預期"
+    },
+    {
+      "date": "4/29",
+      "member": "Ivy",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "大數據官網 LINK 功能開發、技術分享會 (6H dev)",
+      "commits": "4 筆 bigdata commits (style, feat tag search)",
+      "reasoning": "開發時數 6H 與 4 筆 commits 的比例（1.5 H/commit）高於團隊平均（0.48 H/commit），倍數達 3.125 倍，產出與工時比例不符預期"
+    },
+    {
+      "date": "4/29",
+      "member": "Jason",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "AI 產文聲量調整、網溫站台修復、日報異常 (12H dev)",
+      "commits": "3 筆 dailyview commits (chore filters, revert, fix daily-report)",
+      "reasoning": "開發時數 12H 與 3 筆 commits 的比例（4.0 H/commit）遠高於團隊平均（0.48 H/commit），倍數達 8.33 倍，可能有未提交的修復或調試時間"
+    },
+    {
+      "date": "4/29",
+      "member": "侑呈",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "關鍵字探索、KEYTECTOR、UAE 收錄、Docker 瘦身 (5.5H dev)",
+      "commits": "5 筆 CrawlersV2/twitter-scrapy + keytector commits",
+      "reasoning": "開發時數 5.5H 與 5 筆 commits 的比例（1.1 H/commit）高於團隊平均（0.48 H/commit），倍數達 2.29 倍，產出效率略低於預期"
+    },
+    {
+      "date": "4/29",
       "member": "禎佑",
       "severity": "🟡",
       "type": "outlier",
-      "task": "KOL 數據 (3H)、Threads 數據申請表 (2H)、開發 Threads 貼文 comment 檢查工具 (1H)、研究 KOL ES 過濾 (1H)，共7H",
-      "commits": "2 commits (chris.su/kol-lookup-v2)",
-      "reasoning": "報告 7 小時開發工作卻只有 2 個 commits，每小時 commit 數 (2/7≈0.29) 遠低於團隊平均 (14.6/7.2≈2.03)，差距約 7 倍，表示工作進度與代碼產出嚴重不相稱。"
-    },
-    {
-      "date": "4/27",
-      "member": "Ted",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "ui/ux 資料呈現 (0.5H)、後端設計 (0.5H)、處理 fanti issue 與資料搬遷 (7H)、清空 staging 資料 (1H)、日品牌電子報 (1H)，共10H",
-      "commits": "5 commits (KEYPO/keypo-frontend-2023)",
-      "reasoning": "報告 10 小時開發工作（超過團隊平均 7.2 小時），但只有 5 個 commits（遠低於平均 14.6），每小時 commit 數 (5/10=0.5) 與平均相差 4 倍，代碼產出效率明顯低於團隊水準。"
-    },
-    {
-      "date": "4/27",
-      "member": "家輝",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "ES9 pipeline 系統優化 (0.5H)、協助分析部同仁 (0.5H)、bigscrapy 自動打包排程 (2H)、盤點 GCP 專案與警報調整 (2H)、合約說明 PPT (1H)、ES5 pipeline 重啟機制 (1H)，共7H",
-      "commits": "1 commit (KEYPO/keypo-q-huaan-v2 - 'audo add keypo user')",
-      "reasoning": "報告 7 小時開發工作卻只有 1 個 commit，且 commit 內容與報告的多個任務（pipeline 優化、GCP 盤點、自動排程等）關聯度低，每小時 commit 數 (1/7≈0.14) 與平均 (14.6/7.2≈2.03) 相差超過 14 倍，反映報告工作與實際代碼產出的巨大落差。"
+      "task": "時序資料同步、Threads 數據申請、UAE 需求、TikTok timeout 調整 (6H dev)",
+      "commits": "5 筆 kol-lookup、tiktok-crawl、tiktok-task-job commits",
+      "reasoning": "開發時數 6H 與 5 筆 commits 的比例（1.2 H/commit）高於團隊平均（0.48 H/commit），倍數達 2.5 倍，開發效率相對偏低"
     }
   ],
   "summary": {
-    "totalMembers": 10,
-    "totalWarnings": 4,
+    "totalMembers": 16,
+    "totalWarnings": 6,
     "byType": {
-      "low_output": 1,
+      "low_output": 0,
       "mismatch": 0,
-      "outlier": 3
+      "outlier": 6
     }
   }
 }
