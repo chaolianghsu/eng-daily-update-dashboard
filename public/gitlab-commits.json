@@ -53307,9 +53307,9 @@
         "hours": 7.5
       },
       "Jason": {
-        "status": "🔴",
+        "status": "✅",
         "commitCount": 10,
-        "hours": null
+        "hours": 6.5
       },
       "日銜": {
         "status": "✅",
@@ -53317,24 +53317,29 @@
         "hours": 7
       },
       "Wendy": {
-        "status": "🔴",
+        "status": "✅",
         "commitCount": 13,
-        "hours": null
+        "hours": 8
       },
       "侑呈": {
-        "status": "🔴",
+        "status": "✅",
         "commitCount": 7,
-        "hours": null
+        "hours": 7
+      },
+      "禎佑": {
+        "status": "⚠️",
+        "commitCount": 0,
+        "hours": 7.5
       },
       "Ted": {
-        "status": "🔴",
+        "status": "✅",
         "commitCount": 49,
-        "hours": null
+        "hours": 10.5
       },
       "家輝": {
-        "status": "🔴",
+        "status": "✅",
         "commitCount": 3,
-        "hours": null
+        "hours": 7.5
       },
       "Joe": {
         "status": "🔴",
