@@ -1,69 +1,60 @@
 {
-  "analysisDate": "2026-04-30",
-  "period": "4/28-4/29",
+  "analysisDate": "2026-05-05",
+  "period": "4/30-5/5",
   "warnings": [
     {
-      "date": "4/28",
-      "member": "Wendy",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "GCP 專案申請、GCS 建立、OCR 模組整合、數據分析整理 (6.5H dev)",
-      "commits": "6 筆 keytector commits (build, feat GCS upload, refactor)",
-      "reasoning": "開發時數 6.5H 與 6 筆 commits 的比例（1.08 H/commit）遠高於團隊平均（0.39 H/commit），倍數達 2.77 倍，顯示工時產出比低於預期，可能有未提交的工作或評估時數過高"
-    },
-    {
-      "date": "4/28",
-      "member": "Aaron",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "月會、KEYPO Agent Frontend (3H dev)",
-      "commits": "1 筆 llmprojects/keypo-agent feat (health endpoint)",
-      "reasoning": "開發時數 3H 與 1 筆 commit 的比例（3.0 H/commit）遠高於團隊平均（0.39 H/commit），倍數達 7.69 倍，表示開發產出明顯低於預期"
-    },
-    {
-      "date": "4/29",
-      "member": "Ivy",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "大數據官網 LINK 功能開發、技術分享會 (6H dev)",
-      "commits": "4 筆 bigdata commits (style, feat tag search)",
-      "reasoning": "開發時數 6H 與 4 筆 commits 的比例（1.5 H/commit）高於團隊平均（0.48 H/commit），倍數達 3.125 倍，產出與工時比例不符預期"
-    },
-    {
-      "date": "4/29",
+      "date": "4/30",
       "member": "Jason",
       "severity": "🟡",
       "type": "outlier",
-      "task": "AI 產文聲量調整、網溫站台修復、日報異常 (12H dev)",
-      "commits": "3 筆 dailyview commits (chore filters, revert, fix daily-report)",
-      "reasoning": "開發時數 12H 與 3 筆 commits 的比例（4.0 H/commit）遠高於團隊平均（0.48 H/commit），倍數達 8.33 倍，可能有未提交的修復或調試時間"
+      "task": "LSR 黑名單更新 (2H)、網溫正式站關鍵字異常排查 (2H)、網溫日報爬蟲方式 (3H)，共 7H",
+      "commits": "6 筆 (dailyview-admin-backend FB Graph API 相關、dv-ai-draft token 相關)",
+      "reasoning": "開發時數 7H，commits 只有 6 筆，遠低於團隊平均 13.5 筆。工時與代碼產出比例 (0.86) 顯著低於團隊平均 (2.14)，差距達 2.49 倍。任務涉及異常排查與爬蟲優化，代碼變更可能較少，建議確認是否有待合併的 PR 或未記錄的工作。"
     },
     {
-      "date": "4/29",
+      "date": "4/30",
+      "member": "Wendy",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "v5 搬遷到 IDC cluster (0.5H)、v9 上線 (1.5H)、數據驗證 (1H)，共 3H",
+      "commits": "1 筆 (sinyi-dashboard merge branch develop into main)",
+      "reasoning": "開發任務 3H，但代碼產出僅 1 筆 commit。工時與代碼產出比例 (0.33) 遠低於團隊平均 (2.14)，差距達 6.48 倍。任務涉及基礎設施遷移、數據驗證等營運性工作，代碼變更有限。建議確認非代碼工作是否應分別計算。"
+    },
+    {
+      "date": "4/30",
       "member": "侑呈",
       "severity": "🟡",
       "type": "outlier",
-      "task": "關鍵字探索、KEYTECTOR、UAE 收錄、Docker 瘦身 (5.5H dev)",
-      "commits": "5 筆 CrawlersV2/twitter-scrapy + keytector commits",
-      "reasoning": "開發時數 5.5H 與 5 筆 commits 的比例（1.1 H/commit）高於團隊平均（0.48 H/commit），倍數達 2.29 倍，產出效率略低於預期"
+      "task": "KEYTECTOR (5H+1H=6H)、IG (2H+3H=5H)、其他 (1H)，共 12H",
+      "commits": "2 筆 (keytector-cib refactor reverse-IP 與 pipeline 文件)",
+      "reasoning": "開發時數 12H 為全團最高，代碼產出僅 2 筆 commits，極為不符。工時與代碼產出比例 (0.167) 遠低於團隊平均 (2.14)，差距達 12.81 倍。IG 工作 5H 完全無 commits 產出，KEYTECTOR 開發也產出極少。建議確認 IG 工作性質、程式碼審查進度與待合併 PR。"
     },
     {
-      "date": "4/29",
+      "date": "4/30",
       "member": "禎佑",
       "severity": "🟡",
       "type": "outlier",
-      "task": "時序資料同步、Threads 數據申請、UAE 需求、TikTok timeout 調整 (6H dev)",
-      "commits": "5 筆 kol-lookup、tiktok-crawl、tiktok-task-job commits",
-      "reasoning": "開發時數 6H 與 5 筆 commits 的比例（1.2 H/commit）高於團隊平均（0.48 H/commit），倍數達 2.5 倍，開發效率相對偏低"
+      "task": "KOL 數據開發 (5H)、Threads 申請表 (2.5H)、UAE 需求 (0.5H)，共 8H",
+      "commits": "5 筆 (kol-lookup-v2 backfill 功能、tiktok-task-job FBP task)",
+      "reasoning": "開發時數 8H，代碼產出僅 5 筆 commits，低於團隊平均 13.5。工時與代碼產出比例 (0.625) 低於團隊平均 (2.14)，差距達 3.42 倍。KOL 相關工作涉及數據集成與工具開發，代碼變更相對有限。建議確認代碼審查狀態與待合併的功能分支。"
+    },
+    {
+      "date": "4/30",
+      "member": "Ted",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "keypo-ai-listen 後端開發 (5H)、日品牌電子報更新 (0.5H)，共 5.5H",
+      "commits": "2 筆 (keypo-backend merge fix 與 AI summary feature)",
+      "reasoning": "開發時數 5.5H，代碼產出僅 2 筆 commits，遠低於團隊平均 13.5。工時與代碼產出比例 (0.36) 為全團倒數，差距達 5.94 倍。AI 聆聽功能涉及複雜後端設計與集成工作，但代碼產出異常少。建議確認設計階段進度、待審查的 PR 與是否存在大量未合併的工作分支。"
     }
   ],
   "summary": {
-    "totalMembers": 16,
-    "totalWarnings": 6,
+    "totalMembers": 11,
+    "totalWarnings": 5,
     "byType": {
       "low_output": 0,
       "mismatch": 0,
-      "outlier": 6
+      "outlier": 5
     }
   }
 }
