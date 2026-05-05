@@ -1,60 +1,60 @@
 {
   "analysisDate": "2026-05-05",
-  "period": "4/30-5/5",
+  "period": "5/4-5/5",
   "warnings": [
     {
-      "date": "4/30",
-      "member": "Jason",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "LSR 黑名單更新 (2H)、網溫正式站關鍵字異常排查 (2H)、網溫日報爬蟲方式 (3H)，共 7H",
-      "commits": "6 筆 (dailyview-admin-backend FB Graph API 相關、dv-ai-draft token 相關)",
-      "reasoning": "開發時數 7H，commits 只有 6 筆，遠低於團隊平均 13.5 筆。工時與代碼產出比例 (0.86) 顯著低於團隊平均 (2.14)，差距達 2.49 倍。任務涉及異常排查與爬蟲優化，代碼變更可能較少，建議確認是否有待合併的 PR 或未記錄的工作。"
+      "date": "5/4",
+      "member": "禎佑",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "KOL 數據 link (3H) + Threads 數據申請表 (1.5H) + 更新 tiktok, google map 爬蟲狀態監控 (2H)，合計 6.5H 開發時數",
+      "commits": "當日無相關 commits 記錄",
+      "reasoning": "開發任務報告達 6.5H，超過 3H 閾值，但當天未發現任何相關 commits。預期 KOL 數據、Threads 資料申請或爬蟲監控工作應有相應的代碼變更或提交紀錄。"
     },
     {
-      "date": "4/30",
-      "member": "Wendy",
+      "date": "5/4",
+      "member": "Joyce",
       "severity": "🟡",
       "type": "outlier",
-      "task": "v5 搬遷到 IDC cluster (0.5H)、v9 上線 (1.5H)、數據驗證 (1H)，共 3H",
-      "commits": "1 筆 (sinyi-dashboard merge branch develop into main)",
-      "reasoning": "開發任務 3H，但代碼產出僅 1 筆 commit。工時與代碼產出比例 (0.33) 遠低於團隊平均 (2.14)，差距達 6.48 倍。任務涉及基礎設施遷移、數據驗證等營運性工作，代碼變更有限。建議確認非代碼工作是否應分別計算。"
+      "task": "開發任務 9H",
+      "commits": "10 commits in KEYPO/keypo-engine/keypo-engine-api-v3 (title highlight feature)",
+      "reasoning": "Joyce 的工時/commit 比例 (0.9 h/commit) 為團隊平均 (0.423 h/commit) 的 2.13 倍，超過 2 倍閾值。每筆 commit 平均耗時顯著高於團隊水準，建議評估是否涉及複雜的代碼審查週期或更細粒度的任務分解。"
     },
     {
-      "date": "4/30",
+      "date": "5/4",
+      "member": "日銜",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發任務 7H",
+      "commits": "8 commits across CrawlersV2 projects (mu_1 fix, sitemap update, merge commits)",
+      "reasoning": "日銜 的工時/commit 比例 (0.875 h/commit) 為團隊平均的 2.07 倍，略超過 2 倍閾值。每筆 commit 耗時偏高，可能反映任務涉及複雜的除錯或重構工作。"
+    },
+    {
+      "date": "5/4",
       "member": "侑呈",
       "severity": "🟡",
       "type": "outlier",
-      "task": "KEYTECTOR (5H+1H=6H)、IG (2H+3H=5H)、其他 (1H)，共 12H",
-      "commits": "2 筆 (keytector-cib refactor reverse-IP 與 pipeline 文件)",
-      "reasoning": "開發時數 12H 為全團最高，代碼產出僅 2 筆 commits，極為不符。工時與代碼產出比例 (0.167) 遠低於團隊平均 (2.14)，差距達 12.81 倍。IG 工作 5H 完全無 commits 產出，KEYTECTOR 開發也產出極少。建議確認 IG 工作性質、程式碼審查進度與待合併 PR。"
+      "task": "開發任務 7H: KEYTECTOR (1.5H) + IG (1H) + 其他 (4.5H)",
+      "commits": "7 commits across KEYTECTOR and Twitter projects (ApiKeyPool fix, ct_monitor refactor, docker-compose)",
+      "reasoning": "侑呈 的工時/commit 比例 (1.0 h/commit) 為團隊平均的 2.36 倍，顯著高於標準水準。相對於其他高產出成員，每個 commit 投入時間明顯偏高，可能反映任務複雜度或 commit 粒度較粗。"
     },
     {
-      "date": "4/30",
-      "member": "禎佑",
+      "date": "5/4",
+      "member": "家輝",
       "severity": "🟡",
       "type": "outlier",
-      "task": "KOL 數據開發 (5H)、Threads 申請表 (2.5H)、UAE 需求 (0.5H)，共 8H",
-      "commits": "5 筆 (kol-lookup-v2 backfill 功能、tiktok-task-job FBP task)",
-      "reasoning": "開發時數 8H，代碼產出僅 5 筆 commits，低於團隊平均 13.5。工時與代碼產出比例 (0.625) 低於團隊平均 (2.14)，差距達 3.42 倍。KOL 相關工作涉及數據集成與工具開發，代碼變更相對有限。建議確認代碼審查狀態與待合併的功能分支。"
-    },
-    {
-      "date": "4/30",
-      "member": "Ted",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "keypo-ai-listen 後端開發 (5H)、日品牌電子報更新 (0.5H)，共 5.5H",
-      "commits": "2 筆 (keypo-backend merge fix 與 AI summary feature)",
-      "reasoning": "開發時數 5.5H，代碼產出僅 2 筆 commits，遠低於團隊平均 13.5。工時與代碼產出比例 (0.36) 為全團倒數，差距達 5.94 倍。AI 聆聽功能涉及複雜後端設計與集成工作，但代碼產出異常少。建議確認設計階段進度、待審查的 PR 與是否存在大量未合併的工作分支。"
+      "task": "開發任務 5.5H: 重啟日版資料 rmq (0.5H) + 修正 ae 頻道同步 bug (1H) + Gemini 使用說明 ppt (3.5H)",
+      "commits": "3 commits in CrawlersV2/bigcollections (add ae, update token, merge branches)",
+      "reasoning": "家輝 的工時/commit 比例 (1.83 h/commit) 為團隊平均的 4.33 倍，為本次分析中偏差最大者。建議確認開發時數統計中是否包含大量文件工作 (ppt 製作) 或 commit 粒度異常粗大，以澄清實際開發產出。"
     }
   ],
   "summary": {
-    "totalMembers": 11,
+    "totalMembers": 9,
     "totalWarnings": 5,
     "byType": {
-      "low_output": 0,
+      "low_output": 1,
       "mismatch": 0,
-      "outlier": 5
+      "outlier": 4
     }
   }
 }
