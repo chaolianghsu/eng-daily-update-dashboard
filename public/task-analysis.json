@@ -1,60 +1,51 @@
 {
-  "analysisDate": "2026-05-05",
-  "period": "5/4-5/5",
+  "analysisDate": "2026-05-06",
+  "period": "5/5",
   "warnings": [
     {
-      "date": "5/4",
-      "member": "禎佑",
+      "date": "5/5",
+      "member": "Wendy",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "KEYDERS Prototype 實作前功能對焦(4H)、數據產出驗證(0.5H)、產業典範聲譽值報表(0.5H)，合計 5.5H 開發工作",
+      "commits": "2 筆(keytector-cib: refactor classifier、feat report)，遠低於平均 16.7",
+      "reasoning": "報告 5.5 小時開發工作僅產生 2 筆 commits，工時/commit 比例 2.75 為團隊平均 0.33 的 8.3 倍，產出效率顯著低於平均"
+    },
+    {
+      "date": "5/5",
+      "member": "侑呈",
       "severity": "🔴",
       "type": "low_output",
-      "task": "KOL 數據 link (3H) + Threads 數據申請表 (1.5H) + 更新 tiktok, google map 爬蟲狀態監控 (2H)，合計 6.5H 開發時數",
-      "commits": "當日無相關 commits 記錄",
-      "reasoning": "開發任務報告達 6.5H，超過 3H 閾值，但當天未發現任何相關 commits。預期 KOL 數據、Threads 資料申請或爬蟲監控工作應有相應的代碼變更或提交紀錄。"
+      "task": "KEYTECTOR(1H)、IG(0.5H)、132主責服務遷移133(3.5H)、其他(2H)，合計 7H 開發工作",
+      "commits": "0 筆",
+      "reasoning": "報告 7 小時開發工作，但該日無任何 commits，無法驗證任務產出。所有開發任務皆無對應程式碼變更記錄"
     },
     {
-      "date": "5/4",
-      "member": "Joyce",
+      "date": "5/5",
+      "member": "禎佑",
       "severity": "🟡",
       "type": "outlier",
-      "task": "開發任務 9H",
-      "commits": "10 commits in KEYPO/keypo-engine/keypo-engine-api-v3 (title highlight feature)",
-      "reasoning": "Joyce 的工時/commit 比例 (0.9 h/commit) 為團隊平均 (0.423 h/commit) 的 2.13 倍，超過 2 倍閾值。每筆 commit 平均耗時顯著高於團隊水準，建議評估是否涉及複雜的代碼審查週期或更細粒度的任務分解。"
+      "task": "時序資料同步(1.5H)、KOL 頻道申請表比對(4H)、KEYDERS 和 kolr 頻道擴展(3H)、其他維運(6H)，合計 14H 開發工作",
+      "commits": "16 筆(kol-desc-parser 9筆、kol-lookup-v2 3筆、tiktok-crawl-httpx 4筆)，與平均 16.7 相當",
+      "reasoning": "報告 14 小時開發工作(遠高於平均 7H)，但 commits 數量只有 16 筆(與平均相近)，工時/commit 比例 0.875 為團隊平均 0.33 的 2.6 倍，工時報告與產出不相稱"
     },
     {
-      "date": "5/4",
-      "member": "日銜",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發任務 7H",
-      "commits": "8 commits across CrawlersV2 projects (mu_1 fix, sitemap update, merge commits)",
-      "reasoning": "日銜 的工時/commit 比例 (0.875 h/commit) 為團隊平均的 2.07 倍，略超過 2 倍閾值。每筆 commit 耗時偏高，可能反映任務涉及複雜的除錯或重構工作。"
-    },
-    {
-      "date": "5/4",
-      "member": "侑呈",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發任務 7H: KEYTECTOR (1.5H) + IG (1H) + 其他 (4.5H)",
-      "commits": "7 commits across KEYTECTOR and Twitter projects (ApiKeyPool fix, ct_monitor refactor, docker-compose)",
-      "reasoning": "侑呈 的工時/commit 比例 (1.0 h/commit) 為團隊平均的 2.36 倍，顯著高於標準水準。相對於其他高產出成員，每個 commit 投入時間明顯偏高，可能反映任務複雜度或 commit 粒度較粗。"
-    },
-    {
-      "date": "5/4",
+      "date": "5/5",
       "member": "家輝",
       "severity": "🟡",
       "type": "outlier",
-      "task": "開發任務 5.5H: 重啟日版資料 rmq (0.5H) + 修正 ae 頻道同步 bug (1H) + Gemini 使用說明 ppt (3.5H)",
-      "commits": "3 commits in CrawlersV2/bigcollections (add ae, update token, merge branches)",
-      "reasoning": "家輝 的工時/commit 比例 (1.83 h/commit) 為團隊平均的 4.33 倍，為本次分析中偏差最大者。建議確認開發時數統計中是否包含大量文件工作 (ppt 製作) 或 commit 粒度異常粗大，以澄清實際開發產出。"
+      "task": "日版資料 rmq 異常排查(2.5H)、GCP Cloud Scheduler 測試(0.5H)、其他維運(2.5H)，合計 5.5H 開發工作",
+      "commits": "1 筆(bigrmq fix-rmq)，遠低於平均 16.7",
+      "reasoning": "報告 5.5 小時開發工作僅產生 1 筆 commit，工時/commit 比例 5.5 為團隊平均 0.33 的 16.6 倍，為最顯著的產出效率異常"
     }
   ],
   "summary": {
     "totalMembers": 9,
-    "totalWarnings": 5,
+    "totalWarnings": 4,
     "byType": {
       "low_output": 1,
       "mismatch": 0,
-      "outlier": 4
+      "outlier": 3
     }
   }
 }
