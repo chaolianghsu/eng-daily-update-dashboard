@@ -1,209 +1,115 @@
 {
-  "analysisDate": "2026-05-06",
-  "period": "5/5",
+  "analysisDate": "2026-05-07",
+  "period": "5/6",
   "planSpecs": [
     {
-      "date": "5/5",
-      "member": "Aaron",
-      "commit": {
-        "title": "docs: split sandbox tool into generate_file + read_file_content",
-        "sha": "fb5544eb",
-        "project": "llmprojects/keypo-sandbox",
-        "url": "https://biglab.buygta.today/llmprojects/keypo-sandbox/-/commit/fb5544eb",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/superpowers/plans/2026-05-04-sandbox-implementation.md"
-      ]
-    },
-    {
-      "date": "5/5",
-      "member": "Aaron",
-      "commit": {
-        "title": "docs: add edit_file tool (attachment_id + file_id sources)",
-        "sha": "84859687",
-        "project": "llmprojects/keypo-sandbox",
-        "url": "https://biglab.buygta.today/llmprojects/keypo-sandbox/-/commit/84859687",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/superpowers/plans/2026-05-04-sandbox-implementation.md"
-      ]
-    },
-    {
-      "date": "5/5",
-      "member": "Aaron",
-      "commit": {
-        "title": "docs: bucket architecture — 4 buckets, attach() bucket_name param",
-        "sha": "529bffa6",
-        "project": "llmprojects/keypo-sandbox",
-        "url": "https://biglab.buygta.today/llmprojects/keypo-sandbox/-/commit/529bffa6",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/superpowers/plans/2026-05-04-sandbox-implementation.md",
-        "docs/superpowers/specs/2026-05-04-sandbox-design.md"
-      ]
-    },
-    {
-      "date": "5/5",
-      "member": "禎佑",
-      "commit": {
-        "title": "docs: crawler_status 設計文件 — 從 MSSQL 直接比對爬蟲收錄狀態",
-        "sha": "8c50f557",
-        "project": "chris.su/kol-desc-parser",
-        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/8c50f557",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/superpowers/specs/2026-05-05-crawler-status-design.md"
-      ]
-    },
-    {
-      "date": "5/5",
-      "member": "禎佑",
-      "commit": {
-        "title": "docs: crawler_status 實作計畫",
-        "sha": "3a50b8b5",
-        "project": "chris.su/kol-desc-parser",
-        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/3a50b8b5",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/superpowers/plans/2026-05-05-crawler-status.md"
-      ]
-    },
-    {
-      "date": "5/5",
-      "member": "禎佑",
-      "commit": {
-        "title": "feat: channel_post gzip+limit, channel_timeline fetch_time as DATE, update docs",
-        "sha": "ff8ec1d8",
-        "project": "chris.su/kol-lookup-v2",
-        "url": "https://biglab.buygta.today/chris.su/kol-lookup-v2/-/commit/ff8ec1d8",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/tools-overview.md"
-      ]
-    },
-    {
-      "date": "5/5",
+      "date": "5/6",
       "member": "Joyce",
       "commit": {
-        "title": "docs(channel_analytics): add fetched_time -1h shift spec and plan",
-        "sha": "8b5d8ee2",
+        "title": "docs(keyders): add module skeleton + DB connections design spec",
+        "sha": "59ae5474",
         "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/8b5d8ee2",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/59ae5474",
         "source": "gitlab"
       },
-      "files": [
-        "docs/superpowers/plans/2026-05-05-socialchnldailytrend-fetched-time-shift.md",
-        "docs/superpowers/specs/2026-04-16-channel-analytics-design.md",
-        "docs/superpowers/specs/2026-05-05-socialchnldailytrend-fetched-time-shift-design.md"
-      ]
+      "files": ["docs/superpowers/specs/2026-05-06-keyders-module-and-connections-design.md"]
     },
     {
-      "date": "5/5",
-      "member": "Ted",
+      "date": "5/6",
+      "member": "Joyce",
       "commit": {
-        "title": "docs: spec for Google Chat notify on topic/source creation",
-        "sha": "52c3956e",
-        "project": "CrawlersV2/fanti-insights-api",
-        "url": "https://biglab.buygta.today/CrawlersV2/fanti-insights-api/-/commit/52c3956e",
+        "title": "docs(keyders): add implementation plan",
+        "sha": "090fc7ea",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/090fc7ea",
         "source": "gitlab"
       },
-      "files": [
-        "docs/superpowers/specs/2026-05-05-gchat-notify-on-create-design.md"
-      ]
+      "files": ["docs/superpowers/plans/2026-05-06-keyders-module-and-connections.md"]
     },
     {
-      "date": "5/5",
-      "member": "Ted",
+      "date": "5/6",
+      "member": "Joyce",
       "commit": {
-        "title": "docs: tighten gchat-notify spec with verified handler shapes",
-        "sha": "c3198fff",
-        "project": "CrawlersV2/fanti-insights-api",
-        "url": "https://biglab.buygta.today/CrawlersV2/fanti-insights-api/-/commit/c3198fff",
+        "title": "docs(keyders): track ESBaseSetting hosts-Optional refactor as §12.2 #10",
+        "sha": "c406b90f",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/c406b90f",
         "source": "gitlab"
       },
-      "files": [
-        "docs/superpowers/specs/2026-05-05-gchat-notify-on-create-design.md"
-      ]
+      "files": ["docs/superpowers/specs/2026-05-06-keyders-module-and-connections-design.md"]
     },
     {
-      "date": "5/5",
-      "member": "Ted",
+      "date": "5/6",
+      "member": "Joyce",
       "commit": {
-        "title": "docs: implementation plan for gchat-notify-on-create",
-        "sha": "a150dccb",
-        "project": "CrawlersV2/fanti-insights-api",
-        "url": "https://biglab.buygta.today/CrawlersV2/fanti-insights-api/-/commit/a150dccb",
+        "title": "docs(keyders): record §12.2 follow-ups #11~#14 from Phase 10 final review",
+        "sha": "88b5a316",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/88b5a316",
         "source": "gitlab"
       },
-      "files": [
-        "docs/superpowers/plans/2026-05-05-gchat-notify-on-create.md"
-      ]
+      "files": ["docs/superpowers/specs/2026-05-06-keyders-module-and-connections-design.md"]
+    },
+    {
+      "date": "5/6",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs: crawler_status_f2n 設計文件 — 從 Fid2Name 比對爬蟲收錄狀態",
+        "sha": "52fa8465",
+        "project": "chris.su/kol-desc-parser",
+        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/52fa8465",
+        "source": "gitlab"
+      },
+      "files": ["docs/superpowers/specs/2026-05-06-crawler-status-f2n-design.md"]
+    },
+    {
+      "date": "5/6",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs: crawler_status_f2n 實作計畫",
+        "sha": "9e5098b3",
+        "project": "chris.su/kol-desc-parser",
+        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/9e5098b3",
+        "source": "gitlab"
+      },
+      "files": ["docs/superpowers/plans/2026-05-06-crawler-status-f2n.md"]
     }
   ],
   "correlations": [
     {
-      "date": "5/5",
-      "member": "Aaron",
-      "status": "partial",
-      "specCommits": 3,
-      "dailyUpdateMention": true,
-      "matchedTasks": [
-        "KEYPO sandbox 測試 (3H)"
-      ],
-      "unmatchedSpecs": [],
-      "reasoning": "Daily update 第 5 項明確提及「KEYPO sandbox 測試（3H）」，與三個 sandbox 規劃/設計 commits 的主題領域吻合；然而 commits 內容涵蓋具體工具設計細節（generate_file/read_file_content 拆分、edit_file 工具新增、4 bucket 架構設計），daily update 僅描述「測試」，未明確提及規劃或設計文件的撰寫工作，故判定為部分吻合。"
-    },
-    {
-      "date": "5/5",
-      "member": "禎佑",
-      "status": "partial",
-      "specCommits": 3,
-      "dailyUpdateMention": true,
-      "matchedTasks": [
-        "開發直接從 MSSQL 比對 KOL 頻道申請表 (更貼近爬衝狀態) (4H)"
-      ],
-      "unmatchedSpecs": [
-        "feat: channel_post gzip+limit, channel_timeline fetch_time as DATE, update docs"
-      ],
-      "reasoning": "kol-desc-parser 的兩個規劃/設計 commits（crawler_status 設計文件與實作計畫）與 daily update 中「開發直接從 MSSQL 比對 KOL 頻道申請表（更貼近爬衝狀態）」高度吻合，內容一致；但 kol-lookup-v2 的 channel_post gzip+limit 及 channel_timeline fetch_time 文件更新，在 daily update 中未有任何對應提及，故整體判定為部分吻合。"
-    },
-    {
-      "date": "5/5",
+      "date": "5/6",
       "member": "Joyce",
       "status": "matched",
-      "specCommits": 1,
+      "specCommits": 4,
       "dailyUpdateMention": true,
       "matchedTasks": [
-        "處理社群頻道分析時序資料往前位移一小時"
+        "KEYDERS IN KEYPO KEYPO API v3 基本架構處理(4H)",
+        "時序資料庫連線問題(0.5H)",
+        "KEYPO engine API v3 文件整理"
       ],
       "unmatchedSpecs": [],
-      "reasoning": "Commit 內容為社群頻道分析 fetched_time 往前位移一小時的設計規格與實作計畫，daily update 第 1 項中明確標註「[Done] 處理社群頻道分析時序資料往前位移一小時」，兩者描述完全吻合，判定為吻合。"
+      "reasoning": "Joyce 的 4 個 spec commits 均圍繞 KEYDERS 模組架構設計與資料庫連線規格。Daily update 明確記載「KEYDERS IN KEYPO KEYPO API v3 基本架構處理(4H)」直接對應模組骨架設計，「時序資料庫連線問題(0.5H)」對應 DB connections design spec，In Progress 狀態的「KEYPO engine API v3 文件整理」則與多個 docs 類 commits（設計規格更新、follow-up 記錄）一致。整體高度吻合。"
     },
     {
-      "date": "5/5",
-      "member": "Ted",
-      "status": "matched",
-      "specCommits": 3,
+      "date": "5/6",
+      "member": "禎佑",
+      "status": "partial",
+      "specCommits": 2,
       "dailyUpdateMention": true,
       "matchedTasks": [
-        "測試 Fanti 新增議題/來源時通知 Google Chat 功能 - 完成 webhook helper、議題/來源新增成功通知 (1H)"
+        "KEYDERS 和 kolr 頻道新增到 Fid2Name，並回補一年主文留言 (3H)",
+        "收錄 Fid2Name 的頻道的 KOL 資訊（各平台已爬數量追蹤）"
       ],
       "unmatchedSpecs": [],
-      "reasoning": "三個 commits 均針對 Fanti 新增議題/來源時觸發 Google Chat 通知的規格文件（含兩個設計規格版本）與實作計畫；daily update 第 1 項明確記載「測試 Fanti 新增議題/來源時通知 Google Chat 功能，完成 webhook helper、議題/來源新增成功通知」，功能描述與 spec/plan commits 完全對應，判定為吻合。"
+      "reasoning": "禎佑的 2 個 spec commits 是關於 crawler_status_f2n 工具的設計文件與實作計畫，核心概念為透過 Fid2Name 比對來確認各平台爬蟲收錄狀態。Daily update 中有大量 Fid2Name 相關工作（新增 KEYDERS/kolr 頻道、追蹤 FB/YT/IG/TikTok 等平台已爬對應爬數量），顯示正進行相關覆蓋率監控工作，與 spec 主題直接相關。然而 daily update 並未明確提及撰寫 crawler_status_f2n 設計文件或實作計畫本身，屬於工作領域相符但文件產出未被提及的情況，判定為部分吻合。"
     }
   ],
   "summary": {
-    "totalSpecCommits": 10,
-    "totalCorrelations": 4,
-    "membersWithSpecs": 4,
-    "matched": 2,
+    "totalSpecCommits": 6,
+    "totalCorrelations": 2,
+    "membersWithSpecs": 2,
+    "matched": 1,
     "unmatched": 0,
-    "partial": 2
+    "partial": 1
   }
 }

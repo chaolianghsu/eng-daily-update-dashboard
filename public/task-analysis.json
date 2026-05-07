@@ -1,42 +1,42 @@
 {
-  "analysisDate": "2026-05-06",
-  "period": "5/5",
+  "analysisDate": "2026-05-07",
+  "period": "5/6",
   "warnings": [
     {
-      "date": "5/5",
+      "date": "5/6",
+      "member": "家輝",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "日版資料rmq觀察、測試機OS重新安裝、帳號檢測、api gateway port開通、GCP Cloud Scheduler測試等 (6H)",
+      "commits": "0 commits",
+      "reasoning": "開發任務報告6小時，但當天無任何Git commits記錄。日版資料觀察、Cloud Scheduler測試、api gateway配置等任務通常應產出可追蹤的代碼變更，零commit產出表示任務未完成或未同步。"
+    },
+    {
+      "date": "5/6",
       "member": "Wendy",
       "severity": "🟡",
       "type": "outlier",
-      "task": "KEYDERS Prototype 實作前功能對焦(4H)、數據產出驗證(0.5H)、產業典範聲譽值報表(0.5H)，合計 5.5H 開發工作",
-      "commits": "2 筆(keytector-cib: refactor classifier、feat report)，遠低於平均 16.7",
-      "reasoning": "報告 5.5 小時開發工作僅產生 2 筆 commits，工時/commit 比例 2.75 為團隊平均 0.33 的 8.3 倍，產出效率顯著低於平均"
+      "task": "月聲譽值數值異常排查並重跑排程、當日數據驗證、指標計算業務規劃 (5H dev)",
+      "commits": "1 commit (sinyi-dashboard fix)",
+      "reasoning": "開發任務5小時產出1個commit，commit產出比例為0.2（團隊平均1.29），遠低於平均的6.5倍。雖任務包含驗證與規劃工作不必然需大量commits，但與聲譽值異常排查相關的代碼修改預期應有更多產出。"
     },
     {
-      "date": "5/5",
+      "date": "5/6",
       "member": "侑呈",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "KEYTECTOR(1H)、IG(0.5H)、132主責服務遷移133(3.5H)、其他(2H)，合計 7H 開發工作",
-      "commits": "0 筆",
-      "reasoning": "報告 7 小時開發工作，但該日無任何 commits，無法驗證任務產出。所有開發任務皆無對應程式碼變更記錄"
-    },
-    {
-      "date": "5/5",
-      "member": "禎佑",
       "severity": "🟡",
       "type": "outlier",
-      "task": "時序資料同步(1.5H)、KOL 頻道申請表比對(4H)、KEYDERS 和 kolr 頻道擴展(3H)、其他維運(6H)，合計 14H 開發工作",
-      "commits": "16 筆(kol-desc-parser 9筆、kol-lookup-v2 3筆、tiktok-crawl-httpx 4筆)，與平均 16.7 相當",
-      "reasoning": "報告 14 小時開發工作(遠高於平均 7H)，但 commits 數量只有 16 筆(與平均相近)，工時/commit 比例 0.875 為團隊平均 0.33 的 2.6 倍，工時報告與產出不相稱"
+      "task": "KEYTECTOR (2H)、IG (0.5H)、132主責服務遷移133 (2.5H)、其他 (2.5H)",
+      "commits": "1 commit (kol_profile_info fbp channel_id修正)",
+      "reasoning": "開發任務7.5小時產出1個commit，commit產出比例為0.13（團隊平均1.29），差距10倍，遠低於團隊平均水準。服務遷移、多系統開發應產出更多代碼變更，目前commit數量與任務複雜度嚴重不符。"
     },
     {
-      "date": "5/5",
-      "member": "家輝",
+      "date": "5/6",
+      "member": "Ted",
       "severity": "🟡",
       "type": "outlier",
-      "task": "日版資料 rmq 異常排查(2.5H)、GCP Cloud Scheduler 測試(0.5H)、其他維運(2.5H)，合計 5.5H 開發工作",
-      "commits": "1 筆(bigrmq fix-rmq)，遠低於平均 16.7",
-      "reasoning": "報告 5.5 小時開發工作僅產生 1 筆 commit，工時/commit 比例 5.5 為團隊平均 0.33 的 16.6 倍，為最顯著的產出效率異常"
+      "task": "開發作者欄位顯示功能、電子報AI摘要條列式輸出、Fanti資料驗證、多項issue修復 (7H dev)",
+      "commits": "1 commit (keypo-frontend ai-listen citations分析頁)",
+      "reasoning": "開發任務7小時產出1個commit，commit產出比例為0.14（團隊平均1.29），差距9倍，遠低於團隊平均水準。前端功能開發、issue修復(#360、#59、#3075、#62等)通常需產出多個commits，目前產出與任務數量嚴重不符。"
     }
   ],
   "summary": {
