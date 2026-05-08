@@ -1,111 +1,68 @@
 {
-  "analysisDate": "2026-05-07",
-  "period": "5/6",
+  "analysisDate": "2026-05-08",
+  "period": "5/7",
   "planSpecs": [
     {
-      "date": "5/6",
-      "member": "Joyce",
+      "date": "5/7",
+      "member": "侑呈",
       "commit": {
-        "title": "docs(keyders): add module skeleton + DB connections design spec",
-        "sha": "59ae5474",
-        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/59ae5474",
+        "title": "docs(invoice): 改 BRAND_GROUPS 為 BRAND_ALIASES，CLI flag 改 --brand",
+        "sha": "d185e16d",
+        "project": "keytector/keytector-cib",
+        "url": "https://biglab.buygta.today/keytector/keytector-cib/-/commit/d185e16d",
         "source": "gitlab"
       },
-      "files": ["docs/superpowers/specs/2026-05-06-keyders-module-and-connections-design.md"]
+      "files": ["docs/superpowers/specs/2026-05-06-invoice-detection-design.md"]
     },
     {
-      "date": "5/6",
-      "member": "Joyce",
-      "commit": {
-        "title": "docs(keyders): add implementation plan",
-        "sha": "090fc7ea",
-        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/090fc7ea",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/plans/2026-05-06-keyders-module-and-connections.md"]
-    },
-    {
-      "date": "5/6",
-      "member": "Joyce",
-      "commit": {
-        "title": "docs(keyders): track ESBaseSetting hosts-Optional refactor as §12.2 #10",
-        "sha": "c406b90f",
-        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/c406b90f",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/specs/2026-05-06-keyders-module-and-connections-design.md"]
-    },
-    {
-      "date": "5/6",
-      "member": "Joyce",
-      "commit": {
-        "title": "docs(keyders): record §12.2 follow-ups #11~#14 from Phase 10 final review",
-        "sha": "88b5a316",
-        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/88b5a316",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/specs/2026-05-06-keyders-module-and-connections-design.md"]
-    },
-    {
-      "date": "5/6",
+      "date": "5/7",
       "member": "禎佑",
       "commit": {
-        "title": "docs: crawler_status_f2n 設計文件 — 從 Fid2Name 比對爬蟲收錄狀態",
-        "sha": "52fa8465",
+        "title": "docs: 新增 mail 欄位解析 spec（@gmail.com）",
+        "sha": "c80cb456",
         "project": "chris.su/kol-desc-parser",
-        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/52fa8465",
+        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/c80cb456",
         "source": "gitlab"
       },
-      "files": ["docs/superpowers/specs/2026-05-06-crawler-status-f2n-design.md"]
+      "files": ["docs/superpowers/specs/2026-05-07-mail-field-parsing-design.md"]
     },
     {
-      "date": "5/6",
+      "date": "5/7",
       "member": "禎佑",
       "commit": {
-        "title": "docs: crawler_status_f2n 實作計畫",
-        "sha": "9e5098b3",
+        "title": "docs: 新增 mail 欄位解析 implementation plan",
+        "sha": "e3fc5818",
         "project": "chris.su/kol-desc-parser",
-        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/9e5098b3",
+        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/e3fc5818",
         "source": "gitlab"
       },
-      "files": ["docs/superpowers/plans/2026-05-06-crawler-status-f2n.md"]
+      "files": ["docs/superpowers/plans/2026-05-07-mail-field-parsing.md"]
     }
   ],
   "correlations": [
     {
-      "date": "5/6",
-      "member": "Joyce",
-      "status": "matched",
-      "specCommits": 4,
+      "date": "5/7",
+      "member": "侑呈",
+      "status": "partial",
+      "specCommits": 1,
       "dailyUpdateMention": true,
-      "matchedTasks": [
-        "KEYDERS IN KEYPO KEYPO API v3 基本架構處理(4H)",
-        "時序資料庫連線問題(0.5H)",
-        "KEYPO engine API v3 文件整理"
-      ],
+      "matchedTasks": ["KEYTECTOR(1H) [In Progress] 財政部電子發票"],
       "unmatchedSpecs": [],
-      "reasoning": "Joyce 的 4 個 spec commits 均圍繞 KEYDERS 模組架構設計與資料庫連線規格。Daily update 明確記載「KEYDERS IN KEYPO KEYPO API v3 基本架構處理(4H)」直接對應模組骨架設計，「時序資料庫連線問題(0.5H)」對應 DB connections design spec，In Progress 狀態的「KEYPO engine API v3 文件整理」則與多個 docs 類 commits（設計規格更新、follow-up 記錄）一致。整體高度吻合。"
+      "reasoning": "Daily update 提及 KEYTECTOR 電子發票工作項目（1H，In Progress），與該 spec commit 修改的發票偵測設計文件（invoice-detection-design.md）領域相符。然而 daily update 僅簡短標記「財政部電子發票」進行中，未具體提及將 BRAND_GROUPS 改名為 BRAND_ALIASES 或 CLI flag 調整等設計層面的變更內容，因此判定為部分吻合。"
     },
     {
-      "date": "5/6",
+      "date": "5/7",
       "member": "禎佑",
-      "status": "partial",
+      "status": "matched",
       "specCommits": 2,
       "dailyUpdateMention": true,
-      "matchedTasks": [
-        "KEYDERS 和 kolr 頻道新增到 Fid2Name，並回補一年主文留言 (3H)",
-        "收錄 Fid2Name 的頻道的 KOL 資訊（各平台已爬數量追蹤）"
-      ],
+      "matchedTasks": ["[Done] 開發 kol-desc-parser 解析 mail，並新增此欄位到 ES profile_list (4H)"],
       "unmatchedSpecs": [],
-      "reasoning": "禎佑的 2 個 spec commits 是關於 crawler_status_f2n 工具的設計文件與實作計畫，核心概念為透過 Fid2Name 比對來確認各平台爬蟲收錄狀態。Daily update 中有大量 Fid2Name 相關工作（新增 KEYDERS/kolr 頻道、追蹤 FB/YT/IG/TikTok 等平台已爬對應爬數量），顯示正進行相關覆蓋率監控工作，與 spec 主題直接相關。然而 daily update 並未明確提及撰寫 crawler_status_f2n 設計文件或實作計畫本身，屬於工作領域相符但文件產出未被提及的情況，判定為部分吻合。"
+      "reasoning": "Daily update 明確記錄「開發 kol-desc-parser 解析 mail，並新增此欄位到 ES profile_list（4H，Done）」，與兩筆 spec commits（mail 欄位解析的 spec 設計文件與 implementation plan）完全對應。commit 內容為先寫規格再寫實作計畫，符合 superpowers 開發流程，與 daily update 所描述的實作工作一致，判定為吻合。"
     }
   ],
   "summary": {
-    "totalSpecCommits": 6,
+    "totalSpecCommits": 3,
     "totalCorrelations": 2,
     "membersWithSpecs": 2,
     "matched": 1,
