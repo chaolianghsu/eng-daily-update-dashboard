@@ -24,6 +24,8 @@ const loadData: LoadData = async () => {
     commitData: commits,
     taskAnalysisData: tasks,
     planAnalysisData: planAnalysis,
+    centers: (raw as any).centers,
+    validCodes: (raw as any).validCodes,
   };
 };
 

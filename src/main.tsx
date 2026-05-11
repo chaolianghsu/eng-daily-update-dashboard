@@ -16,6 +16,8 @@ const loadData: LoadData = async () => {
     commitData: commits,
     taskAnalysisData: tasks,
     planAnalysisData: planAnalysis,
+    centers: raw.centers,
+    validCodes: raw.validCodes,
   };
 };
 
