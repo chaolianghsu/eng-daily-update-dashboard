@@ -1,5 +1,6 @@
 import { COLORS, SEVERITY_COLORS } from "../constants";
 import { getStatus } from "../utils";
+import { computeUncategorizedStats } from "../utils/uncategorized";
 import type { Issue } from "../types";
 
 interface StatusOverviewProps {
@@ -21,6 +22,13 @@ export function StatusOverview({ allIssues, issues, members, rawData, dates, act
   const latestData = rawData?.[displayDate] || {};
   const teamVals = Object.values(latestData).filter((v: any) => v.total != null).map((v: any) => v.total);
   const teamAvg = teamVals.length ? +(teamVals.reduce((a: number, b: number) => a + b, 0) / teamVals.length).toFixed(1) : null;
+  const uncategorizedStats = computeUncategorizedStats(rawData, { members });
+  const uncategorizedRate = uncategorizedStats.rate;
+  const uncategorizedColor =
+    uncategorizedRate == null ? COLORS.textDim
+    : uncategorizedRate < 20 ? COLORS.green
+    : uncategorizedRate < 50 ? COLORS.yellow
+    : COLORS.red;
   const actionHints: Record<string, string> = {
     "超時": "留意工作量分配",
     "未回報": "請確認是否需要協助",
@@ -58,12 +66,21 @@ export function StatusOverview({ allIssues, issues, members, rawData, dates, act
               </div>
             )}
           </div>
-          <div style={{ padding: "16px 20px", minWidth: 80, textAlign: "center" }}>
+          <div style={{ padding: "16px 20px", minWidth: 80, textAlign: "center", borderRight: uncategorizedRate != null ? `1px solid ${COLORS.border}` : "none" }}>
             <div style={{ fontSize: 10, color: COLORS.textDim, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 6 }}>需關注</div>
             <div style={{ fontSize: 22, fontWeight: 800, color: attentionIssues.length > 0 ? COLORS.yellow : COLORS.green, lineHeight: 1.1 }}>
               {attentionIssues.length}<span style={{ fontSize: 11, fontWeight: 500, color: COLORS.textDim }}>人</span>
             </div>
           </div>
+          {uncategorizedRate != null && (
+            <div style={{ padding: "16px 20px", minWidth: 80, textAlign: "center" }} title="工項無 [CODE] 標籤的時數佔比">
+              <div style={{ fontSize: 10, color: COLORS.textDim, fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 6 }}>未分類</div>
+              <div style={{ fontSize: 22, fontWeight: 800, color: uncategorizedColor, lineHeight: 1.1, fontVariantNumeric: "tabular-nums" }}>
+                {uncategorizedRate}<span style={{ fontSize: 11, fontWeight: 500, color: COLORS.textDim }}>%</span>
+              </div>
+              <div style={{ fontSize: 9, color: COLORS.textDim, marginTop: 2 }}>目標 &lt; 20%</div>
+            </div>
+          )}
         </div>
 
         {/* Right: Attention cards */}
