@@ -6,6 +6,34 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
 
+// --- Config Normalization ---
+
+// Accept legacy single-space shape ({spaceId, memberMap, ...}) and modern
+// multi-space shape ({spaces: [...], centers, validCodes, ...}).
+// Always returns the modern shape so downstream code reads one schema.
+function normalizeChatConfig(config) {
+  const queryKeyword = config.queryKeyword || 'Daily Update';
+  if (Array.isArray(config.spaces) && config.spaces.length > 0) {
+    return {
+      queryKeyword,
+      spaces: config.spaces,
+      centers: config.centers,
+      validCodes: config.validCodes,
+    };
+  }
+  // Legacy: collapse top-level spaceId + memberMap into a single-element spaces[].
+  return {
+    queryKeyword,
+    spaces: [{
+      spaceId: config.spaceId,
+      center: '工程',
+      memberMap: config.memberMap || {},
+    }],
+    centers: config.centers,
+    validCodes: config.validCodes,
+  };
+}
+
 // --- Constants ---
 
 const MEETING_KEYWORDS = /meeting|會議|週會|讀書會|例會|討論|分享會|sync|臨時會/i;
@@ -360,17 +388,22 @@ function parseThread(replies, memberMap) {
 
 // --- Main ---
 
-function parseMessagesFile(messageFiles, manualLeave) {
-  const config = JSON.parse(
+function parseMessagesFile(messageFiles, manualLeave, options = {}) {
+  const config = options.config || JSON.parse(
     fs.readFileSync(path.join(ROOT, 'chat-config.json'), 'utf8')
   );
+  const normalized = normalizeChatConfig(config);
   const rawDataPath = path.join(ROOT, 'public', 'raw_data.json');
   const existing = fs.existsSync(rawDataPath)
     ? JSON.parse(fs.readFileSync(rawDataPath, 'utf8'))
     : { rawData: {}, issues: [] };
 
   const messages = loadMessages(messageFiles);
-  const { memberMap, queryKeyword = 'Daily Update' } = config;
+  // For now use the first space's memberMap. Multi-space orchestration is
+  // driven by the /sync-daily-updates skill which invokes the parser once
+  // per space and merges results upstream.
+  const { queryKeyword } = normalized;
+  const memberMap = options.memberMap || normalized.spaces[0].memberMap;
 
   // Determine reporting members from existing data
   const existingDates = Object.keys(existing.rawData);
@@ -525,4 +558,5 @@ module.exports = {
   parseLeaveMessages,
   parseMessagesFile,
   findThreads,
+  normalizeChatConfig,
 };

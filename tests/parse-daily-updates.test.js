@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { parseHoursFromText, generateIssues, findThreads } from '../scripts/parse-daily-updates.js';
+import { parseHoursFromText, generateIssues, findThreads, normalizeChatConfig } from '../scripts/parse-daily-updates.js';
 
 describe('parseHoursFromText', () => {
   it("returns status 'reported' when hours found", () => {
@@ -125,6 +125,55 @@ describe('parseHoursFromText — items[] with product code', () => {
   it('lowercase [keypo] is NOT treated as a valid code (uncategorized)', () => {
     const result = parseHoursFromText("1. [keypo] 開發 (3H)");
     expect(result.items[0].code).toBeNull();
+  });
+});
+
+describe('normalizeChatConfig', () => {
+  it('collapses legacy single-spaceId config into spaces[]', () => {
+    const legacy = {
+      spaceId: 'spaces/AAQAQhmoRAk',
+      memberMap: { 'users/u1': 'Joyce' },
+      queryKeyword: 'Daily Update',
+    };
+    const n = normalizeChatConfig(legacy);
+    expect(n.spaces).toHaveLength(1);
+    expect(n.spaces[0]).toMatchObject({
+      spaceId: 'spaces/AAQAQhmoRAk',
+      center: '工程',
+      memberMap: { 'users/u1': 'Joyce' },
+    });
+    expect(n.queryKeyword).toBe('Daily Update');
+  });
+
+  it('passes through new multi-space config unchanged', () => {
+    const modern = {
+      queryKeyword: 'Daily Update',
+      spaces: [
+        { spaceId: 'spaces/A', center: '工程', memberMap: {} },
+        { spaceId: 'spaces/B', center: '產品', memberMap: {} },
+      ],
+      centers: { 工程: { label: '工程部', members: [] } },
+      validCodes: { KEYPO: { label: 'KEYPO 系列' } },
+    };
+    const n = normalizeChatConfig(modern);
+    expect(n.spaces).toHaveLength(2);
+    expect(n.centers).toBe(modern.centers);
+    expect(n.validCodes).toBe(modern.validCodes);
+  });
+
+  it('defaults queryKeyword to "Daily Update" when absent', () => {
+    const n = normalizeChatConfig({ spaceId: 'spaces/A', memberMap: {} });
+    expect(n.queryKeyword).toBe('Daily Update');
+  });
+
+  it('preserves centers/validCodes from legacy shape if author included them', () => {
+    const legacyWithMeta = {
+      spaceId: 'spaces/A',
+      memberMap: {},
+      centers: { 工程: { label: '工程部', members: [] } },
+    };
+    const n = normalizeChatConfig(legacyWithMeta);
+    expect(n.centers).toBeDefined();
   });
 });
 
