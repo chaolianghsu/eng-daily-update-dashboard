@@ -18,13 +18,14 @@ import { useWeeklySummary } from "./hooks/useWeeklySummary";
 import { useAllIssues } from "./hooks/useAllIssues";
 import { useHealthAlerts } from "./hooks/useHealthAlerts";
 import { MemberView } from "./views/MemberView";
+import { CodeView } from "./views/CodeView";
 import { CenterFilter } from "./components/CenterFilter";
 import { useCenterFilter } from "./hooks/useCenterFilter";
 import type { LoadData, CommitData, TaskAnalysisData, PlanAnalysisData, Center, ValidCode } from "./types";
 import "./styles.css";
 
 export default function App({ loadData }: { loadData: LoadData }) {
-  const [view, setView] = useState<"detail" | "trend" | "weekly" | "member">("detail");
+  const [view, setView] = useState<"detail" | "trend" | "weekly" | "member" | "code">("detail");
   const [subView, setSubView] = useState<"hours" | "commits" | "planspec">("hours");
   const [rawData, setRawData] = useState<Record<string, Record<string, any>> | null>(null);
   const [issues, setIssues] = useState<any[]>([]);
@@ -145,6 +146,7 @@ export default function App({ loadData }: { loadData: LoadData }) {
             { key: "trend", label: "📈 趨勢" },
             { key: "weekly", label: "📋 週報" },
             { key: "member", label: "👤 成員" },
+            { key: "code", label: "💼 代號" },
           ].map(tab => (
             <button key={tab.key} className={`tab-btn ${view === tab.key ? 'tab-active' : ''}`}
               onClick={() => setView(tab.key as any)} style={tabStyle(view === tab.key)}>
@@ -241,6 +243,16 @@ export default function App({ loadData }: { loadData: LoadData }) {
             taskAnalysisData={taskAnalysisData}
             healthAlerts={healthAlerts}
             isMobile={isMobile}
+          />
+        )}
+
+        {view === "code" && (
+          <CodeView
+            rawData={rawData!}
+            validCodes={validCodes}
+            members={members}
+            dates={dates}
+            commitData={commitData}
           />
         )}
 
