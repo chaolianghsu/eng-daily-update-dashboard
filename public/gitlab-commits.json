@@ -53874,6 +53874,1176 @@
           }
         ]
       }
+    },
+    "5/8": {
+      "日銜": {
+        "count": 28,
+        "projects": [
+          "CrawlersV2/bigcrawler-scrapy",
+          "CrawlersV2/youtube-channel-scrapy",
+          "byron.you/googlesearch"
+        ],
+        "items": [
+          {
+            "title": "fix(udnstyle): three article-page parsing issues",
+            "sha": "6900f627",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/6900f6275ef07f20fc85744a53842ba8a76bae59",
+            "datetime": "2026-05-08T09:52:59.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix(digitimes): switch to /tech/industries/ category index",
+            "sha": "65aec2a9",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/65aec2a9e8e2ed661f75b0be439a1a6ad7703741",
+            "datetime": "2026-05-08T10:39:11.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(eettaiwan): add eettaiwan crawler with curl_cffi middleware fix",
+            "sha": "2bdbb5dd",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/2bdbb5dd561f09f26d6332542b56ec9c893577db",
+            "datetime": "2026-05-08T11:10:11.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "deps: add curl-cffi==0.13.0 for PatchEetMiddleware",
+            "sha": "b7020dc0",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/b7020dc08646c0bedbfbb9f733160f618f5b69c3",
+            "datetime": "2026-05-08T11:50:34.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(truenews): add truenews crawler using post-sitemap1.xml",
+            "sha": "835e30e6",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/835e30e6e3d9128799f206755624d0ff5d740834",
+            "datetime": "2026-05-08T11:57:03.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'claude-add-truenews' into 'develop'",
+            "sha": "d9905346",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/d9905346cb95a9fe7e03e19503e4f3ea7f56d769",
+            "datetime": "2026-05-08T03:57:11.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'claude-add-truenews' into 'develop'",
+            "sha": "76ac8ddf",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/76ac8ddf7796d94229674b9fa1118275f0162ad3",
+            "datetime": "2026-05-08T07:05:50.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'claude-add-eettaiwan' into 'develop'",
+            "sha": "9cc213e3",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/9cc213e316ffa04b53a6fe24755d52a434903d8c",
+            "datetime": "2026-05-08T07:05:55.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'claude-fix-udnstyle-parse' into 'develop'",
+            "sha": "2cfa993c",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/2cfa993c301e72a41a4bfc6dabc01e66a8e68775",
+            "datetime": "2026-05-08T07:06:25.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'claude-fix-udnstyle-parse' into 'develop'",
+            "sha": "9b67faa7",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/9b67faa7a986930da3113af674d847be22fa7694",
+            "datetime": "2026-05-08T07:06:33.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'claude-fix-digitimes-industries' into 'develop'",
+            "sha": "e5b50297",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/e5b502979927cbb90d2250d7872ef44559b8da12",
+            "datetime": "2026-05-08T07:06:36.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'claude-fix-digitimes-industries' into 'develop'",
+            "sha": "1eb42a80",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/1eb42a8086bf9fb1d808869043787ce6d4321838",
+            "datetime": "2026-05-08T07:06:48.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix(yahoo): strip query string from yielded URLs to avoid duplicates",
+            "sha": "d939d978",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/d939d9788b00e1eb06a3069a5c742671862c14c5",
+            "datetime": "2026-05-08T15:47:36.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'claude-fix-yahoo-url-dedup' into 'develop'",
+            "sha": "7e959f6d",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/7e959f6d0fce86704f14b089982d8a2311aaf5a8",
+            "datetime": "2026-05-08T07:47:43.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(twjinmedia): add twjinmedia crawler using highest-numbered sitemap",
+            "sha": "e2d78606",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/e2d786065e225f7fe52ef649c80ec26aceaa39e7",
+            "datetime": "2026-05-08T16:03:56.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(girlstalk): add girlstalk crawler with cloudscraper",
+            "sha": "089ee3bc",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/089ee3bc5d259086875688fb24bf3994f8f18e64",
+            "datetime": "2026-05-08T16:12:56.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(mintnews): add mintnews crawler",
+            "sha": "74a846ec",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/74a846ecc7a15f19313beabe184df892b0d7b9d8",
+            "datetime": "2026-05-08T16:53:08.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'claude-fix-yahoo-url-dedup' into 'develop'",
+            "sha": "14f88667",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/14f8866783d97526f4c3854867c0b70d81b17870",
+            "datetime": "2026-05-08T09:26:22.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'claude-add-twjinmedia' into 'develop'",
+            "sha": "80039976",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/80039976775a5a111529973d297d290ae84d7bb6",
+            "datetime": "2026-05-08T09:26:31.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'claude-add-twjinmedia' into 'develop'",
+            "sha": "abf6baa0",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/abf6baa0c93c85699f77c69daa517fa59b7ac491",
+            "datetime": "2026-05-08T09:26:37.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'claude-add-girlstalk' into 'develop'",
+            "sha": "00d51df0",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/00d51df05758c8d2103522812e72bf1d14491bd1",
+            "datetime": "2026-05-08T09:26:39.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'claude-add-girlstalk' into 'develop'",
+            "sha": "f8dc7ffd",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/f8dc7ffd45e9df3776a7cdff805a778927ce0fe3",
+            "datetime": "2026-05-08T09:26:47.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'claude-add-mintnews' into 'develop'",
+            "sha": "37c7dea4",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/37c7dea40c8a5860e7e901766319c6eba5088d46",
+            "datetime": "2026-05-08T09:26:49.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'claude-add-mintnews' into 'develop'",
+            "sha": "1c98b7f5",
+            "project": "CrawlersV2/bigcrawler-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/bigcrawler-scrapy/-/commit/1c98b7f50daba9cf5de1a044aa181343967a83d2",
+            "datetime": "2026-05-08T09:27:13.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "backfill",
+            "sha": "5ddcdc03",
+            "project": "CrawlersV2/youtube-channel-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/youtube-channel-scrapy/-/commit/5ddcdc031a92362ce6f03c02feb5badcf9148bbd",
+            "datetime": "2026-05-08T14:10:15.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "update backfill",
+            "sha": "a01ada84",
+            "project": "CrawlersV2/youtube-channel-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/youtube-channel-scrapy/-/commit/a01ada8474c3267d8972b7bb3ee95bf9de246f63",
+            "datetime": "2026-05-08T14:26:24.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "update backfill",
+            "sha": "f275a0b7",
+            "project": "CrawlersV2/youtube-channel-scrapy",
+            "url": "https://biglab.buygta.today/CrawlersV2/youtube-channel-scrapy/-/commit/f275a0b7060420dedabb144946c90318ed3ead4a",
+            "datetime": "2026-05-08T14:29:37.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(sinks): keep JSONL audit trail when redis sink is active",
+            "sha": "ca6722fb",
+            "project": "byron.you/googlesearch",
+            "url": "https://biglab.buygta.today/byron.you/googlesearch/-/commit/ca6722fb25a344747a18a94d6984110ba70c1c9f",
+            "datetime": "2026-05-08T09:57:20.000+08:00",
+            "source": "gitlab"
+          }
+        ]
+      },
+      "Ted": {
+        "count": 1,
+        "projects": [
+          "KEYPO/keypo-frontend-2023"
+        ],
+        "items": [
+          {
+            "title": "refactor(ai-listen): 範圍調整、UI 一致化與資料追溯",
+            "sha": "7abdb6b8",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/7abdb6b80a20e2d8155f3c078ba2dc6fe928d2eb",
+            "datetime": "2026-05-08T01:51:02.000+08:00",
+            "source": "gitlab"
+          }
+        ]
+      },
+      "Aaron": {
+        "count": 14,
+        "projects": [
+          "KEYPO/keypo-frontend-2023",
+          "llmprojects/keypo-agent",
+          "KEYPO/keypo-backend",
+          "KEYPO/keypo-engine/on-premises-api-gateway"
+        ],
+        "items": [
+          {
+            "title": "docs: add Lexical TemplateEditor design spec",
+            "sha": "4f2fe6a4",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/4f2fe6a4c6182c3bd4cf1605f6be0833bac5a8e2",
+            "datetime": "2026-05-08T15:17:41.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix(copilot/server): add round field to RawSessionArtifactsResponse",
+            "sha": "89ed86ce",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/89ed86ce6ab252cfaf8fc9b358f8c17b4dad1d0e",
+            "datetime": "2026-05-08T17:49:42.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix(copilot/workbench): fix param key mappings and KEYPO provider visibility",
+            "sha": "d0691fae",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/d0691fae332db3e0fc086b1689dd03cd21d4af37",
+            "datetime": "2026-05-08T17:53:00.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix(copilot/scroll): replace manual offset with scrollIntoView + scrollMarginTop",
+            "sha": "bf342bec",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/bf342bec910795e5aabddf45499d4706d135175d",
+            "datetime": "2026-05-08T18:01:23.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(copilot/sidebar): optimistic skeleton + delete confirmation dialog",
+            "sha": "1c3c1c59",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/1c3c1c5920a60bc73ed045a7b290f617d1bbc8dc",
+            "datetime": "2026-05-08T18:02:36.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(copilot/chat): optimistic sidebar updates + stale-optimistic purge",
+            "sha": "d81e637c",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/d81e637c85cfee296fd044acab49ecc3ccde6af5",
+            "datetime": "2026-05-08T18:02:56.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(copilot/markdown): add copy button to code blocks",
+            "sha": "39e8d253",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/39e8d253f4470042ab527fc286af09deefd1329c",
+            "datetime": "2026-05-08T18:03:13.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix(copilot): composer Backspace-removes-chip, SourcesTab layout polish",
+            "sha": "7d68d262",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/7d68d2624b33dfaf91f39752716c6f552dfc9fd5",
+            "datetime": "2026-05-08T18:03:34.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'integration/bde' into 'dev'",
+            "sha": "cc29af61",
+            "project": "llmprojects/keypo-agent",
+            "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/cc29af6136a411b4b4304bc64c8cc0e573604f24",
+            "datetime": "2026-05-08T01:31:29.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "chore(deps): upgrade agno to 2.6.5 and use native fallback_models",
+            "sha": "b8c697f0",
+            "project": "llmprojects/keypo-agent",
+            "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/b8c697f0aec3959c1b4141f7c498496c86cf52a8",
+            "datetime": "2026-05-08T15:51:01.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "refactor(harness): replace session_state with TurnState in keypo_harness_turn",
+            "sha": "d99137bc",
+            "project": "llmprojects/keypo-agent",
+            "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/d99137bce03bedb9c75b970b9802a645d87d93f0",
+            "datetime": "2026-05-08T15:51:20.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix: keyword codeblock",
+            "sha": "6947fa70",
+            "project": "llmprojects/keypo-agent",
+            "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/6947fa70707cdbf1d3c2fc14b2cc513fc652481c",
+            "datetime": "2026-05-08T17:28:54.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'integration/bde' into 'develop'",
+            "sha": "18706c5f",
+            "project": "KEYPO/keypo-backend",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/18706c5f195a79248ef496b1b79eba1ec2741c6e",
+            "datetime": "2026-05-08T03:06:29.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(consumers): add lsr-api (GCP, read) and engineer-mason (CRUD) for keypo cluster",
+            "sha": "4563c873",
+            "project": "KEYPO/keypo-engine/on-premises-api-gateway",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/on-premises-api-gateway/-/commit/4563c873d2e9faa77a7007a6bf56139eb64410cd",
+            "datetime": "2026-05-08T10:01:27.000+08:00",
+            "source": "gitlab"
+          }
+        ]
+      },
+      "Ivy": {
+        "count": 7,
+        "projects": [
+          "KEYPO/keypo-frontend-2023"
+        ],
+        "items": [
+          {
+            "title": "docs(keyders-518): add design system, component patterns and rewrite plan",
+            "sha": "82429039",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/82429039f8633bf1a469da6837d4c54e65c63190",
+            "datetime": "2026-05-08T17:34:06.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(keyders-518): add domain types, constants, i18n and theme tokens",
+            "sha": "86e0b9f6",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/86e0b9f6bbda48ba48ab392dc14143edce5848f1",
+            "datetime": "2026-05-08T17:35:14.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(keyders-518): add KEYDERS utils (Phase 2 throwaway calculators)",
+            "sha": "c696d5e9",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/c696d5e9e8420b0d49085d1da8ca3d65c20f480c",
+            "datetime": "2026-05-08T17:36:09.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(keyders-518): seed mock data and wire keydersDataSource",
+            "sha": "15f9d807",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/15f9d807a207407e67b88e9b1d79ab75ad1d9e8d",
+            "datetime": "2026-05-08T17:36:51.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(keyders-518): add stores and useKolList hook",
+            "sha": "783283f6",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/783283f6fc1b253a2f694a1f83cc941e597fa520",
+            "datetime": "2026-05-08T17:37:35.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(keyders-518): add UI components (atoms, detail molecules, list)",
+            "sha": "74fbeace",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/74fbeace8d779ac9e6c17b18461ea3050bd2a272",
+            "datetime": "2026-05-08T17:37:59.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(keyders-518): mount KEYDERS list page",
+            "sha": "fe5edab3",
+            "project": "KEYPO/keypo-frontend-2023",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/fe5edab3db8cb6fd0a37d2505f320f018132923e",
+            "datetime": "2026-05-08T17:38:23.000+08:00",
+            "source": "gitlab"
+          }
+        ]
+      },
+      "禎佑": {
+        "count": 24,
+        "projects": [
+          "chris.su/kol-desc-parser",
+          "chris.su/tiktok-task-job",
+          "chris.su/kol-lookup-v2"
+        ],
+        "items": [
+          {
+            "title": "feat(relation): builder 在 channel dict 帶入 is_fid2name",
+            "sha": "c381b5e0",
+            "project": "chris.su/kol-desc-parser",
+            "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/c381b5e09f8752d3416e36de13a4fabe7cdb4e38",
+            "datetime": "2026-05-08T12:39:11.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(relation): manual fallback channel 補 is_fid2name",
+            "sha": "7b107e27",
+            "project": "chris.su/kol-desc-parser",
+            "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/7b107e2754d613758a76f358c4bbb936fdd648af",
+            "datetime": "2026-05-08T12:39:27.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(relation): merger 寫入 is_fid2name 並依任一 channel OR 聚合到 root",
+            "sha": "b4d3b8df",
+            "project": "chris.su/kol-desc-parser",
+            "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/b4d3b8df28687d693ade7c2538bbe825436a76ca",
+            "datetime": "2026-05-08T12:40:20.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'feat/is-fid2name-flag' into 'main'",
+            "sha": "c2d2ed8e",
+            "project": "chris.su/kol-desc-parser",
+            "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/c2d2ed8e2df79869c9176f1e6a744e53fa1462fc",
+            "datetime": "2026-05-08T04:41:29.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'feat/is-fid2name-flag' into 'main'",
+            "sha": "78e54ab1",
+            "project": "chris.su/kol-desc-parser",
+            "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/78e54ab17ad9dd1797d9309dbe52640b1e126344",
+            "datetime": "2026-05-08T04:41:36.000+00:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat: 更新 backfill_once",
+            "sha": "5d5225b9",
+            "project": "chris.su/tiktok-task-job",
+            "url": "https://biglab.buygta.today/chris.su/tiktok-task-job/-/commit/5d5225b9692af85d0b75f309938b09a0ef3e4c2d",
+            "datetime": "2026-05-08T21:23:36.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat: 增加 FB 和 FBP 的排程",
+            "sha": "934eff26",
+            "project": "chris.su/tiktok-task-job",
+            "url": "https://biglab.buygta.today/chris.su/tiktok-task-job/-/commit/934eff261d502fe0c2d0d4f3b8f6b9c6cce74ee9",
+            "datetime": "2026-05-08T21:24:49.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "docs: 新增 channel_timeline_monitor 設計文件",
+            "sha": "25bee22b",
+            "project": "chris.su/kol-lookup-v2",
+            "url": "https://biglab.buygta.today/chris.su/kol-lookup-v2/-/commit/25bee22b85898792e112a1d79f1d80ba7064d7de",
+            "datetime": "2026-05-08T16:20:12.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "docs: 新增 channel_timeline_monitor 實作計畫並補強 spec 時區處理說明",
+            "sha": "e372c297",
+            "project": "chris.su/kol-lookup-v2",
+            "url": "https://biglab.buygta.today/chris.su/kol-lookup-v2/-/commit/e372c2976c2d17590559ba3e643d40e9d856687a",
+            "datetime": "2026-05-08T16:22:50.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat: 新增 channel_timeline_monitor 分類邏輯與單元測試",
+            "sha": "935e5f53",
+            "project": "chris.su/kol-lookup-v2",
+            "url": "https://biglab.buygta.today/chris.su/kol-lookup-v2/-/commit/935e5f539c716535971097a755dc433b7823eb82",
+            "datetime": "2026-05-08T16:35:00.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat: 新增 channel_timeline_monitor 表格格式化函式",
+            "sha": "9f6011cb",
+            "project": "chris.su/kol-lookup-v2",
+            "url": "https://biglab.buygta.today/chris.su/kol-lookup-v2/-/commit/9f6011cb6a166c6204cd121e29d6245bc2f769ca",
+            "datetime": "2026-05-08T16:37:02.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "refactor: 將 format_table 的 import 合併到測試檔頂端",
+            "sha": "9a1bfdd3",
+            "project": "chris.su/kol-lookup-v2",
+            "url": "https://biglab.buygta.today/chris.su/kol-lookup-v2/-/commit/9a1bfdd3dca270c0a22f17b210d3446b581a5e12",
+            "datetime": "2026-05-08T16:38:18.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat: 新增 _load_pg_today，讀取當天 PG channel_timeline 已寫入的 (platform, channel_id)",
+            "sha": "86bafaeb",
+            "project": "chris.su/kol-lookup-v2",
+            "url": "https://biglab.buygta.today/chris.su/kol-lookup-v2/-/commit/86bafaeb29775968227681104e827d549ed794f8",
+            "datetime": "2026-05-08T16:38:49.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat: 新增 _push_redis，按日期分 key 推 Redis 並設 3 天 TTL",
+            "sha": "1420efc4",
+            "project": "chris.su/kol-lookup-v2",
+            "url": "https://biglab.buygta.today/chris.su/kol-lookup-v2/-/commit/1420efc406b172ddfb91d6453d1e33d8bbf8996a",
+            "datetime": "2026-05-08T16:39:49.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat: 新增 _send_webhook，透過 Google Chat webhook 發送 monospace 表格",
+            "sha": "e9d11ea9",
+            "project": "chris.su/kol-lookup-v2",
+            "url": "https://biglab.buygta.today/chris.su/kol-lookup-v2/-/commit/e9d11ea91f60cb3d4b7deda01c5421238c813076",
+            "datetime": "2026-05-08T16:40:59.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat: 組裝 channel_timeline_monitor.run 主流程",
+            "sha": "fa8524bd",
+            "project": "chris.su/kol-lookup-v2",
+            "url": "https://biglab.buygta.today/chris.su/kol-lookup-v2/-/commit/fa8524bdb5e29c4466de88c61986fac3266b082e",
+            "datetime": "2026-05-08T16:41:56.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat: 新增 channel_timeline_monitor CLI 入口",
+            "sha": "96251e81",
+            "project": "chris.su/kol-lookup-v2",
+            "url": "https://biglab.buygta.today/chris.su/kol-lookup-v2/-/commit/96251e810004669217ddedde3c24467170157552",
+            "datetime": "2026-05-08T16:43:04.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat: entrypoint 註冊 channel_timeline_monitor",
+            "sha": "ca6b5594",
+            "project": "chris.su/kol-lookup-v2",
+            "url": "https://biglab.buygta.today/chris.su/kol-lookup-v2/-/commit/ca6b559452e4a6dfde23a8fa654120d5db10cbbe",
+            "datetime": "2026-05-08T16:47:14.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "docs: README 補上 Channel Timeline Monitor 章節與排程列",
+            "sha": "cf7d3a8a",
+            "project": "chris.su/kol-lookup-v2",
+            "url": "https://biglab.buygta.today/chris.su/kol-lookup-v2/-/commit/cf7d3a8a8d155f40c0ec61bb909d0b9ddd44f5f6",
+            "datetime": "2026-05-08T16:48:08.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat: monitor 補上 expected/success 統計 log",
+            "sha": "2b2ea2d7",
+            "project": "chris.su/kol-lookup-v2",
+            "url": "https://biglab.buygta.today/chris.su/kol-lookup-v2/-/commit/2b2ea2d79372a63335a9753797acd8030be6994e",
+            "datetime": "2026-05-08T16:59:43.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat: webhook 表格末尾加上 expected 與 success 數量",
+            "sha": "140949b2",
+            "project": "chris.su/kol-lookup-v2",
+            "url": "https://biglab.buygta.today/chris.su/kol-lookup-v2/-/commit/140949b2a8bc2a31d95596621ff2f53c35b1d334",
+            "datetime": "2026-05-08T17:21:28.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "refactor: 移除 channel_timeline_monitor",
+            "sha": "a7c6bd95",
+            "project": "chris.su/kol-lookup-v2",
+            "url": "https://biglab.buygta.today/chris.su/kol-lookup-v2/-/commit/a7c6bd95b02eedfb9b0df15a1724e09af45fa34d",
+            "datetime": "2026-05-08T17:53:38.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat: channel_timeline sync 加入補值、bootstrap、webhook 功能",
+            "sha": "dd332be4",
+            "project": "chris.su/kol-lookup-v2",
+            "url": "https://biglab.buygta.today/chris.su/kol-lookup-v2/-/commit/dd332be432c8a63a46013f20e5ebd22c9a08d3da",
+            "datetime": "2026-05-08T17:55:03.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "docs: README 補上 channel_timeline 補值流程、bootstrap、webhook 說明",
+            "sha": "8aa557dd",
+            "project": "chris.su/kol-lookup-v2",
+            "url": "https://biglab.buygta.today/chris.su/kol-lookup-v2/-/commit/8aa557dd307acb59523b25e9ad232ee0187fa52f",
+            "datetime": "2026-05-08T17:55:23.000+08:00",
+            "source": "gitlab"
+          }
+        ]
+      },
+      "侑呈": {
+        "count": 11,
+        "projects": [
+          "keytector/keytector-cib"
+        ],
+        "items": [
+          {
+            "title": "Merge remote-tracking branch 'origin/main' into feat/ct-monitor-integration",
+            "sha": "7b656809",
+            "project": "keytector/keytector-cib",
+            "url": "https://biglab.buygta.today/keytector/keytector-cib/-/commit/7b656809dbb638990e711875206a2f64c59ddd7e",
+            "datetime": "2026-05-08T10:34:05.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'feat/ct-monitor-integration' into feat/invoice-detection",
+            "sha": "6819e867",
+            "project": "keytector/keytector-cib",
+            "url": "https://biglab.buygta.today/keytector/keytector-cib/-/commit/6819e8671d046f73c34889d9370a6a993788855b",
+            "datetime": "2026-05-08T10:34:36.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "docs(invoice): 補 main 合併後的對齊事項段落",
+            "sha": "64c429a9",
+            "project": "keytector/keytector-cib",
+            "url": "https://biglab.buygta.today/keytector/keytector-cib/-/commit/64c429a931bd21a2db9571edb2775a4f5a2aca26",
+            "datetime": "2026-05-08T11:24:58.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "docs(invoice): PoC 環境改 .132，使用 keytector-cib (git)",
+            "sha": "d6dda045",
+            "project": "keytector/keytector-cib",
+            "url": "https://biglab.buygta.today/keytector/keytector-cib/-/commit/d6dda04598c80572463fbd240b8497e43e3def25",
+            "datetime": "2026-05-08T12:00:06.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "docs(invoice): 修對齊事項第 7 點 cron 參考改 .132",
+            "sha": "6e9673e8",
+            "project": "keytector/keytector-cib",
+            "url": "https://biglab.buygta.today/keytector/keytector-cib/-/commit/6e9673e809698b0f9dae62a81e74672b26be05b6",
+            "datetime": "2026-05-08T12:01:45.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "docs(invoice): 修兩處 spec 不一致，準備實作",
+            "sha": "876dabde",
+            "project": "keytector/keytector-cib",
+            "url": "https://biglab.buygta.today/keytector/keytector-cib/-/commit/876dabde7be4723ec9485ea38493e3c8256e8253",
+            "datetime": "2026-05-08T12:04:22.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(invoice): 加入財政部電子發票 brand entry 與 cross-brand 優先級",
+            "sha": "da0d15eb",
+            "project": "keytector/keytector-cib",
+            "url": "https://biglab.buygta.today/keytector/keytector-cib/-/commit/da0d15eb4a751b7d2396d87879e07bae8a6f8d22",
+            "datetime": "2026-05-08T14:06:56.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(invoice): 加入 active brand filter + strong-signal bypass + CLI flag",
+            "sha": "88268b68",
+            "project": "keytector/keytector-cib",
+            "url": "https://biglab.buygta.today/keytector/keytector-cib/-/commit/88268b688767482ccb552cb57c88291e520bb044",
+            "datetime": "2026-05-08T14:22:13.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(invoice): step active filter + URLScan query 分組 by brand",
+            "sha": "e4599343",
+            "project": "keytector/keytector-cib",
+            "url": "https://biglab.buygta.today/keytector/keytector-cib/-/commit/e45993430a9a3f19511d918c204cfb2f3cf548e0",
+            "datetime": "2026-05-08T14:35:09.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix(invoice): 修 brands.py / classifier.py module-level circular import",
+            "sha": "407038f7",
+            "project": "keytector/keytector-cib",
+            "url": "https://biglab.buygta.today/keytector/keytector-cib/-/commit/407038f7a77daa89dc228c9fa458843fa39e4f19",
+            "datetime": "2026-05-08T15:08:45.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix(invoice): 加入合法 e-invoice 服務商到 WHITELIST 壓誤陽性",
+            "sha": "2dea63c1",
+            "project": "keytector/keytector-cib",
+            "url": "https://biglab.buygta.today/keytector/keytector-cib/-/commit/2dea63c17e84f043715d17a16ed9f7969bd36a21",
+            "datetime": "2026-05-08T15:40:07.000+08:00",
+            "source": "gitlab"
+          }
+        ]
+      },
+      "Jason": {
+        "count": 26,
+        "projects": [
+          "dailyview/dv-ai-draft"
+        ],
+        "items": [
+          {
+            "title": "feat(filters): add generic_blacklist.json for keyword filter fallback",
+            "sha": "9acfbf24",
+            "project": "dailyview/dv-ai-draft",
+            "url": "https://biglab.buygta.today/dailyview/dv-ai-draft/-/commit/9acfbf24af8f00b02553f82a15efa90c1d8ce702",
+            "datetime": "2026-05-08T12:02:35.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(llm): add KEYWORD_FILTER_PROMPT for volume keyword filter",
+            "sha": "51264072",
+            "project": "dailyview/dv-ai-draft",
+            "url": "https://biglab.buygta.today/dailyview/dv-ai-draft/-/commit/51264072f6a1cd697b25bab9a8c892984090ccfe",
+            "datetime": "2026-05-08T12:02:35.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(llm): add filter_volume_keywords (happy path)",
+            "sha": "a86f9dfc",
+            "project": "dailyview/dv-ai-draft",
+            "url": "https://biglab.buygta.today/dailyview/dv-ai-draft/-/commit/a86f9dfc2f5ec75ceb7c889a6936f151e71cd375",
+            "datetime": "2026-05-08T12:02:35.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(llm): keyword_filter falls back to topic.name on LLM error or bad JSON",
+            "sha": "4624bee3",
+            "project": "dailyview/dv-ai-draft",
+            "url": "https://biglab.buygta.today/dailyview/dv-ai-draft/-/commit/4624bee3efee92af9324b6e21e12162402bf93cf",
+            "datetime": "2026-05-08T12:02:35.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(llm): keyword_filter falls back when filtered keywords are all generic",
+            "sha": "0208ddc8",
+            "project": "dailyview/dv-ai-draft",
+            "url": "https://biglab.buygta.today/dailyview/dv-ai-draft/-/commit/0208ddc8f212f1ab95bebcdd5aad11ffe01a7792",
+            "datetime": "2026-05-08T12:02:35.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "test(keyword_filter): cover missing topic, count cap, empty input",
+            "sha": "191fa033",
+            "project": "dailyview/dv-ai-draft",
+            "url": "https://biglab.buygta.today/dailyview/dv-ai-draft/-/commit/191fa033ac1c8376fdd57262285fce817b2e1e72",
+            "datetime": "2026-05-08T12:02:35.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(llm): re-export filter_volume_keywords and KEYWORD_FILTER_PROMPT",
+            "sha": "3fdbbf4f",
+            "project": "dailyview/dv-ai-draft",
+            "url": "https://biglab.buygta.today/dailyview/dv-ai-draft/-/commit/3fdbbf4fdf52936c9afd977c084756927bf572d5",
+            "datetime": "2026-05-08T12:02:35.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(volume): join multiple keywords with AND instead of OR",
+            "sha": "fa53a79c",
+            "project": "dailyview/dv-ai-draft",
+            "url": "https://biglab.buygta.today/dailyview/dv-ai-draft/-/commit/fa53a79c155eb77a19b4788b170aa2de635a97b3",
+            "datetime": "2026-05-08T12:02:35.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(volume): _select_volume_keywords prefers filtered keywords",
+            "sha": "b54723d2",
+            "project": "dailyview/dv-ai-draft",
+            "url": "https://biglab.buygta.today/dailyview/dv-ai-draft/-/commit/b54723d24b6445e1c74e7d357615c6cc8a1e635d",
+            "datetime": "2026-05-08T12:03:05.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(main): insert keyword filter step between aggregate and volume enrich",
+            "sha": "bf102beb",
+            "project": "dailyview/dv-ai-draft",
+            "url": "https://biglab.buygta.today/dailyview/dv-ai-draft/-/commit/bf102bebfa73090a3ad8fcbc79f99ab27419381b",
+            "datetime": "2026-05-08T12:03:05.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix(volume): stop overwriting volume_keywords in enrich_topics_with_volume",
+            "sha": "948f3d3f",
+            "project": "dailyview/dv-ai-draft",
+            "url": "https://biglab.buygta.today/dailyview/dv-ai-draft/-/commit/948f3d3f9ca9a6a305fabd31f82bfc6b51a6a0d4",
+            "datetime": "2026-05-08T12:03:05.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "docs: update CLAUDE.md to describe three-stage LLM with keyword filter",
+            "sha": "839c2394",
+            "project": "dailyview/dv-ai-draft",
+            "url": "https://biglab.buygta.today/dailyview/dv-ai-draft/-/commit/839c23940a24a694add87f1f9b4e19ef4cf1717e",
+            "datetime": "2026-05-08T12:03:05.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(prompts): rewrite KEYWORD_FILTER_PROMPT for person/event/thing schema",
+            "sha": "ae3e1e98",
+            "project": "dailyview/dv-ai-draft",
+            "url": "https://biglab.buygta.today/dailyview/dv-ai-draft/-/commit/ae3e1e98a78a4c965b06a86ccf7611d4b3811e38",
+            "datetime": "2026-05-08T12:05:31.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(keyword_filter): output groups dict (person/event/thing); update fallbacks",
+            "sha": "791c94ea",
+            "project": "dailyview/dv-ai-draft",
+            "url": "https://biglab.buygta.today/dailyview/dv-ai-draft/-/commit/791c94eab779bf45b7f9d4076bb1c5a6e8a5a02b",
+            "datetime": "2026-05-08T12:10:30.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(volume): build_query_string accepts dict (groups OR within, AND between)",
+            "sha": "c4dcd132",
+            "project": "dailyview/dv-ai-draft",
+            "url": "https://biglab.buygta.today/dailyview/dv-ai-draft/-/commit/c4dcd132b54c04acfb8b3c8fd8fd59a5f8e63956",
+            "datetime": "2026-05-08T12:12:53.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(volume): _select_volume_keywords returns groups dict",
+            "sha": "90a65a74",
+            "project": "dailyview/dv-ai-draft",
+            "url": "https://biglab.buygta.today/dailyview/dv-ai-draft/-/commit/90a65a74f86c696cca1ce74e12ae0a58feb0a274",
+            "datetime": "2026-05-08T12:14:38.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(prompt_builders): show filtered keywords in article prompt; flatten dict to list",
+            "sha": "909e3ab6",
+            "project": "dailyview/dv-ai-draft",
+            "url": "https://biglab.buygta.today/dailyview/dv-ai-draft/-/commit/909e3ab6dafd2ba53fa5613ffce3965db0936c05",
+            "datetime": "2026-05-08T12:16:31.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(clustering): output volume_keywords as person/event/thing groups",
+            "sha": "5145c3cb",
+            "project": "dailyview/dv-ai-draft",
+            "url": "https://biglab.buygta.today/dailyview/dv-ai-draft/-/commit/5145c3cb2ea0a514d7d2394827509da7fe5b95be",
+            "datetime": "2026-05-08T12:20:02.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix(clustering): remove old flat-list volume_keywords rules conflicting with new dict schema",
+            "sha": "dff9a425",
+            "project": "dailyview/dv-ai-draft",
+            "url": "https://biglab.buygta.today/dailyview/dv-ai-draft/-/commit/dff9a42508cb739e798d26e79078e6b1c81720f0",
+            "datetime": "2026-05-08T12:21:12.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "test(clustering): verify dict volume_keywords passes through parse",
+            "sha": "e95bf111",
+            "project": "dailyview/dv-ai-draft",
+            "url": "https://biglab.buygta.today/dailyview/dv-ai-draft/-/commit/e95bf1115e2d9ce5faa6b72cde447fc32e47c255",
+            "datetime": "2026-05-08T12:22:25.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(volume): build_query_string accepts dict (groups OR within, AND between)",
+            "sha": "9d340318",
+            "project": "dailyview/dv-ai-draft",
+            "url": "https://biglab.buygta.today/dailyview/dv-ai-draft/-/commit/9d3403180ce2e0ba6c95745e3c30220dbc7b82e1",
+            "datetime": "2026-05-08T12:24:22.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(volume): _select_volume_keywords returns groups dict",
+            "sha": "96f731d0",
+            "project": "dailyview/dv-ai-draft",
+            "url": "https://biglab.buygta.today/dailyview/dv-ai-draft/-/commit/96f731d0ab8e3df7db5fc5e7b906317418662bf9",
+            "datetime": "2026-05-08T12:25:56.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "feat(prompt_builders): flatten dict volume_keywords for article prompt display",
+            "sha": "01fc30b8",
+            "project": "dailyview/dv-ai-draft",
+            "url": "https://biglab.buygta.today/dailyview/dv-ai-draft/-/commit/01fc30b8fd2fbceac50703c18662efa4905ff364",
+            "datetime": "2026-05-08T12:27:41.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix(prompts): KEYWORD_FILTER_PROMPT encourage 2-3 keywords per group",
+            "sha": "1ec804cd",
+            "project": "dailyview/dv-ai-draft",
+            "url": "https://biglab.buygta.today/dailyview/dv-ai-draft/-/commit/1ec804cd6d9b84288b8c857205eae885dafa90a7",
+            "datetime": "2026-05-08T13:54:52.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix(prompts): unify article list format in 軍購 anti-pattern example",
+            "sha": "a3c3cf67",
+            "project": "dailyview/dv-ai-draft",
+            "url": "https://biglab.buygta.today/dailyview/dv-ai-draft/-/commit/a3c3cf67086266d827089eedc51289322875e7e3",
+            "datetime": "2026-05-08T13:57:39.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "fix(clustering): encourage thing group to collect multi-spelling variants",
+            "sha": "6af4742f",
+            "project": "dailyview/dv-ai-draft",
+            "url": "https://biglab.buygta.today/dailyview/dv-ai-draft/-/commit/6af4742fe6b25f06a43c0e91dab83943178f9b96",
+            "datetime": "2026-05-08T14:35:32.000+08:00",
+            "source": "gitlab"
+          }
+        ]
+      },
+      "Joyce": {
+        "count": 2,
+        "projects": [
+          "KEYPO/keypo-backend"
+        ],
+        "items": [
+          {
+            "title": "docs: update CLAUDE.md for maintext_ai_summary and shared infrastructure",
+            "sha": "1b2f743c",
+            "project": "KEYPO/keypo-backend",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/1b2f743c092fed2b96ced75e7198add5a2dd674d",
+            "datetime": "2026-05-08T18:23:04.000+08:00",
+            "source": "gitlab"
+          },
+          {
+            "title": "Merge branch 'docs/update-claude-md-recent-modules' into 'develop'",
+            "sha": "2dbfa1c4",
+            "project": "KEYPO/keypo-backend",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/2dbfa1c4c71292f2b89287d7af37d9395e2b9b87",
+            "datetime": "2026-05-08T10:27:20.000+00:00",
+            "source": "gitlab"
+          }
+        ]
+      },
+      "Wendy": {
+        "count": 1,
+        "projects": [
+          "KEYPO/keypo-engine/keypo-engine-api-v3"
+        ],
+        "items": [
+          {
+            "title": "docs(keyders): WIP add KEYDERS API spec",
+            "sha": "7aff6e22",
+            "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+            "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/7aff6e22d928b8d19b42ee3041f9e039f3679ba6",
+            "datetime": "2026-05-08T18:15:51.000+08:00",
+            "source": "gitlab"
+          }
+        ]
+      },
+      "哲緯": {
+        "count": 21,
+        "projects": [
+          "bigdata-54837596/line-social-radar",
+          "bigdata-54837596/line-social-radar-api"
+        ],
+        "items": [
+          {
+            "title": "Merge branch 'release/v1.13.44'",
+            "sha": "ec7636e4",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/ec7636e486a2467ad06e18b58bb24e5a11985866",
+            "datetime": "2026-05-08T10:35:40Z",
+            "source": "github"
+          },
+          {
+            "title": "release: bump version 1.13.43 → 1.13.44",
+            "sha": "203dfac7",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/203dfac7cd374d84338472b13fca69153221c277",
+            "datetime": "2026-05-08T10:34:52Z",
+            "source": "github"
+          },
+          {
+            "title": "Merge pull request #124 from bigdata-54837596/feature/ci-staging-manual-trigger",
+            "sha": "92c46e08",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/92c46e08e4e08f485521354bb6f0a68843e2c934",
+            "datetime": "2026-05-08T10:11:14Z",
+            "source": "github"
+          },
+          {
+            "title": "ci: switch develop staging deploy to manual workflow_dispatch",
+            "sha": "8d050d74",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/8d050d74eba19ef49045ad891fc0c9080477db1a",
+            "datetime": "2026-05-08T10:08:23Z",
+            "source": "github"
+          },
+          {
+            "title": "Merge branch 'release/v1.13.43'",
+            "sha": "13eba398",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/13eba3980ac58c23ba3aa053893841cade03a5c7",
+            "datetime": "2026-05-08T09:39:49Z",
+            "source": "github"
+          },
+          {
+            "title": "Merge pull request #123 from bigdata-54837596/fix/issue-119-pipeline-report-stats",
+            "sha": "b098367d",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/b098367d303f611c166250c29b104b6baed13b7b",
+            "datetime": "2026-05-08T07:00:07Z",
+            "source": "github"
+          },
+          {
+            "title": "release: bump version 1.13.42 → 1.13.43",
+            "sha": "08aa0c93",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/08aa0c93f926fef06936dadc2060dfa65caa5eda",
+            "datetime": "2026-05-08T06:12:02Z",
+            "source": "github"
+          },
+          {
+            "title": "fix(report): 修正 generate_pipeline_report.py 多處統計錯誤與遺漏 (#119)",
+            "sha": "428365fa",
+            "project": "bigdata-54837596/line-social-radar",
+            "url": "https://github.com/bigdata-54837596/line-social-radar/commit/428365fa65f903a5b955d178aa99ce2838a011e9",
+            "datetime": "2026-05-08T06:11:58Z",
+            "source": "github"
+          },
+          {
+            "title": "Merge branch 'release/v0.13.0'",
+            "sha": "408b974b",
+            "project": "bigdata-54837596/line-social-radar-api",
+            "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/408b974bdc7a220d35df6a54d2fb199396d73498",
+            "datetime": "2026-05-08T09:22:48Z",
+            "source": "github"
+          },
+          {
+            "title": "Merge pull request #58 from bigdata-54837596/feature/stock-index-build-csv-vision",
+            "sha": "df198c11",
+            "project": "bigdata-54837596/line-social-radar-api",
+            "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/df198c118f8d10eaabebd0081d2c16bf4df8626a",
+            "datetime": "2026-05-08T03:18:40Z",
+            "source": "github"
+          },
+          {
+            "title": "chore(#57): remove legacy scripts/rebuild_stock_index.py",
+            "sha": "e26ddde9",
+            "project": "bigdata-54837596/line-social-radar-api",
+            "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/e26ddde9a55b0955337dd3554eab32cdc83e7ece",
+            "datetime": "2026-05-07T16:49:55Z",
+            "source": "github"
+          },
+          {
+            "title": "release: bump version 0.12.2 → 0.13.0",
+            "sha": "f79653ee",
+            "project": "bigdata-54837596/line-social-radar-api",
+            "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/f79653eedb8dbe0c5340f632ef9dce4651ccee73",
+            "datetime": "2026-05-07T16:37:15Z",
+            "source": "github"
+          },
+          {
+            "title": "refactor(#57): script delegates to StockLibraryService",
+            "sha": "79f67962",
+            "project": "bigdata-54837596/line-social-radar-api",
+            "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/79f6796226bc2a2ca0046907f9ce2a4d956b4a2b",
+            "datetime": "2026-05-07T16:35:38Z",
+            "source": "github"
+          },
+          {
+            "title": "feat(#57): rewrite stock-index/build endpoint (CSV + Vision + incremental)",
+            "sha": "7fbaf90b",
+            "project": "bigdata-54837596/line-social-radar-api",
+            "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/7fbaf90b29a18edd2cf2278a6f117a9488140585",
+            "datetime": "2026-05-07T16:31:47Z",
+            "source": "github"
+          },
+          {
+            "title": "fix(#57): tolerate transient delete failures in build_stock_index",
+            "sha": "3a5bb61f",
+            "project": "bigdata-54837596/line-social-radar-api",
+            "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/3a5bb61f8151fc089e5744e4273bd4cc03ca2db9",
+            "datetime": "2026-05-07T16:28:12Z",
+            "source": "github"
+          },
+          {
+            "title": "feat(#57): rewrite build_stock_index orchestration (CSV + Vision + incremental + orphans)",
+            "sha": "cdc745c5",
+            "project": "bigdata-54837596/line-social-radar-api",
+            "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/cdc745c5aa240c98a59ea8378548f7ec66e1e065",
+            "datetime": "2026-05-07T16:22:48Z",
+            "source": "github"
+          },
+          {
+            "title": "feat(#57): split stock_index into metadata + embeddings files",
+            "sha": "d3fa8323",
+            "project": "bigdata-54837596/line-social-radar-api",
+            "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/d3fa8323acc39b232070af9d9778af06b3bc89ad",
+            "datetime": "2026-05-07T16:16:46Z",
+            "source": "github"
+          },
+          {
+            "title": "feat(#57): add embedding-with-retry helper on StockLibraryService",
+            "sha": "fc791e0d",
+            "project": "bigdata-54837596/line-social-radar-api",
+            "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/fc791e0daa221f2a6486df61678bf0b2a105574e",
+            "datetime": "2026-05-07T16:13:56Z",
+            "source": "github"
+          },
+          {
+            "title": "feat(#57): extract CSV parser into stock_index_csv module",
+            "sha": "b638d3cf",
+            "project": "bigdata-54837596/line-social-radar-api",
+            "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/b638d3cf30e911d76356c2c4772609ecf97b50ca",
+            "datetime": "2026-05-07T16:11:37Z",
+            "source": "github"
+          },
+          {
+            "title": "feat(#57): add stock_embeddings_path setting",
+            "sha": "f836bbfd",
+            "project": "bigdata-54837596/line-social-radar-api",
+            "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/f836bbfd24968e5f8b9d3fd12b11ae9be88dea95",
+            "datetime": "2026-05-07T16:09:19Z",
+            "source": "github"
+          },
+          {
+            "title": "feat(#57): add GCSClient.read_text for CSV download",
+            "sha": "fa38965c",
+            "project": "bigdata-54837596/line-social-radar-api",
+            "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/fa38965c524a23b24090e0f27ae59e98b1130194",
+            "datetime": "2026-05-07T16:06:27Z",
+            "source": "github"
+          }
+        ]
+      }
     }
   },
   "analysis": {
@@ -56769,12 +57939,89 @@
         "commitCount": 17,
         "hours": 14
       }
+    },
+    "5/8": {
+      "Joyce": {
+        "status": "✅",
+        "commitCount": 2,
+        "hours": 8.5
+      },
+      "Ivy": {
+        "status": "✅",
+        "commitCount": 7,
+        "hours": 7.8
+      },
+      "Jason": {
+        "status": "✅",
+        "commitCount": 26,
+        "hours": 7
+      },
+      "日銜": {
+        "status": "✅",
+        "commitCount": 28,
+        "hours": 6.5
+      },
+      "Wendy": {
+        "status": "✅",
+        "commitCount": 1,
+        "hours": 7
+      },
+      "侑呈": {
+        "status": "✅",
+        "commitCount": 11,
+        "hours": 7.5
+      },
+      "禎佑": {
+        "status": "✅",
+        "commitCount": 24,
+        "hours": 9.5
+      },
+      "Ted": {
+        "status": "✅",
+        "commitCount": 1,
+        "hours": 6.5
+      },
+      "Joe": {
+        "status": "⚠️",
+        "commitCount": 0,
+        "hours": 7
+      },
+      "Aaron": {
+        "status": "✅",
+        "commitCount": 14,
+        "hours": 7
+      },
+      "哲緯": {
+        "status": "✅",
+        "commitCount": 21,
+        "hours": 9.5
+      }
     }
   },
   "projectRisks": [
     {
+      "project": "CrawlersV2/bigcrawler-scrapy",
+      "soloContributor": "日銜",
+      "severity": "🟡"
+    },
+    {
       "project": "chris.su/kol-desc-parser",
       "soloContributor": "禎佑",
+      "severity": "🟡"
+    },
+    {
+      "project": "chris.su/tiktok-task-job",
+      "soloContributor": "禎佑",
+      "severity": "🟡"
+    },
+    {
+      "project": "keytector/keytector-cib",
+      "soloContributor": "侑呈",
+      "severity": "🟡"
+    },
+    {
+      "project": "llmprojects/keypo-agent",
+      "soloContributor": "Aaron",
       "severity": "🟡"
     },
     {
@@ -56783,7 +58030,17 @@
       "severity": "🟡"
     },
     {
-      "project": "CrawlersV2/bigcrawler-scrapy",
+      "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+      "soloContributor": "Wendy",
+      "severity": "🟡"
+    },
+    {
+      "project": "chris.su/kol-lookup-v2",
+      "soloContributor": "禎佑",
+      "severity": "🟡"
+    },
+    {
+      "project": "CrawlersV2/youtube-channel-scrapy",
       "soloContributor": "日銜",
       "severity": "🟡"
     },
@@ -56795,51 +58052,6 @@
     {
       "project": "byron.you/googlesearch",
       "soloContributor": "日銜",
-      "severity": "🟡"
-    },
-    {
-      "project": "chris.su/tiktok-crawl-httpx",
-      "soloContributor": "禎佑",
-      "severity": "🟡"
-    },
-    {
-      "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
-      "soloContributor": "Joyce",
-      "severity": "🟡"
-    },
-    {
-      "project": "chris.su/kol-lookup-v2",
-      "soloContributor": "禎佑",
-      "severity": "🟡"
-    },
-    {
-      "project": "dailyview/2025-dailyview-hk-app",
-      "soloContributor": "Jason",
-      "severity": "🟡"
-    },
-    {
-      "project": "KEYPO/keypo-engine/es-proxy-settings",
-      "soloContributor": "Aaron",
-      "severity": "🟡"
-    },
-    {
-      "project": "llmprojects/keypo-agent",
-      "soloContributor": "Aaron",
-      "severity": "🟡"
-    },
-    {
-      "project": "dailyview/2024-dailyview-admin-backend",
-      "soloContributor": "Jason",
-      "severity": "🟡"
-    },
-    {
-      "project": "KEYPO/line-notify-backend-2023",
-      "soloContributor": "Jason",
-      "severity": "🟡"
-    },
-    {
-      "project": "kol/kol-agent",
-      "soloContributor": "Aaron",
       "severity": "🟡"
     },
     {
