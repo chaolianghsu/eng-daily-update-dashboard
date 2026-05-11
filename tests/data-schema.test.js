@@ -95,6 +95,62 @@ describe('raw_data.json schema validation', () => {
     });
   });
 
+  describe('items[] field (optional, Phase 1)', () => {
+    it('if a member entry has items, each item has code, task, hours', () => {
+      for (const [date, members] of Object.entries(data.rawData)) {
+        for (const [member, entry] of Object.entries(members)) {
+          if (!entry.items) continue;
+          expect(Array.isArray(entry.items)).toBe(true);
+          for (const item of entry.items) {
+            expect(item).toHaveProperty('code');
+            expect(item).toHaveProperty('task');
+            expect(item).toHaveProperty('hours');
+            expect(item.code === null || typeof item.code === 'string').toBe(true);
+            expect(typeof item.task).toBe('string');
+            expect(typeof item.hours).toBe('number');
+            if (typeof item.code === 'string') {
+              expect(item.code).toMatch(/^[A-Z][A-Z0-9-]{0,15}$/);
+            }
+          }
+        }
+      }
+    });
+  });
+
+  describe('centers field (optional, Phase 1)', () => {
+    it('if present, each center entry has label and members[]', () => {
+      if (!data.centers) return;
+      expect(typeof data.centers).toBe('object');
+      for (const [key, center] of Object.entries(data.centers)) {
+        expect(typeof key).toBe('string');
+        expect(center).toHaveProperty('label');
+        expect(center).toHaveProperty('members');
+        expect(typeof center.label).toBe('string');
+        expect(Array.isArray(center.members)).toBe(true);
+        center.members.forEach(m => expect(typeof m).toBe('string'));
+      }
+    });
+  });
+
+  describe('validCodes field (optional, Phase 1)', () => {
+    it('if present, each code entry has label and optional category/prefixes', () => {
+      if (!data.validCodes) return;
+      expect(typeof data.validCodes).toBe('object');
+      const allowedCategories = ['product', 'platform', 'special', 'research'];
+      for (const [code, info] of Object.entries(data.validCodes)) {
+        expect(code).toMatch(/^[A-Z][A-Z0-9-]{0,15}$/);
+        expect(info).toHaveProperty('label');
+        expect(typeof info.label).toBe('string');
+        if (info.category) {
+          expect(allowedCategories).toContain(info.category);
+        }
+        if (info.gitlabProjectPrefixes) {
+          expect(Array.isArray(info.gitlabProjectPrefixes)).toBe(true);
+        }
+      }
+    });
+  });
+
   describe('rawData status field (optional)', () => {
     it('rawData entries have valid status field', () => {
       const validStatuses = ['reported', 'unreported', 'replied_no_hours', 'zero', 'leave'];
