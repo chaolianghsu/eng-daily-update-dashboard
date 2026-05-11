@@ -28,6 +28,15 @@ function extractProgressSection(text) {
       if (foundFirstDate) break; // Stop at second date section
       foundFirstDate = true;
     }
+    // Bare M/D header: line is just "5/9", "5/9 (五)", "5/9：" — no work content.
+    // Regression: a single message covering multiple days previously summed all hours
+    // into the first day; bare headers without 進度/工項 keyword now terminate the section.
+    else if (
+      foundFirstDate &&
+      /^\d{1,2}\/\d{1,2}(?:\s*[（(][^）)]*[）)])?\s*[:：]?\s*$/.test(trimmed)
+    ) {
+      break;
+    }
 
     // Stop at blocker/pending/backlog sections
     if (foundFirstDate && /^(?:Block|Blocker|Pending|Backlog)/i.test(trimmed)) {
@@ -40,32 +49,53 @@ function extractProgressSection(text) {
   return result.join('\n');
 }
 
+// Code prefix must appear right after optional numbering at line start.
+// Matches: "1. [KEYPO] ...", "- [KEYPO] ...", "[KEYPO] ..."; rejects "[In Progress]" (lowercase),
+// rejects mid-line "...[DONE]..." (must be at start), rejects "[keypo]" (lowercase).
+const CODE_PREFIX_REGEX = /^\s*(?:\d+\.\s*|[-*•]\s*)?\[([A-Z][A-Z0-9-]{1,15})\]\s*/;
+
 function parseHoursFromText(text) {
   const section = extractProgressSection(text);
   const lines = section.split('\n');
   let total = 0, meeting = 0, dev = 0, found = false;
+  const items = [];
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
+    const codeMatch = line.match(CODE_PREFIX_REGEX);
+    const code = codeMatch ? codeMatch[1] : null;
 
-    // Try parenthesized pattern: (0.5H), （2HR）, etc.
+    // Strip the [CODE] tag + numbering/bullet for the task description.
+    let taskBase = line
+      .replace(CODE_PREFIX_REGEX, '')
+      .replace(/^\s*(?:\d+\.\s*|[-*•]\s*)/, '')
+      .trim();
+
+    // Parenthesized hour pattern: (0.5H), （2HR）, (branch, 4H), etc.
     const re = new RegExp(HOUR_PATTERN.source, 'g');
     let m;
+    let lineHours = 0;
+    const isLineMeeting = MEETING_KEYWORDS.test(line);
     while ((m = re.exec(line)) !== null) {
       const h = parseFloat(m[1]);
+      lineHours += h;
       total += h;
       found = true;
-      if (MEETING_KEYWORDS.test(line)) meeting += h;
+      if (isLineMeeting) meeting += h;
       else dev += h;
     }
 
-    // Try 工時 pattern: 工時：0.5 H, 工時：3 H, etc.
+    if (lineHours > 0) {
+      const task = taskBase.replace(new RegExp(HOUR_PATTERN.source, 'g'), '').trim();
+      items.push({ code, task, hours: Math.round(lineHours * 10) / 10 });
+    }
+
+    // 工時 pattern: 工時：0.5 H — orthogonal format used by some members.
     const wm = line.match(WORK_HOUR_PATTERN);
     if (wm) {
       const h = parseFloat(wm[1]);
       total += h;
       found = true;
-      // Check subsequent lines until next numbered item for meeting keywords
       let isMeeting = false;
       for (let j = i + 1; j < lines.length; j++) {
         const nextLine = lines[j].trim();
@@ -77,16 +107,21 @@ function parseHoursFromText(text) {
       }
       if (isMeeting) meeting += h;
       else dev += h;
+      const task = taskBase.replace(WORK_HOUR_PATTERN, '').trim();
+      items.push({ code, task, hours: h });
     }
   }
 
-  if (!found) return { total: null, meeting: null, dev: null, status: 'replied_no_hours' };
+  if (!found) {
+    return { total: null, meeting: null, dev: null, status: 'replied_no_hours', items: [] };
+  }
   const roundedTotal = Math.round(total * 10) / 10;
   return {
     total: roundedTotal,
     meeting: Math.round(meeting * 10) / 10,
     dev: Math.round(dev * 10) / 10,
     status: roundedTotal === 0 ? 'zero' : 'reported',
+    items,
   };
 }
 

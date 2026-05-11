@@ -9,7 +9,7 @@ export default defineConfig({
       ["tests/unit/**", "jsdom"],
       ["tests/components/**", "jsdom"],
     ],
-    exclude: ["tests/e2e/**", "node_modules/**"],
+    exclude: ["tests/e2e/**", "node_modules/**", ".worktrees/**"],
     setupFiles: ["tests/setup.ts"],
   },
 });
