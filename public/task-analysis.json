@@ -1,69 +1,51 @@
 {
-  "analysisDate": "2026-05-08",
-  "period": "5/7",
+  "analysisDate": "2026-05-11",
+  "period": "5/8",
   "warnings": [
     {
-      "date": "5/7",
-      "member": "Ted",
+      "date": "5/8",
+      "member": "Joe",
       "severity": "🔴",
       "type": "low_output",
-      "task": "[Dev] 依 Sam feedback 更新 UI/UX、後端資料表調整、需求 #76 電子報 AI 摘要 (共 4.5H)",
-      "commits": "無",
-      "reasoning": "開發任務報告達 4.5 小時（排除會議時數），但當天完全沒有相關 commit 記錄。任務描述涉及 UI/UX 更新與後端 API 改動，應有代碼提交，但無任何版本控制紀錄。"
+      "task": "KEYPO & 企業管理平台 BDE 新功能權限新增 (3H)、選單配置調整 (1.5H)、AI 聆聽進行中 (0.5H)",
+      "commits": "無相關 commits",
+      "reasoning": "開發時數 5H 已達 3H 門檻，但當天無任何 commit。BDE 權限新增、選單配置等功能開發應產生代碼改動，完全缺少提交記錄。"
     },
     {
-      "date": "5/7",
-      "member": "家輝",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "[Dev] 測試機遷移、GCP Cloud Scheduler 測試、虛擬環境擴充、爬蟲虛擬機問題修復 (共 7H)",
-      "commits": "無",
-      "reasoning": "開發任務報告達 7 小時，涵蓋測試機部署、GCP 組態、虛擬環境管理與程式修復等需要代碼或組態變更的工作，但當天無任何 commit 記錄。"
-    },
-    {
-      "date": "5/7",
-      "member": "Ivy",
+      "date": "5/8",
+      "member": "Joyce",
       "severity": "🟡",
       "type": "outlier",
-      "task": "[Dev] 網溫文字雲 UI 調整、KEYDERS 前端 prototype 內容確認 (共 4.6H)",
-      "commits": "1 commit：Merge branch 'fix/wordcloud-font-size-mapping'",
-      "reasoning": "開發時數 4.6 小時僅對應 1 個 commit，工時/commit 比例（4.6:1）達 6.6 倍於團隊平均（0.70 H/commit）。超過 2 倍差距閾值，表示工作進度與提交產出明顯不符。"
+      "task": "處理 #335 (0.5H)、#3103 (0.5H)、Agent API 授權功能 (1H)、ES 效能問題緊急處理 (1.5H)、APP v3 遷移 (1.5H)",
+      "commits": "2 筆全為文件更新 (docs: update CLAUDE.md)；實際代碼改動不足",
+      "reasoning": "開發時數 5H 投入，僅產出 2 筆 commits (0.4 commits/H)，遠低於團隊平均效率 2.05 commits/H，差距達 5 倍。所報任務涉及 API 功能、系統效能、應用遷移等，應產生實質代碼改動。"
     },
     {
-      "date": "5/7",
-      "member": "侑呈",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "[Dev] KEYTECTOR、IG、131 主責服務遷移 132、其他 (共 8H)",
-      "commits": "1 commit：docs(invoice): 改 BRAND_GROUPS 為 BRAND_ALIASES",
-      "reasoning": "開發時數 8 小時僅對應 1 個 commit，工時/commit 比例（8:1）達 11.4 倍於團隊平均（0.70 H/commit），是偏離最大的成員之一。任務包括 4 小時的服務遷移，產出記錄嚴重不足。"
-    },
-    {
-      "date": "5/7",
+      "date": "5/8",
       "member": "Wendy",
       "severity": "🟡",
       "type": "outlier",
-      "task": "[Dev] 當日數據驗證、KEYTECTOR sync (共 0.5H dev + 3H API Spec 規劃/Non-Dev)",
-      "commits": "3 commits：URLScan 最佳化相關改動",
-      "reasoning": "開發時數 0.5 小時加上規劃任務無 commit 要求。若將可能涉及代碼的規劃計為開發，工時/commit 比例（7.5:3 = 2.5:1）達 3.6 倍於團隊平均，表示完成度與提交不符。"
+      "task": "數據驗證與提供 (2.5H)、API Spec 規劃調整 (3H)、指標計算排程規劃 (1.5H)",
+      "commits": "1 筆文件 commit (docs: WIP add KEYDERS API spec)；實作代碼極少",
+      "reasoning": "開發時數 5H，僅產出 1 筆文件 commit (0.2 commits/H)，遠低於團隊平均效率 2.05 commits/H，差距達 10 倍。API Spec 規劃與指標計算應伴隨實際代碼實作與提交。"
     },
     {
-      "date": "5/7",
-      "member": "Joe",
+      "date": "5/8",
+      "member": "Ted",
       "severity": "🟡",
       "type": "outlier",
-      "task": "[Dev] KEYPO 前端改以 GKE 部署研究、AI 聆聽 (共 3.5H)",
-      "commits": "2 commits：Merge 遠端追蹤分支相關改動",
-      "reasoning": "開發時數 3.5 小時對應 2 個 commit，工時/commit 比例（1.75:1）達 2.5 倍於團隊平均（0.70 H/commit），表示工時投入與代碼產出不成比例。"
+      "task": "功能列表整理與 UI 調整 (2H)、AI 聆聽功能同步 (0.5H)、電子報 AI 摘要開發 (2H)、#369 爭議處理 (0.5H)、API Gateway 申請 (0.5H)、Fanti 功能調查 (1H)",
+      "commits": "1 筆 refactor commit (refactor(ai-listen): 範圍調整、UI 一致化與資料追溯)；代碼開發明顯不足",
+      "reasoning": "開發時數 6.5H，僅產出 1 筆 refactor commit (0.15 commits/H)，遠低於團隊平均效率 2.05 commits/H，差距達 13 倍。多項功能開發任務應產生相應代碼提交記錄。"
     }
   ],
   "summary": {
-    "totalMembers": 12,
-    "totalWarnings": 6,
+    "totalMembers": 11,
+    "totalWarnings": 4,
     "byType": {
-      "low_output": 2,
+      "low_output": 1,
       "mismatch": 0,
-      "outlier": 4
+      "outlier": 3
     }
   }
 }
