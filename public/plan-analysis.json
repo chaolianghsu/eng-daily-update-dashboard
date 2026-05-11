@@ -1,72 +1,214 @@
 {
-  "analysisDate": "2026-05-08",
-  "period": "5/7",
+  "analysisDate": "2026-05-11",
+  "period": "5/8",
   "planSpecs": [
     {
-      "date": "5/7",
+      "date": "5/8",
+      "member": "Aaron",
+      "commit": {
+        "title": "docs: add Lexical TemplateEditor design spec",
+        "sha": "4f2fe6a4",
+        "project": "KEYPO/keypo-frontend-2023",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/4f2fe6a4",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-05-08-lexical-template-editor-design.md"
+      ]
+    },
+    {
+      "date": "5/8",
+      "member": "Ivy",
+      "commit": {
+        "title": "docs(keyders-518): add design system, component patterns and rewrite plan",
+        "sha": "82429039",
+        "project": "KEYPO/keypo-frontend-2023",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-frontend-2023/-/commit/82429039",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/keyders-518/2026-05-07-rewrite-plan.md",
+        "docs/superpowers/keyders-518/architecture-conventions.md",
+        "docs/superpowers/keyders-518/component-patterns.md",
+        "docs/superpowers/keyders-518/design-system.md"
+      ]
+    },
+    {
+      "date": "5/8",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs: 新增 channel_timeline_monitor 設計文件",
+        "sha": "25bee22b",
+        "project": "chris.su/kol-lookup-v2",
+        "url": "https://biglab.buygta.today/chris.su/kol-lookup-v2/-/commit/25bee22b",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-05-08-channel-timeline-monitor-design.md"
+      ]
+    },
+    {
+      "date": "5/8",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs: 新增 channel_timeline_monitor 實作計畫並補強 spec 時區處理說明",
+        "sha": "e372c297",
+        "project": "chris.su/kol-lookup-v2",
+        "url": "https://biglab.buygta.today/chris.su/kol-lookup-v2/-/commit/e372c297",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-05-08-channel-timeline-monitor.md",
+        "docs/superpowers/specs/2026-05-08-channel-timeline-monitor-design.md"
+      ]
+    },
+    {
+      "date": "5/8",
       "member": "侑呈",
       "commit": {
-        "title": "docs(invoice): 改 BRAND_GROUPS 為 BRAND_ALIASES，CLI flag 改 --brand",
-        "sha": "d185e16d",
+        "title": "docs(invoice): 補 main 合併後的對齊事項段落",
+        "sha": "64c429a9",
         "project": "keytector/keytector-cib",
-        "url": "https://biglab.buygta.today/keytector/keytector-cib/-/commit/d185e16d",
+        "url": "https://biglab.buygta.today/keytector/keytector-cib/-/commit/64c429a9",
         "source": "gitlab"
       },
-      "files": ["docs/superpowers/specs/2026-05-06-invoice-detection-design.md"]
+      "files": [
+        "docs/superpowers/specs/2026-05-06-invoice-detection-design.md"
+      ]
     },
     {
-      "date": "5/7",
-      "member": "禎佑",
+      "date": "5/8",
+      "member": "侑呈",
       "commit": {
-        "title": "docs: 新增 mail 欄位解析 spec（@gmail.com）",
-        "sha": "c80cb456",
-        "project": "chris.su/kol-desc-parser",
-        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/c80cb456",
+        "title": "docs(invoice): PoC 環境改 .132，使用 keytector-cib (git)",
+        "sha": "d6dda045",
+        "project": "keytector/keytector-cib",
+        "url": "https://biglab.buygta.today/keytector/keytector-cib/-/commit/d6dda045",
         "source": "gitlab"
       },
-      "files": ["docs/superpowers/specs/2026-05-07-mail-field-parsing-design.md"]
+      "files": [
+        "docs/superpowers/specs/2026-05-06-invoice-detection-design.md"
+      ]
     },
     {
-      "date": "5/7",
-      "member": "禎佑",
+      "date": "5/8",
+      "member": "侑呈",
       "commit": {
-        "title": "docs: 新增 mail 欄位解析 implementation plan",
-        "sha": "e3fc5818",
-        "project": "chris.su/kol-desc-parser",
-        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/e3fc5818",
+        "title": "docs(invoice): 修對齊事項第 7 點 cron 參考改 .132",
+        "sha": "6e9673e8",
+        "project": "keytector/keytector-cib",
+        "url": "https://biglab.buygta.today/keytector/keytector-cib/-/commit/6e9673e8",
         "source": "gitlab"
       },
-      "files": ["docs/superpowers/plans/2026-05-07-mail-field-parsing.md"]
+      "files": [
+        "docs/superpowers/specs/2026-05-06-invoice-detection-design.md"
+      ]
+    },
+    {
+      "date": "5/8",
+      "member": "侑呈",
+      "commit": {
+        "title": "docs(invoice): 修兩處 spec 不一致，準備實作",
+        "sha": "876dabde",
+        "project": "keytector/keytector-cib",
+        "url": "https://biglab.buygta.today/keytector/keytector-cib/-/commit/876dabde",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-05-06-invoice-detection-design.md"
+      ]
+    },
+    {
+      "date": "5/8",
+      "member": "Wendy",
+      "commit": {
+        "title": "docs(keyders): WIP add KEYDERS API spec",
+        "sha": "7aff6e22",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/7aff6e22",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-05-07-keyders-api-spec.md"
+      ]
     }
   ],
   "correlations": [
     {
-      "date": "5/7",
-      "member": "侑呈",
+      "date": "5/8",
+      "member": "Aaron",
+      "status": "unmatched",
+      "specCommits": 1,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "docs: add Lexical TemplateEditor design spec"
+      ],
+      "reasoning": "Aaron 的 daily update 僅提及 KEYPO Agent 相關工作（檔案生成 Skill 優化、Team context 管理、驗收後調整）及 AI Listening LLM Service，完全未提及 Lexical TemplateEditor 或任何前端編輯器設計文件的撰寫工作，無法判斷此 spec commit 與當日工作的關聯性。"
+    },
+    {
+      "date": "5/8",
+      "member": "Ivy",
       "status": "partial",
       "specCommits": 1,
       "dailyUpdateMention": true,
-      "matchedTasks": ["KEYTECTOR(1H) [In Progress] 財政部電子發票"],
+      "matchedTasks": [
+        "KEYDERS Prototype V2 UI & 功能調整確認",
+        "KEYDERS 前端 prototype 功能 UI 調整 List Page"
+      ],
       "unmatchedSpecs": [],
-      "reasoning": "Daily update 提及 KEYTECTOR 電子發票工作項目（1H，In Progress），與該 spec commit 修改的發票偵測設計文件（invoice-detection-design.md）領域相符。然而 daily update 僅簡短標記「財政部電子發票」進行中，未具體提及將 BRAND_GROUPS 改名為 BRAND_ALIASES 或 CLI flag 調整等設計層面的變更內容，因此判定為部分吻合。"
+      "reasoning": "Ivy 的 daily update 有記錄 KEYDERS 前端 prototype UI 調整工作（共計約 7.8 小時），與 commit 所屬的 KEYDERS-518 功能方向一致。然而 daily update 未明確提及撰寫設計系統文件、component patterns 或 rewrite plan 等規劃文件，僅描述了 UI 功能實作面的調整，屬於部分吻合。"
     },
     {
-      "date": "5/7",
+      "date": "5/8",
       "member": "禎佑",
-      "status": "matched",
+      "status": "partial",
       "specCommits": 2,
       "dailyUpdateMention": true,
-      "matchedTasks": ["[Done] 開發 kol-desc-parser 解析 mail，並新增此欄位到 ES profile_list (4H)"],
+      "matchedTasks": [
+        "整理目前 kol 的監控機制，並做一個整合（Backlog）"
+      ],
       "unmatchedSpecs": [],
-      "reasoning": "Daily update 明確記錄「開發 kol-desc-parser 解析 mail，並新增此欄位到 ES profile_list（4H，Done）」，與兩筆 spec commits（mail 欄位解析的 spec 設計文件與 implementation plan）完全對應。commit 內容為先寫規格再寫實作計畫，符合 superpowers 開發流程，與 daily update 所描述的實作工作一致，判定為吻合。"
+      "reasoning": "禎佑的 daily update 在 Blockers 區塊提及「整理目前 kol 的監控機制，並做一個整合」（In Progress），與 channel_timeline_monitor 設計文件及實作計畫的方向有所關聯。然而 daily update 主要聚焦在 kol-desc-parser 優化、KOL 數據補值、KEYKYC 規劃討論等具體事項，未明確說明撰寫 channel_timeline_monitor 設計文件或實作計畫，且 5/11 工項才出現「排查 channel_timeline 監控狀態」，顯示此 spec 為未來實作的前置準備，屬部分吻合。"
+    },
+    {
+      "date": "5/8",
+      "member": "侑呈",
+      "status": "matched",
+      "specCommits": 4,
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "新增「財政部電子發票」brand（測試驗證）",
+        "解決 cross-brand 誤判（einvoice + 7-eleven 混合 domain）",
+        "classifier active filter",
+        "brand aliases",
+        "pipeline.py CLI flag",
+        "加入合法 e-invoice 服務商到 WHITELIST 壓誤陽性"
+      ],
+      "unmatchedSpecs": [],
+      "reasoning": "侑呈的 daily update 明確記錄 KEYTECTOR 電子發票偵測的實作工作（5 小時），包含新增「財政部電子發票」brand、解決 cross-brand 誤判、classifier 調整等，與 invoice detection design spec 的四次 commit 更新高度吻合。這些 spec commits 內容（對齊事項補充、PoC 環境調整、spec 不一致修正）屬於實作前的設計文件最終確認，與 daily update「準備實作」的工作情境完全一致。"
+    },
+    {
+      "date": "5/8",
+      "member": "Wendy",
+      "status": "matched",
+      "specCommits": 1,
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "KEYDERS IN KEYPO 後端＆數據會議討論指標計算與 API 規劃（2H）",
+        "KEYDERS IN KEYPO API Spec 規劃調整（3H）",
+        "KEYDERS IN KEYPO 指標計算規劃（1H）"
+      ],
+      "unmatchedSpecs": [],
+      "reasoning": "Wendy 的 daily update 明確記錄「KEYDERS IN KEYPO API Spec 規劃調整」花費 3 小時，並有後端數據會議討論 API 規劃（2 小時），與 WIP KEYDERS API spec commit 直接對應。後續 5/9、5/10 的工項也持續記錄 API Spec 規劃調整，顯示此 spec 文件是當日核心產出，完全吻合。"
     }
   ],
   "summary": {
-    "totalSpecCommits": 3,
-    "totalCorrelations": 2,
-    "membersWithSpecs": 2,
-    "matched": 1,
-    "unmatched": 0,
-    "partial": 1
+    "totalSpecCommits": 9,
+    "totalCorrelations": 5,
+    "membersWithSpecs": 5,
+    "matched": 2,
+    "unmatched": 1,
+    "partial": 2
   }
 }
