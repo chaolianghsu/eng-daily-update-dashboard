@@ -1,51 +1,33 @@
 {
-  "analysisDate": "2026-05-11",
-  "period": "5/8",
+  "analysisDate": "2026-05-12",
+  "period": "5/11",
   "warnings": [
     {
-      "date": "5/8",
-      "member": "Joe",
+      "date": "5/11",
+      "member": "Ivy",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "KEYDERS 前端 prototype 功能 UI 調整 (7.8H)",
+      "commits": "keypo-frontend-2023 11 筆 commits：UI 調整、表格組件、列表容器、過濾面板重構等",
+      "reasoning": "成員工時與 commit 產出比例為 0.71H/commit，遠高於團隊平均 0.305H/commit (2.33倍)，每筆 commit 投入工時顯著高於平均水準，建議檢視工作複雜度、溝通協調需求或是否有 commits 無法完整反映的工作內容"
+    },
+    {
+      "date": "5/11",
+      "member": "家輝",
       "severity": "🔴",
       "type": "low_output",
-      "task": "KEYPO & 企業管理平台 BDE 新功能權限新增 (3H)、選單配置調整 (1.5H)、AI 聆聽進行中 (0.5H)",
+      "task": "測試連線轉發 (4H)",
       "commits": "無相關 commits",
-      "reasoning": "開發時數 5H 已達 3H 門檻，但當天無任何 commit。BDE 權限新增、選單配置等功能開發應產生代碼改動，完全缺少提交記錄。"
-    },
-    {
-      "date": "5/8",
-      "member": "Joyce",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "處理 #335 (0.5H)、#3103 (0.5H)、Agent API 授權功能 (1H)、ES 效能問題緊急處理 (1.5H)、APP v3 遷移 (1.5H)",
-      "commits": "2 筆全為文件更新 (docs: update CLAUDE.md)；實際代碼改動不足",
-      "reasoning": "開發時數 5H 投入，僅產出 2 筆 commits (0.4 commits/H)，遠低於團隊平均效率 2.05 commits/H，差距達 5 倍。所報任務涉及 API 功能、系統效能、應用遷移等，應產生實質代碼改動。"
-    },
-    {
-      "date": "5/8",
-      "member": "Wendy",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "數據驗證與提供 (2.5H)、API Spec 規劃調整 (3H)、指標計算排程規劃 (1.5H)",
-      "commits": "1 筆文件 commit (docs: WIP add KEYDERS API spec)；實作代碼極少",
-      "reasoning": "開發時數 5H，僅產出 1 筆文件 commit (0.2 commits/H)，遠低於團隊平均效率 2.05 commits/H，差距達 10 倍。API Spec 規劃與指標計算應伴隨實際代碼實作與提交。"
-    },
-    {
-      "date": "5/8",
-      "member": "Ted",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "功能列表整理與 UI 調整 (2H)、AI 聆聽功能同步 (0.5H)、電子報 AI 摘要開發 (2H)、#369 爭議處理 (0.5H)、API Gateway 申請 (0.5H)、Fanti 功能調查 (1H)",
-      "commits": "1 筆 refactor commit (refactor(ai-listen): 範圍調整、UI 一致化與資料追溯)；代碼開發明顯不足",
-      "reasoning": "開發時數 6.5H，僅產出 1 筆 refactor commit (0.15 commits/H)，遠低於團隊平均效率 2.05 commits/H，差距達 13 倍。多項功能開發任務應產生相應代碼提交記錄。"
+      "reasoning": "報告標記為 [Dev] 的任務 4H 以上（測試連線轉發），但未見相關 commits 記錄。此任務涉及連線測試、環境配置、測試機安裝，屬維運/系統類工作性質，建議確認是否應重新標記為 [Non-Dev]，或確認是否有其他完成方式未在 git history 中反映"
     }
   ],
   "summary": {
     "totalMembers": 11,
-    "totalWarnings": 4,
+    "totalWarnings": 2,
     "byType": {
       "low_output": 1,
       "mismatch": 0,
-      "outlier": 3
+      "outlier": 1
     }
   }
 }
