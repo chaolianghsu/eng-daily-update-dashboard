@@ -12,7 +12,7 @@ const gsr = <T,>(fn: string): Promise<T> =>
 
 const loadData: LoadData = async () => {
   const [raw, commits, tasks, planAnalysis] = await Promise.all([
-    gsr<{ rawData: any; issues: any; leave: any }>("getDashboardData"),
+    gsr<{ rawData: any; issues: any; leave: any; centers?: any }>("getDashboardData"),
     gsr<any>("getCommitData").catch(() => null),
     gsr<any>("getTaskAnalysisData").catch(() => null),
     gsr<any>("getPlanAnalysisData").catch(() => null),
