@@ -4033,116 +4033,6 @@
             "hours": 0.5
           }
         ]
-      },
-      "Mia": {
-        "total": 7.5,
-        "meeting": 2,
-        "dev": 5.5,
-        "status": "reported",
-        "items": [
-          {
-            "code": "KEYPO",
-            "task": "產品規劃 — 新功能 RFC",
-            "hours": 3
-          },
-          {
-            "code": "KEYDERS",
-            "task": "KEYDERS roadmap review",
-            "hours": 2.5
-          },
-          {
-            "code": "MEETING",
-            "task": "產品例會",
-            "hours": 2
-          }
-        ]
-      },
-      "Leo": {
-        "total": 7,
-        "meeting": 1,
-        "dev": 6,
-        "status": "reported",
-        "items": [
-          {
-            "code": "LSR",
-            "task": "LSR UX 流程設計",
-            "hours": 4
-          },
-          {
-            "code": "KEYPO",
-            "task": "客戶訪談整理",
-            "hours": 2
-          },
-          {
-            "code": "MEETING",
-            "task": "週會",
-            "hours": 1
-          }
-        ]
-      },
-      "Sophia": {
-        "total": 6.5,
-        "meeting": 1,
-        "dev": 5.5,
-        "status": "reported",
-        "items": [
-          {
-            "code": "KEYDERS",
-            "task": "KEYDERS 介面 wireframe",
-            "hours": 4
-          },
-          {
-            "code": null,
-            "task": "雜項對接",
-            "hours": 1.5
-          },
-          {
-            "code": "MEETING",
-            "task": "design review",
-            "hours": 1
-          }
-        ]
-      },
-      "Albert": {
-        "total": 8,
-        "meeting": 1.5,
-        "dev": 6.5,
-        "status": "reported",
-        "items": [
-          {
-            "code": "RAG",
-            "task": "RAG retrieval 評估",
-            "hours": 4
-          },
-          {
-            "code": "INFRA",
-            "task": "GPU 環境設定",
-            "hours": 2.5
-          },
-          {
-            "code": "MEETING",
-            "task": "技發週會",
-            "hours": 1.5
-          }
-        ]
-      },
-      "Frank": {
-        "total": 7,
-        "meeting": 2,
-        "dev": 5,
-        "status": "reported",
-        "items": [
-          {
-            "code": "RAG",
-            "task": "LLM finetune 實驗",
-            "hours": 5
-          },
-          {
-            "code": "MEETING",
-            "task": "研究分享會",
-            "hours": 2
-          }
-        ]
       }
     },
     "5/13": {
@@ -4462,36 +4352,6 @@
             "hours": 4
           }
         ]
-      },
-      "Mia": {
-        "total": null,
-        "meeting": null,
-        "dev": null,
-        "status": "unreported"
-      },
-      "Leo": {
-        "total": null,
-        "meeting": null,
-        "dev": null,
-        "status": "unreported"
-      },
-      "Sophia": {
-        "total": null,
-        "meeting": null,
-        "dev": null,
-        "status": "unreported"
-      },
-      "Albert": {
-        "total": null,
-        "meeting": null,
-        "dev": null,
-        "status": "unreported"
-      },
-      "Frank": {
-        "total": null,
-        "meeting": null,
-        "dev": null,
-        "status": "unreported"
       }
     },
     "5/12": {
@@ -4828,36 +4688,6 @@
             "hours": 2
           }
         ]
-      },
-      "Mia": {
-        "total": null,
-        "meeting": null,
-        "dev": null,
-        "status": "unreported"
-      },
-      "Leo": {
-        "total": null,
-        "meeting": null,
-        "dev": null,
-        "status": "unreported"
-      },
-      "Sophia": {
-        "total": null,
-        "meeting": null,
-        "dev": null,
-        "status": "unreported"
-      },
-      "Albert": {
-        "total": null,
-        "meeting": null,
-        "dev": null,
-        "status": "unreported"
-      },
-      "Frank": {
-        "total": null,
-        "meeting": null,
-        "dev": null,
-        "status": "unreported"
       }
     },
     "5/11": {
@@ -5194,36 +5024,6 @@
             "hours": 2
           }
         ]
-      },
-      "Mia": {
-        "total": null,
-        "meeting": null,
-        "dev": null,
-        "status": "unreported"
-      },
-      "Leo": {
-        "total": null,
-        "meeting": null,
-        "dev": null,
-        "status": "unreported"
-      },
-      "Sophia": {
-        "total": null,
-        "meeting": null,
-        "dev": null,
-        "status": "unreported"
-      },
-      "Albert": {
-        "total": null,
-        "meeting": null,
-        "dev": null,
-        "status": "unreported"
-      },
-      "Frank": {
-        "total": null,
-        "meeting": null,
-        "dev": null,
-        "status": "unreported"
       }
     }
   },
@@ -5282,31 +5082,6 @@
       "member": "哲緯",
       "severity": "🟡",
       "text": "超時 10.5hr"
-    },
-    {
-      "member": "Mia",
-      "severity": "🔴",
-      "text": "連續 3 天未回報"
-    },
-    {
-      "member": "Leo",
-      "severity": "🔴",
-      "text": "連續 3 天未回報"
-    },
-    {
-      "member": "Sophia",
-      "severity": "🔴",
-      "text": "連續 3 天未回報"
-    },
-    {
-      "member": "Albert",
-      "severity": "🔴",
-      "text": "連續 3 天未回報"
-    },
-    {
-      "member": "Frank",
-      "severity": "🔴",
-      "text": "連續 3 天未回報"
     }
   ],
   "leave": {
@@ -5634,21 +5409,6 @@
         "Aaron",
         "哲緯",
         "家輝"
-      ]
-    },
-    "產品": {
-      "label": "產品部",
-      "members": [
-        "Mia",
-        "Leo",
-        "Sophia"
-      ]
-    },
-    "技發": {
-      "label": "技術發展部",
-      "members": [
-        "Albert",
-        "Frank"
       ]
     }
   },
