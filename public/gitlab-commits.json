@@ -65689,53 +65689,13 @@
   },
   "projectRisks": [
     {
-      "project": "CrawlersV2/bigcrawler-scrapy",
-      "soloContributor": "日銜",
+      "project": "shared-repo",
+      "soloContributor": "A",
       "severity": "🟡"
     },
     {
-      "project": "dailyview/2024-dailyview-app",
-      "soloContributor": "Jason",
-      "severity": "🟡"
-    },
-    {
-      "project": "llmprojects/keypo-agent",
-      "soloContributor": "Aaron",
-      "severity": "🟡"
-    },
-    {
-      "project": "chris.su/keykyc-backend-v2",
-      "soloContributor": "禎佑",
-      "severity": "🟡"
-    },
-    {
-      "project": "chris.su/penalty-crawler",
-      "soloContributor": "禎佑",
-      "severity": "🟡"
-    },
-    {
-      "project": "chris.su/company-crawler",
-      "soloContributor": "禎佑",
-      "severity": "🟡"
-    },
-    {
-      "project": "keytector/keytector-dashboard",
-      "soloContributor": "侑呈",
-      "severity": "🟡"
-    },
-    {
-      "project": "wendyHsieh/keyders-metrics",
-      "soloContributor": "禎佑",
-      "severity": "🟡"
-    },
-    {
-      "project": "CrawlersV2/youtube-channel-scrapy",
-      "soloContributor": "日銜",
-      "severity": "🟡"
-    },
-    {
-      "project": "bigdata-54837596/line-social-radar",
-      "soloContributor": "哲緯",
+      "project": "gitlab-only",
+      "soloContributor": "A",
       "severity": "🟡"
     }
   ]
