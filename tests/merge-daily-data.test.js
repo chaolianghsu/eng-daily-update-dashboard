@@ -170,6 +170,160 @@ describe('mergeDailyData', () => {
     expect(result.dailyUpdates).toEqual([]);
   });
 
+  describe('multi-space add-missing-member (Phase 2)', () => {
+    it('ADDs member to an existing date when previously absent', () => {
+      // raw_data has 5/14 with 工程 members only; new parsed output from 技發
+      // space brings Richard into the same date.
+      const existing5_14 = {
+        rawData: {
+          '5/14': {
+            Joyce: { total: 8, meeting: 1, dev: 7 },
+            Ivy: { total: 7, meeting: 0, dev: 7 },
+          },
+        },
+        issues: [],
+        leave: {},
+      };
+      const parsedTechDev = {
+        dateEntries: {
+          '5/14': {
+            threadDate: '5/15',
+            contentDate: '5/14',
+            entry: {
+              Richard: { total: 6, meeting: 0, dev: 6, status: 'reported' },
+              Patty: { total: 7, meeting: 0, dev: 7, status: 'reported' },
+            },
+            alreadyExists: true,
+            reportedCount: 2,
+            totalMembers: 2,
+            rawReplies: [
+              { member: 'Richard', text: '5/14 進度：\n1. [BDE] X (6H)', createTime: '2026-05-15T01:00:00Z' },
+              { member: 'Patty', text: '5/14 進度：\n1. [BDE] Y (7H)', createTime: '2026-05-15T02:00:00Z' },
+            ],
+          },
+        },
+        leaveMap: {},
+        issues: [],
+      };
+      const result = mergeDailyData(existing5_14, parsedTechDev);
+      expect(result.rawData['5/14'].Joyce.total).toBe(8);
+      expect(result.rawData['5/14'].Richard).toBeDefined();
+      expect(result.rawData['5/14'].Richard.total).toBe(6);
+      expect(result.rawData['5/14'].Patty.total).toBe(7);
+      // newDates stays empty (date already existed); addedToExisting should track the additions.
+      expect(result.newDates).toEqual([]);
+      expect(result.addedToExisting).toBeDefined();
+      const adds = result.addedToExisting.filter((a) => a.date === '5/14').map((a) => a.member).sort();
+      expect(adds).toEqual(['Patty', 'Richard']);
+      // Daily updates for newly added members should be present.
+      const richardUpdate = result.dailyUpdates.find((u) => u.member === 'Richard' && u.date === '5/14');
+      expect(richardUpdate).toBeDefined();
+    });
+
+    it('does not overwrite an existing reported entry with one from another space', () => {
+      const existingWithRichard = {
+        rawData: {
+          '5/14': {
+            Richard: { total: 6, meeting: 0, dev: 6 },
+          },
+        },
+        issues: [],
+        leave: {},
+      };
+      const parsedOverlap = {
+        dateEntries: {
+          '5/14': {
+            entry: { Richard: { total: 99, meeting: 99, dev: 0 } },
+            alreadyExists: true,
+          },
+        },
+        leaveMap: {},
+      };
+      const result = mergeDailyData(existingWithRichard, parsedOverlap);
+      expect(result.rawData['5/14'].Richard.total).toBe(6);
+      expect(result.addedToExisting || []).toEqual([]);
+    });
+
+    it('sequential merge of two spaces produces same result as a combined parse', () => {
+      // Hypothetical "combined" parse where both spaces are merged into one entry
+      const combinedParse = {
+        dateEntries: {
+          '5/14': {
+            entry: {
+              Joyce: { total: 8, meeting: 1, dev: 7, status: 'reported' },
+              Richard: { total: 6, meeting: 0, dev: 6, status: 'reported' },
+            },
+            alreadyExists: false,
+          },
+        },
+        leaveMap: {},
+      };
+      const combined = mergeDailyData(
+        { rawData: {}, issues: [], leave: {} },
+        combinedParse
+      );
+
+      // Sequential: first 工程 (new date), then 技發 (adds member to existing date)
+      const eng = mergeDailyData(
+        { rawData: {}, issues: [], leave: {} },
+        {
+          dateEntries: {
+            '5/14': {
+              entry: { Joyce: { total: 8, meeting: 1, dev: 7, status: 'reported' } },
+              alreadyExists: false,
+            },
+          },
+          leaveMap: {},
+        }
+      );
+      const tech = mergeDailyData(
+        { rawData: eng.rawData, issues: eng.issues, leave: eng.leave },
+        {
+          dateEntries: {
+            '5/14': {
+              entry: { Richard: { total: 6, meeting: 0, dev: 6, status: 'reported' } },
+              alreadyExists: true,
+            },
+          },
+          leaveMap: {},
+        }
+      );
+      expect(tech.rawData['5/14'].Joyce).toEqual(combined.rawData['5/14'].Joyce);
+      expect(tech.rawData['5/14'].Richard).toEqual(combined.rawData['5/14'].Richard);
+    });
+
+    it('still backfills nulls AND adds missing members in the same merge', () => {
+      const existingMixed = {
+        rawData: {
+          '5/14': {
+            Joyce: { total: null, meeting: null, dev: null },
+            Ivy: { total: 7, meeting: 0, dev: 7 },
+          },
+        },
+        issues: [],
+        leave: {},
+      };
+      const parsed = {
+        dateEntries: {
+          '5/14': {
+            entry: {
+              Joyce: { total: 8, meeting: 1, dev: 7, status: 'reported' },
+              Richard: { total: 6, meeting: 0, dev: 6, status: 'reported' },
+            },
+            alreadyExists: true,
+          },
+        },
+        leaveMap: {},
+      };
+      const result = mergeDailyData(existingMixed, parsed);
+      expect(result.rawData['5/14'].Joyce.total).toBe(8);
+      expect(result.rawData['5/14'].Richard.total).toBe(6);
+      expect(result.rawData['5/14'].Ivy.total).toBe(7);
+      expect(result.backfilled.map((b) => b.member)).toEqual(['Joyce']);
+      expect(result.addedToExisting.map((a) => a.member)).toEqual(['Richard']);
+    });
+  });
+
   describe('items[] propagation (Phase 1)', () => {
     it('carries items array from parsed entry into rawData', () => {
       const parsedWithItems = {
