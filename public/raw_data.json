@@ -3802,7 +3802,7 @@
             "hours": 3.5
           },
           {
-            "code": null,
+            "code": "KEYPO",
             "task": "#335 / #3103 雜事",
             "hours": 1
           }
@@ -3894,7 +3894,7 @@
             "hours": 1.5
           },
           {
-            "code": null,
+            "code": "KEYPO",
             "task": "數據驗證",
             "hours": 2.5
           }
@@ -3953,7 +3953,7 @@
             "hours": 4
           },
           {
-            "code": null,
+            "code": "KEYPO",
             "task": "客戶調查 (uncategorized 範例)",
             "hours": 2.5
           }
@@ -3972,7 +3972,7 @@
         "status": "reported",
         "items": [
           {
-            "code": null,
+            "code": "BDE",
             "task": "BDE 新功能權限新增",
             "hours": 3
           },
@@ -3982,7 +3982,7 @@
             "hours": 1.5
           },
           {
-            "code": null,
+            "code": "AILISTEN",
             "task": "AI 聆聽進行中",
             "hours": 0.5
           },
@@ -4043,27 +4043,27 @@
         "status": "reported",
         "items": [
           {
-            "code": null,
+            "code": "AGENT",
             "task": "[In Progress] 處理KEYPO Agent 可以操作功能設定API授權，需要再次進行調整",
             "hours": 7
           },
           {
-            "code": null,
+            "code": "KEYDERS",
             "task": "[In Progress] KEYDERS模組-KOL收藏功能開發",
             "hours": 0.5
           },
           {
-            "code": null,
+            "code": "MEETING",
             "task": "[Done] 工程部讀書會",
             "hours": 1
           },
           {
-            "code": null,
+            "code": "KEYPO",
             "task": "[Done] #84：因客戶合約的關係，CSM需要加急補送5/1~5/12的速報",
             "hours": 0.5
           },
           {
-            "code": null,
+            "code": "KEYPO",
             "task": "[Done] #3134：修正熱門關鍵字未套用情緒篩選",
             "hours": 1
           }
@@ -4076,32 +4076,32 @@
         "status": "reported",
         "items": [
           {
-            "code": null,
+            "code": "KEYDERS",
             "task": "[Done] KEYDERS 前端 prototype 功能 UI 調整 個人資訊 Page 文章列表 LINK",
             "hours": 2.5
           },
           {
-            "code": null,
+            "code": "KEYPO",
             "task": "[Done] 查詢 list page API 串接",
             "hours": 3
           },
           {
-            "code": null,
+            "code": "KEYPO",
             "task": "[Done] 專案進度確認",
             "hours": 0.8
           },
           {
-            "code": null,
+            "code": "MEETING",
             "task": "[Done] 部門分享會",
             "hours": 1
           },
           {
-            "code": null,
+            "code": "MEETING",
             "task": "[Done] F2E Sync 會",
             "hours": 0.8
           },
           {
-            "code": null,
+            "code": "MEETING",
             "task": "[Done] 大數據官網共契頁面調整討論",
             "hours": 0.4
           }
@@ -4114,12 +4114,12 @@
         "status": "reported",
         "items": [
           {
-            "code": null,
+            "code": "BDE",
             "task": "[Done] 網溫 seo / geo wave 1 調整",
             "hours": 5
           },
           {
-            "code": null,
+            "code": "MEETING",
             "task": "[Done] 工程部讀書分享會",
             "hours": 1
           }
@@ -4132,17 +4132,17 @@
         "status": "reported",
         "items": [
           {
-            "code": null,
+            "code": "BDE",
             "task": "[Done] VIP站台修復",
             "hours": 5
           },
           {
-            "code": null,
+            "code": "MEETING",
             "task": "[Done] 讀書會",
             "hours": 1
           },
           {
-            "code": null,
+            "code": "REVIEW",
             "task": "[In Progress] MR review  link",
             "hours": 1.5
           }
@@ -4155,32 +4155,32 @@
         "status": "reported",
         "items": [
           {
-            "code": null,
+            "code": "KEYPO",
             "task": "[Done] 當日數據產出經人工驗證後提供給外部人員",
             "hours": 0.5
           },
           {
-            "code": null,
+            "code": "KEYPO",
             "task": "[Done] kolprofile, kolkpioverview, kolfollowertrend API 實作",
             "hours": 4
           },
           {
-            "code": null,
+            "code": "MEETING",
             "task": "[In Progress] kolleadervalue API 實作規劃與業務邏輯討論",
             "hours": 1.5
           },
           {
-            "code": null,
+            "code": "KEYPO",
             "task": "[Done] kolranking API 效能問題調整",
             "hours": 3
           },
           {
-            "code": null,
+            "code": "REVIEW",
             "task": "[Done] MR review 問題調整",
             "hours": 2
           },
           {
-            "code": null,
+            "code": "MEETING",
             "task": "[Done] 讀書會",
             "hours": 1
           }
@@ -4193,12 +4193,12 @@
         "status": "reported",
         "items": [
           {
-            "code": null,
+            "code": "KEYTECTOR",
             "task": "KEYTECTOR",
             "hours": 5.5
           },
           {
-            "code": null,
+            "code": "KEYTECTOR",
             "task": "其他",
             "hours": 2.5
           }
@@ -4211,32 +4211,32 @@
         "status": "reported",
         "items": [
           {
-            "code": null,
+            "code": "KEYKYC",
             "task": "[In Progress] KEYKYC 開發 - 後端",
             "hours": 4
           },
           {
-            "code": null,
+            "code": "MEETING",
             "task": "[Done] 讀書會",
             "hours": 1
           },
           {
-            "code": null,
+            "code": "KEYDERS",
             "task": "[Done] KEYDERS 主檔細節 會議",
             "hours": 0.5
           },
           {
-            "code": null,
+            "code": "KEYKYC",
             "task": "[Done] KEYKYC sync 會議",
             "hours": 0.5
           },
           {
-            "code": null,
+            "code": "KEYKYC",
             "task": "[Done] KEYKYC 開發 - 公司資訊收錄 link",
             "hours": 3
           },
           {
-            "code": null,
+            "code": "KEYKYC",
             "task": "[In Progress] KEYKYC 開發 - 裁罰資料收錄 (共 16 個資料源) link",
             "hours": 3
           }
@@ -4260,7 +4260,7 @@
             "hours": 4
           },
           {
-            "code": null,
+            "code": "MEETING",
             "task": "[Done] 讀書會",
             "hours": 1
           },
@@ -4303,12 +4303,12 @@
         "status": "reported",
         "items": [
           {
-            "code": null,
+            "code": "AILISTEN",
             "task": "[In Progress] AI 聆聽",
             "hours": 5.5
           },
           {
-            "code": null,
+            "code": "BDE",
             "task": "[Done] 測試機 BDE 功能進度整併與更新",
             "hours": 1.5
           }
@@ -4327,27 +4327,27 @@
         "status": "reported",
         "items": [
           {
-            "code": null,
+            "code": "LSR",
             "task": "[Done] Threads日常需求處理",
             "hours": 0.5
           },
           {
-            "code": null,
+            "code": "LSR",
             "task": "[Done] LSR會議",
             "hours": 2
           },
           {
-            "code": null,
+            "code": "MEETING",
             "task": "[Done] 工程部會議",
             "hours": 1
           },
           {
-            "code": null,
+            "code": "LSR",
             "task": "line-social-radar-api  link link",
             "hours": 3
           },
           {
-            "code": null,
+            "code": "LSR",
             "task": "line-social-radar  link link link link link link link link link",
             "hours": 4
           }
@@ -4376,17 +4376,17 @@
         "status": "reported",
         "items": [
           {
-            "code": null,
+            "code": "AGENT",
             "task": "[Done] 處理KEYPO Agent 可以操作功能設定API授權",
             "hours": 5
           },
           {
-            "code": null,
+            "code": "KEYPO",
             "task": "[Done] KEYPO 例會",
             "hours": 2.5
           },
           {
-            "code": null,
+            "code": "KEYPO",
             "task": "[In Progress] 玄武計畫 KEYPO engine API v3",
             "hours": 1
           }
@@ -4399,27 +4399,27 @@
         "status": "reported",
         "items": [
           {
-            "code": null,
+            "code": "KEYDERS",
             "task": "[In Progress] KEYDERS 前端 prototype 功能 UI 調整 個人資訊 Page LINK",
             "hours": 6.5
           },
           {
-            "code": null,
+            "code": "KEYPO",
             "task": "[Done] 收藏頁 & List Page 反饋調整",
             "hours": 0.4
           },
           {
-            "code": null,
+            "code": "KEYPO",
             "task": "[Done] API 規格確認",
             "hours": 0.8
           },
           {
-            "code": null,
+            "code": "KEYDERS",
             "task": "[Done] KEYDERS 開發進度確認",
             "hours": 0.5
           },
           {
-            "code": null,
+            "code": "KEYPO",
             "task": "[Done] MISC",
             "hours": 0.6
           }
@@ -4432,17 +4432,17 @@
         "status": "reported",
         "items": [
           {
-            "code": null,
+            "code": "BDE",
             "task": "[Done] 網溫 seo / 關注 geo 方法研究",
             "hours": 2
           },
           {
-            "code": null,
+            "code": "BDE",
             "task": "[Done]  Issue#3129",
             "hours": 1
           },
           {
-            "code": null,
+            "code": "BDE",
             "task": "[Done] Issue#82",
             "hours": 4
           }
@@ -4455,27 +4455,27 @@
         "status": "reported",
         "items": [
           {
-            "code": null,
+            "code": "AGENT",
             "task": "[Done] 搬遷主責服務到其他台機器",
             "hours": 2
           },
           {
-            "code": null,
+            "code": "AGENT",
             "task": "2[Done] 調整主責服務queue連線",
             "hours": 1.5
           },
           {
-            "code": null,
+            "code": "AGENT",
             "task": "3[Done] 確認5/12掉文區間與補收",
             "hours": 1.5
           },
           {
-            "code": null,
+            "code": "REVIEW",
             "task": "[Done]AI修站 非社群MR review&更版",
             "hours": 1
           },
           {
-            "code": null,
+            "code": "MEETING",
             "task": "[Done] KOL進度會議",
             "hours": 0.5
           }
@@ -4488,22 +4488,22 @@
         "status": "reported",
         "items": [
           {
-            "code": null,
+            "code": "KEYPO",
             "task": "[Done] 當日數據產出經人工驗證後提供給外部人員",
             "hours": 0.5
           },
           {
-            "code": null,
+            "code": "KEYTECTOR",
             "task": "[Done] KEYTECTOR sync (電子發票偵測狀況、dashboard 開發進度)",
             "hours": 0.5
           },
           {
-            "code": null,
+            "code": "KEYDERS",
             "task": "[In Progress] KEYDERS IN KEYPO API Spec 規劃調整 (完成相似推薦, 商業活動)",
             "hours": 2
           },
           {
-            "code": null,
+            "code": "KEYPO",
             "task": "[In Progress] kolprofile API 實作、kolranking API 效能問題調整",
             "hours": 5
           }
@@ -4516,7 +4516,7 @@
         "status": "reported",
         "items": [
           {
-            "code": null,
+            "code": "KEYTECTOR",
             "task": "KEYTECTOR",
             "hours": 3.5
           },
@@ -4526,7 +4526,7 @@
             "hours": 4
           },
           {
-            "code": null,
+            "code": "MEETING",
             "task": "Fanti 同步會議",
             "hours": 0.5
           }
@@ -4539,32 +4539,32 @@
         "status": "reported",
         "items": [
           {
-            "code": null,
+            "code": "KEYDERS",
             "task": "[In Progress] keyders-metrics",
             "hours": 3
           },
           {
-            "code": null,
+            "code": "KEYKYC",
             "task": "[In Progress] KEYKYC 開發",
             "hours": 1.5
           },
           {
-            "code": null,
+            "code": "KEYKYC",
             "task": "[Done] 搬遷主責服務到其他台機器",
             "hours": 2.5
           },
           {
-            "code": null,
+            "code": "MEETING",
             "task": "[Done] KOL進度會議",
             "hours": 0.5
           },
           {
-            "code": null,
+            "code": "KEYKYC",
             "task": "[Done] GoogleMap 數據申請表",
             "hours": 0.5
           },
           {
-            "code": null,
+            "code": "KEYKYC",
             "task": "[In Progress] 裁罰資料收錄 (共 16 個資料源) link",
             "hours": 3
           }
@@ -4588,7 +4588,7 @@
             "hours": 0.5
           },
           {
-            "code": null,
+            "code": "MEETING",
             "task": "[Done] 管理中心週會",
             "hours": 1
           },
@@ -4603,7 +4603,7 @@
             "hours": 1
           },
           {
-            "code": null,
+            "code": "MEETING",
             "task": "[Done] KOL對焦會議",
             "hours": 0.5
           }
@@ -4616,17 +4616,17 @@
         "status": "reported",
         "items": [
           {
-            "code": null,
+            "code": "KEYPO",
             "task": "[Done] KEYPO 例會",
             "hours": 3
           },
           {
-            "code": null,
+            "code": "AILISTEN",
             "task": "[In Progress] AI 聆聽",
             "hours": 2.5
           },
           {
-            "code": null,
+            "code": "AILISTEN",
             "task": "[Done] AI 聆聽 sync & API 規格討論會議",
             "hours": 0.5
           }
@@ -4639,32 +4639,32 @@
         "status": "reported",
         "items": [
           {
-            "code": null,
+            "code": "KEYPO",
             "task": "[Done] KEYPO 會議",
             "hours": 2.5
           },
           {
-            "code": null,
+            "code": "LSR",
             "task": "[Done] AI listening pipeline 調整",
             "hours": 1
           },
           {
-            "code": null,
+            "code": "LSR",
             "task": "[Done] AI listening pipeline 同步",
             "hours": 0.5
           },
           {
-            "code": null,
+            "code": "REVIEW",
             "task": "[Done] Review AI listening MR",
             "hours": 0.5
           },
           {
-            "code": null,
+            "code": "REVIEW",
             "task": "[Done] Review KEYPO Agent 輸出檔案 UserStory",
             "hours": 1
           },
           {
-            "code": null,
+            "code": "AGENT",
             "task": "[In Progress] KEYPO Agent 驗收後調整",
             "hours": 1
           }
@@ -4677,27 +4677,27 @@
         "status": "reported",
         "items": [
           {
-            "code": null,
+            "code": "LSR",
             "task": "[Done] Threads日常需求處理",
             "hours": 0.5
           },
           {
-            "code": null,
+            "code": "LSR",
             "task": "[Done] LSR會議",
             "hours": 0.5
           },
           {
-            "code": null,
+            "code": "LSR",
             "task": "line-social-radar-api  link",
             "hours": 3
           },
           {
-            "code": null,
+            "code": "LSR",
             "task": "line-social-radar  link link link",
             "hours": 3
           },
           {
-            "code": null,
+            "code": "LSR",
             "task": "[Done] 技術分享ppt",
             "hours": 2
           }
@@ -4712,22 +4712,22 @@
         "status": "reported",
         "items": [
           {
-            "code": null,
+            "code": "AGENT",
             "task": "[In Progress] 處理KEYPO Agent 可以操作功能設定API授權",
             "hours": 6
           },
           {
-            "code": null,
+            "code": "KEYPO",
             "task": "[Done] 緊急處理 處理 #3126",
             "hours": 1
           },
           {
-            "code": null,
+            "code": "KEYDERS",
             "task": "[Done] KEYDERS IN KEYPO 後端功能討論",
             "hours": 2
           },
           {
-            "code": null,
+            "code": "BDE",
             "task": "[Done] BDE 功能權限前後端串接檢核",
             "hours": 1
           }
@@ -4740,17 +4740,17 @@
         "status": "reported",
         "items": [
           {
-            "code": null,
+            "code": "KEYDERS",
             "task": "[Done] KEYDERS 前端 prototype 功能 UI 調整 List Page LINK",
             "hours": 6.5
           },
           {
-            "code": null,
+            "code": "KEYPO",
             "task": "[Done] 查詢業務邏輯與規格確認",
             "hours": 0.8
           },
           {
-            "code": null,
+            "code": "KEYDERS",
             "task": "[Done] KEYDERS 開發進度確認",
             "hours": 0.5
           }
@@ -4763,17 +4763,17 @@
         "status": "reported",
         "items": [
           {
-            "code": null,
+            "code": "BDE",
             "task": "[In Progress] 網溫 seo / 關注 geo 方法研究",
             "hours": 4
           },
           {
-            "code": null,
+            "code": "BDE",
             "task": "[Done] Issue#373 問題確認",
             "hours": 1
           },
           {
-            "code": null,
+            "code": "BDE",
             "task": "[In Progress] 網溫效能優化",
             "hours": 2
           }
@@ -4786,17 +4786,17 @@
         "status": "reported",
         "items": [
           {
-            "code": null,
+            "code": "AILISTEN",
             "task": "AI修站部署 link",
             "hours": 4.5
           },
           {
-            "code": null,
+            "code": "AGENT",
             "task": "非社群漏文原因確認",
             "hours": 1.5
           },
           {
-            "code": null,
+            "code": "AGENT",
             "task": "其他",
             "hours": 1
           }
@@ -4809,32 +4809,32 @@
         "status": "reported",
         "items": [
           {
-            "code": null,
+            "code": "KEYPO",
             "task": "[Done] 當日數據產出經人工驗證後提供給外部人員",
             "hours": 0.5
           },
           {
-            "code": null,
+            "code": "KEYTECTOR",
             "task": "[Done] KEYTECTOR sync and dashboard 開發討論",
             "hours": 1
           },
           {
-            "code": null,
+            "code": "KEYDERS",
             "task": "[Done] KEYDERS IN KEYPO 數據會議：同步指標計算排程規劃與計算細節討論",
             "hours": 1
           },
           {
-            "code": null,
+            "code": "KEYDERS",
             "task": "[In Progress] KEYDERS IN KEYPO 需求調整釐清＆API Spec 規劃調整& kolranking, kolfilters API 實作",
             "hours": 5
           },
           {
-            "code": null,
+            "code": "KEYDERS",
             "task": "[Done] KEYDERS IN KEYPO 指標計算排程規劃調整",
             "hours": 2
           },
           {
-            "code": null,
+            "code": "KEYPO",
             "task": "[Done] 新廣告通知信沒發問題修正",
             "hours": 1
           }
@@ -4847,17 +4847,17 @@
         "status": "reported",
         "items": [
           {
-            "code": null,
+            "code": "KEYTECTOR",
             "task": "KEYTECTOR LINK",
             "hours": 3.5
           },
           {
-            "code": null,
+            "code": "KEYTECTOR",
             "task": "其他",
             "hours": 3
           },
           {
-            "code": null,
+            "code": "KEYTECTOR",
             "task": "Fanti",
             "hours": 1.5
           }
@@ -4870,32 +4870,32 @@
         "status": "reported",
         "items": [
           {
-            "code": null,
+            "code": "KEYDERS",
             "task": "[Done] 同步每日頻道資訊時，補發任務 link",
             "hours": 1
           },
           {
-            "code": null,
+            "code": "KEYDERS",
             "task": "[Done] 排程分離 (channel_list、search_users、backfill) link",
             "hours": 0.5
           },
           {
-            "code": null,
+            "code": "KEYDERS",
             "task": "[Done] kol-desc-parser 運行時，會自動刪除舊的 profile_list doc",
             "hours": 3
           },
           {
-            "code": null,
+            "code": "KEYDERS",
             "task": "[Done] KEYDERS in KEYPO 指標計算排程",
             "hours": 1
           },
           {
-            "code": null,
+            "code": "KEYKYC",
             "task": "[Done] KEYKYC開發討論",
             "hours": 1
           },
           {
-            "code": null,
+            "code": "KEYDERS",
             "task": "[In Progress] sync keyders-metrics",
             "hours": 1
           }
@@ -4937,22 +4937,22 @@
         "status": "reported",
         "items": [
           {
-            "code": null,
+            "code": "AILISTEN",
             "task": "[In Progress] AI 聆聽",
             "hours": 3
           },
           {
-            "code": null,
+            "code": "KEYPO",
             "task": "[Done] issue#密335：KEYPO 訂單頁說明文字調整",
             "hours": 1
           },
           {
-            "code": null,
+            "code": "KEYPO",
             "task": "[Done] 需求申請系統#58：KEYPO 訂單頁加入開通資料源提醒",
             "hours": 2
           },
           {
-            "code": null,
+            "code": "BDE",
             "task": "[Done] BDE 各功能現況整合測試、處理衝突與更新至測試機",
             "hours": 1
           }
@@ -4965,27 +4965,27 @@
         "status": "reported",
         "items": [
           {
-            "code": null,
+            "code": "AILISTEN",
             "task": "[Done] AI Listening LLM Service Link",
             "hours": 2
           },
           {
-            "code": null,
+            "code": "AILISTEN",
             "task": "[Done] AI Listening 切詞情緒分群 Service Link",
             "hours": 3
           },
           {
-            "code": null,
+            "code": "AGENT",
             "task": "[Done] KEYPO Agent 調整 Token 消耗減少成本 40% Link",
             "hours": 1
           },
           {
-            "code": null,
+            "code": "KEYPO",
             "task": "[Done] KEYPO Frontend 部署速度優化 Link",
             "hours": 0.5
           },
           {
-            "code": null,
+            "code": "AGENT",
             "task": "[In Progress] KEYPO Agent 驗收後調整",
             "hours": 1
           }
@@ -4998,42 +4998,42 @@
         "status": "reported",
         "items": [
           {
-            "code": null,
+            "code": "LSR",
             "task": "[Done] Threads日常需求處理",
             "hours": 0.5
           },
           {
-            "code": null,
+            "code": "LSR",
             "task": "[Done] LSR會議",
             "hours": 0.5
           },
           {
-            "code": null,
+            "code": "LSR",
             "task": "line-social-radar-api  link",
             "hours": 3
           },
           {
-            "code": null,
+            "code": "LSR",
             "task": "line-social-radar  link link link",
             "hours": 2
           },
           {
-            "code": null,
+            "code": "KEYKYC",
             "task": "keykyc-iei-web-frontend  link",
             "hours": 0.5
           },
           {
-            "code": null,
+            "code": "KEYKYC",
             "task": "keykyc-iei-web-backend  link",
             "hours": 0.5
           },
           {
-            "code": null,
+            "code": "KEYKYC",
             "task": "keykyc-web-backend  link link link link",
             "hours": 2
           },
           {
-            "code": null,
+            "code": "KEYKYC",
             "task": "keykyc-web-frontend  link link",
             "hours": 2
           }
