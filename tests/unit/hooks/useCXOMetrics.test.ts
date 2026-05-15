@@ -3,6 +3,7 @@ import { describe, it, expect } from "vitest";
 import { renderHook } from "@testing-library/react";
 import {
   useCenterROI,
+  useParentCenterROI,
   useSpecOwnership,
   useWeeklyHealth,
   useTopRisks,
@@ -124,6 +125,95 @@ describe("useCenterROI", () => {
       useCenterROI(raw, null, { dates: ["3/9"] }, singleCenter)
     );
     expect(result.current[0].items).toBe(2);
+  });
+});
+
+describe("useParentCenterROI", () => {
+  const centersWithParent = {
+    工程: { label: "工程部", members: ["A", "B"], parent: "產品中心" },
+    技發: { label: "技發部", members: ["T1"], parent: "產品中心" },
+    分析: { label: "分析部", members: ["D1"], parent: "數據平台中心" },
+  };
+  const parentCenters = {
+    產品中心: { label: "產品中心", children: ["工程", "技發"] },
+    數據平台中心: { label: "數據平台中心", children: ["分析"] },
+  };
+  const raw = {
+    "3/13": {
+      A: { total: 8, meeting: 1, dev: 7, items: [{ task: "x" }] },
+      B: { total: 6, meeting: 2, dev: 4 },
+      T1: { total: 8, meeting: 0, dev: 8 },
+      D1: { total: 7, meeting: 1, dev: 6 },
+    },
+  };
+  const commits = {
+    commits: {
+      "3/13": {
+        A: { count: 3, projects: [], items: [] },
+        B: { count: 1, projects: [], items: [] },
+        T1: { count: 2, projects: [], items: [] },
+        D1: { count: 4, projects: [], items: [] },
+      },
+    },
+    analysis: {},
+    projectRisks: [],
+  };
+
+  it("aggregates metrics by parent center", () => {
+    const { result } = renderHook(() =>
+      useParentCenterROI(raw, commits as any, parentCenters, centersWithParent, { dates: ["3/13"] })
+    );
+    expect(result.current).toHaveLength(2);
+    const pc = result.current.find(r => r.parentCenter === "產品中心");
+    expect(pc?.devHours).toBe(19); // 7 + 4 + 8
+    expect(pc?.commits).toBe(6); // 3 + 1 + 2
+    expect(pc?.departments).toEqual(["工程", "技發"]);
+    expect(pc?.childMetrics).toHaveLength(2);
+    expect(pc?.childMetrics.find(c => c.dept === "工程")?.devHours).toBe(11); // A=7 + B=4
+  });
+
+  it("returns empty when parentCenters undefined", () => {
+    const { result } = renderHook(() =>
+      useParentCenterROI(raw, commits as any, undefined, centersWithParent, { dates: ["3/13"] })
+    );
+    expect(result.current).toEqual([]);
+  });
+
+  it("returns empty when rawData null", () => {
+    const { result } = renderHook(() =>
+      useParentCenterROI(null, null, parentCenters, centersWithParent, { dates: ["3/13"] })
+    );
+    expect(result.current).toEqual([]);
+  });
+
+  it("handles single-parentCenter setup with one dept", () => {
+    const single = { 產品中心: { label: "產品中心", children: ["工程"] } };
+    const cfg = { 工程: { label: "工程部", members: ["A"], parent: "產品中心" } };
+    const { result } = renderHook(() =>
+      useParentCenterROI(raw, null, single, cfg, { dates: ["3/13"] })
+    );
+    expect(result.current).toHaveLength(1);
+    expect(result.current[0].parentCenter).toBe("產品中心");
+    expect(result.current[0].departments).toEqual(["工程"]);
+    expect(result.current[0].devHours).toBe(7);
+  });
+
+  it("skips parent-center children whose dept config is missing", () => {
+    const orphan = { 產品中心: { label: "產品中心", children: ["工程", "ghost"] } };
+    const cfg = { 工程: { label: "工程部", members: ["A"], parent: "產品中心" } };
+    const { result } = renderHook(() =>
+      useParentCenterROI(raw, null, orphan, cfg, { dates: ["3/13"] })
+    );
+    expect(result.current[0].departments).toEqual(["工程"]);
+  });
+
+  it("computes peopleMonth from total devHours and workdays", () => {
+    const { result } = renderHook(() =>
+      useParentCenterROI(raw, null, parentCenters, centersWithParent, { dates: ["3/13"] })
+    );
+    const pc = result.current.find(r => r.parentCenter === "產品中心");
+    // 19 / 8 / 1 workday = 2.375
+    expect(pc?.peopleMonth).toBeCloseTo(2.375, 2);
   });
 });
 

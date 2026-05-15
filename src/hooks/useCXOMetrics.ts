@@ -32,6 +32,31 @@ export interface CenterROI {
   placeholder: boolean;
 }
 
+export interface ParentCenterConfig {
+  label: string;
+  children: string[];
+}
+
+export type ParentCentersMap = Record<string, ParentCenterConfig> | null | undefined;
+
+export interface ParentCenterROI {
+  parentCenter: string;
+  label: string;
+  devHours: number;
+  commits: number;
+  items: number;
+  peopleMonth: number;
+  departments: string[];
+  childMetrics: Array<{
+    dept: string;
+    label: string;
+    devHours: number;
+    commits: number;
+    items: number;
+    peopleMonth: number;
+  }>;
+}
+
 export interface SpecOwnershipRow {
   date: string;
   member: string;
@@ -149,6 +174,74 @@ export function useCenterROI(
     }
     return out;
   }, [rawData, commitData, period, centers]);
+}
+
+export function useParentCenterROI(
+  rawData: Record<string, Record<string, any>> | null,
+  commitData: CommitData | null,
+  parentCenters: ParentCentersMap,
+  centers: CentersMap,
+  period: Period
+): ParentCenterROI[] {
+  return useMemo(() => {
+    if (!rawData) return [];
+    if (!parentCenters || Object.keys(parentCenters).length === 0) return [];
+    if (!centers) return [];
+    const workdays = Math.max(period.dates.length, 1);
+    const out: ParentCenterROI[] = [];
+
+    for (const [parentKey, parentCfg] of Object.entries(parentCenters)) {
+      const childMetrics: ParentCenterROI["childMetrics"] = [];
+      let totalDev = 0;
+      let totalCommits = 0;
+      let totalItems = 0;
+      const validChildren: string[] = [];
+
+      for (const deptKey of parentCfg.children) {
+        const deptCfg = centers[deptKey];
+        if (!deptCfg) continue; // skip missing dept config
+        validChildren.push(deptKey);
+
+        let devHours = 0;
+        let commits = 0;
+        let items = 0;
+        for (const d of period.dates) {
+          const dayRaw = rawData[d] || {};
+          for (const m of deptCfg.members) {
+            const e = dayRaw[m];
+            if (e?.dev != null) devHours += e.dev;
+            if (Array.isArray(e?.items)) items += e.items.length;
+            const c = commitData?.commits?.[d]?.[m];
+            if (c) commits += c.count;
+          }
+        }
+        const childPM = devHours / 8 / workdays;
+        childMetrics.push({
+          dept: deptKey,
+          label: deptCfg.label,
+          devHours: +devHours.toFixed(2),
+          commits,
+          items,
+          peopleMonth: +childPM.toFixed(3),
+        });
+        totalDev += devHours;
+        totalCommits += commits;
+        totalItems += items;
+      }
+
+      out.push({
+        parentCenter: parentKey,
+        label: parentCfg.label || parentKey,
+        devHours: +totalDev.toFixed(2),
+        commits: totalCommits,
+        items: totalItems,
+        peopleMonth: +(totalDev / 8 / workdays).toFixed(3),
+        departments: validChildren,
+        childMetrics,
+      });
+    }
+    return out;
+  }, [rawData, commitData, parentCenters, centers, period]);
 }
 
 export function useSpecOwnership(
