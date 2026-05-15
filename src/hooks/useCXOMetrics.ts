@@ -13,6 +13,7 @@ import type {
 export interface CenterConfig {
   label: string;
   members: string[];
+  parent?: string;
 }
 
 export type CentersMap = Record<string, CenterConfig> | null | undefined;
