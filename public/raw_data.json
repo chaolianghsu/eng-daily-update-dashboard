@@ -5313,14 +5313,16 @@
         "Joe",
         "Aaron",
         "哲緯"
-      ]
+      ],
+      "parent": "產品中心"
     },
     "技發": {
       "label": "技術發展部",
       "members": [
         "Richard",
         "Patty"
-      ]
+      ],
+      "parent": "產品中心"
     }
   },
   "validCodes": {
@@ -5380,6 +5382,15 @@
     "OPS": {
       "label": "營運維護",
       "category": "special"
+    }
+  },
+  "parentCenters": {
+    "產品中心": {
+      "label": "產品中心",
+      "children": [
+        "工程",
+        "技發"
+      ]
     }
   }
 }

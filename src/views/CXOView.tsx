@@ -4,12 +4,13 @@ import { COLORS, SEVERITY_COLORS } from "../constants";
 import { CardPanel } from "../components";
 import {
   useCenterROI,
+  useParentCenterROI,
   useSpecOwnership,
   useWeeklyHealth,
   useTopRisks,
   useCapacityHeatmap,
 } from "../hooks/useCXOMetrics";
-import type { CentersMap, Period } from "../hooks/useCXOMetrics";
+import type { CentersMap, ParentCentersMap, Period } from "../hooks/useCXOMetrics";
 import { dateToNum } from "../utils";
 import type {
   CommitData,
@@ -27,6 +28,7 @@ interface CXOViewProps {
   members: string[];
   dates: string[];
   centers: CentersMap;
+  parentCenters?: ParentCentersMap;
 }
 
 // Pick "current week" = last Monday to last reported date (or just all available if <5)
@@ -78,12 +80,14 @@ export function CXOView({
   members,
   dates,
   centers,
+  parentCenters,
 }: CXOViewProps) {
   const period = useMemo(() => computeCurrentWeek(dates), [dates]);
   const [centerFilter, setCenterFilter] = useState<string>("all");
 
   // Always compute full data; filter for display
   const allROI = useCenterROI(rawData, commitData, period, centers);
+  const parentROI = useParentCenterROI(rawData, commitData, parentCenters, centers, period);
   const specRows = useSpecOwnership(planAnalysisData, centers, 8);
   const health = useWeeklyHealth(rawData, commitData, taskAnalysisData, period, members);
   const risks = useTopRisks(issues, taskAnalysisData, commitData, rawData, members, period, 5);
@@ -129,44 +133,130 @@ export function CXOView({
       </div>
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 16 }}>
-        {/* Card 1: ROI */}
-        <div data-testid="cxo-card-roi">
-          <CardPanel title="🏭 三中心 ROI 比較（本週）" padding="16px">
+        {/* Card 1A: Parent Center ROI (roll-up) */}
+        <div data-testid="cxo-card-roi-parent">
+          <CardPanel title="🏢 中心 ROI（roll-up）" padding="16px">
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-              {allROI.map(r => (
-                <div key={r.center} style={{ opacity: r.placeholder ? 0.4 : 1 }}>
+              {parentROI.map(p => (
+                <div key={p.parentCenter}>
                   <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4 }}>
-                    <span style={{ fontSize: 12, fontWeight: 700, color: COLORS.text }}>{r.label}</span>
-                    {r.placeholder ? (
-                      <span style={{ fontSize: 11, color: COLORS.textDim }}>尚未加入</span>
-                    ) : (
-                      <span style={{ fontSize: 11, color: COLORS.textMuted, fontVariantNumeric: "tabular-nums" }}>
-                        {r.peopleMonth.toFixed(2)} 人月 · {r.commits} commits · {r.items} items
-                      </span>
-                    )}
+                    <span style={{ fontSize: 12, fontWeight: 700, color: COLORS.text }}>{p.label}</span>
+                    <span style={{ fontSize: 11, color: COLORS.textMuted, fontVariantNumeric: "tabular-nums" }}>
+                      {p.peopleMonth.toFixed(2)} 人月 · {p.commits} commits · {p.items} items
+                    </span>
                   </div>
-                  {!r.placeholder && (
-                    <div style={{ display: "flex", gap: 4, height: 18 }}>
-                      <div title={`人月: ${r.peopleMonth.toFixed(2)}`} style={{
-                        flex: 1, background: COLORS.bg, borderRadius: 4, overflow: "hidden",
-                      }}>
-                        <div style={{
-                          width: `${Math.min(100, r.peopleMonth * 50)}%`, height: "100%",
-                          background: COLORS.accent, transition: "width 0.4s ease",
-                        }} />
-                      </div>
-                      <div title={`commits: ${r.commits}`} style={{
-                        flex: 1, background: COLORS.bg, borderRadius: 4, overflow: "hidden",
-                      }}>
-                        <div style={{
-                          width: `${Math.min(100, (r.commits / 50) * 100)}%`, height: "100%",
-                          background: COLORS.teal, transition: "width 0.4s ease",
-                        }} />
-                      </div>
+                  <div style={{ display: "flex", gap: 4, height: 18 }}>
+                    <div title={`人月: ${p.peopleMonth.toFixed(2)}`} style={{
+                      flex: 1, background: COLORS.bg, borderRadius: 4, overflow: "hidden",
+                    }}>
+                      <div style={{
+                        width: `${Math.min(100, p.peopleMonth * 50)}%`, height: "100%",
+                        background: COLORS.accent, transition: "width 0.4s ease",
+                      }} />
                     </div>
-                  )}
+                    <div title={`commits: ${p.commits}`} style={{
+                      flex: 1, background: COLORS.bg, borderRadius: 4, overflow: "hidden",
+                    }}>
+                      <div style={{
+                        width: `${Math.min(100, (p.commits / 50) * 100)}%`, height: "100%",
+                        background: COLORS.teal, transition: "width 0.4s ease",
+                      }} />
+                    </div>
+                  </div>
+                  <div style={{ fontSize: 10, color: COLORS.textDim, marginTop: 4 }}>
+                    包含：{p.departments.join("・")}
+                  </div>
                 </div>
               ))}
+              {parentROI.length === 0 && (
+                <span style={{ fontSize: 12, color: COLORS.textDim }}>尚未設定中心階層</span>
+              )}
+              {parentROI.length === 1 && (
+                <div style={{ marginTop: 4, fontSize: 10, color: COLORS.textDim, fontStyle: "italic" }}>
+                  目前只有一個中心 — 隨組織擴張會自動顯示更多中心
+                </div>
+              )}
+            </div>
+            <div style={{ marginTop: 12, paddingTop: 10, borderTop: `1px solid ${COLORS.border}`, display: "flex", gap: 12, fontSize: 10, color: COLORS.textDim }}>
+              <span><span style={{ display: "inline-block", width: 8, height: 8, background: COLORS.accent, borderRadius: 2, marginRight: 4 }} />人月投入</span>
+              <span><span style={{ display: "inline-block", width: 8, height: 8, background: COLORS.teal, borderRadius: 2, marginRight: 4 }} />commits 產出</span>
+            </div>
+          </CardPanel>
+        </div>
+
+        {/* Card 1B: Department ROI (grouped by parent center) */}
+        <div data-testid="cxo-card-roi-dept">
+          <CardPanel title="🏭 部門 ROI 細節" padding="16px">
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              {(() => {
+                // Group rows by parent center for visual section headers.
+                // Use centers config to look up parent; fall back to "未分類" group.
+                const groups: Array<{ parentKey: string; parentLabel: string; rows: typeof allROI }> = [];
+                const seen: Record<string, number> = {};
+                for (const r of allROI) {
+                  const cfg = centers?.[r.center];
+                  const parentKey = cfg?.parent || "__未分類";
+                  const parentLabel =
+                    parentCenters?.[parentKey]?.label
+                    || (parentKey === "__未分類" ? "未分類" : parentKey);
+                  if (seen[parentKey] == null) {
+                    seen[parentKey] = groups.length;
+                    groups.push({ parentKey, parentLabel, rows: [] });
+                  }
+                  groups[seen[parentKey]].rows.push(r);
+                }
+                const showHeaders = groups.length > 1 || (groups.length === 1 && groups[0].parentKey !== "__未分類");
+                return groups.map(g => (
+                  <div key={g.parentKey}>
+                    {showHeaders && (
+                      <div style={{
+                        fontSize: 10, color: COLORS.textDim, fontWeight: 600,
+                        textTransform: "uppercase", letterSpacing: "0.08em",
+                        marginBottom: 6, paddingBottom: 4,
+                        borderBottom: `1px solid ${COLORS.border}`,
+                      }}>
+                        {g.parentLabel}
+                      </div>
+                    )}
+                    <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                      {g.rows.map(r => (
+                        <div key={r.center} style={{ opacity: r.placeholder ? 0.4 : 1 }}>
+                          <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 4 }}>
+                            <span style={{ fontSize: 12, fontWeight: 700, color: COLORS.text }}>{r.label}</span>
+                            {r.placeholder ? (
+                              <span style={{ fontSize: 11, color: COLORS.textDim }}>尚未加入</span>
+                            ) : (
+                              <span style={{ fontSize: 11, color: COLORS.textMuted, fontVariantNumeric: "tabular-nums" }}>
+                                {r.peopleMonth.toFixed(2)} 人月 · {r.commits} commits · {r.items} items
+                              </span>
+                            )}
+                          </div>
+                          {!r.placeholder && (
+                            <div style={{ display: "flex", gap: 4, height: 18 }}>
+                              <div title={`人月: ${r.peopleMonth.toFixed(2)}`} style={{
+                                flex: 1, background: COLORS.bg, borderRadius: 4, overflow: "hidden",
+                              }}>
+                                <div style={{
+                                  width: `${Math.min(100, r.peopleMonth * 50)}%`, height: "100%",
+                                  background: COLORS.accent, transition: "width 0.4s ease",
+                                }} />
+                              </div>
+                              <div title={`commits: ${r.commits}`} style={{
+                                flex: 1, background: COLORS.bg, borderRadius: 4, overflow: "hidden",
+                              }}>
+                                <div style={{
+                                  width: `${Math.min(100, (r.commits / 50) * 100)}%`, height: "100%",
+                                  background: COLORS.teal, transition: "width 0.4s ease",
+                                }} />
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ));
+              })()}
               {allROI.length === 0 && (
                 <span style={{ fontSize: 12, color: COLORS.textDim }}>無資料</span>
               )}

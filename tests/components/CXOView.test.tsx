@@ -40,6 +40,10 @@ const issues = [
   { member: "A", severity: "🔴", text: "超時 12hr" },
 ];
 
+const parentCenters = {
+  產品中心: { label: "產品中心", children: ["工程", "技發"] },
+};
+
 const baseProps = {
   rawData,
   commitData,
@@ -49,6 +53,7 @@ const baseProps = {
   members: ["A", "B"],
   dates: ["3/9", "3/10", "3/11", "3/12", "3/13"],
   centers,
+  parentCenters,
 };
 
 describe("CXOView", () => {
@@ -57,13 +62,65 @@ describe("CXOView", () => {
     expect(screen.getByTestId("cxo-view")).toBeInTheDocument();
   });
 
-  it("renders 5 distinct card regions", () => {
+  it("renders all distinct card regions including split ROI cards", () => {
     render(<CXOView {...baseProps} />);
-    expect(screen.getByTestId("cxo-card-roi")).toBeInTheDocument();
+    expect(screen.getByTestId("cxo-card-roi-parent")).toBeInTheDocument();
+    expect(screen.getByTestId("cxo-card-roi-dept")).toBeInTheDocument();
     expect(screen.getByTestId("cxo-card-spec")).toBeInTheDocument();
     expect(screen.getByTestId("cxo-card-health")).toBeInTheDocument();
     expect(screen.getByTestId("cxo-card-risks")).toBeInTheDocument();
     expect(screen.getByTestId("cxo-card-capacity")).toBeInTheDocument();
+  });
+
+  it("Card 1A renders parent center ROI (產品中心)", () => {
+    render(<CXOView {...baseProps} />);
+    const card = screen.getByTestId("cxo-card-roi-parent");
+    expect(card.textContent).toContain("產品中心");
+  });
+
+  it("Card 1B renders department ROI grouped by parent center", () => {
+    render(<CXOView {...baseProps} />);
+    const card = screen.getByTestId("cxo-card-roi-dept");
+    // The department names should appear in card 1B
+    expect(card.textContent).toContain("工程部");
+    expect(card.textContent).toContain("產品中心");
+  });
+
+  it("Card 1A shows 'only one center' note when single parentCenter", () => {
+    render(<CXOView {...baseProps} />);
+    const card = screen.getByTestId("cxo-card-roi-parent");
+    expect(card.textContent).toMatch(/目前只有一個中心/);
+  });
+
+  it("renders Card 1B with multi-parent grouping when 2+ parentCenters", () => {
+    const multiParent = {
+      產品中心: { label: "產品中心", children: ["工程"] },
+      數據平台中心: { label: "數據平台中心", children: ["分析"] },
+    };
+    const centersMulti = {
+      工程: { label: "工程部", members: ["A"], parent: "產品中心" },
+      分析: { label: "分析部", members: ["D"], parent: "數據平台中心" },
+    };
+    const rawMulti = {
+      "3/13": {
+        A: { total: 8, meeting: 1, dev: 7 },
+        D: { total: 7, meeting: 1, dev: 6 },
+      },
+    };
+    render(<CXOView {...baseProps}
+      centers={centersMulti}
+      parentCenters={multiParent}
+      rawData={rawMulti}
+      members={["A", "D"]}
+      dates={["3/13"]} />);
+    const card = screen.getByTestId("cxo-card-roi-dept");
+    expect(card.textContent).toContain("產品中心");
+    expect(card.textContent).toContain("數據平台中心");
+  });
+
+  it("falls back gracefully when parentCenters prop missing", () => {
+    render(<CXOView {...baseProps} parentCenters={undefined} />);
+    expect(screen.getByTestId("cxo-card-roi-dept")).toBeInTheDocument();
   });
 
   it("shows placeholders for empty centers", () => {

@@ -16,6 +16,13 @@ export interface MemberHours {
 export interface Center {
   label: string;
   members: string[];
+  validCodes?: Record<string, ValidCode>;
+  parent?: string;  // parent center key (e.g., "產品中心")
+}
+
+export interface ParentCenter {
+  label: string;
+  children: string[];  // department keys (e.g., ["工程", "技發", "產品"])
 }
 
 export interface ValidCode {
@@ -133,6 +140,7 @@ export interface DashboardData {
   taskAnalysisData: TaskAnalysisData | null;
   planAnalysisData: PlanAnalysisData | null;
   centers?: Record<string, Center>;
+  parentCenters?: Record<string, ParentCenter>;
   validCodes?: Record<string, ValidCode>;
 }
 

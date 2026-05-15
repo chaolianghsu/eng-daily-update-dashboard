@@ -17,6 +17,7 @@ const loadData: LoadData = async () => {
     taskAnalysisData: tasks,
     planAnalysisData: planAnalysis,
     centers: raw.centers,
+    parentCenters: raw.parentCenters,
     validCodes: raw.validCodes,
   };
 };

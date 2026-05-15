@@ -25,6 +25,7 @@ const loadData: LoadData = async () => {
     taskAnalysisData: tasks,
     planAnalysisData: planAnalysis,
     centers: (raw as any).centers,
+    parentCenters: (raw as any).parentCenters,
     validCodes: (raw as any).validCodes,
   };
 };

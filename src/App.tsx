@@ -22,7 +22,7 @@ import { CodeView } from "./views/CodeView";
 import { CXOView } from "./views/CXOView";
 import { CenterFilter } from "./components/CenterFilter";
 import { useCenterFilter } from "./hooks/useCenterFilter";
-import type { LoadData, CommitData, TaskAnalysisData, PlanAnalysisData, Center, ValidCode } from "./types";
+import type { LoadData, CommitData, TaskAnalysisData, PlanAnalysisData, Center, ParentCenter, ValidCode } from "./types";
 import "./styles.css";
 
 export default function App({ loadData }: { loadData: LoadData }) {
@@ -41,6 +41,7 @@ export default function App({ loadData }: { loadData: LoadData }) {
   const [selectedMembers, setSelectedMembers] = useState<Set<string>>(new Set());
   const [trendRange, setTrendRange] = useState("2weeks");
   const [centers, setCenters] = useState<Record<string, Center> | undefined>(undefined);
+  const [parentCenters, setParentCenters] = useState<Record<string, ParentCenter> | undefined>(undefined);
   const [validCodes, setValidCodes] = useState<Record<string, ValidCode> | undefined>(undefined);
   const [selectedCenter, setSelectedCenter] = useState<string>("all");
 
@@ -61,6 +62,7 @@ export default function App({ loadData }: { loadData: LoadData }) {
         setTaskAnalysisData(data.taskAnalysisData);
         setPlanAnalysisData(data.planAnalysisData);
         setCenters(data.centers);
+        setParentCenters(data.parentCenters);
         setValidCodes(data.validCodes);
         setLoading(false);
       })
@@ -130,9 +132,17 @@ export default function App({ loadData }: { loadData: LoadData }) {
             background: "linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%)",
             WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
           }}>
-            {view === "cxo"
-              ? "🎯 產品中心 策略總覽"
-              : centers && Object.keys(centers).length > 1 ? "產品中心工時表" : "工程部 Daily Update"}
+            {(() => {
+              const parentKeys = parentCenters ? Object.keys(parentCenters) : [];
+              const singleParent = parentKeys.length === 1 ? parentCenters![parentKeys[0]].label : null;
+              const multipleParents = parentKeys.length > 1;
+              if (view === "cxo") {
+                return multipleParents ? "🎯 跨中心 策略總覽" : `🎯 ${singleParent || "產品中心"} 策略總覽`;
+              }
+              if (multipleParents) return "跨中心工時表";
+              if (singleParent) return `${singleParent}工時表`;
+              return centers && Object.keys(centers).length > 1 ? "產品中心工時表" : "工程部 Daily Update";
+            })()}
           </h1>
           <p className="dashboard-subtitle" style={{ color: COLORS.textDim, fontSize: 13, marginTop: 6, letterSpacing: "0.02em" }}>
             {view === "cxo"
@@ -144,7 +154,7 @@ export default function App({ loadData }: { loadData: LoadData }) {
         {/* CenterFilter + StatusOverview are operational-level — hide on CXO strategic view */}
         {view !== "cxo" && (
           <>
-            <CenterFilter centers={centers} selected={selectedCenter} onChange={setSelectedCenter} />
+            <CenterFilter centers={centers} parentCenters={parentCenters} selected={selectedCenter} onChange={setSelectedCenter} />
             <StatusOverview allIssues={allIssues} issues={issues} members={members} rawData={rawData!} dates={dates} activeDate={activeDate} />
           </>
         )}
@@ -253,6 +263,7 @@ export default function App({ loadData }: { loadData: LoadData }) {
             members={members}
             dates={dates}
             centers={centers}
+            parentCenters={parentCenters}
           />
         )}
 
