@@ -5314,7 +5314,111 @@
         "Aaron",
         "哲緯"
       ],
-      "parent": "產品中心"
+      "parent": "產品中心",
+      "validCodes": {
+        "KEYPO": {
+          "label": "KEYPO 系列",
+          "category": "product",
+          "gitlabProjectPrefixes": [
+            "KEYPO/",
+            "keypo-",
+            "keypo-suite/",
+            "llmprojects/keypo-"
+          ]
+        },
+        "KEYDERS": {
+          "label": "KEYDERS",
+          "category": "product",
+          "gitlabProjectPrefixes": [
+            "kol-keyders",
+            "keyders-metrics",
+            "wendyHsieh/keyders",
+            "kol-agent",
+            "kol-desc-parser",
+            "kol-tools",
+            "kol-lookup",
+            "kol-profile"
+          ]
+        },
+        "KEYTECTOR": {
+          "label": "KEYTECTOR",
+          "category": "product",
+          "gitlabProjectPrefixes": [
+            "keytector/",
+            "wendyHsieh/cib"
+          ]
+        },
+        "KEYKYC": {
+          "label": "KEYKYC",
+          "category": "product",
+          "gitlabProjectPrefixes": [
+            "keykyc",
+            "kyckyc",
+            "chris.su/keykyc",
+            "bigdata-54837596/keykyc"
+          ]
+        },
+        "LSR": {
+          "label": "Line Social Radar",
+          "category": "product",
+          "gitlabProjectPrefixes": [
+            "line-social-radar",
+            "lsr",
+            "threads-scrapy",
+            "mason/line-social-radar"
+          ]
+        },
+        "BDE": {
+          "label": "BDE 大數據前後端",
+          "category": "platform",
+          "gitlabProjectPrefixes": [
+            "bigdata/",
+            "CrawlersV2/",
+            "Crawlers/",
+            "dailyview/",
+            "sinyi/"
+          ]
+        },
+        "AGENT": {
+          "label": "Agent 開發",
+          "category": "product",
+          "gitlabProjectPrefixes": [
+            "keypo-agent",
+            "kol-agent",
+            "es-query-agent",
+            "ai-crawler-skills",
+            "claude"
+          ]
+        },
+        "AILISTEN": {
+          "label": "AI 聆聽",
+          "category": "product",
+          "gitlabProjectPrefixes": [
+            "ai-listen",
+            "keypo-ai-listen",
+            "ted.juang/ai-listening"
+          ]
+        },
+        "INFRA": {
+          "label": "基礎設施 / 機房",
+          "category": "platform",
+          "gitlabProjectPrefixes": [
+            "platform-infra/"
+          ]
+        },
+        "REVIEW": {
+          "label": "Code Review / MR Review",
+          "category": "special"
+        },
+        "MEETING": {
+          "label": "會議",
+          "category": "special"
+        },
+        "OPS": {
+          "label": "維運 / 部署 / 環境",
+          "category": "special"
+        }
+      }
     },
     "技發": {
       "label": "技術發展部",
@@ -5322,7 +5426,22 @@
         "Richard",
         "Patty"
       ],
-      "parent": "產品中心"
+      "parent": "產品中心",
+      "validCodes": {
+        "KEYLM": {
+          "label": "KEYLM 大語言模型",
+          "category": "research",
+          "gitlabProjectPrefixes": [
+            "keylm",
+            "ragflow",
+            "structure-cot"
+          ]
+        },
+        "MEETING": {
+          "label": "會議",
+          "category": "special"
+        }
+      }
     }
   },
   "validCodes": {
