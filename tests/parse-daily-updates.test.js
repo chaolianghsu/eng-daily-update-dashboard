@@ -28,6 +28,134 @@ describe('parseHoursFromText', () => {
     expect(result.status).toBe('replied_no_hours');
     expect(result.total).toBeNull();
   });
+
+  // --- Dash-trailing hour notation (技發 dept style) ---
+
+  it("parses ASCII dash + hour: '- 3H'", () => {
+    const result = parseHoursFromText("5/14 進度：\n1. [Done] task -3H");
+    expect(result.status).toBe('reported');
+    expect(result.total).toBe(3);
+    expect(result.dev).toBe(3);
+  });
+
+  it("parses ASCII dash + hour with space variants: '-3H', ' - 3H'", () => {
+    const r1 = parseHoursFromText("5/14 進度：\n1. [Done] task A -3H");
+    const r2 = parseHoursFromText("5/14 進度：\n1. [Done] task B - 3H");
+    expect(r1.total).toBe(3);
+    expect(r2.total).toBe(3);
+  });
+
+  it("parses em dash + hour: '—4H'", () => {
+    const result = parseHoursFromText("5/14 進度：\n1. [Done] task —4H");
+    expect(result.status).toBe('reported');
+    expect(result.total).toBe(4);
+  });
+
+  it("parses em dash with space: '— 1.5H'", () => {
+    const result = parseHoursFromText("5/14 進度：\n1. [Done] task — 1.5H");
+    expect(result.total).toBe(1.5);
+  });
+
+  it("parses em dash without preceding space: 'task—4H'", () => {
+    const result = parseHoursFromText("5/14 進度：\n1. [KEYLM][Done] 完成霹靂報告內容調整與優化—4H");
+    expect(result.status).toBe('reported');
+    expect(result.total).toBe(4);
+  });
+
+  it("parses decimal dash hours: '-1.5H'", () => {
+    const result = parseHoursFromText("5/14 進度：\n1. [Done] task -1.5H");
+    expect(result.total).toBe(1.5);
+  });
+
+  it("parses dash with Hr suffix variant: '-3Hr'", () => {
+    const result = parseHoursFromText("5/14 進度：\n1. [Done] task -3Hr");
+    expect(result.total).toBe(3);
+  });
+
+  it("does NOT false-match dash inside word: 'link-3-foo'", () => {
+    const result = parseHoursFromText("5/14 進度：\n1. [Done] check link-3-foo for bugs");
+    expect(result.status).toBe('replied_no_hours');
+  });
+
+  it("does NOT false-match '- 3 個 items' (digit + non-H char)", () => {
+    const result = parseHoursFromText("5/14 進度：\n1. [Done] reviewed - 3 個 items today");
+    expect(result.status).toBe('replied_no_hours');
+  });
+
+  it("prefers paren hours over mid-line dash: 'task with -3 in title (3H)'", () => {
+    const result = parseHoursFromText("5/14 進度：\n1. [Done] task with -3 in title (3H)");
+    expect(result.total).toBe(3);
+  });
+
+  it("handles mixed-style message (parens + dash + work-hour)", () => {
+    const text = "5/14 進度：\n1. [Done] task A (3H)\n2. [Done] task B -2H\n3. [Done] task C —1.5H";
+    const result = parseHoursFromText(text);
+    expect(result.status).toBe('reported');
+    expect(result.total).toBe(6.5);
+    expect(result.dev).toBe(6.5);
+    expect(result.items).toHaveLength(3);
+  });
+
+  it("classifies dash-hour MEETING lines as meeting time", () => {
+    const text = "5/14 進度：\n1. [MEETING][Done] KEYLM 產品呈現對焦 -1.5H";
+    const result = parseHoursFromText(text);
+    expect(result.total).toBe(1.5);
+    expect(result.meeting).toBe(1.5);
+    expect(result.dev).toBe(0);
+  });
+
+  it("parses real 技發 5/14 Richard sample (dash style)", () => {
+    const text = `5/14 進度：
+1. [MEETING][Done] KEYLM 產品呈現對焦 -1.5H
+2. [KEYLM][In Progress] 針對目前簡報持續修正用字與說法 -2H
+3. [KEYLM][In Progress] 錄製簡報素材 -3H
+4. [KEYLM][Done] 將 vLLM proxy 套上 RAGFlow -1.5H
+
+Blockers:
+None
+
+5/15 今日工項：
+1. [To Do] 練習報告，並繼續調整顯示方式
+2. [To Do] 研究 Dflash LLM 加速技術`;
+    const result = parseHoursFromText(text);
+    expect(result.status).toBe('reported');
+    expect(result.total).toBe(8);
+    expect(result.meeting).toBe(1.5);
+    expect(result.dev).toBe(6.5);
+    expect(result.items).toHaveLength(4);
+    expect(result.items[0].code).toBe('MEETING');
+    expect(result.items[1].code).toBe('KEYLM');
+    expect(result.items[2].code).toBe('KEYLM');
+    expect(result.items[3].code).toBe('KEYLM');
+  });
+
+  it("parses real 技發 5/14 Patty sample (em dash, no space)", () => {
+    const text = `5/14 進度：
+1. [KEYLM][Done] 完成霹靂報告內容調整與優化—4H
+2. [KEYLM][Done] 協同完成 5/18 BDE 投影片製作—4H
+
+Blockers：
+None`;
+    const result = parseHoursFromText(text);
+    expect(result.status).toBe('reported');
+    expect(result.total).toBe(8);
+    expect(result.meeting).toBe(0);
+    expect(result.dev).toBe(8);
+    expect(result.items).toHaveLength(2);
+  });
+
+  it("regression: existing engineering parens-style still works", () => {
+    const text = `5/14 進度：
+1. [KEYPO][Done] 處理 API 授權 (4H)
+2. [Done] 工程部讀書會 (1H)
+3. [Done] kolranking 效能調整 (3H)`;
+    const result = parseHoursFromText(text);
+    expect(result.status).toBe('reported');
+    expect(result.total).toBe(8);
+    expect(result.meeting).toBe(1);
+    expect(result.dev).toBe(7);
+    expect(result.items).toHaveLength(3);
+  });
 });
 
 describe('findThreads', () => {
