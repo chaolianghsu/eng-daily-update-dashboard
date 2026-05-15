@@ -44,8 +44,12 @@ if (failures.length === 0) {
 const memberMap = {};
 try {
   const chatConfig = JSON.parse(fs.readFileSync('chat-config.json', 'utf-8'));
-  for (const [userId, name] of Object.entries(chatConfig.memberMap || {})) {
-    memberMap[userId] = name;
+  // Support both legacy (top-level memberMap) and multi-space (spaces[].memberMap) shapes
+  const sources = chatConfig.memberMap
+    ? [chatConfig.memberMap]
+    : (chatConfig.spaces || []).map(s => s.memberMap || {});
+  for (const m of sources) {
+    for (const [userId, name] of Object.entries(m)) memberMap[userId] = name;
   }
 } catch {}
 
