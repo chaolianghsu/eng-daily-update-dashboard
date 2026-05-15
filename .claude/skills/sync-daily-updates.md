@@ -99,7 +99,7 @@ for center in 工程 技發; do
   echo "[$center] Parse failures: $FAILURES"
   if [ "$FAILURES" != "none" ] && command -v claude >/dev/null 2>&1; then
     node scripts/llm-reparse-failures.js "$PARSED" "$MSGS" \
-      | claude --print -m haiku > /tmp/llm-reparse-${center}.json
+      | claude --print --model haiku > /tmp/llm-reparse-${center}.json
     node scripts/merge-parse-results.js "$PARSED" /tmp/llm-reparse-${center}.json > /tmp/parsed-${center}-repaired.json
     mv /tmp/parsed-${center}-repaired.json "$PARSED"
   fi
