@@ -18,11 +18,14 @@ import { useWeeklySummary } from "./hooks/useWeeklySummary";
 import { useAllIssues } from "./hooks/useAllIssues";
 import { useHealthAlerts } from "./hooks/useHealthAlerts";
 import { MemberView } from "./views/MemberView";
-import type { LoadData, CommitData, TaskAnalysisData, PlanAnalysisData } from "./types";
+import { CodeView } from "./views/CodeView";
+import { CenterFilter } from "./components/CenterFilter";
+import { useCenterFilter } from "./hooks/useCenterFilter";
+import type { LoadData, CommitData, TaskAnalysisData, PlanAnalysisData, Center, ValidCode } from "./types";
 import "./styles.css";
 
 export default function App({ loadData }: { loadData: LoadData }) {
-  const [view, setView] = useState<"detail" | "trend" | "weekly" | "member">("detail");
+  const [view, setView] = useState<"detail" | "trend" | "weekly" | "member" | "code">("detail");
   const [subView, setSubView] = useState<"hours" | "commits" | "planspec">("hours");
   const [rawData, setRawData] = useState<Record<string, Record<string, any>> | null>(null);
   const [issues, setIssues] = useState<any[]>([]);
@@ -36,6 +39,9 @@ export default function App({ loadData }: { loadData: LoadData }) {
   const [planAnalysisData, setPlanAnalysisData] = useState<PlanAnalysisData | null>(null);
   const [selectedMembers, setSelectedMembers] = useState<Set<string>>(new Set());
   const [trendRange, setTrendRange] = useState("2weeks");
+  const [centers, setCenters] = useState<Record<string, Center> | undefined>(undefined);
+  const [validCodes, setValidCodes] = useState<Record<string, ValidCode> | undefined>(undefined);
+  const [selectedCenter, setSelectedCenter] = useState<string>("all");
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
@@ -52,6 +58,8 @@ export default function App({ loadData }: { loadData: LoadData }) {
         setCommitData(data.commitData);
         setTaskAnalysisData(data.taskAnalysisData);
         setPlanAnalysisData(data.planAnalysisData);
+        setCenters(data.centers);
+        setValidCodes(data.validCodes);
         setLoading(false);
       })
       .catch(err => {
@@ -61,7 +69,8 @@ export default function App({ loadData }: { loadData: LoadData }) {
   }, []);
 
   const dates = rawData ? Object.keys(rawData).sort((a, b) => dateToNum(a) - dateToNum(b)) : [];
-  const members = rawData ? [...new Set(dates.flatMap(d => Object.keys(rawData[d])))] : [];
+  const allMembers = rawData ? [...new Set(dates.flatMap(d => Object.keys(rawData[d])))] : [];
+  const members = useCenterFilter(allMembers, centers, selectedCenter);
   const dayLabels = Object.fromEntries(dates.map(d => {
     const [m, dd] = d.split("/").map(Number);
     const dow = new Date(new Date().getFullYear(), m - 1, dd).getDay();
@@ -119,12 +128,14 @@ export default function App({ loadData }: { loadData: LoadData }) {
             background: "linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%)",
             WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
           }}>
-            工程部 Daily Update
+            {centers && Object.keys(centers).length > 1 ? "產品中心工時表" : "工程部 Daily Update"}
           </h1>
           <p className="dashboard-subtitle" style={{ color: COLORS.textDim, fontSize: 13, marginTop: 6, letterSpacing: "0.02em" }}>
             工時追蹤・一致性分析・風險警示 — {dates[0]}~{dates[dates.length-1]}（{dates.length} 工作天）
           </p>
         </div>
+
+        <CenterFilter centers={centers} selected={selectedCenter} onChange={setSelectedCenter} />
 
         <StatusOverview allIssues={allIssues} issues={issues} members={members} rawData={rawData!} dates={dates} activeDate={activeDate} />
 
@@ -135,6 +146,7 @@ export default function App({ loadData }: { loadData: LoadData }) {
             { key: "trend", label: "📈 趨勢" },
             { key: "weekly", label: "📋 週報" },
             { key: "member", label: "👤 成員" },
+            { key: "code", label: "💼 代號" },
           ].map(tab => (
             <button key={tab.key} className={`tab-btn ${view === tab.key ? 'tab-active' : ''}`}
               onClick={() => setView(tab.key as any)} style={tabStyle(view === tab.key)}>
@@ -231,6 +243,16 @@ export default function App({ loadData }: { loadData: LoadData }) {
             taskAnalysisData={taskAnalysisData}
             healthAlerts={healthAlerts}
             isMobile={isMobile}
+          />
+        )}
+
+        {view === "code" && (
+          <CodeView
+            rawData={rawData!}
+            validCodes={validCodes}
+            members={members}
+            dates={dates}
+            commitData={commitData}
           />
         )}
 

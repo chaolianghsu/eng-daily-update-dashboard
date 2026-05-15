@@ -1,9 +1,27 @@
 // src/types.ts
+export interface WorkItem {
+  code: string | null;   // null = uncategorized
+  task: string;
+  hours: number;
+}
+
 export interface MemberHours {
   total: number | null;
   meeting: number | null;
   dev: number | null;
   status: 'reported' | 'unreported' | 'replied_no_hours' | 'zero' | 'leave';
+  items?: WorkItem[];
+}
+
+export interface Center {
+  label: string;
+  members: string[];
+}
+
+export interface ValidCode {
+  label: string;
+  category?: 'product' | 'platform' | 'special' | 'research';
+  gitlabProjectPrefixes?: string[];
 }
 
 export interface Issue {
@@ -114,6 +132,8 @@ export interface DashboardData {
   commitData: CommitData | null;
   taskAnalysisData: TaskAnalysisData | null;
   planAnalysisData: PlanAnalysisData | null;
+  centers?: Record<string, Center>;
+  validCodes?: Record<string, ValidCode>;
 }
 
 export type LoadData = () => Promise<DashboardData>;

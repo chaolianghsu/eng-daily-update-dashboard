@@ -3,7 +3,7 @@
 
 const { generateIssues } = require('./parse-daily-updates');
 
-function mergeDailyData(existing, parsed) {
+function mergeDailyData(existing, parsed, config) {
   const rawData = { ...existing.rawData };
   const dailyUpdates = [];
   const newDates = [];
@@ -53,6 +53,10 @@ function mergeDailyData(existing, parsed) {
     ? generateIssues(rawData, leaveMap)
     : (parsed.issues || existing.issues || []);
 
+  // Centers/validCodes precedence: explicit config > existing > undefined.
+  const centers = config?.centers ?? existing.centers;
+  const validCodes = config?.validCodes ?? existing.validCodes;
+
   return {
     rawData,
     issues,
@@ -60,6 +64,8 @@ function mergeDailyData(existing, parsed) {
     dailyUpdates,
     newDates,
     backfilled,
+    ...(centers ? { centers } : {}),
+    ...(validCodes ? { validCodes } : {}),
   };
 }
 
@@ -68,13 +74,14 @@ if (typeof require !== 'undefined' && require.main === module) {
   const args = process.argv.slice(2);
 
   if (args.length < 2) {
-    console.error('Usage: node scripts/merge-daily-data.js <existing.json> <parsed.json>');
+    console.error('Usage: node scripts/merge-daily-data.js <existing.json> <parsed.json> [config.json]');
     process.exit(1);
   }
 
   const existing = JSON.parse(fs.readFileSync(args[0], 'utf8'));
   const parsed = JSON.parse(fs.readFileSync(args[1], 'utf8'));
-  const result = mergeDailyData(existing, parsed);
+  const config = args[2] ? JSON.parse(fs.readFileSync(args[2], 'utf8')) : undefined;
+  const result = mergeDailyData(existing, parsed, config);
   console.log(JSON.stringify(result, null, 2));
 }
 

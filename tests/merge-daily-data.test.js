@@ -169,4 +169,88 @@ describe('mergeDailyData', () => {
     const result = mergeDailyData(existing, parsedNoReplies);
     expect(result.dailyUpdates).toEqual([]);
   });
+
+  describe('items[] propagation (Phase 1)', () => {
+    it('carries items array from parsed entry into rawData', () => {
+      const parsedWithItems = {
+        dateEntries: {
+          '3/7': {
+            entry: {
+              Joyce: {
+                total: 4,
+                meeting: 1,
+                dev: 3,
+                status: 'reported',
+                items: [
+                  { code: 'KEYPO', task: '開發', hours: 3 },
+                  { code: null, task: '週會', hours: 1 },
+                ],
+              },
+            },
+            alreadyExists: false,
+          },
+        },
+        leaveMap: {},
+        issues: [],
+        warnings: [],
+      };
+      const result = mergeDailyData({ rawData: {}, issues: [], leave: {} }, parsedWithItems);
+      expect(result.rawData['3/7'].Joyce.items).toHaveLength(2);
+      expect(result.rawData['3/7'].Joyce.items[0]).toMatchObject({ code: 'KEYPO', hours: 3 });
+    });
+
+    it('leaves existing entries without items untouched (backward compat)', () => {
+      const existingNoItems = {
+        rawData: { '3/5': { Old: { total: 8, meeting: 0, dev: 8 } } },
+        issues: [],
+        leave: {},
+      };
+      const result = mergeDailyData(existingNoItems, { dateEntries: {}, leaveMap: {} });
+      expect(result.rawData['3/5'].Old.items).toBeUndefined();
+    });
+  });
+
+  describe('config metadata propagation (Phase 1)', () => {
+    it('writes centers from config into output', () => {
+      const config = {
+        centers: {
+          工程: { label: '工程部', members: ['Joyce', 'Ivy'] },
+          產品: { label: '產品部', members: ['Alice'] },
+        },
+      };
+      const result = mergeDailyData(
+        { rawData: {}, issues: [], leave: {} },
+        { dateEntries: {}, leaveMap: {} },
+        config
+      );
+      expect(result.centers).toEqual(config.centers);
+    });
+
+    it('writes validCodes from config into output', () => {
+      const config = {
+        validCodes: {
+          KEYPO: { label: 'KEYPO 系列', category: 'product' },
+        },
+      };
+      const result = mergeDailyData(
+        { rawData: {}, issues: [], leave: {} },
+        { dateEntries: {}, leaveMap: {} },
+        config
+      );
+      expect(result.validCodes).toEqual(config.validCodes);
+    });
+
+    it('preserves existing centers/validCodes when config omitted', () => {
+      const existingWithMeta = {
+        rawData: {},
+        issues: [],
+        leave: {},
+        centers: { 工程: { label: '工程部', members: ['Joyce'] } },
+        validCodes: { KEYPO: { label: 'KEYPO 系列' } },
+      };
+      const result = mergeDailyData(existingWithMeta, { dateEntries: {}, leaveMap: {} });
+      expect(result.centers).toEqual(existingWithMeta.centers);
+      expect(result.validCodes).toEqual(existingWithMeta.validCodes);
+    });
+  });
 });
