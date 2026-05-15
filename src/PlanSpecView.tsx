@@ -32,8 +32,9 @@ export default function PlanSpecView({ planAnalysisData, members, memberColors, 
     );
   }
 
-  const dateSpecs = planSpecs.filter(s => s.date === activeDate);
-  const dateCorrelations = (correlations || []).filter(c => c.date === activeDate);
+  const memberSet = new Set(members);
+  const dateSpecs = planSpecs.filter(s => s.date === activeDate && memberSet.has(s.member));
+  const dateCorrelations = (correlations || []).filter(c => c.date === activeDate && memberSet.has(c.member));
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
