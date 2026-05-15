@@ -19,13 +19,14 @@ import { useAllIssues } from "./hooks/useAllIssues";
 import { useHealthAlerts } from "./hooks/useHealthAlerts";
 import { MemberView } from "./views/MemberView";
 import { CodeView } from "./views/CodeView";
+import { CXOView } from "./views/CXOView";
 import { CenterFilter } from "./components/CenterFilter";
 import { useCenterFilter } from "./hooks/useCenterFilter";
 import type { LoadData, CommitData, TaskAnalysisData, PlanAnalysisData, Center, ValidCode } from "./types";
 import "./styles.css";
 
 export default function App({ loadData }: { loadData: LoadData }) {
-  const [view, setView] = useState<"detail" | "trend" | "weekly" | "member" | "code">("detail");
+  const [view, setView] = useState<"detail" | "trend" | "weekly" | "member" | "code" | "cxo">("detail");
   const [subView, setSubView] = useState<"hours" | "commits" | "planspec">("hours");
   const [rawData, setRawData] = useState<Record<string, Record<string, any>> | null>(null);
   const [issues, setIssues] = useState<any[]>([]);
@@ -42,6 +43,7 @@ export default function App({ loadData }: { loadData: LoadData }) {
   const [centers, setCenters] = useState<Record<string, Center> | undefined>(undefined);
   const [validCodes, setValidCodes] = useState<Record<string, ValidCode> | undefined>(undefined);
   const [selectedCenter, setSelectedCenter] = useState<string>("all");
+
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
@@ -128,16 +130,24 @@ export default function App({ loadData }: { loadData: LoadData }) {
             background: "linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%)",
             WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
           }}>
-            {centers && Object.keys(centers).length > 1 ? "產品中心工時表" : "工程部 Daily Update"}
+            {view === "cxo"
+              ? "🎯 產品中心 策略總覽"
+              : centers && Object.keys(centers).length > 1 ? "產品中心工時表" : "工程部 Daily Update"}
           </h1>
           <p className="dashboard-subtitle" style={{ color: COLORS.textDim, fontSize: 13, marginTop: 6, letterSpacing: "0.02em" }}>
-            工時追蹤・一致性分析・風險警示 — {dates[0]}~{dates[dates.length-1]}（{dates.length} 工作天）
+            {view === "cxo"
+              ? `週度 ROI · Spec 負責 · 健康度 · 風險 · 人力分配 — ${dates[0]}~${dates[dates.length-1]}`
+              : `工時追蹤・一致性分析・風險警示 — ${dates[0]}~${dates[dates.length-1]}（${dates.length} 工作天）`}
           </p>
         </div>
 
-        <CenterFilter centers={centers} selected={selectedCenter} onChange={setSelectedCenter} />
-
-        <StatusOverview allIssues={allIssues} issues={issues} members={members} rawData={rawData!} dates={dates} activeDate={activeDate} />
+        {/* CenterFilter + StatusOverview are operational-level — hide on CXO strategic view */}
+        {view !== "cxo" && (
+          <>
+            <CenterFilter centers={centers} selected={selectedCenter} onChange={setSelectedCenter} />
+            <StatusOverview allIssues={allIssues} issues={issues} members={members} rawData={rawData!} dates={dates} activeDate={activeDate} />
+          </>
+        )}
 
         {/* Tabs */}
         <div className="animate-in tab-bar" style={{ animationDelay: "0.1s", display: "flex", gap: 4, marginBottom: 24, background: COLORS.card, borderRadius: 10, padding: 4, width: "fit-content" }}>
@@ -147,6 +157,7 @@ export default function App({ loadData }: { loadData: LoadData }) {
             { key: "weekly", label: "📋 週報" },
             { key: "member", label: "👤 成員" },
             { key: "code", label: "💼 代號" },
+            { key: "cxo", label: "🎯 CXO" },
           ].map(tab => (
             <button key={tab.key} className={`tab-btn ${view === tab.key ? 'tab-active' : ''}`}
               onClick={() => setView(tab.key as any)} style={tabStyle(view === tab.key)}>
@@ -230,6 +241,19 @@ export default function App({ loadData }: { loadData: LoadData }) {
             commitData={commitData} leave={leave}
             dailyDates={dailyDates} dayLabels={dayLabels}
             onDateSelect={(d: string) => { setSelectedDate(d); setSubView("commits"); setView("detail"); }} />
+        )}
+
+        {view === "cxo" && (
+          <CXOView
+            rawData={rawData}
+            commitData={commitData}
+            taskAnalysisData={taskAnalysisData}
+            planAnalysisData={planAnalysisData}
+            issues={issues}
+            members={members}
+            dates={dates}
+            centers={centers}
+          />
         )}
 
         {view === "member" && (
