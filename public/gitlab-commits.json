@@ -63589,58 +63589,7 @@
         "hours": 8.5
       }
     },
-    "3/19": {
-      "Joyce": {
-        "status": "⚠️",
-        "commitCount": 0,
-        "hours": 8
-      },
-      "Ivy": {
-        "status": "⚠️",
-        "commitCount": 0,
-        "hours": 8
-      },
-      "Jason": {
-        "status": "⚠️",
-        "commitCount": 0,
-        "hours": 7
-      },
-      "日銜": {
-        "status": "⚠️",
-        "commitCount": 0,
-        "hours": 7
-      },
-      "Wendy": {
-        "status": "⚠️",
-        "commitCount": 0,
-        "hours": 7.5
-      },
-      "Ted": {
-        "status": "⚠️",
-        "commitCount": 0,
-        "hours": 10
-      },
-      "家輝": {
-        "status": "⚠️",
-        "commitCount": 0,
-        "hours": 7
-      },
-      "Joe": {
-        "status": "⚠️",
-        "commitCount": 0,
-        "hours": 6
-      },
-      "Aaron": {
-        "status": "⚠️",
-        "commitCount": 0,
-        "hours": 7.5
-      },
-      "哲緯": {
-        "status": "⚠️",
-        "commitCount": 0,
-        "hours": 7.5
-      }
-    },
+    "3/19": {},
     "3/21": {
       "哲緯": {
         "status": "🔴",
