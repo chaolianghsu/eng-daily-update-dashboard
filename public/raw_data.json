@@ -4243,10 +4243,37 @@
         ]
       },
       "Ted": {
-        "total": null,
-        "meeting": null,
-        "dev": null,
-        "status": "unreported"
+        "total": 6,
+        "meeting": 0,
+        "dev": 6,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] 後端 proxy 開發 - keypo-backend AI listen proxy 加上 OIDC token forwarding !395 (f3763f4, 4def9aa, f058dc6)",
+            "hours": 3
+          },
+          {
+            "code": null,
+            "task": "[Done] keypo-ai-listen !5 品牌名稱正規化 + 每筆 mention count",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] keypo-ai-listen !4 overview hit rate + citation distinct",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] Review !3 alembic revision 撞號協調",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 開 #1 / #2 follow-up issues",
+            "hours": 0.5
+          }
+        ]
       },
       "家輝": {
         "total": 8.5,
@@ -4315,10 +4342,37 @@
         ]
       },
       "Aaron": {
-        "total": null,
-        "meeting": null,
-        "dev": null,
-        "status": "unreported"
+        "total": 6,
+        "meeting": 1,
+        "dev": 5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done]  讀書會議",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] Al listening 加上提及次數 MR",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] AI Listening 切分 aspect MR",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] AI Listening  pipeline 測試",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[In Progress] 設定 AI listening 部署環境",
+            "hours": 2
+          }
+        ]
       },
       "哲緯": {
         "total": 10.5,
@@ -4902,10 +4956,47 @@
         ]
       },
       "Ted": {
-        "total": null,
-        "meeting": null,
-        "dev": null,
-        "status": "unreported"
+        "total": 7,
+        "meeting": 1,
+        "dev": 6,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[In Progress] 後端開發 - keypo-backend AI listen proxy (38c1375)",
+            "hours": 3
+          },
+          {
+            "code": null,
+            "task": "[In Progress] keypo-ai-listen CI/Dockerfile + Cloud Run 部署 !2",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 開會討論部署時間",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 申請上測試環境",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 跟 Joe 過一下後端 API 更新",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 跟 Neil 討論設計",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 處理 Joanne 回報漏文重送問題",
+            "hours": 1
+          }
+        ]
       },
       "家輝": {
         "total": 6,
@@ -5054,6 +5145,382 @@
         "dev": 8,
         "status": "reported",
         "items": []
+      },
+      "Joyce": {
+        "total": 9.5,
+        "meeting": 0,
+        "dev": 9.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] 處理BDE KEYPO 所有功能分支整合並更新到測試機",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[Done] 臨時處理熱門關鍵字套用進階關鍵字error",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] #89：速報補發",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[In Progress] KEYDERS模組",
+            "hours": 6
+          }
+        ]
+      },
+      "Ivy": {
+        "total": 14.5,
+        "meeting": 2.5,
+        "dev": 12,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] 收藏邏輯討論",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[In Progress] Detail page API 串接 LINK",
+            "hours": 8
+          },
+          {
+            "code": null,
+            "task": "[Done] 0524 反饋調整 LINK",
+            "hours": 3
+          },
+          {
+            "code": null,
+            "task": "[Done] 圖表下載功能",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 領袖價值分數業務邏輯討論",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 專案進度確認",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 大數據官網後台公開資訊揭露操作功能驗收會議",
+            "hours": 0.5
+          }
+        ]
+      },
+      "Jason": {
+        "total": 7.5,
+        "meeting": 0,
+        "dev": 7.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] 網溫 a11y 優化",
+            "hours": 5
+          },
+          {
+            "code": null,
+            "task": "[Done] Issue#3130",
+            "hours": 2.5
+          }
+        ]
+      },
+      "日銜": {
+        "total": 8,
+        "meeting": 0,
+        "dev": 8,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[In Prgoress]AE站台開發",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[In Progress]Google Search新增站台",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] Kibana 查詢手冊 docs/kibana_query_guide.md",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 調整log紀錄格式",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 修 -a urls 模式 AttributeError",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] field_parse 拿掉欄位 value,縮減 ES 容量",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 新增 status=\"off\",避免未設定欄位變改版假警報",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 部署測試環境 + Kibana 驗證",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] MR review",
+            "hours": 1
+          }
+        ]
+      },
+      "Wendy": {
+        "total": 12,
+        "meeting": 1,
+        "dev": 11,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] 當日數據產出經人工驗證後提供給外部人員",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] API 業務邏輯、指標計算規則討論",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] stub repo. 移除並串接真實資料庫, bug 修正",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[Done] kolleadervalue, kolfavoraites API 實作",
+            "hours": 3
+          },
+          {
+            "code": null,
+            "task": "[Done] kolbizactivity, kolsimilar API 實作",
+            "hours": 5
+          }
+        ]
+      },
+      "侑呈": {
+        "total": 8,
+        "meeting": 0,
+        "dev": 8,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "KEYTECTOR + 6H",
+            "hours": 4.5
+          },
+          {
+            "code": null,
+            "task": "其他",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "Fanti 正式部署",
+            "hours": 3
+          }
+        ]
+      },
+      "禎佑": {
+        "total": 12,
+        "meeting": 1,
+        "dev": 11,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] keyders-metrics  link",
+            "hours": 3
+          },
+          {
+            "code": null,
+            "task": "[In Progress] KEYKYC 開發 - 後端 link",
+            "hours": 4
+          },
+          {
+            "code": null,
+            "task": "[In Progress] KEYKYC 開發 - 前端 link",
+            "hours": 4
+          },
+          {
+            "code": null,
+            "task": "[Done] sync keykyc 開發進度",
+            "hours": 1
+          }
+        ]
+      },
+      "Ted": {
+        "total": 8,
+        "meeting": 0,
+        "dev": 8,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] Cloud SQL IAM auth for Cloud Run !6",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] brand 加上 created_at/updated_at + set-primary endpoint !7",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] migrations squash 成單一 baseline !8",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 修 CI set-secrets :latest 版本後綴 !9",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] ailisten6 合成示範資料 (7d × 4 prompt × 4 LLM) !11 !12",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[Done] fanti-insight-api 正式環境切換 es 9",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] fb-search-api 正式環境切換 es 9 支援 KEYPO_ES_SCHEME，區分 HTTPS / HTTP 環境 !2 (cacbe9b, 10aa84f)",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[Done] fb-search-api 改 rabbitmq host + bigscrapy-plugins index-url (3189091, c9e9240)",
+            "hours": 0.5
+          }
+        ]
+      },
+      "家輝": {
+        "total": 7,
+        "meeting": 0.5,
+        "dev": 6.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] ES9 pipeline 優化調整",
+            "hours": 3
+          },
+          {
+            "code": null,
+            "task": "[Done] 調整gcp上分類為product的警報機制",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] GCP管理機制會議",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[In progress] gcp 正式環境弱點掃描",
+            "hours": 3
+          }
+        ]
+      },
+      "Joe": {
+        "total": 14,
+        "meeting": 0,
+        "dev": 14,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[In Progress] AI 聆聽",
+            "hours": 14
+          }
+        ]
+      },
+      "Aaron": {
+        "total": 6,
+        "meeting": 1,
+        "dev": 5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] KEYPO Agent 會議",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 部署 AI listening Staging,  migration 用 Cloud Run Job, 以及連線權限設定",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[In Progress] KEYPO Agent 操作 KEYPO Backend MR",
+            "hours": 4
+          }
+        ]
+      },
+      "哲緯": {
+        "total": 10.5,
+        "meeting": 1,
+        "dev": 9.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] Threads日常需求處理",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] LSR會議",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "line-social-radar  link link link link link link",
+            "hours": 3
+          },
+          {
+            "code": null,
+            "task": "line-social-radar-api  link link link link link link",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "threads-api-scrapy  link",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "threads-api  link",
+            "hours": 2
+          }
+        ]
       }
     }
   },
@@ -5067,6 +5534,61 @@
       "member": "Patty",
       "severity": "🟢",
       "text": "穩定 8hr"
+    },
+    {
+      "member": "Joyce",
+      "severity": "🟡",
+      "text": "超時 9.5hr"
+    },
+    {
+      "member": "Ivy",
+      "severity": "🟡",
+      "text": "超時 14.5hr"
+    },
+    {
+      "member": "Jason",
+      "severity": "🟢",
+      "text": "穩定 7.5hr"
+    },
+    {
+      "member": "日銜",
+      "severity": "🟢",
+      "text": "穩定 8hr"
+    },
+    {
+      "member": "Wendy",
+      "severity": "🟡",
+      "text": "超時 12hr"
+    },
+    {
+      "member": "侑呈",
+      "severity": "🟢",
+      "text": "穩定 8hr"
+    },
+    {
+      "member": "禎佑",
+      "severity": "🟡",
+      "text": "超時 12hr"
+    },
+    {
+      "member": "Ted",
+      "severity": "🟢",
+      "text": "穩定 8hr"
+    },
+    {
+      "member": "家輝",
+      "severity": "🟢",
+      "text": "穩定 7hr"
+    },
+    {
+      "member": "Joe",
+      "severity": "🟡",
+      "text": "超時 14hr"
+    },
+    {
+      "member": "哲緯",
+      "severity": "🟡",
+      "text": "超時 10.5hr"
     }
   ],
   "leave": {
@@ -5110,6 +5632,10 @@
       {
         "start": "4/15",
         "end": "4/15"
+      },
+      {
+        "start": "5/20",
+        "end": "5/20"
       }
     ],
     "禎佑": [
@@ -5250,51 +5776,218 @@
   "dailyUpdates": [
     {
       "date": "5/14",
-      "member": "Richard",
-      "createTime": "2026-05-15T02:06:43.163215Z",
-      "text": "5/14 進度：\n1. [MEETING][Done] KEYLM 產品呈現對焦 -1.5H\n2. [KEYLM][In Progress] 針對目前簡報持續修正用字與說法 -2H\n3. [KEYLM][In Progress] 錄製簡報素材 -3H\n4. [KEYLM][Done] 將 vLLM proxy 套上 RAGFlow -1.5H\n\nBlockers:\nNone\n\n5/15 今日工項：\n1. [To Do] 練習報告，並繼續調整顯示方式\n2. [To Do] 研究 Dflash LLM 加速技術",
+      "member": "侑呈",
+      "createTime": "2026-05-15T02:21:11.678047Z",
+      "text": "5/14 進度：\n1. KEYTECTOR(4.5H) + 6H\n[In Progress] 修改 pototype html\n[Done] prototype 討論\n[Done] Plan & 驗收標準撰寫\n[Done] pg-and-migrations LINK\n[Done] scanner-pool LINK\n[Done] enrichment LINK\n[Done] backend LINK\n[Done] frontend LINK\n[Done] 上132部署\n[Done] 社群偽冒功能 串接爬蟲 即時截圖 自動化流程 LINK LINK\n[In Progress] 測試\n2. 其他(0.5H)\n[Done] 重新部署 HK IG 服務\n3. Fanti 正式部署(3H)\n[Done] 12個專案已部署上正式機\n[In Progress] AI 偵測服務 從28遷移到正式機\n[In Progress] 測試AI機器人鏈路\n\nBlockers:\n1. [To do] twitter 自動化登入\n2. [In Progress] IG關鍵字貼文探索(mobile token)\n3. [In Progress] #2787 確認 ig 以外社群 是否能抓到地標\n4. [In Progress] #318 測試研究FBG response 是否有轉發貼文內容, 測試完畢, 轉發內容要加在哪裡待issue例會討論完\n5. [In Progress] #3004 排查重複貼文 已拉出112篇重複貼文\n\n5/15 今日工項：\n1. 私密社團V3 觀測\n2. KEYTECTOR prototype 實作\n3. 核對新竹最新客戶指定頻道 移除指定頻道\n4. Fanti ES9上線部署",
       "total": 8
     },
     {
       "date": "5/14",
-      "member": "Patty",
-      "createTime": "2026-05-15T02:04:22.111119Z",
-      "text": "5/14 進度：\n1. [KEYLM][Done] 完成霹靂報告內容調整與優化—4H\n2. [KEYLM][Done] 協同完成 5/18 BDE 投影片製作—4H\n\nBlockers：\nNone\n\n5/15 今日工項：\n1. [In Progress] 持續進行 TurboQuant 技術研究，了解核心機制與應用場景[KEYLM]\n2. [To Do] 評估 TurboQuant 導入現有流程或專案之可行性[KEYLM]",
+      "member": "日銜",
+      "createTime": "2026-05-15T02:09:13.522751Z",
+      "text": "5/14進度\n1. [In Prgoress]AE站台開發 (1H)\nfeat(gulfbusiness)\nfeat(timeoutdubai)\nfeat(timeoutabudhabi)\n2.[In Progress]Google Search新增站台 (1H)\n[Done]修正部分站台文章domain與首頁domain不同bug\n[Done]轉換部分站台文章網址成api格式，使非社群專案能夠正確解析\n3. [Done] 爬蟲 log 強化 link , link\n     [Done] Kibana 查詢手冊 docs/kibana_query_guide.md (1.5H)\n     [Done] 調整log紀錄格式 (1H)\n     [Done] 修 -a urls 模式 AttributeError (0.5H)\n     [Done] field_parse 拿掉欄位 value,縮減 ES 容量 (1H)\n     [Done] 新增 status=\"off\",避免未設定欄位變改版假警報 (0.5H)\n     [Done] 部署測試環境 + Kibana 驗證 (0.5H)\n4.[Done] MR review (1H)\n\nblockers:\n\n5/15工項\n1.[To Do] 新版log即時Alert機制\n2.[To Do] 工程部週會\n3.[To Do] issue處理",
       "total": 8
     },
     {
-      "date": "5/13",
-      "member": "Richard",
-      "createTime": "2026-05-14T10:34:02.632719Z",
-      "text": "5/13 進度：\n1. [KEYLM][In Progress] 依據 Sam 的建議改良 5/18 的簡報-3H\n2. [KEYLM][Done] 建立 vLLM proxy 套用 structure-cot -2H\n3. [MEETING][Done] KEYLM 產品呈現對焦 -2H\n\nBlockers:\nNone\n\n5/14 今日工項：\n1. [In Progress] 與 Patty 協作完成 BDE 5/18 報告\n2. [To Do] 將 vLLM proxy 套上 RAGFlow",
+      "date": "5/14",
+      "member": "Joe",
+      "createTime": "2026-05-15T02:03:50.151679Z",
+      "text": "5/14 進度：\n1. [In Progress] AI 聆聽 (14H)\n[Done] mockup 與功能規劃持續迭代討論\n[Done] 聆聽趨勢頁 API 串接與測試\n[Done] 情緒分析頁 API 串接與測試\n[Done] AI 回答原文頁 API 串接與測試\n[Done] AI 引用分析頁 API 串接與測試\n\nBlockers:\nNone\n\n5/15 今日工項：\n1. [To Do] 工程部週會 \n2. [In Progress] AI 聆聽\n[To Do] 圖表查詢原文列表 API 串接與測試\n3. [To Do] KEYDERS 權限套用至所有相關頁面",
+      "total": 14
+    },
+    {
+      "date": "5/14",
+      "member": "哲緯",
+      "createTime": "2026-05-15T01:54:34.804671Z",
+      "text": "     5/14 進度：\n     1. [Done] Threads日常需求處理 (0.5H)\n     2. [Done] LSR會議 (1H)\n     3. line-social-radar (3H) link link link link link link\n         - [Done] feat(stage4.5): person exception list to skip 其他 reclassification\n         - [Done] feat(stage5): quality_gate 加入「含個人資料」過濾規則\n         - [Done] feat(stage5): quality_gate 加入跨 POV 事件一致性檢查\n         - [Done] feat: replace CSV rank column with real topic_id\n         - [Done] fix(makefile): add command/script prefix to job execute --args\n         - [Done] docs(todo): mark v1.16.0 releases, prune resolved tech debt\n         - [Done] chore: untrack TODO.md (local-only progress doc)\n         - [Done] docs(todo): clear tech debt — analyze_exclude_keywords.py deleted\n         - [Done] docs(todo): mark v1.16.1 release (Makefile fix)\n     4. line-social-radar-api (2H) link link link link link link\n         - [Done] chore: gitignore TODO.md and tmp/\n         - [Done] feat: loosen UNIFIED_EXTRACT_PROMPT wearable rules (A2)\n         - [Done] fix: guard parse_json_response against None response.text (Gemini safety)\n         - [Done] ci: add workflow_dispatch trigger for manual staging deploy\n         - [Done] feat(#68): object-only OBJECT template + remove context-dependent whitelist\n         - [Done] docs(spec): add extract prompt wearables loosen design for A2\n         - [Done] docs(spec): add object-only image gen design for #68\n     5. threads-api-scrapy (2H) link\n         - [Done] chore: update gitlab token\n         - [Done] 因佳龍機器重灌，重新部署至43\n     6. threads-api (2H) link\n         - [Done] fix: pin base image to python:3.10-bookworm and drop playwright install-deps\n         - [Done] 因佳龍機器重灌，重新部署至42、43、45、52, 並手動重新登錄20個帳號\n\n     Blockers:\n     1. BM wireframe\n     2. Threads\n         - Alert優化\n         - Log優化\n     3. LSR\n     4. - 測試GCP透過API Gateway是否可連線至ES9\n\n     5/15 工項：\n     1. [To Do] Threads日常需求處理\n     2. [To Do] LSR\n         - 歷史圖庫納入圖庫開發\n         - 工程部會議\n         - 客戶5/15反饋",
+      "total": 10.5
+    },
+    {
+      "date": "5/14",
+      "member": "禎佑",
+      "createTime": "2026-05-15T01:54:27.510783Z",
+      "text": "05/14 進度：\n1. [In Progress] KOL 數據\n[To Do] 規劃未來新增新頻道時，應該要有的流程 (不能無條件新增，不然 KEYPO 爬蟲量體會很可怕)\n[Block] sex 欄位更新進 Channel_list (因為 type 問題，這邊需要跟 PM 討論是否等到需要搬遷 index 到正式環境實再處理) (已確認可這樣處理)\n2. [Done] keyders-metrics (3H) link\n[Done] 優化 postgreSQL 效率 (初次全量寫入，發現消化速度過慢)\n[Done] 修正計算的時間區間\n[Done] 排程部署在 133\n3. [Block] 排查 channel_timeline 監控狀態\n4. [In Progress] KEYKYC 開發 - 後端 link (4H)\n[Done] 監控公司列表開發 (monitor_company_list)\n[Done] KEYPO 貼文列表\n[Done] 部署到 gcp \n[To Do] 名片掃描\n[To Do] 名片夾\n5. [In Progress] KEYKYC 開發 - 前端 link (4H)\n[Done] 監控組合，除了風險規則和事件流區塊\n[Done] 企業盡調，除了財務概況、雇主品牌和報告相關功能\n[Done] 登入功能\n[Done] 部署到 gcp \n6. [Done] sync keykyc 開發進度(1H)\n7. [In Progress] KEYKYC 開發 - 裁罰資料收錄 (共 16 個資料源) link\n[To Do] 接續剩餘資料源\n[To Do] 優化 google chat alert\n8. [Block] 搬遷主責服務到 43\n\nBlockers:\n1. [To Do] TikTok 關鍵字收錄貼文開發\n2. [To Do] 開發自動確認 google map place_id 是失效或更換的流程\n3. [In Progress] TikTok 瀏覽器爬蟲\n[In Progress] 測試並修復 (目前仍會失敗)\n4. [In Progress] 優化 tiktok-crawl-httpx\n[To Do] WAF 處理重複\n[To Do] 優化 Stats\n5. [In Progress] 優化 kol-desc-parser link\n[In Progress] 部分從簡介截取出來的 url 會是搜尋關鍵字，導致組出來的 channel_url 是錯的 link\n6. [To Do] 搬遷主責服務到 43\n\n05/15 今日工項：\n1. [In Progress] KOL 數據\n[To Do] 規劃未來新增新頻道時，應該要有的流程 (不能無條件新增，不然 KEYPO 爬蟲量體會很可怕)\n[Block] sex 欄位更新進 Channel_list (因為 type 問題，這邊需要跟 PM 討論是否等到需要搬遷 index 到正式環境實再處理) (已確認可這樣處理)\n2. [Block] 排查 channel_timeline 監控狀態\n3. [In Progress] KEYKYC 開發 - 後端 link\n[To Do] 事件流區塊要重新規劃\n[To Do] 風險規則\n[To Do] 名片掃描\n[To Do] 名片夾\n5. [In Progress] KEYKYC 開發 - 前端 link (4H)\n[To Do] 監控組合: 風險規則和事件流區塊\n[To Do] 企業盡調: 財務概況、雇主品牌和報告相關功能\n6. [To Do] 週會\n7. [In Progress] KEYKYC 開發 - 裁罰資料收錄 (共 16 個資料源) link\n[To Do] 接續剩餘資料源\n[To Do] 優化 google chat alert\n8. [To Do] 同步 KEYPO 資料到 KEYKYC 流程\n9. [To Do] 財務資料收錄",
+      "total": 12
+    },
+    {
+      "date": "5/14",
+      "member": "Wendy",
+      "createTime": "2026-05-15T01:53:41.514415Z",
+      "text": "5/14 進度：\n1. KETECTOR\n   - [Done] 當日數據產出經人工驗證後提供給外部人員 (1H)\n2. KEYPO\n   - [Done] API 業務邏輯、指標計算規則討論 (1H)\n   - [Done] stub repo. 移除並串接真實資料庫, bug 修正 (2H, link)\n   - [Done] kolleadervalue, kolfavoraites API 實作 (3H, !189)\n   - [Done] kolbizactivity, kolsimilar API 實作 （5H)\n\nBlock:\nNone\n\n5/15 工項：\n1. KETECTOR\n   - [Done] 當日數據產出經人工驗證後提供給外部人員 (1H)\n2. KEYPO\n   - [In Progress] KEYDERS IN KEYPO API 開發與修正\n3. 週會",
+      "total": 12
+    },
+    {
+      "date": "5/14",
+      "member": "Ted",
+      "createTime": "2026-05-15T01:45:25.890271Z",
+      "text": "5/14 工項：\n1. [Done] AI 聆聽\n        - [Done] Cloud SQL IAM auth for Cloud Run !6 (1H)\n        - [Done] brand 加上 created_at/updated_at + set-primary endpoint !7 (1H)\n        - [Done] migrations squash 成單一 baseline !8 (0.5H)\n        - [Done] 修 CI set-secrets :latest 版本後綴 !9 (0.5H)\n        - [Done] ailisten6 合成示範資料 (7d × 4 prompt × 4 LLM) !11 !12 (2H)\n2. [Done] Fanti\n        - [Done] fanti-insight-api 正式環境切換 es 9 (1H)\n        - [Done] fb-search-api 正式環境切換 es 9 支援 KEYPO_ES_SCHEME，區分 HTTPS / HTTP 環境 !2 (cacbe9b, 10aa84f) (1.5H)\n        - [Done] fb-search-api 改 rabbitmq host + bigscrapy-plugins index-url (3189091, c9e9240) (0.5H)\n\nBlockers:\n[API Gateway] QoS 測試\n\n5/15 今日工項：\n1. [In Progress] AI 聆聽 - 後端開發繼續",
+      "total": 8
+    },
+    {
+      "date": "5/14",
+      "member": "家輝",
+      "createTime": "2026-05-15T01:44:27.875039Z",
+      "text": "5/14 進度：\n1. [Done] ES9 pipeline 優化調整(3H)\n          dv&news insert邏輯調整(LINK)\n          f2n同步異常修正(LINK)\n2. [Done] 調整gcp上分類為product的警報機制(0.5H)\n3. [Done] GCP管理機制會議(0.5H)\n4. [In progress] gcp 正式環境弱點掃描(3H)\n          官方提供之掃描報告（LINK）\n          針對單台設備使用nmap進行掃描\n\nPending\n1. ai機器人套件升級 > 初始環境建立與部署\n\n5/15 今日工項：\n1. [To Do] es9 site表格資料對應\n2. [In progress] gcp 正式環境弱點掃描\n3. [To Do] 佳龍合約採購流程",
       "total": 7
     },
     {
-      "date": "5/13",
-      "member": "Patty",
-      "createTime": "2026-05-14T10:18:12.598959Z",
-      "text": "5/13 進度：\n1. [KEYLM][Done] 霹靂專案報告之撰寫與內容調整—4H\n2. [KEYLM][In Progress] 持續進行 TurboQuant 技術研究—4H\n\nBlockers:\nNone\n\n5/14 今日工項：\n1. [To Do] 將資訊填入 5/18 簡報素材[KEYLM]\n2. [In Progress] 與 Richard 協作完成 BDE 5/18 報告[KEYLM]\n3. [In Progress] 持續深入研究 TurboQuant[KEYLM]",
-      "total": 8
-    }
-  ],
-  "newDates": [
-    "5/14"
-  ],
-  "backfilled": [],
-  "addedToExisting": [
+      "date": "5/14",
+      "member": "Aaron",
+      "createTime": "2026-05-15T01:42:52.630159Z",
+      "text": "5/14 工項/進度：\n1. [Done] KEYPO Agent 會議 (1 H)\n2. [Done] 部署 AI listening Staging,  migration 用 Cloud Run Job, 以及連線權限設定 (1 H)\n3. [In Progress] KEYPO Agent 驗收後調整 (1)\n4. [In Progress] KEYPO Agent 操作 KEYPO Backend MR (4 H)\n[Done] 操作 keyword\n[Done] 操作 進階設定\n[Done] HITL\n\nBacklog / Blockers:  待辦事項 / 阻礙因素：\nNone\n\n5/15 今日工項：\n1. [To Do] 週會\n2. [To Do] Data Pipeline 討論\n3. [To Do] API Gateway 週會\n4. [To Do] BDE rehearsal\n5. [In Progress] KEYPO Agent 驗收後調整\n6. [In Progress] KEYPO Agent 操作 KEYPO Backend",
+      "total": 6
+    },
     {
-      "date": "5/13",
-      "member": "Richard",
-      "total": 7,
-      "meeting": 2,
-      "dev": 5
+      "date": "5/14",
+      "member": "Ivy",
+      "createTime": "2026-05-15T01:38:30.552815Z",
+      "text": "5/14 (四) 工項/進度：\n\n1. [In Progress] KEYDERS 功能開發 LINK\n    - [Done] 收藏邏輯討論 (1h) \n    - [In Progress] Detail page API 串接 LINK (8h)\n         - [Done] 個人資料卡\n         - [Done] 平台領袖價值\n         - [Done] 指數總覽\n         - [Done] 商業活動紀錄\n         - [Done] 相關 KOL\n    - [Done] 0524 反饋調整 LINK (3h)\n    - [Done] 圖表下載功能 (0.5h)\n    - [Done] 領袖價值分數業務邏輯討論 (1h)\n    - [Done] 專案進度確認 (0.5h)\n2. [Done] 大數據官網後台公開資訊揭露操作功能驗收會議 (0.5h)\n\n\nBacklog / Blockers:  待辦事項 / 阻礙因素：\n\n[Backlog] 內部系統發信寄件人管理方式：待討論\n[Backlog] 網溫加入 CDN\n[Backlog] VM bigdata-web 關閉：Sam 已回覆，待轉移整個靜態教育訓練網站至 big-data GCS 下（比照簽名檔）\n[Backlog] 教育訓練網站簡報與資源管理：待討論決議是否由管理中心進行管理 (採用 Google Drive or S3 + CloudFront)\n[Block] Azure groupdv 服務備份：因檔案較大，約 40 幾 GB，尚需研究看看如何備份至 gitlab 或是待討論看看是否傳至 GCP 上或是放公司 NAS\n\n\n5/15 (五) 今日工項：\n\n1. [In Progress] KEYDERS 功能開發 LINK\n    - [In Progress] Detail page API 串接\n        - [To Do] 熱門關鍵字 / Hashtag\n        - [To Do] 文章列表\n        - [To Do] 測試與調整\n    - [To Do] 專案進度確認\n2. [To Do] 部門週會\n3. [To Do] BDE rehearsal 會議",
+      "total": 14.5
+    },
+    {
+      "date": "5/14",
+      "member": "Jason",
+      "createTime": "2026-05-15T01:31:00.941247Z",
+      "text": "5/13 進度：\n1. [Done] 網溫 a11y 優化 (5H)\n2. [Done] Issue#3130 (2.5H)\n\nBlock:\n\n\n5/14 今日工項：\n1. [In Progress] 網溫 INP 優化\n2. [TO DO] 網溫文章直接傳送爬蟲格式到 queue\n3. [TO DO] 工程部週會\n4. [TO DO] Issue#82",
+      "total": 7.5
+    },
+    {
+      "date": "5/14",
+      "member": "Joyce",
+      "createTime": "2026-05-15T01:17:28.994879Z",
+      "text": "05/14進度:\n1. [Done] 處理BDE KEYPO 所有功能分支整合並更新到測試機 (2H)\n2. [Done] 臨時處理熱門關鍵字套用進階關鍵字error (1H)\n3. [Done] #89：速報補發 (0.5H)\n4. [In Progress] KEYDERS模組 (6H)\n[In Progress] KOL收藏功能開發\n[In Progress] KOL 貼文功能、KOL 貼文hashtag 功能\n[Done] 臨時處理GKE 無法與時序資料庫連線問題\n\nBockers:\nFanti Meta API 升級至v18 處理中\n[In Progress] 玄武計畫 KEYPO engine API v3\n[In Progress] 撰寫測試\n[In Progress] KEYPO engine API v3 文件整理\n[In Progress] 遷移非目前KEYPO 使用的API: 頻道影響力、關鍵字推薦、getcontentbyref(KEYPO APP 使用)\n[In Progress] Qtool 改用package的方式\n處理 #45，自訂日報新增日文模板\n處理#3071\n處理 #3103\n\n05/15進度:\n1. [In Progress] KEYDERS模組\n[In Progress] KOL收藏功能開發\n[In Progress] KOL 貼文功能、KOL 貼文hashtag、熱門關鍵字功能\n2. [To Do] 工程部週會",
+      "total": 9.5
     },
     {
       "date": "5/13",
-      "member": "Patty",
+      "member": "Ted",
+      "createTime": "2026-05-15T01:50:26.722543Z",
+      "text": "\n5/13 工項：\n1. [Done] AI 聆聽\n        - [Done] 後端 proxy 開發 - keypo-backend AI listen proxy 加上 OIDC token forwarding !395 (f3763f4, 4def9aa, f058dc6) (3H)\n        - [Done] keypo-ai-listen !5 品牌名稱正規化 + 每筆 mention count (1H)\n        - [Done] keypo-ai-listen !4 overview hit rate + citation distinct (1H)\n        - [Done] Review !3 alembic revision 撞號協調 (0.5H)\n        - [Done] 開 #1 / #2 follow-up issues (0.5H)\n        - [Done] ai listen 功能討論\n\n\nBlockers:\n[API Gateway] QoS 測試\n\n5/14 今日工項：\n1. [In Progress] AI 聆聽 - 後端開發繼續、上測試機部署\n2. [To Do] Fanti  Es 9上版",
+      "total": 6
+    },
+    {
+      "date": "5/13",
+      "member": "Aaron",
+      "createTime": "2026-05-14T04:20:38.792991Z",
+      "text": "5/13 工項/進度：\n\n[Done]  讀書會議 (1 H)\n[Done] Al listening 加上提及次數 MR (1 H)\n[Done] AI Listening 切分 aspect MR (1 H)\n[Done] AI Listening  pipeline 測試 (1 H)\n[In Progress] 設定 AI listening 部署環境 (2 H)\n[Done] Cloud SQL 建立 + 只允許 service account 過 sql proxy 連線\n[Done] Cloud Run 建立 +  只允許特定 service account 連線\n\n[In Progress] KEYPO Agent 驗收後調整\n\nBacklog / Blockers:  待辦事項 / 阻礙因素：\n5/14 今日工項：\n\n[To Do] KEYPO Agent 會議\n[In Progress] KEYPO Agent 驗收後調整\n[To Do] KEYPO Agent 操作 KEYPO Backend",
+      "total": 6
+    },
+    {
+      "date": "5/11",
+      "member": "Ted",
+      "createTime": "2026-05-15T01:53:09.469247Z",
+      "text": "5/12 工項：\n1. [In Progress] AI 聆聽\n        - [In Progress] 後端開發 - keypo-backend AI listen proxy (38c1375) (3H)\n        - [In Progress] keypo-ai-listen CI/Dockerfile + Cloud Run 部署 !2 (1H)\n        - [Done] 開會討論部署時間 (0.5H)\n        - [Done] 申請上測試環境 (0.5H)\n        - [Done] 跟 Joe 過一下後端 API 更新 (0.5H)\n        - [Done] 跟 Neil 討論設計 (0.5H)\n2. [Done] 日品牌電子報\n        - [Done] 處理 Joanne 回報漏文重送問題 (1H)\n3. [Done] KEYPO 會議\n\nBlockers:\n[API Gateway] QoS 測試\n\n5/13 今日工項：\n1. [To Do] 讀書會\n2. [In Progress] AI 聆聽 - 修改 CI/CD，預計上測試機部署\n3. [In Progress] AI 聆聽 功能開發測試",
+      "total": 7
+    }
+  ],
+  "newDates": [],
+  "backfilled": [
+    {
+      "date": "5/13",
+      "member": "Ted",
+      "total": 6,
+      "meeting": 0,
+      "dev": 6
+    },
+    {
+      "date": "5/13",
+      "member": "Aaron",
+      "total": 6,
+      "meeting": 1,
+      "dev": 5
+    },
+    {
+      "date": "5/11",
+      "member": "Ted",
+      "total": 7,
+      "meeting": 1,
+      "dev": 6
+    }
+  ],
+  "addedToExisting": [
+    {
+      "date": "5/14",
+      "member": "Joyce",
+      "total": 9.5,
+      "meeting": 0,
+      "dev": 9.5
+    },
+    {
+      "date": "5/14",
+      "member": "Ivy",
+      "total": 14.5,
+      "meeting": 2.5,
+      "dev": 12
+    },
+    {
+      "date": "5/14",
+      "member": "Jason",
+      "total": 7.5,
+      "meeting": 0,
+      "dev": 7.5
+    },
+    {
+      "date": "5/14",
+      "member": "日銜",
       "total": 8,
       "meeting": 0,
       "dev": 8
+    },
+    {
+      "date": "5/14",
+      "member": "Wendy",
+      "total": 12,
+      "meeting": 1,
+      "dev": 11
+    },
+    {
+      "date": "5/14",
+      "member": "侑呈",
+      "total": 8,
+      "meeting": 0,
+      "dev": 8
+    },
+    {
+      "date": "5/14",
+      "member": "禎佑",
+      "total": 12,
+      "meeting": 1,
+      "dev": 11
+    },
+    {
+      "date": "5/14",
+      "member": "Ted",
+      "total": 8,
+      "meeting": 0,
+      "dev": 8
+    },
+    {
+      "date": "5/14",
+      "member": "家輝",
+      "total": 7,
+      "meeting": 0.5,
+      "dev": 6.5
+    },
+    {
+      "date": "5/14",
+      "member": "Joe",
+      "total": 14,
+      "meeting": 0,
+      "dev": 14
+    },
+    {
+      "date": "5/14",
+      "member": "Aaron",
+      "total": 6,
+      "meeting": 1,
+      "dev": 5
+    },
+    {
+      "date": "5/14",
+      "member": "哲緯",
+      "total": 10.5,
+      "meeting": 1,
+      "dev": 9.5
     }
   ],
   "centers": {
@@ -5501,15 +6194,6 @@
     "OPS": {
       "label": "營運維護",
       "category": "special"
-    }
-  },
-  "parentCenters": {
-    "產品中心": {
-      "label": "產品中心",
-      "children": [
-        "工程",
-        "技發"
-      ]
     }
   }
 }
