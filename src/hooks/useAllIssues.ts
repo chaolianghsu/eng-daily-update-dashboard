@@ -9,13 +9,20 @@ export function useAllIssues(
   issues: Issue[],
   commitData: CommitData | null,
   activeDate: string,
-  healthAlerts: HealthAlert[] = []
+  healthAlerts: HealthAlert[] = [],
+  members?: string[]
 ): Issue[] {
   return useMemo(() => {
-    if (!activeDate) return issues.filter(i => i.severity !== '🟢');
+    const memberSet = members ? new Set(members) : null;
+    if (!activeDate) {
+      return issues.filter(
+        i => i.severity !== '🟢' && (!memberSet || memberSet.has(i.member))
+      );
+    }
     const activeDateNum = dateToNum(activeDate);
     const base = issues.filter(i => {
       if (i.severity === '🟢') return false;
+      if (memberSet && !memberSet.has(i.member)) return false;
       const dates = i.text.match(DATE_PATTERN);
       if (!dates) return true;
       return dates.some(d => dateToNum(d) === activeDateNum);
@@ -23,6 +30,7 @@ export function useAllIssues(
     if (commitData) {
       const activeAnalysis = commitData.analysis?.[activeDate] || {};
       for (const [m, a] of Object.entries(activeAnalysis)) {
+        if (memberSet && !memberSet.has(m)) continue;
         if (a.status === '🔴') {
           base.push({ member: m, severity: '🔴', text: `有 ${a.commitCount} commits 但未回報工時` });
         }
@@ -30,6 +38,7 @@ export function useAllIssues(
     }
 
     for (const alert of healthAlerts) {
+      if (memberSet && !memberSet.has(alert.member)) continue;
       base.push({
         member: alert.member,
         severity: alert.severity,
@@ -41,5 +50,5 @@ export function useAllIssues(
     return base.sort((a, b) =>
       (SEVERITY_ORDER[a.severity] ?? 9) - (SEVERITY_ORDER[b.severity] ?? 9)
     );
-  }, [issues, commitData, activeDate, healthAlerts]);
+  }, [issues, commitData, activeDate, healthAlerts, members]);
 }

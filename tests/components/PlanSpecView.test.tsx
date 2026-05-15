@@ -101,6 +101,42 @@ describe('PlanSpecView', () => {
     expect(screen.getByText('無規劃文件')).toBeInTheDocument();
   });
 
+  describe('center filter compliance', () => {
+    const twoMemberData: PlanAnalysisData = {
+      analysisDate: '2026-03-25',
+      period: '3/24',
+      planSpecs: [
+        {
+          date: '3/24', member: 'InCenter',
+          commit: { title: 'docs: in-center', sha: 'in1', project: 'p/in', url: 'u/in1', source: 'gitlab' as const },
+          files: ['docs/specs/in.md'],
+        },
+        {
+          date: '3/24', member: 'OutOfCenter',
+          commit: { title: 'docs: out-center', sha: 'out1', project: 'p/out', url: 'u/out1', source: 'gitlab' as const },
+          files: ['docs/specs/out.md'],
+        },
+      ],
+      correlations: [],
+      summary: {
+        totalSpecCommits: 2, totalCorrelations: 0, membersWithSpecs: 2,
+        matched: 0, unmatched: 0, partial: 0,
+      },
+    };
+
+    it('filters planSpecs by members prop', () => {
+      render(<PlanSpecView {...baseProps} planAnalysisData={twoMemberData} members={['InCenter']} memberColors={{ InCenter: '#06b6d4' }} />);
+      expect(screen.getByText('docs: in-center')).toBeInTheDocument();
+      expect(screen.queryByText('docs: out-center')).not.toBeInTheDocument();
+    });
+
+    it('with all members in filter, both specs render', () => {
+      render(<PlanSpecView {...baseProps} planAnalysisData={twoMemberData} members={['InCenter', 'OutOfCenter']} memberColors={{ InCenter: '#06b6d4', OutOfCenter: '#f472b6' }} />);
+      expect(screen.getByText('docs: in-center')).toBeInTheDocument();
+      expect(screen.getByText('docs: out-center')).toBeInTheDocument();
+    });
+  });
+
   it('renders unmatched status correctly', () => {
     const unmatchedData: PlanAnalysisData = {
       ...mockData,

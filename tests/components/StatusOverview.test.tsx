@@ -77,4 +77,34 @@ describe("StatusOverview", () => {
     render(<StatusOverview {...props} />);
     expect(screen.queryByText("趨勢")).not.toBeInTheDocument();
   });
+
+  describe("center filter compliance", () => {
+    it("filters stableIssues to only members in the filtered set", () => {
+      const props = {
+        ...baseProps,
+        members: ["A"], // only A is in the filtered center
+        issues: [
+          { member: "A", severity: "🟢", text: "穩定" },
+          { member: "OutsideCenter", severity: "🟢", text: "改善 ↑" },
+        ],
+      };
+      render(<StatusOverview {...props} />);
+      expect(screen.getByText(/^A/)).toBeInTheDocument();
+      expect(screen.queryByText(/OutsideCenter/)).not.toBeInTheDocument();
+    });
+
+    it("intersects attentionIssues with filtered members (defensive)", () => {
+      const props = {
+        ...baseProps,
+        members: ["A"],
+        allIssues: [
+          { member: "A", severity: "🔴", text: "超時" },
+          { member: "OutsideCenter", severity: "🔴", text: "未回報" },
+        ],
+      };
+      render(<StatusOverview {...props} />);
+      expect(screen.getByText("超時")).toBeInTheDocument();
+      expect(screen.queryByText("未回報")).not.toBeInTheDocument();
+    });
+  });
 });

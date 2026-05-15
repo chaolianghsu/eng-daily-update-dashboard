@@ -104,4 +104,61 @@ describe("useAllIssues", () => {
       expect(result.current[1].severity).toBe("🟡");
     });
   });
+
+  describe("members filter (center filter compliance)", () => {
+    it("without members arg, returns all issues (backward compat)", () => {
+      const issues = [
+        { member: "A", severity: "🔴", text: "超時" },
+        { member: "OutOfCenter", severity: "🔴", text: "未回報" },
+      ];
+      const { result } = renderHook(() => useAllIssues(issues, null, "3/5"));
+      expect(result.current).toHaveLength(2);
+    });
+
+    it("with members arg, filters base issues to only included members", () => {
+      const issues = [
+        { member: "A", severity: "🔴", text: "超時" },
+        { member: "OutOfCenter", severity: "🔴", text: "超時" },
+      ];
+      const { result } = renderHook(() => useAllIssues(issues, null, "3/5", [], ["A"]));
+      expect(result.current).toHaveLength(1);
+      expect(result.current[0].member).toBe("A");
+    });
+
+    it("with members arg, filters commit-analysis 🔴 entries", () => {
+      const commitData = {
+        commits: {},
+        analysis: {
+          "3/5": {
+            InCenter: { status: "🔴", commitCount: 5, hours: null },
+            OutCenter: { status: "🔴", commitCount: 3, hours: null },
+          },
+        },
+        projectRisks: [],
+      };
+      const { result } = renderHook(() =>
+        useAllIssues([], commitData as any, "3/5", [], ["InCenter"])
+      );
+      expect(result.current).toHaveLength(1);
+      expect(result.current[0].member).toBe("InCenter");
+    });
+
+    it("with members arg, filters healthAlerts to only included members", () => {
+      const healthAlerts = [
+        { member: "A", severity: "🔴", text: "連續低工時", source: "trend" as const, type: "consecutive_low" as const },
+        { member: "OutOfCenter", severity: "🔴", text: "工時突降", source: "trend" as const, type: "hours_drop" as const },
+      ];
+      const { result } = renderHook(() =>
+        useAllIssues([], null, "3/5", healthAlerts, ["A"])
+      );
+      expect(result.current).toHaveLength(1);
+      expect(result.current[0].member).toBe("A");
+    });
+
+    it("with empty members array, filters all out", () => {
+      const issues = [{ member: "A", severity: "🔴", text: "超時" }];
+      const { result } = renderHook(() => useAllIssues(issues, null, "3/5", [], []));
+      expect(result.current).toHaveLength(0);
+    });
+  });
 });

@@ -94,7 +94,7 @@ export default function App({ loadData }: { loadData: LoadData }) {
   const { trendDates, trendData, useWeeklyAgg, weekGroups } = useTrendData(rawData, dates, members, dayLabels, commitData, trendRange);
   const weeklySummary = useWeeklySummary(rawData, dates, members, commitData);
   const healthAlerts = useHealthAlerts(rawData, members, dates, commitData, leave, null, activeDate);
-  const allIssues = useAllIssues(issues, commitData, activeDate, healthAlerts);
+  const allIssues = useAllIssues(issues, commitData, activeDate, healthAlerts, members);
 
   const toggleMember = (m: string) => {
     const next = new Set(selectedMembers);
