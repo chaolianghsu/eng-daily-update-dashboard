@@ -4352,6 +4352,20 @@
             "hours": 4
           }
         ]
+      },
+      "Richard": {
+        "total": 7,
+        "meeting": 2,
+        "dev": 5,
+        "status": "reported",
+        "items": []
+      },
+      "Patty": {
+        "total": 8,
+        "meeting": 0,
+        "dev": 8,
+        "status": "reported",
+        "items": []
       }
     },
     "5/12": {
@@ -5025,63 +5039,34 @@
           }
         ]
       }
+    },
+    "5/14": {
+      "Richard": {
+        "total": 8,
+        "meeting": 1.5,
+        "dev": 6.5,
+        "status": "reported",
+        "items": []
+      },
+      "Patty": {
+        "total": 8,
+        "meeting": 0,
+        "dev": 8,
+        "status": "reported",
+        "items": []
+      }
     }
   },
   "issues": [
     {
-      "member": "Joyce",
-      "severity": "🟡",
-      "text": "超時 10hr"
-    },
-    {
-      "member": "Ivy",
-      "severity": "🟢",
-      "text": "穩定 8.5hr"
-    },
-    {
-      "member": "日銜",
-      "severity": "🟢",
-      "text": "穩定 7.5hr"
-    },
-    {
-      "member": "Wendy",
-      "severity": "🟡",
-      "text": "超時 12hr"
-    },
-    {
-      "member": "侑呈",
+      "member": "Richard",
       "severity": "🟢",
       "text": "穩定 8hr"
     },
     {
-      "member": "禎佑",
-      "severity": "🟡",
-      "text": "超時 12hr"
-    },
-    {
-      "member": "Ted",
-      "severity": "🔴",
-      "text": "連續 3 天未回報"
-    },
-    {
-      "member": "家輝",
+      "member": "Patty",
       "severity": "🟢",
-      "text": "穩定 8.5hr"
-    },
-    {
-      "member": "Joe",
-      "severity": "🟢",
-      "text": "穩定 7hr"
-    },
-    {
-      "member": "Aaron",
-      "severity": "🔴",
-      "text": "未回報 5/13"
-    },
-    {
-      "member": "哲緯",
-      "severity": "🟡",
-      "text": "超時 10.5hr"
+      "text": "穩定 8hr"
     }
   ],
   "leave": {
@@ -5264,133 +5249,52 @@
   },
   "dailyUpdates": [
     {
-      "date": "5/13",
-      "member": "Wendy",
-      "createTime": "2026-05-14T03:07:43.237423Z",
-      "text": "5/13 進度：\n1. KETECTOR\n   - [Done] 當日數據產出經人工驗證後提供給外部人員 (0.5H)\n2. KEYPO\n   - [Done] kolprofile, kolkpioverview, kolfollowertrend API 實作 (4H, link)\n   - [In Progress] kolleadervalue API 實作規劃與業務邏輯討論 (1.5H)\n   - [Done] kolranking API 效能問題調整 (3H, link)\n   - [Done] MR review 問題調整 (2H, link)\n3. [Done] 讀書會 (1H)\n\nBlock:\nNone\n\n5/14 工項：\n1. KETECTOR\n   - [Done] 當日數據產出經人工驗證後提供給外部人員 (1.5H)\n2. KEYPO\n   - [In Progress] kolleadervalue API 實作規劃與業務邏輯討論\n   - [To Do] kolposts, kolhothashtags, kolhotkw, kolfavoraites API 實作",
-      "total": 12
+      "date": "5/14",
+      "member": "Richard",
+      "createTime": "2026-05-15T02:06:43.163215Z",
+      "text": "5/14 進度：\n1. [MEETING][Done] KEYLM 產品呈現對焦 -1.5H\n2. [KEYLM][In Progress] 針對目前簡報持續修正用字與說法 -2H\n3. [KEYLM][In Progress] 錄製簡報素材 -3H\n4. [KEYLM][Done] 將 vLLM proxy 套上 RAGFlow -1.5H\n\nBlockers:\nNone\n\n5/15 今日工項：\n1. [To Do] 練習報告，並繼續調整顯示方式\n2. [To Do] 研究 Dflash LLM 加速技術",
+      "total": 8
     },
     {
-      "date": "5/13",
-      "member": "日銜",
-      "createTime": "2026-05-14T02:57:17.772319Z",
-      "text": "5/13 進度：\n1.[Done] VIP站台修復 (5H)\n[Done] 上報 link\n[Done] 工商時報 link\n          1. API endpoint 被 ctee Cloudflare WAF 對 headless chrome 反爬升級\n          2. 用公開 sitemap_newstoday.xml  抓取1000 條當日文章 URL                                           3. extract_item_links 改為解析 XML，按 item_time_days=3 過濾近期文章\n          4. 從 CF_DOMAIN 移除，文章頁對一般 UA 直接 200，根本不需要 cf-render                  5. 修正 author 異常解析bug\n2.[Done] 讀書會 (1H)\n3.[In Progress] MR review (1.5H) link\n\nblockers:\n\n5/14今日工項\n1. [To Do]AE站台開發\n2.[In Progress]Google Search新增站台\n3.[In Progress]MR review\n4.[To Do] 數據需求申請表消化",
-      "total": 7.5
-    },
-    {
-      "date": "5/13",
-      "member": "Joe",
-      "createTime": "2026-05-14T02:15:19.403535Z",
-      "text": "5/13 進度：\n1. [In Progress] AI 聆聽 (5.5H)\n[In Progress] mockup 與功能規劃持續迭代討論\n[Done] Prompts 與品牌管理頁 API 串接與測試\n[In Progress] 聆聽趨勢頁 API 串接與測試\n2. [Done] 測試機 BDE 功能進度整併與更新 (1.5H)\n\nBlockers:\nNone\n\n5/14 今日工項：\n1. [In Progress] AI 聆聽\n[In Progress] mockup 與功能規劃持續迭代討論\n[In Progress] 聆聽趨勢頁 API 串接與測試\n[To Do] 情緒分析頁 API 串接與測試\n[To Do] AI 回答原文頁 API 串接與測試\n[To Do] AI 引用分析頁 API 串接與測試",
-      "total": 7
-    },
-    {
-      "date": "5/13",
-      "member": "家輝",
-      "createTime": "2026-05-14T02:04:08.385871Z",
-      "text": "5/13 進度：\n1. [Done] 佳龍42, 43, 44重灌OS(4H)\n2. [Done] 讀書會(1H)\n3. [Done] 備份SQL資料庫回42(0.5H)\n4. [Done] 報帳遠傳機房發票(<0.5H)\n5. [Done] 港版爬蟲rmq idc容量擴增(1H)\n6. [Done] 重啟4g proxy服務(0.5H)\n7. [Done] 設定遠傳資料consumer失敗處理機制(0.5H)\n8. [In progress] gcp 正式環境弱點掃描(0.5H)\n\nPending\n1. ai機器人套件升級 > 初始環境建立與部署\n\n5/14 今日工項：\n1. [To Do] es9 site表格資料對應\n2. [In progress] gcp 正式環境弱點掃描\n3. [To Do] 調整gcp上分類為product的警報機制\n4. [To Do] ES9 pipeline dv insert檢查&f2n同步檢查",
-      "total": 8.5
-    },
-    {
-      "date": "5/13",
-      "member": "禎佑",
-      "createTime": "2026-05-14T01:58:13.562863Z",
-      "text": "05/13 進度：\n1. [In Progress] KOL 數據\n[To Do] 規劃未來新增新頻道時，應該要有的流程 (不能無條件新增，不然 KEYPO 爬蟲量體會很可怕)\n[Block] sex 欄位更新進 Channel_list (因為 type 問題，這邊需要跟 PM 討論是否等到需要搬遷 index 到正式環境實再處理) (已確認可這樣處理)\n2. [In Progress] keyders-metrics \n[In Progress] 優化 postgreSQL 效率 (初次全量寫入，發現消化速度過慢) link\n3. [Block] 排查 channel_timeline 監控狀態\n4. [In Progress] KEYKYC 開發 - 後端 (4H)\n[Done] 建好 DB schema, FastAPI 後端架構\n[Done] 完成 table account_list / company_list / penalty_list, 和對應的 API\n5. [Done] 讀書會 (1H)\n6. [Done] KEYDERS 主檔細節 會議 (0.5H)\n7. [Done] KEYKYC sync 會議 (0.5H)\n8. [Done] KEYKYC 開發 - 公司資訊收錄 link (3H)\n[Done] 搬遷原有即時收錄，並調整流程 (原收錄單公司，現符合的全收錄)\n[Done] 限制僅核准設立公司可以查股票代號\n[Done] 寫入 postgreSQL 資料流\n9. [In Progress] KEYKYC 開發 - 裁罰資料收錄 (共 16 個資料源) link (3H)\n[Done] 完成 8 個資料源\n[Done] 寫入 postgreSQL 資料流\n[Done] 基本 google chat alert\n10. [Block] 搬遷主責服務到 43\n\nBlockers:\n1. [To Do] TikTok 關鍵字收錄貼文開發\n2. [To Do] 開發自動確認 google map place_id 是失效或更換的流程\n3. [In Progress] TikTok 瀏覽器爬蟲\n[In Progress] 測試並修復 (目前仍會失敗)\n4. [In Progress] 優化 tiktok-crawl-httpx\n[To Do] WAF 處理重複\n[To Do] 優化 Stats\n5. [In Progress] 優化 kol-desc-parser link\n[In Progress] 部分從簡介截取出來的 url 會是搜尋關鍵字，導致組出來的 channel_url 是錯的 link\n\n05/14 今日工項：\n1. [In Progress] KOL 數據\n[To Do] 規劃未來新增新頻道時，應該要有的流程 (不能無條件新增，不然 KEYPO 爬蟲量體會很可怕)\n[Block] sex 欄位更新進 Channel_list (因為 type 問題，這邊需要跟 PM 討論是否等到需要搬遷 index 到正式環境實再處理) (已確認可這樣處理)\n2. [In Progress] keyders-metrics \n[In Progress] 優化 postgreSQL 效率 (初次全量寫入，發現消化速度過慢) link\n3. [Block] 排查 channel_timeline 監控狀態\n4. [In Progress] KEYKYC 開發 - 後端\n[To Do] 監控公司列表開發 (monitor_company_list)\n[To Do] 名片掃描\n[To Do] 名片夾\n5. [In Progress] KEYKYC 開發 - 裁罰資料收錄 (共 16 個資料源) link\n[To Do] 接續剩餘資料源\n[To Do] 優化 google chat alert\n6. [To Do] 搬遷主責服務到 43",
-      "total": 12
-    },
-    {
-      "date": "5/13",
-      "member": "侑呈",
-      "createTime": "2026-05-14T01:50:51.939039Z",
-      "text": "5/13 進度：\n1. KEYTECTOR(5.5H)\n[In Progress] 新增「財政部電子發票」brand (測試驗證\n[Done] 修改 pototype html\n[Done] Plan & 驗收標準撰寫\n[In Progress] pg-and-migrations LINK\n[In Progress] scanner-pool LINK\n[In Progress] enrichment LINK\n[In Progerss] backend LINK\n[In Progress] frontend LINK\n[In Progress] 上132部署\n[In Progress] 測試\n2. 其他(2.5H)\n[Done] 重新部署 TW FB FBP IG 服務\n[Done] 排查熊貓 FBG 社團是否有漏文 ( 從posttime fetchedtime FBG排程 做排查\n\nBlockers:\n1. [To do] twitter 自動化登入\n2. [In Progress] IG關鍵字貼文探索(mobile token)\n3. [In Progress] #2787 確認 ig 以外社群 是否能抓到地標\n4. [In Progress] #318 測試研究FBG response 是否有轉發貼文內容, 測試完畢, 轉發內容要加在哪裡待issue例會討論完\n5. [In Progress] #3004 排查重複貼文 已拉出112篇重複貼文\n\n5/14 今日工項：\n1. 私密社團V3 觀測\n2. KEYTECTOR prototype 實作\n3. 核對新竹最新客戶指定頻道 移除指定頻道\n4. Fanti ES9上線部署",
+      "date": "5/14",
+      "member": "Patty",
+      "createTime": "2026-05-15T02:04:22.111119Z",
+      "text": "5/14 進度：\n1. [KEYLM][Done] 完成霹靂報告內容調整與優化—4H\n2. [KEYLM][Done] 協同完成 5/18 BDE 投影片製作—4H\n\nBlockers：\nNone\n\n5/15 今日工項：\n1. [In Progress] 持續進行 TurboQuant 技術研究，了解核心機制與應用場景[KEYLM]\n2. [To Do] 評估 TurboQuant 導入現有流程或專案之可行性[KEYLM]",
       "total": 8
     },
     {
       "date": "5/13",
-      "member": "哲緯",
-      "createTime": "2026-05-14T01:50:40.964511Z",
-      "text": "5/13 進度：\n1. [Done] Threads日常需求處理 (0.5H)\n2. [Done] LSR會議 (2H)\n3. [Done] 工程部會議 (1H)\n4. line-social-radar-api (3H) link link\n - [Done] feat: 生圖流程改版（依物件/場景組合分四路）— closes #65\n - [Done] feat: add ip_trademark category to prohibited list (Taipei 101) — closes #62\n5. line-social-radar (4H) link link link link link link link link link\n - [Done] test(stage4): align fallback assertions with remove-on-failure behavior\n - [Done] fix(stage4.7): include original article in regen title/summary prompt for single-article topics\n - [Done] feat(fetch): per-comment simplified/cantonese filter\n - [Done] feat(entity-config): name_generalizations section for institution generalization\n - [Done] feat(stage2.5): inappropriate content filter (sexual implicit)\n - [Done] chore(llm): remove deprecated call_api_with_retry and hardcoded model constants (PR 4/4)\n - [Done] feat(llm): migrate remaining 19 call sites to llm_caller (PR 3/4)\n - [Done] feat(llm): pilot migration of stage3.7 to llm_caller (PR 2/4)\n - [Done] feat(llm): foundation for env-driven model config and fallback chain (PR 1/4)\n\nBlockers:\n1. BM wireframe\n2. Threads\n - Alert優化\n - Log優化\n3. LSR\n4. - 測試GCP透過API Gateway是否可連線至ES9\n\n5/14 工項：\n1. [To Do] Threads日常需求處理\n2. [To Do] LSR\n - 歷史圖庫納入圖庫開發\n - 會議\n - 客戶5/12反饋",
-      "total": 10.5
+      "member": "Richard",
+      "createTime": "2026-05-14T10:34:02.632719Z",
+      "text": "5/13 進度：\n1. [KEYLM][In Progress] 依據 Sam 的建議改良 5/18 的簡報-3H\n2. [KEYLM][Done] 建立 vLLM proxy 套用 structure-cot -2H\n3. [MEETING][Done] KEYLM 產品呈現對焦 -2H\n\nBlockers:\nNone\n\n5/14 今日工項：\n1. [In Progress] 與 Patty 協作完成 BDE 5/18 報告\n2. [To Do] 將 vLLM proxy 套上 RAGFlow",
+      "total": 7
     },
     {
       "date": "5/13",
-      "member": "Jason",
-      "createTime": "2026-05-14T01:36:21.958527Z",
-      "text": "5/13 進度：\n1. [Done] 網溫 seo / geo wave 1 調整 (5H)\n2. [Done] 工程部讀書分享會 (1H)\n\nBlock:\n\n\n5/14 今日工項：\n1. [In Progress] 網溫 a11y 優化\n2. [TO DO] 網溫文章直接傳送爬蟲格式到 queue\n3. [TO DO] Issue#3130",
-      "total": 6
-    },
-    {
-      "date": "5/13",
-      "member": "Ivy",
-      "createTime": "2026-05-14T01:29:23.481759Z",
-      "text": "5/13 (三) 工項/進度：\n\n1. [In Progress] KEYDERS 功能開發 LINK\n    - [Done] KEYDERS 前端 prototype 功能 UI 調整 個人資訊 Page 文章列表 LINK (2.5h)\n    - [Done] 查詢 list page API 串接 (3h)\n    - [Done] 專案進度確認 (0.8h)\n2. [Done] 部門分享會 (1h)\n3. [Done] F2E Sync 會 (0.8h)\n4. [Done] 大數據官網共契頁面調整討論 (0.4h)\n\n\nBacklog / Blockers:  待辦事項 / 阻礙因素：\n\n[Backlog] 內部系統發信寄件人管理方式：待討論\n[Backlog] 網溫加入 CDN\n[Backlog] VM bigdata-web 關閉：Sam 已回覆，待轉移整個靜態教育訓練網站至 big-data GCS 下（比照簽名檔）\n[Backlog] 教育訓練網站簡報與資源管理：待討論決議是否由管理中心進行管理 (採用 Google Drive or S3 + CloudFront)\n[Block] Azure groupdv 服務備份：因檔案較大，約 40 幾 GB，尚需研究看看如何備份至 gitlab 或是待討論看看是否傳至 GCP 上或是放公司 NAS\n\n\n5/14 (四) 今日工項：\n\n1. [In Progress] KEYDERS 功能開發 LINK\n    - [To Do] Detail Page 邏輯討論 \n    - [To Do] Detail page API 串接\n    - [To Do] 專案進度確認\n2. [To Do] 大數據官網後台公開資訊揭露操作功能驗收會議",
-      "total": 8.5
+      "member": "Patty",
+      "createTime": "2026-05-14T10:18:12.598959Z",
+      "text": "5/13 進度：\n1. [KEYLM][Done] 霹靂專案報告之撰寫與內容調整—4H\n2. [KEYLM][In Progress] 持續進行 TurboQuant 技術研究—4H\n\nBlockers:\nNone\n\n5/14 今日工項：\n1. [To Do] 將資訊填入 5/18 簡報素材[KEYLM]\n2. [In Progress] 與 Richard 協作完成 BDE 5/18 報告[KEYLM]\n3. [In Progress] 持續深入研究 TurboQuant[KEYLM]",
+      "total": 8
     }
   ],
-  "newDates": [],
-  "backfilled": [
+  "newDates": [
+    "5/14"
+  ],
+  "backfilled": [],
+  "addedToExisting": [
     {
       "date": "5/13",
-      "member": "Ivy",
-      "total": 8.5,
-      "meeting": 2.2,
-      "dev": 6.3
-    },
-    {
-      "date": "5/13",
-      "member": "Jason",
-      "total": 6,
-      "meeting": 1,
+      "member": "Richard",
+      "total": 7,
+      "meeting": 2,
       "dev": 5
     },
     {
       "date": "5/13",
-      "member": "日銜",
-      "total": 7.5,
-      "meeting": 1,
-      "dev": 6.5
-    },
-    {
-      "date": "5/13",
-      "member": "Wendy",
-      "total": 12,
-      "meeting": 2.5,
-      "dev": 9.5
-    },
-    {
-      "date": "5/13",
-      "member": "侑呈",
+      "member": "Patty",
       "total": 8,
       "meeting": 0,
       "dev": 8
-    },
-    {
-      "date": "5/13",
-      "member": "禎佑",
-      "total": 12,
-      "meeting": 2,
-      "dev": 10
-    },
-    {
-      "date": "5/13",
-      "member": "家輝",
-      "total": 8.5,
-      "meeting": 1,
-      "dev": 7.5
-    },
-    {
-      "date": "5/13",
-      "member": "Joe",
-      "total": 7,
-      "meeting": 0,
-      "dev": 7
-    },
-    {
-      "date": "5/13",
-      "member": "哲緯",
-      "total": 10.5,
-      "meeting": 3,
-      "dev": 7.5
     }
   ],
   "centers": {
