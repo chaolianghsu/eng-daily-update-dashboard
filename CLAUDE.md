@@ -93,6 +93,7 @@ Engineering Department Daily Update Dashboard — a React dashboard for tracking
 | `/sync-daily-updates` | Google Chat daily updates: 抓取 → 解析 → 合併 → commit → push → Sheets |
 | `/sync-gitlab-commits` | GitLab commits: 抓取 → 分析一致性 → 寫入 JSON + Sheets。支援 backfill: `/sync-gitlab-commits 3/9-3/12` |
 | `/sync-github-commits` | GitHub commits: 抓取 → 分析一致性 → 寫入 JSON + Sheets。支援 backfill: `/sync-github-commits 3/9-3/12` |
+| `/backfill-codes` | 一次性回補歷史 `items[].code === null` 的 [CODE] tag — recommend → preview → 確認 → apply → commit + push + Sheets POST。降低 dashboard「未分類率」KPI。一次性使用，非日常增量。 |
 
 Skills 定義在 `.claude/skills/*.md`，需要 `user_invocable: true` frontmatter。
 
