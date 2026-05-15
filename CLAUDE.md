@@ -253,7 +253,10 @@ The Apps Script Spreadsheet receives the same payload that flows through `/sync`
 
 **Graceful degradation.** Payloads that lack `centers` / `parentCenters` still write — `parentCenter` and `department` will simply be empty strings, and the reference sheets are skipped. Read helpers (`readRawData_`, `readIssues_`, `readLeave_`, `getCommitData`, `getTaskAnalysisData`) detect the schema by inspecting the header row's first cell, so they work transparently against both old and new sheets.
 
-**Migration.** Moving an existing Spreadsheet from the old schema (no `parentCenter`/`department`) to the new schema requires a one-shot `clearSheets` POST followed by a normal full-data POST. See `docs/appscript-migration.md` for the exact curl commands.
+**Migration.** Moving an existing Spreadsheet from the old schema (no `parentCenter`/`department`) to the new schema:
+
+- **Full-rewrite sheets** (`rawData`, `issues`, `leave`) — auto-migrate on the next normal `/sync` POST, since their writers `clear()` before writing.
+- **Dedup-append sheets** (`Daily Updates`, `Commits`, `Commit Analysis`, `Task Analysis`, `Plan Specs`, `Plan Correlations`) — preserve accumulated history. Use the non-destructive `{"migrateSchema": true, "centers": {...}, "parentCenters": {...}}` POST handled by `migrateSheetSchema_` in `Code.gs`. Idempotent — already-migrated sheets are skipped. See `docs/appscript-migration.md` for the exact curl command.
 
 ## Key Conventions
 

@@ -65,6 +65,52 @@ function resolveOrg_(member, lookups) {
 }
 
 /**
+ * Non-destructive in-place migration of a single dedup-append sheet from the
+ * OLD column schema to the NEW multi-center schema by prepending two columns:
+ * `parentCenter` and `department`. Values are backfilled from lookups using
+ * the member found at OLD column index `memberColIdx`.
+ *
+ * Idempotency: if the header row already begins with 'parentCenter', this is
+ * a no-op (returns reason='already_migrated'). Empty sheets return
+ * reason='empty'. Otherwise the sheet is rewritten in place: all data is read
+ * into memory first, the sheet is cleared, and the prepended rows are written
+ * back. Safe because the new values come entirely from the existing rows
+ * themselves — no external dependency.
+ *
+ * Returns: { migrated: <data-row count>, skipped: <count>, reason: <enum> }
+ */
+function migrateSheetSchema_(sheet, memberColIdx, lookups) {
+  var lastRow = sheet.getLastRow();
+  var lastCol = sheet.getLastColumn();
+  if (lastRow === 0 || lastCol === 0) {
+    return { migrated: 0, skipped: 0, reason: 'empty' };
+  }
+
+  var data = sheet.getRange(1, 1, lastRow, lastCol).getValues();
+  var headerRow = data[0];
+
+  if (headerRow[0] === 'parentCenter') {
+    return { migrated: 0, skipped: lastRow, reason: 'already_migrated' };
+  }
+
+  var newData = [];
+  newData.push(['parentCenter', 'department'].concat(headerRow));
+
+  for (var i = 1; i < data.length; i++) {
+    var row = data[i];
+    var member = row[memberColIdx];
+    var dept = (lookups && lookups.memberToDept[member]) || '';
+    var parent = dept ? (lookups.deptToParent[dept] || '') : '';
+    newData.push([parent, dept].concat(row));
+  }
+
+  sheet.clear();
+  sheet.getRange(1, 1, newData.length, newData[0].length).setValues(newData);
+
+  return { migrated: data.length - 1, skipped: 0, reason: 'completed' };
+}
+
+/**
  * Receives JSON data from Claude sync skill and writes to Sheets.
  *
  * Expected payload (multi-center schema):
@@ -87,6 +133,50 @@ function doPost(e) {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
 
   var lookups = buildLookups_(data);
+
+  // Non-destructive schema migration for the 6 dedup-append sheets.
+  // Idempotent: already-migrated sheets are skipped. Reads each sheet's data
+  // into memory first, then prepends [parentCenter, department] columns and
+  // backfills via memberToDept + deptToParent lookups. Returns early so a
+  // {migrateSchema:true, centers, parentCenters} payload performs migration
+  // only — no writeRawData_/writeIssues_/etc.
+  //
+  // Order: MUST run before clearSheets / dedup / writers so a migrate-only
+  // payload doesn't fall through to destructive write handlers.
+  if (data.migrateSchema === true) {
+    if (Object.keys(lookups.memberToDept).length === 0) {
+      return ContentService.createTextOutput(JSON.stringify({
+        status: 'error',
+        error: 'migrateSchema requires data.centers + data.parentCenters in payload'
+      })).setMimeType(ContentService.MimeType.JSON);
+    }
+
+    var migrateSheets = [
+      { name: 'Daily Updates',     memberCol: 1 },
+      { name: 'Commits',           memberCol: 1 },
+      { name: 'Commit Analysis',   memberCol: 1 },
+      { name: 'Task Analysis',     memberCol: 3 },
+      { name: 'Plan Specs',        memberCol: 1 },
+      { name: 'Plan Correlations', memberCol: 1 }
+    ];
+
+    var migrateResults = {};
+    for (var mi = 0; mi < migrateSheets.length; mi++) {
+      var spec = migrateSheets[mi];
+      var migSheet = ss.getSheetByName(spec.name);
+      if (!migSheet) {
+        migrateResults[spec.name] = { migrated: 0, skipped: 0, reason: 'not_found' };
+        continue;
+      }
+      migrateResults[spec.name] = migrateSheetSchema_(migSheet, spec.memberCol, lookups);
+    }
+
+    return ContentService.createTextOutput(JSON.stringify({
+      status: 'ok',
+      operation: 'migrateSchema',
+      results: migrateResults
+    })).setMimeType(ContentService.MimeType.JSON);
+  }
 
   // Clear specified sheets before writing (for rebuild / schema migration)
   if (data.clearSheets) {

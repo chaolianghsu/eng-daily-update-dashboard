@@ -5,8 +5,16 @@ dashboard. The new schema prepends `parentCenter` and `department` columns to
 every per-member sheet, adds three new sheets (`Centers`, `Departments`,
 `Items`), and changes dedup keys from `date|member` to `date|dept|member`.
 
-The old schema is column-incompatible with the new one, so we clear the
-affected sheets first and then re-POST the current full dataset.
+There are TWO categories of sheets, and they migrate differently:
+
+- **Full-rewrite sheets** (`rawData`, `issues`, `leave`) — `writeRawData_`,
+  `writeIssues_`, `writeLeave_` all call `sheet.clear()` before writing. These
+  auto-migrate on the next normal `/sync` POST. No action needed.
+- **Dedup-append sheets** (`Daily Updates`, `Commits`, `Commit Analysis`,
+  `Task Analysis`, `Plan Specs`, `Plan Correlations`) — these accumulate
+  history and must NOT be cleared. Use the non-destructive
+  `migrateSchema` POST below, which prepends the two new columns in place
+  and backfills values from the centers/parentCenters payload.
 
 ## When to run
 
@@ -23,12 +31,53 @@ bun run build:appscript     # regenerates appscript/index.html (gitignored)
 bun run deploy:appscript    # clasp push — needs interactive login on first use
 ```
 
-### 2. Clear the old sheets
+### 2. Non-destructive schema migration for existing data
 
-This wipes every sheet whose schema changed plus the three new ones (clearing a
-non-existent sheet is a no-op on the server side, so listing them is safe).
+If you have an existing Spreadsheet with OLD-schema data in dedup-append sheets
+(`Daily Updates`, `Commits`, `Commit Analysis`, `Task Analysis`, `Plan Specs`,
+`Plan Correlations`), DO NOT `clearSheets` those — that wipes accumulated
+history. Instead, run a `migrateSchema` POST. It idempotently prepends
+`parentCenter` and `department` columns at position 1 of each dedup-append
+sheet, backfilling values via the `centers` config in the payload. Already-
+migrated sheets are skipped (no-op). Re-running is safe.
+
+For the 3 full-rewrite sheets (`rawData`, `issues`, `leave`), no migration is
+needed — the next normal `/sync` POST auto-rewrites them in NEW schema.
 
 Replace `$APPSCRIPT_URL` with your deployed `/exec` endpoint.
+
+```bash
+curl -L -X POST "$APPSCRIPT_URL" \
+  -H 'Content-Type: application/json' \
+  -d "{\"migrateSchema\":true,\"centers\":$(node -e 'console.log(JSON.stringify(require(\"./public/raw_data.json\").centers))'),\"parentCenters\":$(node -e 'console.log(JSON.stringify(require(\"./public/raw_data.json\").parentCenters))')}"
+```
+
+Expected response (each per-sheet entry reports a `reason`:
+`completed` | `already_migrated` | `empty` | `not_found`):
+
+```json
+{
+  "status": "ok",
+  "operation": "migrateSchema",
+  "results": {
+    "Daily Updates":     { "migrated": 312, "skipped": 0, "reason": "completed" },
+    "Commits":           { "migrated": 1248, "skipped": 0, "reason": "completed" },
+    "Commit Analysis":   { "migrated": 312, "skipped": 0, "reason": "completed" },
+    "Task Analysis":     { "migrated": 17, "skipped": 0, "reason": "completed" },
+    "Plan Specs":        { "migrated": 0, "skipped": 0, "reason": "empty" },
+    "Plan Correlations": { "migrated": 0, "skipped": 1, "reason": "already_migrated" }
+  }
+}
+```
+
+If `lookups.memberToDept` is empty (caller forgot to include `centers`), the
+endpoint returns `{ status: "error", error: "..." }` and migrates nothing.
+
+#### Legacy destructive flow (only if you want a clean wipe)
+
+Only useful if you are willing to lose all dedup-append history. Wipes every
+schema-changed sheet plus the three new ones (clearing a non-existent sheet is
+a no-op on the server side, so listing them is safe).
 
 ```bash
 curl -L -X POST "$APPSCRIPT_URL" \
