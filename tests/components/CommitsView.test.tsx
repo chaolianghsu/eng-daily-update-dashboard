@@ -106,3 +106,84 @@ describe("CommitsView commit detail time display", () => {
     expect(cells[1].textContent).toBe("—");
   });
 });
+
+describe("CommitsView center filter compliance", () => {
+  const commitDataMulti = {
+    commits: {
+      "3/18": {
+        Joyce: {
+          count: 2,
+          projects: ["projA"],
+          items: [
+            { title: "Joyce fix", sha: "j1", project: "projA", url: "u/j1" },
+            { title: "Joyce feat", sha: "j2", project: "projA", url: "u/j2" },
+          ],
+        },
+        Richard: {
+          count: 1,
+          projects: ["projB"],
+          items: [{ title: "Richard chore", sha: "r1", project: "projB", url: "u/r1" }],
+        },
+      },
+    },
+    analysis: {
+      "3/18": {
+        Joyce: { status: "✅", commitCount: 2, hours: 8 },
+        Richard: { status: "✅", commitCount: 1, hours: 8 },
+      },
+    },
+    projectRisks: [],
+  };
+
+  const taskAnalysisDataMulti = {
+    analysisDate: "2026-03-18",
+    period: "3/18-3/18",
+    warnings: [
+      { date: "3/18", member: "Joyce", severity: "🔴", type: "low_output", task: "T1", commits: "j1", reasoning: "x" },
+      { date: "3/18", member: "Richard", severity: "🟠", type: "outlier", task: "T2", commits: "r1", reasoning: "y" },
+    ],
+    summary: { totalWarnings: 2, critical: 1, warning: 0, caution: 1 },
+  };
+
+  it("filters task warnings by members", () => {
+    const props = {
+      ...baseProps,
+      commitData: commitDataMulti,
+      members: ["Joyce"],
+      memberColors: { Joyce: "#f472b6" },
+      taskAnalysisData: taskAnalysisDataMulti,
+    };
+    render(<CommitsView {...props} />);
+    expect(screen.getByText("T1")).toBeInTheDocument();
+    expect(screen.queryByText("T2")).not.toBeInTheDocument();
+  });
+
+  it("filters commit detail by members", () => {
+    const props = {
+      ...baseProps,
+      commitData: commitDataMulti,
+      members: ["Joyce"],
+      memberColors: { Joyce: "#f472b6" },
+      taskAnalysisData: null,
+    };
+    render(<CommitsView {...props} />);
+    // 2 commits row for Joyce should exist; Richard should not.
+    expect(screen.getByText(/2 commits/)).toBeInTheDocument();
+    expect(screen.queryByText(/1 commits/)).not.toBeInTheDocument();
+  });
+
+  it("when all members are in filter, behavior unchanged (both rendered)", () => {
+    const props = {
+      ...baseProps,
+      commitData: commitDataMulti,
+      members: ["Joyce", "Richard"],
+      memberColors: { Joyce: "#f472b6", Richard: "#60a5fa" },
+      taskAnalysisData: taskAnalysisDataMulti,
+    };
+    render(<CommitsView {...props} />);
+    expect(screen.getByText("T1")).toBeInTheDocument();
+    expect(screen.getByText("T2")).toBeInTheDocument();
+    expect(screen.getByText(/2 commits/)).toBeInTheDocument();
+    expect(screen.getByText(/1 commits/)).toBeInTheDocument();
+  });
+});

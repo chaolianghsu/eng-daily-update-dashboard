@@ -32,11 +32,13 @@ interface CommitsViewProps {
 export default function CommitsView({ commitData, dates, members, memberColors, leave, activeDate, taskAnalysisData, planSpecs }: CommitsViewProps) {
   const { commits, analysis, projectRisks } = commitData;
   const [expandedMember, setExpandedMember] = useState(null);
+  const memberSet = new Set(members);
 
   const projectSet = new Set<string>();
   const memberProjectCounts: Record<string, Record<string, number>> = {};
   const dateCommits = commits[activeDate] || {};
   for (const [member, data] of Object.entries(dateCommits)) {
+    if (!memberSet.has(member)) continue;
     if (!memberProjectCounts[member]) memberProjectCounts[member] = {};
     for (const item of data.items) {
       projectSet.add(item.project);
@@ -54,6 +56,7 @@ export default function CommitsView({ commitData, dates, members, memberColors, 
   const memberCommitList: Record<string, any[]> = {};
   const dateCommitsForDetail = commits[activeDate] || {};
   for (const [member, data] of Object.entries(dateCommitsForDetail)) {
+    if (!memberSet.has(member)) continue;
     if (!memberCommitList[member]) memberCommitList[member] = [];
     for (const item of data.items) {
       memberCommitList[member].push({ date: activeDate, ...item });
@@ -231,7 +234,7 @@ export default function CommitsView({ commitData, dates, members, memberColors, 
         if (!taskAnalysisData || !taskAnalysisData.warnings) return null;
         const typeLabels = { low_output: '產出不足', mismatch: '領域不符', outlier: '偏離均值' };
         const typeIcons = { low_output: '🔴', mismatch: '🟠', outlier: '🟡' };
-        const warnings = taskAnalysisData.warnings.filter(w => w.date === activeDate);
+        const warnings = taskAnalysisData.warnings.filter(w => w.date === activeDate && memberSet.has(w.member));
 
         // Compute summary from filtered warnings
         const byType: Record<string, number> = {};
