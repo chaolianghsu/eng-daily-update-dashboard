@@ -13,8 +13,9 @@ interface StatusOverviewProps {
 }
 
 export function StatusOverview({ allIssues, issues, members, rawData, dates, activeDate }: StatusOverviewProps) {
-  const attentionIssues = allIssues;
-  const stableIssues = issues.filter(i => i.severity === "🟢");
+  const memberSet = new Set(members);
+  const attentionIssues = allIssues.filter(i => memberSet.has(i.member));
+  const stableIssues = issues.filter(i => i.severity === "🟢" && memberSet.has(i.member));
   const displayDate = activeDate || dates[dates.length - 1];
   const reportedCount = members.filter(m => {
     return rawData?.[displayDate]?.[m]?.total != null;
