@@ -1,51 +1,213 @@
 {
-  "analysisDate": "2026-05-14",
-  "period": "5/13",
+  "analysisDate": "2026-05-15",
+  "period": "5/11-5/15",
   "warnings": [
     {
-      "date": "5/13",
+      "date": "5/11",
       "member": "Ivy",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "KEYDERS 前端開發 - UI 調整、API 串接 (6.3H)",
-      "commits": "11 commits across keypo-frontend-2023",
-      "reasoning": "開發 6.3 小時，提交 11 個 commits，產出效率 1.75 commits/小時，遠低於團隊平均 4.39 commits/小時（差距 2.5 倍）。開發時數接近平均，但相對產出明顯不足。"
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工作 (7.8H)",
+      "commits": "0 筆",
+      "reasoning": "報告開發時數 7.8 小時，超過 3H 閾值，但當天無任何 commit 記錄，無法驗證產出。"
     },
     {
-      "date": "5/13",
-      "member": "Jason",
+      "date": "5/11",
+      "member": "家輝",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工作 (6H)",
+      "commits": "0 筆",
+      "reasoning": "報告開發時數 6 小時，超過 3H 閾值，但當天無任何 commit 記錄，無法驗證產出。"
+    },
+    {
+      "date": "5/11",
+      "member": "Joe",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工作 (7H)",
+      "commits": "0 筆",
+      "reasoning": "報告開發時數 7 小時，超過 3H 閾值，但當天無任何 commit 記錄，無法驗證產出。"
+    },
+    {
+      "date": "5/11",
+      "member": "日銜",
       "severity": "🟡",
       "type": "outlier",
-      "task": "網溫 seo / geo wave 1 調整 (5H)",
-      "commits": "9 commits across dailyview/2024-dailyview-app",
-      "reasoning": "開發 5 小時，提交 9 個 commits，產出效率 1.8 commits/小時，遠低於團隊平均 4.39 commits/小時（差距 2.4 倍）。開發時數最低，產出相對偏低。"
+      "task": "開發工作 (7H)",
+      "commits": "2 筆",
+      "reasoning": "開發時數 7H，但僅 2 筆 commit，遠低於團隊平均 16.2 commits，工時/commit 比例高於平均 7.67 倍。"
+    },
+    {
+      "date": "5/11",
+      "member": "Ted",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發工作 (6H)",
+      "commits": "3 筆",
+      "reasoning": "開發時數 6H，但僅 3 筆 commit，遠低於團隊平均 16.2 commits，工時/commit 比例高於平均 4.4 倍。"
+    },
+    {
+      "date": "5/12",
+      "member": "Ivy",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工作 (8.8H)",
+      "commits": "0 筆",
+      "reasoning": "報告開發時數 8.8 小時，超過 3H 閾值，但當天無任何 commit 記錄，無法驗證產出。"
+    },
+    {
+      "date": "5/12",
+      "member": "侑呈",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工作 (7.5H)",
+      "commits": "0 筆",
+      "reasoning": "報告開發時數 7.5 小時，超過 3H 閾值，但當天無任何 commit 記錄，無法驗證產出。"
+    },
+    {
+      "date": "5/12",
+      "member": "家輝",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工作 (5.5H)",
+      "commits": "0 筆",
+      "reasoning": "報告開發時數 5.5 小時，超過 3H 閾值，但當天無任何 commit 記錄，無法驗證產出。"
+    },
+    {
+      "date": "5/12",
+      "member": "日銜",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發工作 (6H)",
+      "commits": "3 筆",
+      "reasoning": "開發時數 6H，但僅 3 筆 commit，遠低於團隊平均 30.5 commits，工時/commit 比例高於平均 9.1 倍。"
+    },
+    {
+      "date": "5/12",
+      "member": "Wendy",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發工作 (7.5H)",
+      "commits": "2 筆",
+      "reasoning": "開發時數 7.5H，但僅 2 筆 commit，遠低於團隊平均 30.5 commits，工時/commit 比例高於平均 17.1 倍。"
     },
     {
       "date": "5/13",
       "member": "家輝",
       "severity": "🔴",
       "type": "low_output",
-      "task": "系統維運與基礎設施 - 重灌 OS、資料備份、RMQ 擴增等 (7.5H)",
-      "commits": "0 commits",
-      "reasoning": "開發任務共 7.5 小時（包括重灌 OS 4H、RMQ 容量擴增 1H、設定 consumer 失敗處理 0.5H 等），但未提交任何 commits。雖大多數為維運性質工作，惟按任務分類標記為 [Dev]，產出記錄缺失。"
+      "task": "開發工作 (7.5H)",
+      "commits": "0 筆",
+      "reasoning": "報告開發時數 7.5 小時，超過 3H 閾值，但當天無任何 commit 記錄，無法驗證產出。"
+    },
+    {
+      "date": "5/13",
+      "member": "Richard",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工作 (5H)",
+      "commits": "0 筆",
+      "reasoning": "報告開發時數 5 小時，超過 3H 閾值，但當天無任何 commit 記錄，無法驗證產出。"
+    },
+    {
+      "date": "5/13",
+      "member": "Patty",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工作 (8H)",
+      "commits": "0 筆",
+      "reasoning": "報告開發時數 8 小時，超過 3H 閾值，但當天無任何 commit 記錄，無法驗證產出。"
+    },
+    {
+      "date": "5/13",
+      "member": "日銜",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發工作 (6.5H)",
+      "commits": "1 筆",
+      "reasoning": "開發時數 6.5H，但僅 1 筆 commit，遠低於團隊平均 24.8 commits，工時/commit 比例高於平均 22.4 倍。"
+    },
+    {
+      "date": "5/13",
+      "member": "Wendy",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發工作 (9.5H)",
+      "commits": "2 筆",
+      "reasoning": "開發時數 9.5H，但僅 2 筆 commit，遠低於團隊平均 24.8 commits，工時/commit 比例高於平均 16.4 倍。"
+    },
+    {
+      "date": "5/13",
+      "member": "侑呈",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發工作 (8H)",
+      "commits": "6 筆",
+      "reasoning": "開發時數 8H，但僅 6 筆 commit，低於團隊平均 24.8 commits（僅 24% of avg），工時/commit 比例高於平均 4.6 倍。"
     },
     {
       "date": "5/13",
       "member": "Joe",
       "severity": "🟡",
       "type": "outlier",
-      "task": "AI 聆聽開發、測試機 BDE 功能整併 (7H)",
-      "commits": "6 commits across keypo-frontend-2023",
-      "reasoning": "開發 7 小時，提交 6 個 commits（多為 merge commits），產出效率 0.86 commits/小時，遠低於團隊平均 4.39 commits/小時（差距 5 倍以上）。開發時數接近平均，但實質產出與工時嚴重不成比例。"
+      "task": "開發工作 (7H)",
+      "commits": "5 筆",
+      "reasoning": "開發時數 7H，但僅 5 筆 commit，低於團隊平均 24.8 commits（僅 20% of avg），工時/commit 比例高於平均 4.8 倍。"
+    },
+    {
+      "date": "5/14",
+      "member": "Richard",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工作 (6.5H)",
+      "commits": "0 筆",
+      "reasoning": "報告開發時數 6.5 小時，超過 3H 閾值，但當天無任何 commit 記錄，無法驗證產出。"
+    },
+    {
+      "date": "5/14",
+      "member": "Patty",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工作 (8H)",
+      "commits": "0 筆",
+      "reasoning": "報告開發時數 8 小時，超過 3H 閾值，但當天無任何 commit 記錄，無法驗證產出。"
+    },
+    {
+      "date": "5/14",
+      "member": "Ivy",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發工作 (12H)",
+      "commits": "5 筆",
+      "reasoning": "開發時數 12H，但僅 5 筆 commit，遠低於團隊平均 34.3 commits（僅 15% of avg），工時/commit 比例高於平均 9.3 倍。"
+    },
+    {
+      "date": "5/14",
+      "member": "日銜",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發工作 (8H)",
+      "commits": "15 筆",
+      "reasoning": "開發時數 8H，但 15 筆 commit 低於團隊平均 34.3 commits（44% of avg），工時/commit 比例高於平均 2.29 倍，顯著低於團隊平均。"
+    },
+    {
+      "date": "5/14",
+      "member": "家輝",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發工作 (6.5H)",
+      "commits": "2 筆",
+      "reasoning": "開發時數 6.5H，但僅 2 筆 commit，遠低於團隊平均 34.3 commits（僅 6% of avg），工時/commit 比例高於平均 12.5 倍。"
     }
   ],
   "summary": {
-    "totalMembers": 10,
-    "totalWarnings": 4,
+    "totalMembers": 14,
+    "totalWarnings": 22,
     "byType": {
-      "low_output": 1,
+      "low_output": 11,
       "mismatch": 0,
-      "outlier": 3
+      "outlier": 11
     }
   }
 }
