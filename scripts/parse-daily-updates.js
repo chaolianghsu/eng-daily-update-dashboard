@@ -34,6 +34,19 @@ function normalizeChatConfig(config) {
   };
 }
 
+// pickSpace: select a space from a normalized config by spaceId or center name.
+// Returns null if no match. Caller decides what to do (CLI errors, parseMessagesFile throws).
+function pickSpace(normalizedConfig, selector) {
+  if (!normalizedConfig || !Array.isArray(normalizedConfig.spaces) || !selector) {
+    return null;
+  }
+  return (
+    normalizedConfig.spaces.find(
+      (s) => s.spaceId === selector || s.center === selector
+    ) || null
+  );
+}
+
 // --- Constants ---
 
 const MEETING_KEYWORDS = /meeting|會議|週會|讀書會|例會|討論|分享會|sync|臨時會/i;
@@ -399,20 +412,45 @@ function parseMessagesFile(messageFiles, manualLeave, options = {}) {
     : { rawData: {}, issues: [] };
 
   const messages = loadMessages(messageFiles);
-  // For now use the first space's memberMap. Multi-space orchestration is
-  // driven by the /sync-daily-updates skill which invokes the parser once
-  // per space and merges results upstream.
   const { queryKeyword } = normalized;
-  const memberMap = options.memberMap || normalized.spaces[0].memberMap;
 
-  // Determine reporting members from existing data
-  const existingDates = Object.keys(existing.rawData);
-  const reportingMembers =
-    existingDates.length > 0
-      ? Object.keys(
-          existing.rawData[existingDates[existingDates.length - 1]]
-        )
-      : [];
+  // Select the active space:
+  //   - explicit options.spaceSelector (spaceId or center) → exact pick (error if no match)
+  //   - else default to spaces[0] (preserves legacy single-space behavior)
+  let activeSpace;
+  if (options.spaceSelector) {
+    activeSpace = pickSpace(normalized, options.spaceSelector);
+    if (!activeSpace) {
+      throw new Error(
+        `parse-daily-updates: no space matches selector "${options.spaceSelector}". ` +
+          `Available: ${normalized.spaces
+            .map((s) => `${s.center} (${s.spaceId})`)
+            .join(', ')}`
+      );
+    }
+  } else {
+    activeSpace = normalized.spaces[0];
+  }
+  const memberMap = options.memberMap || activeSpace.memberMap;
+
+  // Determine reporting members:
+  //   - explicit center scope from config.centers[activeSpace.center].members
+  //   - else fall back to the active space's memberMap values (no cross-center pollution)
+  //   - else (no config at all) fall back to existing rawData keys for full backward compat
+  let reportingMembers;
+  if (normalized.centers && activeSpace.center && normalized.centers[activeSpace.center]?.members) {
+    reportingMembers = normalized.centers[activeSpace.center].members.slice();
+  } else if (options.spaceSelector) {
+    // When caller explicitly picked a space, scope strictly to that space's members.
+    reportingMembers = Array.from(new Set(Object.values(memberMap)));
+  } else {
+    // Legacy single-space behavior: use existing data's member shape.
+    const existingDates = Object.keys(existing.rawData);
+    reportingMembers =
+      existingDates.length > 0
+        ? Object.keys(existing.rawData[existingDates[existingDates.length - 1]])
+        : Array.from(new Set(Object.values(memberMap)));
+  }
 
   // Find threads
   const threadMap = findThreads(messages, queryKeyword);
@@ -516,6 +554,7 @@ if (require.main === module) {
   const args = process.argv.slice(2);
   const files = [];
   const manualLeave = {};
+  let spaceSelector = null;
 
   for (let i = 0; i < args.length; i++) {
     if (args[i] === '--leave' && args[i + 1]) {
@@ -529,6 +568,10 @@ if (require.main === module) {
       if (!manualLeave[name]) manualLeave[name] = [];
       manualLeave[name].push({ start, end });
       i++;
+    } else if ((args[i] === '--space-id' || args[i] === '--space') && args[i + 1]) {
+      // Accepts spaceId ("spaces/AAQ...") or center name ("工程", "技發").
+      spaceSelector = args[i + 1];
+      i++;
     } else {
       files.push(args[i]);
     }
@@ -536,15 +579,28 @@ if (require.main === module) {
 
   if (files.length === 0) {
     console.error(
-      'Usage: node scripts/parse-daily-updates.js <messages-file> [--leave "Name:M/D-M/D"]'
+      'Usage: node scripts/parse-daily-updates.js <messages-file> ' +
+        '[--leave "Name:M/D-M/D"] [--space-id <spaceId|center>]\n' +
+        '\n' +
+        '  --space-id, --space  Pick which space from chat-config.json to parse.\n' +
+        '                       Accepts the literal spaceId ("spaces/AAQ...") or\n' +
+        '                       the center name from spaces[].center ("工程", "技發").\n' +
+        '                       Omit to default to spaces[0] (legacy behavior).'
     );
     process.exit(1);
   }
 
-  const result = parseMessagesFile(
-    files,
-    Object.keys(manualLeave).length > 0 ? manualLeave : null
-  );
+  let result;
+  try {
+    result = parseMessagesFile(
+      files,
+      Object.keys(manualLeave).length > 0 ? manualLeave : null,
+      spaceSelector ? { spaceSelector } : {}
+    );
+  } catch (err) {
+    console.error(err.message);
+    process.exit(1);
+  }
   console.log(JSON.stringify(result, null, 2));
 }
 
@@ -559,4 +615,5 @@ module.exports = {
   parseMessagesFile,
   findThreads,
   normalizeChatConfig,
+  pickSpace,
 };

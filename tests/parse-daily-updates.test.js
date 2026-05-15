@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { parseHoursFromText, generateIssues, findThreads, normalizeChatConfig } from '../scripts/parse-daily-updates.js';
+import { parseHoursFromText, generateIssues, findThreads, normalizeChatConfig, parseMessagesFile, pickSpace } from '../scripts/parse-daily-updates.js';
 
 describe('parseHoursFromText', () => {
   it("returns status 'reported' when hours found", () => {
@@ -174,6 +174,195 @@ describe('normalizeChatConfig', () => {
     };
     const n = normalizeChatConfig(legacyWithMeta);
     expect(n.centers).toBeDefined();
+  });
+});
+
+describe('pickSpace', () => {
+  const config = {
+    spaces: [
+      { spaceId: 'spaces/A', center: '工程', memberMap: { 'users/u1': 'Joyce' } },
+      { spaceId: 'spaces/B', center: '技發', memberMap: { 'users/u2': 'Richard' } },
+    ],
+  };
+
+  it('matches by spaceId', () => {
+    const space = pickSpace(config, 'spaces/A');
+    expect(space.center).toBe('工程');
+  });
+
+  it('matches by center name', () => {
+    const space = pickSpace(config, '技發');
+    expect(space.center).toBe('技發');
+    expect(space.spaceId).toBe('spaces/B');
+  });
+
+  it('returns null on unknown selector', () => {
+    expect(pickSpace(config, 'spaces/UNKNOWN')).toBeNull();
+    expect(pickSpace(config, '未知')).toBeNull();
+  });
+
+  it('works on legacy config after normalization', () => {
+    const legacy = normalizeChatConfig({ spaceId: 'spaces/X', memberMap: {} });
+    const space = pickSpace(legacy, 'spaces/X');
+    expect(space).not.toBeNull();
+    expect(space.center).toBe('工程');
+  });
+});
+
+describe('parseMessagesFile with --space-id selector', () => {
+  const config = {
+    queryKeyword: 'Daily Update',
+    spaces: [
+      {
+        spaceId: 'spaces/A',
+        center: '工程',
+        memberMap: {
+          'users/u1': 'Joyce',
+          'users/u2': 'Ivy',
+        },
+      },
+      {
+        spaceId: 'spaces/B',
+        center: '技發',
+        memberMap: {
+          'users/u3': 'Richard',
+          'users/u4': 'Patty',
+        },
+      },
+    ],
+    centers: {
+      工程: { label: '工程部', members: ['Joyce', 'Ivy'] },
+      技發: { label: '技術發展部', members: ['Richard', 'Patty'] },
+    },
+  };
+
+  it('uses the matched space memberMap (not spaces[0]) when spaceSelector is set', () => {
+    // Single thread starter
+    const messages = [
+      {
+        text: '5/14 Daily Update',
+        thread: { name: 'threads/t1' },
+        name: 'messages/m1',
+      },
+      // Reply from Richard (技發 user)
+      {
+        text: '5/14 進度：\n1. [BDE] 開發 (5H)',
+        thread: { name: 'threads/t1' },
+        name: 'messages/m2',
+        sender: { name: 'users/u3' },
+      },
+      // Reply from Joyce (工程 user) — must NOT be parsed under 技發 selection
+      {
+        text: '5/14 進度：\n1. [KEYPO] foo (3H)',
+        thread: { name: 'threads/t1' },
+        name: 'messages/m3',
+        sender: { name: 'users/u1' },
+      },
+    ];
+    // Mock the message file via in-memory injection: use a unique fixture path.
+    const fs = require('fs');
+    const tmpPath = '/tmp/test-parse-messages.json';
+    fs.writeFileSync(tmpPath, JSON.stringify({ messages }));
+
+    const result = parseMessagesFile([tmpPath], null, {
+      config,
+      spaceSelector: '技發',
+    });
+    // Richard should be present; Joyce must not be (different space)
+    const entry = result.dateEntries['5/14']?.entry || {};
+    expect(entry.Richard).toBeDefined();
+    expect(entry.Richard.total).toBe(5);
+    expect(entry.Joyce).toBeUndefined();
+  });
+
+  it('scopes reportingMembers to centers[space.center].members', () => {
+    const fs = require('fs');
+    const tmpPath = '/tmp/test-parse-messages-2.json';
+    fs.writeFileSync(tmpPath, JSON.stringify({
+      messages: [
+        { text: '5/14 Daily Update', thread: { name: 'threads/t1' }, name: 'messages/m1' },
+        {
+          text: '5/14 進度：\n1. [BDE] 開發 (5H)',
+          thread: { name: 'threads/t1' },
+          name: 'messages/m2',
+          sender: { name: 'users/u3' },
+        },
+      ],
+    }));
+
+    const result = parseMessagesFile([tmpPath], null, {
+      config,
+      spaceSelector: 'spaces/B',
+    });
+    const entry = result.dateEntries['5/14']?.entry || {};
+    const memberNames = Object.keys(entry);
+    // Reporting members for 技發 are Richard and Patty only — must NOT include 工程 members
+    expect(memberNames).toContain('Richard');
+    expect(memberNames).toContain('Patty');
+    expect(memberNames).not.toContain('Joyce');
+    expect(memberNames).not.toContain('Ivy');
+  });
+
+  it('falls back to space.memberMap when centers metadata missing', () => {
+    const noCentersConfig = {
+      queryKeyword: 'Daily Update',
+      spaces: [
+        {
+          spaceId: 'spaces/X',
+          center: '技發',
+          memberMap: { 'users/u3': 'Richard', 'users/u4': 'Patty' },
+        },
+      ],
+    };
+    const fs = require('fs');
+    const tmpPath = '/tmp/test-parse-messages-3.json';
+    fs.writeFileSync(tmpPath, JSON.stringify({
+      messages: [
+        { text: '5/14 Daily Update', thread: { name: 'threads/t1' }, name: 'messages/m1' },
+        {
+          text: '5/14 進度：\n1. [BDE] X (3H)',
+          thread: { name: 'threads/t1' },
+          name: 'messages/m2',
+          sender: { name: 'users/u3' },
+        },
+      ],
+    }));
+    const result = parseMessagesFile([tmpPath], null, {
+      config: noCentersConfig,
+      spaceSelector: 'spaces/X',
+    });
+    const memberNames = Object.keys(result.dateEntries['5/14']?.entry || {});
+    expect(memberNames.sort()).toEqual(['Patty', 'Richard']);
+  });
+
+  it('throws when spaceSelector does not match any space', () => {
+    const fs = require('fs');
+    const tmpPath = '/tmp/test-parse-messages-4.json';
+    fs.writeFileSync(tmpPath, JSON.stringify({ messages: [] }));
+    expect(() =>
+      parseMessagesFile([tmpPath], null, { config, spaceSelector: 'spaces/ZZZ' })
+    ).toThrow(/no space matches/i);
+  });
+
+  it('preserves legacy behavior (defaults to spaces[0]) when spaceSelector omitted', () => {
+    const fs = require('fs');
+    const tmpPath = '/tmp/test-parse-messages-5.json';
+    fs.writeFileSync(tmpPath, JSON.stringify({
+      messages: [
+        { text: '5/14 Daily Update', thread: { name: 'threads/t1' }, name: 'messages/m1' },
+        {
+          text: '5/14 進度：\n1. [KEYPO] foo (3H)',
+          thread: { name: 'threads/t1' },
+          name: 'messages/m2',
+          sender: { name: 'users/u1' },
+        },
+      ],
+    }));
+    const result = parseMessagesFile([tmpPath], null, { config });
+    const entry = result.dateEntries['5/14']?.entry || {};
+    // Default to first space → 工程 → Joyce should be parsed
+    expect(entry.Joyce).toBeDefined();
+    expect(entry.Joyce.total).toBe(3);
   });
 });
 
