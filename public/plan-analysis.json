@@ -1,436 +1,561 @@
 {
-  "analysisDate": "2026-05-14",
-  "period": "5/13",
+  "analysisDate": "2026-05-18",
+  "period": "5/15",
   "planSpecs": [
     {
-      "date": "5/13",
-      "member": "Wendy",
+      "date": "5/15",
+      "member": "禎佑",
       "commit": {
-        "title": "docs(keyders): plan kolranking pool=5000 + regions_exclude refactor",
-        "sha": "65467eab",
-        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/65467eab",
+        "title": "docs: spec — amount unit is NTD (not 千元), add quarter_end field",
+        "sha": "6db1cb2a",
+        "project": "chris.su/findata-crawler",
+        "url": "https://biglab.buygta.today/chris.su/findata-crawler/-/commit/6db1cb2a",
         "source": "gitlab"
       },
-      "files": ["docs/superpowers/plans/2026-05-12-kolranking-pool-limit.md", "docs/superpowers/specs/2026-05-07-keyders-api-spec.md"]
+      "files": ["docs/superpowers/specs/2026-05-15-statementdog-crawler-design.md"]
     },
     {
-      "date": "5/13",
-      "member": "Wendy",
+      "date": "5/15",
+      "member": "禎佑",
       "commit": {
-        "title": "docs(keyders): add kolkpioverview implementation plan",
-        "sha": "5f7255b0",
-        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/5f7255b0",
+        "title": "docs: spec + plan for PostgreSQL write-through",
+        "sha": "c2490dc2",
+        "project": "chris.su/findata-crawler",
+        "url": "https://biglab.buygta.today/chris.su/findata-crawler/-/commit/c2490dc2",
         "source": "gitlab"
       },
-      "files": ["docs/superpowers/plans/2026-05-13-kolkpioverview.md"]
+      "files": [
+        "docs/superpowers/plans/2026-05-15-postgres-write.md",
+        "docs/superpowers/specs/2026-05-15-statementdog-crawler-design.md"
+      ]
     },
     {
-      "date": "5/13",
-      "member": "Wendy",
+      "date": "5/15",
+      "member": "禎佑",
       "commit": {
-        "title": "docs(keyders): add kolfollowertrend implementation plan",
-        "sha": "45e51c48",
-        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/45e51c48",
+        "title": "docs: spec — explain null gross_margin for financial-sector stocks",
+        "sha": "c2493589",
+        "project": "chris.su/findata-crawler",
+        "url": "https://biglab.buygta.today/chris.su/findata-crawler/-/commit/c2493589",
         "source": "gitlab"
       },
-      "files": ["docs/superpowers/plans/2026-05-13-kolfollowertrend.md"]
+      "files": ["docs/superpowers/specs/2026-05-15-statementdog-crawler-design.md"]
     },
     {
-      "date": "5/13",
-      "member": "Joyce",
+      "date": "5/15",
+      "member": "禎佑",
       "commit": {
-        "title": "docs(account): add regional email templates design spec",
-        "sha": "5af569cf",
-        "project": "KEYPO/keypo-backend",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/5af569cf",
+        "title": "docs(spec): risk rule profile schema + CRUD design (Spec A)",
+        "sha": "a7037b6f",
+        "project": "chris.su/keykyc-backend-v2",
+        "url": "https://biglab.buygta.today/chris.su/keykyc-backend-v2/-/commit/a7037b6f",
         "source": "gitlab"
       },
-      "files": ["docs/superpowers/specs/2026-04-21-regional-email-templates-design.md"]
+      "files": ["docs/superpowers/specs/2026-05-15-risk-rule-profile-design.md"]
     },
     {
-      "date": "5/13",
-      "member": "Joyce",
+      "date": "5/15",
+      "member": "禎佑",
       "commit": {
-        "title": "docs(account): add regional email templates implementation plan",
-        "sha": "5858bd2d",
-        "project": "KEYPO/keypo-backend",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/5858bd2d",
+        "title": "docs(plan): risk rule profile (Spec A) implementation plan",
+        "sha": "5a8cd449",
+        "project": "chris.su/keykyc-backend-v2",
+        "url": "https://biglab.buygta.today/chris.su/keykyc-backend-v2/-/commit/5a8cd449",
         "source": "gitlab"
       },
-      "files": ["docs/superpowers/plans/2026-04-21-regional-email-templates.md"]
+      "files": ["docs/superpowers/plans/2026-05-15-risk-rule-profile.md"]
     },
     {
-      "date": "5/13",
-      "member": "Joyce",
+      "date": "5/15",
+      "member": "禎佑",
       "commit": {
-        "title": "docs(agent_delegation): bump spec v4.5 -> v4.6 for v2 outbound integration",
-        "sha": "464f8076",
-        "project": "KEYPO/keypo-backend",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/464f8076",
+        "title": "docs: add Risk Rule v2 spec + implementation plan",
+        "sha": "4791d21c",
+        "project": "chris.su/keykyc-backend-v2",
+        "url": "https://biglab.buygta.today/chris.su/keykyc-backend-v2/-/commit/4791d21c",
         "source": "gitlab"
       },
-      "files": ["docs/keypo_agent_delegation_integration.md", "docs/superpowers/plans/2026-05-11-copilot-agent-delegation.md", "docs/superpowers/specs/2026-05-11-copilot-agent-delegation-design.md"]
+      "files": [
+        "docs/superpowers/plans/2026-05-15-risk-rule-v2.md",
+        "docs/superpowers/specs/2026-05-15-risk-rule-v2-design.md"
+      ]
     },
     {
-      "date": "5/13",
-      "member": "Joyce",
+      "date": "5/15",
+      "member": "禎佑",
       "commit": {
-        "title": "docs(agent_delegation): bump spec v4.6 -> v4.7 for X-Agent-Token header transport",
-        "sha": "a30f8f00",
-        "project": "KEYPO/keypo-backend",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/a30f8f00",
+        "title": "docs: add financial_statement_list implementation plan",
+        "sha": "c2adfec7",
+        "project": "chris.su/keykyc-backend-v2",
+        "url": "https://biglab.buygta.today/chris.su/keykyc-backend-v2/-/commit/c2adfec7",
         "source": "gitlab"
       },
-      "files": ["docs/superpowers/specs/2026-05-11-copilot-agent-delegation-design.md"]
+      "files": ["docs/superpowers/plans/2026-05-15-financial-statement-list.md"]
     },
     {
-      "date": "5/13",
-      "member": "Joyce",
+      "date": "5/15",
+      "member": "禎佑",
       "commit": {
-        "title": "docs(agent_delegation): add v4.7 Tasks 29-32 (X-Agent-Token header transport)",
-        "sha": "cd96bc4a",
-        "project": "KEYPO/keypo-backend",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/cd96bc4a",
+        "title": "docs: add business card OCR pipeline design",
+        "sha": "235f1a8f",
+        "project": "chris.su/keykyc-backend-v2",
+        "url": "https://biglab.buygta.today/chris.su/keykyc-backend-v2/-/commit/235f1a8f",
         "source": "gitlab"
       },
-      "files": ["docs/superpowers/plans/2026-05-11-copilot-agent-delegation.md"]
+      "files": ["docs/superpowers/specs/2026-05-15-business-card-ocr-design.md"]
     },
     {
-      "date": "5/13",
-      "member": "Aaron",
+      "date": "5/15",
+      "member": "禎佑",
       "commit": {
-        "title": "docs: spec for brand alias normalization + mention count",
-        "sha": "3fd5fd3a",
-        "project": "KEYPO/keypo-ai-listen",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-ai-listen/-/commit/3fd5fd3a",
+        "title": "docs: add business card OCR pipeline implementation plan",
+        "sha": "99b93ae8",
+        "project": "chris.su/keykyc-backend-v2",
+        "url": "https://biglab.buygta.today/chris.su/keykyc-backend-v2/-/commit/99b93ae8",
         "source": "gitlab"
       },
-      "files": ["docs/superpowers/specs/2026-05-13-brand-alias-mention-count-design.md"]
+      "files": ["docs/superpowers/plans/2026-05-15-business-card-ocr.md"]
     },
     {
-      "date": "5/13",
-      "member": "Aaron",
+      "date": "5/15",
+      "member": "禎佑",
       "commit": {
-        "title": "docs: implementation plan for brand alias normalization + mention count",
-        "sha": "191c3f7d",
-        "project": "KEYPO/keypo-ai-listen",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-ai-listen/-/commit/191c3f7d",
+        "title": "docs: add business card upload + CRUD design",
+        "sha": "8ac17a40",
+        "project": "chris.su/keykyc-backend-v2",
+        "url": "https://biglab.buygta.today/chris.su/keykyc-backend-v2/-/commit/8ac17a40",
         "source": "gitlab"
       },
-      "files": ["docs/superpowers/plans/2026-05-13-brand-alias-mention-count.md"]
+      "files": ["docs/superpowers/specs/2026-05-15-business-card-upload-design.md"]
     },
     {
-      "date": "5/13",
+      "date": "5/15",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs: add business card upload + CRUD implementation plan",
+        "sha": "5e52edac",
+        "project": "chris.su/keykyc-backend-v2",
+        "url": "https://biglab.buygta.today/chris.su/keykyc-backend-v2/-/commit/5e52edac",
+        "source": "gitlab"
+      },
+      "files": ["docs/superpowers/plans/2026-05-15-business-card-upload.md"]
+    },
+    {
+      "date": "5/15",
       "member": "Jason",
       "commit": {
-        "title": "docs(a11y): add lighthouse-perf-a11y spec and plan",
-        "sha": "8b11056d",
+        "title": "docs(perf): add INP RUM instrumentation design spec + plan",
+        "sha": "0bfa974f",
         "project": "dailyview/2024-dailyview-app",
-        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-app/-/commit/8b11056d",
+        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-app/-/commit/0bfa974f",
         "source": "gitlab"
       },
-      "files": ["docs/superpowers/plans/2026-05-13-lighthouse-perf-a11y.md", "docs/superpowers/specs/2026-05-12-lighthouse-perf-a11y-design.md"]
+      "files": [
+        "docs/superpowers/plans/2026-05-15-inp-instrumentation.md",
+        "docs/superpowers/specs/2026-05-15-inp-instrumentation-design.md"
+      ]
     },
     {
-      "date": "5/13",
-      "member": "禎佑",
+      "date": "5/15",
+      "member": "Jason",
       "commit": {
-        "title": "docs(spec): auth and search api design",
-        "sha": "b2185fac",
-        "project": "chris.su/keykyc-backend-v2",
-        "url": "https://biglab.buygta.today/chris.su/keykyc-backend-v2/-/commit/b2185fac",
+        "title": "docs(seo-geo): log 2026-05-15 INP RUM instrumentation work",
+        "sha": "ae09576a",
+        "project": "dailyview/2024-dailyview-app",
+        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-app/-/commit/ae09576a",
         "source": "gitlab"
       },
-      "files": ["docs/superpowers/specs/2026-05-13-auth-and-search-design.md"]
+      "files": ["docs/seo-geo/log.md"]
     },
     {
-      "date": "5/13",
-      "member": "禎佑",
-      "commit": {
-        "title": "docs(plan): auth and search implementation plan",
-        "sha": "ed2621c2",
-        "project": "chris.su/keykyc-backend-v2",
-        "url": "https://biglab.buygta.today/chris.su/keykyc-backend-v2/-/commit/ed2621c2",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/plans/2026-05-13-auth-and-search.md"]
-    },
-    {
-      "date": "5/13",
-      "member": "禎佑",
-      "commit": {
-        "title": "docs: update README + frontend doc for auth + search endpoints",
-        "sha": "f99ab05e",
-        "project": "chris.su/keykyc-backend-v2",
-        "url": "https://biglab.buygta.today/chris.su/keykyc-backend-v2/-/commit/f99ab05e",
-        "source": "gitlab"
-      },
-      "files": ["docs/frontend/company-list-schema.md"]
-    },
-    {
-      "date": "5/13",
-      "member": "禎佑",
-      "commit": {
-        "title": "docs(plan): moenv run() is single-shot, not per-county",
-        "sha": "d65137f0",
-        "project": "chris.su/penalty-crawler",
-        "url": "https://biglab.buygta.today/chris.su/penalty-crawler/-/commit/d65137f0",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/plans/2026-05-12-penalty-crawler.md"]
-    },
-    {
-      "date": "5/13",
-      "member": "禎佑",
-      "commit": {
-        "title": "docs: plan FSC crawlers expansion (4 sources, A-group)",
-        "sha": "73dc0a9f",
-        "project": "chris.su/penalty-crawler",
-        "url": "https://biglab.buygta.today/chris.su/penalty-crawler/-/commit/73dc0a9f",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/plans/2026-05-13-fsc-crawlers.md", "docs/superpowers/specs/2026-05-12-penalty-crawler-design.md"]
-    },
-    {
-      "date": "5/13",
-      "member": "禎佑",
-      "commit": {
-        "title": "docs(plan): record fsc_main DOM differs from banking; selectors must be rewritten",
-        "sha": "be29ae66",
-        "project": "chris.su/penalty-crawler",
-        "url": "https://biglab.buygta.today/chris.su/penalty-crawler/-/commit/be29ae66",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/plans/2026-05-13-fsc-crawlers.md"]
-    },
-    {
-      "date": "5/13",
-      "member": "禎佑",
-      "commit": {
-        "title": "docs: plan fda_border crawler (B-group: food border inspection)",
-        "sha": "f69e9610",
-        "project": "chris.su/penalty-crawler",
-        "url": "https://biglab.buygta.today/chris.su/penalty-crawler/-/commit/f69e9610",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/plans/2026-05-13-fda-border.md"]
-    },
-    {
-      "date": "5/13",
-      "member": "禎佑",
-      "commit": {
-        "title": "docs(spec): add postgres-pipeline spec, link from main spec",
-        "sha": "5481d31b",
-        "project": "chris.su/penalty-crawler",
-        "url": "https://biglab.buygta.today/chris.su/penalty-crawler/-/commit/5481d31b",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/specs/2026-05-12-penalty-crawler-design.md", "docs/superpowers/specs/2026-05-13-postgres-pipeline.md"]
-    },
-    {
-      "date": "5/13",
-      "member": "禎佑",
-      "commit": {
-        "title": "docs: add project brief, design spec, and implementation plan",
-        "sha": "178b8421",
-        "project": "chris.su/company-crawler",
-        "url": "https://biglab.buygta.today/chris.su/company-crawler/-/commit/178b8421",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/plans/2026-05-13-company-crawler.md", "docs/superpowers/specs/2026-05-13-company-crawler-design.md"]
-    },
-    {
-      "date": "5/13",
+      "date": "5/15",
       "member": "哲緯",
       "commit": {
-        "title": "docs(plan): stage 4.7 regen path force-include-original implementation plan",
-        "sha": "a3781bbe",
-        "project": "bigdata-54837596/line-social-radar",
-        "url": "https://github.com/bigdata-54837596/line-social-radar/commit/a3781bbe",
-        "source": "github"
+        "title": "docs(spec): add §5.4.1 backend changes for per-user export jobs",
+        "sha": "c81658b1",
+        "project": "mason/bigmonitorV3",
+        "url": "https://biglab.buygta.today/mason/bigmonitorV3/-/commit/c81658b1",
+        "source": "gitlab"
       },
-      "files": ["docs/superpowers/plans/2026-05-13-stage4-7-regen-include-original.md"]
+      "files": ["docs/superpowers/specs/2026-05-12-bigmonitor-ui-redesign-design.md"]
     },
     {
-      "date": "5/13",
+      "date": "5/15",
       "member": "哲緯",
       "commit": {
-        "title": "docs(spec): stage 4.7 regen path force-include-original fix design",
-        "sha": "53d4d118",
-        "project": "bigdata-54837596/line-social-radar",
-        "url": "https://github.com/bigdata-54837596/line-social-radar/commit/53d4d118",
-        "source": "github"
+        "title": "docs(spec): add §5.4.1 backend changes for per-user export jobs",
+        "sha": "c81658b1",
+        "project": "bigmonitor/bigmonitor",
+        "url": "https://biglab.buygta.today/bigmonitor/bigmonitor/-/commit/c81658b1",
+        "source": "gitlab"
       },
-      "files": ["docs/superpowers/specs/2026-05-13-stage4-7-regen-include-original-design.md"]
+      "files": ["docs/superpowers/specs/2026-05-12-bigmonitor-ui-redesign-design.md"]
     },
     {
-      "date": "5/13",
+      "date": "5/15",
       "member": "哲緯",
       "commit": {
-        "title": "docs(plan): stage 2.5 inappropriate content filter implementation plan",
-        "sha": "2044e004",
-        "project": "bigdata-54837596/line-social-radar",
-        "url": "https://github.com/bigdata-54837596/line-social-radar/commit/2044e004",
+        "title": "docs: add implementation plan for historical images sync (#59)",
+        "sha": "981a87bb",
+        "project": "bigdata-54837596/line-social-radar-api",
+        "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/981a87bb",
         "source": "github"
       },
-      "files": ["docs/superpowers/plans/2026-05-13-stage2-5-inappropriate-filter.md"]
+      "files": ["docs/superpowers/plans/2026-05-11-historical-images-to-stock-library.md"]
     },
     {
-      "date": "5/13",
+      "date": "5/15",
       "member": "哲緯",
       "commit": {
-        "title": "docs(spec): stage 2.5 inappropriate content filter design",
-        "sha": "e8db005a",
-        "project": "bigdata-54837596/line-social-radar",
-        "url": "https://github.com/bigdata-54837596/line-social-radar/commit/e8db005a",
+        "title": "docs: add design spec for historical images to stock library sync",
+        "sha": "8e49d6d5",
+        "project": "bigdata-54837596/line-social-radar-api",
+        "url": "https://github.com/bigdata-54837596/line-social-radar-api/commit/8e49d6d5",
         "source": "github"
       },
-      "files": ["docs/superpowers/specs/2026-05-13-stage2-5-inappropriate-filter-design.md"]
+      "files": ["docs/superpowers/specs/2026-05-11-historical-images-to-stock-library-design.md"]
     },
     {
-      "date": "5/13",
-      "member": "哲緯",
+      "date": "5/15",
+      "member": "Aaron",
       "commit": {
-        "title": "docs(plan): entity generalizations mapping implementation plan",
-        "sha": "ca617777",
-        "project": "bigdata-54837596/line-social-radar",
-        "url": "https://github.com/bigdata-54837596/line-social-radar/commit/ca617777",
-        "source": "github"
+        "title": "docs(hitl): add delete keyword & filter group design spec",
+        "sha": "e8ffdb95",
+        "project": "KEYPO/keypo-backend",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/e8ffdb95",
+        "source": "gitlab"
       },
-      "files": ["docs/superpowers/plans/2026-05-13-entity-generalizations.md"]
+      "files": ["docs/superpowers/specs/2026-05-15-agent-delete-keyword-filter-group-design.md"]
     },
     {
-      "date": "5/13",
-      "member": "哲緯",
+      "date": "5/15",
+      "member": "Aaron",
       "commit": {
-        "title": "docs(spec): entity generalizations mapping design",
-        "sha": "3610787d",
-        "project": "bigdata-54837596/line-social-radar",
-        "url": "https://github.com/bigdata-54837596/line-social-radar/commit/3610787d",
-        "source": "github"
+        "title": "docs(hitl): add delete keyword & filter group implementation plan",
+        "sha": "53b48c74",
+        "project": "KEYPO/keypo-backend",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/53b48c74",
+        "source": "gitlab"
       },
-      "files": ["docs/superpowers/specs/2026-05-13-entity-generalizations-design.md"]
+      "files": ["docs/superpowers/plans/2026-05-15-agent-delete-keyword-filter-group.md"]
     },
     {
-      "date": "5/13",
-      "member": "哲緯",
+      "date": "5/15",
+      "member": "Joyce",
       "commit": {
-        "title": "docs(plan): comment simplified/cantonese per-comment filter implementation plan",
-        "sha": "aa1ebfea",
-        "project": "bigdata-54837596/line-social-radar",
-        "url": "https://github.com/bigdata-54837596/line-social-radar/commit/aa1ebfea",
-        "source": "github"
+        "title": "docs(keyders): plan for POST /kolposts (spec §4.7)",
+        "sha": "f22e942f",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/f22e942f",
+        "source": "gitlab"
       },
-      "files": ["docs/superpowers/plans/2026-05-13-comment-simplified-filter.md"]
+      "files": ["docs/superpowers/plans/2026-05-14-kolposts.md"]
     },
     {
-      "date": "5/13",
-      "member": "哲緯",
+      "date": "5/15",
+      "member": "Joyce",
       "commit": {
-        "title": "docs(spec): comment simplified/cantonese per-comment filter design",
-        "sha": "6538b0a5",
-        "project": "bigdata-54837596/line-social-radar",
-        "url": "https://github.com/bigdata-54837596/line-social-radar/commit/6538b0a5",
-        "source": "github"
+        "title": "docs(keyders): fix middleware class name typo in kolposts plan",
+        "sha": "8164f808",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/8164f808",
+        "source": "gitlab"
       },
-      "files": ["docs/superpowers/specs/2026-05-13-comment-simplified-filter-design.md"]
+      "files": ["docs/superpowers/plans/2026-05-14-kolposts.md"]
+    },
+    {
+      "date": "5/15",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs(keyders): note spec-alignment refactor in kolposts plan",
+        "sha": "e0a87452",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/e0a87452",
+        "source": "gitlab"
+      },
+      "files": ["docs/superpowers/plans/2026-05-14-kolposts.md"]
+    },
+    {
+      "date": "5/15",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs(keyders): document -1 sentinel handling in /kolposts spec + plan",
+        "sha": "72035063",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/72035063",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-05-14-kolposts.md",
+        "docs/superpowers/specs/2026-05-07-keyders-api-spec.md"
+      ]
+    },
+    {
+      "date": "5/15",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs(spec): align §4.8/§4.9 with frequency-mode PM decision (2026-05-15)",
+        "sha": "e5f015a9",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/e5f015a9",
+        "source": "gitlab"
+      },
+      "files": ["docs/superpowers/specs/2026-05-07-keyders-api-spec.md"]
+    },
+    {
+      "date": "5/15",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs(keyders): add /kolhothashtags + /kolhotkw implementation plan (v6)",
+        "sha": "31475c5c",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/31475c5c",
+        "source": "gitlab"
+      },
+      "files": ["docs/superpowers/plans/2026-05-15-kol-wordclouds.md"]
+    },
+    {
+      "date": "5/15",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs(spec): use value:float + BLACK_LIST_AS_LIST exclude in §4.8/§4.9",
+        "sha": "241bad09",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/241bad09",
+        "source": "gitlab"
+      },
+      "files": ["docs/superpowers/specs/2026-05-07-keyders-api-spec.md"]
+    },
+    {
+      "date": "5/15",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs(keyders): align plan v6 schemas/tests/impl with value:float + BLACK_LIST",
+        "sha": "821d71c2",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/821d71c2",
+        "source": "gitlab"
+      },
+      "files": ["docs/superpowers/plans/2026-05-15-kol-wordclouds.md"]
+    },
+    {
+      "date": "5/15",
+      "member": "日銜",
+      "commit": {
+        "title": "Initial design documents",
+        "sha": "fa07a336",
+        "project": "byron.you/bigcrawler-alert",
+        "url": "https://biglab.buygta.today/byron.you/bigcrawler-alert/-/commit/fa07a336",
+        "source": "gitlab"
+      },
+      "files": [
+        "DESIGN.md",
+        "docs/superpowers/specs/2026-05-15-bigcrawler-alert-design.md"
+      ]
+    },
+    {
+      "date": "5/15",
+      "member": "日銜",
+      "commit": {
+        "title": "docs: add operator runbook for 7 rules",
+        "sha": "7a741058",
+        "project": "byron.you/bigcrawler-alert",
+        "url": "https://biglab.buygta.today/byron.you/bigcrawler-alert/-/commit/7a741058",
+        "source": "gitlab"
+      },
+      "files": ["docs/runbook.md"]
+    },
+    {
+      "date": "5/15",
+      "member": "Wendy",
+      "commit": {
+        "title": "docs(keyders): tighten time-format examples across spec §4.x params",
+        "sha": "c7fa8c61",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/c7fa8c61",
+        "source": "gitlab"
+      },
+      "files": ["docs/superpowers/specs/2026-05-07-keyders-api-spec.md"]
+    },
+    {
+      "date": "5/15",
+      "member": "Wendy",
+      "commit": {
+        "title": "docs(keyders): refine §4.10 kolbizactivity per implementation design",
+        "sha": "232093f8",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/232093f8",
+        "source": "gitlab"
+      },
+      "files": ["docs/superpowers/specs/2026-05-07-keyders-api-spec.md"]
+    },
+    {
+      "date": "5/15",
+      "member": "Wendy",
+      "commit": {
+        "title": "docs(keyders): add kolbizactivity implementation plan",
+        "sha": "46654f06",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/46654f06",
+        "source": "gitlab"
+      },
+      "files": ["docs/superpowers/plans/2026-05-14-kolbizactivity.md"]
+    },
+    {
+      "date": "5/15",
+      "member": "Wendy",
+      "commit": {
+        "title": "docs(keyders): add kolsimilar implementation plan",
+        "sha": "a53b981b",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/a53b981b",
+        "source": "gitlab"
+      },
+      "files": ["docs/superpowers/plans/2026-05-14-kolsimilar.md"]
+    },
+    {
+      "date": "5/15",
+      "member": "Ted",
+      "commit": {
+        "title": "docs(api): regenerate api-response-dump against ailisten6 7-day fixture",
+        "sha": "98b525be",
+        "project": "KEYPO/keypo-ai-listen",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-ai-listen/-/commit/98b525be",
+        "source": "gitlab"
+      },
+      "files": ["docs/api/api-response-dump.md"]
     }
   ],
   "correlations": [
     {
-      "date": "5/13",
-      "member": "Wendy",
-      "status": "matched",
-      "specCommits": 3,
-      "dailyUpdateMention": true,
-      "matchedTasks": [
-        "kolprofile, kolkpioverview, kolfollowertrend API 實作 (4H)",
-        "kolranking API 效能問題調整 (3H)",
-        "kolleadervalue API 實作規劃與業務邏輯討論 (1.5H)"
-      ],
-      "unmatchedSpecs": [],
-      "reasoning": "Daily update 明確提及 kolkpioverview 與 kolfollowertrend API 實作（4H），與對應的兩個 implementation plan commits 直接吻合。kolranking API 效能問題調整（3H）與 kolranking pool=5000 + regions_exclude 重構規劃 commit 對應。kolleadervalue API 實作規劃與業務邏輯討論（1.5H）進一步呼應持續進行規劃設計的工作模式。三個 spec/plan commits 均有對應的 daily update 工作描述，評為吻合。"
-    },
-    {
-      "date": "5/13",
-      "member": "Joyce",
+      "date": "5/15",
+      "member": "禎佑",
       "status": "unmatched",
-      "specCommits": 5,
+      "specCommits": 11,
       "dailyUpdateMention": false,
       "matchedTasks": [],
       "unmatchedSpecs": [
-        "docs(account): add regional email templates design spec",
-        "docs(account): add regional email templates implementation plan",
-        "docs(agent_delegation): bump spec v4.5 -> v4.6 for v2 outbound integration",
-        "docs(agent_delegation): bump spec v4.6 -> v4.7 for X-Agent-Token header transport",
-        "docs(agent_delegation): add v4.7 Tasks 29-32 (X-Agent-Token header transport)"
+        "docs: spec — amount unit is NTD (not 千元), add quarter_end field",
+        "docs: spec + plan for PostgreSQL write-through",
+        "docs: spec — explain null gross_margin for financial-sector stocks",
+        "docs(spec): risk rule profile schema + CRUD design (Spec A)",
+        "docs(plan): risk rule profile (Spec A) implementation plan",
+        "docs: add Risk Rule v2 spec + implementation plan",
+        "docs: add financial_statement_list implementation plan",
+        "docs: add business card OCR pipeline design",
+        "docs: add business card OCR pipeline implementation plan",
+        "docs: add business card upload + CRUD design",
+        "docs: add business card upload + CRUD implementation plan"
       ],
-      "reasoning": "Joyce 在 5/13 沒有提交 daily update，無法評估任何 spec/plan commit 與當日工作描述的對應關係。共有 5 個規劃類 commits（涵蓋 regional email templates 及 agent delegation 整合規格更新），但缺乏 daily update 資訊，故評為未提及。"
+      "reasoning": "禎佑在 5/15 無提交 daily update。從 commits 內容來看，當日工作量相當豐富，橫跨兩個專案：findata-crawler（財務資料爬蟲規格修訂，包含金額單位確認、PostgreSQL 寫入方案、金融業股票 null gross_margin 說明）與 keykyc-backend-v2（risk rule profile Spec A 設計與實作計畫、Risk Rule v2 設計、financial_statement_list 實作計畫、名片 OCR pipeline 設計與實作計畫、名片上傳 CRUD 設計與實作計畫）。由於缺乏 daily update，無法驗證 commit 所述工作是否實際對應當日投入。"
     },
     {
-      "date": "5/13",
+      "date": "5/15",
+      "member": "Jason",
+      "status": "unmatched",
+      "specCommits": 2,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "docs(perf): add INP RUM instrumentation design spec + plan",
+        "docs(seo-geo): log 2026-05-15 INP RUM instrumentation work"
+      ],
+      "reasoning": "Jason 在 5/15 無提交 daily update。commits 顯示當日完成了 INP RUM 效能量測的設計規格與實作計畫，並在 seo-geo log 記錄了相關工作內容。由於缺乏 daily update，無法對照確認實際工時分配與工作描述是否吻合。"
+    },
+    {
+      "date": "5/15",
+      "member": "哲緯",
+      "status": "unmatched",
+      "specCommits": 4,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "docs(spec): add §5.4.1 backend changes for per-user export jobs (mason/bigmonitorV3)",
+        "docs(spec): add §5.4.1 backend changes for per-user export jobs (bigmonitor/bigmonitor)",
+        "docs: add implementation plan for historical images sync (#59)",
+        "docs: add design spec for historical images to stock library sync"
+      ],
+      "reasoning": "哲緯在 5/15 無提交 daily update。commits 跨越 GitLab 與 GitHub 兩個平台，涵蓋 bigmonitorV3/bigmonitor 的 per-user export jobs 後端規格新增（同一 commit 出現在兩個 mirror 專案），以及 line-social-radar-api 的歷史圖片同步至素材庫的設計規格與實作計畫。由於缺乏 daily update，無法核實工作內容的實際對應關係。"
+    },
+    {
+      "date": "5/15",
       "member": "Aaron",
       "status": "unmatched",
       "specCommits": 2,
       "dailyUpdateMention": false,
       "matchedTasks": [],
       "unmatchedSpecs": [
-        "docs: spec for brand alias normalization + mention count",
-        "docs: implementation plan for brand alias normalization + mention count"
+        "docs(hitl): add delete keyword & filter group design spec",
+        "docs(hitl): add delete keyword & filter group implementation plan"
       ],
-      "reasoning": "Aaron 在 5/13 沒有提交 daily update，無法評估 brand alias normalization + mention count 的 spec 及 plan commits 是否與當日工作相符，故評為未提及。"
+      "reasoning": "Aaron 在 5/15 無提交 daily update。commits 顯示當日完成了 KEYPO backend 中 HITL（Human-in-the-Loop）模組的刪除關鍵字與篩選群組功能的設計規格及實作計畫。由於缺乏 daily update，無法對照確認工作描述是否吻合。"
     },
     {
-      "date": "5/13",
-      "member": "Jason",
-      "status": "partial",
+      "date": "5/15",
+      "member": "Joyce",
+      "status": "unmatched",
+      "specCommits": 8,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "docs(keyders): plan for POST /kolposts (spec §4.7)",
+        "docs(keyders): fix middleware class name typo in kolposts plan",
+        "docs(keyders): note spec-alignment refactor in kolposts plan",
+        "docs(keyders): document -1 sentinel handling in /kolposts spec + plan",
+        "docs(spec): align §4.8/§4.9 with frequency-mode PM decision (2026-05-15)",
+        "docs(keyders): add /kolhothashtags + /kolhotkw implementation plan (v6)",
+        "docs(spec): use value:float + BLACK_LIST_AS_LIST exclude in §4.8/§4.9",
+        "docs(keyders): align plan v6 schemas/tests/impl with value:float + BLACK_LIST"
+      ],
+      "reasoning": "Joyce 在 5/15 無提交 daily update。commits 顯示當日工作量相當充實，持續迭代 keypo-engine-api-v3 的 keyders 規格與實作計畫：包含 /kolposts 計畫撰寫、middleware 命名修正、-1 sentinel 處理記錄、§4.8/§4.9 依 PM 頻率模式決策的規格對齊、/kolhothashtags + /kolhotkw 實作計畫（v6 版），以及 value:float + BLACK_LIST 的 schema 同步更新。由於缺乏 daily update，無法驗證實際工作投入情況。"
+    },
+    {
+      "date": "5/15",
+      "member": "日銜",
+      "status": "unmatched",
+      "specCommits": 2,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "Initial design documents",
+        "docs: add operator runbook for 7 rules"
+      ],
+      "reasoning": "日銜在 5/15 無提交 daily update。commits 顯示當日在全新專案 bigcrawler-alert 中初始化設計文件（包含 DESIGN.md 與 superpowers spec），並新增涵蓋 7 條規則的運維 runbook。由於缺乏 daily update，無法確認工作描述是否對應。"
+    },
+    {
+      "date": "5/15",
+      "member": "Wendy",
+      "status": "unmatched",
+      "specCommits": 4,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "docs(keyders): tighten time-format examples across spec §4.x params",
+        "docs(keyders): refine §4.10 kolbizactivity per implementation design",
+        "docs(keyders): add kolbizactivity implementation plan",
+        "docs(keyders): add kolsimilar implementation plan"
+      ],
+      "reasoning": "Wendy 在 5/15 無提交 daily update。commits 顯示當日在 keypo-engine-api-v3 進行 keyders spec §4.x 時間格式範例補強、§4.10 kolbizactivity 規格精修，並新增 kolbizactivity 與 kolsimilar 兩支 API 的實作計畫。由於缺乏 daily update，無法對照確認工作是否吻合。"
+    },
+    {
+      "date": "5/15",
+      "member": "Ted",
+      "status": "unmatched",
       "specCommits": 1,
       "dailyUpdateMention": false,
-      "matchedTasks": [
-        "網溫 a11y 優化（5/14 工項）"
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "docs(api): regenerate api-response-dump against ailisten6 7-day fixture"
       ],
-      "unmatchedSpecs": [],
-      "reasoning": "Jason 的 5/13 當日進度中僅提及「網溫 seo / geo wave 1 調整」與「工程部讀書分享會」，並未明確描述撰寫 lighthouse-perf-a11y spec 或規劃文件的工作。然而，5/14 工項列出「網溫 a11y 優化」，顯示該 spec/plan commit 係為隔日工作預先準備。由於當日進度未直接提及此規劃文件的撰寫，但 5/14 計畫隱含相關性，評為部分吻合。"
-    },
-    {
-      "date": "5/13",
-      "member": "禎佑",
-      "status": "matched",
-      "specCommits": 9,
-      "dailyUpdateMention": true,
-      "matchedTasks": [
-        "KEYKYC 開發 - 後端：建好 DB schema、FastAPI 後端架構，完成 table account_list / company_list / penalty_list 和對應的 API (4H)",
-        "KEYKYC 開發 - 公司資訊收錄：搬遷原有即時收錄並調整流程，寫入 postgreSQL 資料流 (3H)",
-        "KEYKYC 開發 - 裁罰資料收錄（共 16 個資料源）：完成 8 個資料源，寫入 postgreSQL 資料流 (3H)"
-      ],
-      "unmatchedSpecs": [],
-      "reasoning": "Daily update 詳細描述三大工作區塊，與 9 個 spec/plan commits 高度對應：（1）keykyc-backend-v2 的 auth/search API design 與 implementation plan、前端文件更新，對應後端 DB schema 建置及 API 開發；（2）company-crawler 的 spec/plan，對應公司資訊收錄的搬遷與流程調整；（3）penalty-crawler 系列 spec/plan（FSC 爬蟲擴充、fda_border 爬蟲、PostgreSQL pipeline spec、moenv 單次執行說明），對應裁罰資料收錄的 16 個資料源開發。工作量與 commit 數量均符合，評為吻合。"
-    },
-    {
-      "date": "5/13",
-      "member": "哲緯",
-      "status": "matched",
-      "specCommits": 8,
-      "dailyUpdateMention": true,
-      "matchedTasks": [
-        "fix(stage4.7): include original article in regen title/summary prompt for single-article topics",
-        "feat(fetch): per-comment simplified/cantonese filter",
-        "feat(entity-config): name_generalizations section for institution generalization",
-        "feat(stage2.5): inappropriate content filter (sexual implicit)"
-      ],
-      "unmatchedSpecs": [],
-      "reasoning": "Daily update 中 line-social-radar 的四個完成功能與 8 個 spec/plan commits（每個功能各有一個 spec 及一個 plan）完全對應：stage 4.7 regen 修正對應 force-include-original spec/plan；stage 2.5 不當內容過濾對應 inappropriate content filter spec/plan；entity generalizations 對應 name_generalizations spec/plan；per-comment 簡體/粵語過濾器對應 comment simplified/cantonese filter spec/plan。Spec/plan 的撰寫與功能實作在同一天完成，規劃與執行一致，評為吻合。"
+      "reasoning": "Ted 在 5/15 無提交 daily update。commit 顯示當日針對 keypo-ai-listen 專案，使用 ailisten6 的 7 天 fixture 重新生成 API response dump 文件。由於缺乏 daily update，無法核實此項工作的實際工時與描述是否吻合。"
     }
   ],
   "summary": {
-    "totalSpecCommits": 28,
-    "totalCorrelations": 6,
-    "membersWithSpecs": 6,
-    "matched": 3,
-    "unmatched": 2,
-    "partial": 1
+    "totalSpecCommits": 34,
+    "totalCorrelations": 8,
+    "membersWithSpecs": 8,
+    "matched": 0,
+    "unmatched": 8,
+    "partial": 0
   }
 }
