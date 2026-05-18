@@ -18,6 +18,7 @@ function normalizeChatConfig(config) {
       queryKeyword,
       spaces: config.spaces,
       centers: config.centers,
+      parentCenters: config.parentCenters,
       validCodes: config.validCodes,
     };
   }
@@ -30,6 +31,7 @@ function normalizeChatConfig(config) {
       memberMap: config.memberMap || {},
     }],
     centers: config.centers,
+    parentCenters: config.parentCenters,
     validCodes: config.validCodes,
   };
 }

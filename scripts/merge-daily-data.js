@@ -81,8 +81,9 @@ function mergeDailyData(existing, parsed, config) {
     ? generateIssues(rawData, leaveMap)
     : (parsed.issues || existing.issues || []);
 
-  // Centers/validCodes precedence: explicit config > existing > undefined.
+  // Centers/parentCenters/validCodes precedence: explicit config > existing > undefined.
   const centers = config?.centers ?? existing.centers;
+  const parentCenters = config?.parentCenters ?? existing.parentCenters;
   const validCodes = config?.validCodes ?? existing.validCodes;
 
   return {
@@ -94,6 +95,7 @@ function mergeDailyData(existing, parsed, config) {
     backfilled,
     addedToExisting,
     ...(centers ? { centers } : {}),
+    ...(parentCenters ? { parentCenters } : {}),
     ...(validCodes ? { validCodes } : {}),
   };
 }
