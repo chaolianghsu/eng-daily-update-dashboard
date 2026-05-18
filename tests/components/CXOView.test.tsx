@@ -145,12 +145,82 @@ describe("CXOView", () => {
     const capacityCard = screen.getByTestId("cxo-card-capacity");
     expect(capacityCard.textContent).toContain("A");
     expect(capacityCard.textContent).toContain("B");
-    // Filter to 產品 → no members
-    const select = screen.getByTestId("cxo-center-filter") as HTMLSelectElement;
-    fireEvent.change(select, { target: { value: "產品" } });
+    // Filter to 產品 dept (empty placeholder) → no members
+    // Selector is now two-tier: pick parent 產品中心 first, then dept 產品.
+    const parentSel = screen.getByTestId("cxo-parent-filter") as HTMLSelectElement;
+    fireEvent.change(parentSel, { target: { value: "產品中心" } });
+    const deptSel = screen.getByTestId("cxo-dept-filter") as HTMLSelectElement;
+    fireEvent.change(deptSel, { target: { value: "產品" } });
     const updated = screen.getByTestId("cxo-card-capacity");
     expect(updated.textContent).not.toContain("A");
     expect(updated.textContent).not.toContain("B");
+  });
+
+  it("center selector lists parent centers, not depts", () => {
+    const multiParent = {
+      產品中心: { label: "產品中心", children: ["工程"] },
+      數據平台中心: { label: "數據平台中心", children: ["分析"] },
+    };
+    const centersMulti = {
+      工程: { label: "工程部", members: ["A"], parent: "產品中心" },
+      分析: { label: "分析部", members: [], parent: "數據平台中心" },
+    };
+    render(<CXOView {...baseProps}
+      centers={centersMulti}
+      parentCenters={multiParent}
+      members={["A"]} />);
+    const parentSel = screen.getByTestId("cxo-parent-filter") as HTMLSelectElement;
+    const optionValues = Array.from(parentSel.options).map(o => o.value);
+    expect(optionValues).toContain("all");
+    expect(optionValues).toContain("產品中心");
+    expect(optionValues).toContain("數據平台中心");
+    // Dept keys should NOT appear in parent selector
+    expect(optionValues).not.toContain("工程");
+    expect(optionValues).not.toContain("分析");
+  });
+
+  it("dept selector appears only when parent !== all", () => {
+    render(<CXOView {...baseProps} />);
+    // Before any selection: parent is "all", dept selector hidden
+    expect(screen.queryByTestId("cxo-dept-filter")).toBeNull();
+    // Pick parent center
+    const parentSel = screen.getByTestId("cxo-parent-filter") as HTMLSelectElement;
+    fireEvent.change(parentSel, { target: { value: "產品中心" } });
+    // Dept selector now visible
+    expect(screen.getByTestId("cxo-dept-filter")).toBeInTheDocument();
+  });
+
+  it("selecting a parent center narrows Card 1B (dept ROI) to its children", () => {
+    const multiParent = {
+      產品中心: { label: "產品中心", children: ["工程"] },
+      數據平台中心: { label: "數據平台中心", children: ["分析"] },
+    };
+    const centersMulti = {
+      工程: { label: "工程部", members: ["A"], parent: "產品中心" },
+      分析: { label: "分析部", members: ["D"], parent: "數據平台中心" },
+    };
+    const rawMulti = {
+      "3/13": {
+        A: { total: 8, meeting: 1, dev: 7 },
+        D: { total: 7, meeting: 1, dev: 6 },
+      },
+    };
+    render(<CXOView {...baseProps}
+      centers={centersMulti}
+      parentCenters={multiParent}
+      rawData={rawMulti}
+      members={["A", "D"]}
+      dates={["3/13"]} />);
+    // Default "all" shows both
+    const card1Before = screen.getByTestId("cxo-card-roi-dept");
+    expect(card1Before.textContent).toContain("工程部");
+    expect(card1Before.textContent).toContain("分析部");
+    // Select 數據平台中心
+    const parentSel = screen.getByTestId("cxo-parent-filter") as HTMLSelectElement;
+    fireEvent.change(parentSel, { target: { value: "數據平台中心" } });
+    const card1After = screen.getByTestId("cxo-card-roi-dept");
+    expect(card1After.textContent).toContain("分析部");
+    expect(card1After.textContent).not.toContain("工程部");
   });
 
   it("renders spec ownership rows when planAnalysisData provided", () => {

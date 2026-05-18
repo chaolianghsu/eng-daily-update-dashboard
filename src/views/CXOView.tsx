@@ -83,52 +83,104 @@ export function CXOView({
   parentCenters,
 }: CXOViewProps) {
   const period = useMemo(() => computeCurrentWeek(dates), [dates]);
-  const [centerFilter, setCenterFilter] = useState<string>("all");
+  // Two-tier selector: parent-center + (optional) dept inside that parent.
+  // parentFilter === "all"  →  no scope (whole org)
+  // parentFilter === "<parent>" + deptFilter === "all"  →  all depts under that parent
+  // parentFilter === "<parent>" + deptFilter === "<dept>"  →  only that dept
+  const [parentFilter, setParentFilter] = useState<string>("all");
+  const [deptFilter, setDeptFilter] = useState<string>("all");
+
+  // Compute the set of dept keys the filter currently allows. Used by Card 1B
+  // and the capacity heatmap. Card 1A (parent ROI) always shows all parents.
+  const allowedDepts: Set<string> | null = useMemo(() => {
+    if (parentFilter === "all") return null; // no filter
+    if (deptFilter !== "all") return new Set([deptFilter]);
+    if (parentCenters && parentCenters[parentFilter]) {
+      return new Set(parentCenters[parentFilter].children || []);
+    }
+    return new Set();
+  }, [parentFilter, deptFilter, parentCenters]);
 
   // Always compute full data; filter for display
-  const allROI = useCenterROI(rawData, commitData, period, centers);
+  const fullROI = useCenterROI(rawData, commitData, period, centers);
   const parentROI = useParentCenterROI(rawData, commitData, parentCenters, centers, period);
   const specRows = useSpecOwnership(planAnalysisData, centers, 8);
   const health = useWeeklyHealth(rawData, commitData, taskAnalysisData, period, members);
   const risks = useTopRisks(issues, taskAnalysisData, commitData, rawData, members, period, 5);
   const fullHeatmap = useCapacityHeatmap(rawData, dates, 4, centers);
 
-  // Filter heatmap by centerFilter
+  // Filter dept-level data by allowedDepts.
+  const allROI = useMemo(() => {
+    if (!allowedDepts) return fullROI;
+    return fullROI.filter(r => allowedDepts.has(r.center));
+  }, [fullROI, allowedDepts]);
+
   const heatmap = useMemo(() => {
-    if (centerFilter === "all") return fullHeatmap;
+    if (!allowedDepts) return fullHeatmap;
     return {
       ...fullHeatmap,
-      centers: fullHeatmap.centers.filter(c => c.center === centerFilter),
+      centers: fullHeatmap.centers.filter(c => allowedDepts.has(c.center)),
     };
-  }, [fullHeatmap, centerFilter]);
+  }, [fullHeatmap, allowedDepts]);
 
-  const centerOptions = useMemo(() => {
-    return Object.keys(centers || { 工程: { label: "工程部", members: [] } });
-  }, [centers]);
+  const parentOptions = useMemo(() => {
+    return Object.keys(parentCenters || {});
+  }, [parentCenters]);
+
+  const deptOptions = useMemo(() => {
+    if (parentFilter === "all" || !parentCenters?.[parentFilter]) return [];
+    return (parentCenters[parentFilter].children || []).filter(d => centers?.[d]);
+  }, [parentFilter, parentCenters, centers]);
+
+  const onParentChange = (next: string) => {
+    setParentFilter(next);
+    setDeptFilter("all"); // reset dept when parent changes
+  };
 
   const [expandedSpec, setExpandedSpec] = useState<number | null>(null);
 
   return (
     <div data-testid="cxo-view" className="animate-in" style={{ display: "grid", gap: 16 }}>
-      {/* Center filter header */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 4 }}>
+      {/* Two-tier filter header: parent center + (optional) dept */}
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 4, flexWrap: "wrap", gap: 8 }}>
         <div style={{ fontSize: 14, color: COLORS.textMuted, fontWeight: 600 }}>
           策略總覽 · {period.dates[0] || "—"} ~ {period.dates[period.dates.length - 1] || "—"}
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
           <span style={{ fontSize: 11, color: COLORS.textDim }}>中心</span>
           <select
-            data-testid="cxo-center-filter"
-            value={centerFilter}
-            onChange={e => setCenterFilter(e.target.value)}
+            data-testid="cxo-parent-filter"
+            value={parentFilter}
+            onChange={e => onParentChange(e.target.value)}
             style={{
               background: COLORS.card, color: COLORS.text, border: `1px solid ${COLORS.border}`,
               borderRadius: 6, padding: "4px 10px", fontSize: 12, fontFamily: "inherit",
             }}
           >
             <option value="all">全部</option>
-            {centerOptions.map(c => <option key={c} value={c}>{c}</option>)}
+            {parentOptions.map(p => (
+              <option key={p} value={p}>{parentCenters?.[p]?.label || p}</option>
+            ))}
           </select>
+          {parentFilter !== "all" && deptOptions.length > 0 && (
+            <>
+              <span style={{ fontSize: 11, color: COLORS.textDim }}>部門</span>
+              <select
+                data-testid="cxo-dept-filter"
+                value={deptFilter}
+                onChange={e => setDeptFilter(e.target.value)}
+                style={{
+                  background: COLORS.card, color: COLORS.text, border: `1px solid ${COLORS.border}`,
+                  borderRadius: 6, padding: "4px 10px", fontSize: 12, fontFamily: "inherit",
+                }}
+              >
+                <option value="all">(全部部門)</option>
+                {deptOptions.map(d => (
+                  <option key={d} value={d}>{centers?.[d]?.label || d}</option>
+                ))}
+              </select>
+            </>
+          )}
         </div>
       </div>
 

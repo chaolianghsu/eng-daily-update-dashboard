@@ -6135,6 +6135,18 @@
           "category": "special"
         }
       }
+    },
+    "產品": {
+      "label": "產品部",
+      "members": [],
+      "parent": "產品中心",
+      "validCodes": {}
+    },
+    "分析調查一": {
+      "label": "分析調查部(一)",
+      "members": [],
+      "parent": "數據平台中心",
+      "validCodes": {}
     }
   },
   "validCodes": {
@@ -6201,7 +6213,14 @@
       "label": "產品中心",
       "children": [
         "工程",
-        "技發"
+        "技發",
+        "產品"
+      ]
+    },
+    "數據平台中心": {
+      "label": "數據平台中心",
+      "children": [
+        "分析調查一"
       ]
     }
   }
