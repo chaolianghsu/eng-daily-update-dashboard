@@ -74,7 +74,7 @@ export default function App({ loadData }: { loadData: LoadData }) {
 
   const dates = rawData ? Object.keys(rawData).sort((a, b) => dateToNum(a) - dateToNum(b)) : [];
   const allMembers = rawData ? [...new Set(dates.flatMap(d => Object.keys(rawData[d])))] : [];
-  const members = useCenterFilter(allMembers, centers, selectedCenter);
+  const members = useCenterFilter(allMembers, centers, selectedCenter, parentCenters);
   const dayLabels = Object.fromEntries(dates.map(d => {
     const [m, dd] = d.split("/").map(Number);
     const dow = new Date(new Date().getFullYear(), m - 1, dd).getDay();
