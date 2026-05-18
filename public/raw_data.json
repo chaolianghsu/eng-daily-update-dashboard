@@ -6195,5 +6195,14 @@
       "label": "營運維護",
       "category": "special"
     }
+  },
+  "parentCenters": {
+    "產品中心": {
+      "label": "產品中心",
+      "children": [
+        "工程",
+        "技發"
+      ]
+    }
   }
 }
