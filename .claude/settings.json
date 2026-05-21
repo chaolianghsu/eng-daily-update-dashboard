@@ -14,6 +14,17 @@
           }
         ]
       }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "F=$(jq -r '.tool_input.file_path' 2>/dev/null); case \"$F\" in *src/*.ts|*src/*.tsx) bunx vitest related --run \"$F\" 2>&1 | tail -20 ;; esac; exit 0"
+          }
+        ]
+      }
     ]
   }
 }
