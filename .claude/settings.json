@@ -2,5 +2,18 @@
   "enabledPlugins": {
     "frontend-design@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -e '.tool_input.file_path | test(\"appscript/index\\\\.html$|(^|/)[^/]*-config\\\\.json$|(^|/)\\\\.env(\\\\.|$)\")' >/dev/null 2>&1 && { echo 'Blocked: protected file (auto-generated build output, secret config, or .env).' >&2; exit 2; } || exit 0"
+          }
+        ]
+      }
+    ]
   }
 }
