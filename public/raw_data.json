@@ -6289,12 +6289,6 @@
         "meeting": null,
         "dev": null,
         "status": "unreported"
-      },
-      "Sabine": {
-        "total": null,
-        "meeting": null,
-        "dev": null,
-        "status": "unreported"
       }
     },
     "5/19": {
@@ -6868,12 +6862,6 @@
             "hours": 1.5
           }
         ]
-      },
-      "Sabine": {
-        "total": null,
-        "meeting": null,
-        "dev": null,
-        "status": "unreported"
       }
     },
     "5/18": {
@@ -7275,12 +7263,6 @@
         "meeting": null,
         "dev": null,
         "status": "unreported"
-      },
-      "Sabine": {
-        "total": null,
-        "meeting": null,
-        "dev": null,
-        "status": "unreported"
       }
     }
   },
@@ -7354,11 +7336,6 @@
       "member": "Sylvia",
       "severity": "🔴",
       "text": "未回報 5/20"
-    },
-    {
-      "member": "Sabine",
-      "severity": "🔴",
-      "text": "連續 3 天未回報"
     }
   ],
   "leave": {
