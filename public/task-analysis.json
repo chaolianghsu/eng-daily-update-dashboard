@@ -1,60 +1,213 @@
 {
-  "analysisDate": "2026-05-18",
-  "period": "5/15",
+  "analysisDate": "2026-05-21",
+  "period": "5/18-5/20",
   "warnings": [
     {
-      "date": "5/15",
-      "member": "家輝",
+      "date": "5/18",
+      "member": "Richard",
       "severity": "🔴",
       "type": "low_output",
       "task": "開發工作 3H",
-      "commits": "零筆",
-      "reasoning": "報告 3 小時開發工作但零筆 commits，無法驗證產出。開發任務時數 ≥3H 應有相應的 commits 紀錄。"
+      "commits": "無相關 commits",
+      "reasoning": "報告開發工作 3H，但當天無任何相關 commits，產出明顯不足"
     },
     {
-      "date": "5/15",
-      "member": "Wendy",
+      "date": "5/18",
+      "member": "Patty",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工作 4H",
+      "commits": "無相關 commits",
+      "reasoning": "報告開發工作 4H，但當天無任何相關 commits，產出明顯不足"
+    },
+    {
+      "date": "5/18",
+      "member": "Tanya",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "純開發工作 3.3H（扣除非開發類 1.8H）",
+      "commits": "無相關 commits",
+      "reasoning": "報告開發時數 5.1H，扣除審查、評估、研究等非開發任務 1.8H 後，實際開發工作 3.3H，但無任何 commits"
+    },
+    {
+      "date": "5/18",
+      "member": "日銜",
       "severity": "🟡",
       "type": "outlier",
-      "task": "開發工作 6H",
-      "commits": "11 筆，涵蓋 /kolbizactivity、/kolsimilar 端點及文檔",
-      "reasoning": "開發 6 小時但僅 11 筆 commits，遠低於團隊平均。平均 commit 比例 6.09/H，Wendy 1.83/H，僅為平均的 30%，超過 2 倍差距閾值。"
+      "task": "開發工作 7.5H",
+      "commits": "2 commits（ES 相容性修正、實作計畫文件）",
+      "reasoning": "報告開發時數 7.5H，但僅有 2 個 commits，為團隊平均 23 commits 的 8.7%，工時/commit 比例遠低於團隊平均"
     },
     {
-      "date": "5/15",
+      "date": "5/18",
       "member": "侑呈",
       "severity": "🟡",
       "type": "outlier",
-      "task": "開發工作 6H",
-      "commits": "6 筆，涵蓋 keytector-dashboard 社群偽冒探索、帳號頁面、圖表及 modal 功能",
-      "reasoning": "開發 6 小時但僅 6 筆 commits，遠低於團隊平均。平均 commit 比例 6.09/H，侑呈 1/H，僅為平均的 16%，超過 2 倍差距閾值。"
+      "task": "開發工作 8H",
+      "commits": "1 commit（品牌 UI 調整）",
+      "reasoning": "報告開發時數 8H，但僅有 1 個 commit，為團隊平均 23 commits 的 4.3%，產出明顯低於團隊平均水準"
     },
     {
-      "date": "5/15",
+      "date": "5/18",
+      "member": "家輝",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發工作 7.5H",
+      "commits": "1 commit",
+      "reasoning": "報告開發時數 7.5H，但僅有 1 個 commit，為團隊平均 23 commits 的 4.3%，工時產出比例遠低於團隊平均"
+    },
+    {
+      "date": "5/18",
+      "member": "Wendy",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發工作 7.5H",
+      "commits": "6 commits（KEYDERS 邏輯修正）",
+      "reasoning": "報告開發時數 7.5H，commits 數量 6 個為團隊平均 23 的 26%，工時/commit 比例低於團隊平均水準"
+    },
+    {
+      "date": "5/19",
+      "member": "Joyce",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工作 5H（無日報詳情）",
+      "commits": "無相關 commits",
+      "reasoning": "報告開發工作 5H ≥ 3H，但當天無任何 commits，產出明顯不足"
+    },
+    {
+      "date": "5/19",
+      "member": "Aaron",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工作 6H（無日報詳情）",
+      "commits": "無相關 commits",
+      "reasoning": "報告開發工作 6H，但當天無任何相關 commits，產出明顯不足"
+    },
+    {
+      "date": "5/19",
+      "member": "Richard",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工作 4H",
+      "commits": "無相關 commits",
+      "reasoning": "報告開發工作 4H，但當天無任何相關 commits，產出明顯不足"
+    },
+    {
+      "date": "5/19",
+      "member": "Patty",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工作 9H（無日報詳情）",
+      "commits": "無相關 commits",
+      "reasoning": "報告開發工作 9H，但當天無任何相關 commits，產出明顯不足"
+    },
+    {
+      "date": "5/19",
+      "member": "Tanya",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "純開發工作 5.3H（扣除非開發類 0.3H）",
+      "commits": "無相關 commits",
+      "reasoning": "報告開發時數 5.6H，扣除非開發類審查工作 0.3H 後，實際開發工作 5.3H，但無任何 commits"
+    },
+    {
+      "date": "5/19",
+      "member": "Sylvia",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工作 3.2H",
+      "commits": "無相關 commits",
+      "reasoning": "報告開發工作 3.2H ≥ 3H，但當天無任何相關 commits，產出明顯不足"
+    },
+    {
+      "date": "5/19",
+      "member": "Wendy",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發工作 5.5H",
+      "commits": "4 commits（LINE Notify 通知功能）",
+      "reasoning": "報告開發時數 5.5H，commits 數量 4 個為團隊平均 18.7 的 21%，工時/commit 比例遠低於團隊平均"
+    },
+    {
+      "date": "5/19",
       "member": "Ted",
       "severity": "🟡",
       "type": "outlier",
-      "task": "開發工作 7H",
-      "commits": "15 筆，涵蓋 keypo-ai-listen 合成數據、API 文檔及修復",
-      "reasoning": "開發 7 小時但僅 15 筆 commits，低於團隊平均。平均 commit 比例 6.09/H，Ted 2.14/H，僅為平均的 35%，超過 2 倍差距閾值。"
+      "task": "開發工作 5.5H",
+      "commits": "5 commits（AI 聆聽 API 功能）",
+      "reasoning": "報告開發時數 5.5H，commits 數量 5 個為團隊平均 18.7 的 27%，工時/commit 比例低於團隊平均"
     },
     {
-      "date": "5/15",
+      "date": "5/19",
       "member": "Joe",
       "severity": "🟡",
       "type": "outlier",
-      "task": "開發工作 11.5H",
-      "commits": "19 筆，涵蓋 keypo-frontend-2023 AI 聆聽回應、引用及情感分析面板整合",
-      "reasoning": "開發 11.5 小時但僅 19 筆 commits，遠低於團隊平均。平均 commit 比例 6.09/H，Joe 1.65/H，僅為平均的 27%，超過 2 倍差距閾值。"
+      "task": "開發工作 6H",
+      "commits": "6 commits（前端 UI 修正）",
+      "reasoning": "報告開發時數 6H，commits 數量 6 個為團隊平均 18.7 的 32%，工時/commit 比例低於團隊平均"
+    },
+    {
+      "date": "5/20",
+      "member": "Tanya",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "純開發工作 6.3H（扣除非開發類 0.5H）",
+      "commits": "無相關 commits",
+      "reasoning": "報告開發時數 6.8H，扣除非開發類研究工作 0.5H 後，實際開發工作 6.3H，但無任何 commits"
+    },
+    {
+      "date": "5/20",
+      "member": "Joyce",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發工作 8H",
+      "commits": "8 commits（API 端點遷移、文件更新）",
+      "reasoning": "報告開發時數 8H，commits 數量 8 個為團隊平均 26.3 的 30%，工時/commit 比例低於團隊平均"
+    },
+    {
+      "date": "5/20",
+      "member": "Wendy",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發工作 7H",
+      "commits": "9 commits（KEYDERS KPI 計算修正）",
+      "reasoning": "報告開發時數 7H，commits 數量 9 個為團隊平均 26.3 的 34%，工時/commit 比例低於團隊平均"
+    },
+    {
+      "date": "5/20",
+      "member": "侑呈",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發工作 7.5H",
+      "commits": "3 commits（發票模組修正、趨勢圖優化）",
+      "reasoning": "報告開發時數 7.5H，commits 數量 3 個為團隊平均 26.3 的 11%，工時/commit 比例遠低於團隊平均"
+    },
+    {
+      "date": "5/20",
+      "member": "Ted",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發工作 9H",
+      "commits": "7 commits（前端修正、API 性能優化）",
+      "reasoning": "報告開發時數 9H，commits 數量 7 個為團隊平均 26.3 的 27%，工時/commit 比例遠低於團隊平均"
+    },
+    {
+      "date": "5/20",
+      "member": "Joe",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發工作 6H",
+      "commits": "7 commits（前端帳戶管理、圖表修正）",
+      "reasoning": "報告開發時數 6H，commits 數量 7 個為團隊平均 26.3 的 27%，工時/commit 比例遠低於團隊平均"
     }
   ],
   "summary": {
-    "totalMembers": 9,
-    "totalWarnings": 5,
+    "totalMembers": 16,
+    "totalWarnings": 22,
     "byType": {
-      "low_output": 1,
+      "low_output": 10,
       "mismatch": 0,
-      "outlier": 4
+      "outlier": 12
     }
   }
 }
