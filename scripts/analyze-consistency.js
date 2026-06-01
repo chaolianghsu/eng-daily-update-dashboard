@@ -63,9 +63,14 @@ async function main() {
   const existing = fs.existsSync(rawDataPath)
     ? JSON.parse(fs.readFileSync(rawDataPath, 'utf8'))
     : { rawData: {} };
-  const dailyUpdateMembers = Object.keys(
-    existing.rawData[Object.keys(existing.rawData).pop()] || {}
-  );
+  // Union of all members across all dates — using the last date alone misses
+  // anyone who didn't report that day (e.g. only 產品 reported on 5/29 for the
+  // 上週 backfill, so 工程 would otherwise be excluded entirely).
+  const memberSet = new Set();
+  for (const day of Object.values(existing.rawData || {})) {
+    for (const m of Object.keys(day || {})) memberSet.add(m);
+  }
+  const dailyUpdateMembers = [...memberSet];
 
   // Build analysis
   const analysisResult = buildAnalysis(allCommits, existing.rawData, dailyUpdateMembers);

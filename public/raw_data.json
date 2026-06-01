@@ -4420,6 +4420,100 @@
         "dev": 8,
         "status": "reported",
         "items": []
+      },
+      "Tanya": {
+        "total": 10.5,
+        "meeting": 6.1,
+        "dev": 4.4,
+        "status": "reported",
+        "items": [
+          {
+            "code": "PROTOTYPE",
+            "task": "(09:00-10:00) 跟後端 RD 拿 KEYPO .env+透過 cc local build",
+            "hours": 1
+          },
+          {
+            "code": "MGMT",
+            "task": "(10:00-10:10) 回覆品牌行銷部撈名單需求",
+            "hours": 0.2
+          },
+          {
+            "code": "TEST",
+            "task": "(10:10-10:30) 驗證 KEYDERS 貼標進度",
+            "hours": 0.3
+          },
+          {
+            "code": "REPORT",
+            "task": "(10:30-11:00) 整理跟谷哥開會用的資料",
+            "hours": 0.5
+          },
+          {
+            "code": "MEETING",
+            "task": "(11:00-12:50) 跟谷哥展示 KEYDERS 模組+收 feedback",
+            "hours": 1.8
+          },
+          {
+            "code": "CS",
+            "task": "(13:20-13:50) 查看及回覆祥順案的稽核文件",
+            "hours": 0.5
+          },
+          {
+            "code": "REPORT",
+            "task": "(13:50-14:00) 整理跟 Chris 討論的 KOL 主檔示意",
+            "hours": 0.2
+          },
+          {
+            "code": "MEETING",
+            "task": "(14:00-14:30) 跟 Chris 會議-釐清 KOL 主檔(含頭像、簡介、標籤)",
+            "hours": 0.5
+          },
+          {
+            "code": "REPORT",
+            "task": "(14:30-15:00) 整理跟谷哥的會議紀錄",
+            "hours": 0.5
+          },
+          {
+            "code": "MEETING",
+            "task": "(15:00-16:10) 工程部讀書分享會",
+            "hours": 1.1
+          },
+          {
+            "code": "REQ",
+            "task": "(16:10-17:00) 條列 KEYDERS 模組前端要調的 tooltips+文字",
+            "hours": 0.9
+          },
+          {
+            "code": "MGMT",
+            "task": "(17:00-17:30) 跟 Neil 部門內部 sync",
+            "hours": 0.5
+          },
+          {
+            "code": "MGMT",
+            "task": "(17:30-18:00) (加班) 跟前端 RD 對齊 KEYDERS 開發方向",
+            "hours": 0.5
+          },
+          {
+            "code": "REVIEW",
+            "task": "(18:00-18:30) (加班) 盤點 KOL 已貼標數量+更新進度表",
+            "hours": 0.5
+          },
+          {
+            "code": "MEETING",
+            "task": "(19:00-19:30) (加班) 跟工程師討論 KEYDERS 領袖價值計算技術細節",
+            "hours": 0.5
+          },
+          {
+            "code": "REVIEW",
+            "task": "(19:30-20:30) (加班) 整理會議紀錄 action items 列到 Trello",
+            "hours": 1
+          }
+        ]
+      },
+      "Sylvia": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
       }
     },
     "5/12": {
@@ -4756,6 +4850,65 @@
             "hours": 2
           }
         ]
+      },
+      "Tanya": {
+        "total": 9.3,
+        "meeting": 7,
+        "dev": 2.3,
+        "status": "reported",
+        "items": [
+          {
+            "code": "REVIEW",
+            "task": "(09:30-10:30) KEYDERS vwn lru 盤點+查看前端Layout畫面",
+            "hours": 1
+          },
+          {
+            "code": "TEST",
+            "task": "(10:30-11:00) KEYDERS 驗證貼標成效",
+            "hours": 0.5
+          },
+          {
+            "code": "MEETING",
+            "task": "(11:00-12:40) KEYPO 例會",
+            "hours": 1.7
+          },
+          {
+            "code": "MEETING",
+            "task": "(13:40-15:40) KEYPO 例會接續討論",
+            "hours": 2
+          },
+          {
+            "code": "MGMT",
+            "task": "(15:40-16:30) Google chat 與谷哥+IvyMa 協調會議時間",
+            "hours": 0.8
+          },
+          {
+            "code": "MEETING",
+            "task": "(16:30-17:50) 跟 CSM IvyMa 展示 KEYDERS 模組+收 feedback",
+            "hours": 1.3
+          },
+          {
+            "code": "ISSUE",
+            "task": "(17:50-18:30) 跟 RD 討論 KEYDERS 資料列表問題+提供解決方案",
+            "hours": 0.7
+          },
+          {
+            "code": "MEETING",
+            "task": "(18:30-19:00) (加班) 跟 IvyWang 討論前端畫面調整+sync 進度",
+            "hours": 0.5
+          },
+          {
+            "code": "MGMT",
+            "task": "(19:00-19:50) (加班) 詢問技發部 YT 的 KOL 貼標排程",
+            "hours": 0.8
+          }
+        ]
+      },
+      "Sylvia": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
       }
     },
     "5/11": {
@@ -5129,6 +5282,80 @@
             "hours": 2
           }
         ]
+      },
+      "Tanya": {
+        "total": 9.5,
+        "meeting": 1.8,
+        "dev": 7.7,
+        "status": "reported",
+        "items": [
+          {
+            "code": "MGMT",
+            "task": "(09:30-10:30) 回Discord訊息+跟RD討論prototype",
+            "hours": 1
+          },
+          {
+            "code": "REQ",
+            "task": "(10:30-11:30) 補prototype截圖+文字說明至Trello卡片",
+            "hours": 1
+          },
+          {
+            "code": "DESIGN",
+            "task": "(11:30-12:30) KEYDERS模組功能 PRD 文件版更",
+            "hours": 1
+          },
+          {
+            "code": "DESIGN",
+            "task": "(13:30-14:40) KEYDERS模組功能 PRD 文件版更（續）",
+            "hours": 1.2
+          },
+          {
+            "code": "MEETING",
+            "task": "(14:40-15:00) 跟前端RD討論UIUX設計稿",
+            "hours": 0.3
+          },
+          {
+            "code": "DESIGN",
+            "task": "(15:00-17:00) KEYDERS模組功能 PRD 文件版更（續2）",
+            "hours": 2
+          },
+          {
+            "code": "REVIEW",
+            "task": "(17:00-17:30) KEYDERS 詢問開發進度",
+            "hours": 0.5
+          },
+          {
+            "code": "REVIEW",
+            "task": "(17:30-18:00) KEYDERS 跟工程同步進度+調整進度表",
+            "hours": 0.5
+          },
+          {
+            "code": "REVIEW",
+            "task": "(18:00-18:30) KEYDERS 抓貼標狀態",
+            "hours": 0.5
+          },
+          {
+            "code": "DESIGN",
+            "task": "(18:30-19:00) (加班) KEYDERS模組功能 PRD 文件版更（續3）",
+            "hours": 0.5
+          },
+          {
+            "code": "MEETING",
+            "task": "(19:00-19:30) (加班) 跟後端工程師討論開發細節",
+            "hours": 0.5
+          },
+          {
+            "code": "DESIGN",
+            "task": "(19:30-20:00) (加班) KEYDERS模組功能 PRD 文件版更（續4）",
+            "hours": 0.5
+          }
+        ]
+      },
+      "Sylvia": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
       }
     },
     "5/14": {
@@ -5521,6 +5748,80 @@
             "hours": 2
           }
         ]
+      },
+      "Tanya": {
+        "total": 9,
+        "meeting": 1.2,
+        "dev": 7.8,
+        "status": "reported",
+        "items": [
+          {
+            "code": "DESIGN",
+            "task": "(09:30-11:00) 整理 KEYDERS 模組相關文件+重新確認計算邏輯",
+            "hours": 1.5
+          },
+          {
+            "code": "MEETING",
+            "task": "(11:00-11:30) KEYDERS 跟前後端工程師討論頁面跳轉資料呈現",
+            "hours": 0.5
+          },
+          {
+            "code": "REQ",
+            "task": "(11:30-12:30) KEYDERS 模組-前端要調整的 UI",
+            "hours": 1
+          },
+          {
+            "code": "MGMT",
+            "task": "(13:30-14:00) KEYDERS-我的收藏下階段要有群組，跟 RD 說明",
+            "hours": 0.5
+          },
+          {
+            "code": "REVIEW",
+            "task": "(14:00-14:30) 跟數據端確認目前資料狀況",
+            "hours": 0.5
+          },
+          {
+            "code": "DESIGN",
+            "task": "(14:30-15:30) 觀測競品計算公式的 Tooltip 及文案",
+            "hours": 1
+          },
+          {
+            "code": "PROTOTYPE",
+            "task": "(15:30-16:00) 本機調整 prototype 截示意圖跟前端 RD 溝通",
+            "hours": 0.5
+          },
+          {
+            "code": "MEETING",
+            "task": "(16:00-16:40) 跟工程+數據端討論 KEYDERS 我的收藏-群組資料夾實作與數據關聯性",
+            "hours": 0.7
+          },
+          {
+            "code": "REQ",
+            "task": "(16:40-17:30) 處理 Trello 要列的項目+口頭跟 RD 說明",
+            "hours": 0.8
+          },
+          {
+            "code": "REVIEW",
+            "task": "(17:30-18:20) 盤點各項進度+確認後端 API 現況",
+            "hours": 0.8
+          },
+          {
+            "code": "REQ",
+            "task": "(18:20-18:30) 更新 Trello+附截圖+文案說明+進度給 RD（前 10 分）",
+            "hours": 0.2
+          },
+          {
+            "code": "REQ",
+            "task": "(18:30-19:30) (加班) 更新 Trello+附截圖+文案說明+進度給 RD",
+            "hours": 1
+          }
+        ]
+      },
+      "Sylvia": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
       }
     },
     "5/15": {
@@ -5946,6 +6247,112 @@
             "code": "KEYLM",
             "task": "[In Progress] 了解 turboquant",
             "hours": 4
+          }
+        ]
+      },
+      "Tanya": {
+        "total": 10.4,
+        "meeting": 4.2,
+        "dev": 6.2,
+        "status": "reported",
+        "items": [
+          {
+            "code": "REVIEW",
+            "task": "(09:30-10:30) KEYDERS 模組進度盤點+貼標數量",
+            "hours": 1
+          },
+          {
+            "code": "TEST",
+            "task": "(10:30-11:00) 測試 KEYDERS 模組功能",
+            "hours": 0.5
+          },
+          {
+            "code": "MEETING",
+            "task": "(11:00-12:20) 跟業務子洵開會討論 KEYDERS 模組+收 feedback",
+            "hours": 1.2
+          },
+          {
+            "code": "REQ",
+            "task": "(12:20-12:30) 請前端 RD 依業務建議調整 tooltips 文字",
+            "hours": 0.2
+          },
+          {
+            "code": "PROTOTYPE",
+            "task": "(13:30-14:00) 讓 cc 重新產出開團/業配關鍵字（品質不佳）",
+            "hours": 0.5
+          },
+          {
+            "code": "TEST",
+            "task": "(14:00-14:40) RD 更新後接續測試 KEYDERS 模組",
+            "hours": 0.7
+          },
+          {
+            "code": "REQ",
+            "task": "(14:40-15:00) 將數據及功能問題列在 Google chat",
+            "hours": 0.3
+          },
+          {
+            "code": "REVIEW",
+            "task": "(15:00-16:00) 跟工程端 PO sync 開發進度+對齊 demo 內容",
+            "hours": 1
+          },
+          {
+            "code": "MEETING",
+            "task": "(16:00-18:00) BDE rehearsal 會議",
+            "hours": 2
+          },
+          {
+            "code": "PROTOTYPE",
+            "task": "(19:30-20:00) (加班) 繼續調整開團/業配關鍵字",
+            "hours": 0.5
+          },
+          {
+            "code": "MGMT",
+            "task": "(20:00-20:30) (加班) 跟工程端 PO 確認需要加班完成的項目",
+            "hours": 0.5
+          },
+          {
+            "code": "PROTOTYPE",
+            "task": "(20:30-22:00) (加班) 從 KEYPO 取得關鍵字+讓 cc 驗證+重複調整優化",
+            "hours": 1.5
+          },
+          {
+            "code": "REQ",
+            "task": "(22:00-22:30) (加班) 條列抽測發現未整併的 KOL 至 Google 表單",
+            "hours": 0.5
+          }
+        ]
+      },
+      "Sylvia": {
+        "total": 7.5,
+        "meeting": 2,
+        "dev": 5.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": "MGMT",
+            "task": "(09:30-11:00) 改 KEYPO Agent UI",
+            "hours": 1.5
+          },
+          {
+            "code": "DESIGN",
+            "task": "(11:00-12:30) 處理 KOL_query 通行問題；熟悉 KEYPO Agent 專案",
+            "hours": 1.5
+          },
+          {
+            "code": "DESIGN",
+            "task": "(13:30-14:00) 更新 worklog skill v0.2.0 + 設定 daily-report .md 同步",
+            "hours": 0.5
+          },
+          {
+            "code": "DESIGN",
+            "task": "(14:00-16:00) MR 衝突處理",
+            "hours": 2
+          },
+          {
+            "code": "MEETING",
+            "task": "(16:00-18:00) BDE rehearsal 開會",
+            "hours": 2
           }
         ]
       }
@@ -7698,73 +8105,1310 @@
           }
         ]
       }
+    },
+    "5/28": {
+      "Joyce": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Ivy": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Jason": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "日銜": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Wendy": {
+        "total": 7.5,
+        "meeting": 1,
+        "dev": 6.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] 當日數據產出經人工驗證後提供給外部人員",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[In Progress] 數據分析＆整理 Action items",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[Done] KEYDERS 測試反饋調整: 上版到測試機 & 驗證修正符合預期",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 回覆 CSM 推播設置相關疑問",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] issue 3148：新竹市消防局推播晚進 - 已釐清並解釋為目前機制設計下的正常行為",
+            "hours": 2.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 稽核會議",
+            "hours": 1
+          }
+        ]
+      },
+      "侑呈": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "禎佑": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Ted": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "家輝": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Joe": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Aaron": {
+        "total": 6,
+        "meeting": 0,
+        "dev": 6,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] Terraform 文件  link",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[Done] GCP Logging 文件  link",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[Done] KEYDERS Agent 加上驗證 is_fid2name / is_channel_list   link",
+            "hours": 2
+          }
+        ]
+      },
+      "哲緯": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Tanya": {
+        "total": 8,
+        "meeting": 1.3,
+        "dev": 6.7,
+        "status": "reported",
+        "items": [
+          {
+            "code": "TEST",
+            "task": "(09:00-11:40) 測試 KEYDERS 模組功能",
+            "hours": 2.7
+          },
+          {
+            "code": "MEETING",
+            "task": "(11:40-12:00) 祥順案內部臨時會議",
+            "hours": 0.3
+          },
+          {
+            "code": "RESEARCH",
+            "task": "(12:00-12:30) 查看祥順案相關討論內容",
+            "hours": 0.5
+          },
+          {
+            "code": "MEETING",
+            "task": "(13:30-14:00) 祥順案-桃市府線上稽核會議",
+            "hours": 0.5
+          },
+          {
+            "code": "MGMT",
+            "task": "(14:00-14:30) 查找祥順案相關資訊提供至 line 群",
+            "hours": 0.5
+          },
+          {
+            "code": "TEST",
+            "task": "(14:30-15:30) 繼續測試 KEYDERS 模組 + 將 bug issues 設置於 Trello",
+            "hours": 1
+          },
+          {
+            "code": "REQ",
+            "task": "(15:30-18:00) 將 T1 貼標 Uncategorized 的頻道區分為數據/貼標 issues 列入待優化項目",
+            "hours": 2.5
+          }
+        ]
+      },
+      "Sylvia": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      }
+    },
+    "5/27": {
+      "Joyce": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Ivy": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Jason": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "日銜": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Wendy": {
+        "total": 7.5,
+        "meeting": 0,
+        "dev": 7.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] 當日數據產出經人工驗證後提供給外部人員",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[In Progress] 過往數據分析＆整理 Next Actions",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] KEYDERS 測試反饋調整",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[Done] KEYPO 平台 502 問題 root cause",
+            "hours": 4
+          }
+        ]
+      },
+      "侑呈": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "禎佑": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Ted": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "家輝": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Joe": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Aaron": {
+        "total": 6,
+        "meeting": 0,
+        "dev": 6,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] 排查 KEYPO 執行緩慢以及處理",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] KEYPO 502 問題找 root cause 及文件撰寫",
+            "hours": 3
+          },
+          {
+            "code": null,
+            "task": "[Done] KEYDERS Agent 文件",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[In Progress] Terraform 文件",
+            "hours": 1
+          }
+        ]
+      },
+      "哲緯": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Tanya": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Sylvia": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      }
+    },
+    "5/26": {
+      "Joyce": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Ivy": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Jason": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "日銜": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Wendy": {
+        "total": 6,
+        "meeting": 0,
+        "dev": 6,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] 當日數據產出經人工驗證後提供給外部人員",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[In Progress] 過往數據分析＆整理 Next Actions",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[In Progress] KEYDERS 測試反饋調整",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[In Progress] KEYPO 平台 502 問題協助解決與排查原因",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[Done] Notify system 檢查推播是否正常發送、新聞補發狀況觀察",
+            "hours": 0.5
+          }
+        ]
+      },
+      "侑呈": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "禎佑": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Ted": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "家輝": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Joe": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Aaron": {
+        "total": 6.5,
+        "meeting": 0,
+        "dev": 6.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] 整理 Grafana Dashboard",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[Done] LookerStudio 文件",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[Done] Newsletter 更新關鍵字",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 處理 KEYPO 502 問題以及找 root cause",
+            "hours": 2
+          }
+        ]
+      },
+      "哲緯": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Tanya": {
+        "total": 8,
+        "meeting": 1,
+        "dev": 7,
+        "status": "reported",
+        "items": [
+          {
+            "code": "TEST",
+            "task": "(09:30-10:30) 繼續調整商業紀錄關鍵字",
+            "hours": 1
+          },
+          {
+            "code": "MEETING",
+            "task": "(10:30-11:30) 跟技發部討論 KOL 貼標優化",
+            "hours": 1
+          },
+          {
+            "code": "REQ",
+            "task": "(11:30-12:30) 整理 KOL 貼標待優化項目",
+            "hours": 1
+          },
+          {
+            "code": "RESEARCH",
+            "task": "(13:30-16:00) 用 cc 查詢中文域名費用（結果不合預期再人工查詢）",
+            "hours": 2.5
+          },
+          {
+            "code": "TEST",
+            "task": "(16:00-18:30) 繼續測試商業紀錄關鍵字 + 下班前在 Trello 給出優化版",
+            "hours": 2.5
+          }
+        ]
+      },
+      "Sylvia": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      }
+    },
+    "5/25": {
+      "Joyce": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Ivy": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Jason": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "日銜": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Wendy": {
+        "total": 8,
+        "meeting": 6.5,
+        "dev": 1.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] 當日數據產出經人工驗證後提供給外部人員",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 刑事局會議",
+            "hours": 2.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 會議記錄 ＆ next action items 整理 ＆ 技術 sync",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[Done] KEYPO engine API v3 測試機上版會議",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[In Progress] 測試反饋調整: 錯誤排查",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] LSR 短期交接會議",
+            "hours": 1.5
+          }
+        ]
+      },
+      "侑呈": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "禎佑": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Ted": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "家輝": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Joe": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Aaron": {
+        "total": 4.5,
+        "meeting": 1.5,
+        "dev": 3,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] KEYPO Agent 交接會議",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 排查 Grafana 爬蟲 Q 部分 Alert 未發送",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done]  KEYPO Agent 文件",
+            "hours": 2
+          }
+        ]
+      },
+      "哲緯": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Tanya": {
+        "total": 8,
+        "meeting": 0,
+        "dev": 8,
+        "status": "reported",
+        "items": [
+          {
+            "code": "TEST",
+            "task": "(09:30-10:30) 確認 KEYPO 項目 + 回覆和關閉 issues",
+            "hours": 1
+          },
+          {
+            "code": "TEST",
+            "task": "(10:30-12:30) 藉由 cc 將未存在於原 KEYDERS ES 的啦啦隊名單所對應的社群頻道補齊",
+            "hours": 2
+          },
+          {
+            "code": "TEST",
+            "task": "(13:30-14:30) 繼續藉由 cc 補齊啦啦隊社群頻道",
+            "hours": 1
+          },
+          {
+            "code": "TEST",
+            "task": "(14:30-15:30) 人工驗證社群頻道連結的正確性",
+            "hours": 1
+          },
+          {
+            "code": "TEST",
+            "task": "(15:30-18:30) 利用 cc 重新調整商業紀錄的開團&業配關鍵字 + 在 KEYPO 設定主題關鍵字進行驗證",
+            "hours": 3
+          }
+        ]
+      },
+      "Sylvia": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      }
+    },
+    "5/22": {
+      "Joyce": {
+        "total": 8,
+        "meeting": 1.5,
+        "dev": 6.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[In Progress] 玄武計畫 KEYPO engine API v3",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[Done] KEYPO APP 調整",
+            "hours": 3.5
+          },
+          {
+            "code": null,
+            "task": "[In Progress] 優化速報發送排程，本地端測試",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 工程部週會",
+            "hours": 1.5
+          }
+        ]
+      },
+      "Ivy": {
+        "total": 7,
+        "meeting": 1.5,
+        "dev": 5.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] 0518-0522 反饋修正 LINK",
+            "hours": 5
+          },
+          {
+            "code": null,
+            "task": "[Done] 專案進度確認",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 部門週會",
+            "hours": 1.5
+          }
+        ]
+      },
+      "Jason": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "replied_no_hours",
+        "items": []
+      },
+      "日銜": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Wendy": {
+        "total": 8.5,
+        "meeting": 7.5,
+        "dev": 1,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] 當日數據產出經人工驗證後提供給外部人員",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] CIB 對焦會議",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 會議相關資料整理",
+            "hours": 4
+          },
+          {
+            "code": null,
+            "task": "[Done] 工程部週會",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 數值相關 bug 釐清與討論",
+            "hours": 1
+          }
+        ]
+      },
+      "侑呈": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "禎佑": {
+        "total": 7.5,
+        "meeting": 1.5,
+        "dev": 6,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[In Progress] KEYKYC 前端優化 link",
+            "hours": 3.5
+          },
+          {
+            "code": null,
+            "task": "[In Progress] KEYKYC 公司資料源優化",
+            "hours": 2.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 週會",
+            "hours": 1.5
+          }
+        ]
+      },
+      "Ted": {
+        "total": 8.5,
+        "meeting": 1.5,
+        "dev": 7,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] MonitoringGroup 加上使用者層級權限範圍，user_id 讀寫保護、可見度過濾、cron 不受限 (d726ad0, dd2b8dd)",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[Done] Langfuse 整合 - LLM 呼叫包進 generation trace、scanner / cron 包進 scan_job trace，方便追蹤每次 LLM 行為與成本 (0079a4e, 96c7a49, 29b6334)",
+            "hours": 3.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 修 Gemini SCAN 自由文字回傳包成 JSON (67ff5f2)",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] segmenter / brand_normalizer 預設改用 gemini-3.1-flash-lite (771e40d)",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 修 event payload 格式，jsonPayload 才會帶 data 欄位 (44510fa)",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 工程部週會",
+            "hours": 1.5
+          }
+        ]
+      },
+      "家輝": {
+        "total": 6.8,
+        "meeting": 2.8,
+        "dev": 4,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] 工程部週會",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[In progress] 改善數據q到esq跨機房慢速問題",
+            "hours": 2.5
+          },
+          {
+            "code": null,
+            "task": "[Done] GCP管理機制會議",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] Ai First會議",
+            "hours": 0.8
+          },
+          {
+            "code": null,
+            "task": "[Done] Gemini主題課程",
+            "hours": 1.5
+          }
+        ]
+      },
+      "Joe": {
+        "total": 7,
+        "meeting": 2,
+        "dev": 5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] KEYPO Agent handover kick off meeting",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] KEYPO Agent 開發現況同步",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[Done] AI 聆聽狀態同步與問題討論",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[Done] KEYPO 前端正式機更新，處理相關文件與原始碼掃描",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[In Progress] AI 聆聽",
+            "hours": 2.5
+          }
+        ]
+      },
+      "Aaron": {
+        "total": 4,
+        "meeting": 1.5,
+        "dev": 2.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] 部門週會",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 雲端網路架構文件 link",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] Observability Stack 文件 link",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] Terraform 文件 link",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[In Progress] KEYPO Agent 文件",
+            "hours": 1
+          }
+        ]
+      },
+      "哲緯": {
+        "total": 10,
+        "meeting": 0,
+        "dev": 10,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] Threads日常需求處理",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] LSR 測試不同量體下是否可符合客戶最終話題數量",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[Done] LSR 計算各階段花費的token數量",
+            "hours": 3
+          },
+          {
+            "code": null,
+            "task": "line-social-radar  link",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "threads-api-scrapy  link link link",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "threads-gateway  link link link",
+            "hours": 2
+          }
+        ]
+      },
+      "Richard": {
+        "total": 6,
+        "meeting": 0,
+        "dev": 6,
+        "status": "reported",
+        "items": [
+          {
+            "code": "KEYLM",
+            "task": "[In Progress] 了解 NEMO Agent Toolkit （https://developer.nvidia.com/nemo-agent-toolkit）並評估接入 KEYLM 的可行",
+            "hours": 2
+          },
+          {
+            "code": "KEYLM",
+            "task": "[Done] 以 claude 評估建立外掛式 rbac proxy 的可行性",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[玄武計畫][In Progress] 建立符號白名單管理器，以避免使用 google sheet 管理",
+            "hours": 2
+          }
+        ]
+      },
+      "Patty": {
+        "total": 6,
+        "meeting": 0,
+        "dev": 6,
+        "status": "reported",
+        "items": [
+          {
+            "code": "KEYLM",
+            "task": "[turboquant][Done] 用 vLLM 0.21.0 重測 hybrid 模型，確認 0.21 解除官方壓縮死結（9/9 smoke 全過），三尺寸 × 三模式全部 load+serve+generate 成功，含 0.20 會 page-size 死結的 turboquant_4bit_nc",
+            "hours": 2
+          },
+          {
+            "code": "KEYLM",
+            "task": "[turboquant][Done] 完成 KV 容量結論：fp8 約 1.8–2.1× 容量、tq4bit 約 2.8–3.9×（以 32k token 計",
+            "hours": 1
+          },
+          {
+            "code": "KEYLM",
+            "task": "[turboquant][Done] 模型定案（逐尺寸）：9B = Qwen3.5-9B、27B = Qwen3.6-27B、35B-A3B = Qwen3.6-35B-A3B",
+            "hours": 1
+          },
+          {
+            "code": "KEYLM",
+            "task": "[turboquant][In Progress] 效能 A/B 測試：cu129 image 在 GB10（sm_121）非原生 + hybrid Triton kernel JIT，單人速度比上輪 cu130 慢約 6×（4.4 vs 27 tok/s、TTFT 11 vs 3.5s），完整跑要 8–12h+，已停掉慢跑改查 cu130 原生 build",
+            "hours": 2
+          }
+        ]
+      },
+      "Tanya": {
+        "total": 8,
+        "meeting": 1,
+        "dev": 7,
+        "status": "reported",
+        "items": [
+          {
+            "code": "TEST",
+            "task": "(09:30-10:30) 透過 cc 列出 L1 只有日常生活的 KOL 清單 + 驗證是否需修正",
+            "hours": 1
+          },
+          {
+            "code": "PROTOTYPE",
+            "task": "(10:30-11:30) 透過 cc 把前端待修改項目在 local 實作 + 跟工程對齊認知",
+            "hours": 1
+          },
+          {
+            "code": "REPORT",
+            "task": "(11:30-12:00) 整理 KEYDERS 模組-網紅週報",
+            "hours": 0.5
+          },
+          {
+            "code": "MGMT",
+            "task": "(12:00-12:30) 擬定並寄送回覆給 Sam 的 email",
+            "hours": 0.5
+          },
+          {
+            "code": "MGMT",
+            "task": "(13:30-14:00) 向谷哥及 IvyMa 發出會議邀請（待確認 AI 報告隱藏功能）",
+            "hours": 0.5
+          },
+          {
+            "code": "TEST",
+            "task": "(14:00-15:30) 透過 cc 從網溫撈取 200 名啦啦隊名單 + 確認是否存在於 KEYDERS ES",
+            "hours": 1.5
+          },
+          {
+            "code": "MEETING",
+            "task": "(15:30-16:00) 產品部 sync 會議",
+            "hours": 0.5
+          },
+          {
+            "code": "TEST",
+            "task": "(16:00-18:30) 繼續驗證啦啦隊名單，標註是否存在 KEYDERS ES 以及爬收需補收錄的社群頻道 url",
+            "hours": 2.5
+          }
+        ]
+      },
+      "Sylvia": {
+        "total": 7.5,
+        "meeting": 0.5,
+        "dev": 7,
+        "status": "reported",
+        "items": [
+          {
+            "code": "DEV",
+            "task": "(09:30-12:30) 調整 KEYPO Agent prompt 架構跟內容（發 MR #88 #89）",
+            "hours": 3
+          },
+          {
+            "code": "DEV",
+            "task": "(13:30-15:00) 調整 KEYPO Agent prompt 架構跟內容（發 MR #90）",
+            "hours": 1.5
+          },
+          {
+            "code": "ISSUE",
+            "task": "(15:00-15:30) 排查 Agent 等待時間過長的問題",
+            "hours": 0.5
+          },
+          {
+            "code": "MEETING",
+            "task": "(15:30-16:00) 產品部門週會",
+            "hours": 0.5
+          },
+          {
+            "code": "ISSUE",
+            "task": "(16:00-17:00) 排查 Agent 等待時間過長的問題",
+            "hours": 1
+          },
+          {
+            "code": "TEST",
+            "task": "(17:00-18:00) 整合測試",
+            "hours": 1
+          }
+        ]
+      }
+    },
+    "5/29": {
+      "Tanya": {
+        "total": 8,
+        "meeting": 1,
+        "dev": 7,
+        "status": "reported",
+        "items": [
+          {
+            "code": "TEST",
+            "task": "(09:00-12:30) T1 Uncategorized 頻道分類檢視 + 貼標評估 + 可確認類別優先人工標籤修正",
+            "hours": 3.5
+          },
+          {
+            "code": "TEST",
+            "task": "(13:30-16:00) 繼續處理標籤修正",
+            "hours": 2.5
+          },
+          {
+            "code": "DESIGN",
+            "task": "(16:00-17:00) 查看祥順工時預估表 + 跟 leamon 討論後調整一小部分內容",
+            "hours": 1
+          },
+          {
+            "code": "TEST",
+            "task": "(17:00-18:00) 繼續處理標籤修正",
+            "hours": 1
+          }
+        ]
+      },
+      "Sylvia": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      }
+    },
+    "5/23": {
+      "Tanya": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Sylvia": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      }
+    },
+    "5/17": {
+      "Tanya": {
+        "total": 3,
+        "meeting": 0,
+        "dev": 3,
+        "status": "reported",
+        "items": [
+          {
+            "code": "DESIGN",
+            "task": "(14:30-16:30) (加班) 產出 KEYDERS 模組相關文件+跟 RD 溝通+測試模組功能",
+            "hours": 2
+          },
+          {
+            "code": "TEST",
+            "task": "(16:30-17:30) (加班) 測試 KEYDERS Agent+查看資料來源+部門溝通+提交資料",
+            "hours": 1
+          }
+        ]
+      },
+      "Sylvia": {
+        "total": 3.5,
+        "meeting": 0,
+        "dev": 3.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": "TEST",
+            "task": "(14:00-15:00) (加班) 測試操縱 KEYPO 功能",
+            "hours": 1
+          },
+          {
+            "code": "DESIGN",
+            "task": "(15:00-16:00) (加班) 釐清資料來源的顯示邏輯",
+            "hours": 1
+          },
+          {
+            "code": "TEST",
+            "task": "(16:00-16:30) (加班) 整合測試",
+            "hours": 0.5
+          },
+          {
+            "code": "TEST",
+            "task": "(21:00-22:00) (加班) 整合測試",
+            "hours": 1
+          }
+        ]
+      }
+    },
+    "5/16": {
+      "Tanya": {
+        "total": 8.5,
+        "meeting": 0,
+        "dev": 8.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": "REVIEW",
+            "task": "(13:00-13:30) (加班) 盤點 KOL 數據收錄現況表",
+            "hours": 0.5
+          },
+          {
+            "code": "TEST",
+            "task": "(13:30-14:00) (加班) 抽測 KEYDERS 頻道主檔及粉絲折線圖",
+            "hours": 0.5
+          },
+          {
+            "code": "TEST",
+            "task": "(14:00-15:30) (加班) 盤點貼標現況+製作 dashboard+人工清除異常 Uncategorized 貼標",
+            "hours": 1.5
+          },
+          {
+            "code": "TEST",
+            "task": "(15:30-16:00) (加班) 重新檢查貼標結果",
+            "hours": 0.5
+          },
+          {
+            "code": "REQ",
+            "task": "(16:00-17:30) (加班) 整理需要調整的 UIUX 截圖+文字列在 Trello",
+            "hours": 1.5
+          },
+          {
+            "code": "REQ",
+            "task": "(17:30-18:30) (加班) 持續測試平台功能+合併 KOL 主檔未整併項",
+            "hours": 1
+          },
+          {
+            "code": "TEST",
+            "task": "(18:30-19:30) (加班) 抽測 KOL 資料（頻道頭像、連結、國外 KOL 粉絲成長率異常清單）+ 整併待優化",
+            "hours": 1
+          },
+          {
+            "code": "ISSUE",
+            "task": "(19:30-20:00) (加班) 某 KOL 粉絲一天爆漲 40+ 萬不合理，留言請數據端刪除",
+            "hours": 0.5
+          },
+          {
+            "code": "DESIGN",
+            "task": "(21:00-22:30) (加班) 整理相關文件（前端功能結構、指標、時序資料）",
+            "hours": 1.5
+          }
+        ]
+      },
+      "Sylvia": {
+        "total": 12.5,
+        "meeting": 0,
+        "dev": 12.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": "ISSUE",
+            "task": "(15:30-21:30) (加班) 輸出品質調整 (system prompt 調整 + 新增領域 skill)",
+            "hours": 6
+          },
+          {
+            "code": "ISSUE",
+            "task": "(13:30-15:30) (加班) 生成圖表 prompt 優化",
+            "hours": 2
+          },
+          {
+            "code": "PROTOTYPE",
+            "task": "(09:00-13:30) (加班) 資料來源實作",
+            "hours": 4.5
+          }
+        ]
+      }
     }
   },
   "issues": [
     {
       "member": "Joyce",
-      "severity": "🟢",
-      "text": "穩定 8hr"
+      "severity": "🔴",
+      "text": "未回報 6/1"
     },
     {
       "member": "Ivy",
-      "severity": "🟢",
-      "text": "穩定 7hr"
+      "severity": "🔴",
+      "text": "未回報 6/1"
     },
     {
       "member": "Jason",
       "severity": "🔴",
-      "text": "未回報 5/21"
+      "text": "未回報 6/1"
     },
     {
       "member": "日銜",
-      "severity": "🟢",
-      "text": "穩定 7hr"
+      "severity": "🔴",
+      "text": "未回報 6/1"
     },
     {
       "member": "Wendy",
-      "severity": "🟡",
-      "text": "會議佔比 87%"
+      "severity": "🔴",
+      "text": "未回報 6/1"
     },
     {
       "member": "侑呈",
-      "severity": "🟢",
-      "text": "穩定 7.5hr"
+      "severity": "🔴",
+      "text": "未回報 6/1"
     },
     {
       "member": "禎佑",
-      "severity": "🟢",
-      "text": "穩定 8hr"
+      "severity": "🔴",
+      "text": "未回報 6/1"
     },
     {
       "member": "Ted",
       "severity": "🔴",
-      "text": "未回報 5/21"
+      "text": "未回報 6/1"
     },
     {
       "member": "家輝",
-      "severity": "🟢",
-      "text": "穩定 7.8hr"
+      "severity": "🔴",
+      "text": "未回報 6/1"
     },
     {
       "member": "Joe",
       "severity": "🔴",
-      "text": "未回報 5/21"
+      "text": "未回報 6/1"
+    },
+    {
+      "member": "Aaron",
+      "severity": "🔴",
+      "text": "未回報 6/1"
     },
     {
       "member": "哲緯",
-      "severity": "🟡",
-      "text": "超時 12.5hr"
-    },
-    {
-      "member": "Tanya",
-      "severity": "🟢",
-      "text": "穩定 8hr"
-    },
-    {
-      "member": "Sylvia",
-      "severity": "🟢",
-      "text": "穩定 7.5hr"
+      "severity": "🔴",
+      "text": "未回報 6/1"
     }
   ],
   "leave": {
@@ -7951,51 +9595,293 @@
   },
   "dailyUpdates": [
     {
-      "date": "5/21",
+      "date": "5/29",
+      "member": "Neil",
+      "createTime": "2026-05-31T12:45:00.451247Z",
+      "text": "05/29 進度：\n1. [RESEARCH] (09:00-10:30) Agent skill, workflow 操作學習 (1.5H)\n2. [RESEARCH] (10:30-11:30) Agent 新知識 study (1H)\n3. [SUPPORT] (11:30-12:30) 協助 BDE 功能範圍解答 (1H)\n4. [MEETING] (13:30-15:00) 開發工程師 talk Aaron (1.5H)\n5. [DEV] (15:00-16:00) AI聆聽 開發環境調整 (1H)\n6. [DEV] (16:00-17:00) AI聆聽 開發環境還原調整 (1H)\n7. [REVIEW] (17:00-18:00) 工作盤點整理 (1H)",
+      "total": null
+    },
+    {
+      "date": "5/29",
       "member": "Tanya",
-      "createTime": "2026-05-22T01:51:14Z",
-      "text": "05/21 進度：\n1. [TEST] (09:30-10:10) 比對 KEYDERS 模組與原平台查詢結果 (0.7H)\n2. [ISSUE] (10:10-12:30) pull KEYDERS 程式 + 確認資料不完整主因 (2.3H)\n3. [ISSUE] (13:30-14:00) 繼續確認 KEYDERS issues 由誰處理 (0.5H)\n4. [MEETING] (14:00-15:10) 跟 Chris 討論 KOL issues (1.2H)\n5. [REQ] (15:10-17:00) 將原本誤判給數據的 issues 改列給工程 (1.8H)\n6. [MGMT] (17:00-18:00) 跟品牌行銷討論口碑之星名單 (1H)\n7. [REQ] (18:00-18:30) Trello 設定前端待修改項目 (0.5H)",
+      "createTime": "2026-05-29T16:05:23.935263Z",
+      "text": "05/29 進度：\n1. [TEST] (09:00-12:30) T1 Uncategorized 頻道分類檢視 + 貼標評估 + 可確認類別優先人工標籤修正 (3.5H)\n2. [TEST] (13:30-16:00) 繼續處理標籤修正 (2.5H)\n3. [DESIGN] (16:00-17:00) 查看祥順工時預估表 + 跟 leamon 討論後調整一小部分內容 (1H)\n4. [TEST] (17:00-18:00) 繼續處理標籤修正 (1H)",
       "total": 8
     },
     {
-      "date": "5/21",
+      "date": "5/28",
+      "member": "Tanya",
+      "createTime": "2026-05-29T00:02:24.662911Z",
+      "text": "05/28 進度：\n1. [TEST] (09:00-11:40) 測試 KEYDERS 模組功能 (2.7H)\n2. [MEETING] (11:40-12:00) 祥順案內部臨時會議 (0.3H)\n3. [RESEARCH] (12:00-12:30) 查看祥順案相關討論內容 (0.5H)\n4. [MEETING] (13:30-14:00) 祥順案-桃市府線上稽核會議 (0.5H)\n5. [MGMT] (14:00-14:30) 查找祥順案相關資訊提供至 line 群 (0.5H)\n6. [TEST] (14:30-15:30) 繼續測試 KEYDERS 模組 + 將 bug issues 設置於 Trello (1H)\n7. [REQ] (15:30-18:00) 將 T1 貼標 Uncategorized 的頻道區分為數據/貼標 issues 列入待優化項目 (2.5H)",
+      "total": 8
+    },
+    {
+      "date": "5/26",
+      "member": "Tanya",
+      "createTime": "2026-05-26T10:50:51.185983Z",
+      "text": "05/26 進度：\n1. [TEST] (09:30-10:30) 繼續調整商業紀錄關鍵字 (1H)\n2. [MEETING] (10:30-11:30) 跟技發部討論 KOL 貼標優化 (1H)\n3. [REQ] (11:30-12:30) 整理 KOL 貼標待優化項目 (1H)\n4. [RESEARCH] (13:30-16:00) 用 cc 查詢中文域名費用（結果不合預期再人工查詢） (2.5H)\n5. [TEST] (16:00-18:30) 繼續測試商業紀錄關鍵字 + 下班前在 Trello 給出優化版 (2.5H)",
+      "total": 8
+    },
+    {
+      "date": "5/25",
+      "member": "Tanya",
+      "createTime": "2026-05-25T10:29:16.121231Z",
+      "text": "05/25 進度：\n1. [TEST] (09:30-10:30) 確認 KEYPO 項目 + 回覆和關閉 issues (1H)\n2. [TEST] (10:30-12:30) 藉由 cc 將未存在於原 KEYDERS ES 的啦啦隊名單所對應的社群頻道補齊 (2H)\n3. [TEST] (13:30-14:30) 繼續藉由 cc 補齊啦啦隊社群頻道 (1H)\n4. [TEST] (14:30-15:30) 人工驗證社群頻道連結的正確性 (1H)\n5. [TEST] (15:30-18:30) 利用 cc 重新調整商業紀錄的開團&業配關鍵字 + 在 KEYPO 設定主題關鍵字進行驗證 (3H)",
+      "total": 8
+    },
+    {
+      "date": "5/23",
+      "member": "Neil",
+      "createTime": "2026-05-24T14:25:27.676111Z",
+      "text": "05/23 進度：\n1. [RESEARCH] (16:00-22:00) (加班) AI聆聽 市場研究與路線研究 (6H)",
+      "total": null
+    },
+    {
+      "date": "5/22",
       "member": "Sylvia",
-      "createTime": "2026-05-22T02:30:37Z",
-      "text": "05/21 進度：\n1. [TEST] (09:30-10:00) 測試 KEYPO Agent (0.5H)\n2. [TRAVEL] (10:00-12:00) 拜訪和泰汽車 (2H)\n3. [TRAVEL] (13:00-15:00) 拜訪戰國策 (2H)\n4. [MEETING] (15:00-16:30) 與 Joe sync KEYPO Agent 現況 (1.5H)\n5. [TEST] (16:30-18:00) 本機啟動 KEYPO Agent 測試 (1.5H)",
+      "createTime": "2026-05-24T14:27:34.553663Z",
+      "text": "05/22 進度：\n1. [DEV] (09:30-12:30) 調整 KEYPO Agent prompt 架構跟內容（發 MR #88 #89） (3H)\n2. [DEV] (13:30-15:00) 調整 KEYPO Agent prompt 架構跟內容（發 MR #90） (1.5H)\n3. [ISSUE] (15:00-15:30) 排查 Agent 等待時間過長的問題 (0.5H)\n4. [MEETING] (15:30-16:00) 產品部門週會 (0.5H)\n5. [ISSUE] (16:00-17:00) 排查 Agent 等待時間過長的問題 (1H)\n6. [TEST] (17:00-18:00) 整合測試 (1H)",
       "total": 7.5
     },
     {
-      "date": "5/20",
-      "member": "Sylvia",
-      "createTime": "2026-05-21T08:15:53Z",
-      "text": "05/20 進度：\n1. [ISSUE] (09:30-11:00) 沒資料的回合不顯示綠點提示 (1.5H)\n2. [ISSUE] (11:00-12:30) 排查圖表生成 bug 來源 (1.5H)\n3. [ISSUE] (13:30-14:00) 圖表生成 debug (0.5H)\n4. [TEST] (14:00-15:00) 生成 KEYPO Agent AI 測試計劃 (1H)\n5. [ISSUE] (15:00-17:00) debug 對話會消失不見 (2H)\n6. [ISSUE] (17:00-18:00) 查找 KEYPO Agent 思考過慢原因 (1H)",
-      "total": 7.5
-    }
-  ],
-  "newDates": [],
-  "backfilled": [
+      "date": "5/22",
+      "member": "Tanya",
+      "createTime": "2026-05-22T12:43:50.692191Z",
+      "text": "05/22 進度：\n1. [TEST] (09:30-10:30) 透過 cc 列出 L1 只有日常生活的 KOL 清單 + 驗證是否需修正 (1H)\n2. [PROTOTYPE] (10:30-11:30) 透過 cc 把前端待修改項目在 local 實作 + 跟工程對齊認知 (1H)\n3. [REPORT] (11:30-12:00) 整理 KEYDERS 模組-網紅週報 (0.5H)\n4. [MGMT] (12:00-12:30) 擬定並寄送回覆給 Sam 的 email (0.5H)\n5. [MGMT] (13:30-14:00) 向谷哥及 IvyMa 發出會議邀請（待確認 AI 報告隱藏功能） (0.5H)\n6. [TEST] (14:00-15:30) 透過 cc 從網溫撈取 200 名啦啦隊名單 + 確認是否存在於 KEYDERS ES (1.5H)\n7. [MEETING] (15:30-16:00) 產品部 sync 會議 (0.5H)\n8. [TEST] (16:00-18:30) 繼續驗證啦啦隊名單，標註是否存在 KEYDERS ES 以及爬收需補收錄的社群頻道 url (2.5H)",
+      "total": 8
+    },
     {
-      "date": "5/20",
+      "date": "5/17",
       "member": "Sylvia",
-      "total": 7.5,
-      "meeting": 0,
-      "dev": 7.5
+      "createTime": "2026-05-19T04:21:16.386175Z",
+      "text": "05/17 進度：\n1. [TEST] (14:00-15:00) (加班) 測試操縱 KEYPO 功能 (1H)\n2. [DESIGN] (15:00-16:00) (加班) 釐清資料來源的顯示邏輯 (1H)\n3. [TEST] (16:00-16:30) (加班) 整合測試 (0.5H)\n4. [TEST] (21:00-22:00) (加班) 整合測試 (1H)",
+      "total": 3.5
+    },
+    {
+      "date": "5/17",
+      "member": "Tanya",
+      "createTime": "2026-05-18T02:25:09.816047Z",
+      "text": "05/17 進度：\n1. [DESIGN] (14:30-16:30) (加班) 產出 KEYDERS 模組相關文件+跟 RD 溝通+測試模組功能 (2H)\n2. [TEST] (16:30-17:30) (加班) 測試 KEYDERS Agent+查看資料來源+部門溝通+提交資料 (1H)",
+      "total": 3
+    },
+    {
+      "date": "5/17",
+      "member": "Neil",
+      "createTime": "2026-05-17T17:20:41.991023Z",
+      "text": "05/17 進度：\n1. [TEST] (17:00-20:00) (加班) 測試 GenAI Lens (3H)\n2. [TEST] (20:00-23:00) (加班) 測試 KEYDERS 網紅 (3H)\n3. [TEST] (23:00-01:00) (加班) 測試 Agent (2H)\n4. [REVIEW] (01:00-02:00) (加班) 團隊管理與工作狀態 Review",
+      "total": null
+    },
+    {
+      "date": "5/16",
+      "member": "Sylvia",
+      "createTime": "2026-05-19T04:21:40.882047Z",
+      "text": "05/16 進度：\n1. [ISSUE] (15:30-21:30) (加班) 輸出品質調整 (system prompt 調整 + 新增領域 skill) (6H)\n2. [ISSUE] (13:30-15:30) (加班) 生成圖表 prompt 優化 (2H)\n3. [PROTOTYPE] (09:00-13:30) (加班) 資料來源實作 (4.5H)",
+      "total": 12.5
+    },
+    {
+      "date": "5/16",
+      "member": "Tanya",
+      "createTime": "2026-05-18T02:23:42.580527Z",
+      "text": "05/16 進度：\n1. [REVIEW] (13:00-13:30) (加班) 盤點 KOL 數據收錄現況表 (0.5H)\n2. [TEST] (13:30-14:00) (加班) 抽測 KEYDERS 頻道主檔及粉絲折線圖 (0.5H)\n3. [TEST] (14:00-15:30) (加班) 盤點貼標現況+製作 dashboard+人工清除異常 Uncategorized 貼標 (1.5H)\n4. [TEST] (15:30-16:00) (加班) 重新檢查貼標結果 (0.5H)\n5. [REQ] (16:00-17:30) (加班) 整理需要調整的 UIUX 截圖+文字列在 Trello (1.5H)\n6. [REQ] (17:30-18:30) (加班) 持續測試平台功能+合併 KOL 主檔未整併項 (1H)\n7. [TEST] (18:30-19:30) (加班) 抽測 KOL 資料（頻道頭像、連結、國外 KOL 粉絲成長率異常清單）+ 整併待優化 (1H)\n8. [ISSUE] (19:30-20:00) (加班) 某 KOL 粉絲一天爆漲 40+ 萬不合理，留言請數據端刪除 (0.5H)\n9. [DESIGN] (21:00-22:30) (加班) 整理相關文件（前端功能結構、指標、時序資料） (1.5H)",
+      "total": 8.5
+    },
+    {
+      "date": "5/16",
+      "member": "Neil",
+      "createTime": "2026-05-17T17:20:16.140735Z",
+      "text": "05/16 進度：\n1. [TEST] (20:00-21:00) (加班) 測試 Agent (1H)\n2. [TEST] (21:00-22:00) (加班) 測試 KEYDERS 網紅 (1H)\n3. [TEST] (22:00-23:00) (加班) 測試 GenAI Lens (1H)\n4. [MGMT] (23:00-23:30) (加班) 團隊管理 (0.5H)\n5. [MEETING] (23:30-00:00) (加班) 臨時討論 (0.5H)",
+      "total": null
+    },
+    {
+      "date": "5/15",
+      "member": "Tanya",
+      "createTime": "2026-05-18T02:26:56.298127Z",
+      "text": "05/15 進度：\n1. [REVIEW] (09:30-10:30) KEYDERS 模組進度盤點+貼標數量 (1H)\n2. [TEST] (10:30-11:00) 測試 KEYDERS 模組功能 (0.5H)\n3. [MEETING] (11:00-12:20) 跟業務子洵開會討論 KEYDERS 模組+收 feedback (1.2H)\n4. [REQ] (12:20-12:30) 請前端 RD 依業務建議調整 tooltips 文字 (0.2H)\n5. [PROTOTYPE] (13:30-14:00) 讓 cc 重新產出開團/業配關鍵字（品質不佳） (0.5H)\n6. [TEST] (14:00-14:40) RD 更新後接續測試 KEYDERS 模組 (0.7H)\n7. [REQ] (14:40-15:00) 將數據及功能問題列在 Google chat (0.3H)\n8. [REVIEW] (15:00-16:00) 跟工程端 PO sync 開發進度+對齊 demo 內容 (1H)\n9. [MEETING] (16:00-18:00) BDE rehearsal 會議 (2H)\n10. [PROTOTYPE] (19:30-20:00) (加班) 繼續調整開團/業配關鍵字 (0.5H)\n11. [MGMT] (20:00-20:30) (加班) 跟工程端 PO 確認需要加班完成的項目 (0.5H)\n12. [PROTOTYPE] (20:30-22:00) (加班) 從 KEYPO 取得關鍵字+讓 cc 驗證+重複調整優化 (1.5H)\n13. [REQ] (22:00-22:30) (加班) 條列抽測發現未整併的 KOL 至 Google 表單 (0.5H)",
+      "total": 10.4
+    },
+    {
+      "date": "5/15",
+      "member": "Sylvia",
+      "createTime": "2026-05-15T11:35:31.889039Z",
+      "text": "05/15 進度：\n1. [MGMT] (09:30-11:00) 改 KEYPO Agent UI (1.5H)\n2. [DESIGN] (11:00-12:30) 處理 KOL_query 通行問題；熟悉 KEYPO Agent 專案 (1.5H)\n3. [DESIGN] (13:30-14:00) 更新 worklog skill v0.2.0 + 設定 daily-report .md 同步 (0.5H)\n4. [DESIGN] (14:00-16:00) MR 衝突處理 (2H)\n5. [MEETING] (16:00-18:00) BDE rehearsal 開會 (2H)",
+      "total": 7.5
+    },
+    {
+      "date": "5/14",
+      "member": "Tanya",
+      "createTime": "2026-05-18T02:26:37.630703Z",
+      "text": "05/14 進度：\n1. [DESIGN] (09:30-11:00) 整理 KEYDERS 模組相關文件+重新確認計算邏輯 (1.5H)\n2. [MEETING] (11:00-11:30) KEYDERS 跟前後端工程師討論頁面跳轉資料呈現 (0.5H)\n3. [REQ] (11:30-12:30) KEYDERS 模組-前端要調整的 UI (1H)\n4. [MGMT] (13:30-14:00) KEYDERS-我的收藏下階段要有群組，跟 RD 說明 (0.5H)\n5. [REVIEW] (14:00-14:30) 跟數據端確認目前資料狀況 (0.5H)\n6. [DESIGN] (14:30-15:30) 觀測競品計算公式的 Tooltip 及文案 (1H)\n7. [PROTOTYPE] (15:30-16:00) 本機調整 prototype 截示意圖跟前端 RD 溝通 (0.5H)\n8. [MEETING] (16:00-16:40) 跟工程+數據端討論 KEYDERS 我的收藏-群組資料夾實作與數據關聯性 (0.7H)\n9. [REQ] (16:40-17:30) 處理 Trello 要列的項目+口頭跟 RD 說明 (0.8H)\n10. [REVIEW] (17:30-18:20) 盤點各項進度+確認後端 API 現況 (0.8H)\n11. [REQ] (18:20-18:30) 更新 Trello+附截圖+文案說明+進度給 RD（前 10 分） (0.2H)\n12. [REQ] (18:30-19:30) (加班) 更新 Trello+附截圖+文案說明+進度給 RD (1H)",
+      "total": 9
+    },
+    {
+      "date": "5/13",
+      "member": "Tanya",
+      "createTime": "2026-05-18T02:26:23.439631Z",
+      "text": "05/13 進度：\n1. [PROTOTYPE] (09:00-10:00) 跟後端 RD 拿 KEYPO .env+透過 cc local build (1H)\n2. [MGMT] (10:00-10:10) 回覆品牌行銷部撈名單需求 (0.2H)\n3. [TEST] (10:10-10:30) 驗證 KEYDERS 貼標進度 (0.3H)\n4. [REPORT] (10:30-11:00) 整理跟谷哥開會用的資料 (0.5H)\n5. [MEETING] (11:00-12:50) 跟谷哥展示 KEYDERS 模組+收 feedback (1.8H)\n6. [CS] (13:20-13:50) 查看及回覆祥順案的稽核文件 (0.5H)\n7. [REPORT] (13:50-14:00) 整理跟 Chris 討論的 KOL 主檔示意 (0.2H)\n8. [MEETING] (14:00-14:30) 跟 Chris 會議-釐清 KOL 主檔(含頭像、簡介、標籤) (0.5H)\n9. [REPORT] (14:30-15:00) 整理跟谷哥的會議紀錄 (0.5H)\n10. [MEETING] (15:00-16:10) 工程部讀書分享會 (1.1H)\n11. [REQ] (16:10-17:00) 條列 KEYDERS 模組前端要調的 tooltips+文字 (0.9H)\n12. [MGMT] (17:00-17:30) 跟 Neil 部門內部 sync (0.5H)\n13. [MGMT] (17:30-18:00) (加班) 跟前端 RD 對齊 KEYDERS 開發方向 (0.5H)\n14. [REVIEW] (18:00-18:30) (加班) 盤點 KOL 已貼標數量+更新進度表 (0.5H)\n15. [MEETING] (19:00-19:30) (加班) 跟工程師討論 KEYDERS 領袖價值計算技術細節 (0.5H)\n16. [REVIEW] (19:30-20:30) (加班) 整理會議紀錄 action items 列到 Trello (1H)",
+      "total": 10.5
+    },
+    {
+      "date": "5/12",
+      "member": "Tanya",
+      "createTime": "2026-05-18T02:26:09.727839Z",
+      "text": "05/12 進度：\n1. [REVIEW] (09:30-10:30) KEYDERS vwn lru 盤點+查看前端Layout畫面 (1H)\n2. [TEST] (10:30-11:00) KEYDERS 驗證貼標成效 (0.5H)\n3. [MEETING] (11:00-12:40) KEYPO 例會 (1.7H)\n4. [MEETING] (13:40-15:40) KEYPO 例會接續討論 (2H)\n5. [MGMT] (15:40-16:30) Google chat 與谷哥+IvyMa 協調會議時間 (0.8H)\n6. [MEETING] (16:30-17:50) 跟 CSM IvyMa 展示 KEYDERS 模組+收 feedback (1.3H)\n7. [ISSUE] (17:50-18:30) 跟 RD 討論 KEYDERS 資料列表問題+提供解決方案 (0.7H)\n8. [MEETING] (18:30-19:00) (加班) 跟 IvyWang 討論前端畫面調整+sync 進度 (0.5H)\n9. [MGMT] (19:00-19:50) (加班) 詢問技發部 YT 的 KOL 貼標排程 (0.8H)",
+      "total": 9.3
+    },
+    {
+      "date": "5/11",
+      "member": "Tanya",
+      "createTime": "2026-05-18T02:25:55.922879Z",
+      "text": "05/11 進度：\n1. [MGMT] (09:30-10:30) 回Discord訊息+跟RD討論prototype (1H)\n2. [REQ] (10:30-11:30) 補prototype截圖+文字說明至Trello卡片 (1H)\n3. [DESIGN] (11:30-12:30) KEYDERS模組功能 PRD 文件版更 (1H)\n4. [DESIGN] (13:30-14:40) KEYDERS模組功能 PRD 文件版更（續） (1.2H)\n5. [MEETING] (14:40-15:00) 跟前端RD討論UIUX設計稿 (0.3H)\n6. [DESIGN] (15:00-17:00) KEYDERS模組功能 PRD 文件版更（續2） (2H)\n7. [REVIEW] (17:00-17:30) KEYDERS 詢問開發進度 (0.5H)\n8. [REVIEW] (17:30-18:00) KEYDERS 跟工程同步進度+調整進度表 (0.5H)\n9. [REVIEW] (18:00-18:30) KEYDERS 抓貼標狀態 (0.5H)\n10. [DESIGN] (18:30-19:00) (加班) KEYDERS模組功能 PRD 文件版更（續3） (0.5H)\n11. [MEETING] (19:00-19:30) (加班) 跟後端工程師討論開發細節 (0.5H)\n12. [DESIGN] (19:30-20:00) (加班) KEYDERS模組功能 PRD 文件版更（續4） (0.5H)",
+      "total": 9.5
     }
   ],
+  "newDates": [
+    "5/29",
+    "5/23",
+    "5/17",
+    "5/16"
+  ],
+  "backfilled": [],
   "addedToExisting": [
     {
-      "date": "5/21",
+      "date": "5/27",
       "member": "Tanya",
-      "total": 8,
-      "meeting": 2.2,
-      "dev": 5.8
+      "total": null,
+      "meeting": null,
+      "dev": null
     },
     {
-      "date": "5/21",
+      "date": "5/27",
+      "member": "Sylvia",
+      "total": null,
+      "meeting": null,
+      "dev": null
+    },
+    {
+      "date": "5/28",
+      "member": "Tanya",
+      "total": 8,
+      "meeting": 1.3,
+      "dev": 6.7
+    },
+    {
+      "date": "5/28",
+      "member": "Sylvia",
+      "total": null,
+      "meeting": null,
+      "dev": null
+    },
+    {
+      "date": "5/26",
+      "member": "Tanya",
+      "total": 8,
+      "meeting": 1,
+      "dev": 7
+    },
+    {
+      "date": "5/26",
+      "member": "Sylvia",
+      "total": null,
+      "meeting": null,
+      "dev": null
+    },
+    {
+      "date": "5/25",
+      "member": "Tanya",
+      "total": 8,
+      "meeting": 0,
+      "dev": 8
+    },
+    {
+      "date": "5/25",
+      "member": "Sylvia",
+      "total": null,
+      "meeting": null,
+      "dev": null
+    },
+    {
+      "date": "5/22",
+      "member": "Tanya",
+      "total": 8,
+      "meeting": 1,
+      "dev": 7
+    },
+    {
+      "date": "5/22",
       "member": "Sylvia",
       "total": 7.5,
-      "meeting": 1.5,
-      "dev": 6
+      "meeting": 0.5,
+      "dev": 7
+    },
+    {
+      "date": "5/15",
+      "member": "Tanya",
+      "total": 10.4,
+      "meeting": 4.2,
+      "dev": 6.2
+    },
+    {
+      "date": "5/15",
+      "member": "Sylvia",
+      "total": 7.5,
+      "meeting": 2,
+      "dev": 5.5
+    },
+    {
+      "date": "5/14",
+      "member": "Tanya",
+      "total": 9,
+      "meeting": 1.2,
+      "dev": 7.8
+    },
+    {
+      "date": "5/14",
+      "member": "Sylvia",
+      "total": null,
+      "meeting": null,
+      "dev": null
+    },
+    {
+      "date": "5/13",
+      "member": "Tanya",
+      "total": 10.5,
+      "meeting": 6.1,
+      "dev": 4.4
+    },
+    {
+      "date": "5/13",
+      "member": "Sylvia",
+      "total": null,
+      "meeting": null,
+      "dev": null
+    },
+    {
+      "date": "5/12",
+      "member": "Tanya",
+      "total": 9.3,
+      "meeting": 7,
+      "dev": 2.3
+    },
+    {
+      "date": "5/12",
+      "member": "Sylvia",
+      "total": null,
+      "meeting": null,
+      "dev": null
+    },
+    {
+      "date": "5/11",
+      "member": "Tanya",
+      "total": 9.5,
+      "meeting": 1.8,
+      "dev": 7.7
+    },
+    {
+      "date": "5/11",
+      "member": "Sylvia",
+      "total": null,
+      "meeting": null,
+      "dev": null
     }
   ],
   "centers": {
@@ -8015,111 +9901,7 @@
         "Aaron",
         "哲緯"
       ],
-      "parent": "產品中心",
-      "validCodes": {
-        "KEYPO": {
-          "label": "KEYPO 系列",
-          "category": "product",
-          "gitlabProjectPrefixes": [
-            "KEYPO/",
-            "keypo-",
-            "keypo-suite/",
-            "llmprojects/keypo-"
-          ]
-        },
-        "KEYDERS": {
-          "label": "KEYDERS",
-          "category": "product",
-          "gitlabProjectPrefixes": [
-            "kol-keyders",
-            "keyders-metrics",
-            "wendyHsieh/keyders",
-            "kol-agent",
-            "kol-desc-parser",
-            "kol-tools",
-            "kol-lookup",
-            "kol-profile"
-          ]
-        },
-        "KEYTECTOR": {
-          "label": "KEYTECTOR",
-          "category": "product",
-          "gitlabProjectPrefixes": [
-            "keytector/",
-            "wendyHsieh/cib"
-          ]
-        },
-        "KEYKYC": {
-          "label": "KEYKYC",
-          "category": "product",
-          "gitlabProjectPrefixes": [
-            "keykyc",
-            "kyckyc",
-            "chris.su/keykyc",
-            "bigdata-54837596/keykyc"
-          ]
-        },
-        "LSR": {
-          "label": "Line Social Radar",
-          "category": "product",
-          "gitlabProjectPrefixes": [
-            "line-social-radar",
-            "lsr",
-            "threads-scrapy",
-            "mason/line-social-radar"
-          ]
-        },
-        "BDE": {
-          "label": "BDE 大數據前後端",
-          "category": "platform",
-          "gitlabProjectPrefixes": [
-            "bigdata/",
-            "CrawlersV2/",
-            "Crawlers/",
-            "dailyview/",
-            "sinyi/"
-          ]
-        },
-        "AGENT": {
-          "label": "Agent 開發",
-          "category": "product",
-          "gitlabProjectPrefixes": [
-            "keypo-agent",
-            "kol-agent",
-            "es-query-agent",
-            "ai-crawler-skills",
-            "claude"
-          ]
-        },
-        "AILISTEN": {
-          "label": "AI 聆聽",
-          "category": "product",
-          "gitlabProjectPrefixes": [
-            "ai-listen",
-            "keypo-ai-listen",
-            "ted.juang/ai-listening"
-          ]
-        },
-        "INFRA": {
-          "label": "基礎設施 / 機房",
-          "category": "platform",
-          "gitlabProjectPrefixes": [
-            "platform-infra/"
-          ]
-        },
-        "REVIEW": {
-          "label": "Code Review / MR Review",
-          "category": "special"
-        },
-        "MEETING": {
-          "label": "會議",
-          "category": "special"
-        },
-        "OPS": {
-          "label": "維運 / 部署 / 環境",
-          "category": "special"
-        }
-      }
+      "parent": "產品中心"
     },
     "技發": {
       "label": "技術發展部",
@@ -8127,28 +9909,50 @@
         "Richard",
         "Patty"
       ],
-      "parent": "產品中心",
-      "validCodes": {
-        "KEYLM": {
-          "label": "KEYLM 大語言模型",
-          "category": "research",
-          "gitlabProjectPrefixes": [
-            "keylm",
-            "ragflow",
-            "structure-cot"
-          ]
-        },
-        "MEETING": {
-          "label": "會議",
-          "category": "special"
-        }
-      }
+      "parent": "產品中心"
     },
     "產品": {
       "label": "產品部",
-      "members": [],
+      "members": [
+        "Tanya",
+        "Sylvia"
+      ],
       "parent": "產品中心",
-      "validCodes": {}
+      "validCodes": {
+        "MGMT": {
+          "label": "管理"
+        },
+        "MEETING": {
+          "label": "會議"
+        },
+        "PROTOTYPE": {
+          "label": "原型開發"
+        },
+        "DESIGN": {
+          "label": "設計"
+        },
+        "TEST": {
+          "label": "測試"
+        },
+        "REVIEW": {
+          "label": "Review"
+        },
+        "REPORT": {
+          "label": "報告"
+        },
+        "SUPPORT": {
+          "label": "支援"
+        },
+        "RESEARCH": {
+          "label": "研究"
+        },
+        "DEV": {
+          "label": "開發"
+        },
+        "ISSUE": {
+          "label": "Issues"
+        }
+      }
     },
     "分析調查一": {
       "label": "分析調查部(一)",
