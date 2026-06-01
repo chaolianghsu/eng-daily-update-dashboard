@@ -1,78 +1,114 @@
 {
-  "analysisDate": "2026-05-22",
-  "period": "5/21",
+  "analysisDate": "2026-06-01",
+  "period": "5/25-5/29",
   "warnings": [
     {
-      "date": "5/21",
-      "member": "Ivy",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "開發工作 6H",
-      "commits": "無",
-      "reasoning": "報告開發時數 6H，但當天無任何相關 commits。開發時數達到警示門檻（≥3H），零代碼提交與報告時數存在重大矛盾，需確認工作完成度。"
-    },
-    {
-      "date": "5/21",
-      "member": "家輝",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "開發工作 7.8H",
-      "commits": "無",
-      "reasoning": "報告開發時數 7.8H，但當天無任何 commits。高於團隊平均開發時數，與零代碼提交存在重大矛盾，強烈建議查明工作進度。"
-    },
-    {
-      "date": "5/21",
-      "member": "哲緯",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "開發工作 11.5H",
-      "commits": "無",
-      "reasoning": "報告開發時數 11.5H（為團隊平均 6.6H 的 1.74 倍），但當天零 commits。極高的報告時數與零代碼提交存在嚴重矛盾，需立即確認工作狀況。"
-    },
-    {
-      "date": "5/21",
-      "member": "Joyce",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發工作 6.5H",
-      "commits": "5 筆（KEYPO/keypo-backend 郵件功能相關）",
-      "reasoning": "開發時數 6.5H 接近團隊平均，但 commits 數量 5 筆遠低於團隊平均 27.7。工時/commits 比例（1.3）是團隊平均（0.238）的 5.46 倍。缺少詳細日常更新文本，建議確認工作內容與 commits 記錄的一致性。"
-    },
-    {
-      "date": "5/21",
-      "member": "侑呈",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發工作 7.5H",
-      "commits": "6 筆（yuriy.lin/fanti_browser_scraper 4 筆、keytector/keytector-dashboard 2 筆）",
-      "reasoning": "開發時數 7.5H 接近團隊平均（6.6H），但 commits 數量 6 筆遠低於團隊平均 27.7。工時/commits 比例（1.0）是團隊平均（0.238）的 4.2 倍，顯著偏離正常範圍。"
-    },
-    {
-      "date": "5/21",
-      "member": "Sylvia",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發工作 6H（含出差拜訪 4H）",
-      "commits": "3 筆（llmprojects/keypo-agent）",
-      "reasoning": "報告開發時數 6H，但 commits 數量 3 筆遠低於團隊平均 27.7。工時/commits 比例（0.5）是團隊平均（3.785）的 0.13 倍。注：報告時數中包含拜訪和泰汽車和戰國策共 4H 出差時間，不應產生代碼提交。扣除出差後實際開發時數約 2H，建議調整報告分類。"
-    },
-    {
-      "date": "5/21",
+      "date": "5/25",
       "member": "Tanya",
       "severity": "🔴",
       "type": "low_output",
-      "task": "開發工作 5.8H（含測試、問題調查、需求評估）",
-      "commits": "無",
-      "reasoning": "報告開發時數 5.8H（扣除會議 2.2H），包含 KEYDERS 模組測試對比、數據不完整調查、issue 重新分類、前端需求列表設定等工作。雖任務性質主要為質量管理和分析（非直接編碼），但按規則開發時數 ≥3H 零 commits 仍應標記。建議確認此類質量管理工作應否納入編碼產出評估。"
+      "task": "確認KEYPO項目、補齊社群頻道、調整商業紀錄關鍵字 (8H dev)",
+      "commits": "0",
+      "reasoning": "報告開發任務8小時，涵蓋KEYPO測試、ES社群頻道補齊、商業紀錄調整等工作，但當日無任何相關commits提交"
+    },
+    {
+      "date": "5/25",
+      "member": "Aaron",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "工程開發任務 (3H dev)",
+      "commits": "3 commits across 2 projects",
+      "reasoning": "開發工時與commits產出遠低於團隊平均。團隊平均3.67 commits/hour，Aaron僅1.0 commits/hour，相差3.67倍"
+    },
+    {
+      "date": "5/26",
+      "member": "Wendy",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "工程開發任務 (6H dev)",
+      "commits": "9 commits across 2 projects",
+      "reasoning": "開發工時與commits產出遠低於團隊平均。團隊平均4.31 commits/hour，Wendy僅1.5 commits/hour，相差2.87倍"
+    },
+    {
+      "date": "5/26",
+      "member": "Aaron",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "工程開發任務 (6.5H dev)",
+      "commits": "1 commit",
+      "reasoning": "開發工時與commits產出遠低於團隊平均。團隊平均4.31 commits/hour，Aaron僅0.154 commits/hour，相差28倍"
+    },
+    {
+      "date": "5/26",
+      "member": "Tanya",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "測試商業紀錄、整理待優化項目、查詢域名費用 (7H dev)",
+      "commits": "0",
+      "reasoning": "報告開發任務7小時，包含多項TEST、RESEARCH、REQ工作，但當日無任何相關commits提交"
+    },
+    {
+      "date": "5/27",
+      "member": "Wendy",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "工程開發任務 (7.5H dev)",
+      "commits": "2 commits",
+      "reasoning": "開發工時與commits產出遠低於團隊平均。團隊平均5.29 commits/hour，Wendy僅0.267 commits/hour，相差19.8倍"
+    },
+    {
+      "date": "5/27",
+      "member": "Aaron",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "工程開發任務 (6H dev)",
+      "commits": "0",
+      "reasoning": "報告開發任務6小時，但當日無任何相關commits提交，與團隊平均36筆commits差距顯著"
+    },
+    {
+      "date": "5/28",
+      "member": "Wendy",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "工程開發任務 (6.5H dev)",
+      "commits": "0",
+      "reasoning": "報告開發任務6.5小時，但當日無任何相關commits提交，與團隊平均34.7筆commits差距顯著"
+    },
+    {
+      "date": "5/28",
+      "member": "Aaron",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "工程開發任務 (6H dev)",
+      "commits": "3 commits",
+      "reasoning": "開發工時與commits產出遠低於團隊平均。團隊平均5.42 commits/hour，Aaron僅0.5 commits/hour，相差10.84倍"
+    },
+    {
+      "date": "5/28",
+      "member": "Tanya",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "KEYDERS模組測試、祥順案會議、頻道分類 (6.7H dev)",
+      "commits": "0",
+      "reasoning": "報告開發任務6.7小時，包含TEST、REQ、MGMT工作，但當日無任何相關commits提交"
+    },
+    {
+      "date": "5/29",
+      "member": "Tanya",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "T1頻道分類檢視、貼標修正、優化評估 (7H dev)",
+      "commits": "0",
+      "reasoning": "報告開發任務7小時，包含多項TEST與分類優化工作，但當日無任何相關commits提交"
     }
   ],
   "summary": {
-    "totalMembers": 11,
-    "totalWarnings": 7,
+    "totalMembers": 3,
+    "totalWarnings": 11,
     "byType": {
-      "low_output": 4,
+      "low_output": 6,
       "mismatch": 0,
-      "outlier": 3
+      "outlier": 5
     }
   }
 }

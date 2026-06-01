@@ -1,151 +1,321 @@
 {
-  "analysisDate": "2026-05-22",
-  "period": "5/21",
+  "analysisDate": "2026-06-01",
+  "period": "5/25-5/29",
   "planSpecs": [
     {
-      "date": "5/21",
-      "member": "Aaron",
+      "date": "5/25",
+      "member": "侑呈",
       "commit": {
-        "title": "docs(readme): rewrite as full onboarding guide and auto-bootstrap pg schema",
-        "sha": "63690291",
-        "project": "llmprojects/keypo-agent",
-        "url": "https://biglab.buygta.today/llmprojects/keypo-agent/-/commit/63690291",
-        "source": "gitlab"
-      },
-      "files": ["docs/agent-example.md", "docs/prompt_collections.md", "docs/write-test.md"]
-    },
-    {
-      "date": "5/21",
-      "member": "Jason",
-      "commit": {
-        "title": "docs(spec+plan): geo wave 1 w1-2a — article anchor id + sr-only toc",
-        "sha": "c96553c7",
-        "project": "dailyview/2024-dailyview-app",
-        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-app/-/commit/c96553c7",
+        "title": "登入模組 review 定案：修訂 spec + 新增 v1 實作計畫",
+        "sha": "d28d51f8",
+        "project": "keytector/keytector-dashboard",
+        "url": "https://biglab.buygta.today/keytector/keytector-dashboard/-/commit/d28d51f8",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/plans/2026-05-21-geo-wave1-w1-2a-article-anchor-and-sronly-toc.md",
-        "docs/superpowers/specs/2026-05-21-geo-wave1-w1-2a-article-anchor-and-sronly-toc-design.md"
+        "docs/superpowers/plans/2026-05-25-login-module.md",
+        "docs/superpowers/specs/2026-05-21-login-module-design.md"
       ]
     },
     {
-      "date": "5/21",
+      "date": "5/25",
       "member": "Jason",
       "commit": {
-        "title": "docs(log): w1-2a done — article anchor id + popular/insight sr-only toc",
-        "sha": "27369c14",
+        "title": "docs(spec+plan): listing pages h1 dynamic + placeholder guard",
+        "sha": "03e039e6",
         "project": "dailyview/2024-dailyview-app",
-        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-app/-/commit/27369c14",
-        "source": "gitlab"
-      },
-      "files": ["docs/seo-geo/log.md"]
-    },
-    {
-      "date": "5/21",
-      "member": "Jason",
-      "commit": {
-        "title": "docs(spec+plan): geo wave 1 ai citation favicon high-res link",
-        "sha": "c130669c",
-        "project": "dailyview/2024-dailyview-app",
-        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-app/-/commit/c130669c",
+        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-app/-/commit/03e039e6",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/plans/2026-05-21-ai-citation-favicon-high-res-link.md",
-        "docs/superpowers/specs/2026-05-21-ai-citation-favicon-high-res-link-design.md"
+        "docs/superpowers/plans/2026-05-25-listing-pages-h1-dynamic.md",
+        "docs/superpowers/specs/2026-05-25-listing-pages-h1-dynamic-design.md"
       ]
     },
     {
-      "date": "5/21",
+      "date": "5/25",
       "member": "Jason",
       "commit": {
-        "title": "docs(log): ai citation favicon high-res link done",
-        "sha": "c6e3be8e",
+        "title": "docs(log): listing pages h1 dynamic done + backlog cleanup",
+        "sha": "d945cd37",
         "project": "dailyview/2024-dailyview-app",
-        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-app/-/commit/c6e3be8e",
-        "source": "gitlab"
-      },
-      "files": ["docs/seo-geo/log.md"]
-    },
-    {
-      "date": "5/21",
-      "member": "Jason",
-      "commit": {
-        "title": "docs(spec+plan): banner filter + popular/topic h1 + lint cleanup",
-        "sha": "2f27ff1d",
-        "project": "dailyview/2024-dailyview-app",
-        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-app/-/commit/2f27ff1d",
+        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-app/-/commit/d945cd37",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/plans/2026-05-21-banner-filter-popular-topic-h1-lint.md",
-        "docs/superpowers/specs/2026-05-21-banner-filter-popular-topic-h1-lint-design.md"
+        "docs/seo-geo/log.md"
       ]
     },
     {
-      "date": "5/21",
+      "date": "5/25",
       "member": "Jason",
       "commit": {
-        "title": "docs(log): frontend cleanup bundle done — banner filter + topic h1 + lint",
-        "sha": "bca54bf3",
+        "title": "docs(log): close Lighthouse Best Practices — 3rd-party bound, not engineering-fixable",
+        "sha": "5e760730",
         "project": "dailyview/2024-dailyview-app",
-        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-app/-/commit/bca54bf3",
+        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-app/-/commit/5e760730",
         "source": "gitlab"
       },
-      "files": ["docs/seo-geo/log.md"]
+      "files": [
+        "docs/seo-geo/log.md"
+      ]
     },
     {
-      "date": "5/21",
-      "member": "Jason",
+      "date": "5/25",
+      "member": "禎佑",
       "commit": {
-        "title": "docs(log): cleanup popular/topic h1 backlog + add listing-pages-h1-dynamic follow-up",
-        "sha": "79179094",
-        "project": "dailyview/2024-dailyview-app",
-        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-app/-/commit/79179094",
+        "title": "docs: spec for company_list_search v2 (BGMOPEN with whitelist filter)",
+        "sha": "4b90dbb5",
+        "project": "chris.su/company-crawler",
+        "url": "https://biglab.buygta.today/chris.su/company-crawler/-/commit/4b90dbb5",
         "source": "gitlab"
       },
-      "files": ["docs/seo-geo/log.md"]
+      "files": [
+        "docs/superpowers/specs/2026-05-25-company-list-search-v2-design.md"
+      ]
+    },
+    {
+      "date": "5/25",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs: implementation plan for company_list_search v2",
+        "sha": "e9a94803",
+        "project": "chris.su/company-crawler",
+        "url": "https://biglab.buygta.today/chris.su/company-crawler/-/commit/e9a94803",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-05-25-company-list-search-v2.md"
+      ]
+    },
+    {
+      "date": "5/25",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs: spec for monthly registry sync (--mode=company_list_search_monthly)",
+        "sha": "98dc0cbc",
+        "project": "chris.su/company-crawler",
+        "url": "https://biglab.buygta.today/chris.su/company-crawler/-/commit/98dc0cbc",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-05-25-monthly-registry-sync-design.md"
+      ]
+    },
+    {
+      "date": "5/25",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs: implementation plan for monthly registry sync",
+        "sha": "b5f600c4",
+        "project": "chris.su/company-crawler",
+        "url": "https://biglab.buygta.today/chris.su/company-crawler/-/commit/b5f600c4",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-05-25-monthly-registry-sync.md"
+      ]
+    },
+    {
+      "date": "5/25",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs: add Airflow DAG deployment guide",
+        "sha": "daf95923",
+        "project": "chris.su/penalty-crawler",
+        "url": "https://biglab.buygta.today/chris.su/penalty-crawler/-/commit/daf95923",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/airflow.md"
+      ]
+    },
+    {
+      "date": "5/25",
+      "member": "Ted",
+      "commit": {
+        "title": "docs: TODO entry for promote auto_discovered brand endpoint",
+        "sha": "b8504793",
+        "project": "KEYPO/keypo-ai-listen",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-ai-listen/-/commit/b8504793",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/TODO.md"
+      ]
+    },
+    {
+      "date": "5/25",
+      "member": "Ted",
+      "commit": {
+        "title": "docs: TODO entry for promote auto_discovered brand endpoint",
+        "sha": "dd71bb03",
+        "project": "KEYPO/keypo-ai-listen",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-ai-listen/-/commit/dd71bb03",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/TODO.md"
+      ]
+    },
+    {
+      "date": "5/25",
+      "member": "哲緯",
+      "commit": {
+        "title": "docs(spec): /channels/search → MSSQL Fid2Name + region & multi-select source filter",
+        "sha": "dab7952e",
+        "project": "mason/bigmonitorV3",
+        "url": "https://biglab.buygta.today/mason/bigmonitorV3/-/commit/dab7952e",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-05-25-channels-search-mssql-design.md"
+      ]
+    },
+    {
+      "date": "5/25",
+      "member": "哲緯",
+      "commit": {
+        "title": "docs(plan): /channels/search MSSQL migration implementation plan",
+        "sha": "32c1460c",
+        "project": "mason/bigmonitorV3",
+        "url": "https://biglab.buygta.today/mason/bigmonitorV3/-/commit/32c1460c",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-05-25-channels-search-mssql.md",
+        "docs/superpowers/specs/2026-05-25-channels-search-mssql-design.md"
+      ]
+    },
+    {
+      "date": "5/26",
+      "member": "Wendy",
+      "commit": {
+        "title": "docs(keyders/kolsimilar): §4.11 add follower_ranges + reason enum",
+        "sha": "8f3d38ed",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-05-07-keyders-api-spec.md"
+      ]
+    },
+    {
+      "date": "5/29",
+      "member": "Wendy",
+      "commit": {
+        "title": "docs(keyders/kolsimilar): §4.11 fallback bucket from channel follow_count",
+        "sha": "cb554b17",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/cb554b17",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-05-07-keyders-api-spec.md"
+      ]
     }
   ],
   "correlations": [
     {
-      "date": "5/21",
-      "member": "Aaron",
+      "date": "5/25",
+      "member": "侑呈",
       "status": "unmatched",
       "specCommits": 1,
       "dailyUpdateMention": false,
       "matchedTasks": [],
       "unmatchedSpecs": [
-        "docs(readme): rewrite as full onboarding guide and auto-bootstrap pg schema"
+        "登入模組 review 定案：修訂 spec + 新增 v1 實作計畫"
       ],
-      "reasoning": "Aaron 在 5/21 無 daily update，無法比對其在 llmprojects/keypo-agent 專案中提交的 onboarding 文件改寫與 pg schema 自動初始化的規劃文件 commit，判定為未提及（unmatched）。"
+      "reasoning": "侑呈在 5/25 沒有提交 daily update，無法確認其是否有提及登入模組的規劃與設計工作。commit 內容顯示已完成 keytector-dashboard 登入模組的 spec 修訂及 v1 實作計畫，屬於重要的規劃文件，但 daily update 缺席導致無從對照，標記為未提及。"
     },
     {
-      "date": "5/21",
+      "date": "5/25",
       "member": "Jason",
       "status": "unmatched",
-      "specCommits": 7,
+      "specCommits": 3,
       "dailyUpdateMention": false,
       "matchedTasks": [],
       "unmatchedSpecs": [
-        "docs(spec+plan): geo wave 1 w1-2a — article anchor id + sr-only toc",
-        "docs(log): w1-2a done — article anchor id + popular/insight sr-only toc",
-        "docs(spec+plan): geo wave 1 ai citation favicon high-res link",
-        "docs(log): ai citation favicon high-res link done",
-        "docs(spec+plan): banner filter + popular/topic h1 + lint cleanup",
-        "docs(log): frontend cleanup bundle done — banner filter + topic h1 + lint",
-        "docs(log): cleanup popular/topic h1 backlog + add listing-pages-h1-dynamic follow-up"
+        "docs(spec+plan): listing pages h1 dynamic + placeholder guard",
+        "docs(log): listing pages h1 dynamic done + backlog cleanup",
+        "docs(log): close Lighthouse Best Practices — 3rd-party bound, not engineering-fixable"
       ],
-      "reasoning": "Jason 在 5/21 無 daily update，但實際上有大量規劃與記錄類 commits，涵蓋 SEO/GEO Wave 1 的多個任務：文章錨點 ID 與 sr-only TOC（w1-2a）、AI Citation favicon 高解析度連結、以及 banner filter + topic h1 + lint 清理等三個功能面向，每項均有對應的 spec+plan 文件與完成 log commit。由於完全缺乏 daily update 做為比對依據，所有規劃文件 commits 均判定為未提及（unmatched）。"
+      "reasoning": "Jason 在 5/25 沒有提交 daily update，無法比對 listing pages H1 動態化的 spec/plan 撰寫、backlog 清理及 Lighthouse Best Practices 關閉決策等三筆規劃文件 commits 是否有對應說明。三筆 commits 均涉及 SEO/GEO 相關技術決策與規劃，為重要文件，因 daily update 缺席標記為未提及。"
+    },
+    {
+      "date": "5/25",
+      "member": "禎佑",
+      "status": "unmatched",
+      "specCommits": 5,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "docs: spec for company_list_search v2 (BGMOPEN with whitelist filter)",
+        "docs: implementation plan for company_list_search v2",
+        "docs: spec for monthly registry sync (--mode=company_list_search_monthly)",
+        "docs: implementation plan for monthly registry sync",
+        "docs: add Airflow DAG deployment guide"
+      ],
+      "reasoning": "禎佑在 5/25 沒有提交 daily update，無法確認是否有提及公司搜尋 v2 的 spec 與實作計畫、月度登記資料同步的 spec 與計畫，以及 Airflow DAG 部署指南等五筆規劃文件 commits。該成員當日規劃文件產出量為所有成員中最多，因 daily update 缺席全部標記為未提及。"
+    },
+    {
+      "date": "5/25",
+      "member": "Ted",
+      "status": "unmatched",
+      "specCommits": 2,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "docs: TODO entry for promote auto_discovered brand endpoint (b8504793)",
+        "docs: TODO entry for promote auto_discovered brand endpoint (dd71bb03)"
+      ],
+      "reasoning": "Ted 在 5/25 沒有提交 daily update，無法確認是否有說明 auto_discovered brand endpoint 推廣的 TODO 項目。兩筆 commits 標題相同但 SHA 不同，可能為重複提交或分批更新，因 daily update 缺席均標記為未提及。"
+    },
+    {
+      "date": "5/25",
+      "member": "哲緯",
+      "status": "unmatched",
+      "specCommits": 2,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "docs(spec): /channels/search → MSSQL Fid2Name + region & multi-select source filter",
+        "docs(plan): /channels/search MSSQL migration implementation plan"
+      ],
+      "reasoning": "哲緯在 5/25 沒有提交 daily update，無法確認是否有提及 /channels/search 遷移至 MSSQL 的 spec 設計（含 Fid2Name 對應、地區及多選 source 篩選）及對應實作計畫。兩筆 commits 為同一功能的設計文件，因 daily update 缺席標記為未提及。"
+    },
+    {
+      "date": "5/26",
+      "member": "Wendy",
+      "status": "unmatched",
+      "specCommits": 1,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "docs(keyders/kolsimilar): §4.11 add follower_ranges + reason enum"
+      ],
+      "reasoning": "Wendy 在 5/26 無任何 daily update 紀錄，無法確認其是否有提及此規劃文件的修改工作。該 commit 更新了 keyders API spec 的 §4.11 章節，新增 follower_ranges 與 reason enum 定義，屬於 API 規格設計類文件，但因 daily update 缺失，判定為未提及（unmatched）。"
+    },
+    {
+      "date": "5/29",
+      "member": "Wendy",
+      "status": "unmatched",
+      "specCommits": 1,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "docs(keyders/kolsimilar): §4.11 fallback bucket from channel follow_count"
+      ],
+      "reasoning": "Wendy 在 5/29 無 daily update，因此無法確認此規劃文件 commit（keyders API spec §4.11 fallback bucket 相關更新）是否有對應的工作描述。由於缺乏 daily update 資料，判定為未提及（unmatched）。"
     }
   ],
   "summary": {
-    "totalSpecCommits": 8,
-    "totalCorrelations": 2,
-    "membersWithSpecs": 2,
+    "totalSpecCommits": 15,
+    "totalCorrelations": 7,
+    "membersWithSpecs": 6,
     "matched": 0,
-    "unmatched": 2,
+    "unmatched": 7,
     "partial": 0
   }
 }
