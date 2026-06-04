@@ -1,45 +1,58 @@
 {
-  "analysisDate": "2026-06-01",
-  "period": "5/25-5/29",
+  "analysisDate": "2026-06-04",
+  "period": "6/1-6/3",
   "planSpecs": [
     {
-      "date": "5/25",
-      "member": "侑呈",
+      "date": "6/1",
+      "member": "Jason",
       "commit": {
-        "title": "登入模組 review 定案：修訂 spec + 新增 v1 實作計畫",
-        "sha": "d28d51f8",
-        "project": "keytector/keytector-dashboard",
-        "url": "https://biglab.buygta.today/keytector/keytector-dashboard/-/commit/d28d51f8",
+        "title": "docs(spec,plan): img alt 3-tier fallback design + implementation plan",
+        "sha": "214c01e3",
+        "project": "dailyview/2024-dailyview-app",
+        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-app/-/commit/214c01e3",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/plans/2026-05-25-login-module.md",
-        "docs/superpowers/specs/2026-05-21-login-module-design.md"
+        "docs/superpowers/plans/2026-05-25-img-alt-fallback.md",
+        "docs/superpowers/specs/2026-05-25-img-alt-fallback-design.md"
       ]
     },
     {
-      "date": "5/25",
+      "date": "6/1",
       "member": "Jason",
       "commit": {
-        "title": "docs(spec+plan): listing pages h1 dynamic + placeholder guard",
-        "sha": "03e039e6",
+        "title": "docs(spec): record Task 0 caption-quality spike outcome (2026-06-01)",
+        "sha": "b4046c30",
         "project": "dailyview/2024-dailyview-app",
-        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-app/-/commit/03e039e6",
+        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-app/-/commit/b4046c30",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/plans/2026-05-25-listing-pages-h1-dynamic.md",
-        "docs/superpowers/specs/2026-05-25-listing-pages-h1-dynamic-design.md"
+        "docs/superpowers/specs/2026-05-25-img-alt-fallback-design.md"
       ]
     },
     {
-      "date": "5/25",
+      "date": "6/1",
       "member": "Jason",
       "commit": {
-        "title": "docs(log): listing pages h1 dynamic done + backlog cleanup",
-        "sha": "d945cd37",
+        "title": "docs(plan): align smoke-runner tasks with Task 0 spike outcome",
+        "sha": "2bc0429d",
         "project": "dailyview/2024-dailyview-app",
-        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-app/-/commit/d945cd37",
+        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-app/-/commit/2bc0429d",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-05-25-img-alt-fallback.md"
+      ]
+    },
+    {
+      "date": "6/1",
+      "member": "Jason",
+      "commit": {
+        "title": "docs(log): article figure alt 3-tier fallback wave done + backlog cleanup",
+        "sha": "ec1ad1bb",
+        "project": "dailyview/2024-dailyview-app",
+        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-app/-/commit/ec1ad1bb",
         "source": "gitlab"
       },
       "files": [
@@ -47,13 +60,28 @@
       ]
     },
     {
-      "date": "5/25",
+      "date": "6/1",
       "member": "Jason",
       "commit": {
-        "title": "docs(log): close Lighthouse Best Practices — 3rd-party bound, not engineering-fixable",
-        "sha": "5e760730",
+        "title": "docs(spec,plan): inp fix wave 1 — defer AviviD init to requestIdleCallback",
+        "sha": "2ab09cd0",
         "project": "dailyview/2024-dailyview-app",
-        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-app/-/commit/5e760730",
+        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-app/-/commit/2ab09cd0",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-01-inp-fix-wave1.md",
+        "docs/superpowers/specs/2026-06-01-inp-fix-wave1-design.md"
+      ]
+    },
+    {
+      "date": "6/1",
+      "member": "Jason",
+      "commit": {
+        "title": "docs(log): inp fix wave 1 (avivid requestIdleCallback) + ad-pipeline backlog",
+        "sha": "4a4fa903",
+        "project": "dailyview/2024-dailyview-app",
+        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-app/-/commit/4a4fa903",
         "source": "gitlab"
       },
       "files": [
@@ -61,261 +89,583 @@
       ]
     },
     {
-      "date": "5/25",
+      "date": "6/1",
+      "member": "Jason",
+      "commit": {
+        "title": "docs(spec,plan): oldcontent column2/3 alt fix",
+        "sha": "21a6811b",
+        "project": "dailyview/2024-dailyview-app",
+        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-app/-/commit/21a6811b",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-01-oldcontent-column-alt-fix.md",
+        "docs/superpowers/specs/2026-06-01-oldcontent-column-alt-fix-design.md"
+      ]
+    },
+    {
+      "date": "6/1",
+      "member": "Jason",
+      "commit": {
+        "title": "docs(log): oldcontent column2/3 alt fix done + backlog cleanup",
+        "sha": "7dd13e77",
+        "project": "dailyview/2024-dailyview-app",
+        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-app/-/commit/7dd13e77",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/seo-geo/log.md"
+      ]
+    },
+    {
+      "date": "6/1",
+      "member": "Jason",
+      "commit": {
+        "title": "docs(articles): spec and plan for template-paragraph stale image fix",
+        "sha": "b452cfe9",
+        "project": "dailyview/2024-dailyview-admin",
+        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-admin/-/commit/b452cfe9",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-01-template-paragraph-stale-image.md",
+        "docs/superpowers/specs/2026-06-01-template-paragraph-stale-image-design.md"
+      ]
+    },
+    {
+      "date": "6/1",
       "member": "禎佑",
       "commit": {
-        "title": "docs: spec for company_list_search v2 (BGMOPEN with whitelist filter)",
-        "sha": "4b90dbb5",
-        "project": "chris.su/company-crawler",
-        "url": "https://biglab.buygta.today/chris.su/company-crawler/-/commit/4b90dbb5",
+        "title": "docs: KEYKYC 系統架構圖",
+        "sha": "c3e1688d",
+        "project": "chris.su/keykyc-backend-v2",
+        "url": "https://biglab.buygta.today/chris.su/keykyc-backend-v2/-/commit/c3e1688d",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/specs/2026-05-25-company-list-search-v2-design.md"
+        "docs/keykyc_system_overview.md"
       ]
     },
     {
-      "date": "5/25",
+      "date": "6/1",
       "member": "禎佑",
       "commit": {
-        "title": "docs: implementation plan for company_list_search v2",
-        "sha": "e9a94803",
-        "project": "chris.su/company-crawler",
-        "url": "https://biglab.buygta.today/chris.su/company-crawler/-/commit/e9a94803",
+        "title": "docs: clarify company-crawler three modes in system overview",
+        "sha": "98c73ee3",
+        "project": "chris.su/keykyc-backend-v2",
+        "url": "https://biglab.buygta.today/chris.su/keykyc-backend-v2/-/commit/98c73ee3",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/plans/2026-05-25-company-list-search-v2.md"
+        "docs/keykyc_system_overview.md"
       ]
     },
     {
-      "date": "5/25",
+      "date": "6/1",
       "member": "禎佑",
       "commit": {
-        "title": "docs: spec for monthly registry sync (--mode=company_list_search_monthly)",
-        "sha": "98dc0cbc",
-        "project": "chris.su/company-crawler",
-        "url": "https://biglab.buygta.today/chris.su/company-crawler/-/commit/98dc0cbc",
+        "title": "docs: 建立關聯頻道流程的文件",
+        "sha": "1e8e9290",
+        "project": "chris.su/kol-desc-parser",
+        "url": "https://biglab.buygta.today/chris.su/kol-desc-parser/-/commit/1e8e9290",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/specs/2026-05-25-monthly-registry-sync-design.md"
+        "docs/relation-flow.md"
       ]
     },
     {
-      "date": "5/25",
-      "member": "禎佑",
+      "date": "6/2",
+      "member": "Ivy",
       "commit": {
-        "title": "docs: implementation plan for monthly registry sync",
-        "sha": "b5f600c4",
-        "project": "chris.su/company-crawler",
-        "url": "https://biglab.buygta.today/chris.su/company-crawler/-/commit/b5f600c4",
+        "title": "chore: untrack accidentally-committed local notes / draft docs",
+        "sha": "81e80380",
+        "project": "bigdata/2025-bigdata-backend",
+        "url": "https://biglab.buygta.today/bigdata/2025-bigdata-backend/-/commit/81e80380",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/plans/2026-05-25-monthly-registry-sync.md"
+        "docs/mr31-frontend-backend-redo-plan.md",
+        "docs/superpowers/plans/2026-04-07-ir-frontend-api-integration.md",
+        "docs/superpowers/plans/2026-04-07-ir-investor-relations-api.md",
+        "docs/superpowers/plans/2026-04-24-esg-public-integration.md",
+        "docs/superpowers/plans/2026-04-28-tag-search-api.md",
+        "docs/superpowers/plans/public-shareholders-meeting-and-dividend.md"
       ]
     },
     {
-      "date": "5/25",
-      "member": "禎佑",
+      "date": "6/2",
+      "member": "Jason",
       "commit": {
-        "title": "docs: add Airflow DAG deployment guide",
-        "sha": "daf95923",
-        "project": "chris.su/penalty-crawler",
-        "url": "https://biglab.buygta.today/chris.su/penalty-crawler/-/commit/daf95923",
+        "title": "docs(log): record INP spike + GPT wave no-go + backlog cleanup",
+        "sha": "26ded5ae",
+        "project": "dailyview/2024-dailyview-app",
+        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-app/-/commit/26ded5ae",
         "source": "gitlab"
       },
       "files": [
-        "docs/airflow.md"
+        "docs/seo-geo/log.md"
       ]
     },
     {
-      "date": "5/25",
-      "member": "Ted",
+      "date": "6/2",
+      "member": "Joyce",
       "commit": {
-        "title": "docs: TODO entry for promote auto_discovered brand endpoint",
-        "sha": "b8504793",
-        "project": "KEYPO/keypo-ai-listen",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-ai-listen/-/commit/b8504793",
+        "title": "docs(runbook): add staging verification runbook for SendingJob stuck-ING fix",
+        "sha": "93b18366",
+        "project": "KEYPO/keypo-backend",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/93b18366",
         "source": "gitlab"
       },
       "files": [
-        "docs/TODO.md"
+        "docs/runbooks/staging-verify-sendingjob-stuck-ing-fix.md"
       ]
     },
     {
-      "date": "5/25",
-      "member": "Ted",
-      "commit": {
-        "title": "docs: TODO entry for promote auto_discovered brand endpoint",
-        "sha": "dd71bb03",
-        "project": "KEYPO/keypo-ai-listen",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-ai-listen/-/commit/dd71bb03",
-        "source": "gitlab"
-      },
-      "files": [
-        "docs/TODO.md"
-      ]
-    },
-    {
-      "date": "5/25",
+      "date": "6/2",
       "member": "哲緯",
       "commit": {
-        "title": "docs(spec): /channels/search → MSSQL Fid2Name + region & multi-select source filter",
-        "sha": "dab7952e",
-        "project": "mason/bigmonitorV3",
-        "url": "https://biglab.buygta.today/mason/bigmonitorV3/-/commit/dab7952e",
-        "source": "gitlab"
+        "title": "chore(docs): remove obsolete stage4 two-phase generation plan",
+        "sha": "a141308b",
+        "project": "bigdata-54837596/line-social-radar",
+        "url": "https://github.com/bigdata-54837596/line-social-radar/commit/a141308b",
+        "source": "github"
       },
       "files": [
-        "docs/superpowers/specs/2026-05-25-channels-search-mssql-design.md"
+        "docs/superpowers/plans/2026-04-13-stage4-two-phase-generation.md"
       ]
     },
     {
-      "date": "5/25",
+      "date": "6/2",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(spec): live-crawl-financial-by-stock-code endpoint design",
+        "sha": "58577199",
+        "project": "chris.su/keykyc-backend-v2",
+        "url": "https://biglab.buygta.today/chris.su/keykyc-backend-v2/-/commit/58577199",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-02-live-crawl-financial-by-stock-code-design.md"
+      ]
+    },
+    {
+      "date": "6/2",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(plan): live-crawl-financial-by-stock-code implementation plan",
+        "sha": "e3f15f3b",
+        "project": "chris.su/keykyc-backend-v2",
+        "url": "https://biglab.buygta.today/chris.su/keykyc-backend-v2/-/commit/e3f15f3b",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-02-live-crawl-financial-by-stock-code.md"
+      ]
+    },
+    {
+      "date": "6/2",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(frontend): add live-crawl-flow guide (by-name / by-ubn / by-stock-code)",
+        "sha": "7d1ef05c",
+        "project": "chris.su/keykyc-backend-v2",
+        "url": "https://biglab.buygta.today/chris.su/keykyc-backend-v2/-/commit/7d1ef05c",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/frontend/live-crawl-flow.md"
+      ]
+    },
+    {
+      "date": "6/2",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(frontend): add live-crawl-flow guide (by-name / by-ubn / by-stock-code)",
+        "sha": "deb47037",
+        "project": "chris.su/keykyc-backend-v2",
+        "url": "https://biglab.buygta.today/chris.su/keykyc-backend-v2/-/commit/deb47037",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/frontend/live-crawl-flow.md"
+      ]
+    },
+    {
+      "date": "6/2",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs: business card LLM parser spec + implementation plan",
+        "sha": "451eccc8",
+        "project": "chris.su/keykyc-backend-v2",
+        "url": "https://biglab.buygta.today/chris.su/keykyc-backend-v2/-/commit/451eccc8",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-02-business-card-llm-parser.md",
+        "docs/superpowers/specs/2026-06-02-business-card-llm-parser-design.md"
+      ]
+    },
+    {
+      "date": "6/3",
+      "member": "Jason",
+      "commit": {
+        "title": "docs(spec): cms richtext pipeline phase 1 spec + plan",
+        "sha": "12f2164d",
+        "project": "dailyview/2024-dailyview-app",
+        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-app/-/commit/12f2164d",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-02-cms-richtext-pipeline.md",
+        "docs/superpowers/specs/2026-06-02-cms-richtext-pipeline-design.md"
+      ]
+    },
+    {
+      "date": "6/3",
+      "member": "Jason",
+      "commit": {
+        "title": "docs(richtext): record Task 1 prod content scan + scan tool",
+        "sha": "e85ff58c",
+        "project": "dailyview/2024-dailyview-app",
+        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-app/-/commit/e85ff58c",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-02-cms-richtext-pipeline.md"
+      ]
+    },
+    {
+      "date": "6/3",
+      "member": "Jason",
+      "commit": {
+        "title": "docs(log): cms richtext pipeline phase 1 (renderer) done + backlog update",
+        "sha": "92806c84",
+        "project": "dailyview/2024-dailyview-app",
+        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-app/-/commit/92806c84",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/seo-geo/log.md"
+      ]
+    },
+    {
+      "date": "6/3",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs(spec): add design for send_alert_mail_jobs Google Chat monitoring",
+        "sha": "1d42f36a",
+        "project": "KEYPO/keypo-backend",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/1d42f36a",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-03-alert-pipeline-monitoring-design.md"
+      ]
+    },
+    {
+      "date": "6/3",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs(plan): add implementation plan for alert-pipeline Google Chat monitoring",
+        "sha": "4dbb5c30",
+        "project": "KEYPO/keypo-backend",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/4dbb5c30",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-03-alert-pipeline-monitoring.md"
+      ]
+    },
+    {
+      "date": "6/3",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs(plan): document MONITOR_CHAT_* in .env.example as part of Task 1",
+        "sha": "f2909a93",
+        "project": "KEYPO/keypo-backend",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/f2909a93",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-03-alert-pipeline-monitoring.md"
+      ]
+    },
+    {
+      "date": "6/3",
+      "member": "Ted",
+      "commit": {
+        "title": "docs: import TnT spec + plan from feat/grouping-experiment",
+        "sha": "d5980bf6",
+        "project": "KEYPO/keypo-ai-listen",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-ai-listen/-/commit/d5980bf6",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-03-tnt-segmenter-and-review.md",
+        "docs/superpowers/specs/2026-06-03-tnt-segmenter-and-review-design.md"
+      ]
+    },
+    {
+      "date": "6/3",
+      "member": "Ted",
+      "commit": {
+        "title": "docs(reclustering): cron + manual trigger + staging validation runbook",
+        "sha": "c874866b",
+        "project": "KEYPO/keypo-ai-listen",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-ai-listen/-/commit/c874866b",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/reclustering/operations.md"
+      ]
+    },
+    {
+      "date": "6/3",
       "member": "哲緯",
       "commit": {
-        "title": "docs(plan): /channels/search MSSQL migration implementation plan",
-        "sha": "32c1460c",
+        "title": "docs(spec): article + channel batch dispatch design (v0.4.0)",
+        "sha": "fe4c9ae9",
         "project": "mason/bigmonitorV3",
-        "url": "https://biglab.buygta.today/mason/bigmonitorV3/-/commit/32c1460c",
+        "url": "https://biglab.buygta.today/mason/bigmonitorV3/-/commit/fe4c9ae9",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/plans/2026-05-25-channels-search-mssql.md",
-        "docs/superpowers/specs/2026-05-25-channels-search-mssql-design.md"
+        "docs/superpowers/specs/2026-06-03-article-batch-dispatch-design.md"
       ]
     },
     {
-      "date": "5/26",
-      "member": "Wendy",
+      "date": "6/3",
+      "member": "哲緯",
       "commit": {
-        "title": "docs(keyders/kolsimilar): §4.11 add follower_ranges + reason enum",
-        "sha": "8f3d38ed",
-        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
-        "url": "",
+        "title": "docs(plan): article + channel batch dispatch — 28-task implementation plan",
+        "sha": "ddf2fafa",
+        "project": "mason/bigmonitorV3",
+        "url": "https://biglab.buygta.today/mason/bigmonitorV3/-/commit/ddf2fafa",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/specs/2026-05-07-keyders-api-spec.md"
+        "docs/superpowers/plans/2026-06-03-article-batch-dispatch.md"
       ]
     },
     {
-      "date": "5/29",
-      "member": "Wendy",
+      "date": "6/3",
+      "member": "哲緯",
       "commit": {
-        "title": "docs(keyders/kolsimilar): §4.11 fallback bucket from channel follow_count",
-        "sha": "cb554b17",
-        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
-        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/cb554b17",
+        "title": "docs(spec): channel onboarding workflow design (subscribe ≠ onboarded)",
+        "sha": "713954a4",
+        "project": "mason/bigmonitorV3",
+        "url": "https://biglab.buygta.today/mason/bigmonitorV3/-/commit/713954a4",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/specs/2026-05-07-keyders-api-spec.md"
+        "docs/superpowers/specs/2026-06-03-channel-onboarding-workflow-design.md"
+      ]
+    },
+    {
+      "date": "6/3",
+      "member": "哲緯",
+      "commit": {
+        "title": "docs(plan): channel onboarding workflow implementation plan (22 tasks)",
+        "sha": "f71327ad",
+        "project": "mason/bigmonitorV3",
+        "url": "https://biglab.buygta.today/mason/bigmonitorV3/-/commit/f71327ad",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-03-channel-onboarding-workflow.md"
+      ]
+    },
+    {
+      "date": "6/3",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(frontend): add business-cards-api.md with search query reference",
+        "sha": "d10becb1",
+        "project": "chris.su/keykyc-backend-v2",
+        "url": "https://biglab.buygta.today/chris.su/keykyc-backend-v2/-/commit/d10becb1",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/frontend/business-cards-api.md"
       ]
     }
   ],
   "correlations": [
     {
-      "date": "5/25",
-      "member": "侑呈",
-      "status": "unmatched",
-      "specCommits": 1,
-      "dailyUpdateMention": false,
-      "matchedTasks": [],
-      "unmatchedSpecs": [
-        "登入模組 review 定案：修訂 spec + 新增 v1 實作計畫"
-      ],
-      "reasoning": "侑呈在 5/25 沒有提交 daily update，無法確認其是否有提及登入模組的規劃與設計工作。commit 內容顯示已完成 keytector-dashboard 登入模組的 spec 修訂及 v1 實作計畫，屬於重要的規劃文件，但 daily update 缺席導致無從對照，標記為未提及。"
-    },
-    {
-      "date": "5/25",
+      "date": "6/1",
       "member": "Jason",
       "status": "unmatched",
-      "specCommits": 3,
+      "specCommits": 9,
       "dailyUpdateMention": false,
       "matchedTasks": [],
       "unmatchedSpecs": [
-        "docs(spec+plan): listing pages h1 dynamic + placeholder guard",
-        "docs(log): listing pages h1 dynamic done + backlog cleanup",
-        "docs(log): close Lighthouse Best Practices — 3rd-party bound, not engineering-fixable"
+        "docs(spec,plan): img alt 3-tier fallback design + implementation plan",
+        "docs(spec): record Task 0 caption-quality spike outcome (2026-06-01)",
+        "docs(plan): align smoke-runner tasks with Task 0 spike outcome",
+        "docs(log): article figure alt 3-tier fallback wave done + backlog cleanup",
+        "docs(spec,plan): inp fix wave 1 — defer AviviD init to requestIdleCallback",
+        "docs(log): inp fix wave 1 (avivid requestIdleCallback) + ad-pipeline backlog",
+        "docs(spec,plan): oldcontent column2/3 alt fix",
+        "docs(log): oldcontent column2/3 alt fix done + backlog cleanup",
+        "docs(articles): spec and plan for template-paragraph stale image fix"
       ],
-      "reasoning": "Jason 在 5/25 沒有提交 daily update，無法比對 listing pages H1 動態化的 spec/plan 撰寫、backlog 清理及 Lighthouse Best Practices 關閉決策等三筆規劃文件 commits 是否有對應說明。三筆 commits 均涉及 SEO/GEO 相關技術決策與規劃，為重要文件，因 daily update 缺席標記為未提及。"
+      "reasoning": "Jason 的 9 個規劃/設計 commits 涵蓋圖片 alt 三層降級方案（img alt 3-tier fallback）、Task 0 caption quality spike 結果記錄、INP 效能優化（AviviD 延遲至 requestIdleCallback）、oldcontent 欄位 alt 修復，以及模板段落過時圖片修復的 spec 與 plan 文件。然而 6/1 daily update 僅提及「網溫根據 seo/geo 分析報表優化」、「K-AI 產文」和「ai 產文新增篩選分別寄信」，完全未提及任何圖片 alt、INP 效能或相關文件撰寫工作。Commit 實際工作內容與 daily update 所述工項之間存在顯著落差，無法對應。"
     },
     {
-      "date": "5/25",
+      "date": "6/1",
       "member": "禎佑",
+      "status": "partial",
+      "specCommits": 3,
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "規劃未來新增新頻道時，應該要有的流程（對應 docs: 建立關聯頻道流程的文件）"
+      ],
+      "unmatchedSpecs": [
+        "docs: KEYKYC 系統架構圖",
+        "docs: clarify company-crawler three modes in system overview"
+      ],
+      "reasoning": "禎佑的 3 個規劃/設計 commits 中，「建立關聯頻道流程的文件」與 daily update 明確記載的「規劃未來新增新頻道時，應該要有的流程（不能無條件新增，不然 KEYPO 爬蟲量體會很可怕）」直接對應，屬於吻合。另外兩個 commits（KEYKYC 系統架構圖、company-crawler 三種模式說明）雖然 daily update 列有大量 KEYKYC 相關工作（前端優化、後端優化、資料源優化等），但均未具體提及「撰寫系統架構文件」或「釐清 company-crawler 操作模式文件」，因此整體評定為部分吻合。"
+    },
+    {
+      "date": "6/2",
+      "member": "Ivy",
       "status": "unmatched",
+      "specCommits": 1,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "chore: untrack accidentally-committed local notes / draft docs"
+      ],
+      "reasoning": "該 commit 為移除誤提交的本地草稿規劃文件，涵蓋 IR 前端 API 整合、投資人關係 API、ESG 公開整合、標籤搜尋 API、股東會與股利等主題。6/2 daily update 完全聚焦於大數據後台發信流程、前端聯絡我們通知系統及相關 MR 串接，完全未提及上述任何規劃文件的工作方向，判定為未吻合。"
+    },
+    {
+      "date": "6/2",
+      "member": "Jason",
+      "status": "partial",
+      "specCommits": 1,
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "網溫根據 seo/geo 分析報表優化"
+      ],
+      "unmatchedSpecs": [],
+      "reasoning": "Daily update 有提及「網溫根據 seo/geo 分析報表優化」，與 commit 所寫入的 docs/seo-geo/log.md 屬於同一工作脈絡，具備方向性吻合。然而 commit 具體記錄的技術決策內容（INP spike 現象、GPT wave 方案不採用的決策、backlog 整理）在 daily update 中均未具體提及，無法確認這些設計決策的記錄已反映於當日報告中，判定為部分吻合。"
+    },
+    {
+      "date": "6/2",
+      "member": "Joyce",
+      "status": "matched",
+      "specCommits": 1,
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "優化速報發送排程，本地端測試，已將加強速報log追蹤加入以及強化線程處理異常try except 更新至測試機並開始進行測試，目前也會加強監控機制"
+      ],
+      "unmatchedSpecs": [],
+      "reasoning": "Commit 為速報發送 SendingJob 卡住（stuck-ING）修復的 staging 驗證 runbook。Daily update 明確提及優化速報發送排程、更新至測試機進行測試、加強監控機制，且提到評估「速報發送卡住的監控」，與 runbook 記錄的 staging 驗證流程高度對應，判定為吻合。"
+    },
+    {
+      "date": "6/2",
+      "member": "哲緯",
+      "status": "matched",
+      "specCommits": 1,
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "修 stage4_7 驗證流程 bug：補進引用文章的留言內容，避免留言觀點因為找不到資料被誤判，觸發不必要的重生"
+      ],
+      "unmatchedSpecs": [],
+      "reasoning": "Commit 為移除 line-social-radar 中已過時的 stage4 兩階段生成計畫文件。Daily update 明確提及在 line-social-radar 中修復 stage4_7 驗證流程 bug，顯示 stage4 相關功能仍在積極迭代，清理已不適用的舊規劃文件屬於該工作的自然維護行為，判定為吻合。"
+    },
+    {
+      "date": "6/2",
+      "member": "禎佑",
+      "status": "matched",
       "specCommits": 5,
-      "dailyUpdateMention": false,
-      "matchedTasks": [],
-      "unmatchedSpecs": [
-        "docs: spec for company_list_search v2 (BGMOPEN with whitelist filter)",
-        "docs: implementation plan for company_list_search v2",
-        "docs: spec for monthly registry sync (--mode=company_list_search_monthly)",
-        "docs: implementation plan for monthly registry sync",
-        "docs: add Airflow DAG deployment guide"
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "即時爬蟲需要支援 基本資料、財務概況",
+        "優化名片掃描流程，解析 raw 文字那段改由 gemini model 實現",
+        "支援批量掃描名片",
+        "名片掃描後，加入監控組合和立即生成盡職報告兩功能要開發，其中僅公司資訊需要即時爬蟲"
       ],
-      "reasoning": "禎佑在 5/25 沒有提交 daily update，無法確認是否有提及公司搜尋 v2 的 spec 與實作計畫、月度登記資料同步的 spec 與計畫，以及 Airflow DAG 部署指南等五筆規劃文件 commits。該成員當日規劃文件產出量為所有成員中最多，因 daily update 缺席全部標記為未提及。"
+      "unmatchedSpecs": [],
+      "reasoning": "禎佑的 5 個 spec/plan commits 均與 daily update 有明確對應：live-crawl-financial-by-stock-code 的 spec 和 implementation plan 直接對應「即時爬蟲需要支援 基本資料、財務概況」；兩個 live-crawl-flow 前端指南 commits 對應 KEYKYC 前端優化中關於即時爬蟲的開發工作（by-name、by-ubn、by-stock-code 三種查詢方式）；business card LLM parser 的 spec 和 plan 對應「優化名片掃描流程，解析 raw 文字那段改由 gemini model 實現」及「支援批量掃描名片」的具體工作項目，整體判定為吻合。"
     },
     {
-      "date": "5/25",
+      "date": "6/3",
+      "member": "Jason",
+      "status": "partial",
+      "specCommits": 3,
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "網溫 CMS 新增其他 tag 支援",
+        "網溫根據 seo/geo 分析報表優化"
+      ],
+      "unmatchedSpecs": [
+        "docs(spec): cms richtext pipeline phase 1 spec + plan",
+        "docs(richtext): record Task 1 prod content scan + scan tool"
+      ],
+      "reasoning": "Jason 的 daily update 有提及 CMS 工作（網溫 CMS 新增其他 tag 支援）及 seo/geo 報表優化，與部分 spec commit 有關聯。其中 docs(log) 記錄於 docs/seo-geo/log.md，與 seo/geo 工作有一定對應。但 daily update 未明確提及 cms richtext pipeline 規劃設計工作，也未提及 prod content scan 工具開發，整體描述不夠具體，判定為部分吻合。"
+    },
+    {
+      "date": "6/3",
+      "member": "Joyce",
+      "status": "matched",
+      "specCommits": 3,
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "優化速報發送排程 — 優化監控機制，加強 status 為正在發送的速報卡住的監控"
+      ],
+      "unmatchedSpecs": [],
+      "reasoning": "Joyce 的 daily update 明確提及「優化速報發送排程」，並具體說明「優化監控機制，加強 status 為正在發送的速報卡住的監控」，與三個 alert-pipeline Google Chat monitoring 的 spec/plan commit（send_alert_mail_jobs 監控設計、實作計畫、環境變數文件）高度吻合，判定為完全吻合。"
+    },
+    {
+      "date": "6/3",
       "member": "Ted",
-      "status": "unmatched",
+      "status": "matched",
       "specCommits": 2,
-      "dailyUpdateMention": false,
-      "matchedTasks": [],
-      "unmatchedSpecs": [
-        "docs: TODO entry for promote auto_discovered brand endpoint (b8504793)",
-        "docs: TODO entry for promote auto_discovered brand endpoint (dd71bb03)"
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "分群方法調整 — 參考論文（TnT-LLM）改成兩階段：segment 先抽 claim，再用 cluster_decision 決定分群",
+        "分群審查（reclustering）流程開發 — 定期 review job、apply_merge/split/modify/drop、admin endpoints、審查 log"
       ],
-      "reasoning": "Ted 在 5/25 沒有提交 daily update，無法確認是否有說明 auto_discovered brand endpoint 推廣的 TODO 項目。兩筆 commits 標題相同但 SHA 不同，可能為重複提交或分批更新，因 daily update 缺席均標記為未提及。"
+      "unmatchedSpecs": [],
+      "reasoning": "Ted 的 daily update 明確提及以 TnT-LLM 論文為基礎的兩階段分群方法調整，與 TnT spec + plan commit 直接對應；並提及 reclustering 審查流程開發（定期 review job、四種 apply 操作、admin endpoints），與 reclustering operations.md runbook commit 完全吻合，判定為完全吻合。"
     },
     {
-      "date": "5/25",
+      "date": "6/3",
       "member": "哲緯",
       "status": "unmatched",
-      "specCommits": 2,
+      "specCommits": 4,
       "dailyUpdateMention": false,
       "matchedTasks": [],
       "unmatchedSpecs": [
-        "docs(spec): /channels/search → MSSQL Fid2Name + region & multi-select source filter",
-        "docs(plan): /channels/search MSSQL migration implementation plan"
+        "docs(spec): article + channel batch dispatch design (v0.4.0)",
+        "docs(plan): article + channel batch dispatch — 28-task implementation plan",
+        "docs(spec): channel onboarding workflow design (subscribe ≠ onboarded)",
+        "docs(plan): channel onboarding workflow implementation plan (22 tasks)"
       ],
-      "reasoning": "哲緯在 5/25 沒有提交 daily update，無法確認是否有提及 /channels/search 遷移至 MSSQL 的 spec 設計（含 Fid2Name 對應、地區及多選 source 篩選）及對應實作計畫。兩筆 commits 為同一功能的設計文件，因 daily update 缺席標記為未提及。"
+      "reasoning": "哲緯於 6/3 無提交 daily update，無法確認規劃文件 commit 與工作進度的對應關係。四個 spec/plan commit 涵蓋文章批次派送設計及頻道 onboarding 工作流程設計，但缺乏 daily update 作為對照依據，判定為未提及。"
     },
     {
-      "date": "5/26",
-      "member": "Wendy",
-      "status": "unmatched",
+      "date": "6/3",
+      "member": "禎佑",
+      "status": "matched",
       "specCommits": 1,
-      "dailyUpdateMention": false,
-      "matchedTasks": [],
-      "unmatchedSpecs": [
-        "docs(keyders/kolsimilar): §4.11 add follower_ranges + reason enum"
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "KEYKYC 前端優化 — 名片頁搜尋（人名、公司名、城市、產業別、職稱）Done",
+        "KEYKYC 後端優化 — 名片頁搜尋 api（人名、公司名、城市、產業別、職稱）In Progress"
       ],
-      "reasoning": "Wendy 在 5/26 無任何 daily update 紀錄，無法確認其是否有提及此規劃文件的修改工作。該 commit 更新了 keyders API spec 的 §4.11 章節，新增 follower_ranges 與 reason enum 定義，屬於 API 規格設計類文件，但因 daily update 缺失，判定為未提及（unmatched）。"
-    },
-    {
-      "date": "5/29",
-      "member": "Wendy",
-      "status": "unmatched",
-      "specCommits": 1,
-      "dailyUpdateMention": false,
-      "matchedTasks": [],
-      "unmatchedSpecs": [
-        "docs(keyders/kolsimilar): §4.11 fallback bucket from channel follow_count"
-      ],
-      "reasoning": "Wendy 在 5/29 無 daily update，因此無法確認此規劃文件 commit（keyders API spec §4.11 fallback bucket 相關更新）是否有對應的工作描述。由於缺乏 daily update 資料，判定為未提及（unmatched）。"
+      "unmatchedSpecs": [],
+      "reasoning": "禎佑的 daily update 明確提及名片頁搜尋功能開發（前端已完成、後端進行中），搜尋欄位包含人名、公司名、城市、產業別、職稱，與 business-cards-api.md 新增 search query reference 的 commit 直接對應，判定為完全吻合。"
     }
   ],
   "summary": {
-    "totalSpecCommits": 15,
-    "totalCorrelations": 7,
+    "totalSpecCommits": 34,
+    "totalCorrelations": 12,
     "membersWithSpecs": 6,
-    "matched": 0,
-    "unmatched": 7,
-    "partial": 0
+    "matched": 6,
+    "unmatched": 3,
+    "partial": 3
   }
 }
