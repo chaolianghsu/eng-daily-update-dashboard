@@ -1,240 +1,60 @@
 {
-  "analysisDate": "2026-06-08",
-  "period": "6/1-6/5",
+  "analysisDate": "2026-06-09",
+  "period": "6/8",
   "warnings": [
     {
-      "date": "6/1",
+      "date": "6/8",
+      "member": "家輝",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發任務 7H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 7H（超過 3H 閾值），但當日無任何相關 commit 記錄。無法驗證開發成果，需確認是否存在異常情況或是工作內容未提交至版本控制。"
+    },
+    {
+      "date": "6/8",
+      "member": "Tanya",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發任務 4.8H（標籤清理 1.5H + 1.8H、盤點 KEYDERS 名單 1.5H）",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 4.8H（超過 3H 閾值），包括 T1 標籤清理與名單盤點工作，但當日無任何相關 commit 記錄。工作成果無法在程式碼層面驗證。"
+    },
+    {
+      "date": "6/8",
+      "member": "Joyce",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發任務 8H",
+      "commits": "6 commits（KEYPO/keypo-backend 的 cronjob 與 alert 功能）",
+      "reasoning": "開發產出顯著低於團隊平均。成員 commit 產出率 0.75 commits/H，團隊平均 4.28 commits/H，差距達 5.7 倍。建議確認工作任務中是否包含文件審閱、設計、或其他非程式碼型工作。"
+    },
+    {
+      "date": "6/8",
       "member": "Wendy",
       "severity": "🟡",
       "type": "outlier",
-      "task": "dev工作 4.5H",
-      "commits": "1筆（平均10.5筆，比例0.095）",
-      "reasoning": "報告4.5小時開發任務但僅有1筆commit，遠低於團隊平均10.5筆的5.25筆閾值，顯示工時與產出明顯不成比例"
+      "task": "開發任務 7.5H",
+      "commits": "5 commits（keytector-cib 專案）",
+      "reasoning": "開發產出顯著低於團隊平均。成員 commit 產出率 0.67 commits/H，團隊平均 4.28 commits/H，差距達 6.4 倍。雖有 commits 但產出比例偏低，建議確認任務複雜度、code review 時間或其他因素影響。"
     },
     {
-      "date": "6/1",
-      "member": "Ted",
+      "date": "6/8",
+      "member": "Joe",
       "severity": "🟡",
       "type": "outlier",
-      "task": "dev工作 5.5H",
-      "commits": "4筆（平均10.5筆，比例0.38）",
-      "reasoning": "報告5.5小時開發任務但僅有4筆commit，低於團隊平均的閾值，commit產出與工時不成正比"
-    },
-    {
-      "date": "6/1",
-      "member": "家輝",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "dev工作 7H",
-      "commits": "0筆",
-      "reasoning": "報告7小時開發任務卻無任何commit產出，無法驗證工作成果，屬於嚴重的產出不足"
-    },
-    {
-      "date": "6/1",
-      "member": "Richard",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "dev工作 7H",
-      "commits": "3筆（平均10.5筆，比例0.29）",
-      "reasoning": "報告7小時開發任務但僅有3筆commit，遠低於團隊平均，時間投入與成果差距明顯"
-    },
-    {
-      "date": "6/1",
-      "member": "Patty",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "dev工作 4H",
-      "commits": "3筆（平均10.5筆，比例0.29）",
-      "reasoning": "報告4小時開發任務但僅有3筆commit，低於團隊平均閾值，產出效率低於預期"
-    },
-    {
-      "date": "6/1",
-      "member": "Tanya",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "dev工作 7.2H",
-      "commits": "0筆",
-      "reasoning": "報告7.2小時開發任務但無任何commit產出，工作成果無法驗證，屬於嚴重的產出不足"
-    },
-    {
-      "date": "6/2",
-      "member": "日銜",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "dev工作 8H",
-      "commits": "5筆（平均17.1筆，比例0.29）",
-      "reasoning": "報告8小時開發任務但僅有5筆commit，遠低於6/2團隊平均17.1筆的閾值8.55筆，時間與產出明顯不符"
-    },
-    {
-      "date": "6/2",
-      "member": "侑呈",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "dev工作 8H",
-      "commits": "0筆",
-      "reasoning": "報告8小時開發任務但無任何commit產出，無法驗證整日工作成果，屬於嚴重的產出不足"
-    },
-    {
-      "date": "6/2",
-      "member": "家輝",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "dev工作 6.5H",
-      "commits": "0筆",
-      "reasoning": "報告6.5小時開發任務但無任何commit產出，無法驗證工作成果，產出不足"
-    },
-    {
-      "date": "6/2",
-      "member": "Richard",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "dev工作 7H",
-      "commits": "0筆",
-      "reasoning": "報告7小時開發任務但無任何commit產出，無法驗證工作成果，屬於嚴重的產出不足"
-    },
-    {
-      "date": "6/2",
-      "member": "Patty",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "dev工作 7H",
-      "commits": "0筆",
-      "reasoning": "報告7小時開發任務但無任何commit產出，無法驗證工作成果，屬於嚴重的產出不足"
-    },
-    {
-      "date": "6/3",
-      "member": "日銜",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "dev工作 7.5H",
-      "commits": "0筆",
-      "reasoning": "報告7.5小時開發任務但無任何commit產出，無法驗證工作成果，屬於嚴重的產出不足"
-    },
-    {
-      "date": "6/3",
-      "member": "Wendy",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "dev工作 6.5H",
-      "commits": "0筆",
-      "reasoning": "報告6.5小時開發任務但無任何commit產出，無法驗證工作成果，產出不足"
-    },
-    {
-      "date": "6/3",
-      "member": "Tanya",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "dev工作 8H",
-      "commits": "0筆",
-      "reasoning": "報告8小時開發任務但無任何commit產出，無法驗證工作成果，屬於嚴重的產出不足"
-    },
-    {
-      "date": "6/3",
-      "member": "Sylvia",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "dev工作 6.5H",
-      "commits": "3筆（平均14.7筆，比例0.20）",
-      "reasoning": "報告6.5小時開發任務但僅有3筆commit，遠低於6/3團隊平均14.7筆的閾值7.35筆，時間與產出明顯不成比例"
-    },
-    {
-      "date": "6/3",
-      "member": "Richard",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "dev工作 7H",
-      "commits": "0筆",
-      "reasoning": "報告7小時開發任務但無任何commit產出，無法驗證工作成果，屬於嚴重的產出不足"
-    },
-    {
-      "date": "6/3",
-      "member": "Patty",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "dev工作 7H",
-      "commits": "2筆（平均14.7筆，比例0.14）",
-      "reasoning": "報告7小時開發任務但僅有2筆commit，遠低於團隊平均閾值，時間投入與成果差距極大"
-    },
-    {
-      "date": "6/4",
-      "member": "Ivy",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "dev工作 7H",
-      "commits": "7筆（平均22筆，比例0.32）",
-      "reasoning": "報告7小時開發任務但僅有7筆commit，低於6/4團隊平均22筆的閾值11筆，產出效率明顯低於預期"
-    },
-    {
-      "date": "6/4",
-      "member": "Tanya",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "dev工作 7.1H",
-      "commits": "0筆",
-      "reasoning": "報告7.1小時開發任務但無任何commit產出，無法驗證工作成果，屬於嚴重的產出不足"
-    },
-    {
-      "date": "6/4",
-      "member": "Richard",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "dev工作 8H",
-      "commits": "0筆",
-      "reasoning": "報告8小時開發任務但無任何commit產出，無法驗證工作成果，屬於嚴重的產出不足"
-    },
-    {
-      "date": "6/4",
-      "member": "Patty",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "dev工作 7H",
-      "commits": "0筆",
-      "reasoning": "報告7小時開發任務但無任何commit產出，無法驗證工作成果，屬於嚴重的產出不足"
-    },
-    {
-      "date": "6/5",
-      "member": "日銜",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "dev工作 8H",
-      "commits": "0筆",
-      "reasoning": "報告8小時開發任務但無任何commit產出，無法驗證工作成果，屬於嚴重的產出不足"
-    },
-    {
-      "date": "6/5",
-      "member": "家輝",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "dev工作 3.5H",
-      "commits": "0筆",
-      "reasoning": "報告3.5小時開發任務但無任何commit產出，無法驗證工作成果，邊界情況的產出不足"
-    },
-    {
-      "date": "6/5",
-      "member": "Richard",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "dev工作 8H",
-      "commits": "0筆",
-      "reasoning": "報告8小時開發任務但無任何commit產出，無法驗證工作成果，屬於嚴重的產出不足"
-    },
-    {
-      "date": "6/5",
-      "member": "Patty",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "dev工作 7H",
-      "commits": "1筆（平均26.5筆，比例0.04）",
-      "reasoning": "報告7小時開發任務但僅有1筆commit，遠低於6/5團隊平均26.5筆的閾值13.25筆，時間與產出差距極大"
+      "task": "開發任務 6.5H",
+      "commits": "10 commits（KEYPO/keypo-frontend-2023、KEYPO/keypo-international-website、keypo-suite/keypo-suite-official-website）",
+      "reasoning": "開發產出低於團隊平均。成員 commit 產出率 1.54 commits/H，團隊平均 4.28 commits/H，差距達 2.8 倍。建議確認任務屬性是否特殊或工作方式與團隊產出模式不同。"
     }
   ],
   "summary": {
-    "totalMembers": 15,
-    "totalWarnings": 25,
+    "totalMembers": 12,
+    "totalWarnings": 5,
     "byType": {
-      "low_output": 15,
+      "low_output": 2,
       "mismatch": 0,
-      "outlier": 10
+      "outlier": 3
     }
   }
 }
