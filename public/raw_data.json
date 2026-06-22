@@ -12044,69 +12044,2775 @@
             "hours": 2
           }
         ]
+      },
+      "Richard": {
+        "total": 10,
+        "meeting": 3,
+        "dev": 7,
+        "status": "reported",
+        "items": [
+          {
+            "code": "KEYLM",
+            "task": "[In Progress] 進行 BFF → RAGFlow → LiteLLM 串接",
+            "hours": 6
+          },
+          {
+            "code": "MEETING",
+            "task": "[Done] 1999 專案現況同步",
+            "hours": 3
+          },
+          {
+            "code": null,
+            "task": "[其他][CSM Agent][Done] 收集介面設計的回饋意見",
+            "hours": 1
+          }
+        ]
+      },
+      "Patty": {
+        "total": 7,
+        "meeting": 0,
+        "dev": 7,
+        "status": "reported",
+        "items": [
+          {
+            "code": "KEYLM",
+            "task": "[模型調參][Done] QWEN3.6-35B-A3B 輸出品質根因排查",
+            "hours": 4
+          },
+          {
+            "code": "KEYLM",
+            "task": "[Ragflow 多模型並行][Done] 套用最佳參數啟用 multi-model 並行輸出並錄製成影片",
+            "hours": 3
+          }
+        ]
+      }
+    },
+    "6/18": {
+      "Joyce": {
+        "total": 8,
+        "meeting": 0,
+        "dev": 8,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[In Progress] KEYPO金流更換成PayPal 成本分析",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 協助Ivy ma 撈取目前正式環境使用者KEYPO Agent 每日提問次數用量，需要近3個月的資料",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[In Progress] #29：開發關鍵字修改次數新增以年單位配額",
+            "hours": 3
+          },
+          {
+            "code": null,
+            "task": "[In Progress] #14：修改一般主題與共享主題排序方式",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[In Progress] 玄武計畫 KEYPO engine API v3",
+            "hours": 3
+          }
+        ]
+      },
+      "Ivy": {
+        "total": 5.5,
+        "meeting": 0,
+        "dev": 5.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[In Progress] KEYPO F2E E2E Test",
+            "hours": 5.5
+          }
+        ]
+      },
+      "Jason": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "日銜": {
+        "total": 6.5,
+        "meeting": 0,
+        "dev": 6.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[InProgress] 博報堂專案",
+            "hours": 5
+          },
+          {
+            "code": null,
+            "task": "[In Progress] 處理數據需求申請 link",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[In Progress] issue#3189",
+            "hours": 0.5
+          }
+        ]
+      },
+      "Wendy": {
+        "total": 7,
+        "meeting": 3.5,
+        "dev": 3.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] 當日數據產出經人工驗證後提供給 CIB, 更新成效統計表單",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 1999 vender API nginx 502 問題排查並解決",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[In Progress] SY 由 K4 nginx 轉移出來方案調查研究: nginx 配置方法初步 plan",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[Done] PM 職責交接會議, 相關文件了解",
+            "hours": 2.5
+          },
+          {
+            "code": null,
+            "task": "[Done] KEYPO Frontend E2E sync 會議",
+            "hours": 1
+          }
+        ]
+      },
+      "侑呈": {
+        "total": 7.5,
+        "meeting": 0,
+        "dev": 7.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "Fanti",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "其他",
+            "hours": 6.5
+          }
+        ]
+      },
+      "禎佑": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "replied_no_hours",
+        "items": []
+      },
+      "Ted": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "leave"
+      },
+      "家輝": {
+        "total": 6.5,
+        "meeting": 0,
+        "dev": 6.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] 會計師抽查相關資料搜集",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[In progress] 開發 data api mcp功能",
+            "hours": 4
+          },
+          {
+            "code": null,
+            "task": "[In progress] 筆電設備回收還原MB0046",
+            "hours": 1.5
+          }
+        ]
+      },
+      "Joe": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Aaron": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "哲緯": {
+        "total": 8.5,
+        "meeting": 0,
+        "dev": 8.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] Threads日常需求處理",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "line-social-radar  link",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "line-social-radar-api  link link link",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "bigmonitorV3  link link link link link link link",
+            "hours": 4
+          },
+          {
+            "code": null,
+            "task": "threads-scrapy  link",
+            "hours": 1
+          }
+        ]
+      },
+      "Tanya": {
+        "total": 8,
+        "meeting": 0,
+        "dev": 8,
+        "status": "reported",
+        "items": [
+          {
+            "code": "LEAVE",
+            "task": "(09:00-18:00) 補休假（全天）",
+            "hours": 8
+          }
+        ]
+      },
+      "Sylvia": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      }
+    },
+    "6/17": {
+      "Joyce": {
+        "total": 4,
+        "meeting": 0,
+        "dev": 4,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[In Progress] KEYPO金流更換成PayPal 成本分析",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[In Progress] 玄武計畫 KEYPO engine API v3",
+            "hours": 3
+          }
+        ]
+      },
+      "Ivy": {
+        "total": 7,
+        "meeting": 1,
+        "dev": 6,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] KEYPO E2E Agent 開發網路好感度功能 !182",
+            "hours": 3
+          },
+          {
+            "code": null,
+            "task": "[In Progress] KEYPO E2E Agent 開發熱門排行榜功能",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 熱門頻道 MR Check & 合併進 E2E 主分支",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 測試主分支 CIplaywright config 加上E2E_GATE flag供 ship skill 前置用",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] Sync 會議",
+            "hours": 1
+          }
+        ]
+      },
+      "Jason": {
+        "total": 7,
+        "meeting": 0,
+        "dev": 7,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[In progress] 網溫 meta description 前後台新增欄位填寫",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[Done] ai 產文調整文章呈現方式及內容",
+            "hours": 3
+          },
+          {
+            "code": null,
+            "task": "[Done] 遠雄專案前端部署與debug",
+            "hours": 2
+          }
+        ]
+      },
+      "日銜": {
+        "total": 7.5,
+        "meeting": 2.5,
+        "dev": 5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[InProgress] 博報堂專案",
+            "hours": 3.5
+          },
+          {
+            "code": null,
+            "task": "[Done] Google-AI-overview優化  link",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] Issue例會",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 會議 with Mason",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 收錄CSM需求產品留言",
+            "hours": 0.5
+          }
+        ]
+      },
+      "Wendy": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "侑呈": {
+        "total": 8,
+        "meeting": 1.5,
+        "dev": 6.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "Fanti",
+            "hours": 3.5
+          },
+          {
+            "code": null,
+            "task": "Issue",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "其他",
+            "hours": 2.5
+          },
+          {
+            "code": null,
+            "task": "Issues例會",
+            "hours": 1.5
+          }
+        ]
+      },
+      "禎佑": {
+        "total": 7.5,
+        "meeting": 1.5,
+        "dev": 6,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[In Progress] KEYKYC 後端優化 link",
+            "hours": 3
+          },
+          {
+            "code": null,
+            "task": "[In Progress] 優化 GoogleMap",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 博報堂 google map 地點收錄 (貼文留言)",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[Done] issue 例會",
+            "hours": 1.5
+          }
+        ]
+      },
+      "Ted": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "家輝": {
+        "total": 7,
+        "meeting": 0.5,
+        "dev": 6.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] 前往佳龍重灌 46, 54, 55",
+            "hours": 4
+          },
+          {
+            "code": null,
+            "task": "[Done] 筆電設備回收還原MB0062 MB0008 MB0056",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 產品中心藍圖對焦會議",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 會計師抽查相關資料搜集",
+            "hours": 1
+          }
+        ]
+      },
+      "Joe": {
+        "total": 6.5,
+        "meeting": 1.5,
+        "dev": 5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] Frontend E2E 例會",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[Done] KEYPO API 測機監控異常協助排查",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] KEYPO Agent 造成 KEYPO API 壓力原因排查，從 tracing 紀錄來看，判斷為 Agent 在處理過程進行長度過長關鍵字的查詢，再加上 Agent 會多個請求併發，且請求 timeout 後又有重試機制，進一步惡化短時間內 API 端的處理壓力",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[Done] KEYPO 系統管理員撈取條件改為可多選",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[In Progress] KEYPO 權限管理功能順序因應 BDE 功能加入後做調整",
+            "hours": 0.5
+          }
+        ]
+      },
+      "Aaron": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "哲緯": {
+        "total": 7.5,
+        "meeting": 1,
+        "dev": 6.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] Threads日常需求處理 ok",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] Byron工作內容會議",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] WG - 查詢面試趣AI機器人失敗原因",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "bigmonitorV3  link link link link",
+            "hours": 5
+          }
+        ]
+      },
+      "Tanya": {
+        "total": 8,
+        "meeting": 0,
+        "dev": 8,
+        "status": "reported",
+        "items": [
+          {
+            "code": "LEAVE",
+            "task": "(09:00-18:00) 補休假（全天）",
+            "hours": 8
+          }
+        ]
+      },
+      "Sylvia": {
+        "total": 7.5,
+        "meeting": 2.5,
+        "dev": 5,
+        "status": "reported",
+        "items": [
+          {
+            "code": "REPORT",
+            "task": "(09:30-11:00) 撰寫SY交接文件",
+            "hours": 1.5
+          },
+          {
+            "code": "EVAL",
+            "task": "(11:00-12:30) KEYPO Agent V1轉換計費方案調查並提供結論說明",
+            "hours": 1.5
+          },
+          {
+            "code": "REPORT",
+            "task": "(13:30-14:30) 撰寫工作進度報告",
+            "hours": 1
+          },
+          {
+            "code": "MEETING",
+            "task": "(14:30-15:00) SY例會",
+            "hours": 0.5
+          },
+          {
+            "code": "MEETING",
+            "task": "(15:00-16:00) SY交接會議",
+            "hours": 1
+          },
+          {
+            "code": "REVIEW",
+            "task": "(16:00-17:00) 與主管進行工作進度報告",
+            "hours": 1
+          },
+          {
+            "code": "REPORT",
+            "task": "(17:00-18:00) 整理會議記錄/action items",
+            "hours": 1
+          }
+        ]
+      }
+    },
+    "6/16": {
+      "Joyce": {
+        "total": 8,
+        "meeting": 3.5,
+        "dev": 4.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] #57：調整速報文章列表、庫存內容highlight 邏輯，後端參數調整完成",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[In Progress] KEYPO金流更換成PayPal 成本分析",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] KEYPO 例會",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 產品中心藍圖對焦",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] KEYPO new features 定價討論 (Agent 2.0、AI聆聽)",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[In Progress] 玄武計畫 KEYPO engine API v3",
+            "hours": 2
+          }
+        ]
+      },
+      "Ivy": {
+        "total": 7,
+        "meeting": 1,
+        "dev": 6,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] #3173 #3174 大數據官網頁面文字調整上線 !160",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] phase2 測試環境整理，單一 worker 序列化、移除 dead auth.setup、修 SPEC d522251",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 測試使用 KEYPO E2E Agent 開發探索概念功能 !179",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[In Progress] KEYPO E2E Agent 開發網路好感度功能",
+            "hours": 2.5
+          },
+          {
+            "code": null,
+            "task": "[Done] MISC 會議/討論",
+            "hours": 1
+          }
+        ]
+      },
+      "Jason": {
+        "total": 7.5,
+        "meeting": 0,
+        "dev": 7.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[In progress] 網溫 meta description 前後台新增欄位填寫",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[Done] KEYPO Agent用於AI產文",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 產品中心藍圖對焦",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] eeg 新增藝人資訊榜單更新",
+            "hours": 4
+          }
+        ]
+      },
+      "日銜": {
+        "total": 7,
+        "meeting": 0,
+        "dev": 7,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done]重複站台資料清除",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[InProgress] 博報堂專案",
+            "hours": 3
+          },
+          {
+            "code": null,
+            "task": "[In Progress] Issue處理&回覆",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 數據需求申請處理",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 產品中心藍圖對焦",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 非社群Redis塞車狀況處理",
+            "hours": 1
+          }
+        ]
+      },
+      "Wendy": {
+        "total": 8,
+        "meeting": 0,
+        "dev": 8,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] 當日數據產出經人工驗證後提供給 CIB, 更新成效統計表單",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] #98: 動態判斷切分訊息功能驗證、上版",
+            "hours": 3
+          },
+          {
+            "code": null,
+            "task": "[Done] #83: 推播機制依照最終收斂需求估算成本, 並回覆給 CSM 決定是否繼續實作",
+            "hours": 3.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 產品中心藍圖對焦",
+            "hours": 0.5
+          }
+        ]
+      },
+      "侑呈": {
+        "total": 8,
+        "meeting": 0,
+        "dev": 8,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "Fanti",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "Issue",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "其他",
+            "hours": 5
+          },
+          {
+            "code": null,
+            "task": "產品中心對焦藍圖",
+            "hours": 1
+          }
+        ]
+      },
+      "禎佑": {
+        "total": 7.5,
+        "meeting": 0,
+        "dev": 7.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[In Progress] 博報堂 google map 地點收錄 (貼文留言)",
+            "hours": 3
+          },
+          {
+            "code": null,
+            "task": "[Done] 產品中心藍圖對焦",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 開發 google map 工具",
+            "hours": 3.5
+          }
+        ]
+      },
+      "Ted": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "家輝": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Joe": {
+        "total": 7,
+        "meeting": 1.5,
+        "dev": 5.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] KEYPO 例會",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 產品中心藍圖對焦",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[In Progress] 公司電腦環境設定，已完成各種軟體安裝、專案 repo 與環境變數設置等可自動化處理項目",
+            "hours": 2.5
+          },
+          {
+            "code": null,
+            "task": "[Done] issue#3150：熱門關鍵字相關查詢無資料時預期顯示 no data",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[Done] issue#3152：主題操作記錄優化查詢時的 UX 體驗",
+            "hours": 1
+          }
+        ]
+      },
+      "Aaron": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "哲緯": {
+        "total": 6.5,
+        "meeting": 1,
+        "dev": 5.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] Threads日常需求處理",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 中心藍圖對焦會議",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "bigmonitorV3  link link link link link",
+            "hours": 5
+          }
+        ]
+      },
+      "Tanya": {
+        "total": 8,
+        "meeting": 0,
+        "dev": 8,
+        "status": "reported",
+        "items": [
+          {
+            "code": "LEAVE",
+            "task": "(09:00-12:30) 補休假（上午半天）",
+            "hours": 3.5
+          },
+          {
+            "code": "SUPPORT",
+            "task": "(13:30-15:30) 用 cc 產出 KOL 貼標交接文件並放雲端",
+            "hours": 2
+          },
+          {
+            "code": "SUPPORT",
+            "task": "(15:30-18:00) 用 cc 驗證口碑之星-啦啦隊及 Youtuber 領袖價值分數並產文件放交接資料夾",
+            "hours": 2.5
+          }
+        ]
+      },
+      "Sylvia": {
+        "total": 7.5,
+        "meeting": 4,
+        "dev": 3.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": "DEV",
+            "task": "(09:30-10:30) 實作資料來源chip依照後端注入語系",
+            "hours": 1
+          },
+          {
+            "code": "TEST",
+            "task": "(10:30-11:00) 本機驗測 上版",
+            "hours": 0.5
+          },
+          {
+            "code": "MEETING",
+            "task": "(11:00-12:30) KEYPO例會",
+            "hours": 1.5
+          },
+          {
+            "code": "MGMT",
+            "task": "(13:30-14:30) 與CSM溝通KEYPO Agent如何操作",
+            "hours": 1
+          },
+          {
+            "code": "MEETING",
+            "task": "(14:30-15:00) 產品中心會議",
+            "hours": 0.5
+          },
+          {
+            "code": "MEETING",
+            "task": "(15:00-17:00) KEYPO Agent 計費方案會議",
+            "hours": 2
+          },
+          {
+            "code": "TEST",
+            "task": "(17:00-18:00) debug-對話列表未撈完整",
+            "hours": 1
+          }
+        ]
+      }
+    },
+    "6/15": {
+      "Joyce": {
+        "total": 8,
+        "meeting": 0,
+        "dev": 8,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[In Progress] 優化速報發送排程",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[In Progress] 排查後端API哪些是有可能負載比較重",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[In Progress] #57：調整速報文章列表、庫存內容highlight 邏輯",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[In Progress] 客戶用量統計儀表板修改根據Ivy ma需求",
+            "hours": 4
+          }
+        ]
+      },
+      "Ivy": {
+        "total": 7,
+        "meeting": 1,
+        "dev": 6,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[In Progress] KEYPO F2E E2E Test",
+            "hours": 6
+          },
+          {
+            "code": null,
+            "task": "[Done] 會議",
+            "hours": 1
+          }
+        ]
+      },
+      "Jason": {
+        "total": 7,
+        "meeting": 0,
+        "dev": 7,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] 網溫建立 INP 監測的 Looker 報表",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[Done] 網溫前台summary設計啟動",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] Summary設計簡報",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[Done] 網溫 HK sitemap 無法擷取根因清除及未索引 65.2 萬頁原因分析",
+            "hours": 2
+          }
+        ]
+      },
+      "日銜": {
+        "total": 7,
+        "meeting": 1,
+        "dev": 6,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done]港版環境遷移",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done]數據需求收錄",
+            "hours": 2.5
+          },
+          {
+            "code": null,
+            "task": "[Done]  Ai-crawler-skills 測試",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 會議",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[In Progress] 博報堂專案",
+            "hours": 1
+          }
+        ]
+      },
+      "Wendy": {
+        "total": 7,
+        "meeting": 0,
+        "dev": 7,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] 當日數據產出經人工驗證後提供給 CIB, 更新成效統計表單",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] #98: 動態判斷切分訊息功能規劃、實作",
+            "hours": 5
+          },
+          {
+            "code": null,
+            "task": "[Done] #3184：台鐵推播晚進排查",
+            "hours": 1
+          }
+        ]
+      },
+      "侑呈": {
+        "total": 7.5,
+        "meeting": 1,
+        "dev": 6.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "Fanti",
+            "hours": 4
+          },
+          {
+            "code": null,
+            "task": "Issue",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "其他",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "數據會議",
+            "hours": 1
+          }
+        ]
+      },
+      "禎佑": {
+        "total": 8,
+        "meeting": 1,
+        "dev": 7,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[In Progress] KEYKYC - 裁罰資料收錄 (共 16 個資料源) link",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[In Progress] KEYKYC 後端優化 link",
+            "hours": 3.5
+          },
+          {
+            "code": null,
+            "task": "[In Progress] 博報堂 google map 地點收錄 (貼文留言)",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 數據會議",
+            "hours": 1
+          }
+        ]
+      },
+      "Ted": {
+        "total": 7.5,
+        "meeting": 1,
+        "dev": 6.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] Brand merge / promote allowlist !53 merge 進 main",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[In Progress] 分群定期審查 cron + auto-apply !54 - 開發中，新增 sub-LLM cost 標記功能",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[Done] 補充 6/12 與 Ivy Ma 討論紀錄到 #85",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 跟 Neil 交接確認功能優先級",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[Done] Langfuse cost 匯出 skill",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 討論 Google AI Overview 功能",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 回覆分析部的 API 問題",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] SM 文章作者顯示功能 !58 merge 進 develop",
+            "hours": 1
+          }
+        ]
+      },
+      "家輝": {
+        "total": 7,
+        "meeting": 1,
+        "dev": 6,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] grafana gcloud解決連線異常",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[In progress] 筆電設備回收還原MB0062 MB0008",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 產品中心週會",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 會計師抽查相關資料搜集",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 新到職同仁設備交接",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[In progress] 警報器閥值調查與調整",
+            "hours": 2
+          }
+        ]
+      },
+      "Joe": {
+        "total": 6.5,
+        "meeting": 0,
+        "dev": 6.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] KEYPO Agent 正式機環境架設與準備，完成 Agent 相依服務與儲存空間設置、IAM 權限設定、正式機 secret 新版本處理",
+            "hours": 3.5
+          },
+          {
+            "code": null,
+            "task": "[In Progress] KEYPO Agent MR review",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] IDC 機房 Gateway 交接項目最後確認與測試機設置",
+            "hours": 2
+          }
+        ]
+      },
+      "Aaron": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "哲緯": {
+        "total": 6.5,
+        "meeting": 1,
+        "dev": 5.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] Threads日常需求處理",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 數據工程會議",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "bigmonitorV3  link link link link",
+            "hours": 5
+          }
+        ]
+      },
+      "Richard": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Patty": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "replied_no_hours",
+        "items": []
+      },
+      "Tanya": {
+        "total": 8,
+        "meeting": 0,
+        "dev": 8,
+        "status": "reported",
+        "items": [
+          {
+            "code": "SUPPORT",
+            "task": "(09:30-11:30) 用 cc 整理產出貼標交接文件再人工確認",
+            "hours": 2
+          },
+          {
+            "code": "SUPPORT",
+            "task": "(11:30-12:30) 用 cc 整理雲端資料夾",
+            "hours": 1
+          },
+          {
+            "code": "SUPPORT",
+            "task": "(13:30-14:30) 繼續用 cc 整理雲端資料夾",
+            "hours": 1
+          },
+          {
+            "code": "SUPPORT",
+            "task": "(14:30-15:30) 用 cc 重算去年7月至今口碑之星分數",
+            "hours": 1
+          },
+          {
+            "code": "SUPPORT",
+            "task": "(15:30-18:30) 用 cc 整理電腦文件並將交接文件放置雲端",
+            "hours": 3
+          }
+        ]
+      },
+      "Sylvia": {
+        "total": 8,
+        "meeting": 0,
+        "dev": 8,
+        "status": "reported",
+        "items": [
+          {
+            "code": "REPORT",
+            "task": "(09:30-10:40) 撰寫SY交接文件",
+            "hours": 1.2
+          },
+          {
+            "code": "TEST",
+            "task": "(10:40-12:30) KEYPO Agent 多語系驗測",
+            "hours": 1.8
+          },
+          {
+            "code": "DEV",
+            "task": "(13:30-14:30) 前後端本機啟動並打KEYPO Engine API",
+            "hours": 1
+          },
+          {
+            "code": "TEST",
+            "task": "(14:30-16:30) debug 結構化輸出的語系",
+            "hours": 2
+          },
+          {
+            "code": "DEV",
+            "task": "(16:30-17:30) 優化-生成關鍵字依照資料源的語系去生成",
+            "hours": 1
+          },
+          {
+            "code": "TEST",
+            "task": "(17:30-18:30) debug-KOL標籤應依照介面語系顯示對應語系",
+            "hours": 1
+          }
+        ]
+      }
+    },
+    "6/12": {
+      "Joyce": {
+        "total": 8,
+        "meeting": 1.5,
+        "dev": 6.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[In Progress] 優化速報發送排程",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[Done] 檢核Aaron交接文件",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[In Progress] 排查後端API哪些是有可能負載比較重",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 工程部週會",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 客戶用量統計儀表板問題訪談(Ivy ma)",
+            "hours": 1.5
+          }
+        ]
+      },
+      "Ivy": {
+        "total": 7,
+        "meeting": 1.5,
+        "dev": 5.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[In Progress] KEYPO F2E E2E Test",
+            "hours": 5.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 部門週會",
+            "hours": 1.5
+          }
+        ]
+      },
+      "Jason": {
+        "total": 6.5,
+        "meeting": 0,
+        "dev": 6.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] 網溫 summary 研究",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[Done] 網溫前台新增搜尋作者欄位功能",
+            "hours": 2.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 網溫研究流量下跌原因",
+            "hours": 2
+          }
+        ]
+      },
+      "日銜": {
+        "total": 7,
+        "meeting": 0,
+        "dev": 7,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "Google AI Overview",
+            "hours": 3
+          },
+          {
+            "code": null,
+            "task": "[Done] 工程部周會",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[In Progress] Ai-crawler-skills",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[Done] YT收錄需求頻道添加&回爬",
+            "hours": 0.5
+          }
+        ]
+      },
+      "Wendy": {
+        "total": 7.5,
+        "meeting": 1.5,
+        "dev": 6,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] 當日數據產出經人工驗證後提供給 CIB, 更新成效統計表單",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[In Progress] pipeline 整理",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[In Progress] 未回報過清單 recheck 流程規劃",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[In Progress] #98: 確認台鐵主題是否有需要先處理, 釐清需求並規劃實作方式",
+            "hours": 3
+          },
+          {
+            "code": null,
+            "task": "[Done] 工程部週會",
+            "hours": 1.5
+          }
+        ]
+      },
+      "侑呈": {
+        "total": 7.5,
+        "meeting": 1.5,
+        "dev": 6,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "Fanti",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "Issue",
+            "hours": 3
+          },
+          {
+            "code": null,
+            "task": "其他",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "工程部週會",
+            "hours": 1.5
+          }
+        ]
+      },
+      "禎佑": {
+        "total": 7,
+        "meeting": 0,
+        "dev": 7,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] 排查饗賓集團關鍵字偵測異常，後來發現是 ES query 的問題，連帶監控一併修復 link",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[In Progress] KEYKYC 前端優化 link",
+            "hours": 3
+          },
+          {
+            "code": null,
+            "task": "[In Progress] KEYKYC - 輿情同步api link",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 部門周會",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 調整 tiktok stats 的時間 (更好統計 worker 狀態) link",
+            "hours": 0.5
+          }
+        ]
+      },
+      "Ted": {
+        "total": 6,
+        "meeting": 4,
+        "dev": 2,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[In Progress] Brand merge / promote API 合進 main，加上 BRAND_MERGE_ALLOWED_USER_IDS allowlist 限制可用對象 !52",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[Done] 跟 Ivy Ma、Neil 討論即時監控預警功能（14:30 - 17:00）",
+            "hours": 2.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 工程部週會",
+            "hours": 1.5
+          }
+        ]
+      },
+      "家輝": {
+        "total": 7.5,
+        "meeting": 1.5,
+        "dev": 6,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[In progress] grafana gcloud連線異常debug",
+            "hours": 3
+          },
+          {
+            "code": null,
+            "task": "[Done] 兆豐data api效期延伸",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 工程部週會",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[In progress] 瞭解fet tw環境oom情況",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[In progress] 筆電設備回收還原",
+            "hours": 1.5
+          }
+        ]
+      },
+      "Joe": {
+        "total": 7,
+        "meeting": 1.5,
+        "dev": 5.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] 工程部週會",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[Done] KEYPO 前端 E2E 測試目前執行成本對於 runner 來說過於繁重，先將 E2E job 改為手動觸發，避免時常佔用 runner 資源影響其他專案",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] KEYPO Agent 確認 v1 / v2 版本的對話成本與進行比較 & KEYPO Agent 取樣統計實際使用情境所需成本",
+            "hours": 2.5
+          },
+          {
+            "code": null,
+            "task": "[In Progress] KEYPO Agent MR review",
+            "hours": 2
+          }
+        ]
+      },
+      "Aaron": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "哲緯": {
+        "total": 6.5,
+        "meeting": 0,
+        "dev": 6.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] Threads日常需求處理",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "bigmonitorV3  link link link link",
+            "hours": 6
+          }
+        ]
+      },
+      "Tanya": {
+        "total": 8,
+        "meeting": 0,
+        "dev": 8,
+        "status": "reported",
+        "items": [
+          {
+            "code": "LEAVE",
+            "task": "(09:00-18:00) 補休假（全天）",
+            "hours": 8
+          }
+        ]
+      },
+      "Sylvia": {
+        "total": 7.5,
+        "meeting": 1,
+        "dev": 6.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": "TEST",
+            "task": "(09:30-10:30) 多語系測試",
+            "hours": 1
+          },
+          {
+            "code": "TEST",
+            "task": "(10:30-12:00) 多語系全面 audit（後端）",
+            "hours": 1.5
+          },
+          {
+            "code": "REPORT",
+            "task": "(12:00-12:30) 整理 audit 文件",
+            "hours": 0.5
+          },
+          {
+            "code": "REPORT",
+            "task": "(13:30-14:30) KEYPO Agent 錄製英文介面影片",
+            "hours": 1
+          },
+          {
+            "code": "MEETING",
+            "task": "(14:30-15:30) RD 開會 sync KEYPO Agent 進度",
+            "hours": 1
+          },
+          {
+            "code": "DESIGN",
+            "task": "(15:30-16:00) 製作多語系分階段優化 plan",
+            "hours": 0.5
+          },
+          {
+            "code": "DEV",
+            "task": "(16:00-17:00) 實作多語系優化（後端）階段 1",
+            "hours": 1
+          },
+          {
+            "code": "REPORT",
+            "task": "(17:00-18:00) 撰寫週報",
+            "hours": 1
+          }
+        ]
+      }
+    },
+    "6/11": {
+      "Joyce": {
+        "total": 8,
+        "meeting": 0,
+        "dev": 8,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[In Progress] 優化速報發送排程",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[In Progress] 檢核Aaron交接文件",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[In Progress] 排查後端API哪些是有可能負載比較重",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 可觀測性 Project 交接",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] #57：新增標題是否要highlight 的參數，因應有些系統可能不需要這個功能",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] #56：因為資料合理性運用，已協助把將庫存內容使用量加入客戶用量統計儀表板，讓CSM可以確認庫存內容使用量",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] #382：協助調查速報重複寄送原因，有一封速報是使用者設定兩封一樣的速報，另一封為雅詩集團速報，因大量收件人過去寄送方式不太優良，一個一個發起請求mailgun，昨日已完成批量寄送的方式更新至正式機",
+            "hours": 1
+          }
+        ]
+      },
+      "Ivy": {
+        "total": 4,
+        "meeting": 0,
+        "dev": 4,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[In Progress] #3173 #3174 大數據官網頁面文字調整 & 上線",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[In Progress] KEYPO E2E Agent 與 Skill 家族細修 5135b6",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 測試使用 KEYPO E2E Agent 開發傳播趨勢功能 !174",
+            "hours": 2.5
+          }
+        ]
+      },
+      "Jason": {
+        "total": 7,
+        "meeting": 0,
+        "dev": 7,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[In progress] 網溫 summary 研究",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 網溫前台後端新增圖片 alt 標籤",
+            "hours": 6
+          }
+        ]
+      },
+      "日銜": {
+        "total": 7,
+        "meeting": 0,
+        "dev": 7,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] 修正 mobile01 comment_count 計算 bug",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] cmy_f 站台改用 RSS + cmoney API 混合架構",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[Done] Google-Ai-overview測試  link",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[Done] Ai-crawler-skills優化  link",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[In Progress] Issue回覆",
+            "hours": 1
+          }
+        ]
+      },
+      "Wendy": {
+        "total": 7,
+        "meeting": 2,
+        "dev": 5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] 當日數據產出經人工驗證後提供給 CIB, 更新成效統計表單",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 同步 META UGC 偵測數據端狀況、回覆 CIB 詢問偵測後續事項",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[In Progress] #83 推播筆數上限調整需求：需求確認並回覆",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 與 joanne, joyce, ivy ma 分別討論近期 issue",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[Done] TY: 地端 Nginx SSL 相關憑證與金鑰匯出",
+            "hours": 0.5
+          }
+        ]
+      },
+      "侑呈": {
+        "total": 7.5,
+        "meeting": 0,
+        "dev": 7.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "Fanti",
+            "hours": 3
+          },
+          {
+            "code": null,
+            "task": "Issue",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "KEYTECTOR",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "其他",
+            "hours": 2
+          }
+        ]
+      },
+      "禎佑": {
+        "total": 7.5,
+        "meeting": 0,
+        "dev": 7.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[In Progress] KEYKYC 後端優化 link",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] KEYDERS Agent",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[In Progress] 優化 GoogleMap",
+            "hours": 5
+          },
+          {
+            "code": null,
+            "task": "[Done] 修復 tiktok-channel-api link",
+            "hours": 0.5
+          }
+        ]
+      },
+      "Ted": {
+        "total": 11,
+        "meeting": 0,
+        "dev": 11,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] log middleware !51",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[In Progress] Rank 改在 query 時計算 (0291cc2)",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[In Progress] Brand merge 開發  (6262bda, 4229ba3, a165c34)",
+            "hours": 3
+          },
+          {
+            "code": null,
+            "task": "[In Progress] 分群定期審查 cron + auto-apply - MERGE/MODIFY/DROP 自動執行 (f36c781, 4a3a71f)",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[In Progress] CSM 後台權限設計 (7588032, 29ed072, 76dad05)",
+            "hours": 3
+          },
+          {
+            "code": null,
+            "task": "[In Progress] 社群作者欄位顯示 flag 控制 (812800c)",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] Mailgun webhook 寄件失敗監控 !56",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[In Progress] Gemini 預設改 gemini-3.1-flash-lite 測試 (fa0abff)",
+            "hours": 0.5
+          }
+        ]
+      },
+      "家輝": {
+        "total": 6,
+        "meeting": 0,
+        "dev": 6,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] 可觀測性 Project 交接",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 協助同仁處理claude code環境與處理使用疑問",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] gitlab kanban功能調查",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] openai續約說明投影片",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 螢幕送修後測試",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] Dell筆電異常當機測試",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[In progress] 瞭解fet tw環境oom情況",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[In progress] 改善數據q到esq跨機房慢速問題",
+            "hours": 1.5
+          }
+        ]
+      },
+      "Joe": {
+        "total": 7.5,
+        "meeting": 2.5,
+        "dev": 5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] Frontend 開發 guideline 例會",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 工程部讀書分享會",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[In Progress] KEYPO Agent 確認 v1 / v2 版本的對話成本與進行比較 & KEYPO Agent 取樣統計實際使用情境所需成本",
+            "hours": 2.5
+          },
+          {
+            "code": null,
+            "task": "[In Progress] KEYPO Agent MR review",
+            "hours": 2.5
+          }
+        ]
+      },
+      "Aaron": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "哲緯": {
+        "total": 7,
+        "meeting": 0,
+        "dev": 7,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] Threads日常需求處理",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "bigmonitorV3  link link link link link",
+            "hours": 4
+          },
+          {
+            "code": null,
+            "task": "threads-api-scrapy  link",
+            "hours": 2.5
+          }
+        ]
+      },
+      "Richard": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Patty": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "replied_no_hours",
+        "items": []
+      },
+      "Tanya": {
+        "total": 8,
+        "meeting": 0,
+        "dev": 8,
+        "status": "reported",
+        "items": [
+          {
+            "code": "LEAVE",
+            "task": "(09:00-18:00) 補休假（全天）",
+            "hours": 8
+          }
+        ]
+      },
+      "Sylvia": {
+        "total": 7.5,
+        "meeting": 0,
+        "dev": 7.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": "RESEARCH",
+            "task": "(09:30-10:30) 理解 git 運作",
+            "hours": 1
+          },
+          {
+            "code": "ISSUE",
+            "task": "(10:30-11:20) debug HITL 送出後秒數沒有從當下的秒數繼續跑",
+            "hours": 0.8
+          },
+          {
+            "code": "DEV",
+            "task": "(11:20-12:00) 實作 有臨時查詢的 q 就不 call generate_keyword tool",
+            "hours": 0.7
+          },
+          {
+            "code": "ISSUE",
+            "task": "(12:00-12:30) rebase 5 分支",
+            "hours": 0.5
+          },
+          {
+            "code": "RESEARCH",
+            "task": "(13:30-14:30) 研究 langfuse 運作模式",
+            "hours": 1
+          },
+          {
+            "code": "DESIGN",
+            "task": "(14:30-15:30) 釐清 UIUX（reload、關 tab、中斷鈕、HITL）",
+            "hours": 1
+          },
+          {
+            "code": "TEST",
+            "task": "(15:30-16:00) 使用 playwright 驗測 UIUX（reload、關 tab、中斷鈕、HITL）",
+            "hours": 0.5
+          },
+          {
+            "code": "DEV",
+            "task": "(16:00-17:30) 實作優化 UIUX（reload、關 tab、中斷鈕、HITL）",
+            "hours": 1.5
+          },
+          {
+            "code": "ISSUE",
+            "task": "(17:30-18:00) dead code 清理",
+            "hours": 0.5
+          }
+        ]
+      }
+    },
+    "6/10": {
+      "Joyce": {
+        "total": 8,
+        "meeting": 1,
+        "dev": 7,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[In Progress] 優化速報發送排程",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[In Progress] 檢核Aaron交接文件",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[In Progress] 排查後端API哪些是有可能負載比較重",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[Done] 工程部讀書會",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[In Progress] #57：新增標題是否要highlight 的參數，因應有些系統可能不需要這個功能",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] #96：因為推播客製化需求，協助調整文章列表可回傳文章完整標題的參數",
+            "hours": 1
+          }
+        ]
+      },
+      "Ivy": {
+        "total": 7,
+        "meeting": 2,
+        "dev": 5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] KEYPO E2E Agent 與 Skill 家族設計 Plan Branch",
+            "hours": 3.5
+          },
+          {
+            "code": null,
+            "task": "[In Progress] 測試使用 KEYPO E2E Agent 開發傳播趨勢功能",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[Done] Sync 會議",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 部門技術分享會",
+            "hours": 1
+          }
+        ]
+      },
+      "Jason": {
+        "total": 7,
+        "meeting": 0,
+        "dev": 7,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] 網溫前後台 CMS 標籤功能上線",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 遠雄專案前後端上線",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[In progress] 網溫後台前、後端新增圖片 alt 標籤",
+            "hours": 4
+          }
+        ]
+      },
+      "日銜": {
+        "total": 7,
+        "meeting": 1,
+        "dev": 6,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[In Progress] Google-ai-overview",
+            "hours": 3
+          },
+          {
+            "code": null,
+            "task": "Issue處理",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[To Do]讀書會",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[In Progress] 自動修站skill優化調整",
+            "hours": 1
+          }
+        ]
+      },
+      "Wendy": {
+        "total": 7.5,
+        "meeting": 2,
+        "dev": 5.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] 當日數據產出經人工驗證後提供給 CIB, 更新成效統計表單",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[In Progress] #83 推播筆數上限調整需求：評估技術與成本細節以規劃調整方向",
+            "hours": 4
+          },
+          {
+            "code": null,
+            "task": "[Done] KEYPO Frontend e2e 會議",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 讀書會",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] WP：協助調查 store_name 欄位使用狀況",
+            "hours": 0.5
+          }
+        ]
+      },
+      "侑呈": {
+        "total": 2,
+        "meeting": 1,
+        "dev": 1,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "其他",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 工程部讀書會",
+            "hours": 1
+          }
+        ]
+      },
+      "禎佑": {
+        "total": 7.5,
+        "meeting": 1,
+        "dev": 6.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[In Progress] KEYKYC - 輿情同步api link",
+            "hours": 3
+          },
+          {
+            "code": null,
+            "task": "[Done] 搬遷 keykyc 專案到獨立 group link",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 技術分享會",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 優化監控dashboard link",
+            "hours": 3
+          }
+        ]
+      },
+      "Ted": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "家輝": {
+        "total": 7.5,
+        "meeting": 0,
+        "dev": 7.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] 更新fet hk環境之supervisor並更新至對應機器上",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 更新bigscrapy plugins專用runner",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] 下週報到同仁筆電更新處理",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 會計事務所訪談",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[Done] gcp api key 關閉已開立並未使用的key；已開立但沒限制的key，限縮至使用中之權限",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "[In progress] 改善數據q到esq跨機房慢速問題",
+            "hours": 1.5
+          }
+        ]
+      },
+      "Joe": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Aaron": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "哲緯": {
+        "total": 8,
+        "meeting": 1,
+        "dev": 7,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[Done] Threads日常需求處理",
+            "hours": 0.5
+          },
+          {
+            "code": null,
+            "task": "[Done] 技術分享會",
+            "hours": 1
+          },
+          {
+            "code": null,
+            "task": "line-social-radar  link",
+            "hours": 1.5
+          },
+          {
+            "code": null,
+            "task": "bigmonitorV3  link link link",
+            "hours": 5
+          }
+        ]
+      },
+      "Richard": {
+        "total": 8,
+        "meeting": 2,
+        "dev": 6,
+        "status": "reported",
+        "items": [
+          {
+            "code": "KEYLM",
+            "task": "[In Progress] 進行 BFF → RAGFlow → LiteLLM 串接",
+            "hours": 4
+          },
+          {
+            "code": "MEETING",
+            "task": "[Done] 與 Joanne 討論後續平台的做法",
+            "hours": 2
+          },
+          {
+            "code": null,
+            "task": "[其他][CSM Agent][Done] 完成回饋意見中，案件列表跟新增案件的部分",
+            "hours": 2
+          }
+        ]
+      },
+      "Patty": {
+        "total": 8,
+        "meeting": 0,
+        "dev": 8,
+        "status": "reported",
+        "items": [
+          {
+            "code": null,
+            "task": "[交接][Done] 阿拉伯文情緒模型交接資料準備",
+            "hours": 3
+          },
+          {
+            "code": null,
+            "task": "[交接][Done] 整理中文情緒 finetune 交接資料準備",
+            "hours": 3
+          },
+          {
+            "code": null,
+            "task": "[交接][Done] 線上交接",
+            "hours": 2
+          }
+        ]
+      },
+      "Tanya": {
+        "total": 8,
+        "meeting": 0,
+        "dev": 8,
+        "status": "reported",
+        "items": [
+          {
+            "code": "LEAVE",
+            "task": "(09:00-18:00) 補休假（全天）",
+            "hours": 8
+          }
+        ]
+      },
+      "Sylvia": {
+        "total": 7.5,
+        "meeting": 0,
+        "dev": 7.5,
+        "status": "reported",
+        "items": [
+          {
+            "code": "RESEARCH",
+            "task": "(09:30-10:30) 研究生成關鍵字相關資料",
+            "hours": 1
+          },
+          {
+            "code": "DEV",
+            "task": "(10:30-12:30) 實作優化生成關鍵字功能",
+            "hours": 2
+          },
+          {
+            "code": "DEV",
+            "task": "(13:30-14:30) 實作優化生成關鍵字功能",
+            "hours": 1
+          },
+          {
+            "code": "TEST",
+            "task": "(14:30-15:30) KEYPO Agent 驗測",
+            "hours": 1
+          },
+          {
+            "code": "EVAL",
+            "task": "(15:30-16:30) 臨時查詢+一般查詢主題比較的邏輯確認",
+            "hours": 1
+          },
+          {
+            "code": "DEV",
+            "task": "(16:30-18:00) 實作臨時查詢與一般查詢「主題（競品）比較」要分開查詢而不是聯集查詢",
+            "hours": 1.5
+          }
+        ]
+      }
+    },
+    "6/9": {
+      "Richard": {
+        "total": 8,
+        "meeting": 0,
+        "dev": 8,
+        "status": "reported",
+        "items": [
+          {
+            "code": "KEYLM",
+            "task": "[In Progress] 進行 BFF → RAGFlow → LiteLLM 串接",
+            "hours": 4
+          },
+          {
+            "code": "KEYLM",
+            "task": "[In Progress] 向 Tanya 取得一個月內的通報資料，使用 claude code 整理分析方法",
+            "hours": 3
+          },
+          {
+            "code": null,
+            "task": "[其他][CSM Agent][In Progress] 收集 demo UI 的回饋意見，依據意見提供開發時程",
+            "hours": 1
+          }
+        ]
+      },
+      "Patty": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Tanya": {
+        "total": 8,
+        "meeting": 1,
+        "dev": 7,
+        "status": "reported",
+        "items": [
+          {
+            "code": "TEST",
+            "task": "(09:30-11:00) T1 標籤清理：重貼被貼 6 個標籤的頻道",
+            "hours": 1.5
+          },
+          {
+            "code": "MEETING",
+            "task": "(11:00-12:00) KEYPO 例會",
+            "hours": 1
+          },
+          {
+            "code": "TEST",
+            "task": "(12:00-12:30) 重新產出標籤現況分佈表",
+            "hours": 0.5
+          },
+          {
+            "code": "SUPPORT",
+            "task": "(13:30-14:40) 產出口碑之星 Youtuber 及啦啦隊名單 + 交接文件",
+            "hours": 1.2
+          },
+          {
+            "code": "SUPPORT",
+            "task": "(14:40-15:40) 整理 1999 專案 API 交接文件給 Richard + 放 google drive",
+            "hours": 1
+          },
+          {
+            "code": "SUPPORT",
+            "task": "(15:40-16:00) 撈 5 月市政信箱 + 交通局案件 json 給 Richard",
+            "hours": 0.3
+          },
+          {
+            "code": "SUPPORT",
+            "task": "(16:00-16:30) 整理 google drive 1999 專案資料夾",
+            "hours": 0.5
+          },
+          {
+            "code": "TEST",
+            "task": "(16:30-17:00) 用 cc 將標籤狀態列成 Dashboard",
+            "hours": 0.5
+          },
+          {
+            "code": "TEST",
+            "task": "(17:00-18:00) 用 cc 全面盤點可能誤標的頻道",
+            "hours": 1
+          },
+          {
+            "code": "SUPPORT",
+            "task": "(18:00-18:30) 整理貼標用的交接文件",
+            "hours": 0.5
+          }
+        ]
+      },
+      "Sylvia": {
+        "total": 8,
+        "meeting": 1,
+        "dev": 7,
+        "status": "reported",
+        "items": [
+          {
+            "code": "ISSUE",
+            "task": "(09:30-11:00) 排查執行思考速度過慢的問題",
+            "hours": 1.5
+          },
+          {
+            "code": "MEETING",
+            "task": "(11:00-12:00) KEYPO 例會",
+            "hours": 1
+          },
+          {
+            "code": "ISSUE",
+            "task": "(12:00-12:30) 繼續排查思考過慢原因",
+            "hours": 0.5
+          },
+          {
+            "code": "ISSUE",
+            "task": "(13:30-14:30) 繼續排查思考過慢原因",
+            "hours": 1
+          },
+          {
+            "code": "ISSUE",
+            "task": "(14:30-15:00) 調整 path A brief 不完全顯示給使用者看",
+            "hours": 0.5
+          },
+          {
+            "code": "ISSUE",
+            "task": "(15:00-15:30) 排查 tool 顯示對應的語系",
+            "hours": 0.5
+          },
+          {
+            "code": "ISSUE",
+            "task": "(15:30-16:30) 生成報告的引用來源要附上 URL",
+            "hours": 1
+          },
+          {
+            "code": "ISSUE",
+            "task": "(16:30-17:00) KEYPO Agent 前端文案調整",
+            "hours": 0.5
+          },
+          {
+            "code": "ISSUE",
+            "task": "(17:00-18:30) 報告引用格式重構（Chapter 7 拆 KEYPO/網路兩段、strip K1/W1）",
+            "hours": 1.5
+          }
+        ]
+      }
+    },
+    "6/7": {
+      "Tanya": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Sylvia": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      }
+    },
+    "6/6": {
+      "Tanya": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
+      },
+      "Sylvia": {
+        "total": null,
+        "meeting": null,
+        "dev": null,
+        "status": "unreported"
       }
     }
   },
   "issues": [
     {
       "member": "Joyce",
-      "severity": "🟡",
-      "text": "超時 9hr"
-    },
-    {
-      "member": "Ivy",
       "severity": "🟢",
-      "text": "穩定 7.5hr"
+      "text": "改善 4→8hr"
     },
     {
       "member": "Jason",
-      "severity": "🟡",
-      "text": "會議佔比 60%"
-    },
-    {
-      "member": "日銜",
-      "severity": "🟡",
-      "text": "超時 10.5hr"
+      "severity": "🔴",
+      "text": "未回報 6/18"
     },
     {
       "member": "Wendy",
       "severity": "🟢",
-      "text": "穩定 7.5hr"
+      "text": "穩定 7hr"
     },
     {
       "member": "侑呈",
-      "severity": "🔴",
-      "text": "未回報 6/8"
+      "severity": "🟢",
+      "text": "穩定 7.5hr"
     },
     {
       "member": "禎佑",
-      "severity": "🟡",
-      "text": "超時 9hr"
+      "severity": "🟠",
+      "text": "有回覆無工時 6/18"
     },
     {
       "member": "Ted",
-      "severity": "🟢",
-      "text": "穩定 8.5hr"
-    },
-    {
-      "member": "家輝",
-      "severity": "🟢",
-      "text": "穩定 7hr"
+      "severity": "🔴",
+      "text": "連續 3 天未回報"
     },
     {
       "member": "Joe",
-      "severity": "🟢",
-      "text": "穩定 7hr"
+      "severity": "🔴",
+      "text": "未回報 6/18"
     },
     {
       "member": "Aaron",
       "severity": "🔴",
-      "text": "連續 6 天未回報"
+      "text": "連續 7 天未回報"
     },
     {
       "member": "哲緯",
-      "severity": "🟡",
-      "text": "超時 9.5hr"
+      "severity": "🟢",
+      "text": "穩定 8.5hr"
     },
     {
       "member": "Tanya",
@@ -12115,8 +14821,8 @@
     },
     {
       "member": "Sylvia",
-      "severity": "🟡",
-      "text": "會議佔比 60%"
+      "severity": "🔴",
+      "text": "未回報 6/18"
     }
   ],
   "leave": {
@@ -12376,41 +15082,271 @@
       {
         "start": "06/05",
         "end": "06/05"
+      },
+      {
+        "start": "06/18",
+        "end": "06/18"
+      },
+      {
+        "start": "06/17",
+        "end": "06/17"
+      },
+      {
+        "start": "06/16",
+        "end": "06/16"
+      },
+      {
+        "start": "06/12",
+        "end": "06/12"
+      },
+      {
+        "start": "06/11",
+        "end": "06/11"
+      },
+      {
+        "start": "06/10",
+        "end": "06/10"
       }
     ]
   },
   "dailyUpdates": [
     {
-      "date": "6/8",
+      "date": "6/18",
+      "member": "Tanya",
+      "createTime": "2026-06-22T02:20:49.594127Z",
+      "text": "06/18 進度：\n1. [LEAVE] (09:00-18:00) 補休假（全天） (8H)",
+      "total": 8
+    },
+    {
+      "date": "6/17",
       "member": "Sylvia",
-      "createTime": "2026-06-09T03:03:52.155135Z",
-      "text": "06/08 進度：\n1. [ISSUE] (09:30-10:30) debug 資料來源文章標題不應出現程式編碼 (1H)\n2. [MEETING] (10:30-11:00) 與 RD 開會 conflict 處理 (0.5H)\n3. [MEETING] (11:00-12:30) 與 CSM 開會討論 KEYPO Agent 相關事宜 (1.5H)\n4. [MEETING] (13:30-15:30) 跟 Sam 開會 (2H)\n5. [MEETING] (15:30-16:00) 產品部門週會 (0.5H)\n6. [ISSUE] (16:00-18:00) debug 臨時查詢 + KOL_query 沒有呼叫 (2H)",
+      "createTime": "2026-06-18T02:47:17.321423Z",
+      "text": "06/17 進度：\n1. [REPORT] (09:30-11:00) 撰寫SY交接文件 (1.5H)\n2. [EVAL] (11:00-12:30) KEYPO Agent V1轉換計費方案調查並提供結論說明 (1.5H)\n3. [REPORT] (13:30-14:30) 撰寫工作進度報告 (1H)\n4. [MEETING] (14:30-15:00) SY例會 (0.5H)\n5. [MEETING] (15:00-16:00) SY交接會議 (1H)\n6. [REVIEW] (16:00-17:00) 與主管進行工作進度報告 (1H)\n7. [REPORT] (17:00-18:00) 整理會議記錄/action items (1H)",
       "total": 7.5
     },
     {
-      "date": "6/8",
+      "date": "6/17",
       "member": "Tanya",
-      "createTime": "2026-06-09T01:46:07.525999Z",
-      "text": "06/08 進度：\n1. [TEST] (09:30-11:00) T1 標籤清理：重貼被貼 9 個標籤的頻道 (1.5H)\n2. [TEST] (11:00-12:30) 盤點 KEYDERS 啦啦隊名單 + 查證網溫排行榜覆蓋 (1.5H)\n3. [TEST] (13:30-15:20) T1 標籤清理：重貼被貼 7~8 個標籤的頻道 (1.8H)\n4. [MEETING] (15:20-16:00) 產品部會議 (0.7H)\n5. [MEETING] (16:00-18:00) 1999 新案會議：陪同 Richard 跟雅鈴、Gini (2H)\n6. [MGMT] (18:00-18:30) 會議後跟 Richard 討論並說明平台功能 (0.5H)",
+      "createTime": "2026-06-18T01:45:13.178239Z",
+      "text": "06/17 進度：\n1. [LEAVE] (09:00-18:00) 補休假（全天） (8H)",
       "total": 8
+    },
+    {
+      "date": "6/16",
+      "member": "Sylvia",
+      "createTime": "2026-06-17T01:06:18.721535Z",
+      "text": "06/16 進度：\n1. [DEV] (09:30-10:30) 實作資料來源chip依照後端注入語系 (1H)\n2. [TEST] (10:30-11:00) 本機驗測 上版 (0.5H)\n3. [MEETING] (11:00-12:30) KEYPO例會 (1.5H)\n4. [MGMT] (13:30-14:30) 與CSM溝通KEYPO Agent如何操作 (1H)\n5. [MEETING] (14:30-15:00) 產品中心會議 (0.5H)\n6. [MEETING] (15:00-17:00) KEYPO Agent 計費方案會議 (2H)\n7. [TEST] (17:00-18:00) debug-對話列表未撈完整 (1H)",
+      "total": 7.5
+    },
+    {
+      "date": "6/16",
+      "member": "Tanya",
+      "createTime": "2026-06-17T01:01:19.807983Z",
+      "text": "06/16 進度：\n1. [LEAVE] (09:00-12:30) 補休假（上午半天） (3.5H)\n2. [SUPPORT] (13:30-15:30) 用 cc 產出 KOL 貼標交接文件並放雲端 (2H)\n3. [SUPPORT] (15:30-18:00) 用 cc 驗證口碑之星-啦啦隊及 Youtuber 領袖價值分數並產文件放交接資料夾 (2.5H)",
+      "total": 8
+    },
+    {
+      "date": "6/15",
+      "member": "Sylvia",
+      "createTime": "2026-06-16T03:05:55.621359Z",
+      "text": "06/15 進度：\n1. [REPORT] (09:30-10:40) 撰寫SY交接文件 (1.2H)\n2. [TEST] (10:40-12:30) KEYPO Agent 多語系驗測 (1.8H)\n3. [DEV] (13:30-14:30) 前後端本機啟動並打KEYPO Engine API (1H)\n4. [TEST] (14:30-16:30) debug 結構化輸出的語系 (2H)\n5. [DEV] (16:30-17:30) 優化-生成關鍵字依照資料源的語系去生成 (1H)\n6. [TEST] (17:30-18:30) debug-KOL標籤應依照介面語系顯示對應語系 (1H)",
+      "total": 8
+    },
+    {
+      "date": "6/15",
+      "member": "Tanya",
+      "createTime": "2026-06-16T00:33:13.627631Z",
+      "text": "06/15 進度：\n1. [SUPPORT] (09:30-11:30) 用 cc 整理產出貼標交接文件再人工確認 (2H)\n2. [SUPPORT] (11:30-12:30) 用 cc 整理雲端資料夾 (1H)\n3. [SUPPORT] (13:30-14:30) 繼續用 cc 整理雲端資料夾 (1H)\n4. [SUPPORT] (14:30-15:30) 用 cc 重算去年7月至今口碑之星分數 (1H)\n5. [SUPPORT] (15:30-18:30) 用 cc 整理電腦文件並將交接文件放置雲端 (3H)",
+      "total": 8
+    },
+    {
+      "date": "6/12",
+      "member": "Sylvia",
+      "createTime": "2026-06-15T01:50:26.465775Z",
+      "text": "06/12 進度：\n1. [TEST] (09:30-10:30) 多語系測試 (1H)\n2. [TEST] (10:30-12:00) 多語系全面 audit（後端） (1.5H)\n3. [REPORT] (12:00-12:30) 整理 audit 文件 (0.5H)\n4. [REPORT] (13:30-14:30) KEYPO Agent 錄製英文介面影片 (1H)\n5. [MEETING] (14:30-15:30) RD 開會 sync KEYPO Agent 進度 (1H)\n6. [DESIGN] (15:30-16:00) 製作多語系分階段優化 plan (0.5H)\n7. [DEV] (16:00-17:00) 實作多語系優化（後端）階段 1 (1H)\n8. [REPORT] (17:00-18:00) 撰寫週報 (1H)",
+      "total": 7.5
+    },
+    {
+      "date": "6/12",
+      "member": "Tanya",
+      "createTime": "2026-06-15T01:42:53.296047Z",
+      "text": "06/12 進度：\n1. [LEAVE] (09:00-18:00) 補休假（全天） (8H)",
+      "total": 8
+    },
+    {
+      "date": "6/11",
+      "member": "Sylvia",
+      "createTime": "2026-06-12T04:03:10.322239Z",
+      "text": "06/11 進度：\n1. [RESEARCH] (09:30-10:30) 理解 git 運作 (1H)\n2. [ISSUE] (10:30-11:20) debug HITL 送出後秒數沒有從當下的秒數繼續跑 (0.8H)\n3. [DEV] (11:20-12:00) 實作 有臨時查詢的 q 就不 call generate_keyword tool (0.7H)\n4. [ISSUE] (12:00-12:30) rebase 5 分支 (0.5H)\n5. [RESEARCH] (13:30-14:30) 研究 langfuse 運作模式 (1H)\n6. [DESIGN] (14:30-15:30) 釐清 UIUX（reload、關 tab、中斷鈕、HITL） (1H)\n7. [TEST] (15:30-16:00) 使用 playwright 驗測 UIUX（reload、關 tab、中斷鈕、HITL） (0.5H)\n8. [DEV] (16:00-17:30) 實作優化 UIUX（reload、關 tab、中斷鈕、HITL） (1.5H)\n9. [ISSUE] (17:30-18:00) dead code 清理 (0.5H)",
+      "total": 7.5
+    },
+    {
+      "date": "6/11",
+      "member": "Tanya",
+      "createTime": "2026-06-12T01:03:19.195215Z",
+      "text": "06/11 進度：\n1. [LEAVE] (09:00-18:00) 補休假（全天） (8H)",
+      "total": 8
+    },
+    {
+      "date": "6/10",
+      "member": "Sylvia",
+      "createTime": "2026-06-11T01:37:59.697615Z",
+      "text": "06/10 進度：\n1. [RESEARCH] (09:30-10:30) 研究生成關鍵字相關資料 (1H)\n2. [DEV] (10:30-12:30) 實作優化生成關鍵字功能 (2H)\n3. [DEV] (13:30-14:30) 實作優化生成關鍵字功能 (1H)\n4. [TEST] (14:30-15:30) KEYPO Agent 驗測 (1H)\n5. [EVAL] (15:30-16:30) 臨時查詢+一般查詢主題比較的邏輯確認 (1H)\n6. [DEV] (16:30-18:00) 實作臨時查詢與一般查詢「主題（競品）比較」要分開查詢而不是聯集查詢 (1.5H)",
+      "total": 7.5
+    },
+    {
+      "date": "6/10",
+      "member": "Tanya",
+      "createTime": "2026-06-11T00:31:22.670575Z",
+      "text": "06/10 進度：\n1. [LEAVE] (09:00-18:00) 補休假（全天） (8H)",
+      "total": 8
+    },
+    {
+      "date": "6/9",
+      "member": "Sylvia",
+      "createTime": "2026-06-10T04:39:23.324623Z",
+      "text": "06/09 進度：\n1. [ISSUE] (09:30-11:00) 排查執行思考速度過慢的問題 (1.5H)\n2. [MEETING] (11:00-12:00) KEYPO 例會 (1H)\n3. [ISSUE] (12:00-12:30) 繼續排查思考過慢原因 (0.5H)\n4. [ISSUE] (13:30-14:30) 繼續排查思考過慢原因 (1H)\n5. [ISSUE] (14:30-15:00) 調整 path A brief 不完全顯示給使用者看 (0.5H)\n6. [ISSUE] (15:00-15:30) 排查 tool 顯示對應的語系 (0.5H)\n7. [ISSUE] (15:30-16:30) 生成報告的引用來源要附上 URL (1H)\n8. [ISSUE] (16:30-17:00) KEYPO Agent 前端文案調整 (0.5H)\n9. [ISSUE] (17:00-18:30) 報告引用格式重構（Chapter 7 拆 KEYPO/網路兩段、strip K1/W1） (1.5H)",
+      "total": 8
+    },
+    {
+      "date": "6/9",
+      "member": "Tanya",
+      "createTime": "2026-06-10T01:24:46.300623Z",
+      "text": "06/09 進度：\n1. [TEST] (09:30-11:00) T1 標籤清理：重貼被貼 6 個標籤的頻道 (1.5H)\n2. [MEETING] (11:00-12:00) KEYPO 例會 (1H)\n3. [TEST] (12:00-12:30) 重新產出標籤現況分佈表 (0.5H)\n4. [SUPPORT] (13:30-14:40) 產出口碑之星 Youtuber 及啦啦隊名單 + 交接文件 (1.2H)\n5. [SUPPORT] (14:40-15:40) 整理 1999 專案 API 交接文件給 Richard + 放 google drive (1H)\n6. [SUPPORT] (15:40-16:00) 撈 5 月市政信箱 + 交通局案件 json 給 Richard (0.3H)\n7. [SUPPORT] (16:00-16:30) 整理 google drive 1999 專案資料夾 (0.5H)\n8. [TEST] (16:30-17:00) 用 cc 將標籤狀態列成 Dashboard (0.5H)\n9. [TEST] (17:00-18:00) 用 cc 全面盤點可能誤標的頻道 (1H)\n10. [SUPPORT] (18:00-18:30) 整理貼標用的交接文件 (0.5H)",
+      "total": 8
+    },
+    {
+      "date": "6/7",
+      "member": "Neil",
+      "createTime": "2026-06-08T01:50:32.959231Z",
+      "text": "06/07 進度：\n1. [DEV] (22:00-02:30) (加班) 四支影片剪輯完成 (4.5H)\n2. [DEV] (11:00-12:30) (加班) function-2-1 剪輯調整（Remotion 問題學習處理） (1.5H)\n3. [DEV] (17:00-20:00) (加班) function-2-1 剪輯調整，擴充 part1-5 (3H)\n4. [DEV] (20:00-20:30) (加班) function-2-1 匯出調整 (0.5H)\n5. [DEV] (20:30-21:00) (加班) function-2-2 粗剪 (0.5H)\n6. [DEV] (21:00-22:00) (加班) function-2-2 剪輯拼湊 (1H)",
+      "total": null
+    },
+    {
+      "date": "6/6",
+      "member": "Neil",
+      "createTime": "2026-06-08T01:50:24.971679Z",
+      "text": "06/06 進度：\n1. [RESEARCH] (10:00-14:00) (加班) Remotion 測試與學習 (4H)\n2. [DEV] (14:00-16:00) (加班) 錄製 function-2-1 (2H)\n3. [DEV] (16:00-19:00) (加班) function-2-1 剪輯 (3H)",
+      "total": null
     }
   ],
-  "newDates": [],
+  "newDates": [
+    "6/7",
+    "6/6"
+  ],
   "backfilled": [],
   "addedToExisting": [
     {
-      "date": "6/8",
+      "date": "6/18",
       "member": "Tanya",
       "total": 8,
-      "meeting": 3.2,
-      "dev": 4.8
+      "meeting": 0,
+      "dev": 8
     },
     {
-      "date": "6/8",
+      "date": "6/18",
+      "member": "Sylvia",
+      "total": null,
+      "meeting": null,
+      "dev": null
+    },
+    {
+      "date": "6/17",
+      "member": "Tanya",
+      "total": 8,
+      "meeting": 0,
+      "dev": 8
+    },
+    {
+      "date": "6/17",
       "member": "Sylvia",
       "total": 7.5,
-      "meeting": 4.5,
-      "dev": 3
+      "meeting": 2.5,
+      "dev": 5
+    },
+    {
+      "date": "6/16",
+      "member": "Tanya",
+      "total": 8,
+      "meeting": 0,
+      "dev": 8
+    },
+    {
+      "date": "6/16",
+      "member": "Sylvia",
+      "total": 7.5,
+      "meeting": 4,
+      "dev": 3.5
+    },
+    {
+      "date": "6/15",
+      "member": "Tanya",
+      "total": 8,
+      "meeting": 0,
+      "dev": 8
+    },
+    {
+      "date": "6/15",
+      "member": "Sylvia",
+      "total": 8,
+      "meeting": 0,
+      "dev": 8
+    },
+    {
+      "date": "6/12",
+      "member": "Tanya",
+      "total": 8,
+      "meeting": 0,
+      "dev": 8
+    },
+    {
+      "date": "6/12",
+      "member": "Sylvia",
+      "total": 7.5,
+      "meeting": 1,
+      "dev": 6.5
+    },
+    {
+      "date": "6/11",
+      "member": "Tanya",
+      "total": 8,
+      "meeting": 0,
+      "dev": 8
+    },
+    {
+      "date": "6/11",
+      "member": "Sylvia",
+      "total": 7.5,
+      "meeting": 0,
+      "dev": 7.5
+    },
+    {
+      "date": "6/10",
+      "member": "Tanya",
+      "total": 8,
+      "meeting": 0,
+      "dev": 8
+    },
+    {
+      "date": "6/10",
+      "member": "Sylvia",
+      "total": 7.5,
+      "meeting": 0,
+      "dev": 7.5
+    },
+    {
+      "date": "6/9",
+      "member": "Tanya",
+      "total": 8,
+      "meeting": 1,
+      "dev": 7
+    },
+    {
+      "date": "6/9",
+      "member": "Sylvia",
+      "total": 8,
+      "meeting": 1,
+      "dev": 7
     }
   ],
   "centers": {
