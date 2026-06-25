@@ -1,60 +1,123 @@
 {
-  "analysisDate": "2026-06-09",
-  "period": "6/8",
+  "analysisDate": "2026-06-25",
+  "period": "6/22-6/23",
   "warnings": [
     {
-      "date": "6/8",
-      "member": "家輝",
+      "date": "6/22",
+      "member": "Jason",
       "severity": "🔴",
       "type": "low_output",
-      "task": "開發任務 7H",
-      "commits": "0 commits",
-      "reasoning": "報告開發工時 7H（超過 3H 閾值），但當日無任何相關 commit 記錄。無法驗證開發成果，需確認是否存在異常情況或是工作內容未提交至版本控制。"
+      "task": "開發 7H",
+      "commits": "0 筆 commits",
+      "reasoning": "報告開發工作 7 小時，但無任何 commits 記錄，產出不足。"
     },
     {
-      "date": "6/8",
-      "member": "Tanya",
+      "date": "6/22",
+      "member": "Wendy",
       "severity": "🔴",
       "type": "low_output",
-      "task": "開發任務 4.8H（標籤清理 1.5H + 1.8H、盤點 KEYDERS 名單 1.5H）",
-      "commits": "0 commits",
-      "reasoning": "報告開發工時 4.8H（超過 3H 閾值），包括 T1 標籤清理與名單盤點工作，但當日無任何相關 commit 記錄。工作成果無法在程式碼層面驗證。"
+      "task": "開發 7H",
+      "commits": "0 筆 commits",
+      "reasoning": "報告開發工作 7 小時，但無任何 commits 記錄，產出不足。"
     },
     {
-      "date": "6/8",
-      "member": "Joyce",
+      "date": "6/22",
+      "member": "Ted",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發 6.5H",
+      "commits": "0 筆 commits",
+      "reasoning": "報告開發工作 6.5 小時，但無任何 commits 記錄，產出不足。"
+    },
+    {
+      "date": "6/22",
+      "member": "Joe",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發 5.5H",
+      "commits": "0 筆 commits",
+      "reasoning": "報告開發工作 5.5 小時，但無任何 commits 記錄，產出不足。"
+    },
+    {
+      "date": "6/22",
+      "member": "Ivy",
       "severity": "🟡",
       "type": "outlier",
-      "task": "開發任務 8H",
-      "commits": "6 commits（KEYPO/keypo-backend 的 cronjob 與 alert 功能）",
-      "reasoning": "開發產出顯著低於團隊平均。成員 commit 產出率 0.75 commits/H，團隊平均 4.28 commits/H，差距達 5.7 倍。建議確認工作任務中是否包含文件審閱、設計、或其他非程式碼型工作。"
+      "task": "開發 6.5H",
+      "commits": "3 筆 commits",
+      "reasoning": "開發 6.5 小時但僅 3 筆 commits，commit/小時比例 0.46，遠低於團隊平均 1.51，相差 3.3 倍。"
     },
     {
-      "date": "6/8",
+      "date": "6/22",
+      "member": "日銜",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發 6H",
+      "commits": "2 筆 commits",
+      "reasoning": "開發 6 小時但僅 2 筆 commits，commit/小時比例 0.33，遠低於團隊平均 1.51，相差 4.6 倍。"
+    },
+    {
+      "date": "6/22",
+      "member": "家輝",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發 7.5H",
+      "commits": "1 筆 commits",
+      "reasoning": "開發 7.5 小時但僅 1 筆 commits，commit/小時比例 0.13，遠低於團隊平均 1.51，相差 11.6 倍。"
+    },
+    {
+      "date": "6/23",
+      "member": "Ivy",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發 7H",
+      "commits": "0 筆 commits",
+      "reasoning": "報告開發工作 7 小時，但無任何 commits 記錄，產出不足。"
+    },
+    {
+      "date": "6/23",
+      "member": "日銜",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發 7H",
+      "commits": "0 筆 commits",
+      "reasoning": "報告開發工作 7 小時，但無任何 commits 記錄，產出不足。"
+    },
+    {
+      "date": "6/23",
+      "member": "Jason",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發 5.5H",
+      "commits": "4 筆 commits",
+      "reasoning": "開發 5.5 小時但僅 4 筆 commits，commit/小時比例 0.73，遠低於團隊平均 2.30，相差 3.15 倍。"
+    },
+    {
+      "date": "6/23",
       "member": "Wendy",
       "severity": "🟡",
       "type": "outlier",
-      "task": "開發任務 7.5H",
-      "commits": "5 commits（keytector-cib 專案）",
-      "reasoning": "開發產出顯著低於團隊平均。成員 commit 產出率 0.67 commits/H，團隊平均 4.28 commits/H，差距達 6.4 倍。雖有 commits 但產出比例偏低，建議確認任務複雜度、code review 時間或其他因素影響。"
+      "task": "開發 5.5H",
+      "commits": "3 筆 commits",
+      "reasoning": "開發 5.5 小時但僅 3 筆 commits，commit/小時比例 0.55，遠低於團隊平均 2.30，相差 4.2 倍。"
     },
     {
-      "date": "6/8",
+      "date": "6/23",
       "member": "Joe",
       "severity": "🟡",
       "type": "outlier",
-      "task": "開發任務 6.5H",
-      "commits": "10 commits（KEYPO/keypo-frontend-2023、KEYPO/keypo-international-website、keypo-suite/keypo-suite-official-website）",
-      "reasoning": "開發產出低於團隊平均。成員 commit 產出率 1.54 commits/H，團隊平均 4.28 commits/H，差距達 2.8 倍。建議確認任務屬性是否特殊或工作方式與團隊產出模式不同。"
+      "task": "開發 3.5H",
+      "commits": "2 筆 commits",
+      "reasoning": "開發 3.5 小時但僅 2 筆 commits，commit/小時比例 0.57，遠低於團隊平均 2.30，相差 4 倍。"
     }
   ],
   "summary": {
     "totalMembers": 12,
-    "totalWarnings": 5,
+    "totalWarnings": 12,
     "byType": {
-      "low_output": 2,
+      "low_output": 6,
       "mismatch": 0,
-      "outlier": 3
+      "outlier": 6
     }
   }
 }

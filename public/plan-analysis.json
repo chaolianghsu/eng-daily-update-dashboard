@@ -1,364 +1,1129 @@
 {
-  "analysisDate": "2026-06-09",
-  "period": "6/8",
+  "analysisDate": "2026-06-25",
+  "period": "6/22-6/25",
   "planSpecs": [
     {
-      "date": "6/8",
-      "member": "禎佑",
+      "date": "6/22",
+      "member": "Joyce",
       "commit": {
-        "title": "docs: spec — MOPS 爬蟲（並行第二資料來源）",
-        "sha": "5775887b",
-        "project": "chris.su/findata-crawler",
-        "url": "https://biglab.buygta.today/chris.su/findata-crawler/-/commit/5775887b",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/specs/2026-06-08-mops-crawler-design.md"]
-    },
-    {
-      "date": "6/8",
-      "member": "禎佑",
-      "commit": {
-        "title": "docs: plan — MOPS 爬蟲實作計畫",
-        "sha": "0f1240a0",
-        "project": "chris.su/findata-crawler",
-        "url": "https://biglab.buygta.today/chris.su/findata-crawler/-/commit/0f1240a0",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/plans/2026-06-08-mops-crawler.md"]
-    },
-    {
-      "date": "6/8",
-      "member": "禎佑",
-      "commit": {
-        "title": "docs: MOPS 查詢頁抓包筆記（給 parser 實作參考）",
-        "sha": "1ccb8718",
-        "project": "chris.su/findata-crawler",
-        "url": "https://biglab.buygta.today/chris.su/findata-crawler/-/commit/1ccb8718",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/notes/2026-06-08-mops-request-probe.md"]
-    },
-    {
-      "date": "6/8",
-      "member": "禎佑",
-      "commit": {
-        "title": "docs(plan): 依抓包結果重寫 Task 7-11 — MOPS 實際非 ASP.NET WebForms",
-        "sha": "1a79c755",
-        "project": "chris.su/findata-crawler",
-        "url": "https://biglab.buygta.today/chris.su/findata-crawler/-/commit/1a79c755",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/plans/2026-06-08-mops-crawler.md"]
-    },
-    {
-      "date": "6/8",
-      "member": "禎佑",
-      "commit": {
-        "title": "docs: byparr deployment SOP",
-        "sha": "5631ae47",
-        "project": "chris.su/keykyc-backend-v2",
-        "url": "https://biglab.buygta.today/chris.su/keykyc-backend-v2/-/commit/5631ae47",
-        "source": "gitlab"
-      },
-      "files": ["docs/byparr_deploy.md"]
-    },
-    {
-      "date": "6/8",
-      "member": "禎佑",
-      "commit": {
-        "title": "docs: spec for GoogleMap 饗賓集團 brand mention monitoring",
-        "sha": "c346feec",
-        "project": "chris.su/data-ingestion-monitor",
-        "url": "https://biglab.buygta.today/chris.su/data-ingestion-monitor/-/commit/c346feec",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/specs/2026-06-08-googlemap-brand-mention-comment-design.md"]
-    },
-    {
-      "date": "6/8",
-      "member": "禎佑",
-      "commit": {
-        "title": "docs: 加入 GoogleMap 饗賓集團 brand_mention_comment 實作計畫",
-        "sha": "9e59f25a",
-        "project": "chris.su/data-ingestion-monitor",
-        "url": "https://biglab.buygta.today/chris.su/data-ingestion-monitor/-/commit/9e59f25a",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/plans/2026-06-08-googlemap-brand-mention-comment.md"]
-    },
-    {
-      "date": "6/8",
-      "member": "禎佑",
-      "commit": {
-        "title": "docs: spec for dashboard time_field toggle (寫入量 / 發佈量)",
-        "sha": "c349e4bf",
-        "project": "chris.su/data-ingestion-monitor",
-        "url": "https://biglab.buygta.today/chris.su/data-ingestion-monitor/-/commit/c349e4bf",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/specs/2026-06-08-dashboard-time-field-toggle-design.md"]
-    },
-    {
-      "date": "6/8",
-      "member": "禎佑",
-      "commit": {
-        "title": "docs: implementation plan for dashboard time_field toggle",
-        "sha": "882c6700",
-        "project": "chris.su/data-ingestion-monitor",
-        "url": "https://biglab.buygta.today/chris.su/data-ingestion-monitor/-/commit/882c6700",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/plans/2026-06-08-dashboard-time-field-toggle.md"]
-    },
-    {
-      "date": "6/8",
-      "member": "禎佑",
-      "commit": {
-        "title": "docs: 加入 crawler alerts 設計 spec",
-        "sha": "d1e7eeeb",
-        "project": "chris.su/googlemap-crawler-v2",
-        "url": "https://biglab.buygta.today/chris.su/googlemap-crawler-v2/-/commit/d1e7eeeb",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/specs/2026-06-08-crawler-alerts-design.md"]
-    },
-    {
-      "date": "6/8",
-      "member": "禎佑",
-      "commit": {
-        "title": "docs: 加入 crawler alerts implementation plan",
-        "sha": "a5da7f5d",
-        "project": "chris.su/googlemap-crawler-v2",
-        "url": "https://biglab.buygta.today/chris.su/googlemap-crawler-v2/-/commit/a5da7f5d",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/plans/2026-06-08-crawler-alerts.md"]
-    },
-    {
-      "date": "6/8",
-      "member": "哲緯",
-      "commit": {
-        "title": "docs(spec): ES9 migration + multi-country support design",
-        "sha": "de349262",
-        "project": "mason/bigmonitorV3",
-        "url": "https://biglab.buygta.today/mason/bigmonitorV3/-/commit/de349262",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/specs/2026-06-08-es9-migration-multicountry-design.md"]
-    },
-    {
-      "date": "6/8",
-      "member": "哲緯",
-      "commit": {
-        "title": "docs(plan): ES9 migration Phase 1 implementation plan",
-        "sha": "82970ab7",
-        "project": "mason/bigmonitorV3",
-        "url": "https://biglab.buygta.today/mason/bigmonitorV3/-/commit/82970ab7",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/plans/2026-06-08-es9-migration-p1.md"]
-    },
-    {
-      "date": "6/8",
-      "member": "哲緯",
-      "commit": {
-        "title": "docs(spec): record P1 live-verification amendments (basic+apikey auth, monthly wildcard index, parity)",
-        "sha": "0d51004a",
-        "project": "mason/bigmonitorV3",
-        "url": "https://biglab.buygta.today/mason/bigmonitorV3/-/commit/0d51004a",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/specs/2026-06-08-es9-migration-multicountry-design.md"]
-    },
-    {
-      "date": "6/8",
-      "member": "哲緯",
-      "commit": {
-        "title": "docs(es9): P1 deploy notes + P2/P3 impeccable timing annotations",
-        "sha": "d6ef3f74",
-        "project": "mason/bigmonitorV3",
-        "url": "https://biglab.buygta.today/mason/bigmonitorV3/-/commit/d6ef3f74",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/specs/2026-06-08-es9-migration-multicountry-design.md"]
-    },
-    {
-      "date": "6/8",
-      "member": "哲緯",
-      "commit": {
-        "title": "docs(plan): ES9 migration Phase 2 (read-side multi-country) plan",
-        "sha": "ddcc9251",
-        "project": "mason/bigmonitorV3",
-        "url": "https://biglab.buygta.today/mason/bigmonitorV3/-/commit/ddcc9251",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/plans/2026-06-08-es9-migration-p2.md"]
-    },
-    {
-      "date": "6/8",
-      "member": "哲緯",
-      "commit": {
-        "title": "docs(plan): scope P2 to dashboard+articles; split channels to P2b (per-channel)",
-        "sha": "d9999b6e",
-        "project": "mason/bigmonitorV3",
-        "url": "https://biglab.buygta.today/mason/bigmonitorV3/-/commit/d9999b6e",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/plans/2026-06-08-es9-migration-p2.md", "docs/superpowers/specs/2026-06-08-es9-migration-multicountry-design.md"]
-    },
-    {
-      "date": "6/8",
-      "member": "哲緯",
-      "commit": {
-        "title": "docs(spec): P2b channels per-channel region switch design",
-        "sha": "ec991d7b",
-        "project": "mason/bigmonitorV3",
-        "url": "https://biglab.buygta.today/mason/bigmonitorV3/-/commit/ec991d7b",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/specs/2026-06-08-channels-per-channel-region-p2b-design.md"]
-    },
-    {
-      "date": "6/8",
-      "member": "哲緯",
-      "commit": {
-        "title": "docs(plan): P2b channels per-channel region implementation plan",
-        "sha": "f346cba8",
-        "project": "mason/bigmonitorV3",
-        "url": "https://biglab.buygta.today/mason/bigmonitorV3/-/commit/f346cba8",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/plans/2026-06-08-channels-per-channel-region-p2b.md"]
-    },
-    {
-      "date": "6/8",
-      "member": "哲緯",
-      "commit": {
-        "title": "docs(spec): P3 write-side multicountry design",
-        "sha": "c87b3828",
-        "project": "mason/bigmonitorV3",
-        "url": "https://biglab.buygta.today/mason/bigmonitorV3/-/commit/c87b3828",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/specs/2026-06-08-es9-write-side-multicountry-p3-design.md"]
-    },
-    {
-      "date": "6/8",
-      "member": "哲緯",
-      "commit": {
-        "title": "docs(plan): P3 write-side multicountry implementation plan",
-        "sha": "d21d9123",
-        "project": "mason/bigmonitorV3",
-        "url": "https://biglab.buygta.today/mason/bigmonitorV3/-/commit/d21d9123",
-        "source": "gitlab"
-      },
-      "files": ["docs/superpowers/plans/2026-06-08-es9-write-side-multicountry-p3.md"]
-    },
-    {
-      "date": "6/8",
-      "member": "Ivy",
-      "commit": {
-        "title": "docs(contact_us): add source-aware spec and implementation plans",
-        "sha": "0e49e759",
-        "project": "bigdata/2025-bigdata-admin-backend",
-        "url": "https://biglab.buygta.today/bigdata/2025-bigdata-admin-backend/-/commit/0e49e759",
+        "title": "docs(account): add design spec for keyword-edit yearly period",
+        "sha": "f19f3859",
+        "project": "KEYPO/keypo-backend",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/f19f3859",
         "source": "gitlab"
       },
       "files": [
-        "docs/superpowers/plans/2026-06-08-contact-us-source-aware-admin-backend.md",
-        "docs/superpowers/plans/2026-06-08-contact-us-source-aware-frontend.md",
-        "docs/superpowers/plans/2026-06-08-contact-us-source-aware-public-backend.md",
-        "docs/superpowers/specs/2026-06-08-contact-us-source-aware-design.md"
+        "docs/superpowers/specs/2026-06-22-keyword-edit-period-yearly-design.md"
       ]
     },
     {
-      "date": "6/8",
-      "member": "侑呈",
+      "date": "6/22",
+      "member": "Joyce",
       "commit": {
-        "title": "docs(email-alerts): 新增 design doc + PROGRESS 已知段落更新",
-        "sha": "4b9c67fd",
-        "project": "keytector/keytector-dashboard",
-        "url": "https://biglab.buygta.today/keytector/keytector-dashboard/-/commit/4b9c67fd",
+        "title": "docs(account): address blind review of keyword-edit yearly spec",
+        "sha": "82ff61b3",
+        "project": "KEYPO/keypo-backend",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/82ff61b3",
         "source": "gitlab"
       },
-      "files": ["docs/PROGRESS.md", "docs/email_alerts_design.md"]
+      "files": [
+        "docs/superpowers/specs/2026-06-22-keyword-edit-period-yearly-design.md"
+      ]
+    },
+    {
+      "date": "6/22",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs(account): add implementation plan for keyword-edit yearly period",
+        "sha": "8c5d0019",
+        "project": "KEYPO/keypo-backend",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/8c5d0019",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-22-keyword-edit-period-yearly.md"
+      ]
+    },
+    {
+      "date": "6/22",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs(account): address blind review of yearly-period plan",
+        "sha": "264bf5f8",
+        "project": "KEYPO/keypo-backend",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/264bf5f8",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-22-keyword-edit-period-yearly.md"
+      ]
+    },
+    {
+      "date": "6/22",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs(account): add period-aware enforcement exceptions to spec (§6a)",
+        "sha": "12ebe8cd",
+        "project": "KEYPO/keypo-backend",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/12ebe8cd",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-22-keyword-edit-period-yearly-design.md"
+      ]
+    },
+    {
+      "date": "6/22",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(specs): account menu + change password design",
+        "sha": "40b6ac1b",
+        "project": "keykyc_v2/keykyc-frontend-v2",
+        "url": "https://biglab.buygta.today/keykyc_v2/keykyc-frontend-v2/-/commit/40b6ac1b",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-22-account-menu-design.md"
+      ]
+    },
+    {
+      "date": "6/22",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(plans): account menu + change password implementation plan",
+        "sha": "7d9c9c95",
+        "project": "keykyc_v2/keykyc-frontend-v2",
+        "url": "https://biglab.buygta.today/keykyc_v2/keykyc-frontend-v2/-/commit/7d9c9c95",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-22-account-menu.md"
+      ]
+    },
+    {
+      "date": "6/22",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(specs): per-page docs design (business + IT)",
+        "sha": "4413a9b8",
+        "project": "keykyc_v2/keykyc-frontend-v2",
+        "url": "https://biglab.buygta.today/keykyc_v2/keykyc-frontend-v2/-/commit/4413a9b8",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-22-page-docs-design.md"
+      ]
+    },
+    {
+      "date": "6/22",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(plans): portfolio page docs pilot",
+        "sha": "5aa17551",
+        "project": "keykyc_v2/keykyc-frontend-v2",
+        "url": "https://biglab.buygta.today/keykyc_v2/keykyc-frontend-v2/-/commit/5aa17551",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-22-page-docs-portfolio-pilot.md"
+      ]
+    },
+    {
+      "date": "6/22",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(portfolio): IT technical reference",
+        "sha": "2b71e4b7",
+        "project": "keykyc_v2/keykyc-frontend-v2",
+        "url": "https://biglab.buygta.today/keykyc_v2/keykyc-frontend-v2/-/commit/2b71e4b7",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/pages/portfolio/it.md"
+      ]
+    },
+    {
+      "date": "6/22",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(portfolio): business-friendly user guide",
+        "sha": "1630bb95",
+        "project": "keykyc_v2/keykyc-frontend-v2",
+        "url": "https://biglab.buygta.today/keykyc_v2/keykyc-frontend-v2/-/commit/1630bb95",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/pages/portfolio/business.md"
+      ]
+    },
+    {
+      "date": "6/22",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(pages): add README index",
+        "sha": "0ab9c55d",
+        "project": "keykyc_v2/keykyc-frontend-v2",
+        "url": "https://biglab.buygta.today/keykyc_v2/keykyc-frontend-v2/-/commit/0ab9c55d",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/pages/README.md"
+      ]
+    },
+    {
+      "date": "6/22",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(portfolio): correct KpiStrip filter behaviour",
+        "sha": "3da0a088",
+        "project": "keykyc_v2/keykyc-frontend-v2",
+        "url": "https://biglab.buygta.today/keykyc_v2/keykyc-frontend-v2/-/commit/3da0a088",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/pages/portfolio/business.md",
+        "docs/pages/portfolio/it.md"
+      ]
+    },
+    {
+      "date": "6/22",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(plans): page docs rollout — 4 pages × 2 docs",
+        "sha": "9134e9a8",
+        "project": "keykyc_v2/keykyc-frontend-v2",
+        "url": "https://biglab.buygta.today/keykyc_v2/keykyc-frontend-v2/-/commit/9134e9a8",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-22-page-docs-rollout.md"
+      ]
+    },
+    {
+      "date": "6/22",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(reports): IT technical reference",
+        "sha": "9b2258a0",
+        "project": "keykyc_v2/keykyc-frontend-v2",
+        "url": "https://biglab.buygta.today/keykyc_v2/keykyc-frontend-v2/-/commit/9b2258a0",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/pages/reports/it.md"
+      ]
+    },
+    {
+      "date": "6/22",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(investigation): IT technical reference",
+        "sha": "b73c5b7c",
+        "project": "keykyc_v2/keykyc-frontend-v2",
+        "url": "https://biglab.buygta.today/keykyc_v2/keykyc-frontend-v2/-/commit/b73c5b7c",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/pages/investigation/it.md"
+      ]
+    },
+    {
+      "date": "6/22",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(wallet): IT technical reference",
+        "sha": "05d51071",
+        "project": "keykyc_v2/keykyc-frontend-v2",
+        "url": "https://biglab.buygta.today/keykyc_v2/keykyc-frontend-v2/-/commit/05d51071",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/pages/wallet/it.md"
+      ]
+    },
+    {
+      "date": "6/22",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(scan): IT technical reference",
+        "sha": "29453c97",
+        "project": "keykyc_v2/keykyc-frontend-v2",
+        "url": "https://biglab.buygta.today/keykyc_v2/keykyc-frontend-v2/-/commit/29453c97",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/pages/scan/it.md"
+      ]
+    },
+    {
+      "date": "6/22",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(investigation): business-friendly user guide",
+        "sha": "d56edd57",
+        "project": "keykyc_v2/keykyc-frontend-v2",
+        "url": "https://biglab.buygta.today/keykyc_v2/keykyc-frontend-v2/-/commit/d56edd57",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/pages/investigation/business.md"
+      ]
+    },
+    {
+      "date": "6/22",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(wallet): business-friendly user guide",
+        "sha": "4e6f108d",
+        "project": "keykyc_v2/keykyc-frontend-v2",
+        "url": "https://biglab.buygta.today/keykyc_v2/keykyc-frontend-v2/-/commit/4e6f108d",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/pages/scan/business.md",
+        "docs/pages/wallet/business.md"
+      ]
+    },
+    {
+      "date": "6/22",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(reports): business-friendly user guide",
+        "sha": "c7c2c119",
+        "project": "keykyc_v2/keykyc-frontend-v2",
+        "url": "https://biglab.buygta.today/keykyc_v2/keykyc-frontend-v2/-/commit/c7c2c119",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/pages/reports/business.md"
+      ]
+    },
+    {
+      "date": "6/22",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(pages): README rollout — link all 5 pages",
+        "sha": "1175764f",
+        "project": "keykyc_v2/keykyc-frontend-v2",
+        "url": "https://biglab.buygta.today/keykyc_v2/keykyc-frontend-v2/-/commit/1175764f",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/pages/README.md"
+      ]
+    },
+    {
+      "date": "6/23",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs: add design spec for usage-overview query performance optimization",
+        "sha": "6d29612b",
+        "project": "KEYPO/keypo-backend",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/6d29612b",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-23-usage-overview-query-performance-design.md"
+      ]
+    },
+    {
+      "date": "6/23",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs: add implementation plan for usage-overview query performance",
+        "sha": "103692f8",
+        "project": "KEYPO/keypo-backend",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/103692f8",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-23-usage-overview-query-performance.md"
+      ]
+    },
+    {
+      "date": "6/23",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs: revise usage-overview plan/spec per backend-engineer review",
+        "sha": "dd4cfc6b",
+        "project": "KEYPO/keypo-backend",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/dd4cfc6b",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-23-usage-overview-query-performance.md",
+        "docs/superpowers/specs/2026-06-23-usage-overview-query-performance-design.md"
+      ]
+    },
+    {
+      "date": "6/23",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs(hotrank): spec for Facebook url reformat",
+        "sha": "d68d6717",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/d68d6717",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-23-hotrank-facebook-url-format-design.md"
+      ]
+    },
+    {
+      "date": "6/23",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs(hotrank): revise spec per architect + backend review",
+        "sha": "b6f190b6",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/b6f190b6",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-23-hotrank-facebook-url-format-design.md"
+      ]
+    },
+    {
+      "date": "6/23",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs(hotrank): bundle print->structlog cleanup into MR scope",
+        "sha": "97451b09",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/97451b09",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-23-hotrank-facebook-url-format-design.md"
+      ]
+    },
+    {
+      "date": "6/23",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs(hotrank): implementation plan for Facebook url reformat",
+        "sha": "9a3717d4",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/9a3717d4",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-23-hotrank-facebook-url-format.md"
+      ]
+    },
+    {
+      "date": "6/23",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs(hotrank): revise plan per architect + backend review",
+        "sha": "e95d52f5",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/e95d52f5",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-23-hotrank-facebook-url-format.md",
+        "docs/superpowers/specs/2026-06-23-hotrank-facebook-url-format-design.md"
+      ]
+    },
+    {
+      "date": "6/23",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs(hotrank): correct spec compat-test note (none exists for hotrank)",
+        "sha": "6a5c9e3b",
+        "project": "KEYPO/keypo-engine/keypo-engine-api-v3",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-engine/keypo-engine-api-v3/-/commit/6a5c9e3b",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-23-hotrank-facebook-url-format-design.md"
+      ]
+    },
+    {
+      "date": "6/23",
+      "member": "侑呈",
+      "commit": {
+        "title": "spec 記錄 ES9 keypo Gateway 連線遷移與地區化 index",
+        "sha": "0785352f",
+        "project": "ben1126/instagram-scraper",
+        "url": "https://biglab.buygta.today/ben1126/instagram-scraper/-/commit/0785352f",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-18-swarm-proxy-architecture-design.md"
+      ]
+    },
+    {
+      "date": "6/23",
+      "member": "侑呈",
+      "commit": {
+        "title": "log 統一 spec 補進度與待辦（中央 Loki 最後一哩、dashboard app filter）",
+        "sha": "1ec6aea0",
+        "project": "ben1126/instagram-scraper",
+        "url": "https://biglab.buygta.today/ben1126/instagram-scraper/-/commit/1ec6aea0",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-23-log-unification-design.md"
+      ]
+    },
+    {
+      "date": "6/23",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(spec): admin groups CRUD frontend design",
+        "sha": "5ff6ad58",
+        "project": "keykyc_v2/keykyc-admin-v2",
+        "url": "https://biglab.buygta.today/keykyc_v2/keykyc-admin-v2/-/commit/5ff6ad58",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-23-admin-groups-frontend-design.md"
+      ]
+    },
+    {
+      "date": "6/23",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(spec): business card group collaboration frontend design",
+        "sha": "a191a7d9",
+        "project": "keykyc_v2/keykyc-frontend-v2",
+        "url": "https://biglab.buygta.today/keykyc_v2/keykyc-frontend-v2/-/commit/a191a7d9",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-23-business-card-group-collaboration-frontend.md",
+        "docs/superpowers/specs/2026-06-23-business-card-group-collaboration-frontend-design.md"
+      ]
+    },
+    {
+      "date": "6/23",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(spec): business card group collaboration design",
+        "sha": "26fc951d",
+        "project": "keykyc_v2/keykyc-backend-v2",
+        "url": "https://biglab.buygta.today/keykyc_v2/keykyc-backend-v2/-/commit/26fc951d",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-23-business-card-group-collaboration-design.md"
+      ]
+    },
+    {
+      "date": "6/23",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(spec): admin groups CRUD backend design",
+        "sha": "5509bf89",
+        "project": "keykyc_v2/keykyc-backend-v2",
+        "url": "https://biglab.buygta.today/keykyc_v2/keykyc-backend-v2/-/commit/5509bf89",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-23-admin-groups-design.md"
+      ]
+    },
+    {
+      "date": "6/23",
+      "member": "哲緯",
+      "commit": {
+        "title": "docs(spec): 通知點擊 deep-link 到特定任務設計",
+        "sha": "bebc120b",
+        "project": "mason/bigmonitorV3",
+        "url": "https://biglab.buygta.today/mason/bigmonitorV3/-/commit/bebc120b",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-23-notification-deeplink-task-design.md"
+      ]
+    },
+    {
+      "date": "6/23",
+      "member": "哲緯",
+      "commit": {
+        "title": "docs(plan): 通知 deep-link 到特定任務實作計畫(4 task)",
+        "sha": "c13b39eb",
+        "project": "mason/bigmonitorV3",
+        "url": "https://biglab.buygta.today/mason/bigmonitorV3/-/commit/c13b39eb",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-23-notification-deeplink-task.md"
+      ]
+    },
+    {
+      "date": "6/23",
+      "member": "哲緯",
+      "commit": {
+        "title": "docs(spec): 補爬驗收加入近7天已有資料也判 DONE",
+        "sha": "3af2dbf6",
+        "project": "mason/bigmonitorV3",
+        "url": "https://biglab.buygta.today/mason/bigmonitorV3/-/commit/3af2dbf6",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-23-ingest-done-7day-window-design.md"
+      ]
+    },
+    {
+      "date": "6/23",
+      "member": "哲緯",
+      "commit": {
+        "title": "docs(plan): 近7天已有資料判 DONE 實作計畫(4 task)",
+        "sha": "4219e1a9",
+        "project": "mason/bigmonitorV3",
+        "url": "https://biglab.buygta.today/mason/bigmonitorV3/-/commit/4219e1a9",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-23-ingest-done-7day-window.md"
+      ]
+    },
+    {
+      "date": "6/23",
+      "member": "哲緯",
+      "commit": {
+        "title": "docs(spec): GoogleMap 地點補爬新資料源設計定案",
+        "sha": "e0b7b055",
+        "project": "mason/bigmonitorV3",
+        "url": "https://biglab.buygta.today/mason/bigmonitorV3/-/commit/e0b7b055",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-23-googlemap-place-source-design.md"
+      ]
+    },
+    {
+      "date": "6/23",
+      "member": "哲緯",
+      "commit": {
+        "title": "docs(plan): GoogleMap 地點補爬實作計畫(16 task, TDD)",
+        "sha": "d2201d05",
+        "project": "mason/bigmonitorV3",
+        "url": "https://biglab.buygta.today/mason/bigmonitorV3/-/commit/d2201d05",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-23-googlemap-place-source.md"
+      ]
+    },
+    {
+      "date": "6/23",
+      "member": "哲緯",
+      "commit": {
+        "title": "docs(plan): Task0 部分驗證 — GoogleMap 內容不在 keypo-tw sm/places,內容落點待 chris 確認",
+        "sha": "2bf84a09",
+        "project": "mason/bigmonitorV3",
+        "url": "https://biglab.buygta.today/mason/bigmonitorV3/-/commit/2bf84a09",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-23-googlemap-place-source.md"
+      ]
+    },
+    {
+      "date": "6/23",
+      "member": "哲緯",
+      "commit": {
+        "title": "docs(plan): Task0 驗證定案回填(內容探針 places+doc.id=md5 / Fid2Name 僅 Fid 必填)",
+        "sha": "ecd1d88e",
+        "project": "mason/bigmonitorV3",
+        "url": "https://biglab.buygta.today/mason/bigmonitorV3/-/commit/ecd1d88e",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-23-googlemap-place-source.md"
+      ]
+    },
+    {
+      "date": "6/23",
+      "member": "Richard",
+      "commit": {
+        "title": "docs: add design spec for GitLab issue linking feature",
+        "sha": "8c1e688e",
+        "project": "richard.lee/csm-agent",
+        "url": "https://biglab.buygta.today/richard.lee/csm-agent/-/commit/8c1e688e",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-23-gitlab-issue-linking-design.md"
+      ]
+    },
+    {
+      "date": "6/23",
+      "member": "Richard",
+      "commit": {
+        "title": "docs: add implementation plan for GitLab issue linking",
+        "sha": "dde8cd14",
+        "project": "richard.lee/csm-agent",
+        "url": "https://biglab.buygta.today/richard.lee/csm-agent/-/commit/dde8cd14",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-23-gitlab-issue-linking.md"
+      ]
+    },
+    {
+      "date": "6/23",
+      "member": "Wendy",
+      "commit": {
+        "title": "docs(migration): add Keypo GCP project 退場遷移 design spec",
+        "sha": "7929e523",
+        "project": "sinyi/sinyi-dashboard",
+        "url": "https://biglab.buygta.today/sinyi/sinyi-dashboard/-/commit/7929e523",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-22-sinyi-dashboard-keypo-gcp-migration-design.md"
+      ]
+    },
+    {
+      "date": "6/23",
+      "member": "家輝",
+      "commit": {
+        "title": "Add KEYDATA news MCP server design doc",
+        "sha": "f1070047",
+        "project": "KEYPO/keydata-mcp",
+        "url": "https://biglab.buygta.today/KEYPO/keydata-mcp/-/commit/f1070047",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-23-keydata-news-mcp-design.md"
+      ]
+    },
+    {
+      "date": "6/23",
+      "member": "家輝",
+      "commit": {
+        "title": "Add KEYDATA news MCP implementation plan",
+        "sha": "32a7cc74",
+        "project": "KEYPO/keydata-mcp",
+        "url": "https://biglab.buygta.today/KEYPO/keydata-mcp/-/commit/32a7cc74",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-23-keydata-news-mcp.md"
+      ]
+    },
+    {
+      "date": "6/23",
+      "member": "家輝",
+      "commit": {
+        "title": "docs(alerts): TW 爬蟲告警頻率分層設計文件",
+        "sha": "003ce59d",
+        "project": "platform-infra/observability",
+        "url": "https://biglab.buygta.today/platform-infra/observability/-/commit/003ce59d",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-23-tw-crawler-alert-frequency-tiers-design.md"
+      ]
+    },
+    {
+      "date": "6/23",
+      "member": "家輝",
+      "commit": {
+        "title": "docs(alerts): 更新爬蟲告警頻率分層設計(含 HK)",
+        "sha": "317d66e2",
+        "project": "platform-infra/observability",
+        "url": "https://biglab.buygta.today/platform-infra/observability/-/commit/317d66e2",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-23-tw-crawler-alert-frequency-tiers-design.md"
+      ]
+    },
+    {
+      "date": "6/23",
+      "member": "家輝",
+      "commit": {
+        "title": "docs(alerts): 爬蟲告警頻率分層實作計畫",
+        "sha": "48a5dc9e",
+        "project": "platform-infra/observability",
+        "url": "https://biglab.buygta.today/platform-infra/observability/-/commit/48a5dc9e",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-23-crawler-alert-frequency-tiers.md"
+      ]
+    },
+    {
+      "date": "6/24",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs: defer copilot N+1 (P0-b) from usage-overview plan/spec",
+        "sha": "1256b05a",
+        "project": "KEYPO/keypo-backend",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/1256b05a",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-05-16-keyword-history-agent-scope.md",
+        "docs/superpowers/plans/2026-05-19-fix-sending-job-stuck-ing.md",
+        "docs/superpowers/plans/2026-05-27-keypo-backend-502-mitigation.md",
+        "docs/superpowers/plans/2026-06-23-usage-overview-query-performance.md",
+        "docs/superpowers/specs/2026-05-16-keyword-history-agent-scope-design.md",
+        "docs/superpowers/specs/2026-05-27-keypo-backend-502-mitigation-design.md",
+        "docs/superpowers/specs/2026-06-23-usage-overview-query-performance-design.md"
+      ]
+    },
+    {
+      "date": "6/24",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs: simplify test _force_created_time helper to created_time only",
+        "sha": "c8f31967",
+        "project": "KEYPO/keypo-backend",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/c8f31967",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-23-usage-overview-query-performance.md"
+      ]
+    },
+    {
+      "date": "6/24",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs: re-include copilot N+1 (P0-b) in usage-overview plan/spec",
+        "sha": "bff38eaf",
+        "project": "KEYPO/keypo-backend",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/bff38eaf",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-23-usage-overview-query-performance.md",
+        "docs/superpowers/specs/2026-06-23-usage-overview-query-performance-design.md"
+      ]
+    },
+    {
+      "date": "6/24",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs: use (executor, created_time) index; defer keyword_history list API",
+        "sha": "2ba1ecee",
+        "project": "KEYPO/keypo-backend",
+        "url": "https://biglab.buygta.today/KEYPO/keypo-backend/-/commit/2ba1ecee",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-23-usage-overview-query-performance.md",
+        "docs/superpowers/specs/2026-06-23-usage-overview-query-performance-design.md"
+      ]
+    },
+    {
+      "date": "6/24",
+      "member": "Jason",
+      "commit": {
+        "title": "docs(log): meta_description 更新為各整合分支已 merge、待部署",
+        "sha": "723523e8",
+        "project": "dailyview/2024-dailyview-app",
+        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-app/-/commit/723523e8",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/seo-geo/log.md"
+      ]
+    },
+    {
+      "date": "6/24",
+      "member": "Jason",
+      "commit": {
+        "title": "docs: add W1-1 快速重點 (key_summary) 後端 + CMS 設計 spec + plan",
+        "sha": "3d1b5015",
+        "project": "dailyview/2024-dailyview-app",
+        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-app/-/commit/3d1b5015",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-23-w1-1-summary-block-backend-cms.md",
+        "docs/superpowers/specs/2026-06-23-w1-1-summary-block-backend-cms-design.md"
+      ]
+    },
+    {
+      "date": "6/24",
+      "member": "Jason",
+      "commit": {
+        "title": "docs(log): 2026-06-24 W1-1 key_summary popular/daily 後端+後台 CMS 串接 entry",
+        "sha": "65b7424b",
+        "project": "dailyview/2024-dailyview-app",
+        "url": "https://biglab.buygta.today/dailyview/2024-dailyview-app/-/commit/65b7424b",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/seo-geo/log.md"
+      ]
+    },
+    {
+      "date": "6/24",
+      "member": "哲緯",
+      "commit": {
+        "title": "docs(spec): 側邊欄區塊摺疊設計",
+        "sha": "eb03f3e3",
+        "project": "mason/bigmonitorV3",
+        "url": "https://biglab.buygta.today/mason/bigmonitorV3/-/commit/eb03f3e3",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-24-sidebar-group-collapse-design.md"
+      ]
+    },
+    {
+      "date": "6/24",
+      "member": "哲緯",
+      "commit": {
+        "title": "docs(plan): 側邊欄區塊摺疊實作計畫",
+        "sha": "24da85cc",
+        "project": "mason/bigmonitorV3",
+        "url": "https://biglab.buygta.today/mason/bigmonitorV3/-/commit/24da85cc",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-24-sidebar-group-collapse.md"
+      ]
+    },
+    {
+      "date": "6/25",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs(topic): spec for keyword_history list query perf (backend-only)",
+        "sha": "ef4194f8",
+        "project": "KEYPO/keypo-backend",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-25-keyword-history-list-query-perf-design.md"
+      ]
+    },
+    {
+      "date": "6/25",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs(topic): revise keyword_history perf spec per blind review",
+        "sha": "1f94a8a2",
+        "project": "KEYPO/keypo-backend",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-25-keyword-history-list-query-perf-design.md"
+      ]
+    },
+    {
+      "date": "6/25",
+      "member": "Joyce",
+      "commit": {
+        "title": "docs(topic): implementation plan for keyword_history list query perf",
+        "sha": "a6cae2e5",
+        "project": "KEYPO/keypo-backend",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-25-keyword-history-list-query.md"
+      ]
     }
   ],
   "correlations": [
     {
-      "date": "6/8",
+      "date": "6/22",
+      "member": "Joyce",
+      "status": "matched",
+      "specCommits": 5,
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "#29：開發關鍵字修改次數新增以年單位配額，後端已新增完成，已轉單 (4H)"
+      ],
+      "unmatchedSpecs": [],
+      "reasoning": "Joyce 的 5 筆規劃/設計 commits 均圍繞「關鍵字修改次數以年單位配額」功能，包含 design spec 撰寫、blind review 修訂與 implementation plan 制定。Daily update 第 2 項明確記載「#29：開發關鍵字修改次數新增以年單位配額，後端已新增完成，已轉單 (4H)」，主題完全吻合。Commits 顯示當日同步進行 spec/plan 文件化與後端實作，daily update 以實作完成角度描述，但確實涵蓋了同一功能範疇，判定為 matched。"
+    },
+    {
+      "date": "6/22",
       "member": "禎佑",
+      "status": "partial",
+      "specCommits": 17,
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "KEYKYC 前端優化：修改密碼功能實作（含明文顯示 toggle）"
+      ],
+      "unmatchedSpecs": [
+        "docs(specs): per-page docs design (business + IT)",
+        "docs(plans): portfolio page docs pilot",
+        "docs(portfolio): IT technical reference",
+        "docs(portfolio): business-friendly user guide",
+        "docs(pages): add README index",
+        "docs(portfolio): correct KpiStrip filter behaviour",
+        "docs(plans): page docs rollout — 4 pages × 2 docs",
+        "docs(reports): IT technical reference",
+        "docs(investigation): IT technical reference",
+        "docs(wallet): IT technical reference",
+        "docs(scan): IT technical reference",
+        "docs(investigation): business-friendly user guide",
+        "docs(wallet): business-friendly user guide",
+        "docs(reports): business-friendly user guide",
+        "docs(pages): README rollout — link all 5 pages"
+      ],
+      "reasoning": "禎佑 共有 17 筆規劃/設計 commits，可分為兩大群組。第一群（2 筆）為帳號選單與修改密碼的 spec 及 plan，daily update 第 6 項記載「KEYKYC 前端優化：修改密碼、密碼顯示明文 toggle」，功能領域吻合但 daily update 未明確提及撰寫設計文件，屬部分吻合。第二群（15 筆）為各頁面（portfolio、reports、investigation、wallet、scan）的 IT 技術參考文件及 business-friendly 使用指南，以及對應的 spec/plan 和 README，daily update 中完全未提及任何頁面文件撰寫工作，屬未提及。整體因兩群組情況不同，判定為 partial。"
+    },
+    {
+      "date": "6/23",
+      "member": "Joyce",
+      "status": "matched",
+      "specCommits": 9,
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "優化KEYPO 帳號系統用量總覽SQL查詢方式（對應 usage-overview query performance spec/plan）",
+        "處理 #2839：已根據數據端建議調整FACEBOOK主文連結格式，相關修正已更新至正式機（對應 hotrank Facebook URL reformat spec/plan）"
+      ],
+      "unmatchedSpecs": [],
+      "reasoning": "Joyce 的 9 筆規劃 commits 分屬兩個主題：(1) usage-overview 查詢效能優化（3 commits）對應 daily update 第 5 項「優化KEYPO 帳號系統用量總覽SQL查詢方式」，明確提及此項正在進行中；(2) hotrank Facebook URL reformat（6 commits，含多輪 spec 修訂與 plan）對應 daily update 第 7 項「處理 #2839：已根據數據端建議調整FACEBOOK主文連結格式」，工作描述與 spec/plan 範圍高度吻合。兩個主題皆有明確提及，判定為 matched。"
+    },
+    {
+      "date": "6/23",
+      "member": "侑呈",
+      "status": "partial",
+      "specCommits": 2,
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "log-canter Merge: promtail 通用化 logging.* producer-label 映射（對應 log 統一 spec）"
+      ],
+      "unmatchedSpecs": [
+        "spec 記錄 ES9 keypo Gateway 連線遷移與地區化 index（spec 文件日期為 6/18，6/23 daily update 未明確提及此設計文件更新）"
+      ],
+      "reasoning": "侑呈的兩筆 spec commits 中：(1) log 統一 spec（2026-06-23-log-unification-design.md）在 daily update 中有對應的 log-canter promtail 通用化工作，但 daily update 描述的是具體合併操作而非寫設計文件，關聯性存在但不夠明確；(2) ES9 keypo Gateway 連線遷移 spec（spec 文件日期為 2026-06-18，屬補記型 commit），6/23 daily update 提到 IG 多地區 swarm 測試，與 swarm proxy 架構有相關性，但未明確提及 ES9 keypo Gateway 連線遷移的設計文件工作。整體判定為 partial。"
+    },
+    {
+      "date": "6/23",
+      "member": "禎佑",
+      "status": "matched",
+      "specCommits": 4,
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "KEYKYC 後端開發：建立群組 table、開發群組管理相關 api（對應 admin groups CRUD backend design 與 business card group collaboration design）",
+        "KEYKYC 後台開發：群組管理頁面（對應 admin groups CRUD frontend design）",
+        "KEYKYC 前端開發：開發結合群組功能的名片夾畫面，可指派（對應 business card group collaboration frontend design）"
+      ],
+      "unmatchedSpecs": [],
+      "reasoning": "禎佑的 4 筆 spec commits 涵蓋 admin groups CRUD（前端+後端）與名片夾群組協作（前端+後端），與 daily update 的描述高度一致：第 3 項後端開發明確提及建立群組 table、開發群組管理 API；第 4 項後台開發提及群組管理頁面；第 5 項前端開發提及開發結合群組功能的名片夾畫面。spec 的設計範疇與 daily update 的實作說明完全吻合，判定為 matched。"
+    },
+    {
+      "date": "6/23",
+      "member": "哲緯",
+      "status": "matched",
+      "specCommits": 8,
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "鈴鐺通知點擊改為直接定位到提交歷史中的該筆任務（自動展開＋高亮）（對應通知 deep-link spec/plan）",
+        "補爬資料若 ES 已有近 7 天內的內容也判定完成，救援被誤判為空的任務（prod #27）（對應補爬近7天已有資料判 DONE spec/plan）",
+        "新增 Google Map 地點補爬資料源（貼地圖網址或地點名稱即可回爬貼文與留言）（對應 GoogleMap 地點補爬資料源 spec/plan 及 Task0 驗證）"
+      ],
+      "unmatchedSpecs": [],
+      "reasoning": "哲緯的 8 筆 spec/plan commits 分屬三個功能：(1) 通知 deep-link（2 commits）對應 daily update「鈴鐺通知點擊改為直接定位到提交歷史中的該筆任務」；(2) 補爬近7天判 DONE（2 commits）對應「補爬資料若 ES 已有近 7 天內的內容也判定完成」；(3) GoogleMap 地點補爬資料源（4 commits，含 spec 定案、16-task 實作計畫、Task0 兩次驗證回填）對應「新增 Google Map 地點補爬資料源」。三個主題皆有明確提及且均標記為 Done，判定為 matched。"
+    },
+    {
+      "date": "6/23",
+      "member": "Richard",
       "status": "unmatched",
-      "specCommits": 11,
+      "specCommits": 2,
       "dailyUpdateMention": false,
       "matchedTasks": [],
       "unmatchedSpecs": [
-        "docs: spec — MOPS 爬蟲（並行第二資料來源）",
-        "docs: plan — MOPS 爬蟲實作計畫",
-        "docs: MOPS 查詢頁抓包筆記（給 parser 實作參考）",
-        "docs(plan): 依抓包結果重寫 Task 7-11 — MOPS 實際非 ASP.NET WebForms",
-        "docs: byparr deployment SOP",
-        "docs: spec for GoogleMap 饗賓集團 brand mention monitoring",
-        "docs: 加入 GoogleMap 饗賓集團 brand_mention_comment 實作計畫",
-        "docs: spec for dashboard time_field toggle (寫入量 / 發佈量)",
-        "docs: implementation plan for dashboard time_field toggle",
-        "docs: 加入 crawler alerts 設計 spec",
-        "docs: 加入 crawler alerts implementation plan"
+        "docs: add design spec for GitLab issue linking feature",
+        "docs: add implementation plan for GitLab issue linking"
       ],
-      "reasoning": "禎佑在 6/8 無 daily update，無法核對其大量規劃/設計文件 commit 是否有對應的工作描述。Commits 涵蓋 MOPS 爬蟲設計與實作計畫、byparr 部署 SOP、GoogleMap 饗賓集團品牌提及監控設計、dashboard time_field 切換設計，以及 crawler 警報設計等五個方向，工作量豐富，但完全缺乏 daily update 佐證，判定為 unmatched。"
+      "reasoning": "Richard 當日無 daily update，無法對照其規劃文件是否有對應的工作描述。2 筆 commits 均為 GitLab issue linking 功能的設計文件與實作計畫，但完全無 daily update 可供比對，判定為 unmatched。"
     },
     {
-      "date": "6/8",
+      "date": "6/23",
+      "member": "Wendy",
+      "status": "matched",
+      "specCommits": 1,
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "SY 由 K4 nginx 轉移出來方案調查研究：相關成本計算、轉移時程規劃並寄信通知相關人員協助評估（對應 sinyi-dashboard Keypo GCP 退場遷移 design spec）"
+      ],
+      "unmatchedSpecs": [],
+      "reasoning": "Wendy 的 spec commit 為 sinyi-dashboard Keypo GCP project 退場遷移設計文件（spec 檔案日期 6/22，commit 於 6/23），對應 daily update 第 2 項 SY（信義）項目「SY 由 K4 nginx 轉移出來方案調查研究：相關成本計算、轉移時程規劃並寄信通知相關人員協助評估（3H）」。K4 即 Keypo 4 GCP project，SY 即 sinyi，遷移調查研究工作與設計文件的產出直接對應，判定為 matched。"
+    },
+    {
+      "date": "6/23",
+      "member": "家輝",
+      "status": "matched",
+      "specCommits": 5,
+      "dailyUpdateMention": true,
+      "matchedTasks": [
+        "開發 KEYDATA mcp功能（2.5H）（對應 KEYDATA news MCP server design doc 與 implementation plan）",
+        "調整可觀測性專案中的警報閥值，減少誤報狀況（1H）（對應爬蟲告警頻率分層設計文件與實作計畫）"
+      ],
+      "unmatchedSpecs": [],
+      "reasoning": "家輝的 5 筆 spec/plan commits 分屬兩個主題：(1) KEYDATA MCP（2 commits：design doc + implementation plan）對應 daily update 第 2 項「開發 KEYDATA mcp功能（2.5H）」，直接吻合；(2) 爬蟲告警頻率分層（3 commits：TW 設計文件、含 HK 更新版、實作計畫）對應 daily update 第 3 項「調整可觀測性專案中的警報閥值，減少誤報狀況（1H）」，雖 daily update 描述的是實際調整操作，但與設計文件所規劃的頻率分層方案為同一工作脈絡。兩個主題均有明確提及，判定為 matched。"
+    },
+    {
+      "date": "6/24",
+      "member": "Joyce",
+      "status": "unmatched",
+      "specCommits": 4,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "docs: defer copilot N+1 (P0-b) from usage-overview plan/spec",
+        "docs: simplify test _force_created_time helper to created_time only",
+        "docs: re-include copilot N+1 (P0-b) in usage-overview plan/spec",
+        "docs: use (executor, created_time) index; defer keyword_history list API"
+      ],
+      "reasoning": "Joyce 於 6/24 無提交 daily update，無法與 usage-overview 查詢效能最佳化相關的 4 筆規劃/設計 commits（包含 copilot N+1 延後評估、(executor, created_time) 複合索引策略調整）進行對照，一律判定為未提及。"
+    },
+    {
+      "date": "6/24",
+      "member": "Jason",
+      "status": "unmatched",
+      "specCommits": 3,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "docs(log): meta_description 更新為各整合分支已 merge、待部署",
+        "docs: add W1-1 快速重點 (key_summary) 後端 + CMS 設計 spec + plan",
+        "docs(log): 2026-06-24 W1-1 key_summary popular/daily 後端+後台 CMS 串接 entry"
+      ],
+      "reasoning": "Jason 於 6/24 無提交 daily update，無法與 W1-1 key_summary 後端 + CMS 設計規格、SEO log 更新等 3 筆 commits 進行對照，一律判定為未提及。"
+    },
+    {
+      "date": "6/24",
       "member": "哲緯",
       "status": "unmatched",
-      "specCommits": 10,
+      "specCommits": 2,
       "dailyUpdateMention": false,
       "matchedTasks": [],
       "unmatchedSpecs": [
-        "docs(spec): ES9 migration + multi-country support design",
-        "docs(plan): ES9 migration Phase 1 implementation plan",
-        "docs(spec): record P1 live-verification amendments (basic+apikey auth, monthly wildcard index, parity)",
-        "docs(es9): P1 deploy notes + P2/P3 impeccable timing annotations",
-        "docs(plan): ES9 migration Phase 2 (read-side multi-country) plan",
-        "docs(plan): scope P2 to dashboard+articles; split channels to P2b (per-channel)",
-        "docs(spec): P2b channels per-channel region switch design",
-        "docs(plan): P2b channels per-channel region implementation plan",
-        "docs(spec): P3 write-side multicountry design",
-        "docs(plan): P3 write-side multicountry implementation plan"
+        "docs(spec): 側邊欄區塊摺疊設計",
+        "docs(plan): 側邊欄區塊摺疊實作計畫"
       ],
-      "reasoning": "哲緯在 6/8 無 daily update，無法核對其 ES9 migration 多國支援設計的大量 spec/plan commits。Commits 顯示完整的三階段規劃（P1 讀側 + P2 多國讀側 + P2b per-channel + P3 寫側多國），設計深度可觀，但缺乏 daily update 文字對應，判定為 unmatched。"
+      "reasoning": "哲緯於 6/24 無提交 daily update，無法與側邊欄區塊摺疊功能的設計 spec 及實作計畫 2 筆 commits 進行對照，一律判定為未提及。"
     },
     {
-      "date": "6/8",
-      "member": "Ivy",
+      "date": "6/25",
+      "member": "Joyce",
       "status": "unmatched",
-      "specCommits": 1,
+      "specCommits": 3,
       "dailyUpdateMention": false,
       "matchedTasks": [],
       "unmatchedSpecs": [
-        "docs(contact_us): add source-aware spec and implementation plans"
+        "docs(topic): spec for keyword_history list query perf (backend-only)",
+        "docs(topic): revise keyword_history perf spec per blind review",
+        "docs(topic): implementation plan for keyword_history list query perf"
       ],
-      "reasoning": "Ivy 在 6/8 無 daily update，無法核對 contact_us source-aware 功能的 spec 與三份實作計畫（admin backend、frontend、public backend）是否有對應工作描述，判定為 unmatched。"
-    },
-    {
-      "date": "6/8",
-      "member": "侑呈",
-      "status": "unmatched",
-      "specCommits": 1,
-      "dailyUpdateMention": false,
-      "matchedTasks": [],
-      "unmatchedSpecs": [
-        "docs(email-alerts): 新增 design doc + PROGRESS 已知段落更新"
-      ],
-      "reasoning": "侑呈在 6/8 無 daily update，無法核對 email-alerts design doc 及 PROGRESS 更新是否有對應工作描述，判定為 unmatched。"
+      "reasoning": "Joyce 當日有 3 筆規劃/設計類 commits，涵蓋 keyword_history 列表查詢效能的 spec 撰寫、blind review 後的修訂，以及實作計劃文件。然而 Joyce 當日無 daily update，無法確認這些規劃工作是否有在日報中被提及，因此判定為 unmatched。"
     }
   ],
   "summary": {
-    "totalSpecCommits": 23,
-    "totalCorrelations": 4,
-    "membersWithSpecs": 4,
-    "matched": 0,
-    "unmatched": 4,
-    "partial": 0
+    "totalSpecCommits": 65,
+    "totalCorrelations": 13,
+    "membersWithSpecs": 8,
+    "matched": 6,
+    "unmatched": 5,
+    "partial": 2
   }
 }
