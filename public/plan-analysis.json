@@ -1,6 +1,6 @@
 {
-  "analysisDate": "2026-06-25",
-  "period": "6/22-6/25",
+  "analysisDate": "2026-07-01",
+  "period": "6/22-6/30",
   "planSpecs": [
     {
       "date": "6/22",
@@ -925,6 +925,490 @@
       "files": [
         "docs/superpowers/plans/2026-06-25-keyword-history-list-query.md"
       ]
+    },
+    {
+      "date": "6/26",
+      "member": "家輝",
+      "commit": {
+        "title": "docs: add keytector-mcp (incl monorepo restructure) and kol-mcp design specs",
+        "sha": "5b2d54f6",
+        "project": "KEYPO/keydata-mcp",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-26-keytector-mcp-design.md",
+        "docs/superpowers/specs/2026-06-26-kol-mcp-design.md"
+      ]
+    },
+    {
+      "date": "6/26",
+      "member": "家輝",
+      "commit": {
+        "title": "docs: add keykyc-mcp design spec",
+        "sha": "70d0967b",
+        "project": "KEYPO/keydata-mcp",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-26-keykyc-mcp-design.md"
+      ]
+    },
+    {
+      "date": "6/26",
+      "member": "家輝",
+      "commit": {
+        "title": "docs: add keytector-mcp implementation plan (incl monorepo restructure)",
+        "sha": "35451624",
+        "project": "KEYPO/keydata-mcp",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-26-keytector-mcp.md"
+      ]
+    },
+    {
+      "date": "6/26",
+      "member": "家輝",
+      "commit": {
+        "title": "docs: add keykyc-mcp implementation plan",
+        "sha": "08dad402",
+        "project": "KEYPO/keydata-mcp",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-26-keykyc-mcp.md"
+      ]
+    },
+    {
+      "date": "6/26",
+      "member": "家輝",
+      "commit": {
+        "title": "docs: add kol-mcp implementation plan",
+        "sha": "8f52e039",
+        "project": "KEYPO/keydata-mcp",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-26-kol-mcp.md"
+      ]
+    },
+    {
+      "date": "6/26",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs: database reference covering all 21 tables",
+        "sha": "02727c9e",
+        "project": "keykyc_v2/keykyc-backend-v2",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/database.md"
+      ]
+    },
+    {
+      "date": "6/26",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(spec): reports LLM JSON + HTML pipeline (Playwright)",
+        "sha": "a038ae0f",
+        "project": "keykyc_v2/keykyc-backend-v2",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-26-reports-llm-json-html-pipeline-design.md"
+      ]
+    },
+    {
+      "date": "6/26",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(spec): administrative penalties facet (legal domain)",
+        "sha": "d6aec9ba",
+        "project": "keykyc_v2/keykyc-backend-v2",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-26-reports-administrative-penalties-facet-design.md"
+      ]
+    },
+    {
+      "date": "6/26",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(spec): drop Playwright from reports pipeline, keep WeasyPrint",
+        "sha": "f5489974",
+        "project": "keykyc_v2/keykyc-backend-v2",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-26-reports-administrative-penalties-facet-design.md",
+        "docs/superpowers/specs/2026-06-26-reports-llm-json-html-pipeline-design.md"
+      ]
+    },
+    {
+      "date": "6/26",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(plan): reports LLM JSON + HTML pipeline implementation plan",
+        "sha": "e4a0ae66",
+        "project": "keykyc_v2/keykyc-backend-v2",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-26-reports-llm-json-html-pipeline.md"
+      ]
+    },
+    {
+      "date": "6/26",
+      "member": "哲緯",
+      "commit": {
+        "title": "docs(csm): 階段 2 cases API 實作計畫(5 任務)",
+        "sha": "5f6842a8",
+        "project": "mason/bigmonitorV3",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-26-csm-cases-api.md"
+      ]
+    },
+    {
+      "date": "6/26",
+      "member": "哲緯",
+      "commit": {
+        "title": "docs(csm): 階段 3 前端實作計畫(6 任務)",
+        "sha": "7751e2cc",
+        "project": "mason/bigmonitorV3",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-26-csm-frontend.md"
+      ]
+    },
+    {
+      "date": "6/26",
+      "member": "哲緯",
+      "commit": {
+        "title": "docs(spec): 資料源即時監控戰情牆設計 (source-pulse landing)",
+        "sha": "1420d93a",
+        "project": "mason/bigmonitorV3",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-26-source-pulse-landing-design.md"
+      ]
+    },
+    {
+      "date": "6/26",
+      "member": "哲緯",
+      "commit": {
+        "title": "docs(plan): source-pulse landing 實作計畫 (7 tasks + artifact appendix)",
+        "sha": "3b58f7d5",
+        "project": "mason/bigmonitorV3",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-26-source-pulse-landing.md"
+      ]
+    },
+    {
+      "date": "6/29",
+      "member": "侑呈",
+      "commit": {
+        "title": "新增 BM 插隊叢集設計 spec：獨立 stack 自帶 redis、1 link 1 post、外部 ssh manager 跑 dispatcher 補資料插隊",
+        "sha": "0f5cc635",
+        "project": "ben1126/instagram-scraper",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-29-bm-priority-cluster-design.md"
+      ]
+    },
+    {
+      "date": "6/29",
+      "member": "侑呈",
+      "commit": {
+        "title": "BM spec 修正：redis 比照主叢集對外(各 stack 獨立 REDIS_PORT_EXTERNAL)；偵測卡住交既有監控服務、本 repo 不寫偵測，只負責 redis 對外+bm-{region} 標籤",
+        "sha": "79c0744e",
+        "project": "ben1126/instagram-scraper",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-29-bm-priority-cluster-design.md"
+      ]
+    },
+    {
+      "date": "6/29",
+      "member": "Jason",
+      "commit": {
+        "title": "docs(log): favicon 引用圖標 2026-06-26 結案驗證",
+        "sha": "92f95cb7",
+        "project": "dailyview/2024-dailyview-app",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/seo-geo/log.md"
+      ]
+    },
+    {
+      "date": "6/29",
+      "member": "Jason",
+      "commit": {
+        "title": "Merge branch 'docs/w1-1-key-summary' into 'staging'",
+        "sha": "9ceb9f90",
+        "project": "dailyview/2024-dailyview-app",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/seo-geo/log.md",
+        "docs/superpowers/plans/2026-06-23-w1-1-summary-block-backend-cms.md",
+        "docs/superpowers/specs/2026-06-23-w1-1-summary-block-backend-cms-design.md"
+      ]
+    },
+    {
+      "date": "6/29",
+      "member": "Jason",
+      "commit": {
+        "title": "Merge branch 'docs/w1-1-key-summary' into 'staging'",
+        "sha": "971a7ced",
+        "project": "dailyview/2024-dailyview-app",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/seo-geo/log.md",
+        "docs/superpowers/plans/2026-06-23-w1-1-summary-block-backend-cms.md",
+        "docs/superpowers/specs/2026-06-23-w1-1-summary-block-backend-cms-design.md"
+      ]
+    },
+    {
+      "date": "6/29",
+      "member": "Jason",
+      "commit": {
+        "title": "docs(log): 研究 Google News 收錄 — Publisher Center 降級、新增 News sitemap 工項",
+        "sha": "fce01b97",
+        "project": "dailyview/2024-dailyview-app",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/seo-geo/log.md"
+      ]
+    },
+    {
+      "date": "6/29",
+      "member": "Jason",
+      "commit": {
+        "title": "feat(article): add normalizeKeySummary helper + smoke test + plan",
+        "sha": "2eaba780",
+        "project": "dailyview/2024-dailyview-app",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-29-key-summary-frontend.md"
+      ]
+    },
+    {
+      "date": "6/29",
+      "member": "Jason",
+      "commit": {
+        "title": "docs(log): 回寫 W1-1 前台渲染（文章摘要）2026-06-29 結案",
+        "sha": "66ed19b7",
+        "project": "dailyview/2024-dailyview-app",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/seo-geo/log.md"
+      ]
+    },
+    {
+      "date": "6/29",
+      "member": "Jason",
+      "commit": {
+        "title": "docs: 新增 cron/views 修正 spec 與實作 plan",
+        "sha": "28454816",
+        "project": "dailyview/dv-realestate",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-29-cron-views-fixes.md",
+        "docs/superpowers/specs/2026-06-29-cron-views-fixes-design.md"
+      ]
+    },
+    {
+      "date": "6/29",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(spec): basic_info facet (DB-only) + unify facet builder pattern",
+        "sha": "21d86912",
+        "project": "keykyc_v2/keykyc-backend-v2",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-29-reports-basic-info-facet-design.md"
+      ]
+    },
+    {
+      "date": "6/29",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(plan): basic_info facet + builder pattern unification",
+        "sha": "82a24217",
+        "project": "keykyc_v2/keykyc-backend-v2",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-29-reports-basic-info-facet.md"
+      ]
+    },
+    {
+      "date": "6/29",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(spec): reports PDF visual overhaul + shareholding/board prompt hardening",
+        "sha": "871d8499",
+        "project": "keykyc_v2/keykyc-backend-v2",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-29-reports-visual-overhaul-design.md"
+      ]
+    },
+    {
+      "date": "6/29",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(plan): reports PDF visual overhaul implementation plan",
+        "sha": "4e7e014a",
+        "project": "keykyc_v2/keykyc-backend-v2",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-29-reports-visual-overhaul.md"
+      ]
+    },
+    {
+      "date": "6/29",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs: 新增 README、claude.md 改為工作守則、補 spec",
+        "sha": "517a0fa8",
+        "project": "keykyc_v2/findata-crawler",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-29-docs-refresh-design.md"
+      ]
+    },
+    {
+      "date": "6/29",
+      "member": "Joe",
+      "commit": {
+        "title": "docs: add MCP server pivot design spec (app side)",
+        "sha": "c71f842e",
+        "project": "richard.lee/csm-agent",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-29-csm-mcp-server-design.md"
+      ]
+    },
+    {
+      "date": "6/29",
+      "member": "Joe",
+      "commit": {
+        "title": "docs: add MCP server implementation plan (app side)",
+        "sha": "cf39a94c",
+        "project": "richard.lee/csm-agent",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-29-csm-mcp-server.md"
+      ]
+    },
+    {
+      "date": "6/30",
+      "member": "禎佑",
+      "commit": {
+        "title": "chore: initial commit with trust score schema spec + plan",
+        "sha": "54467b31",
+        "project": "chris.su/trust-project",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/plans/2026-06-30-trust-score-schema-implementation.md",
+        "docs/superpowers/specs/2026-06-30-trust-score-schema-design.md"
+      ]
+    },
+    {
+      "date": "6/30",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs: add API integration guide for external departments",
+        "sha": "3245b414",
+        "project": "keykyc_v2/keykyc-backend-v2",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/api-integration.md"
+      ]
+    },
+    {
+      "date": "6/30",
+      "member": "禎佑",
+      "commit": {
+        "title": "docs(spec): post_comments_classify — two-stage post → comments classifier",
+        "sha": "1e6005d0",
+        "project": "googlemap/googlemap-tools",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-17-post-comments-classify-design.md"
+      ]
+    },
+    {
+      "date": "6/30",
+      "member": "禎佑",
+      "commit": {
+        "title": "fix(post_comments_classify): join on doc.id, not post.id",
+        "sha": "346438be",
+        "project": "googlemap/googlemap-tools",
+        "url": "",
+        "source": "gitlab"
+      },
+      "files": [
+        "docs/superpowers/specs/2026-06-17-post-comments-classify-design.md"
+      ]
     }
   ],
   "correlations": [
@@ -1116,14 +1600,136 @@
         "docs(topic): implementation plan for keyword_history list query perf"
       ],
       "reasoning": "Joyce 當日有 3 筆規劃/設計類 commits，涵蓋 keyword_history 列表查詢效能的 spec 撰寫、blind review 後的修訂，以及實作計劃文件。然而 Joyce 當日無 daily update，無法確認這些規劃工作是否有在日報中被提及，因此判定為 unmatched。"
+    },
+    {
+      "date": "6/26",
+      "member": "家輝",
+      "status": "unmatched",
+      "specCommits": 5,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "docs: add keytector-mcp (incl monorepo restructure) and kol-mcp design specs",
+        "docs: add keykyc-mcp design spec",
+        "docs: add keytector-mcp implementation plan (incl monorepo restructure)",
+        "docs: add keykyc-mcp implementation plan",
+        "docs: add kol-mcp implementation plan"
+      ],
+      "reasoning": "家輝在 6/26 完全沒有提交 daily update，因此無法確認其對 keytector-mcp、kol-mcp、keykyc-mcp 三項設計規劃與實作計畫的規劃工作是否有向團隊揭露進度，判定為未提及。"
+    },
+    {
+      "date": "6/26",
+      "member": "禎佑",
+      "status": "unmatched",
+      "specCommits": 5,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "docs: database reference covering all 21 tables",
+        "docs(spec): reports LLM JSON + HTML pipeline (Playwright)",
+        "docs(spec): administrative penalties facet (legal domain)",
+        "docs(spec): drop Playwright from reports pipeline, keep WeasyPrint",
+        "docs(plan): reports LLM JSON + HTML pipeline implementation plan"
+      ],
+      "reasoning": "禎佑在 6/26 完全沒有提交 daily update，其針對 keykyc-backend-v2 資料庫文件與 reports pipeline 設計/計畫的產出未在日報中被提及，判定為未提及。"
+    },
+    {
+      "date": "6/26",
+      "member": "哲緯",
+      "status": "unmatched",
+      "specCommits": 4,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "docs(csm): 階段 2 cases API 實作計畫(5 任務)",
+        "docs(csm): 階段 3 前端實作計畫(6 任務)",
+        "docs(spec): 資料源即時監控戰情牆設計 (source-pulse landing)",
+        "docs(plan): source-pulse landing 實作計畫 (7 tasks + artifact appendix)"
+      ],
+      "reasoning": "哲緯在 6/26 完全沒有提交 daily update，其針對 bigmonitorV3 的 CSM 階段性實作計畫與 source-pulse landing 設計/計畫的產出未在日報中被提及，判定為未提及。"
+    },
+    {
+      "date": "6/29",
+      "member": "侑呈",
+      "status": "unmatched",
+      "specCommits": 2,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "新增 BM 插隊叢集設計 spec：獨立 stack 自帶 redis、1 link 1 post、外部 ssh manager 跑 dispatcher 補資料插隊",
+        "BM spec 修正：redis 比照主叢集對外(各 stack 獨立 REDIS_PORT_EXTERNAL)；偵測卡住交既有監控服務、本 repo 不寫偵測，只負責 redis 對外+bm-{region} 標籤"
+      ],
+      "reasoning": "侑呈 6/29 無 daily update 紀錄，因此無法確認其是否有提及 BM 插隊叢集設計相關的規劃/設計工作，判定為未提及。"
+    },
+    {
+      "date": "6/29",
+      "member": "Jason",
+      "status": "unmatched",
+      "specCommits": 7,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "docs(log): favicon 引用圖標 2026-06-26 結案驗證",
+        "Merge branch 'docs/w1-1-key-summary' into 'staging' (9ceb9f90)",
+        "Merge branch 'docs/w1-1-key-summary' into 'staging' (971a7ced)",
+        "docs(log): 研究 Google News 收錄 — Publisher Center 降級、新增 News sitemap 工項",
+        "feat(article): add normalizeKeySummary helper + smoke test + plan",
+        "docs(log): 回寫 W1-1 前台渲染（文章摘要）2026-06-29 結案",
+        "docs: 新增 cron/views 修正 spec 與實作 plan"
+      ],
+      "reasoning": "Jason 6/29 無 daily update 紀錄，儘管有大量 SEO/GEO log 更新、W1-1 摘要區塊與 cron/views 修正的規劃/設計 commits，皆無法與其本人回報的工作內容對照，判定為未提及。"
+    },
+    {
+      "date": "6/29",
+      "member": "禎佑",
+      "status": "unmatched",
+      "specCommits": 5,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "docs(spec): basic_info facet (DB-only) + unify facet builder pattern",
+        "docs(plan): basic_info facet + builder pattern unification",
+        "docs(spec): reports PDF visual overhaul + shareholding/board prompt hardening",
+        "docs(plan): reports PDF visual overhaul implementation plan",
+        "docs: 新增 README、claude.md 改為工作守則、補 spec"
+      ],
+      "reasoning": "禎佑 6/29 無 daily update 紀錄，其 basic_info facet、reports PDF 視覺改版與 findata-crawler 文件補完等規劃/設計 commits 均無對應的每日回報內容，判定為未提及。"
+    },
+    {
+      "date": "6/29",
+      "member": "Joe",
+      "status": "unmatched",
+      "specCommits": 2,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "docs: add MCP server pivot design spec (app side)",
+        "docs: add MCP server implementation plan (app side)"
+      ],
+      "reasoning": "Joe 6/29 無 daily update 紀錄，MCP server pivot 設計 spec 與實作 plan 兩筆規劃類 commits 均無法對照其回報內容，判定為未提及。"
+    },
+    {
+      "date": "6/30",
+      "member": "禎佑",
+      "status": "unmatched",
+      "specCommits": 4,
+      "dailyUpdateMention": false,
+      "matchedTasks": [],
+      "unmatchedSpecs": [
+        "chore: initial commit with trust score schema spec + plan",
+        "docs: add API integration guide for external departments",
+        "docs(spec): post_comments_classify — two-stage post → comments classifier",
+        "fix(post_comments_classify): join on doc.id, not post.id"
+      ],
+      "reasoning": "禎佑當日（6/30）沒有提交 daily update，因此無法比對規劃/設計 commits 與工作描述的吻合度。共有 4 筆規劃/設計類 commit（trust score schema 規格與計畫、keykyc API 整合指南、googlemap post_comments_classify 規格及其修正），皆缺乏對應的每日回報說明，判定為未提及。"
     }
   ],
   "summary": {
-    "totalSpecCommits": 65,
-    "totalCorrelations": 13,
-    "membersWithSpecs": 8,
+    "totalSpecCommits": 99,
+    "totalCorrelations": 21,
+    "membersWithSpecs": 9,
     "matched": 6,
-    "unmatched": 5,
+    "unmatched": 13,
     "partial": 2
   }
 }
