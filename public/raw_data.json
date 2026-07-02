@@ -15849,12 +15849,6 @@
           }
         ]
       },
-      "Aaron": {
-        "total": null,
-        "meeting": null,
-        "dev": null,
-        "status": "unreported"
-      },
       "哲緯": {
         "total": 11,
         "meeting": 5.5,
@@ -16180,12 +16174,6 @@
           }
         ]
       },
-      "Aaron": {
-        "total": null,
-        "meeting": null,
-        "dev": null,
-        "status": "unreported"
-      },
       "哲緯": {
         "total": 6,
         "meeting": 0.5,
@@ -16414,12 +16402,6 @@
             "hours": 1.5
           }
         ]
-      },
-      "Aaron": {
-        "total": null,
-        "meeting": null,
-        "dev": null,
-        "status": "unreported"
       },
       "哲緯": {
         "total": 7,
@@ -16771,12 +16753,6 @@
             "hours": 2.5
           }
         ]
-      },
-      "Aaron": {
-        "total": null,
-        "meeting": null,
-        "dev": null,
-        "status": "unreported"
       },
       "哲緯": {
         "total": 7.5,
@@ -17167,12 +17143,6 @@
           }
         ]
       },
-      "Aaron": {
-        "total": null,
-        "meeting": null,
-        "dev": null,
-        "status": "unreported"
-      },
       "哲緯": {
         "total": 9,
         "meeting": 1.5,
@@ -17277,11 +17247,6 @@
       "member": "Joe",
       "severity": "🟢",
       "text": "穩定 7hr"
-    },
-    {
-      "member": "Aaron",
-      "severity": "🔴",
-      "text": "連續 14 天未回報"
     },
     {
       "member": "哲緯",
@@ -17650,7 +17615,6 @@
         "Ted",
         "家輝",
         "Joe",
-        "Aaron",
         "哲緯"
       ],
       "parent": "產品中心"
@@ -17666,7 +17630,6 @@
     "產品": {
       "label": "產品部",
       "members": [
-        "Tanya",
         "Sylvia"
       ],
       "parent": "產品中心",
