@@ -1,267 +1,332 @@
 {
-  "analysisDate": "2026-07-01",
-  "period": "6/24-6/30",
+  "analysisDate": "2026-07-23",
+  "period": "7/1-7/21",
   "warnings": [
     {
-      "date": "6/24",
+      "date": "7/1",
+      "member": "Joyce",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "優化速報排程、排查 #3103、監控ES效能、排查 #351 (6H)",
+      "commits": "0",
+      "reasoning": "報告開發任務 6H（1+3+1+1，排除會議時數），當天無相關提交。任務涵蓋速報系統和索引問題排查，應有版本控制紀錄，但系統顯示零筆相關 commits。"
+    },
+    {
+      "date": "7/1",
+      "member": "Ivy",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "KEYPO F2E E2E Test、協助網溫 issue、Sonnet 5 測試 (6H)",
+      "commits": "0",
+      "reasoning": "報告開發任務 6H（5+0.5+0.5，排除會議），當天無任何 commits。包含前端測試開發工作，預期應有程式變更提交。"
+    },
+    {
+      "date": "7/1",
       "member": "日銜",
       "severity": "🔴",
       "type": "low_output",
-      "task": "開發工作 (4.5H)",
-      "commits": "無相關 commit",
-      "reasoning": "回報開發時數 4.5 小時，但當日無任何 commit 記錄，與團隊平均 8.0 commits 相比產出明顯不足"
+      "task": "Issue#3047、AI開發新站回爬、博報堂專案重新收錄 (6H)",
+      "commits": "0",
+      "reasoning": "開發任務 6H（4+1+1，排除會議），爬蟲站點收錄和 Issue 處理工作無任何 commit 記錄。"
     },
     {
-      "date": "6/24",
-      "member": "Wendy",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "開發工作 (5H)",
-      "commits": "無相關 commit",
-      "reasoning": "回報開發時數 5 小時，但當日無任何 commit 記錄，與團隊平均 8.0 commits 相比產出明顯不足"
-    },
-    {
-      "date": "6/24",
+      "date": "7/1",
       "member": "Ted",
       "severity": "🔴",
       "type": "low_output",
-      "task": "開發工作 (6.5H)",
-      "commits": "無相關 commit",
-      "reasoning": "回報開發時數 6.5 小時，但當日無任何 commit 記錄，與團隊平均 8.0 commits 相比產出明顯不足"
+      "task": "KEYPO API 測試、規則排程執行、媒體類型與文章類型配置、內政部電子報 MVP、後台操作紀錄、M2M 欄位儲存修正 (6H)",
+      "commits": "0",
+      "reasoning": "報告開發任務 6H（1+1+1+2+0.5+0.5），包含多項後台功能開發和修復，卻無相應的版本控制提交。"
     },
     {
-      "date": "6/24",
+      "date": "7/2",
+      "member": "Joyce",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "排查 #351、修正 #29、排查網溫ES、KEYPO API 教學、庫存內容不可顯示全文、金流溝通 (8H)",
+      "commits": "0",
+      "reasoning": "開發任務 8H，涉及多項後端 API 和功能調整，連續第二天無任何 commit 記錄。"
+    },
+    {
+      "date": "7/2",
       "member": "Ivy",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發工作 (3.5H)",
-      "commits": "2 commits",
-      "reasoning": "開發時數與 commit 產出的工時比例（1.75）顯著低於團隊平均（0.66），相差 2.65 倍，表示單位產出遠低於團隊平均"
-    },
-    {
-      "date": "6/24",
-      "member": "侑呈",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發工作 (5.5H)",
-      "commits": "2 commits",
-      "reasoning": "開發時數與 commit 產出的工時比例（2.75）顯著低於團隊平均（0.66），相差 4.16 倍，表示單位產出遠低於團隊平均"
-    },
-    {
-      "date": "6/24",
-      "member": "家輝",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發工作 (5.5H)",
-      "commits": "1 commit",
-      "reasoning": "開發時數與 commit 產出的工時比例（5.5）顯著低於團隊平均（0.66），相差 8.33 倍，表示單位產出遠低於團隊平均"
-    },
-    {
-      "date": "6/25",
-      "member": "Jason",
       "severity": "🔴",
       "type": "low_output",
-      "task": "開發工作 (5.5H)",
-      "commits": "無相關 commit",
-      "reasoning": "回報開發時數 5.5 小時，但當日無任何 commit 記錄，與團隊平均 15.6 commits 相比產出明顯不足"
+      "task": "KEYPO F2E E2E Test (7H)",
+      "commits": "0",
+      "reasoning": "整日專注前端測試開發 7H，應有測試代碼或配置變更，但無 commits。"
     },
     {
-      "date": "6/25",
-      "member": "Wendy",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "開發工作 (7H)",
-      "commits": "無相關 commit",
-      "reasoning": "回報開發時數 7 小時，但當日無任何 commit 記錄，與團隊平均 15.6 commits 相比產出明顯不足"
-    },
-    {
-      "date": "6/25",
+      "date": "7/2",
       "member": "禎佑",
       "severity": "🔴",
       "type": "low_output",
-      "task": "開發工作 (5H)",
-      "commits": "無相關 commit",
-      "reasoning": "回報開發時數 5 小時，但當日無任何 commit 記錄，與團隊平均 15.6 commits 相比產出明顯不足"
+      "task": "信任計劃、KEYKYC 裁罰資料源優化 (8.5H)",
+      "commits": "0",
+      "reasoning": "報告開發時數 8.5H，涉及資料源整合和計劃開發工作，卻未有任何版本控制記錄。"
     },
     {
-      "date": "6/25",
-      "member": "家輝",
+      "date": "7/2",
+      "member": "Ted",
       "severity": "🔴",
       "type": "low_output",
-      "task": "開發工作 (6H)",
-      "commits": "無相關 commit",
-      "reasoning": "回報開發時數 6 小時，但當日無任何 commit 記錄，與團隊平均 15.6 commits 相比產出明顯不足"
+      "task": "日品牌電子報、自動化月報表、內政部電子報 MVP (7H)",
+      "commits": "0",
+      "reasoning": "連續第二天報告開發 7H，包含郵件系統和報表功能，無任何 commits。"
     },
     {
-      "date": "6/25",
+      "date": "7/3",
       "member": "Ivy",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發工作 (5.5H)",
-      "commits": "1 commit",
-      "reasoning": "開發時數與 commit 產出的工時比例（5.5）顯著低於團隊平均（0.39），相差 14.1 倍，表示單位產出遠低於團隊平均"
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "KEYPO F2E E2E Test、維護 Wiki (5.8H)",
+      "commits": "0",
+      "reasoning": "開發任務 5.8H，超過 3H 門檻，當天無相關 commits。"
     },
     {
-      "date": "6/25",
+      "date": "7/3",
       "member": "日銜",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發工作 (7.5H)",
-      "commits": "7 commits",
-      "reasoning": "開發時數與 commit 產出的工時比例（1.07）顯著低於團隊平均（0.39），相差 2.74 倍，表示單位產出低於團隊平均"
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "Alert偵測優化、bigcrawler-scrapy-v2 部署 (5H)",
+      "commits": "0",
+      "reasoning": "爬蟲部署和最佳化工作 5H，無任何版本控制紀錄。"
     },
     {
-      "date": "6/25",
-      "member": "侑呈",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發工作 (7H)",
-      "commits": "4 commits",
-      "reasoning": "開發時數與 commit 產出的工時比例（1.75）顯著低於團隊平均（0.39），相差 4.49 倍，表示單位產出遠低於團隊平均"
+      "date": "7/3",
+      "member": "Ted",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "修正 article_id、Migration 處理、日品牌電子報、內政部電子報首段擷取、自動化月報表 (5H)",
+      "commits": "0",
+      "reasoning": "連續第三天開發 5H 且 0 commits，涉及多個系統的功能修正。"
     },
     {
-      "date": "6/25",
+      "date": "7/3",
       "member": "Richard",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發工作 (4H)",
-      "commits": "3 commits",
-      "reasoning": "開發時數與 commit 產出的工時比例（1.33）顯著低於團隊平均（0.39），相差 3.41 倍，表示單位產出遠低於團隊平均"
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "修復 KEYLM Box 穩定性、再次交付會議後、重整 code (7H)",
+      "commits": "0",
+      "reasoning": "KEYLM 系統開發與穩定性修復 7H，無任何 commits。"
     },
     {
-      "date": "6/26",
+      "date": "7/6",
+      "member": "Joyce",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "排查 #351、排查 #388、金流測試、跨年查詢 ES 限制、速報內容優化 (8.5H)",
+      "commits": "0",
+      "reasoning": "多項後端問題排查和優化工作 8.5H，無相應的版本控制提交。"
+    },
+    {
+      "date": "7/6",
       "member": "Ivy",
       "severity": "🔴",
       "type": "low_output",
-      "task": "開發工作 (5.5H)",
-      "commits": "無相關 commit",
-      "reasoning": "回報開發時數 5.5 小時，但當日無任何 commit 記錄，與團隊平均 16.1 commits 相比產出明顯不足"
+      "task": "KEYPO F2E E2E Test、KEYDERS 模組確認與調整 (6.5H)",
+      "commits": "0",
+      "reasoning": "前端測試和模組整合工作 6.5H，當天無 commits。"
     },
     {
-      "date": "6/26",
+      "date": "7/7",
+      "member": "Joyce",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "處理 #351、ES 配置問題、#56 PM 回報、協助 SY domain 遷出 (8H)",
+      "commits": "0",
+      "reasoning": "後端問題排查和遷移工作 8H，無任何 commits。"
+    },
+    {
+      "date": "7/7",
+      "member": "侑呈",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "KETDERS、Twitter 優化部署、FBG (7.5H)",
+      "commits": "0",
+      "reasoning": "爬蟲系統優化和部署 7.5H，當天無相關提交。"
+    },
+    {
+      "date": "7/7",
+      "member": "Richard",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "修復 KEYLM Box 穩定性、CSM Agent 交付、玄武計畫 ES CPU 調整 (8H)",
+      "commits": "0",
+      "reasoning": "系統優化與部署工作 8H，無版本控制記錄。"
+    },
+    {
+      "date": "7/8",
+      "member": "Joyce",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "整理平台後端分支、#56 調整、產製速報優化、#3182 排查、#3071 image url、#351 highlight (8H)",
+      "commits": "0",
+      "reasoning": "多項後端修改和優化 8H，連續多天無 commits 記錄。"
+    },
+    {
+      "date": "7/8",
+      "member": "日銜",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "AI修站後自動回爬、issue 處理 (5H)",
+      "commits": "0",
+      "reasoning": "爬蟲系統優化 5H，無任何提交。"
+    },
+    {
+      "date": "7/9",
       "member": "Jason",
       "severity": "🔴",
       "type": "low_output",
-      "task": "開發工作 (5.5H)",
-      "commits": "無相關 commit",
-      "reasoning": "回報開發時數 5.5 小時，但當日無任何 commit 記錄，與團隊平均 16.1 commits 相比產出明顯不足"
+      "task": "網溫網站體檢、製作技術分享投影片 (5.5H)",
+      "commits": "0",
+      "reasoning": "網站檢查和內容製作 5.5H，無相關版本控制記錄。"
     },
     {
-      "date": "6/26",
+      "date": "7/9",
       "member": "Wendy",
       "severity": "🔴",
       "type": "low_output",
-      "task": "開發工作 (4.5H)",
-      "commits": "無相關 commit",
-      "reasoning": "回報開發時數 4.5 小時，但當日無任何 commit 記錄，與團隊平均 16.1 commits 相比產出明顯不足"
+      "task": "PoC 技術可行性評估、考試院推播異常、台鐵推播主題、推播優先序 (7H)",
+      "commits": "0",
+      "reasoning": "推播系統問題診斷和評估 7H，當日無提交記錄。"
     },
     {
-      "date": "6/26",
-      "member": "侑呈",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發工作 (6.5H)",
-      "commits": "3 commits",
-      "reasoning": "開發時數與 commit 產出的工時比例（2.17）顯著低於團隊平均（0.33），相差 6.59 倍，表示單位產出遠低於團隊平均"
-    },
-    {
-      "date": "6/26",
-      "member": "Joe",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發工作 (4.5H)",
-      "commits": "6 commits",
-      "reasoning": "開發時數與 commit 產出的工時比例（0.75）顯著低於團隊平均（0.33），相差 2.27 倍，表示單位產出低於團隊平均"
-    },
-    {
-      "date": "6/29",
-      "member": "Wendy",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "開發工作 (5H)",
-      "commits": "無相關 commit",
-      "reasoning": "回報開發時數 5 小時，但當日無任何 commit 記錄，與團隊平均 13.7 commits 相比產出明顯不足"
-    },
-    {
-      "date": "6/29",
+      "date": "7/9",
       "member": "家輝",
       "severity": "🔴",
       "type": "low_output",
-      "task": "開發工作 (6.5H)",
-      "commits": "無相關 commit",
-      "reasoning": "回報開發時數 6.5 小時，但當日無任何 commit 記錄，與團隊平均 13.7 commits 相比產出明顯不足"
+      "task": "KEYDATA mcp 部署完成、GCP 專案評估、AI listen 專案建立 (6.5H)",
+      "commits": "0",
+      "reasoning": "基礎設施部署和配置 6.5H，無版本控制紀錄。"
     },
     {
-      "date": "6/29",
-      "member": "Ivy",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發工作 (5H)",
-      "commits": "5 commits",
-      "reasoning": "開發時數與 commit 產出的工時比例（1.0）顯著低於團隊平均（0.45），相差 2.22 倍，表示單位產出低於團隊平均"
+      "date": "7/10",
+      "member": "日銜",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "清洗近一年資料圖片網址、AI修站後自動回爬、資料收錄需求 (7H)",
+      "commits": "0",
+      "reasoning": "資料清理與爬蟲工作 7H，無任何提交。"
     },
     {
-      "date": "6/29",
-      "member": "Ted",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發工作 (7H)",
-      "commits": "5 commits",
-      "reasoning": "開發時數與 commit 產出的工時比例（1.4）顯著低於團隊平均（0.45），相差 3.11 倍，表示單位產出遠低於團隊平均"
+      "date": "7/13",
+      "member": "日銜",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "優化非社群站台、Issue 處理、YT 資料補收 (6.5H)",
+      "commits": "0",
+      "reasoning": "爬蟲優化和資料維護 6.5H，無版本控制記錄。"
     },
     {
-      "date": "6/30",
+      "date": "7/13",
+      "member": "Wendy",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "專案交接文件整理、推播開通 (5.5H)",
+      "commits": "0",
+      "reasoning": "文件準備和系統配置 5.5H，無相應提交。"
+    },
+    {
+      "date": "7/14",
+      "member": "Joyce",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "#3182 頻道篩選優化、#29 權限 API、#3047 image url、#351 highlight、Token Revoke 公告 (6.5H)",
+      "commits": "0",
+      "reasoning": "多項 API 和功能調整 6.5H，無任何提交。"
+    },
+    {
+      "date": "7/14",
+      "member": "日銜",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "優化非社群站台、Issue 處理、自動回爬測試 (6.5H)",
+      "commits": "0",
+      "reasoning": "持續的爬蟲優化工作 6.5H，無版本控制紀錄。"
+    },
+    {
+      "date": "7/15",
+      "member": "Jason",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "AI 對 PV 評估、FAQ UI 定版實作、網溫排程 phase2 計時 (6.5H)",
+      "commits": "0",
+      "reasoning": "前端實作和功能調整 6.5H，當日無相關提交。"
+    },
+    {
+      "date": "7/16",
+      "member": "日銜",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "魅客專案開發、Issue 處理、事假 (7H)",
+      "commits": "0",
+      "reasoning": "新專案開發和 Issue 修復 7H，無任何提交。"
+    },
+    {
+      "date": "7/16",
       "member": "侑呈",
       "severity": "🔴",
       "type": "low_output",
-      "task": "開發工作 (7.5H)",
-      "commits": "無相關 commit",
-      "reasoning": "回報開發時數 7.5 小時，但當日無任何 commit 記錄，與團隊平均 14.9 commits 相比產出明顯不足"
+      "task": "KEYKYC-CRM、Claude Code × LLM Wiki 整合、FB 粉專頻道協助 (8H)",
+      "commits": "0",
+      "reasoning": "系統整合開發 8H，當天無版本控制提交。"
     },
     {
-      "date": "6/30",
+      "date": "7/16",
+      "member": "家輝",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "keydata mcp 相關事項、叢集版數據q 部署、GCP 帳號調整 (6.5H)",
+      "commits": "0",
+      "reasoning": "基礎設施維護和部署 6.5H，無相應提交。"
+    },
+    {
+      "date": "7/17",
+      "member": "Wendy",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "數據產出驗證、跨域產業詐騙情資簡報、信義例會、驗測指標調整 (5H)",
+      "commits": "0",
+      "reasoning": "數據分析和會議準備 5H，無任何提交。"
+    },
+    {
+      "date": "7/20",
       "member": "哲緯",
       "severity": "🔴",
       "type": "low_output",
-      "task": "開發工作 (5.5H)",
-      "commits": "無相關 commit",
-      "reasoning": "回報開發時數 5.5 小時，但當日無任何 commit 記錄，與團隊平均 14.9 commits 相比產出明顯不足"
+      "task": "上午請假、宏遠會議、富邦 POC 驗證、Issue#3215、Threads 需求 (6H)",
+      "commits": "0",
+      "reasoning": "系統需求處理和驗證工作 6H，當天無相關提交。"
     },
     {
-      "date": "6/30",
-      "member": "Ivy",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發工作 (5.5H)",
-      "commits": "4 commits",
-      "reasoning": "開發時數與 commit 產出的工時比例（1.375）顯著低於團隊平均（0.44），相差 3.13 倍，表示單位產出遠低於團隊平均"
+      "date": "7/21",
+      "member": "Wendy",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "跨域詐騙情資簡報、信義例會、地端機器連線交接 (5H)",
+      "commits": "0",
+      "reasoning": "系統維護和會議準備 5H，無版本控制記錄。"
     },
     {
-      "date": "6/30",
-      "member": "家輝",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發工作 (6H)",
-      "commits": "2 commits",
-      "reasoning": "開發時數與 commit 產出的工時比例（3.0）顯著低於團隊平均（0.44），相差 6.82 倍，表示單位產出遠低於團隊平均"
-    },
-    {
-      "date": "6/30",
-      "member": "Joe",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發工作 (5.5H)",
-      "commits": "5 commits",
-      "reasoning": "開發時數與 commit 產出的工時比例（1.1）顯著低於團隊平均（0.44），相差 2.5 倍，表示單位產出低於團隊平均"
+      "date": "7/21",
+      "member": "禎佑",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "盤點 KEYKYC 架構、信任計劃 YTR 數據收錄、數發部 AI 能量登錄 (7.5H)",
+      "commits": "0",
+      "reasoning": "系統架構設計和資料整合工作 7.5H，無任何提交記錄。"
     }
   ],
   "summary": {
-    "totalMembers": 13,
-    "totalWarnings": 28,
+    "totalMembers": 20,
+    "totalWarnings": 33,
+    "critical": 33,
     "byType": {
-      "low_output": 14,
+      "low_output": 33,
       "mismatch": 0,
-      "outlier": 14
-    }
+      "outlier": 0
+    },
+    "analysisNote": "期間內共識別 33 筆低產出警示（🔴），涉及 10 位團隊成員。主要問題成員包括 Joyce（11 次警示）、日銜（7 次警示）、Ted（4 次警示），反映出某些成員報告開發時數較高但無相應版本控制紀錄。建議檢查：(1)任務記錄與實際工作的對應關係、(2)commit 工作流程和提交習慣、(3)是否存在系統整合或文件更新不透過標準 VCS 流程。"
   }
 }
