@@ -1,267 +1,512 @@
 {
-  "analysisDate": "2026-07-01",
-  "period": "6/24-6/30",
+  "analysisDate": "2026-07-23",
+  "period": "7/1-7/22",
   "warnings": [
     {
-      "date": "6/24",
+      "date": "7/1",
+      "member": "Joyce",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工時 6H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 6 小時，但當天無任何 commit 記錄"
+    },
+    {
+      "date": "7/1",
+      "member": "Ivy",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工時 6H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 6 小時，但當天無任何 commit 記錄"
+    },
+    {
+      "date": "7/1",
       "member": "日銜",
       "severity": "🔴",
       "type": "low_output",
-      "task": "開發工作 (4.5H)",
-      "commits": "無相關 commit",
-      "reasoning": "回報開發時數 4.5 小時，但當日無任何 commit 記錄，與團隊平均 8.0 commits 相比產出明顯不足"
+      "task": "開發工時 6H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 6 小時，但當天無任何 commit 記錄"
     },
     {
-      "date": "6/24",
-      "member": "Wendy",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "開發工作 (5H)",
-      "commits": "無相關 commit",
-      "reasoning": "回報開發時數 5 小時，但當日無任何 commit 記錄，與團隊平均 8.0 commits 相比產出明顯不足"
-    },
-    {
-      "date": "6/24",
-      "member": "Ted",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "開發工作 (6.5H)",
-      "commits": "無相關 commit",
-      "reasoning": "回報開發時數 6.5 小時，但當日無任何 commit 記錄，與團隊平均 8.0 commits 相比產出明顯不足"
-    },
-    {
-      "date": "6/24",
-      "member": "Ivy",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發工作 (3.5H)",
-      "commits": "2 commits",
-      "reasoning": "開發時數與 commit 產出的工時比例（1.75）顯著低於團隊平均（0.66），相差 2.65 倍，表示單位產出遠低於團隊平均"
-    },
-    {
-      "date": "6/24",
+      "date": "7/1",
       "member": "侑呈",
       "severity": "🟡",
       "type": "outlier",
-      "task": "開發工作 (5.5H)",
+      "task": "開發工時 6.5H",
       "commits": "2 commits",
-      "reasoning": "開發時數與 commit 產出的工時比例（2.75）顯著低於團隊平均（0.66），相差 4.16 倍，表示單位產出遠低於團隊平均"
+      "reasoning": "commit 產出 (0.31/時) 遠低於團隊平均 (2.91/時)，差距達 9.4 倍"
     },
     {
-      "date": "6/24",
-      "member": "家輝",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發工作 (5.5H)",
-      "commits": "1 commit",
-      "reasoning": "開發時數與 commit 產出的工時比例（5.5）顯著低於團隊平均（0.66），相差 8.33 倍，表示單位產出遠低於團隊平均"
-    },
-    {
-      "date": "6/25",
-      "member": "Jason",
+      "date": "7/1",
+      "member": "Ted",
       "severity": "🔴",
       "type": "low_output",
-      "task": "開發工作 (5.5H)",
-      "commits": "無相關 commit",
-      "reasoning": "回報開發時數 5.5 小時，但當日無任何 commit 記錄，與團隊平均 15.6 commits 相比產出明顯不足"
+      "task": "開發工時 6H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 6 小時，但當天無任何 commit 記錄"
     },
     {
-      "date": "6/25",
-      "member": "Wendy",
+      "date": "7/2",
+      "member": "Joyce",
       "severity": "🔴",
       "type": "low_output",
-      "task": "開發工作 (7H)",
-      "commits": "無相關 commit",
-      "reasoning": "回報開發時數 7 小時，但當日無任何 commit 記錄，與團隊平均 15.6 commits 相比產出明顯不足"
+      "task": "開發工時 8H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 8 小時，但當天無任何 commit 記錄"
     },
     {
-      "date": "6/25",
+      "date": "7/2",
+      "member": "Ivy",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工時 7H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 7 小時，但當天無任何 commit 記錄"
+    },
+    {
+      "date": "7/2",
       "member": "禎佑",
       "severity": "🔴",
       "type": "low_output",
-      "task": "開發工作 (5H)",
-      "commits": "無相關 commit",
-      "reasoning": "回報開發時數 5 小時，但當日無任何 commit 記錄，與團隊平均 15.6 commits 相比產出明顯不足"
+      "task": "開發工時 8.5H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 8.5 小時，但當天無任何 commit 記錄"
     },
     {
-      "date": "6/25",
+      "date": "7/2",
+      "member": "Ted",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工時 7H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 7 小時，但當天無任何 commit 記錄"
+    },
+    {
+      "date": "7/2",
       "member": "家輝",
       "severity": "🔴",
       "type": "low_output",
-      "task": "開發工作 (6H)",
-      "commits": "無相關 commit",
-      "reasoning": "回報開發時數 6 小時，但當日無任何 commit 記錄，與團隊平均 15.6 commits 相比產出明顯不足"
+      "task": "開發工時 4H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 4 小時，但當天無任何 commit 記錄"
     },
     {
-      "date": "6/25",
-      "member": "Ivy",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發工作 (5.5H)",
-      "commits": "1 commit",
-      "reasoning": "開發時數與 commit 產出的工時比例（5.5）顯著低於團隊平均（0.39），相差 14.1 倍，表示單位產出遠低於團隊平均"
-    },
-    {
-      "date": "6/25",
-      "member": "日銜",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發工作 (7.5H)",
-      "commits": "7 commits",
-      "reasoning": "開發時數與 commit 產出的工時比例（1.07）顯著低於團隊平均（0.39），相差 2.74 倍，表示單位產出低於團隊平均"
-    },
-    {
-      "date": "6/25",
-      "member": "侑呈",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發工作 (7H)",
-      "commits": "4 commits",
-      "reasoning": "開發時數與 commit 產出的工時比例（1.75）顯著低於團隊平均（0.39），相差 4.49 倍，表示單位產出遠低於團隊平均"
-    },
-    {
-      "date": "6/25",
+      "date": "7/2",
       "member": "Richard",
       "severity": "🟡",
       "type": "outlier",
-      "task": "開發工作 (4H)",
-      "commits": "3 commits",
-      "reasoning": "開發時數與 commit 產出的工時比例（1.33）顯著低於團隊平均（0.39），相差 3.41 倍，表示單位產出遠低於團隊平均"
+      "task": "開發工時 9H",
+      "commits": "1 commit",
+      "reasoning": "commit 產出 (0.11/時) 遠低於團隊平均 (0.97/時)，差距達 8.8 倍"
     },
     {
-      "date": "6/26",
+      "date": "7/3",
       "member": "Ivy",
       "severity": "🔴",
       "type": "low_output",
-      "task": "開發工作 (5.5H)",
-      "commits": "無相關 commit",
-      "reasoning": "回報開發時數 5.5 小時，但當日無任何 commit 記錄，與團隊平均 16.1 commits 相比產出明顯不足"
+      "task": "開發工時 5.8H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 5.8 小時，但當天無任何 commit 記錄"
     },
     {
-      "date": "6/26",
-      "member": "Jason",
+      "date": "7/3",
+      "member": "日銜",
       "severity": "🔴",
       "type": "low_output",
-      "task": "開發工作 (5.5H)",
-      "commits": "無相關 commit",
-      "reasoning": "回報開發時數 5.5 小時，但當日無任何 commit 記錄，與團隊平均 16.1 commits 相比產出明顯不足"
+      "task": "開發工時 5H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 5 小時，但當天無任何 commit 記錄"
     },
     {
-      "date": "6/26",
-      "member": "Wendy",
+      "date": "7/3",
+      "member": "Ted",
       "severity": "🔴",
       "type": "low_output",
-      "task": "開發工作 (4.5H)",
-      "commits": "無相關 commit",
-      "reasoning": "回報開發時數 4.5 小時，但當日無任何 commit 記錄，與團隊平均 16.1 commits 相比產出明顯不足"
+      "task": "開發工時 5H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 5 小時，但當天無任何 commit 記錄"
     },
     {
-      "date": "6/26",
+      "date": "7/3",
+      "member": "Richard",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工時 7H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 7 小時，但當天無任何 commit 記錄"
+    },
+    {
+      "date": "7/6",
+      "member": "Joyce",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工時 8.5H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 8.5 小時，但當天無任何 commit 記錄"
+    },
+    {
+      "date": "7/6",
+      "member": "Ivy",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工時 6.5H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 6.5 小時，但當天無任何 commit 記錄"
+    },
+    {
+      "date": "7/6",
+      "member": "Richard",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發工時 7H",
+      "commits": "2 commits",
+      "reasoning": "commit 產出 (0.29/時) 遠低於團隊平均 (2.62/時)，差距達 9.0 倍"
+    },
+    {
+      "date": "7/7",
+      "member": "Joyce",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工時 8H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 8 小時，但當天無任何 commit 記錄"
+    },
+    {
+      "date": "7/7",
+      "member": "日銜",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發工時 7H",
+      "commits": "1 commit",
+      "reasoning": "commit 產出 (0.14/時) 遠低於團隊平均 (1.57/時)，差距達 11.2 倍"
+    },
+    {
+      "date": "7/7",
       "member": "侑呈",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發工作 (6.5H)",
-      "commits": "3 commits",
-      "reasoning": "開發時數與 commit 產出的工時比例（2.17）顯著低於團隊平均（0.33），相差 6.59 倍，表示單位產出遠低於團隊平均"
-    },
-    {
-      "date": "6/26",
-      "member": "Joe",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發工作 (4.5H)",
-      "commits": "6 commits",
-      "reasoning": "開發時數與 commit 產出的工時比例（0.75）顯著低於團隊平均（0.33），相差 2.27 倍，表示單位產出低於團隊平均"
-    },
-    {
-      "date": "6/29",
-      "member": "Wendy",
       "severity": "🔴",
       "type": "low_output",
-      "task": "開發工作 (5H)",
-      "commits": "無相關 commit",
-      "reasoning": "回報開發時數 5 小時，但當日無任何 commit 記錄，與團隊平均 13.7 commits 相比產出明顯不足"
+      "task": "開發工時 7.5H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 7.5 小時，但當天無任何 commit 記錄"
     },
     {
-      "date": "6/29",
-      "member": "家輝",
-      "severity": "🔴",
-      "type": "low_output",
-      "task": "開發工作 (6.5H)",
-      "commits": "無相關 commit",
-      "reasoning": "回報開發時數 6.5 小時，但當日無任何 commit 記錄，與團隊平均 13.7 commits 相比產出明顯不足"
-    },
-    {
-      "date": "6/29",
-      "member": "Ivy",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發工作 (5H)",
-      "commits": "5 commits",
-      "reasoning": "開發時數與 commit 產出的工時比例（1.0）顯著低於團隊平均（0.45），相差 2.22 倍，表示單位產出低於團隊平均"
-    },
-    {
-      "date": "6/29",
+      "date": "7/7",
       "member": "Ted",
       "severity": "🟡",
       "type": "outlier",
-      "task": "開發工作 (7H)",
-      "commits": "5 commits",
-      "reasoning": "開發時數與 commit 產出的工時比例（1.4）顯著低於團隊平均（0.45），相差 3.11 倍，表示單位產出遠低於團隊平均"
+      "task": "開發工時 5H",
+      "commits": "1 commit",
+      "reasoning": "commit 產出 (0.20/時) 遠低於團隊平均 (1.57/時)，差距達 7.9 倍"
     },
     {
-      "date": "6/30",
-      "member": "侑呈",
+      "date": "7/7",
+      "member": "Richard",
       "severity": "🔴",
       "type": "low_output",
-      "task": "開發工作 (7.5H)",
-      "commits": "無相關 commit",
-      "reasoning": "回報開發時數 7.5 小時，但當日無任何 commit 記錄，與團隊平均 14.9 commits 相比產出明顯不足"
+      "task": "開發工時 8H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 8 小時，但當天無任何 commit 記錄"
     },
     {
-      "date": "6/30",
-      "member": "哲緯",
+      "date": "7/8",
+      "member": "Joyce",
       "severity": "🔴",
       "type": "low_output",
-      "task": "開發工作 (5.5H)",
-      "commits": "無相關 commit",
-      "reasoning": "回報開發時數 5.5 小時，但當日無任何 commit 記錄，與團隊平均 14.9 commits 相比產出明顯不足"
+      "task": "開發工時 8H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 8 小時，但當天無任何 commit 記錄"
     },
     {
-      "date": "6/30",
-      "member": "Ivy",
-      "severity": "🟡",
-      "type": "outlier",
-      "task": "開發工作 (5.5H)",
-      "commits": "4 commits",
-      "reasoning": "開發時數與 commit 產出的工時比例（1.375）顯著低於團隊平均（0.44），相差 3.13 倍，表示單位產出遠低於團隊平均"
+      "date": "7/8",
+      "member": "日銜",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工時 5H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 5 小時，但當天無任何 commit 記錄"
     },
     {
-      "date": "6/30",
+      "date": "7/8",
       "member": "家輝",
       "severity": "🟡",
       "type": "outlier",
-      "task": "開發工作 (6H)",
-      "commits": "2 commits",
-      "reasoning": "開發時數與 commit 產出的工時比例（3.0）顯著低於團隊平均（0.44），相差 6.82 倍，表示單位產出遠低於團隊平均"
+      "task": "開發工時 5H",
+      "commits": "1 commit",
+      "reasoning": "commit 產出 (0.20/時) 遠低於團隊平均 (1.48/時)，差距達 7.4 倍"
     },
     {
-      "date": "6/30",
-      "member": "Joe",
+      "date": "7/9",
+      "member": "Jason",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工時 5.5H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 5.5 小時，但當天無任何 commit 記錄"
+    },
+    {
+      "date": "7/9",
+      "member": "日銜",
       "severity": "🟡",
       "type": "outlier",
-      "task": "開發工作 (5.5H)",
-      "commits": "5 commits",
-      "reasoning": "開發時數與 commit 產出的工時比例（1.1）顯著低於團隊平均（0.44），相差 2.5 倍，表示單位產出低於團隊平均"
+      "task": "開發工時 6H",
+      "commits": "1 commit",
+      "reasoning": "commit 產出 (0.17/時) 遠低於團隊平均 (3.44/時)，差距達 20.2 倍"
+    },
+    {
+      "date": "7/9",
+      "member": "Wendy",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工時 7H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 7 小時，但當天無任何 commit 記錄"
+    },
+    {
+      "date": "7/9",
+      "member": "家輝",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工時 6.5H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 6.5 小時，但當天無任何 commit 記錄"
+    },
+    {
+      "date": "7/9",
+      "member": "Richard",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發工時 6H",
+      "commits": "2 commits",
+      "reasoning": "commit 產出 (0.33/時) 遠低於團隊平均 (3.44/時)，差距達 10.4 倍"
+    },
+    {
+      "date": "7/10",
+      "member": "日銜",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工時 7H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 7 小時，但當天無任何 commit 記錄"
+    },
+    {
+      "date": "7/10",
+      "member": "家輝",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工時 4H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 4 小時，但當天無任何 commit 記錄"
+    },
+    {
+      "date": "7/13",
+      "member": "日銜",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工時 6.5H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 6.5 小時，但當天無任何 commit 記錄"
+    },
+    {
+      "date": "7/13",
+      "member": "Wendy",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工時 5.5H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 5.5 小時，但當天無任何 commit 記錄"
+    },
+    {
+      "date": "7/13",
+      "member": "Richard",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發工時 8H",
+      "commits": "3 commits",
+      "reasoning": "commit 產出 (0.38/時) 遠低於團隊平均 (2.02/時)，差距達 5.3 倍"
+    },
+    {
+      "date": "7/14",
+      "member": "Joyce",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工時 6.5H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 6.5 小時，但當天無任何 commit 記錄"
+    },
+    {
+      "date": "7/14",
+      "member": "日銜",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工時 6.5H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 6.5 小時，但當天無任何 commit 記錄"
+    },
+    {
+      "date": "7/14",
+      "member": "Wendy",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工時 6H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 6 小時，但當天無任何 commit 記錄"
+    },
+    {
+      "date": "7/14",
+      "member": "Richard",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發工時 6H",
+      "commits": "1 commit",
+      "reasoning": "commit 產出 (0.17/時) 遠低於團隊平均 (2.43/時)，差距達 14.3 倍"
+    },
+    {
+      "date": "7/15",
+      "member": "Joyce",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發工時 4.5H",
+      "commits": "1 commit",
+      "reasoning": "commit 產出 (0.22/時) 遠低於團隊平均 (1.74/時)，差距達 7.9 倍"
+    },
+    {
+      "date": "7/15",
+      "member": "侑呈",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發工時 7H",
+      "commits": "1 commit",
+      "reasoning": "commit 產出 (0.14/時) 遠低於團隊平均 (1.74/時)，差距達 12.4 倍"
+    },
+    {
+      "date": "7/15",
+      "member": "Richard",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工時 8H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 8 小時，但當天無任何 commit 記錄"
+    },
+    {
+      "date": "7/16",
+      "member": "侑呈",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工時 8H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 8 小時，但當天無任何 commit 記錄"
+    },
+    {
+      "date": "7/16",
+      "member": "家輝",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工時 6.5H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 6.5 小時，但當天無任何 commit 記錄"
+    },
+    {
+      "date": "7/16",
+      "member": "Joe",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工時 3H",
+      "commits": "1 commit",
+      "reasoning": "開發工時達 3 小時之門檻，但 commit 產出 (0.33/時) 遠低於團隊平均 (3.03/時)"
+    },
+    {
+      "date": "7/16",
+      "member": "Richard",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發工時 6H",
+      "commits": "1 commit",
+      "reasoning": "commit 產出 (0.17/時) 遠低於團隊平均 (3.03/時)，差距達 17.8 倍"
+    },
+    {
+      "date": "7/17",
+      "member": "日銜",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工時 4.5H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 4.5 小時，但當天無任何 commit 記錄"
+    },
+    {
+      "date": "7/17",
+      "member": "Wendy",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工時 6H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 6 小時，但當天無任何 commit 記錄"
+    },
+    {
+      "date": "7/17",
+      "member": "禎佑",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發工時 15H",
+      "commits": "4 commits",
+      "reasoning": "開發工時報告 15 小時（遠高於平均 6.2H），但 commit 產出 (0.27/時) 遠低於團隊平均 (2.55/時)，可能表示工時報告與實際工作不符"
+    },
+    {
+      "date": "7/17",
+      "member": "家輝",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發工時 4.5H",
+      "commits": "1 commit",
+      "reasoning": "commit 產出 (0.22/時) 遠低於團隊平均 (2.55/時)，差距達 11.6 倍"
+    },
+    {
+      "date": "7/20",
+      "member": "Wendy",
+      "severity": "🟡",
+      "type": "outlier",
+      "task": "開發工時 7H",
+      "commits": "1 commit",
+      "reasoning": "commit 產出 (0.14/時) 遠低於團隊平均 (1.86/時)，差距達 13.3 倍"
+    },
+    {
+      "date": "7/20",
+      "member": "哲緯",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工時 6H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 6 小時，但當天無任何 commit 記錄"
+    },
+    {
+      "date": "7/21",
+      "member": "Wendy",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工時 5H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 5 小時，但當天無任何 commit 記錄"
+    },
+    {
+      "date": "7/21",
+      "member": "禎佑",
+      "severity": "🔴",
+      "type": "low_output",
+      "task": "開發工時 7.5H",
+      "commits": "0 commits",
+      "reasoning": "報告開發工時 7.5 小時，但當天無任何 commit 記錄"
     }
   ],
   "summary": {
-    "totalMembers": 13,
-    "totalWarnings": 28,
+    "totalMembers": 12,
+    "totalWarnings": 56,
+    "critical": 40,
+    "warning": 16,
     "byType": {
-      "low_output": 14,
+      "low_output": 40,
       "mismatch": 0,
-      "outlier": 14
+      "outlier": 16
     }
   }
 }
